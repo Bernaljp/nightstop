@@ -87,7 +87,7 @@ Run `nightstop-2026-08-28T20-00-03-466Z` · 2026-08-28 20:06 · git `5d387f94` �
 
 ### `reference` — case by case
 
-Run `reference-2026-08-28T19-55-21-889Z` · 2026-08-28 19:55 · git `f09c422a` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+Run `reference-2026-08-28T21-22-22-312Z` · 2026-08-28 21:22 · git `279cfc1f` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
@@ -105,3 +105,4 @@ Run `reference-2026-08-28T19-55-21-889Z` · 2026-08-28 19:55 · git `f09c422a` �
 Kept rather than deleted. Listed so nothing is quietly dropped from the record.
 
 - `nightstop-2026-08-28T19-46-11-243Z` (nightstop) — 7/8 trustworthy
+- `reference-2026-08-28T19-55-21-889Z` (reference) — 8/8 trustworthy

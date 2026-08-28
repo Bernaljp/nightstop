@@ -107,8 +107,8 @@ async function main() {
     writeFileSync(join(truthRoot, `${spec.caseId}.json`), truthJson);
 
     for (const [file, buf] of [
-      [`${set}/${spec.caseId}/roster.pdf`, pdf],
-      [`truth/${set}/${spec.caseId}.json`, Buffer.from(truthJson)],
+      [`corpus/${set}/${spec.caseId}/roster.pdf`, pdf],
+      [`corpus/truth/${set}/${spec.caseId}.json`, Buffer.from(truthJson)],
     ] as const) {
       manifest.push(`${createHash("sha256").update(buf).digest("hex")}  ${file}`);
     }
@@ -125,6 +125,8 @@ async function main() {
     );
   }
 
+  // Paths are relative to the REPO ROOT, so `shasum -c corpus/manifest.dev.sha256`
+  // works from where the reproduction guide says to run it.
   writeFileSync(join(process.cwd(), "corpus", `manifest.${set}.sha256`), manifest.join("\n") + "\n");
 
   const readme = `# Nightstop evaluation corpus — \`${set}\`

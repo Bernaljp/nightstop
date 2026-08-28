@@ -1,0 +1,402 @@
+[
+  {
+    "id": "2026-09-01-01",
+    "date": "2026-09-01",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "GRU",
+    "reportUtc": "2026-09-01T16:00:00.000Z",
+    "endUtc": "2026-09-02T05:40:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW899",
+        "origin": "LHR",
+        "dest": "GRU",
+        "depUtc": "2026-09-01T17:30:00.000Z",
+        "arrUtc": "2026-09-02T05:10:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-02-02",
+    "date": "2026-09-02",
+    "kind": "flight",
+    "station": "GRU",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-02T20:00:00.000Z",
+    "endUtc": "2026-09-03T09:40:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW700",
+        "origin": "GRU",
+        "dest": "LHR",
+        "depUtc": "2026-09-02T21:30:00.000Z",
+        "arrUtc": "2026-09-03T09:10:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-03-03",
+    "date": "2026-09-03",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-04-04",
+    "date": "2026-09-04",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "ORD",
+    "reportUtc": "2026-09-04T16:00:00.000Z",
+    "endUtc": "2026-09-05T02:30:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW117",
+        "origin": "LHR",
+        "dest": "ORD",
+        "depUtc": "2026-09-04T17:30:00.000Z",
+        "arrUtc": "2026-09-05T02:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-05-05",
+    "date": "2026-09-05",
+    "kind": "off",
+    "code": "OFF",
+    "station": "ORD",
+    "endStation": "ORD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-06-06",
+    "date": "2026-09-06",
+    "kind": "flight",
+    "station": "ORD",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-06T13:45:00.000Z",
+    "endUtc": "2026-09-07T00:15:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW157",
+        "origin": "ORD",
+        "dest": "LHR",
+        "depUtc": "2026-09-06T15:15:00.000Z",
+        "arrUtc": "2026-09-06T23:45:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-07-07",
+    "date": "2026-09-07",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "ORD",
+    "reportUtc": "2026-09-07T20:40:00.000Z",
+    "endUtc": "2026-09-08T07:10:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW895",
+        "origin": "LHR",
+        "dest": "ORD",
+        "depUtc": "2026-09-07T22:10:00.000Z",
+        "arrUtc": "2026-09-08T06:40:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-08-08",
+    "date": "2026-09-08",
+    "kind": "off",
+    "code": "OFF",
+    "station": "ORD",
+    "endStation": "ORD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-09-09",
+    "date": "2026-09-09",
+    "kind": "flight",
+    "station": "ORD",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-09T13:45:00.000Z",
+    "endUtc": "2026-09-10T00:15:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW566",
+        "origin": "ORD",
+        "dest": "LHR",
+        "depUtc": "2026-09-09T15:15:00.000Z",
+        "arrUtc": "2026-09-09T23:45:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-10-10",
+    "date": "2026-09-10",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-11-11",
+    "date": "2026-09-11",
+    "kind": "standby",
+    "code": "SBY",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-11T12:00:00.000Z",
+    "endUtc": "2026-09-11T20:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-12-12",
+    "date": "2026-09-12",
+    "kind": "standby",
+    "code": "SBY",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-12T12:00:00.000Z",
+    "endUtc": "2026-09-12T20:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-13-13",
+    "date": "2026-09-13",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-14-14",
+    "date": "2026-09-14",
+    "kind": "training",
+    "code": "SIM",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-14T07:00:00.000Z",
+    "endUtc": "2026-09-14T15:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-15-15",
+    "date": "2026-09-15",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-16-16",
+    "date": "2026-09-16",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-17-17",
+    "date": "2026-09-17",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-18-18",
+    "date": "2026-09-18",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-19-19",
+    "date": "2026-09-19",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-20-20",
+    "date": "2026-09-20",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-21-21",
+    "date": "2026-09-21",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "GRU",
+    "reportUtc": "2026-09-21T10:10:00.000Z",
+    "endUtc": "2026-09-21T23:50:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW135",
+        "origin": "LHR",
+        "dest": "GRU",
+        "depUtc": "2026-09-21T11:40:00.000Z",
+        "arrUtc": "2026-09-21T23:20:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-22-22",
+    "date": "2026-09-22",
+    "kind": "flight",
+    "station": "GRU",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-23T00:40:00.000Z",
+    "endUtc": "2026-09-23T14:20:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW344",
+        "origin": "GRU",
+        "dest": "LHR",
+        "depUtc": "2026-09-23T02:10:00.000Z",
+        "arrUtc": "2026-09-23T13:50:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-23-23",
+    "date": "2026-09-23",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-24-24",
+    "date": "2026-09-24",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-25-25",
+    "date": "2026-09-25",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-26-26",
+    "date": "2026-09-26",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LAX",
+    "reportUtc": "2026-09-26T07:45:00.000Z",
+    "endUtc": "2026-09-26T20:45:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW559",
+        "origin": "LHR",
+        "dest": "LAX",
+        "depUtc": "2026-09-26T09:15:00.000Z",
+        "arrUtc": "2026-09-26T20:15:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-27-27",
+    "date": "2026-09-27",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LAX",
+    "endStation": "LAX",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-28-28",
+    "date": "2026-09-28",
+    "kind": "flight",
+    "station": "LAX",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-28T15:45:00.000Z",
+    "endUtc": "2026-09-29T04:45:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "PW353",
+        "origin": "LAX",
+        "dest": "LHR",
+        "depUtc": "2026-09-28T17:15:00.000Z",
+        "arrUtc": "2026-09-29T04:15:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-29-29",
+    "date": "2026-09-29",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-30-30",
+    "date": "2026-09-30",
+    "kind": "standby",
+    "code": "SBY",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-30T05:00:00.000Z",
+    "endUtc": "2026-09-30T13:00:00.000Z",
+    "sectors": []
+  }
+]
