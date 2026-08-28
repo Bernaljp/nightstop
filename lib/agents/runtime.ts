@@ -19,6 +19,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import type { BetaRunnableTool } from "@anthropic-ai/sdk/lib/tools/BetaRunnableTool";
 import type { BetaMessageParam } from "@anthropic-ai/sdk/resources/beta";
+import { loadEnv } from "../env";
 import { UsageMeter } from "../trace/usage";
 import type { TrajectoryWriter } from "../trace/trajectory";
 
@@ -27,11 +28,12 @@ export const MODEL = "claude-opus-5";
 let client: Anthropic | null = null;
 export function anthropic(): Anthropic {
   if (!client) {
+    loadEnv();
     if (!process.env.ANTHROPIC_API_KEY) {
       throw new Error(
-        "ANTHROPIC_API_KEY is not set. Nightstop needs one to run any arm that calls " +
-          "the model. The corpus, the grader and `npm run verify:grader` all work " +
-          "without it.",
+        "ANTHROPIC_API_KEY is not set. Put it in .env.local at the repo root " +
+          "(gitignored) or export it. The corpus, the grader, `npm run verify:grader` " +
+          "and the reference arm all work without it.",
       );
     }
     client = new Anthropic();
