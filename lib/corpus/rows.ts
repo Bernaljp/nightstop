@@ -45,19 +45,39 @@ function timeCell(
   return text;
 }
 
+/**
+ * The date a roster prints against a duty, in the convention the document itself uses.
+ *
+ * A duty is dated by the crew member's base local day, but a UTC-only roster prints
+ * times in UTC — so a duty reporting at 22:35 local on the 20th shows a 23:25Z
+ * departure that already belongs to the 19th in UTC. Printing the local date beside UTC
+ * times produces a document where the date column and the time column disagree, and
+ * nothing on the page says which to believe. That is not a hard case; it is an
+ * unreadable one, and a corpus should not contain a question with no right answer.
+ *
+ * So a UTC-only roster dates its rows in UTC, which is what such a roster does in
+ * practice.
+ */
+function rowDateFor(duty: Duty, spec: FormatSpec): string {
+  if (spec.timeConvention !== "utc") return duty.date;
+  const anchor = duty.reportUtc ?? duty.sectors[0]?.depUtc;
+  return anchor ? anchor.slice(0, 10) : duty.date;
+}
+
 export function toPrintRows(duties: Duty[], spec: FormatSpec): PrintRow[] {
   const rows: PrintRow[] = [];
 
   for (const duty of duties) {
-    const dateCell = formatDate(duty.date, spec.dateStyle);
+    const rowDate = rowDateFor(duty, spec);
+    const dateCell = formatDate(rowDate, spec.dateStyle);
 
     if (duty.sectors.length === 0) {
       // A non-flying duty is one row: the window, and the code that names it.
       const row: PrintRow = { startsDuty: true, date: dateCell, code: duty.code ?? "" };
       if (spec.reportTime === "stated" || duty.kind !== "flight") {
-        row.report = timeCell(duty.reportUtc, duty.station, duty.date, spec);
+        row.report = timeCell(duty.reportUtc, duty.station, rowDate, spec);
       }
-      row.end = timeCell(duty.endUtc, duty.endStation, duty.date, spec);
+      row.end = timeCell(duty.endUtc, duty.endStation, rowDate, spec);
       row.origin = duty.station;
       row.dest = duty.endStation;
       row.route = duty.kind === "off" ? "" : `${duty.station}-${duty.endStation}`;
@@ -77,19 +97,19 @@ export function toPrintRows(duties: Duty[], spec: FormatSpec): PrintRow[] {
       row.date = first || spec.continuationRows === "dated" ? dateCell : "";
 
       if (first && spec.reportTime === "stated") {
-        row.report = timeCell(duty.reportUtc, duty.station, duty.date, spec);
+        row.report = timeCell(duty.reportUtc, duty.station, rowDate, spec);
       }
       // Duty end prints on the LAST row of the duty, which is where rosters put it
       // and which is what makes an undated continuation row load-bearing.
-      if (last) row.end = timeCell(duty.endUtc, duty.endStation, duty.date, spec);
+      if (last) row.end = timeCell(duty.endUtc, duty.endStation, rowDate, spec);
 
       row.code = "";
       row.flightNo = s.flightNo;
       row.origin = s.origin;
       row.dest = s.dest;
       row.route = `${s.origin}-${s.dest}`;
-      row.dep = timeCell(s.depUtc, s.origin, duty.date, spec);
-      row.arr = timeCell(s.arrUtc, s.dest, duty.date, spec);
+      row.dep = timeCell(s.depUtc, s.origin, rowDate, spec);
+      row.arr = timeCell(s.arrUtc, s.dest, rowDate, spec);
       row.block = formatDuration(minutesBetween(new Date(s.depUtc), new Date(s.arrUtc)));
       if (last && duty.reportUtc && duty.endUtc) {
         row.duty = formatDuration(minutesBetween(new Date(duty.reportUtc), new Date(duty.endUtc)));

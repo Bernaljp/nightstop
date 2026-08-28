@@ -1,0 +1,131 @@
+{
+  "runId": "nightstop-2026-08-28T21-38-15-412Z",
+  "arm": "nightstop",
+  "set": "heldout",
+  "describes": "Model reads the roster with a timezone tool and the document's own totals as a checksum; the deterministic engine places sleep and finds every rule collision.",
+  "at": "2026-08-28T21:42:26.899Z",
+  "gitSha": "1bb136ce60b7f132e9dbb036a635c1bee1b32f6e",
+  "corpusManifestSha256": "d392331e011c159c5bf03440412ab45afee2936468d0c189fbf74bfdcab6735d",
+  "model": "claude-opus-5",
+  "rulePack": {
+    "id": "baseline-public+operator-manual-synthetic+crew-preferences",
+    "rules": 12
+  },
+  "summary": {
+    "arm": "nightstop",
+    "cases": 4,
+    "trustworthy": 3,
+    "silentlyWrong": 1,
+    "buckets": {
+      "unusable": 0,
+      "misread": 1,
+      "missed": 0,
+      "false_alarm": 0,
+      "surfaced": 2,
+      "clean": 1
+    },
+    "fieldAccuracy": 0.991130820399113,
+    "conflictRecall": 0.88,
+    "falseAlarmCount": 5,
+    "totalCostUsd": 2.80582075,
+    "totalWallMs": 796253,
+    "totalHumanSeconds": 0
+  },
+  "grades": [
+    {
+      "caseId": "h01-corvus",
+      "arm": "nightstop",
+      "costUsd": 0.5567022500000001,
+      "wallMs": 189969,
+      "humanSeconds": 0,
+      "bucket": "misread",
+      "trustworthy": false,
+      "fieldsTotal": 341,
+      "fieldsCorrect": 329,
+      "fieldsExact": false,
+      "mismatches": [
+        "2026-09-08[0] reportUtc: expected 2026-09-09T01:50:00.000Z, read 2026-09-08T01:50:00.000Z",
+        "2026-09-08[0] endUtc: expected 2026-09-09T11:10:00.000Z, read 2026-09-08T11:10:00.000Z",
+        "2026-09-08[0] sectorDepUtc: expected 2026-09-09T03:10:00.000Z, read 2026-09-08T03:10:00.000Z",
+        "2026-09-08[0] sectorArrUtc: expected 2026-09-09T10:40:00.000Z, read 2026-09-08T10:40:00.000Z",
+        "2026-09-20[0] reportUtc: expected 2026-09-19T22:35:00.000Z, read 2026-09-20T22:35:00.000Z",
+        "2026-09-20[0] endUtc: expected 2026-09-20T12:45:00.000Z, read 2026-09-21T12:45:00.000Z",
+        "2026-09-20[0] sectorDepUtc: expected 2026-09-19T23:25:00.000Z,2026-09-20T02:48:00.000Z,2026-09-20T06:15:00.000Z,2026-09-20T09:35:00.000Z, read 2026-09-20T23:25:00.000Z,2026-09-21T02:48:00.000Z,2026-09-21T06:15:00.000Z,2026-09-21T09:35:00.000Z",
+        "2026-09-20[0] sectorArrUtc: expected 2026-09-20T01:50:00.000Z,2026-09-20T05:13:00.000Z,2026-09-20T08:55:00.000Z,2026-09-20T12:15:00.000Z, read 2026-09-21T01:50:00.000Z,2026-09-21T05:13:00.000Z,2026-09-21T08:55:00.000Z,2026-09-21T12:15:00.000Z",
+        "2026-09-21[0] reportUtc: expected 2026-09-20T22:45:00.000Z, read 2026-09-21T22:45:00.000Z",
+        "2026-09-21[0] endUtc: expected 2026-09-21T08:30:00.000Z, read 2026-09-22T08:30:00.000Z",
+        "2026-09-21[0] sectorDepUtc: expected 2026-09-20T23:35:00.000Z,2026-09-21T01:48:00.000Z,2026-09-21T04:18:00.000Z,2026-09-21T06:35:00.000Z, read 2026-09-21T23:35:00.000Z,2026-09-22T01:48:00.000Z,2026-09-22T04:18:00.000Z,2026-09-22T06:35:00.000Z",
+        "2026-09-21[0] sectorArrUtc: expected 2026-09-21T00:55:00.000Z,2026-09-21T03:08:00.000Z,2026-09-21T05:43:00.000Z,2026-09-21T08:00:00.000Z, read 2026-09-22T00:55:00.000Z,2026-09-22T03:08:00.000Z,2026-09-22T05:43:00.000Z,2026-09-22T08:00:00.000Z"
+      ],
+      "mandatoryTotal": 12,
+      "surfacedCount": 9,
+      "missed": [
+        "far117-sleep-opportunity-8h@2026-09-20",
+        "op-rest-12h-home@2026-09-20",
+        "pref-sleep-window-9h@2026-09-20"
+      ],
+      "falseAlarms": [
+        "far117-rest-10h@2026-09-08",
+        "far117-rest-10h@2026-09-21",
+        "main-sleep-floor-6h@2026-09-21",
+        "op-rest-12h-home@2026-09-08",
+        "pref-sleep-window-9h@2026-09-08"
+      ],
+      "planViolationCount": 3
+    },
+    {
+      "caseId": "h02-lyra",
+      "arm": "nightstop",
+      "costUsd": 0.64147325,
+      "wallMs": 192081,
+      "humanSeconds": 0,
+      "bucket": "surfaced",
+      "trustworthy": true,
+      "fieldsTotal": 352,
+      "fieldsCorrect": 352,
+      "fieldsExact": true,
+      "mismatches": [],
+      "mandatoryTotal": 10,
+      "surfacedCount": 10,
+      "missed": [],
+      "falseAlarms": [],
+      "planViolationCount": 0
+    },
+    {
+      "caseId": "h03-tellus",
+      "arm": "nightstop",
+      "costUsd": 0.579765,
+      "wallMs": 162730,
+      "humanSeconds": 0,
+      "bucket": "surfaced",
+      "trustworthy": true,
+      "fieldsTotal": 330,
+      "fieldsCorrect": 330,
+      "fieldsExact": true,
+      "mismatches": [],
+      "mandatoryTotal": 3,
+      "surfacedCount": 3,
+      "missed": [],
+      "falseAlarms": [],
+      "planViolationCount": 0
+    },
+    {
+      "caseId": "h04-atria",
+      "arm": "nightstop",
+      "costUsd": 1.02788025,
+      "wallMs": 251473,
+      "humanSeconds": 0,
+      "bucket": "clean",
+      "trustworthy": true,
+      "fieldsTotal": 330,
+      "fieldsCorrect": 330,
+      "fieldsExact": true,
+      "mismatches": [],
+      "mandatoryTotal": 0,
+      "surfacedCount": 0,
+      "missed": [],
+      "falseAlarms": [],
+      "planViolationCount": 0
+    }
+  ]
+}

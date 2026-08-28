@@ -1,0 +1,18 @@
+{
+  "caseId": "d04-kestrel",
+  "arm": "reference",
+  "costUsd": 0,
+  "wallMs": 9,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 12,
+  "surfacedCount": 12,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

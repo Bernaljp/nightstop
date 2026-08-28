@@ -1,0 +1,194 @@
+{
+  "caseId": "h03-tellus",
+  "blocks": [
+    {
+      "id": "main-2026-10-12",
+      "kind": "main",
+      "startUtc": "2026-10-12T15:55:00.000Z",
+      "endUtc": "2026-10-12T23:55:00.000Z",
+      "station": "JFK",
+      "why": "11:55 to 19:55 local at JFK — which is about 5h23 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-14",
+      "kind": "main",
+      "startUtc": "2026-10-13T18:15:00.000Z",
+      "endUtc": "2026-10-14T02:15:00.000Z",
+      "station": "MAD",
+      "why": "20:15 to 04:15 at MAD, covering 2h15 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-15",
+      "kind": "main",
+      "startUtc": "2026-10-14T21:00:00.000Z",
+      "endUtc": "2026-10-15T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-17",
+      "kind": "main",
+      "startUtc": "2026-10-16T18:45:00.000Z",
+      "endUtc": "2026-10-17T02:45:00.000Z",
+      "station": "SIN",
+      "why": "02:45 to 10:45 local at SIN — which is about 4h43 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-22",
+      "kind": "main",
+      "startUtc": "2026-10-17T21:00:00.000Z",
+      "endUtc": "2026-10-18T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-24",
+      "kind": "main",
+      "startUtc": "2026-10-23T19:00:00.000Z",
+      "endUtc": "2026-10-24T03:00:00.000Z",
+      "station": "DXB",
+      "why": "23:00 to 07:00 at DXB, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-26",
+      "kind": "main",
+      "startUtc": "2026-10-25T21:57:00.000Z",
+      "endUtc": "2026-10-26T05:57:00.000Z",
+      "station": "MAD",
+      "why": "22:57 to 06:57 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-27",
+      "kind": "main",
+      "startUtc": "2026-10-27T02:20:00.000Z",
+      "endUtc": "2026-10-27T10:20:00.000Z",
+      "station": "GRU",
+      "why": "23:20 to 07:20 local at GRU — which is about 1h05 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-30",
+      "kind": "main",
+      "startUtc": "2026-10-28T23:45:00.000Z",
+      "endUtc": "2026-10-29T07:45:00.000Z",
+      "station": "MAD",
+      "why": "00:45 to 08:45 local at MAD — which is about 1h45 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-01",
+      "kind": "main",
+      "startUtc": "2026-10-30T22:25:00.000Z",
+      "endUtc": "2026-10-31T06:25:00.000Z",
+      "station": "MAD",
+      "why": "23:25 to 07:25 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-02",
+      "kind": "main",
+      "startUtc": "2026-11-01T22:00:00.000Z",
+      "endUtc": "2026-11-02T06:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-04",
+      "kind": "main",
+      "startUtc": "2026-11-02T20:45:00.000Z",
+      "endUtc": "2026-11-03T04:45:00.000Z",
+      "station": "DXB",
+      "why": "00:45 to 08:45 local at DXB — which is about 1h45 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-06",
+      "kind": "main",
+      "startUtc": "2026-11-05T22:00:00.000Z",
+      "endUtc": "2026-11-06T06:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-07",
+      "kind": "main",
+      "startUtc": "2026-11-07T00:34:00.000Z",
+      "endUtc": "2026-11-07T08:34:00.000Z",
+      "station": "BOS",
+      "why": "19:34 to 03:34 local at BOS — which is about 3h26 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-10-14",
+      "where": "2026-10-14-04",
+      "statement": "2026-10-14 is a 14h19 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-10-15",
+      "where": "2026-10-15-05",
+      "statement": "2026-10-15 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-10-17",
+      "where": "2026-10-17-07",
+      "statement": "2026-10-17 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    }
+  ]
+}

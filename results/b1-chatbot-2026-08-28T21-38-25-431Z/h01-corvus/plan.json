@@ -1,0 +1,485 @@
+{
+  "caseId": "h01-corvus",
+  "blocks": [
+    {
+      "kind": "main",
+      "startUtc": "2026-08-31T22:00:00Z",
+      "endUtc": "2026-09-01T06:00:00Z",
+      "station": "MAD",
+      "why": "Normal night at home so I start the month rested — tomorrow is a 20:30 local report and an all-night crossing to Bogota.",
+      "id": "b0",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-01T12:00:00Z",
+      "endUtc": "2026-09-01T15:00:00Z",
+      "station": "MAD",
+      "why": "Siesta before the BOG night flight; I'll be awake until 08:35 body time, so I want three hours in the bank before I leave the door at 16:55Z.",
+      "id": "b1",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-02T07:30:00Z",
+      "endUtc": "2026-09-02T15:00:00Z",
+      "station": "BOG",
+      "why": "Straight to bed at the hotel at 02:30 Bogota time after a ten-hour sector — sleep now while I'm still tired enough not to care what the clock says.",
+      "id": "b2",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-03T04:00:00Z",
+      "endUtc": "2026-09-03T12:00:00Z",
+      "station": "BOG",
+      "why": "A proper Bogota night, 23:00 to 07:00 local, to load up before tonight's 12-hour duty back to Madrid.",
+      "id": "b3",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-03T17:00:00Z",
+      "endUtc": "2026-09-03T19:30:00Z",
+      "station": "BOG",
+      "why": "Early-afternoon top-up in BOG before a 22:10Z report — this nap is what gets me through the second half of the flight.",
+      "id": "b4",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-04T12:30:00Z",
+      "endUtc": "2026-09-04T15:30:00Z",
+      "station": "MAD",
+      "why": "Home by 11:50Z off a night crossing; three hours to take the edge off, then I get up so I can still sleep tonight.",
+      "id": "b5",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-04T20:00:00Z",
+      "endUtc": "2026-09-05T03:00:00Z",
+      "station": "MAD",
+      "why": "Deliberately early to bed — standby opens at 04:00Z tomorrow, which is 06:00 local, so this is the only sleep I'll get before it.",
+      "id": "b6",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-05T21:00:00Z",
+      "endUtc": "2026-09-06T05:30:00Z",
+      "station": "MAD",
+      "why": "Full night back on Madrid time; tomorrow's standby doesn't start until midday so I can sleep normally.",
+      "id": "b7",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-06T20:30:00Z",
+      "endUtc": "2026-09-07T04:30:00Z",
+      "station": "MAD",
+      "why": "Eight hours before the Boston trip — report is 06:55Z so I'm out the door at 05:20Z and I want that sleep finished, not interrupted.",
+      "id": "b8",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-07T17:15:00Z",
+      "endUtc": "2026-09-07T23:45:00Z",
+      "station": "BOS",
+      "why": "Curtains shut at 13:15 Boston time — it's 19:15 on my body clock, so this counts as the night's sleep before the 01:50Z red-eye home.",
+      "id": "b9",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-08T13:15:00Z",
+      "endUtc": "2026-09-08T16:15:00Z",
+      "station": "MAD",
+      "why": "Just landed off a duty that ran clean through the whole 02-06 window; three hours only, then up, so I can get a real night tonight.",
+      "id": "b10",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-08T21:00:00Z",
+      "endUtc": "2026-09-09T05:30:00Z",
+      "station": "MAD",
+      "why": "The realignment sleep — this is the one that puts me back on Madrid nights after the Boston red-eye.",
+      "id": "b11",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-09T21:30:00Z",
+      "endUtc": "2026-09-10T05:30:00Z",
+      "station": "MAD",
+      "why": "Day off, ordinary night, banking sleep before three standby days.",
+      "id": "b12",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-10T21:30:00Z",
+      "endUtc": "2026-09-11T05:30:00Z",
+      "station": "MAD",
+      "why": "Standby tomorrow opens at 11:00Z, so a normal night and I'm callable rested.",
+      "id": "b13",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-11T21:30:00Z",
+      "endUtc": "2026-09-12T05:30:00Z",
+      "station": "MAD",
+      "why": "Last normal night before the 13SEP early — get it while it's easy.",
+      "id": "b14",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-12T12:00:00Z",
+      "endUtc": "2026-09-12T14:00:00Z",
+      "station": "MAD",
+      "why": "Afternoon nap on my day off purely to bank sleep for the 03:05Z report — I will not get a full night tonight and I know it.",
+      "id": "b15",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-12T18:00:00Z",
+      "endUtc": "2026-09-13T01:00:00Z",
+      "station": "MAD",
+      "why": "Lights out at 20:00 local, which is unnatural, but with the alarm at 01:00Z and a 95-minute drive it's the only way to get seven hours before a four-sector day.",
+      "id": "b16",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-13T16:30:00Z",
+      "endUtc": "2026-09-13T18:30:00Z",
+      "station": "MAD",
+      "why": "Home after eleven and a half hours and four landings on almost no sleep — short nap, then hold out for bedtime.",
+      "id": "b17",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-13T21:30:00Z",
+      "endUtc": "2026-09-14T06:30:00Z",
+      "station": "MAD",
+      "why": "Nine hours to pay back the early; two days off after this so I can let it run long.",
+      "id": "b18",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-14T22:00:00Z",
+      "endUtc": "2026-09-15T06:00:00Z",
+      "station": "MAD",
+      "why": "Ordinary night at home, staying anchored to Madrid time.",
+      "id": "b19",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-15T22:00:00Z",
+      "endUtc": "2026-09-16T06:30:00Z",
+      "station": "MAD",
+      "why": "Full night before Dubai — a civilised 09:20Z report means no sleep debt going out.",
+      "id": "b20",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-16T19:30:00Z",
+      "endUtc": "2026-09-17T03:30:00Z",
+      "station": "DXB",
+      "why": "23:30 to 07:30 Dubai time, which is also 21:30 to 05:30 on my body clock — a rare layover where local night and body night line up, so I take all of it.",
+      "id": "b21",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-17T10:00:00Z",
+      "endUtc": "2026-09-17T11:30:00Z",
+      "station": "DXB",
+      "why": "Afternoon nap before the 13:10Z report; I'll be awake eighteen hours by the time I'm off duty in Madrid tonight.",
+      "id": "b22",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-18T00:00:00Z",
+      "endUtc": "2026-09-18T08:00:00Z",
+      "station": "MAD",
+      "why": "In the door at 23:35Z off the Dubai sector; standby isn't until midday so I sleep straight through the morning.",
+      "id": "b23",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-18T16:00:00Z",
+      "endUtc": "2026-09-18T17:00:00Z",
+      "station": "MAD",
+      "why": "Nap on the sofa mid-standby — tomorrow is a 05:00Z report and tonight's sleep will be short.",
+      "id": "b24",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-18T19:30:00Z",
+      "endUtc": "2026-09-19T02:45:00Z",
+      "station": "MAD",
+      "why": "Straight to bed the moment standby releases, alarm at 02:45Z for a 03:25Z departure from home.",
+      "id": "b25",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-19T14:30:00Z",
+      "endUtc": "2026-09-19T16:30:00Z",
+      "station": "MAD",
+      "why": "Two hours after the Dublin turnaround to clear the early-start debt before the worst night of the month.",
+      "id": "b26",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-19T23:00:00Z",
+      "endUtc": "2026-09-20T05:00:00Z",
+      "station": "MAD",
+      "why": "Six hours only, on purpose — I need enough sleep pressure left to actually fall asleep in tomorrow's afternoon before the night duty.",
+      "id": "b27",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-20T12:30:00Z",
+      "endUtc": "2026-09-20T19:30:00Z",
+      "station": "MAD",
+      "why": "The big one: seven hours in a dark room in the afternoon, because from 21:00Z I'm awake for eighteen hours straight across a four-sector night.",
+      "id": "b28",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-21T14:45:00Z",
+      "endUtc": "2026-09-21T16:45:00Z",
+      "station": "MAD",
+      "why": "Home at 14:20Z off the all-nighter with another night duty possibly reporting at 18:30Z — two hours is all I can safely take, and it is not enough.",
+      "id": "b29",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-22T06:00:00Z",
+      "endUtc": "2026-09-22T13:00:00Z",
+      "station": "MAD",
+      "why": "Off the second night duty and into bed; seven hours in the morning, then up so I don't wreck tonight.",
+      "id": "b30",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-22T21:30:00Z",
+      "endUtc": "2026-09-23T06:30:00Z",
+      "station": "MAD",
+      "why": "Nine hours to put the body clock back on Madrid nights after two nights on the back of it.",
+      "id": "b31",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-23T22:00:00Z",
+      "endUtc": "2026-09-24T04:30:00Z",
+      "station": "MAD",
+      "why": "Slightly short night on purpose so the pre-Singapore nap will take.",
+      "id": "b32",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-24T08:45:00Z",
+      "endUtc": "2026-09-24T10:45:00Z",
+      "station": "MAD",
+      "why": "Two hours before leaving home at 11:10Z — the Singapore sector is 15h20 of duty finishing at 06:05 body time.",
+      "id": "b33",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-25T05:00:00Z",
+      "endUtc": "2026-09-25T12:00:00Z",
+      "station": "SIN",
+      "why": "At the hotel by 12:35 Singapore time after a fifteen-hour duty — sleep immediately, seven hours, don't fight it.",
+      "id": "b34",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-25T20:00:00Z",
+      "endUtc": "2026-09-26T04:00:00Z",
+      "station": "SIN",
+      "why": "04:00 to 12:00 Singapore local, which is 22:00 to 06:00 at home — I'm staying on Madrid time because the flight back reports at 15:50 body time.",
+      "id": "b35",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-26T10:00:00Z",
+      "endUtc": "2026-09-26T11:30:00Z",
+      "station": "SIN",
+      "why": "Last top-up before the 13:50Z report; this duty finishes at 07:10 body time and crosses my whole window of low alertness.",
+      "id": "b36",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-27T07:15:00Z",
+      "endUtc": "2026-09-27T13:00:00Z",
+      "station": "MAD",
+      "why": "In the door at 06:45Z off Singapore; a short morning sleep only, so I can still sleep tonight and be ready for Boston tomorrow.",
+      "id": "b37",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-27T21:00:00Z",
+      "endUtc": "2026-09-28T06:45:00Z",
+      "station": "MAD",
+      "why": "The proper recovery night after the Singapore pairing, finished in time to leave home at 07:45Z.",
+      "id": "b38",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-28T21:30:00Z",
+      "endUtc": "2026-09-29T05:30:00Z",
+      "station": "BOS",
+      "why": "17:30 to 01:30 Boston time looks odd but it is 23:30 to 07:30 at home — only one layover night, so I keep the Madrid clock rather than shift for it.",
+      "id": "b39",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-29T22:30:00Z",
+      "endUtc": "2026-09-30T06:30:00Z",
+      "station": "BOS",
+      "why": "Eight hours on a half-shifted clock before the last duty; awake at 02:30 Boston local, but that's 08:30 body time and report is 12:55Z.",
+      "id": "b40",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-01T00:15:00Z",
+      "endUtc": "2026-10-01T08:15:00Z",
+      "station": "MAD",
+      "why": "Blocks in at 23:45 local and home at 01:50 — the roster's last commute is the tiring bit, so nothing planned the next morning.",
+      "id": "b41",
+      "ruleIds": []
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "roster.duplicate-overlapping-duty",
+      "date": "2026-09-21",
+      "statement": "21SEP is printed twice with two different four-sector night duties that overlap each other: one reporting 18:30Z and finishing 22SEP 03:53Z, the other reporting 22:45Z and finishing 22SEP 08:30Z. Both cannot be flown. Whichever is correct, it follows a 14h10 all-night duty that only ends at 21SEP 12:45Z, giving 5h45 or 10h00 rest between two consecutive back-of-the-clock duties.",
+      "options": [
+        "Get crewing to confirm which of the two 21SEP lines stands before you plan anything else — this is the single biggest unknown in the month",
+        "If only the 22:45Z duty is real, extend the 21SEP recovery sleep from 14:45Z all the way to 21:00Z instead of stopping at 16:45Z",
+        "If the 18:30Z duty is real, you have a 2-hour nap between two night duties and I would raise a fatigue report rather than accept it",
+        "Ask whether the second line was meant to read 22SEP, which would make the sequence workable at roughly 10 hours' rest"
+      ],
+      "where": "2026-09-21",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "fatigue.sleep-before-early-start",
+      "date": "2026-09-13",
+      "statement": "Report is 03:05Z, which is 05:05 Madrid local. With a 95-minute commute you leave the door at 01:30Z and wake at 01:00Z, so the pre-duty sleep has to end at an hour when sleep is deepest. It is then a four-sector, 11h24 duty with the first two sectors flown entirely inside the 02:00-06:00 body-clock window.",
+      "options": [
+        "Take the 12SEP afternoon nap as planned — it is not optional, it is most of the sleep you will get for this duty",
+        "Consider a hotel or crash pad near MAD on the night of 12SEP to convert 95 minutes of commute into 95 minutes of sleep",
+        "Expect the low point around the BCN-MAD and MAD-LHR sectors and plan controlled rest and caffeine accordingly",
+        "Flag to the operator that a 03:05Z report with a 95-minute commute is effectively a 01:00Z wake-up"
+      ],
+      "where": "2026-09-13",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "fatigue.wocl-full-crossing-short-layover",
+      "date": "2026-09-08",
+      "statement": "Arrive BOS 07SEP 15:45Z and report back at 08:08 01:50Z — under 10 hours at the hotel, of which maybe 6h30 is sleepable, and it lands in the Boston afternoon. The duty then runs 01:50Z to 11:10Z, covering the entire 02:00-06:00 body-clock window with no local-night sleep beforehand.",
+      "options": [
+        "Sleep on arrival at 17:15Z rather than trying to stay up — at 19:15 body time you will fall asleep, at 23:00 body time you will not",
+        "Blackout mask and earplugs; the Boston afternoon is the enemy here",
+        "Split rest with the other pilot in the cruise if the operator's scheme allows it",
+        "If the hotel transfer or room is not ready on arrival, say so at the time — the sleep opportunity is already marginal"
+      ],
+      "where": "2026-09-08",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "fatigue.consecutive-night-duties",
+      "date": "2026-09-20",
+      "statement": "20SEP is a 14h10 duty reporting 22:35Z and finishing 21SEP 12:45Z, four sectors, all of it through the night and the whole low-alertness window. It follows a 05:00Z report on 19SEP, so the body clock is pulled early then pushed straight onto nights, and it is immediately followed by the disputed 21SEP night duty.",
+      "options": [
+        "Protect the 20SEP afternoon sleep 12:30-19:30Z absolutely — no errands, no daylight, phone off",
+        "Deliberately trim the 19/20SEP night to six hours so the afternoon sleep will actually come",
+        "Raise a fatigue report for the 19SEP-to-21SEP sequence regardless of how the 21SEP duplicate resolves",
+        "Ask whether the DUB sectors on the back end of the 20SEP duty can be reallocated"
+      ],
+      "where": "2026-09-20",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "roster.day-off-not-clear-of-duty",
+      "date": "2026-09-02",
+      "statement": "02SEP is marked DO but the previous duty does not end until 06:35Z that morning, and it ends in Bogota, not at base. The same pattern appears on 04SEP (duty ends 10:15Z), 22SEP (duty ends 03:53Z or 08:30Z), 25SEP (in SIN) and 27SEP (duty ends 05:10Z).",
+      "options": [
+        "Treat these as post-duty rest days, not free days — do not plan anything on the morning of a DO that follows a night arrival",
+        "Confirm with crewing which of these count towards the ten days off credited on the roster header",
+        "Note that 25SEP as a 'day off' is a downroute day in Singapore on the wrong side of the clock"
+      ],
+      "where": "2026-09-02",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "fatigue.early-standby-window",
+      "date": "2026-09-05",
+      "statement": "The 05SEP standby window is not printed directly; back-calculated from the 14:00Z end and 10h00 length it starts at 04:00Z, which is 06:00 Madrid local. It comes the day after a 12h05 overnight arrival from Bogota that only cleared at 10:15Z on 04SEP.",
+      "options": [
+        "Confirm the standby start time with crewing — the roster only prints the end time and the length",
+        "Bed at 20:00Z on 04SEP so you have seven hours before the window opens",
+        "If called out early on 05SEP, be honest about how much sleep you actually got since the BOG arrival"
+      ],
+      "where": "2026-09-05",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "fatigue.long-duty-body-night",
+      "date": "2026-09-24",
+      "statement": "The SIN pairing is two 15h20 duties. Outbound finishes 25SEP 04:05Z, which is 06:05 body time, and the return reports 26SEP 13:50Z and finishes 27SEP 05:10Z, again finishing right at the bottom of the body clock. The 34-hour Singapore layover is not long enough to adapt to a six-hour shift and should not be used to try.",
+      "options": [
+        "Stay on Madrid time in Singapore as planned — sleep 04:00-12:00 SIN local, be awake through the SIN afternoon",
+        "Use the 26SEP 10:00Z nap before report; it is worth more than an extra hour in the morning",
+        "Plan in-flight rest to fall in the 02:00-06:00 body-time band on both sectors",
+        "Keep 27SEP genuinely clear — the morning sleep after this pairing is short and the real recovery is the following night"
+      ],
+      "where": "2026-09-24",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "roster.reporting-offset-assumption",
+      "date": "2026-09-16",
+      "statement": "The roster gives two reporting offsets but does not label which flights are short or long haul. I applied 80 minutes to BOG, BOS, DXB and SIN and 50 minutes to BCN, LHR, DUB, FCO, LIS and CDG; every duty length printed on the roster reconciles exactly with those assumptions, including the 8h50 DXB duties.",
+      "options": [
+        "Sanity-check the DXB report time of 13:10Z against your ops manual, since 7h00 block is a borderline long-haul call",
+        "If any offset differs, the affected pre-duty sleep block should move with it, not the wake-up time"
+      ],
+      "where": "2026-09-16",
+      "hardness": "recommendation"
+    }
+  ]
+}

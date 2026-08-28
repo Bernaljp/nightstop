@@ -1,0 +1,492 @@
+{
+  "caseId": "h03-tellus",
+  "blocks": [
+    {
+      "kind": "main",
+      "startUtc": "2026-10-10T22:30:00Z",
+      "endUtc": "2026-10-11T06:30:00Z",
+      "station": "MAD",
+      "why": "Full night in your own bed before the JFK night flight — this is the sleep the whole first week is built on.",
+      "id": "b0",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-11T12:00:00Z",
+      "endUtc": "2026-10-11T15:00:00Z",
+      "station": "MAD",
+      "why": "Three-hour siesta before an 18:20Z report; you land JFK at 05:50 body time so bank it now.",
+      "id": "b1",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-12T05:30:00Z",
+      "endUtc": "2026-10-12T13:00:00Z",
+      "station": "JFK",
+      "why": "Straight into bed on arrival at the hotel and sleep the JFK night out — 01:30 to 09:00 local.",
+      "id": "b2",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-12T19:30:00Z",
+      "endUtc": "2026-10-12T22:30:00Z",
+      "station": "JFK",
+      "why": "Afternoon nap before another all-nighter home; without it you're awake right through the WOCL with nothing in reserve.",
+      "id": "b3",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-13T11:45:00Z",
+      "endUtc": "2026-10-13T14:30:00Z",
+      "station": "MAD",
+      "why": "Head down as soon as you're through the door — it's still morning on JFK time so this one will come easily.",
+      "id": "b4",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-13T18:30:00Z",
+      "endUtc": "2026-10-14T01:45:00Z",
+      "station": "MAD",
+      "why": "Lights out at 20:30 local for the 05:40 report; you'll fight for it with a New York body clock, so a dark room and no screens from 17:30.",
+      "id": "b5",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-14T20:15:00Z",
+      "endUtc": "2026-10-15T06:00:00Z",
+      "station": "MAD",
+      "why": "Nearly ten hours to pay off the JFK debt before the long one to Singapore.",
+      "id": "b6",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-16T01:30:00Z",
+      "endUtc": "2026-10-16T05:30:00Z",
+      "station": "SIN",
+      "why": "Four hours on arrival in Singapore, then get up and out into daylight rather than sleeping the day away.",
+      "id": "b7",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-16T14:30:00Z",
+      "endUtc": "2026-10-16T22:30:00Z",
+      "station": "SIN",
+      "why": "Sleep the Singapore night 22:30 to 06:30 — one clean night is all this layover gives you before the 11:10 report.",
+      "id": "b8",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-17T20:45:00Z",
+      "endUtc": "2026-10-18T05:45:00Z",
+      "station": "MAD",
+      "why": "Home and straight onto Madrid nights — first of four days off, so reset hard tonight.",
+      "id": "b9",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-18T22:00:00Z",
+      "endUtc": "2026-10-19T06:00:00Z",
+      "station": "MAD",
+      "why": "Normal night at home, holding a fixed schedule through the days off.",
+      "id": "b10",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-19T22:00:00Z",
+      "endUtc": "2026-10-20T06:00:00Z",
+      "station": "MAD",
+      "why": "Normal night at home.",
+      "id": "b11",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-20T22:00:00Z",
+      "endUtc": "2026-10-21T06:00:00Z",
+      "station": "MAD",
+      "why": "Normal night at home.",
+      "id": "b12",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-21T23:30:00Z",
+      "endUtc": "2026-10-22T08:00:00Z",
+      "station": "MAD",
+      "why": "Deliberate lie-in to 10:00 local — tomorrow is a 21:50 departure to Dubai, so start drifting late tonight.",
+      "id": "b13",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-22T12:30:00Z",
+      "endUtc": "2026-10-22T15:30:00Z",
+      "station": "MAD",
+      "why": "Nap before you leave home at 16:55Z; you land Dubai at 04:50 body time, the low point of the night.",
+      "id": "b14",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-23T04:15:00Z",
+      "endUtc": "2026-10-23T10:15:00Z",
+      "station": "DXB",
+      "why": "Six hours in the Dubai morning to clear the night flight, then up for the afternoon.",
+      "id": "b15",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-23T21:30:00Z",
+      "endUtc": "2026-10-24T05:30:00Z",
+      "station": "DXB",
+      "why": "Full night in Dubai that also lines up with your Madrid body night — the one block that serves both clocks.",
+      "id": "b16",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-24T12:00:00Z",
+      "endUtc": "2026-10-24T15:00:00Z",
+      "station": "DXB",
+      "why": "Three hours before the 23:10 out of Dubai; you'll be on approach into Madrid at 03:10 with the clocks going back.",
+      "id": "b17",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-25T04:30:00Z",
+      "endUtc": "2026-10-25T11:30:00Z",
+      "station": "MAD",
+      "why": "Home at 05:05 local after the night crossing — sleep the morning out, and remember the clocks changed overnight.",
+      "id": "b18",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-25T23:00:00Z",
+      "endUtc": "2026-10-26T08:00:00Z",
+      "station": "MAD",
+      "why": "Long lie-in to 09:00 local so you go to São Paulo rested rather than napping through the afternoon.",
+      "id": "b19",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-27T03:00:00Z",
+      "endUtc": "2026-10-27T10:30:00Z",
+      "station": "GRU",
+      "why": "Straight to bed at São Paulo — you only get one short night here before turning round at 14:35.",
+      "id": "b20",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-27T14:00:00Z",
+      "endUtc": "2026-10-27T15:30:00Z",
+      "station": "GRU",
+      "why": "Late-morning top-up before an overnight home that puts you over the Atlantic through the whole of the WOCL.",
+      "id": "b21",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-28T07:45:00Z",
+      "endUtc": "2026-10-28T13:00:00Z",
+      "station": "MAD",
+      "why": "Five hours after landing at 06:25 — cap it at 14:00 local so you can still sleep tonight.",
+      "id": "b22",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-28T22:30:00Z",
+      "endUtc": "2026-10-29T06:30:00Z",
+      "station": "MAD",
+      "why": "Back onto a proper Madrid night on the first full day off.",
+      "id": "b23",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-29T22:00:00Z",
+      "endUtc": "2026-10-30T06:30:00Z",
+      "station": "MAD",
+      "why": "Normal night before standby — go into a reserve day with a full tank.",
+      "id": "b24",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-30T08:30:00Z",
+      "endUtc": "2026-10-30T09:45:00Z",
+      "station": "MAD",
+      "why": "Short insurance nap before an afternoon-to-22:00 standby, in case the call-out turns into a night sector.",
+      "id": "b25",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-30T22:00:00Z",
+      "endUtc": "2026-10-31T06:00:00Z",
+      "station": "MAD",
+      "why": "Normal night if standby is not used.",
+      "id": "b26",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-10-31T19:30:00Z",
+      "endUtc": "2026-11-01T02:15:00Z",
+      "station": "MAD",
+      "why": "Bed at 20:30 local for the 05:00 reserve — you won't fall asleep on command, so accept a short night and back it up with a nap tomorrow.",
+      "id": "b27",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-11-01T13:30:00Z",
+      "endUtc": "2026-11-01T15:00:00Z",
+      "station": "MAD",
+      "why": "Ninety minutes after the reserve is released, to make up what the early start cost you.",
+      "id": "b28",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-11-01T21:30:00Z",
+      "endUtc": "2026-11-02T06:00:00Z",
+      "station": "MAD",
+      "why": "Full night before the daytime run to Dubai — this one is a civilised duty, so go into it clean.",
+      "id": "b29",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-11-02T20:15:00Z",
+      "endUtc": "2026-11-03T03:15:00Z",
+      "station": "DXB",
+      "why": "Straight to bed on arrival; 00:15 Dubai is 21:15 at home, early but you've been up since 06:00Z.",
+      "id": "b30",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-11-03T21:00:00Z",
+      "endUtc": "2026-11-04T04:30:00Z",
+      "station": "DXB",
+      "why": "Second Dubai night, held on home time so the overnight back doesn't hurt.",
+      "id": "b31",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-11-04T12:00:00Z",
+      "endUtc": "2026-11-04T15:00:00Z",
+      "station": "DXB",
+      "why": "Three hours before the 23:10 departure — same shape as the last Dubai turnaround and it worked.",
+      "id": "b32",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-11-05T04:30:00Z",
+      "endUtc": "2026-11-05T11:30:00Z",
+      "station": "MAD",
+      "why": "Home at 05:05 after the night crossing; sleep the morning, get outside in the afternoon light.",
+      "id": "b33",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-11-05T21:30:00Z",
+      "endUtc": "2026-11-06T06:00:00Z",
+      "station": "MAD",
+      "why": "Full night before Boston — the outbound is a day flight, the trap is the way back.",
+      "id": "b34",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-11-06T21:00:00Z",
+      "endUtc": "2026-11-07T04:30:00Z",
+      "station": "BOS",
+      "why": "Stay on Madrid time: bed at 16:00 Boston feels absurd but it is 22:00 body time and it protects the night flight home.",
+      "id": "b35",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-11-07T15:30:00Z",
+      "endUtc": "2026-11-07T18:00:00Z",
+      "station": "BOS",
+      "why": "Late-morning nap before the 16:05 out of Boston — you land Madrid at 05:35 having been in the WOCL the whole way.",
+      "id": "b36",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-11-08T07:00:00Z",
+      "endUtc": "2026-11-08T12:00:00Z",
+      "station": "MAD",
+      "why": "Five hours after the Boston night, then up by lunchtime to protect tonight.",
+      "id": "b37",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-11-08T22:00:00Z",
+      "endUtc": "2026-11-09T06:30:00Z",
+      "station": "MAD",
+      "why": "First proper night back on Madrid time.",
+      "id": "b38",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-11-09T22:00:00Z",
+      "endUtc": "2026-11-10T06:00:00Z",
+      "station": "MAD",
+      "why": "Last night of the period — fully reset and ready for whatever the next roster brings.",
+      "id": "b39",
+      "ruleIds": []
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "FRMS-WOCL-EARLY-START-AFTER-WESTBOUND",
+      "date": "2026-10-14",
+      "statement": "You land MAD 11:50 local off the JFK overnight on the 13th and report again at 05:40 on the 14th for a four-sector, 14h19 day. That 03:40Z report is roughly 23:40 on the New York body clock you've just spent two nights building, and the whole first half of the duty sits in the WOCL. There is no way to genuinely sleep the night of the 13th; the plan splits it into an afternoon nap plus a 20:30 bedtime and still comes up short.",
+      "options": [
+        "Ask crewing to swap the 14/10 short-haul day with someone off the JFK pairing — it is the single highest-risk duty on the line",
+        "If it stays, protect the 13th absolutely: nap on arrival, blackout blinds, no daylight after 16:00 local, and no evening commitments",
+        "Consider filing a fatigue report and being prepared to call unfit on the morning of the 14th if the night's sleep does not happen",
+        "If operated, request the FCO turn be flown by the other pilot to reduce workload on the first sector"
+      ],
+      "where": "2026-10-14",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "FRMS-CONSECUTIVE-NIGHT-CROSSINGS-SHORT-LAYOVER",
+      "date": "2026-10-12",
+      "statement": "JFK layover is only 20h00 from duty end (12/10 00:20 local) to next report (12/10 20:20 local), and both TL811 and TL374 are flown entirely within your body-clock night. Note also that although the roster dates this duty 12/10, the report is actually 00:20Z on 13 October — the sign-on rolls past midnight UTC.",
+      "options": [
+        "Treat the layover as one main sleep plus one afternoon nap, as planned, rather than trying to shift onto New York time",
+        "Ask whether in-flight rest is rostered on TL374 and take the first rest period, not the last",
+        "Request an extended JFK layover if the pairing is ever rebuilt"
+      ],
+      "where": "2026-10-12",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ROSTER-REPORT-OFFSET-INCONSISTENT",
+      "date": "2026-10-14",
+      "statement": "Every long-haul duty reports 90 minutes before off-blocks, but 14/10 reports 05:40 for an 06:40 departure — 60 minutes. I have taken this as the operator's short-haul offset and used it as printed, but if the correct offset is 90 minutes your report is 05:10 local (03:10Z) and you must leave home at 01:45Z.",
+      "options": [
+        "Confirm the short-haul reporting offset with crewing before the 14th",
+        "Plan the 14 Oct wake-up 30 minutes earlier as a hedge until it is confirmed"
+      ],
+      "where": "2026-10-14",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "TZ-DST-TRANSITION-EUROPE",
+      "date": "2026-10-25",
+      "statement": "European summer time ends at 01:00Z on 25 October, while you are airborne on TL640 DXB-MAD. The printed arrival of 03:10+1 is post-change local time (UTC+1); in UTC you land at 02:10Z. Anything on the roster from 25/10 onwards is MAD UTC+1, not UTC+2 — easy to get an hour wrong on the 26/10 GRU report.",
+      "options": [
+        "Double-check your phone and watch have rolled over before the 26/10 report",
+        "Work from the UTC times in this plan rather than local times across that weekend"
+      ],
+      "where": "2026-10-25",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "TZ-DST-TRANSITION-US",
+      "date": "2026-11-01",
+      "statement": "US daylight time ends on 1 November, so BOS is UTC-5 for the 6-7 November trip while JFK was UTC-4 back on 11-12 October. The MAD-BOS time difference is six hours in November, not five.",
+      "options": [
+        "Use the UTC instants in this plan; the Boston sleep blocks already assume EST"
+      ],
+      "where": "2026-11-01",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "FRMS-SHORT-LAYOVER-GRU",
+      "date": "2026-10-27",
+      "statement": "São Paulo gives you 15h40 from duty end to next report, of which maybe 8h is usable in bed, and then an overnight eastbound that departs 19:05Z and lands 05:25Z — the entire sector inside the WOCL on Madrid time.",
+      "options": [
+        "Take the pre-duty nap at 14:00Z even if you don't feel like it; it is the difference on the descent into MAD",
+        "Agree in-flight rest order with the crew before departure and take a bunk period in the middle of the night",
+        "Ask crewing whether the GRU layover can be extended to two nights"
+      ],
+      "where": "2026-10-27",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "FRMS-EARLY-STANDBY-SLEEP-OPPORTUNITY",
+      "date": "2026-11-01",
+      "statement": "Reserve starts 05:00 local (04:00Z) on the 1st. Sleep before a 05:00 report is the hardest sleep there is — bedtime at 20:30 falls in the evening wake-maintenance zone — and if you are called out you could be flying for another 10+ hours on a short night.",
+      "options": [
+        "Move bedtime forward gradually on 31/10 rather than trying to fall asleep three hours early in one jump",
+        "Take the planned 13:30Z nap on the 1st regardless of whether you were used",
+        "If called out to a long sector, tell the operator up front what sleep you actually got"
+      ],
+      "where": "2026-11-01",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "FRMS-STANDBY-LOCATION-UNSPECIFIED",
+      "date": "2026-10-30",
+      "statement": "Both reserves are printed 'RSV MAD-MAD' with no indication of home or airport standby. The 85-minute commute changes the useful start of the window: for the 05:00 reserve on 1 November you would need to leave home at 02:35Z if it is airport standby.",
+      "options": [
+        "Confirm home vs airport standby with crewing for both 30/10 and 01/11",
+        "The plan wakes you early enough to cover the airport case on both days"
+      ],
+      "where": "2026-10-30",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "FRMS-WOCL-LANDING",
+      "date": "2026-10-25",
+      "statement": "TL640 lands MAD 03:10 local and you are not through your own front door until roughly 05:05. TL396 on 5 November is identical, and TL862 from Boston lands 05:35 on 8 November. Three arrivals a month at the bottom of the body clock, followed by a 25-85 minute drive.",
+      "options": [
+        "Arrange a lift or taxi home from MAD after these three arrivals rather than driving yourself",
+        "If driving is unavoidable, take a 20-minute nap in the car park before setting off"
+      ],
+      "where": "2026-10-25",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ROSTER-DAY-OFF-ENCROACHED",
+      "date": "2026-10-13",
+      "statement": "13/10 is marked LIB but TL374 does not land until 11:50 local and you sign off at 12:20 — the day off is effectively consumed by the inbound, and it is also the only recovery day before the 05:40 start on the 14th.",
+      "options": [
+        "Query with crewing whether 13/10 counts as a day off under your agreement",
+        "Treat it as a duty day for planning purposes, as this plan does"
+      ],
+      "where": "2026-10-13",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "FRMS-ULR-INFLIGHT-REST-ASSUMED",
+      "date": "2026-10-15",
+      "statement": "MAD-SIN is 13h30 block in a 15h30 duty, and SIN-MAD the same on the 17th. Both are only survivable with augmented crew and in-flight rest, which the roster does not show. TL433 also arrives MAD at 18:10Z having departed 04:40Z, so you are on duty across the full body-clock day.",
+      "options": [
+        "Confirm crew complement and rest facility before both sectors",
+        "On the eastbound to SIN take the later rest period; on the westbound home take the earlier one so you are fresh for the arrival"
+      ],
+      "where": "2026-10-15",
+      "hardness": "recommendation"
+    }
+  ]
+}

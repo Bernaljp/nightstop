@@ -1,0 +1,18 @@
+{
+  "caseId": "h02-lyra",
+  "arm": "nightstop",
+  "costUsd": 0.64147325,
+  "wallMs": 192081,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 352,
+  "fieldsCorrect": 352,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 10,
+  "surfacedCount": 10,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}
