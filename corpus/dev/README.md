@@ -27,5 +27,7 @@
   - `roster.pdf` — the document, and the only roster input a run is given
   - `case.json` — what a run may see: the covered period and the crew member's own
     commute settings
-  - `ground_truth.json` — the answer key. Never shown to any agent.
+  The answer key is deliberately **not** in the case directory — it lives in
+`corpus/truth/dev/<case>.json`, so an agent that lists the folder its roster sits in
+cannot stumble into it.
   

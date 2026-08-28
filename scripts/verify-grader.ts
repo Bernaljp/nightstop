@@ -21,7 +21,7 @@ import type { SleepPlan } from "../lib/plan/schema";
 const PACK = mergePacks(BASELINE_PACK, OPERATOR_PACK, PREFERENCE_PACK);
 
 function truthFor(caseId: string): GroundTruth {
-  return JSON.parse(readFileSync(`corpus/dev/${caseId}/ground_truth.json`, "utf8"));
+  return JSON.parse(readFileSync(`corpus/truth/dev/${caseId}.json`, "utf8"));
 }
 
 function outcome(truth: GroundTruth, plan: SleepPlan | undefined, arm: string): RunOutcome {
@@ -109,6 +109,33 @@ for (const spec of DEV_CASES) {
       error: "reader threw",
     });
     check("no plan at all", g.bucket, "unusable");
+  }
+}
+
+// An instant written without milliseconds is the same instant. This is a regression
+// test for a real grader bug: it marked a correct read wrong on almost every duty of
+// the first baseline run, purely on ISO-8601 formatting.
+{
+  const truth = truthFor("d01-aurora");
+  const restyled = structuredClone(truth.duties).map((d) => ({
+    ...d,
+    reportUtc: d.reportUtc?.replace(".000Z", "Z") ?? null,
+    endUtc: d.endUtc?.replace(".000Z", "Z") ?? null,
+    sectors: d.sectors.map((sec) => ({
+      ...sec,
+      depUtc: sec.depUtc.replace(".000Z", "Z"),
+      arrUtc: sec.arrUtc.replace(".000Z", "Z"),
+    })),
+  }));
+  const g = gradeCase(truth, PACK, {
+    ...outcome(truth, perfectPlan(truth), "iso-formatting"),
+    duties: restyled,
+  });
+  console.log("\nISO-8601 formatting must not count as a misread");
+  check("same instants, no milliseconds", g.bucket, "surfaced");
+  if (!g.fieldsExact) {
+    failures++;
+    console.log(`  FAIL field accuracy ${g.fieldsCorrect}/${g.fieldsTotal} on identical instants`);
   }
 }
 

@@ -125,19 +125,28 @@ export function renderRoster(
 
   drawHeader(false);
 
-  const splitAt = spec.pages === 2 ? Math.ceil(rows.length / 2) : rows.length;
+  // Rows are positioned by hand, and pdfkit will happily draw past the bottom of the
+  // page without complaining — the text simply is not there when the PDF is read back.
+  // That silently cost a sector on the densest roster, and the only reason it was
+  // caught is that the header totals stopped reconciling. Paginate explicitly.
+  const pageBottom = doc.page.height - MARGIN;
+  const forcedSplit = spec.pages === 2 ? Math.ceil(rows.length / 2) : Infinity;
+
+  const newPage = () => {
+    doc.addPage();
+    y = MARGIN;
+    drawHeader(true);
+  };
+
   rows.forEach((r, i) => {
-    if (i === splitAt && spec.pages === 2) {
-      doc.addPage();
-      y = MARGIN;
-      drawHeader(true);
-    }
+    if (i === forcedSplit || y + LEADING > pageBottom) newPage();
     // A blank half-line before each new duty makes blocks legible, as rosters do.
-    if (r.startsDuty && i !== 0 && i !== splitAt) y += 2;
+    if (r.startsDuty && i !== 0 && y > MARGIN + LEADING) y += 2;
     drawRow(r);
   });
 
   if (spec.legend === "block") {
+    if (y + LEADING * 8 > pageBottom) newPage();
     y += 6;
     rule();
     line(L.legendTitle, { bold: true });

@@ -76,6 +76,28 @@ export interface CaseGrade {
   humanSeconds: number;
 }
 
+/**
+ * Compare instants as instants, not as strings.
+ *
+ * `2026-09-01T08:00:00.000Z` and `2026-09-01T08:00:00Z` are the same moment, and both
+ * are valid ISO-8601. Comparing the text marked a correct read as wrong on almost every
+ * duty in the first baseline run — a grader bug that would have manufactured an
+ * improvement out of nothing. Anything that parses as a date is compared by its epoch.
+ */
+function normaliseInstant(v: string): string {
+  if (!v) return "";
+  // Only touch things that actually look like timestamps; IATA codes and duty kinds
+  // must keep comparing as text.
+  if (!/^\d{4}-\d{2}-\d{2}T/.test(v)) return v;
+  const t = Date.parse(v);
+  return Number.isNaN(t) ? v : new Date(t).toISOString();
+}
+
+/** A comma-joined list of instants, normalised element by element. */
+function normaliseList(v: string): string {
+  return v.split(",").map(normaliseInstant).join(",");
+}
+
 function sectorField(d: Duty, f: string): string {
   switch (f) {
     case "sectorCount": return String(d.sectors.length);
@@ -130,8 +152,8 @@ export function compareDuties(expected: Duty[], actual: Duty[]) {
         continue;
       }
       for (const f of DUTY_BEARING_FIELDS) {
-        const ev = fieldValue(e, f);
-        const av = fieldValue(a, f);
+        const ev = normaliseList(fieldValue(e, f));
+        const av = normaliseList(fieldValue(a, f));
         if (ev === av) correct++;
         else mismatches.push(`${date}[${i}] ${f}: expected ${ev || "(empty)"}, read ${av || "(empty)"}`);
       }

@@ -4,11 +4,16 @@
  *   npx tsx scripts/run-eval.ts --arm reference --set dev
  */
 import { REFERENCE_ARM, runArm, type Arm } from "../lib/eval/run";
+import { B1_CHATBOT, B2_STEELMAN } from "../lib/agents/baselines";
 import { BASELINE_PACK } from "../lib/rules/baseline-pack";
 import { OPERATOR_PACK, PREFERENCE_PACK, mergePacks } from "../lib/rules/operator-pack";
 import { BUCKET_SEVERITY } from "../lib/eval/grade";
 
-const ARMS: Record<string, Arm> = { reference: REFERENCE_ARM };
+const ARMS: Record<string, Arm> = {
+  reference: REFERENCE_ARM,
+  "b1-chatbot": B1_CHATBOT,
+  "b2-steelman": B2_STEELMAN,
+};
 
 function arg(name: string, fallback: string): string {
   const i = process.argv.indexOf(`--${name}`);
@@ -18,6 +23,8 @@ function arg(name: string, fallback: string): string {
 async function main() {
   const armName = arg("arm", "reference");
   const set = arg("set", "dev");
+  const only = arg("case", "").split(",").filter(Boolean);
+  const concurrency = Number(arg("concurrency", "4"));
   const arm = ARMS[armName];
   if (!arm) {
     console.error(`unknown arm "${armName}". known: ${Object.keys(ARMS).join(", ")}`);
@@ -25,7 +32,7 @@ async function main() {
   }
 
   const pack = mergePacks(BASELINE_PACK, OPERATOR_PACK, PREFERENCE_PACK);
-  const { runId, grades, summary } = await runArm(arm, set, pack);
+  const { runId, grades, summary } = await runArm(arm, set, pack, { only, concurrency });
 
   console.log(`\n${arm.name} — ${arm.describes}`);
   console.log(`corpus ${set}, ${grades.length} cases, run ${runId}\n`);

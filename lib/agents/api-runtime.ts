@@ -23,7 +23,8 @@ import { loadEnv } from "../env";
 import { UsageMeter } from "../trace/usage";
 import type { TrajectoryWriter } from "../trace/trajectory";
 
-export const MODEL = "claude-opus-5";
+import { MODEL } from "./types";
+export { MODEL };
 
 let client: Anthropic | null = null;
 export function anthropic(): Anthropic {

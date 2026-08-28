@@ -35,8 +35,14 @@ async function main() {
   }
 
   const root = join(process.cwd(), "corpus", set);
-  if (existsSync(root)) rmSync(root, { recursive: true });
-  mkdirSync(root, { recursive: true });
+  // The answer key lives OUTSIDE the case directory. An agent given a roster path will
+  // list the directory it sits in - the first baseline run did exactly that - and a
+  // ground truth file sitting next to the input is an accident waiting to happen.
+  const truthRoot = join(process.cwd(), "corpus", "truth", set);
+  for (const d of [root, truthRoot]) {
+    if (existsSync(d)) rmSync(d, { recursive: true });
+    mkdirSync(d, { recursive: true });
+  }
 
   /**
    * Commute times are a crew member's own setting, not something a roster states, and
@@ -95,16 +101,16 @@ async function main() {
       roster: "roster.pdf",
     };
 
+    const truthJson = JSON.stringify(truth, null, 2) + "\n";
     writeFileSync(join(dir, "roster.pdf"), pdf);
-    writeFileSync(join(dir, "ground_truth.json"), JSON.stringify(truth, null, 2) + "\n");
     writeFileSync(join(dir, "case.json"), JSON.stringify(caseFile, null, 2) + "\n");
+    writeFileSync(join(truthRoot, `${spec.caseId}.json`), truthJson);
 
     for (const [file, buf] of [
-      ["roster.pdf", pdf],
-      ["ground_truth.json", Buffer.from(JSON.stringify(truth, null, 2) + "\n")],
+      [`${set}/${spec.caseId}/roster.pdf`, pdf],
+      [`truth/${set}/${spec.caseId}.json`, Buffer.from(truthJson)],
     ] as const) {
-      const h = createHash("sha256").update(buf).digest("hex");
-      manifest.push(`${h}  ${set}/${spec.caseId}/${file}`);
+      manifest.push(`${createHash("sha256").update(buf).digest("hex")}  ${file}`);
     }
 
     const flying = duties.filter((d) => d.reportUtc);
@@ -143,7 +149,9 @@ async function main() {
   - \`roster.pdf\` — the document, and the only roster input a run is given
   - \`case.json\` — what a run may see: the covered period and the crew member's own
     commute settings
-  - \`ground_truth.json\` — the answer key. Never shown to any agent.
+  The answer key is deliberately **not** in the case directory — it lives in
+\`corpus/truth/${set}/<case>.json\`, so an agent that lists the folder its roster sits in
+cannot stumble into it.
   `;
   writeFileSync(join(root, "README.md"), readme);
   console.log(`\nwrote ${cases.length} cases to corpus/${set}/ and corpus/manifest.${set}.sha256`);

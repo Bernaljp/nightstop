@@ -15,7 +15,7 @@ import { gradeCase, summarise, type CaseGrade, type RunOutcome } from "./grade";
 import { UsageMeter, emptyUsage } from "../trace/usage";
 import { TrajectoryWriter } from "../trace/trajectory";
 import { buildPlan } from "../plan/engine";
-import { MODEL } from "../agents/runtime";
+import { MODEL } from "../agents/types";
 
 export interface ArmContext {
   runId: string;
@@ -65,7 +65,7 @@ export function listCases(set: string): string[] {
   // Read the directory rather than the generated README. Parsing prose for the list of
   // things to evaluate is how a case goes missing from a run without anyone noticing.
   return readdirSync(dir, { withFileTypes: true })
-    .filter((e) => e.isDirectory() && existsSync(join(dir, e.name, "ground_truth.json")))
+    .filter((e) => e.isDirectory() && existsSync(join(dir, e.name, "case.json")))
     .map((e) => e.name)
     .sort();
 }
@@ -96,16 +96,19 @@ export async function runArm(
   arm: Arm,
   set: string,
   pack: RulePack,
-  opts: { runId?: string; only?: string[] } = {},
+  opts: { runId?: string; only?: string[]; concurrency?: number } = {},
 ): Promise<RunResult> {
   const runId = opts.runId ?? `${arm.name}-${new Date().toISOString().replace(/[:.]/g, "-")}`;
   const cases = listCases(set).filter((c) => !opts.only?.length || opts.only.includes(c));
-  const grades: CaseGrade[] = [];
+  // Cases are independent, so they run together. Serially a single arm takes the better
+  // part of an hour, which is long enough that it stops being run.
+  const concurrency = Math.max(1, opts.concurrency ?? (arm.usesModel ? 4 : 1));
+  const byCase = new Map<string, CaseGrade>();
 
-  for (const caseId of cases) {
+  const runOne = async (caseId: string) => {
     const caseDir = join(process.cwd(), "corpus", set, caseId);
     const truth: GroundTruth = JSON.parse(
-      readFileSync(join(caseDir, "ground_truth.json"), "utf8"),
+      readFileSync(join(process.cwd(), "corpus", "truth", set, `${caseId}.json`), "utf8"),
     );
     const meter = new UsageMeter();
     const trajPath = join(process.cwd(), "results", runId, caseId, "trajectory.jsonl");
@@ -130,7 +133,7 @@ export async function runArm(
     }
 
     const grade = gradeCase(truth, pack, outcome);
-    grades.push(grade);
+    byCase.set(caseId, grade);
 
     const dir = join(process.cwd(), "results", runId, caseId);
     mkdirSync(dir, { recursive: true });
@@ -138,12 +141,27 @@ export async function runArm(
     if (outcome.plan) {
       writeFileSync(join(dir, "plan.json"), JSON.stringify(outcome.plan, null, 2) + "\n");
     }
+    // Keep what the run READ as well as what it produced. A grader fix should be
+    // re-applicable to a finished run without paying to run the model again.
+    if (outcome.duties) {
+      writeFileSync(join(dir, "duties.json"), JSON.stringify(outcome.duties, null, 2) + "\n");
+    }
     writeFileSync(
       join(dir, "usage.json"),
       JSON.stringify({ byAgent: meter.byAgent(), total: meter.total() }, null, 2) + "\n",
     );
-  }
+    process.stdout.write(`  ${caseId} → ${grade.bucket}\n`);
+  };
 
+  const queue = [...cases];
+  await Promise.all(
+    Array.from({ length: Math.min(concurrency, queue.length) }, async () => {
+      for (let next = queue.shift(); next; next = queue.shift()) await runOne(next);
+    }),
+  );
+
+  // Report in corpus order regardless of the order they finished in.
+  const grades = cases.map((c) => byCase.get(c)!).filter(Boolean);
   const summary = summarise(grades, arm.name);
   const dir = join(process.cwd(), "results", runId);
   mkdirSync(dir, { recursive: true });
