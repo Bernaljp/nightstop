@@ -36,6 +36,7 @@ export const NIGHTSTOP_ARM: Arm = {
     ctx.traj.note("reader", "read complete", {
       duties: read.duties.length,
       reconciledAgainstHeaderTotals: read.reconciled,
+      derivations: read.derivations.length,
       uncertainties: read.uncertainties,
       format: read.notes,
     });
@@ -58,6 +59,13 @@ export const NIGHTSTOP_ARM: Arm = {
       ctx.pack,
     );
     plan.readingUncertainties = read.uncertainties;
+    plan.derivations = read.derivations;
+
+    if (read.derivations.length) {
+      ctx.traj.note("reader", "values worked out rather than read", {
+        derivations: read.derivations,
+      });
+    }
 
     ctx.traj.final("engine", {
       blocks: plan.blocks.length,

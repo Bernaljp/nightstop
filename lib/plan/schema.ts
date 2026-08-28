@@ -62,5 +62,12 @@ export interface SleepPlan {
    * A plan is still produced, but these are shown for confirmation first.
    */
   readingUncertainties?: string[];
+  /**
+   * Fields the reader worked out rather than read off the page. These are the values
+   * nothing in the document can check, so they are shown for confirmation. A wrong
+   * derived value that is labelled as derived is a different kind of failure from one
+   * asserted as fact.
+   */
+  derivations?: { date: string; field: string; method: string; confidence: string }[];
   notes?: string;
 }

@@ -1,0 +1,197 @@
+{
+  "caseId": "d07-cirrus",
+  "blocks": [
+    {
+      "id": "main-2026-09-03",
+      "kind": "main",
+      "startUtc": "2026-09-02T21:41:00.000Z",
+      "endUtc": "2026-09-03T05:41:00.000Z",
+      "station": "ORD",
+      "why": "16:41 to 00:41 local at ORD — which is about 6h19 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-05",
+      "kind": "main",
+      "startUtc": "2026-09-04T21:00:00.000Z",
+      "endUtc": "2026-09-05T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-07",
+      "kind": "main",
+      "startUtc": "2026-09-05T22:56:00.000Z",
+      "endUtc": "2026-09-06T06:56:00.000Z",
+      "station": "JFK",
+      "why": "18:56 to 02:56 local at JFK — which is about 4h04 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-11",
+      "kind": "main",
+      "startUtc": "2026-09-08T21:00:00.000Z",
+      "endUtc": "2026-09-09T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-19",
+      "kind": "main",
+      "startUtc": "2026-09-12T21:00:00.000Z",
+      "endUtc": "2026-09-13T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-20",
+      "kind": "main",
+      "startUtc": "2026-09-19T21:00:00.000Z",
+      "endUtc": "2026-09-20T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-22",
+      "kind": "main",
+      "startUtc": "2026-09-20T21:00:00.000Z",
+      "endUtc": "2026-09-21T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23",
+      "kind": "main",
+      "startUtc": "2026-09-22T17:10:00.000Z",
+      "endUtc": "2026-09-23T01:10:00.000Z",
+      "station": "MAD",
+      "why": "19:10 to 03:10 at MAD, covering 1h10 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-24",
+      "kind": "main",
+      "startUtc": "2026-09-23T21:00:00.000Z",
+      "endUtc": "2026-09-24T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-26",
+      "kind": "main",
+      "startUtc": "2026-09-25T21:00:00.000Z",
+      "endUtc": "2026-09-26T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-28",
+      "kind": "main",
+      "startUtc": "2026-09-27T18:30:00.000Z",
+      "endUtc": "2026-09-28T02:30:00.000Z",
+      "station": "SIN",
+      "why": "02:30 to 10:30 local at SIN — which is about 3h54 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-11",
+      "statement": "2026-09-11 is a 14h53 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-26",
+      "statement": "2026-09-26 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-28",
+      "statement": "2026-09-28 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    }
+  ],
+  "readingUncertainties": [],
+  "derivations": [
+    {
+      "date": "2026-09-03",
+      "field": "reportUtc",
+      "method": "Report 20:20 is printed, but the station is not printed; the duty starts at ORD (crew nightstopped there from 01/09), so 20:20 was converted as ORD local = 2026-09-04T01:20Z. Confirmed by the printed block 9h00 matching 21:50 ORD → 13:50 MAD.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-07",
+      "field": "reportUtc",
+      "method": "Printed report 21:40 converted as JFK local (duty starts at the JFK nightstop) = 2026-09-08T01:40Z; block 8h00 for 23:10 JFK → 13:10 MAD confirms the JFK reading.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-11",
+      "field": "endUtc",
+      "method": "Off Duty 06:18 carries no date; the last two sectors run past midnight, so it is 06:18 MAD local on 12/09 = 2026-09-12T04:18Z. Confirmed by the printed duty length 14h53 from report 13:25Z.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-24",
+      "field": "endUtc",
+      "method": "Off Duty 00:14 is after the 23:44 arrival, so it falls on 25/09 MAD local = 2026-09-24T22:14Z; printed duty 11h54 from report 10:20Z confirms.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-26",
+      "field": "endUtc",
+      "method": "STA 08:10 and Off Duty 08:40 are SIN local on the following day (block 13h30 from 12:40 MAD = 10:40Z gives 00:10Z on 27/09 = 08:10 SIN); printed duty 15h30 from report 09:10Z confirms.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-28",
+      "field": "reportUtc",
+      "method": "Printed report 11:10 converted as SIN local (duty starts at the SIN nightstop) = 2026-09-28T03:10Z; block 13h30 from 12:40 SIN to 20:10 MAD confirms.",
+      "confidence": "high"
+    }
+  ]
+}

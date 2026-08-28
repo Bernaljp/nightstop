@@ -45,7 +45,15 @@ Work in this order and do not skip ahead:
    read. If it does not reconcile, you have misread or missed a row. Find it and fix it,
    then check again. Do not proceed on a mismatch and do not explain it away.
 
-5. Only then produce the answer.
+5. **Say what you derived rather than read.** A value printed on the page and a value
+   you worked out are not the same kind of fact, and only one of them can be checked
+   against the document. If report time is not printed and you computed it from an
+   offset stated in the header, that is a derivation — record it, say which offset you
+   used and why that one. The header totals cannot catch an error here: report time is
+   not part of block hours, so a derived report time reconciles perfectly while being
+   wrong.
+
+6. Only then produce the answer.
 
 Two standing rules:
 
@@ -60,9 +68,18 @@ If something is genuinely unreadable, still give your best reading and say plain
 you were unsure about. Never return nothing.
 `.trim();
 
+export interface Derivation {
+  date: string;
+  field: string;
+  method: string;
+  confidence: "high" | "medium" | "low";
+}
+
 export interface ReaderResult {
   duties: Duty[];
   uncertainties: string[];
+  /** Fields worked out rather than read. Nothing in the document can check these. */
+  derivations: Derivation[];
   reconciled: boolean | null;
   notes: string;
 }
@@ -86,6 +103,14 @@ Return a single fenced JSON block and nothing after it:
   "traps": ["anything about this layout that could be misread"],
   "reconciled": true,
   "uncertainties": ["anything you could not read with confidence, or [] if none"],
+  "derivations": [
+    {
+      "date": "YYYY-MM-DD",
+      "field": "reportUtc",
+      "method": "how you worked it out, e.g. STD minus the 75 minute long-haul offset",
+      "confidence": "high" | "medium" | "low"
+    }
+  ],
   "duties": [
     {
       "date": "YYYY-MM-DD",
@@ -122,6 +147,7 @@ Every date in the covered period appears, including days off. Set \`reconciled\`
   const raw = extractJson<{
     duties?: Duty[];
     uncertainties?: string[];
+    derivations?: Derivation[];
     reconciled?: boolean;
     format?: string;
     traps?: string[];
@@ -130,6 +156,7 @@ Every date in the covered period appears, including days off. Set \`reconciled\`
   return {
     duties: raw.duties ?? [],
     uncertainties: raw.uncertainties ?? [],
+    derivations: raw.derivations ?? [],
     reconciled: raw.reconciled ?? null,
     notes: [raw.format, ...(raw.traps ?? [])].filter(Boolean).join(" · "),
   };
