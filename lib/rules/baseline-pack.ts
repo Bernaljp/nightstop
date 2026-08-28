@@ -21,8 +21,9 @@ import type { RulePack } from "./schema";
 export const BASELINE_PACK: RulePack = {
   id: "baseline-public",
   origin:
-    "Public aviation fatigue guidance: 14 CFR Part 117, ICAO Doc 9966, FAA AC 120-103A, " +
-    "UK CAA Paper 2003/8, Flight Safety Foundation controlled-rest guidance.",
+    "Public aviation fatigue guidance: 14 CFR Part 117 (docs/sources/far-117.txt, " +
+    "retrieved from eCFR), ICAO Doc 9966, FAA AC 120-103A, UK CAA Paper 2003/8, " +
+    "Flight Safety Foundation controlled-rest guidance.",
   rules: [
     {
       id: "far117-rest-10h",
@@ -37,7 +38,12 @@ export const BASELINE_PACK: RulePack = {
       statement:
         "That rest has to leave you 8 uninterrupted hours of sleep opportunity — so your " +
         "commute at both ends comes out of the 10, not out of the 8.",
-      source: "14 CFR 117.25(e)",
+      source:
+        "14 CFR 117.25(e). Note 117.25(f): if a crew member determines the rest period " +
+        "will not provide eight uninterrupted hours of sleep opportunity, they MUST " +
+        "notify the operator and cannot report until they get one. The regulation puts " +
+        "that judgement on the crew member, which is precisely why this tool surfaces " +
+        "the shortfall instead of deciding what to do about it.",
       hardness: "hard-limit",
       check: { kind: "min_sleep_opportunity", minutes: 480 },
     },
@@ -99,3 +105,23 @@ export const BASELINE_PACK: RulePack = {
  * crew member who has just flown east is not on the clock the wall says.
  */
 export const WOCL_BODY_HOURS = { from: 2, to: 6 } as const;
+
+/**
+ * Rules in Part 117 that this pack knowingly does NOT encode, listed so the gap is
+ * visible rather than implied:
+ *
+ *   117.25(d)  56 consecutive hours rest on return to base after crossing more than
+ *              60 degrees of longitude and being away more than 168 hours. Checkable
+ *              in principle; the check vocabulary has no way to express it yet.
+ *   117.13     Flight duty period limits, which are a table keyed on report time and
+ *              number of segments rather than a single number.
+ *   117.23     Cumulative flight time and duty limits over 672 and 365 hour windows.
+ *
+ * A rule the checker cannot evaluate is a rule that silently does nothing, so these
+ * are absent rather than present-and-inert.
+ */
+export const KNOWN_UNENCODED = [
+  "14 CFR 117.25(d) - 56h rest after long-longitude trips",
+  "14 CFR 117.13 - FDP limit table",
+  "14 CFR 117.23 - cumulative duty limits",
+] as const;

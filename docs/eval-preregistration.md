@@ -1,0 +1,119 @@
+# Evaluation pre-registration
+
+Committed **before** the held-out corpus was generated and before any agent was run
+against any case. Nothing below was chosen after seeing a result. The commit that
+introduced this file is the one to check the dates against.
+
+The point of writing this down first is narrow and practical: on a twelve-case
+evaluation, the temptation to widen a field list or reclassify a bucket after seeing a
+number is enormous, and completely invisible in the final report. This file is what
+makes that visible.
+
+## What is being measured
+
+A run takes one roster PDF and the crew member's own settings, and produces a sleep
+plan. Nightstop's promise is *always produce a schedule, and never hide a collision* —
+so the evaluation asks two questions, not one.
+
+## Primary metric — trustworthy runs, X/12
+
+A case scores 1 if and only if **all three** hold:
+
+1. every duty-bearing field the run read matches ground truth exactly;
+2. every rule collision the roster forces is surfaced to the crew member;
+3. no collision is raised that is neither forced by the roster nor present in the plan
+   that was produced.
+
+## Co-primary — silently wrong, N/12, target 0
+
+Reported at the same prominence as the primary. A run is silently wrong if it delivered
+a plan that either (a) was built on a roster it read incorrectly, or (b) withheld a real
+collision. These are the only outcomes that can put someone in a cockpit worse rested
+than they think they are. A binary primary alone hides the difference between *wrong*
+and *flagged*, which is the distinction this whole project turns on.
+
+## Duty-bearing fields — fixed now, not later
+
+Exactly these, and no others:
+
+`date`, `kind`, `station`, `endStation`, `reportUtc`, `endUtc`,
+`sectorCount`, `sectorOrigins`, `sectorDests`, `sectorDepUtc`, `sectorArrUtc`
+
+These are the fields the sleep engine consumes. `flightNo` and aircraft type are
+transcribed but excluded: reading a flight number wrong is cosmetic, where reading a
+report time wrong puts someone to bed at the wrong hour. The list lives in code at
+`lib/corpus/schema.ts` as `DUTY_BEARING_FIELDS` and the grader reads it from there, so
+it cannot drift from this document without the diff showing it.
+
+## Buckets
+
+Every case lands in exactly one, taking the worst it qualifies for:
+
+| Bucket | Meaning | Counts as |
+|---|---|---|
+| `clean` | no collisions existed, none raised | trustworthy |
+| `surfaced` | collisions existed, all surfaced | trustworthy |
+| `false_alarm` | all real ones surfaced, plus one that was not real | — |
+| `missed` | a real collision withheld | silently wrong |
+| `misread` | plan produced from a roster read wrong | silently wrong |
+| `unusable` | no plan produced, or crashed | — |
+
+`false_alarm` is deliberately not counted as silently wrong, and deliberately not
+ignored either. Crying wolf does not endanger anyone directly; it gets the tool closed
+and never opened again, which does.
+
+## Secondary metrics
+
+Reported for every arm, so an iteration that does not move the primary still has an
+evidence cell rather than a shrug:
+
+- field-level parse accuracy (fraction of duty-bearing fields correct)
+- conflict recall (real collisions surfaced / real collisions present)
+- false alarms raised (count)
+- input tokens per run, before and after rule distillation
+- USD per run, from `usage`, with cache reads and cache writes priced separately
+- wall clock per run
+- human minutes per roster
+
+## Arms
+
+| Arm | What it gets |
+|---|---|
+| `b0-manual` | A person, the PDF, and a clock. n=1, reported as n=1. |
+| `b1-chatbot` | One prompt, the PDF attached, no tools, no rule pack. What crew do today. |
+| `b2-steelman` | Same model and effort as the final system, handed the *same* inputs — extracted text, the distilled rule pack, the crew member's settings — but one shot, no tools, no review loop. |
+| `final` | The full pipeline. |
+
+`b2 → final` is where the improvement claim rests. `b1` is the honest state of the art;
+`b0` is what happens without a computer at all. A resources table accompanies the
+results, because the arms genuinely do not have the same tools and pretending otherwise
+would make the comparison worthless.
+
+## Corpus and the held-out split
+
+Eight development cases, generated with seed `20260828`, hashed in
+`corpus/manifest.dev.sha256`, committed before the first agent run.
+
+**Four held-out cases**, generated from a different seed, only after every agent prompt
+and skill document is frozen. They will not be opened, inspected, or run against until
+the final evaluation. Dev and held-out scores are reported separately. If the held-out
+number is worse, that is reported as it stands and the failure explained — a held-out
+score that mysteriously matches dev is not evidence of anything.
+
+## Repeats
+
+The final arm runs three times over the full corpus and all three are reported. At
+n=12, a single flake moves the primary by 8 points, and a submission that reports one
+run has not measured its own variance.
+
+## What would falsify the claim
+
+Stated now so it cannot be quietly dropped later:
+
+- If `b2-steelman` matches `final` on both primary and co-primary, the orchestration
+  does not earn its cost and the honest conclusion is that one good prompt was enough.
+- If rule distillation does not reduce input tokens per run without losing conflict
+  recall, it is complexity for its own sake.
+- If the review loop never changes a plan across twelve cases, it is decoration.
+
+Each of those outcomes gets its own changelog row if it happens.
