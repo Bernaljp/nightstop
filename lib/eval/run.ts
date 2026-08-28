@@ -1,0 +1,168 @@
+/**
+ * Running an arm over the corpus.
+ *
+ * An "arm" is one way of getting from a roster PDF to a plan. They are compared on the
+ * same cases with the same grader, and the only thing that differs is what each one is
+ * given and how much machinery it is allowed.
+ */
+import { readFileSync, readdirSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { execSync } from "node:child_process";
+import type { GroundTruth } from "../corpus/schema";
+import type { RulePack } from "../rules/schema";
+import type { SleepPlan } from "../plan/schema";
+import { gradeCase, summarise, type CaseGrade, type RunOutcome } from "./grade";
+import { UsageMeter, emptyUsage } from "../trace/usage";
+import { TrajectoryWriter } from "../trace/trajectory";
+import { buildPlan } from "../plan/engine";
+import { MODEL } from "../agents/runtime";
+
+export interface ArmContext {
+  runId: string;
+  arm: string;
+  truth: GroundTruth;
+  caseDir: string;
+  pack: RulePack;
+  meter: UsageMeter;
+  traj: TrajectoryWriter;
+}
+
+/** What every arm must provide. */
+export type Arm = {
+  name: string;
+  /** One line for the results table, describing what this arm is given. */
+  describes: string;
+  /** True if it calls the model, and therefore needs a key and costs money. */
+  usesModel: boolean;
+  run(ctx: ArmContext): Promise<{ duties?: GroundTruth["duties"]; plan?: SleepPlan; error?: string }>;
+};
+
+/**
+ * The upper bound: a perfect read of the roster, planned deterministically.
+ *
+ * It is not a baseline and not a submission arm. It answers a question the other
+ * numbers cannot — how much of any shortfall is the reading, and how much is the
+ * planning — by removing the reading from the problem entirely.
+ */
+export const REFERENCE_ARM: Arm = {
+  name: "reference",
+  describes: "Ground-truth duties, deterministic engine. Upper bound, not a baseline.",
+  usesModel: false,
+  async run(ctx) {
+    const plan = buildPlan(ctx.truth.caseId, ctx.truth.duties, ctx.truth.profile, ctx.pack);
+    ctx.traj.note("engine", "deterministic engine, no model involved", {
+      blocks: plan.blocks.length,
+      conflicts: plan.conflicts.length,
+    });
+    ctx.traj.final("engine", { blocks: plan.blocks.length, conflicts: plan.conflicts.length });
+    return { duties: ctx.truth.duties, plan };
+  },
+};
+
+export function listCases(set: string): string[] {
+  const dir = join(process.cwd(), "corpus", set);
+  if (!existsSync(dir)) return [];
+  // Read the directory rather than the generated README. Parsing prose for the list of
+  // things to evaluate is how a case goes missing from a run without anyone noticing.
+  return readdirSync(dir, { withFileTypes: true })
+    .filter((e) => e.isDirectory() && existsSync(join(dir, e.name, "ground_truth.json")))
+    .map((e) => e.name)
+    .sort();
+}
+
+function gitSha(): string {
+  try {
+    return execSync("git rev-parse HEAD", { encoding: "utf8" }).trim();
+  } catch {
+    return "unknown";
+  }
+}
+
+function manifestSha(set: string): string {
+  const p = join(process.cwd(), "corpus", `manifest.${set}.sha256`);
+  if (!existsSync(p)) return "missing";
+  return execSync(`shasum -a 256 "${p}"`, { encoding: "utf8" }).split(" ")[0];
+}
+
+export interface RunResult {
+  runId: string;
+  arm: string;
+  set: string;
+  grades: CaseGrade[];
+  summary: ReturnType<typeof summarise>;
+}
+
+export async function runArm(
+  arm: Arm,
+  set: string,
+  pack: RulePack,
+  opts: { runId?: string; only?: string[] } = {},
+): Promise<RunResult> {
+  const runId = opts.runId ?? `${arm.name}-${new Date().toISOString().replace(/[:.]/g, "-")}`;
+  const cases = listCases(set).filter((c) => !opts.only?.length || opts.only.includes(c));
+  const grades: CaseGrade[] = [];
+
+  for (const caseId of cases) {
+    const caseDir = join(process.cwd(), "corpus", set, caseId);
+    const truth: GroundTruth = JSON.parse(
+      readFileSync(join(caseDir, "ground_truth.json"), "utf8"),
+    );
+    const meter = new UsageMeter();
+    const trajPath = join(process.cwd(), "results", runId, caseId, "trajectory.jsonl");
+    const traj = new TrajectoryWriter(trajPath, runId, arm.name, caseId);
+
+    const started = Date.now();
+    let outcome: RunOutcome;
+    try {
+      const r = await arm.run({ runId, arm: arm.name, truth, caseDir, pack, meter, traj });
+      outcome = {
+        caseId, arm: arm.name,
+        duties: r.duties, plan: r.plan, error: r.error,
+        usage: meter.total(), wallMs: Date.now() - started,
+      };
+    } catch (e) {
+      traj.note("runner", `threw: ${(e as Error).message}`);
+      outcome = {
+        caseId, arm: arm.name,
+        error: (e as Error).message,
+        usage: meter.total(), wallMs: Date.now() - started,
+      };
+    }
+
+    const grade = gradeCase(truth, pack, outcome);
+    grades.push(grade);
+
+    const dir = join(process.cwd(), "results", runId, caseId);
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, "grade.json"), JSON.stringify(grade, null, 2) + "\n");
+    if (outcome.plan) {
+      writeFileSync(join(dir, "plan.json"), JSON.stringify(outcome.plan, null, 2) + "\n");
+    }
+    writeFileSync(
+      join(dir, "usage.json"),
+      JSON.stringify({ byAgent: meter.byAgent(), total: meter.total() }, null, 2) + "\n",
+    );
+  }
+
+  const summary = summarise(grades, arm.name);
+  const dir = join(process.cwd(), "results", runId);
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, "summary.json"),
+    JSON.stringify(
+      {
+        runId, arm: arm.name, set,
+        describes: arm.describes,
+        at: new Date().toISOString(),
+        gitSha: gitSha(),
+        corpusManifestSha256: manifestSha(set),
+        model: arm.usesModel ? MODEL : null,
+        rulePack: { id: pack.id, rules: pack.rules.length },
+        summary,
+        grades,
+      },
+      null, 2,
+    ) + "\n",
+  );
+  return { runId, arm: arm.name, set, grades, summary };
+}

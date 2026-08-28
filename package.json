@@ -9,7 +9,9 @@
     "lint": "eslint",
     "corpus": "tsx scripts/generate-corpus.ts --set dev --seed 20260828",
     "corpus:heldout": "tsx scripts/generate-corpus.ts --set heldout --seed 19730411",
-    "verify:grader": "tsx scripts/verify-grader.ts"
+    "verify:grader": "tsx scripts/verify-grader.ts",
+    "eval": "tsx scripts/run-eval.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.122.0",
