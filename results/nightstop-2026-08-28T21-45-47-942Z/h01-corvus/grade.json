@@ -1,0 +1,34 @@
+{
+  "caseId": "h01-corvus",
+  "arm": "nightstop",
+  "costUsd": 0.47362024999999996,
+  "wallMs": 156651,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 352,
+  "fieldsCorrect": 321,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-09-09[0] kind: expected flight, read off",
+    "2026-09-09[0] station: expected BOS, read MAD",
+    "2026-09-09[0] reportUtc: expected 2026-09-09T01:50:00.000Z, read (empty)",
+    "2026-09-09[0] endUtc: expected 2026-09-09T11:10:00.000Z, read (empty)",
+    "2026-09-09[0] sectorCount: expected 1, read 0",
+    "2026-09-09[0] sectorOrigins: expected BOS, read (empty)",
+    "2026-09-09[0] sectorDests: expected MAD, read (empty)",
+    "2026-09-09[0] sectorDepUtc: expected 2026-09-09T03:10:00.000Z, read (empty)",
+    "2026-09-09[0] sectorArrUtc: expected 2026-09-09T10:40:00.000Z, read (empty)",
+    "2026-09-09[1] not read at all",
+    "2026-09-08 is not in the covered period at all"
+  ],
+  "mandatoryTotal": 12,
+  "surfacedCount": 12,
+  "missed": [],
+  "falseAlarms": [
+    "far117-rest-10h@2026-09-08",
+    "op-rest-12h-home@2026-09-08",
+    "pref-sleep-window-9h@2026-09-08"
+  ],
+  "planViolationCount": 1
+}

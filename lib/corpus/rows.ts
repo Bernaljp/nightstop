@@ -58,10 +58,10 @@ function timeCell(
  * So a UTC-only roster dates its rows in UTC, which is what such a roster does in
  * practice.
  */
-function rowDateFor(duty: Duty, spec: FormatSpec): string {
-  if (spec.timeConvention !== "utc") return duty.date;
-  const anchor = duty.reportUtc ?? duty.sectors[0]?.depUtc;
-  return anchor ? anchor.slice(0, 10) : duty.date;
+function rowDateFor(duty: Duty, _spec: FormatSpec): string {
+  // The duty already carries the date its roster prints - generateMonth applies the
+  // document's dating convention, before days off are filled in.
+  return duty.date;
 }
 
 export function toPrintRows(duties: Duty[], spec: FormatSpec): PrintRow[] {

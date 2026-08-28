@@ -112,6 +112,17 @@
     },
     {
       "id": "2026-09-08-08",
+      "date": "2026-09-08",
+      "kind": "off",
+      "code": "DO",
+      "station": "BOS",
+      "endStation": "BOS",
+      "reportUtc": null,
+      "endUtc": null,
+      "sectors": []
+    },
+    {
+      "id": "2026-09-09-09",
       "date": "2026-09-09",
       "kind": "flight",
       "station": "BOS",
@@ -127,17 +138,6 @@
           "arrUtc": "2026-09-09T10:40:00.000Z"
         }
       ]
-    },
-    {
-      "id": "2026-09-09-09",
-      "date": "2026-09-09",
-      "kind": "off",
-      "code": "DO",
-      "station": "MAD",
-      "endStation": "MAD",
-      "reportUtc": null,
-      "endUtc": null,
-      "sectors": []
     },
     {
       "id": "2026-09-10-10",
@@ -306,7 +306,7 @@
       ]
     },
     {
-      "id": "2026-09-20-20",
+      "id": "2026-09-19-20",
       "date": "2026-09-19",
       "kind": "flight",
       "station": "MAD",
@@ -345,7 +345,7 @@
       ]
     },
     {
-      "id": "2026-09-21-21",
+      "id": "2026-09-20-21",
       "date": "2026-09-20",
       "kind": "flight",
       "station": "MAD",

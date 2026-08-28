@@ -73,6 +73,8 @@ async function main() {
       spec.coveredFrom,
       spec.coveredTo,
       rng,
+      0.35,
+      spec.timeConvention === "utc" ? "utc" : "local",
     );
     const rows = toPrintRows(duties, spec);
     const totals = computeTotals(duties, spec.operator.base);
@@ -81,25 +83,13 @@ async function main() {
     const dir = join(root, spec.caseId);
     mkdirSync(dir, { recursive: true });
 
-    // The answer key is dated the way the DOCUMENT dates its rows. A UTC-only roster
-    // prints - and therefore keys - its duties by UTC day; grading such a read against
-    // base-local dates would mark a correct transcription wrong for using the only
-    // convention the page offers.
-    const dutiesAsPrinted =
-      spec.timeConvention === "utc"
-        ? duties.map((d) => {
-            const anchor = d.reportUtc ?? d.sectors[0]?.depUtc;
-            return anchor ? { ...d, date: anchor.slice(0, 10) } : d;
-          })
-        : duties;
-
     const truth: GroundTruth = {
       caseId: spec.caseId,
       operator: spec.operator.name,
       coveredFrom: spec.coveredFrom,
       coveredTo: spec.coveredTo,
       profile: profileFor(spec),
-      duties: dutiesAsPrinted,
+      duties,
       quirks: spec.quirks,
       intent: spec.intent,
     };

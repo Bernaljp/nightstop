@@ -1,0 +1,305 @@
+{
+  "caseId": "h04-atria",
+  "blocks": [
+    {
+      "id": "main-2026-09-07",
+      "kind": "main",
+      "startUtc": "2026-09-05T22:00:00.000Z",
+      "endUtc": "2026-09-06T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-08",
+      "kind": "main",
+      "startUtc": "2026-09-07T19:15:00.000Z",
+      "endUtc": "2026-09-08T03:15:00.000Z",
+      "station": "LHR",
+      "why": "20:15 to 04:15 at LHR, covering 2h15 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-09",
+      "kind": "main",
+      "startUtc": "2026-09-08T19:45:00.000Z",
+      "endUtc": "2026-09-09T03:45:00.000Z",
+      "station": "LHR",
+      "why": "20:45 to 04:45 at LHR, covering 2h45 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-10",
+      "kind": "main",
+      "startUtc": "2026-09-09T19:15:00.000Z",
+      "endUtc": "2026-09-10T03:15:00.000Z",
+      "station": "LHR",
+      "why": "20:15 to 04:15 at LHR, covering 2h15 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-11",
+      "kind": "main",
+      "startUtc": "2026-09-10T22:00:00.000Z",
+      "endUtc": "2026-09-11T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-12",
+      "kind": "main",
+      "startUtc": "2026-09-11T22:00:00.000Z",
+      "endUtc": "2026-09-12T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-14",
+      "kind": "main",
+      "startUtc": "2026-09-13T00:46:00.000Z",
+      "endUtc": "2026-09-13T08:46:00.000Z",
+      "station": "LHR",
+      "why": "01:46 to 09:46 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-15",
+      "kind": "main",
+      "startUtc": "2026-09-14T22:00:00.000Z",
+      "endUtc": "2026-09-15T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-17",
+      "kind": "main",
+      "startUtc": "2026-09-16T18:40:00.000Z",
+      "endUtc": "2026-09-17T02:40:00.000Z",
+      "station": "LHR",
+      "why": "19:40 to 03:40 at LHR, covering 1h40 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-18",
+      "kind": "main",
+      "startUtc": "2026-09-17T18:40:00.000Z",
+      "endUtc": "2026-09-18T02:40:00.000Z",
+      "station": "LHR",
+      "why": "19:40 to 03:40 at LHR, covering 1h40 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-19",
+      "kind": "main",
+      "startUtc": "2026-09-18T22:00:00.000Z",
+      "endUtc": "2026-09-19T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21",
+      "kind": "main",
+      "startUtc": "2026-09-20T00:06:00.000Z",
+      "endUtc": "2026-09-20T08:06:00.000Z",
+      "station": "LHR",
+      "why": "01:06 to 09:06 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-22",
+      "kind": "main",
+      "startUtc": "2026-09-21T22:00:00.000Z",
+      "endUtc": "2026-09-22T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23",
+      "kind": "main",
+      "startUtc": "2026-09-23T00:58:00.000Z",
+      "endUtc": "2026-09-23T08:58:00.000Z",
+      "station": "LHR",
+      "why": "01:58 to 09:58 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-25",
+      "kind": "main",
+      "startUtc": "2026-09-24T22:00:00.000Z",
+      "endUtc": "2026-09-25T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-30",
+      "kind": "main",
+      "startUtc": "2026-09-26T22:00:00.000Z",
+      "endUtc": "2026-09-27T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [],
+  "readingUncertainties": [],
+  "derivations": [
+    {
+      "date": "2026-09-05",
+      "field": "reportUtc",
+      "method": "Standby row prints no start time: start = Off Duty 20:00 LHR minus the printed Duty length 6h00 = 14:00 LHR. Standby report is the start of the window with no offset applied.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-07",
+      "field": "reportUtc",
+      "method": "Standby row prints no start time: start = Off Duty 14:00 LHR minus the printed Duty length 8h00 = 06:00 LHR. No reporting offset applied to standby.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-08",
+      "field": "reportUtc",
+      "method": "STD 06:20 LHR minus the 40 min short-haul offset = 05:40 LHR; cross-checked against printed Duty 6h49 to Off Duty 12:29.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-09",
+      "field": "reportUtc",
+      "method": "STD 06:50 LHR minus 40 min = 06:10 LHR; cross-checked against printed Duty 6h53.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-10",
+      "field": "reportUtc",
+      "method": "STD 06:20 LHR minus 40 min = 05:40 LHR; cross-checked against printed Duty 11h01.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-11",
+      "field": "reportUtc",
+      "method": "STD 13:00 LHR minus 40 min = 12:20 LHR; cross-checked against printed Duty 6h51.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-12",
+      "field": "reportUtc",
+      "method": "STD 13:00 LHR minus 40 min = 12:20 LHR; cross-checked against printed Duty 12h01 to Off Duty 00:21+1.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-14",
+      "field": "reportUtc",
+      "method": "STD 05:45 LHR minus 40 min = 05:05 LHR; cross-checked against printed Duty 10h00.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-15",
+      "field": "reportUtc",
+      "method": "STD 13:55 LHR minus 40 min = 13:15 LHR; cross-checked against printed Duty 12h55 to Off Duty 02:10+1.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-17",
+      "field": "reportUtc",
+      "method": "STD 05:45 LHR minus 40 min = 05:05 LHR; cross-checked against printed Duty 6h43.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-18",
+      "field": "reportUtc",
+      "method": "STD 05:45 LHR minus 40 min = 05:05 LHR; cross-checked against printed Duty 9h16.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-19",
+      "field": "reportUtc",
+      "method": "STD 13:00 LHR minus 40 min = 12:20 LHR; cross-checked against printed Duty 11h21.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-21",
+      "field": "reportUtc",
+      "method": "STD 05:45 LHR minus 40 min = 05:05 LHR; cross-checked against printed Duty 10h42.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-22",
+      "field": "reportUtc",
+      "method": "STD 13:55 LHR minus 40 min = 13:15 LHR; cross-checked against printed Duty 11h18 to Off Duty 00:33+1.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-23",
+      "field": "reportUtc",
+      "method": "STD 16:05 LHR minus 40 min = 15:25 LHR; cross-checked against printed Duty 11h40 to Off Duty 03:05+1.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-25",
+      "field": "reportUtc",
+      "method": "STD 15:20 LHR minus 40 min = 14:40 LHR; cross-checked against printed Duty 11h44 to Off Duty 02:24+1.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-30",
+      "field": "reportUtc",
+      "method": "STD 05:15 LHR minus 40 min = 04:35 LHR; cross-checked against printed Duty 5h17.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-15",
+      "field": "sector date rollover",
+      "method": "AT876 BCN-LHR printed 00:35+1 / 01:40+1 on the row dated 15/09: the '+1' places departure on 16 Sep local BCN (22:35Z on 15 Sep) and arrival on 16 Sep local LHR.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-23",
+      "field": "sector date rollover",
+      "method": "AT302 arrives CDG 01:19+1 and AT797 departs CDG 02:15+1, both 24 Sep local; AT797's CDG departure at 02:15 local is 00:15Z on 24 Sep.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-25",
+      "field": "sector date rollover",
+      "method": "AT205 arrives BCN 00:06+1 and AT369 departs BCN 00:49+1, both 26 Sep local BCN, which is still 25 Sep in UTC (22:06Z / 22:49Z).",
+      "confidence": "high"
+    }
+  ]
+}

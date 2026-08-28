@@ -1,0 +1,2 @@
+{"seq":0,"ts":"2026-08-28T22:29:05.230Z","runId":"reference-2026-08-28T22-29-05-195Z","arm":"reference","caseId":"d05-halcyon","agent":"engine","kind":"note","message":"deterministic engine, no model involved","blocks":18,"conflicts":16}
+{"seq":1,"ts":"2026-08-28T22:29:05.230Z","runId":"reference-2026-08-28T22-29-05-195Z","arm":"reference","caseId":"d05-halcyon","agent":"engine","kind":"final","output":{"blocks":18,"conflicts":16}}

@@ -300,6 +300,16 @@ export function generateMonth(
   to: string,
   rng: Rng,
   tightRestRate = 0.35,
+  /**
+   * How the roster dates its rows. A UTC-only document dates by UTC day, because
+   * printing a local date beside UTC times gives a page whose date column and time
+   * column disagree with nothing to say which is right.
+   *
+   * This has to be applied BEFORE days off are filled in: a duty that moves onto the
+   * next day would otherwise land on top of a day off already placed there, and the
+   * roster would print two rows for one date that no real roster would.
+   */
+  dateBy: "local" | "utc" = "local",
 ): Duty[] {
   const st: GenState = {
     station: op.base,
@@ -351,6 +361,13 @@ export function generateMonth(
         st.duties.push(dayOff(op, date, st));
         date = addDays(date, 1);
       }
+    }
+  }
+
+  if (dateBy === "utc") {
+    for (const d of st.duties) {
+      const anchor = d.reportUtc ?? d.sectors[0]?.depUtc;
+      if (anchor) d.date = anchor.slice(0, 10);
     }
   }
 

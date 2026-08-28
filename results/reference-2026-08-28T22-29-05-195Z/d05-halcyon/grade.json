@@ -1,0 +1,18 @@
+{
+  "caseId": "d05-halcyon",
+  "arm": "reference",
+  "costUsd": 0,
+  "wallMs": 13,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 16,
+  "surfacedCount": 16,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

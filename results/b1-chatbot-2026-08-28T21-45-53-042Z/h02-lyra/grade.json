@@ -1,0 +1,41 @@
+{
+  "caseId": "h02-lyra",
+  "arm": "b1-chatbot",
+  "costUsd": 0.702973,
+  "wallMs": 291144,
+  "humanSeconds": 0,
+  "bucket": "missed",
+  "trustworthy": false,
+  "fieldsTotal": 352,
+  "fieldsCorrect": 352,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 10,
+  "surfacedCount": 0,
+  "missed": [
+    "op-rest-12h-home@2026-09-03",
+    "op-rest-12h-home@2026-09-04",
+    "op-rest-12h-home@2026-09-05",
+    "op-rest-12h-home@2026-09-12",
+    "op-max-duty-13h@2026-09-07",
+    "op-max-duty-13h@2026-09-12",
+    "pref-sleep-window-9h@2026-09-03",
+    "pref-sleep-window-9h@2026-09-04",
+    "pref-sleep-window-9h@2026-09-05",
+    "pref-sleep-window-9h@2026-09-12"
+  ],
+  "falseAlarms": [
+    "MIN-REST-BEFORE-NIGHT-DUTY@2026-09-03",
+    "WOCL-ENCROACHMENT@2026-09-04",
+    "MIN-REST-AT-HOME-BASE@2026-09-04",
+    "MIN-REST-AT-HOME-BASE@2026-09-05",
+    "CUMULATIVE-FATIGUE-CONSECUTIVE-DUTIES@2026-09-05",
+    "EARLY-START-SLEEP-OPPORTUNITY@2026-09-07",
+    "MIN-REST-AFTER-TRAINING@2026-09-12",
+    "CONSECUTIVE-WOCL-DUTIES@2026-09-12",
+    "EARLY-START-SLEEP-OPPORTUNITY@2026-09-20",
+    "LATE-FINISH-INTO-WOCL@2026-09-17",
+    "REPORT-OFFSET-ASSUMPTION@2026-09-01"
+  ],
+  "planViolationCount": 2
+}
