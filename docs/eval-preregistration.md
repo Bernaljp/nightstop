@@ -95,7 +95,9 @@ Eight development cases, generated with seed `20260828`, hashed in
 `corpus/manifest.dev.sha256`, committed before the first agent run.
 
 **Four held-out cases**, generated from a different seed, only after every agent prompt
-and skill document is frozen. They will not be opened, inspected, or run against until
+and skill document is frozen. **They were frozen at commit `7b77a67719996342d81034ec90be858a1e2b5aa7`** — that
+commit contains every prompt used by every arm, and the held-out corpus was generated
+after it. Check the dates. They will not be opened, inspected, or run against until
 the final evaluation. Dev and held-out scores are reported separately. If the held-out
 number is worse, that is reported as it stands and the failure explained — a held-out
 score that mysteriously matches dev is not evidence of anything.
