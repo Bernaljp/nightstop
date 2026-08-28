@@ -15,7 +15,7 @@ import { Rng, seedFrom } from "../lib/corpus/rng";
 import { generateMonth } from "../lib/corpus/months";
 import { toPrintRows, computeTotals } from "../lib/corpus/rows";
 import { renderRoster } from "../lib/corpus/render";
-import { DEV_CASES } from "../lib/corpus/cases";
+import { DEV_CASES, HELDOUT_CASES } from "../lib/corpus/cases";
 import type { FormatSpec } from "../lib/corpus/format";
 import type { GroundTruth, CrewProfile } from "../lib/corpus/schema";
 import { tzOf } from "../lib/corpus/network";
@@ -28,7 +28,8 @@ function arg(name: string, fallback: string): string {
 async function main() {
   const set = arg("set", "dev");
   const seed = Number(arg("seed", "20260828"));
-  const cases: FormatSpec[] = set === "dev" ? DEV_CASES : [];
+  const cases: FormatSpec[] =
+    set === "dev" ? DEV_CASES : set === "heldout" ? HELDOUT_CASES : [];
   if (!cases.length) {
     console.error(`no cases defined for set "${set}"`);
     process.exit(1);

@@ -1,0 +1,15 @@
+{
+  "caseId": "h04-atria",
+  "operator": "ATRIA REGIONAL",
+  "coveredFrom": "2026-09-01",
+  "coveredTo": "2026-09-30",
+  "profile": {
+    "base": "LHR",
+    "baseTz": "Europe/London",
+    "commuteMinutes": {
+      "LHR": 85
+    },
+    "defaultCommuteMinutes": 25
+  },
+  "roster": "roster.pdf"
+}

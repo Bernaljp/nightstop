@@ -156,3 +156,81 @@ export const DEV_CASES: FormatSpec[] = [
       "changes mid-trip. Fixed offset arithmetic drifts by an hour and never says so.",
   },
 ];
+
+/**
+ * The held-out set.
+ *
+ * Generated only after every agent prompt was frozen (see docs/eval-preregistration.md
+ * for the commit), from a different seed, and not opened or run against until the final
+ * evaluation. They recombine the same documented layout differences in ways the
+ * development set does not, so nothing here was tuned against.
+ */
+export const HELDOUT_CASES: FormatSpec[] = [
+  {
+    caseId: "h01-corvus",
+    operator: op("CORVUS AIRWAYS", "CV", "MAD", "mixed", {
+      reportOffset: { short: 50, long: 80 },
+      codes: { standby: "STBY", training: "TRN", off: "DO", positioning: "PAX" },
+    }),
+    crewRef: "CV-58210", rank: "CP/A21N",
+    language: "en", dateStyle: "ddmmm", timeConvention: "utc",
+    reportTime: "derived", continuationRows: "undated", rolloverMarker: false,
+    columns: ["date", "code", "flightNo", "route", "dep", "arr", "block", "end", "duty"],
+    legend: "block", pages: 1, headerTotals: true, ...SEP,
+    quirks: [
+      "report-time-derived", "utc-only", "undated-continuation-rows",
+      "no-rollover-marker", "legend-block",
+    ],
+    intent:
+      "Every hard thing at once: report time derived from the header, UTC-only times, " +
+      "continuation rows with no date, and no rollover marker anywhere. Nothing here is " +
+      "new — it is the combination that has not been seen.",
+  },
+  {
+    caseId: "h02-lyra",
+    operator: op("LYRA CONNECT", "LY", "LHR", "short"),
+    crewRef: "LY-13094", rank: "FO/E190",
+    language: "en", dateStyle: "ymd", timeConvention: "both",
+    reportTime: "stated", continuationRows: "dated", rolloverMarker: true,
+    columns: ["date", "report", "code", "flightNo", "origin", "dest", "dep", "arr", "block", "end", "duty"],
+    legend: "inline", pages: 2, headerTotals: false, ...SEP,
+    quirks: ["no-header-totals", "two-page", "dual-time", "split-origin-dest"],
+    intent:
+      "The header prints no totals, so the document offers no checksum at all — the one " +
+      "self-check the reader leans on is simply absent, and it has to notice rather than " +
+      "report a reconciliation it never did.",
+  },
+  {
+    caseId: "h03-tellus",
+    operator: op("TELLUS LINEAS", "TL", "MAD", "long", {
+      codes: { standby: "RSV", training: "SIM", off: "LIB", positioning: "PSJ" },
+    }),
+    crewRef: "TL-77451", rank: "CP/B788",
+    language: "es", dateStyle: "dmy", timeConvention: "local",
+    reportTime: "stated", continuationRows: "dated", rolloverMarker: true,
+    columns: ["date", "report", "code", "flightNo", "route", "dep", "arr", "block", "end", "layover"],
+    legend: "block", pages: 1, headerTotals: true,
+    coveredFrom: "2026-10-11", coveredTo: "2026-11-09",
+    quirks: ["spanish", "dst-transition", "long-haul", "transatlantic"],
+    intent:
+      "Spanish labels on a month that crosses both daylight-saving changes. The language " +
+      "and the DST trap have each been seen, never together.",
+  },
+  {
+    caseId: "h04-atria",
+    operator: op("ATRIA REGIONAL", "AT", "LHR", "short", {
+      reportOffset: { short: 40, long: 70 },
+      codes: { standby: "A", training: "T", off: "-", positioning: "P" },
+    }),
+    crewRef: "AT-90233", rank: "FO/AT72",
+    language: "en", dateStyle: "dmy", timeConvention: "local",
+    reportTime: "derived", continuationRows: "dated", rolloverMarker: true,
+    columns: ["date", "code", "flightNo", "route", "dep", "arr", "block", "end", "duty", "equip"],
+    legend: "block", pages: 1, headerTotals: true, ...SEP,
+    quirks: ["single-character-codes", "report-time-derived", "empty-equipment-column"],
+    intent:
+      "Activity codes are single characters — a day off is a bare hyphen — and there is " +
+      "an equipment column that is empty on every row. Both invite a reader to see " +
+      "structure that is not there.",
+  },
+];
