@@ -9,7 +9,7 @@
     "commuteMinutes": {
       "LHR": 55
     },
-    "defaultCommuteMinutes": 35
+    "defaultCommuteMinutes": 25
   },
   "roster": "roster.pdf"
 }

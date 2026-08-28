@@ -7,9 +7,9 @@
     "base": "MAD",
     "baseTz": "Europe/Madrid",
     "commuteMinutes": {
-      "MAD": 55
+      "MAD": 95
     },
-    "defaultCommuteMinutes": 35
+    "defaultCommuteMinutes": 30
   },
   "duties": [
     {

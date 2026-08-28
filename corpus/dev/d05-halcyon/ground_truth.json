@@ -7,9 +7,9 @@
     "base": "LHR",
     "baseTz": "Europe/London",
     "commuteMinutes": {
-      "LHR": 55
+      "LHR": 95
     },
-    "defaultCommuteMinutes": 35
+    "defaultCommuteMinutes": 25
   },
   "duties": [
     {

@@ -38,13 +38,21 @@ async function main() {
   if (existsSync(root)) rmSync(root, { recursive: true });
   mkdirSync(root, { recursive: true });
 
-  /** Commute times are a crew member's own setting, not something a roster states. */
+  /**
+   * Commute times are a crew member's own setting, not something a roster states, and
+   * they vary a lot: plenty of crew live an hour and a half from their base. That
+   * matters more than it looks — the commute comes out of the rest period at both
+   * ends, so a long one can turn a legal 10-hour rest into a sleep window too short
+   * to be worth much. Varied per case, deterministically.
+   */
   function profileFor(spec: FormatSpec): CrewProfile {
+    const r = new Rng(seedFrom(spec.caseId, seed ^ 0x5eed));
+    const homeCommute = r.pick([40, 55, 70, 85, 95]);
     return {
       base: spec.operator.base,
       baseTz: tzOf(spec.operator.base),
-      commuteMinutes: { [spec.operator.base]: 55 },
-      defaultCommuteMinutes: 35,
+      commuteMinutes: { [spec.operator.base]: homeCommute },
+      defaultCommuteMinutes: r.pick([25, 30, 40]),
     };
   }
 

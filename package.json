@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "corpus": "tsx scripts/generate-corpus.ts --set dev --seed 20260828",
+    "corpus:heldout": "tsx scripts/generate-corpus.ts --set heldout --seed 19730411",
+    "verify:grader": "tsx scripts/verify-grader.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.122.0",
