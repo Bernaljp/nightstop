@@ -1,0 +1,18 @@
+{
+  "byAgent": {
+    "chatbot": {
+      "inputTokens": 4,
+      "outputTokens": 26097,
+      "cacheReadInputTokens": 3169,
+      "cacheCreationInputTokens": 4324,
+      "turns": 1
+    }
+  },
+  "total": {
+    "inputTokens": 4,
+    "outputTokens": 26097,
+    "cacheReadInputTokens": 3169,
+    "cacheCreationInputTokens": 4324,
+    "turns": 1
+  }
+}

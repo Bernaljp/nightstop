@@ -41,6 +41,8 @@ yarn-error.log*
 next-env.d.ts
 
 # Nightstop
+# results/ is deliberately NOT ignored - the evaluation output is the evidence
+# the submission rests on, and a claim whose result file is not in the repo is
+# just an assertion.
 .env*.local
-results/
 scratch/

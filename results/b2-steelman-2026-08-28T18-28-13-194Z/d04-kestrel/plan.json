@@ -1,0 +1,491 @@
+{
+  "caseId": "d04-kestrel",
+  "blocks": [
+    {
+      "kind": "main",
+      "startUtc": "2026-09-01T21:30:00Z",
+      "endUtc": "2026-09-02T05:30:00Z",
+      "station": "MAD",
+      "why": "Normal night at home, 23:30-07:30 local — nothing to work around yet.",
+      "id": "b0",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-02T21:30:00Z",
+      "endUtc": "2026-09-03T05:30:00Z",
+      "station": "MAD",
+      "why": "Same again; keep the body clock parked on Madrid time before the JFK trip.",
+      "id": "b1",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-03T21:30:00Z",
+      "endUtc": "2026-09-04T05:30:00Z",
+      "station": "MAD",
+      "why": "Day off, hold the routine so the pre-trip night isn't the first good one.",
+      "id": "b2",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-04T21:30:00Z",
+      "endUtc": "2026-09-05T05:30:00Z",
+      "station": "MAD",
+      "why": "Full night before the JFK sector; report isn't until 11:25 local so there's no reason to cut this short.",
+      "id": "b3",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-05T20:00:00Z",
+      "endUtc": "2026-09-05T22:00:00Z",
+      "station": "JFK",
+      "why": "Down at the hotel by 16:00 New York after a 9h45 duty — take two hours now so you can hold out to a local-ish bedtime.",
+      "id": "b4",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-06T02:30:00Z",
+      "endUtc": "2026-09-06T10:00:00Z",
+      "station": "JFK",
+      "why": "22:30-06:00 New York: first proper night westbound, and it starts nudging you toward local time for the daylight flight home.",
+      "id": "b5",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-07T03:00:00Z",
+      "endUtc": "2026-09-07T11:00:00Z",
+      "station": "JFK",
+      "why": "23:00-07:00 New York, waking 4h25 before report — this is the sleep that has to carry you through a duty landing at 02:40 Madrid.",
+      "id": "b6",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-08T03:00:00Z",
+      "endUtc": "2026-09-08T09:30:00Z",
+      "station": "MAD",
+      "why": "Home about 04:45 local; go straight down — 23:00 on the New York clock you've been keeping, so it should come easily.",
+      "id": "b7",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-08T13:00:00Z",
+      "endUtc": "2026-09-08T14:00:00Z",
+      "station": "MAD",
+      "why": "An hour in the afternoon to top the morning up to about 7h30, without killing tonight.",
+      "id": "b8",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-08T21:30:00Z",
+      "endUtc": "2026-09-09T05:30:00Z",
+      "station": "MAD",
+      "why": "Back onto Madrid nights — this is the re-anchoring night after JFK.",
+      "id": "b9",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-09T21:30:00Z",
+      "endUtc": "2026-09-10T05:30:00Z",
+      "station": "MAD",
+      "why": "Clean night before the Boston sector; report 11:25 local so no early alarm.",
+      "id": "b10",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-10T21:30:00Z",
+      "endUtc": "2026-09-11T05:30:00Z",
+      "station": "BOS",
+      "why": "17:30-01:30 Boston looks strange but it's 23:30-07:30 body time — stay on Madrid, the flight home is a red-eye you have to be awake for.",
+      "id": "b11",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-11T13:00:00Z",
+      "endUtc": "2026-09-11T15:00:00Z",
+      "station": "BOS",
+      "why": "Mid-morning Boston, mid-afternoon body time — two hours here is what keeps the 24-hour total above 7h30 on a red-eye day.",
+      "id": "b12",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-11T21:30:00Z",
+      "endUtc": "2026-09-11T23:30:00Z",
+      "station": "BOS",
+      "why": "Two hours before the overnight home, finishing nearly two hours before you leave the hotel so you're clear of the fog.",
+      "id": "b13",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-12T13:00:00Z",
+      "endUtc": "2026-09-12T15:00:00Z",
+      "station": "MAD",
+      "why": "Home mid-afternoon off the red-eye — two hours only, so tonight still works.",
+      "id": "b14",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-12T21:30:00Z",
+      "endUtc": "2026-09-13T06:30:00Z",
+      "station": "MAD",
+      "why": "Nine hours to clear the Boston debt before the night flight to Dubai.",
+      "id": "b15",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-13T13:00:00Z",
+      "endUtc": "2026-09-13T15:00:00Z",
+      "station": "MAD",
+      "why": "Bank two hours in the afternoon — you leave home at 19:00 local for a duty that lands at dawn in Dubai. Two clear hours before you drive.",
+      "id": "b16",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-14T04:00:00Z",
+      "endUtc": "2026-09-14T11:00:00Z",
+      "station": "DXB",
+      "why": "Straight down on arrival, 08:00-15:00 Dubai — it's your body's morning after a night flight and you'll sleep.",
+      "id": "b17",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-14T22:30:00Z",
+      "endUtc": "2026-09-15T06:00:00Z",
+      "station": "DXB",
+      "why": "02:30-10:00 Dubai, which is midnight to 08:00 at home — the body-clock night, and you wake with plenty of margin on a 14:50 report.",
+      "id": "b18",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-15T21:30:00Z",
+      "endUtc": "2026-09-16T06:30:00Z",
+      "station": "MAD",
+      "why": "Home by 23:10 local; nine hours to reset before four days off.",
+      "id": "b19",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-16T21:30:00Z",
+      "endUtc": "2026-09-17T05:30:00Z",
+      "station": "MAD",
+      "why": "Days off — hold the routine rather than drifting late.",
+      "id": "b20",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-17T21:30:00Z",
+      "endUtc": "2026-09-18T05:30:00Z",
+      "station": "MAD",
+      "why": "Same pattern, keeping the clock steady.",
+      "id": "b21",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-18T21:30:00Z",
+      "endUtc": "2026-09-19T05:30:00Z",
+      "station": "MAD",
+      "why": "Last unconstrained night before the Chicago trip.",
+      "id": "b22",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-19T20:30:00Z",
+      "endUtc": "2026-09-20T04:30:00Z",
+      "station": "MAD",
+      "why": "22:30-06:30 local — an hour earlier than usual because you're out the door at 07:25 for the ORD report.",
+      "id": "b23",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-20T23:00:00Z",
+      "endUtc": "2026-09-21T06:30:00Z",
+      "station": "ORD",
+      "why": "18:00-01:30 Chicago after an 18-hour day; go with the body clock on night one rather than fighting it.",
+      "id": "b24",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-21T13:00:00Z",
+      "endUtc": "2026-09-21T14:30:00Z",
+      "station": "ORD",
+      "why": "Ninety minutes to bridge a long Chicago day and let you hold out until a later bedtime tonight.",
+      "id": "b25",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-22T03:00:00Z",
+      "endUtc": "2026-09-22T10:30:00Z",
+      "station": "ORD",
+      "why": "22:00-05:30 Chicago — shifting later on purpose so you're rested for a departure at 21:50 local.",
+      "id": "b26",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-22T22:00:00Z",
+      "endUtc": "2026-09-23T00:00:00Z",
+      "station": "ORD",
+      "why": "Two hours before the overnight home, done an hour before you leave the hotel — this puts you above 9h sleep in the 24 before report.",
+      "id": "b27",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-23T14:15:00Z",
+      "endUtc": "2026-09-23T16:15:00Z",
+      "station": "MAD",
+      "why": "Home about 16:00 local off the red-eye; two hours, then get up and eat so tonight holds.",
+      "id": "b28",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-23T21:30:00Z",
+      "endUtc": "2026-09-24T06:30:00Z",
+      "station": "MAD",
+      "why": "Nine hours to clear Chicago before the short-haul block.",
+      "id": "b29",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-24T21:00:00Z",
+      "endUtc": "2026-09-25T04:00:00Z",
+      "station": "MAD",
+      "why": "Deliberately seven hours, not nine — you need to be tired enough to fall asleep at 19:00 tomorrow.",
+      "id": "b30",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-25T17:00:00Z",
+      "endUtc": "2026-09-26T00:45:00Z",
+      "station": "MAD",
+      "why": "19:00-02:45 local for an 04:35 report; a 19:00 bedtime rarely goes to plan, so treat anything over 6h as a win and don't lie there fighting it.",
+      "id": "b31",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-26T15:45:00Z",
+      "endUtc": "2026-09-26T23:45:00Z",
+      "station": "MAD",
+      "why": "Airport hotel, not home — the rest is only 10h03 and the 95-minute drive each way would leave you 6h53. Staying airside-adjacent buys the full 8h.",
+      "id": "b32",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-27T18:00:00Z",
+      "endUtc": "2026-09-28T02:00:00Z",
+      "station": "MAD",
+      "why": "Airport hotel again after a 16h29 duty; 10h01 rest means 8h in bed is only possible if you don't commute.",
+      "id": "b33",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-28T19:30:00Z",
+      "endUtc": "2026-09-29T04:30:00Z",
+      "station": "MAD",
+      "why": "Go home tonight — 18h46 off and a 13:15 report tomorrow, so nine hours in your own bed after three early starts.",
+      "id": "b34",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-29T17:00:00Z",
+      "endUtc": "2026-09-30T01:00:00Z",
+      "station": "MAD",
+      "why": "Airport hotel one more time; 10h03 rest into an 04:15 report leaves no room for the drive at either end.",
+      "id": "b35",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-30T19:30:00Z",
+      "endUtc": "2026-10-01T04:30:00Z",
+      "station": "MAD",
+      "why": "Home and done — nine hours to start paying back what the last five days cost.",
+      "id": "b36",
+      "ruleIds": []
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-27",
+      "statement": "The roster itself prints this duty as 16h29 (report 02:50 local, off duty 19:19 local, four sectors via ARN and FCO). That is 3h29 beyond the operator's own 13-hour planning ceiling, and the whole first sector sits inside the 02:00-06:00 body-time window.",
+      "options": [
+        "Raise it with crewing before the block starts, not on the day — a 16h29 FDP printed on a published roster looks like a build error rather than a disruption extension.",
+        "Ask whether KE526/KE490 (the FCO round trip) can be pulled off the end; that alone brings it to roughly 11h.",
+        "If it stands as rostered, file fatigue at the point you accept it, and plan the 26th's sleep at an airport hotel so you start this duty with a genuine 8 hours behind you."
+      ],
+      "where": "2026-09-27",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-28",
+      "statement": "Printed duty is 13h09 — nine minutes over the 13-hour ceiling, on the third consecutive pre-06:00 report.",
+      "options": [
+        "Nine minutes is a scheduling rounding problem; flag it with the other two so crewing sees the pattern rather than one stray duty.",
+        "Ask for a slightly later report or a shorter turnaround at DUB to bring KE605 inside the limit.",
+        "Nothing about your sleep plan changes either way — the 19:30Z start that night is already built to recover from it."
+      ],
+      "where": "2026-09-28",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-30",
+      "statement": "Printed duty is 14h18, report 04:15 local, four sectors ending at 18:33 local. That is 1h18 over the ceiling on the last day of a five-day short-haul block.",
+      "options": [
+        "Flag it together with the 27th and 28th — three over-limit duties in five days is a build issue, not three separate ones.",
+        "Ask for the MAD-DUB-MAD pairing (KE327/KE401) to come off; that leaves an 8h duty.",
+        "If it stands, the 29th's rest must be at an airport hotel or you will start this one on under 7 hours."
+      ],
+      "where": "2026-09-30",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "date": "2026-09-26",
+      "statement": "Off duty 16:47 local, report 04:35 local next day: 10h03 of rest. Your MAD commute is 95 minutes each way, so 3h10 comes out of it, leaving 6h53 of sleep opportunity — 1h07 short of eight uninterrupted hours.",
+      "options": [
+        "Take an airport hotel instead of going home — 30 minutes each way leaves 9h03, which clears the eight hours. This is what the plan above assumes.",
+        "If you go home, 117.25(f) puts the call on you: you must tell the operator the rest won't give you eight uninterrupted hours, and you cannot report until you have had one.",
+        "Ask crewing to move the 26th's report later or the 25th's release earlier so the rest reaches 12h and the commute stops mattering."
+      ],
+      "where": "2026-09-26",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "date": "2026-09-27",
+      "statement": "Off duty 19:19 local after a 16h29 day, report 05:20 local: 10h01 of rest. Minus the 95-minute commute each way that is 6h51 of sleep opportunity, 1h09 short.",
+      "options": [
+        "Airport hotel again — it takes the opportunity to 9h01 and is the only way this rest works on paper.",
+        "This is the tightest rest of the month and it follows the longest duty. If you are going to notify under 117.25(f) once this block, this is the night.",
+        "Ask for the 28th's report to move back by two hours; that puts the rest over 12h and inside company policy."
+      ],
+      "where": "2026-09-27",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "date": "2026-09-29",
+      "statement": "Off duty 18:12 local, report 04:15 local: 10h03 of rest into a 14h18 duty. With the commute that is 6h53 of sleep opportunity, 1h07 short.",
+      "options": [
+        "Airport hotel — 9h03 available, and the plan puts you down at 19:00 local for a full eight.",
+        "Notify under 117.25(f) if you intend to go home; the shortfall is the commute, not the roster's arithmetic.",
+        "The 29th is a short 4h57 duty — ask whether it can move earlier in the day to open the rest up."
+      ],
+      "where": "2026-09-29",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "date": "2026-09-26",
+      "statement": "Rest at base is 10h03, against the company's own 12 hours at base.",
+      "options": [
+        "Cite FCM §4.2.1 when you raise the 8-hour shortfall — the two arguments are stronger together.",
+        "Accept it with the airport-hotel plan and treat the 28th's long rest as the recovery point."
+      ],
+      "where": "2026-09-26",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "date": "2026-09-27",
+      "statement": "Rest at base is 10h01, nearly two hours under the 12-hour base standard, and it follows the 16h29 duty.",
+      "options": [
+        "Same conversation as the 26th; ask for the whole 26-28 sequence to be rebuilt rather than patched one night at a time.",
+        "If it stands, protect the 18:00Z bedtime hard — no admin, no errands after release."
+      ],
+      "where": "2026-09-27",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "date": "2026-09-29",
+      "statement": "Rest at base is 10h03 against the 12-hour base standard, going into the month's second-longest duty.",
+      "options": [
+        "Raise with the 26th and 27th as a single pattern.",
+        "Airport hotel keeps the sleep intact even though the rest itself stays short."
+      ],
+      "where": "2026-09-29",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "date": "2026-09-26",
+      "statement": "Your own line is 9 hours between getting home and leaving again. On the nights of 26, 27 and 29 September the home-to-home window is 6h53, 6h51 and 6h53 — every one of them below your threshold, so by your own rule these are not worth going home for.",
+      "options": [
+        "Book the MAD airport hotel for those three nights; that is what the plan assumes and it is the only version where you get 8 hours.",
+        "Move your line for this block only and accept roughly 5h30 in your own bed on those nights — but that breaks the 6-hour main sleep floor three times in five days.",
+        "Ask crewing for hotel accommodation at base for the 26-30 block on fatigue grounds, given three duties over the 13-hour ceiling."
+      ],
+      "where": "2026-09-26",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "sleep-per-24h-7h",
+      "date": "2026-09-27",
+      "statement": "In the 24 hours ending at release on the 27th you can only get about 6h26 of sleep. The duty is 16h29 long and there is no legal place to put a nap inside it, so the shortfall cannot be planned away.",
+      "options": [
+        "Accept the debt and take the deliberate nine hours on the night of the 28th, which the plan already schedules.",
+        "If the FCO sectors come off the end of the 27th, this resolves itself.",
+        "Treat the afternoon of the 27th as the low point and plan caffeine and a proper meal around the FCO turnaround rather than relying on alertness."
+      ],
+      "where": "2026-09-27",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-target-7h30",
+      "date": "2026-09-27",
+      "statement": "Your 7h30 target is missed on the 27th by about an hour, for the same reason — a 16h29 duty leaves no room.",
+      "options": [
+        "This is the only day in the month the target is missed; everywhere else the plan meets or beats it.",
+        "The nine-hour blocks on the nights of the 23rd, 28th and 30th are there to pay it back."
+      ],
+      "where": "2026-09-27",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "op-max-3-early-starts",
+      "date": "2026-09-30",
+      "statement": "Not a breach, but worth knowing you are at the limit: 26, 27 and 28 September are three consecutive pre-06:00 reports. The 29th (13:15 report) is the only thing breaking the run before the 04:15 start on the 30th.",
+      "options": [
+        "If crewing offers to move the 29th earlier to help the rest problem, check it does not create a fourth consecutive early — that trade would cost more than it buys.",
+        "Guard the 29th as your recovery day: it is the single night in the block where you get home and get nine hours."
+      ],
+      "where": "2026-09-30",
+      "hardness": "recommendation"
+    }
+  ]
+}

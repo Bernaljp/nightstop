@@ -1,0 +1,47 @@
+{
+  "caseId": "d05-halcyon",
+  "arm": "b1-chatbot",
+  "costUsd": 0.702567,
+  "wallMs": 287172,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 328,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-09-19[0] station: expected LHR, read SIN",
+    "2026-09-19[0] endStation: expected LHR, read SIN"
+  ],
+  "mandatoryTotal": 16,
+  "surfacedCount": 0,
+  "missed": [
+    "far117-sleep-opportunity-8h@2026-09-21",
+    "far117-sleep-opportunity-8h@2026-09-22",
+    "far117-sleep-opportunity-8h@2026-09-26",
+    "far117-sleep-opportunity-8h@2026-09-27",
+    "op-rest-12h-home@2026-09-21",
+    "op-rest-12h-home@2026-09-22",
+    "op-rest-12h-home@2026-09-26",
+    "op-rest-12h-home@2026-09-27",
+    "op-max-duty-13h@2026-09-18",
+    "op-max-duty-13h@2026-09-20",
+    "op-max-duty-13h@2026-09-25",
+    "op-max-3-early-starts@2026-09-27",
+    "pref-sleep-window-9h@2026-09-21",
+    "pref-sleep-window-9h@2026-09-22",
+    "pref-sleep-window-9h@2026-09-26",
+    "pref-sleep-window-9h@2026-09-27"
+  ],
+  "falseAlarms": [
+    "roster-notation-ambiguity@2026-09-18",
+    "off-day-encroached@2026-09-06",
+    "min-rest-vs-commute@2026-09-21",
+    "consecutive-reduced-rest@2026-09-22",
+    "early-start-cluster@2026-09-25",
+    "early-start-after-long-duty@2026-09-26",
+    "wocl-back-of-clock@2026-09-27",
+    "sim-after-night-duty@2026-09-28"
+  ],
+  "planViolationCount": 6
+}

@@ -1,0 +1,641 @@
+[
+  {
+    "date": "2026-09-01",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-02",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-02T04:10:00Z",
+    "endUtc": "2026-09-02T10:45:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG884",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-02T05:10:00Z",
+        "arrUtc": "2026-09-02T07:15:00Z"
+      },
+      {
+        "flightNo": "VG211",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-02T08:10:00Z",
+        "arrUtc": "2026-09-02T10:15:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-03",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-03T13:25:00Z",
+    "endUtc": "2026-09-03T20:30:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG815",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-09-03T14:25:00Z",
+        "arrUtc": "2026-09-03T16:50:00Z"
+      },
+      {
+        "flightNo": "VG382",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-09-03T17:35:00Z",
+        "arrUtc": "2026-09-03T20:00:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-04",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-05",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-05T03:05:00Z",
+    "endUtc": "2026-09-05T10:11:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG457",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-09-05T04:05:00Z",
+        "arrUtc": "2026-09-05T06:30:00Z"
+      },
+      {
+        "flightNo": "VG100",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-09-05T07:16:00Z",
+        "arrUtc": "2026-09-05T09:41:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-06",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-06T03:05:00Z",
+    "endUtc": "2026-09-06T17:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG897",
+        "origin": "MAD",
+        "dest": "FRA",
+        "depUtc": "2026-09-06T04:05:00Z",
+        "arrUtc": "2026-09-06T06:40:00Z"
+      },
+      {
+        "flightNo": "VG185",
+        "origin": "FRA",
+        "dest": "MAD",
+        "depUtc": "2026-09-06T07:37:00Z",
+        "arrUtc": "2026-09-06T10:12:00Z"
+      },
+      {
+        "flightNo": "VG484",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-06T10:59:00Z",
+        "arrUtc": "2026-09-06T13:39:00Z"
+      },
+      {
+        "flightNo": "VG241",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-06T14:30:00Z",
+        "arrUtc": "2026-09-06T17:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-07",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-08",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-10",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-10T04:10:00Z",
+    "endUtc": "2026-09-10T09:04:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG470",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-10T05:10:00Z",
+        "arrUtc": "2026-09-10T06:30:00Z"
+      },
+      {
+        "flightNo": "VG743",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-10T07:14:00Z",
+        "arrUtc": "2026-09-10T08:34:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-11",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-11T13:25:00Z",
+    "endUtc": "2026-09-11T18:35:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG651",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-11T14:25:00Z",
+        "arrUtc": "2026-09-11T15:45:00Z"
+      },
+      {
+        "flightNo": "VG521",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-11T16:45:00Z",
+        "arrUtc": "2026-09-11T18:05:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-12T10:20:00Z",
+    "endUtc": "2026-09-13T01:02:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG584",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-12T11:20:00Z",
+        "arrUtc": "2026-09-12T12:40:00Z"
+      },
+      {
+        "flightNo": "VG635",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-12T13:32:00Z",
+        "arrUtc": "2026-09-12T14:52:00Z"
+      },
+      {
+        "flightNo": "VG101",
+        "origin": "MAD",
+        "dest": "ARN",
+        "depUtc": "2026-09-12T15:58:00Z",
+        "arrUtc": "2026-09-12T19:53:00Z"
+      },
+      {
+        "flightNo": "VG590",
+        "origin": "ARN",
+        "dest": "MAD",
+        "depUtc": "2026-09-12T20:37:00Z",
+        "arrUtc": "2026-09-13T00:32:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-13",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-14",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-14T03:40:00Z",
+    "endUtc": "2026-09-14T17:30:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG512",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-09-14T04:40:00Z",
+        "arrUtc": "2026-09-14T07:05:00Z"
+      },
+      {
+        "flightNo": "VG850",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-09-14T07:59:00Z",
+        "arrUtc": "2026-09-14T10:24:00Z"
+      },
+      {
+        "flightNo": "VG225",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-09-14T11:29:00Z",
+        "arrUtc": "2026-09-14T13:54:00Z"
+      },
+      {
+        "flightNo": "VG715",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-09-14T14:35:00Z",
+        "arrUtc": "2026-09-14T17:00:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-15",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-15T03:30:00Z",
+    "endUtc": "2026-09-15T17:06:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG615",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-09-15T04:30:00Z",
+        "arrUtc": "2026-09-15T06:55:00Z"
+      },
+      {
+        "flightNo": "VG664",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-09-15T07:44:00Z",
+        "arrUtc": "2026-09-15T10:09:00Z"
+      },
+      {
+        "flightNo": "VG305",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-09-15T10:57:00Z",
+        "arrUtc": "2026-09-15T13:22:00Z"
+      },
+      {
+        "flightNo": "VG545",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-09-15T14:11:00Z",
+        "arrUtc": "2026-09-15T16:36:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-16",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-16T03:10:00Z",
+    "endUtc": "2026-09-16T10:30:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG820",
+        "origin": "MAD",
+        "dest": "FRA",
+        "depUtc": "2026-09-16T04:10:00Z",
+        "arrUtc": "2026-09-16T06:45:00Z"
+      },
+      {
+        "flightNo": "VG313",
+        "origin": "FRA",
+        "dest": "MAD",
+        "depUtc": "2026-09-16T07:25:00Z",
+        "arrUtc": "2026-09-16T10:00:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-17",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-17T03:05:00Z",
+    "endUtc": "2026-09-17T16:04:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG160",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-17T04:05:00Z",
+        "arrUtc": "2026-09-17T06:10:00Z"
+      },
+      {
+        "flightNo": "VG559",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-17T07:14:00Z",
+        "arrUtc": "2026-09-17T09:19:00Z"
+      },
+      {
+        "flightNo": "VG494",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-17T10:19:00Z",
+        "arrUtc": "2026-09-17T12:24:00Z"
+      },
+      {
+        "flightNo": "VG234",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-17T13:29:00Z",
+        "arrUtc": "2026-09-17T15:34:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-18",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-18T13:25:00Z",
+    "endUtc": "2026-09-18T18:18:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG311",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-18T14:25:00Z",
+        "arrUtc": "2026-09-18T15:45:00Z"
+      },
+      {
+        "flightNo": "VG704",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-18T16:28:00Z",
+        "arrUtc": "2026-09-18T17:48:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-19",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-20",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-21",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-22",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-22T10:20:00Z",
+    "endUtc": "2026-09-22T17:03:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG312",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-22T11:20:00Z",
+        "arrUtc": "2026-09-22T13:25:00Z"
+      },
+      {
+        "flightNo": "VG587",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-22T14:28:00Z",
+        "arrUtc": "2026-09-22T16:33:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-23",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-23T11:15:00Z",
+    "endUtc": "2026-09-23T18:53:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG488",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-23T12:15:00Z",
+        "arrUtc": "2026-09-23T14:55:00Z"
+      },
+      {
+        "flightNo": "VG790",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-23T15:43:00Z",
+        "arrUtc": "2026-09-23T18:23:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-24",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-25",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-25T02:35:00Z",
+    "endUtc": "2026-09-25T07:37:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG798",
+        "origin": "MAD",
+        "dest": "LIS",
+        "depUtc": "2026-09-25T03:35:00Z",
+        "arrUtc": "2026-09-25T05:00:00Z"
+      },
+      {
+        "flightNo": "VG842",
+        "origin": "LIS",
+        "dest": "MAD",
+        "depUtc": "2026-09-25T05:42:00Z",
+        "arrUtc": "2026-09-25T07:07:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-26",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-26T04:10:00Z",
+    "endUtc": "2026-09-26T16:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG552",
+        "origin": "MAD",
+        "dest": "LIS",
+        "depUtc": "2026-09-26T05:10:00Z",
+        "arrUtc": "2026-09-26T06:35:00Z"
+      },
+      {
+        "flightNo": "VG652",
+        "origin": "LIS",
+        "dest": "MAD",
+        "depUtc": "2026-09-26T07:36:00Z",
+        "arrUtc": "2026-09-26T09:01:00Z"
+      },
+      {
+        "flightNo": "VG479",
+        "origin": "MAD",
+        "dest": "FRA",
+        "depUtc": "2026-09-26T09:56:00Z",
+        "arrUtc": "2026-09-26T12:31:00Z"
+      },
+      {
+        "flightNo": "VG797",
+        "origin": "FRA",
+        "dest": "MAD",
+        "depUtc": "2026-09-26T13:35:00Z",
+        "arrUtc": "2026-09-26T16:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-27",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-28",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-28T04:10:00Z",
+    "endUtc": "2026-09-28T11:38:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG738",
+        "origin": "MAD",
+        "dest": "FRA",
+        "depUtc": "2026-09-28T05:10:00Z",
+        "arrUtc": "2026-09-28T07:45:00Z"
+      },
+      {
+        "flightNo": "VG536",
+        "origin": "FRA",
+        "dest": "MAD",
+        "depUtc": "2026-09-28T08:33:00Z",
+        "arrUtc": "2026-09-28T11:08:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-29",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-29T03:05:00Z",
+    "endUtc": "2026-09-29T09:37:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG232",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-29T04:05:00Z",
+        "arrUtc": "2026-09-29T06:10:00Z"
+      },
+      {
+        "flightNo": "VG362",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-29T07:02:00Z",
+        "arrUtc": "2026-09-29T09:07:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-30T03:40:00Z",
+    "endUtc": "2026-09-30T10:42:00Z",
+    "sectors": [
+      {
+        "flightNo": "VG474",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-09-30T04:40:00Z",
+        "arrUtc": "2026-09-30T07:05:00Z"
+      },
+      {
+        "flightNo": "VG435",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-09-30T07:47:00Z",
+        "arrUtc": "2026-09-30T10:12:00Z"
+      }
+    ]
+  }
+]

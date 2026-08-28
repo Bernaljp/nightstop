@@ -1,0 +1,42 @@
+{
+  "caseId": "d01-aurora",
+  "arm": "b1-chatbot",
+  "costUsd": 0.739205,
+  "wallMs": 312095,
+  "humanSeconds": 0,
+  "bucket": "missed",
+  "trustworthy": false,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 10,
+  "surfacedCount": 0,
+  "missed": [
+    "op-rest-12h-home@2026-09-02",
+    "op-rest-12h-home@2026-09-15",
+    "op-max-duty-13h@2026-09-05",
+    "op-max-duty-13h@2026-09-07",
+    "op-max-duty-13h@2026-09-10",
+    "op-max-duty-13h@2026-09-19",
+    "op-max-duty-13h@2026-09-22",
+    "op-max-duty-13h@2026-09-24",
+    "pref-sleep-window-9h@2026-09-02",
+    "pref-sleep-window-9h@2026-09-15"
+  ],
+  "falseAlarms": [
+    "FTG-FDP-EXTREME@2026-09-07",
+    "FTG-STANDBY-INTO-NIGHT@2026-09-15",
+    "FTG-WOCL-FINISH@2026-09-11",
+    "FTG-BACKWARD-ROTATION@2026-09-12",
+    "FTG-REST-AT-HOME-SHORT@2026-09-02",
+    "FTG-WOCL-FINISH@2026-09-20",
+    "FTG-EARLY-START-SLEEP@2026-09-26",
+    "FTG-CONSECUTIVE-EARLIES@2026-09-30",
+    "FTG-LATE-TO-EARLY@2026-09-29",
+    "ROSTER-AMBIGUITY@2026-09-13",
+    "ROSTER-AMBIGUITY@2026-09-15",
+    "FTG-LONG-DUTY-EARLY-REPORT@2026-09-22"
+  ],
+  "planViolationCount": 4
+}

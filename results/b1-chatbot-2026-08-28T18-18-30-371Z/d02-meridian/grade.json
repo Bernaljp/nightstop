@@ -1,0 +1,39 @@
+{
+  "caseId": "d02-meridian",
+  "arm": "b1-chatbot",
+  "costUsd": 0.66771025,
+  "wallMs": 268034,
+  "humanSeconds": 0,
+  "bucket": "missed",
+  "trustworthy": false,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 8,
+  "surfacedCount": 0,
+  "missed": [
+    "op-rest-12h-home@2026-09-02",
+    "op-max-duty-13h@2026-09-11",
+    "op-max-duty-13h@2026-09-18",
+    "op-max-duty-13h@2026-09-19",
+    "op-max-duty-13h@2026-09-21",
+    "op-max-duty-13h@2026-09-23",
+    "op-max-duty-13h@2026-09-30",
+    "pref-sleep-window-9h@2026-09-02"
+  ],
+  "falseAlarms": [
+    "MIN-REST-AT-BASE@2026-09-01",
+    "WOCL-FULL-ENCROACHMENT@2026-09-02",
+    "MIN-REST-AT-BASE@2026-09-02",
+    "EXTENDED-FDP-THROUGH-WOCL@2026-09-11",
+    "DAY-OFF-ENCROACHED@2026-09-12",
+    "CONSECUTIVE-EARLY-STARTS@2026-09-08",
+    "EXTENDED-FDP-EARLY-START@2026-09-18",
+    "CONSECUTIVE-DISRUPTIVE-DUTIES@2026-09-19",
+    "BACKWARD-ROTATION@2026-09-23",
+    "EXTENDED-FDP-THROUGH-WOCL@2026-09-30",
+    "ROSTER-INTERPRETATION@2026-09-01"
+  ],
+  "planViolationCount": 8
+}

@@ -1,0 +1,43 @@
+{
+  "caseId": "d08-nimbus",
+  "arm": "b1-chatbot",
+  "costUsd": 0.552767,
+  "wallMs": 232307,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 322,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-10-12[0] station: expected MAD, read DXB",
+    "2026-10-12[0] endStation: expected MAD, read DXB",
+    "2026-10-22[0] station: expected MAD, read DXB",
+    "2026-10-22[0] endStation: expected MAD, read DXB",
+    "2026-10-30[0] station: expected MAD, read SIN",
+    "2026-10-30[0] endStation: expected MAD, read SIN",
+    "2026-11-02[0] station: expected MAD, read SIN",
+    "2026-11-02[0] endStation: expected MAD, read SIN"
+  ],
+  "mandatoryTotal": 7,
+  "surfacedCount": 0,
+  "missed": [
+    "far117-sleep-opportunity-8h@2026-11-04",
+    "op-rest-12h-home@2026-11-04",
+    "op-max-duty-13h@2026-10-29",
+    "op-max-duty-13h@2026-10-31",
+    "op-max-duty-13h@2026-11-01",
+    "op-max-duty-13h@2026-11-03",
+    "pref-sleep-window-9h@2026-11-04"
+  ],
+  "falseAlarms": [
+    "ORO.FTL.235@2026-11-04",
+    "ORO.FTL.110@2026-11-05",
+    "ORO.FTL.205@2026-10-29",
+    "ORO.FTL.205@2026-10-23",
+    "ORO.FTL.205@2026-11-07",
+    "ORO.FTL.230@2026-11-05",
+    "ROSTER.LEGIBILITY@2026-11-04"
+  ],
+  "planViolationCount": 3
+}

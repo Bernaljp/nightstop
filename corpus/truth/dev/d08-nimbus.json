@@ -35,8 +35,8 @@
       "date": "2026-10-12",
       "kind": "off",
       "code": "OFF",
-      "station": "MAD",
-      "endStation": "MAD",
+      "station": "DXB",
+      "endStation": "DXB",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []
@@ -159,8 +159,8 @@
       "date": "2026-10-22",
       "kind": "off",
       "code": "OFF",
-      "station": "MAD",
-      "endStation": "MAD",
+      "station": "DXB",
+      "endStation": "DXB",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []
@@ -275,8 +275,8 @@
       "date": "2026-10-30",
       "kind": "off",
       "code": "OFF",
-      "station": "MAD",
-      "endStation": "MAD",
+      "station": "SIN",
+      "endStation": "SIN",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []
@@ -322,8 +322,8 @@
       "date": "2026-11-02",
       "kind": "off",
       "code": "OFF",
-      "station": "MAD",
-      "endStation": "MAD",
+      "station": "SIN",
+      "endStation": "SIN",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []

@@ -365,21 +365,27 @@ export function generateMonth(
     byDate.get(d.date)!.push(d);
   }
 
+  // A date with no duty is a day off WHERE THE CREW MEMBER ACTUALLY IS, which is not
+  // necessarily home. Fly MAD-ORD on the 1st and the 2nd is spent in Chicago; recording
+  // it as a day off at base is wrong about the time zone they will be sleeping in,
+  // which is the one thing this whole system exists to get right.
   const out: Duty[] = [];
+  let position = op.base;
   for (const cur of dateRange(from, to)) {
     const here = byDate.get(cur) ?? [];
     const real = here.filter((d) => d.kind !== "off");
     if (real.length) {
       real.sort((a, b) => (a.reportUtc ?? "").localeCompare(b.reportUtc ?? ""));
       out.push(...real);
+      position = real[real.length - 1].endStation;
     } else {
       out.push({
         id: "",
         date: cur,
         kind: "off",
         code: op.codes.off,
-        station: op.base,
-        endStation: op.base,
+        station: position,
+        endStation: position,
         reportUtc: null,
         endUtc: null,
         sectors: [],

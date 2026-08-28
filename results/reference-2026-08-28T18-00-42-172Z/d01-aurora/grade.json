@@ -1,0 +1,18 @@
+{
+  "caseId": "d01-aurora",
+  "arm": "reference",
+  "costUsd": 0,
+  "wallMs": 14,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 10,
+  "surfacedCount": 10,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

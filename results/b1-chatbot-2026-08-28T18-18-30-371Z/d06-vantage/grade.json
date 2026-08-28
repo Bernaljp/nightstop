@@ -1,0 +1,38 @@
+{
+  "caseId": "d06-vantage",
+  "arm": "b1-chatbot",
+  "costUsd": 0.55344775,
+  "wallMs": 202024,
+  "humanSeconds": 0,
+  "bucket": "missed",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 11,
+  "surfacedCount": 0,
+  "missed": [
+    "far117-sleep-opportunity-8h@2026-09-15",
+    "far117-sleep-opportunity-8h@2026-09-16",
+    "op-rest-12h-home@2026-09-15",
+    "op-rest-12h-home@2026-09-16",
+    "op-max-duty-13h@2026-09-06",
+    "op-max-duty-13h@2026-09-12",
+    "op-max-duty-13h@2026-09-14",
+    "op-max-duty-13h@2026-09-15",
+    "op-max-3-early-starts@2026-09-17",
+    "pref-sleep-window-9h@2026-09-15",
+    "pref-sleep-window-9h@2026-09-16"
+  ],
+  "falseAlarms": [
+    "sleep-opportunity-under-8h@2026-09-15",
+    "sleep-opportunity-under-8h@2026-09-16",
+    "consecutive-early-starts@2026-09-17",
+    "wocl-duty-end@2026-09-13",
+    "extended-wakefulness@2026-09-06",
+    "wocl-report@2026-09-25",
+    "roster-interpretation@2026-09-01"
+  ],
+  "planViolationCount": 3
+}

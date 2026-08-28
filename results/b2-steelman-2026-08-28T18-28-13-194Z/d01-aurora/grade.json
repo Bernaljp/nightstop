@@ -1,0 +1,23 @@
+{
+  "caseId": "d01-aurora",
+  "arm": "b2-steelman",
+  "costUsd": 0.9474482499999999,
+  "wallMs": 374445,
+  "humanSeconds": 0,
+  "bucket": "false_alarm",
+  "trustworthy": false,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 10,
+  "surfacedCount": 10,
+  "missed": [],
+  "falseAlarms": [
+    "far117-sleep-opportunity-8h@2026-09-02",
+    "far117-sleep-opportunity-8h@2026-09-15",
+    "main-sleep-floor-6h@2026-09-15",
+    "pref-sleep-target-7h30@2026-09-05"
+  ],
+  "planViolationCount": 0
+}

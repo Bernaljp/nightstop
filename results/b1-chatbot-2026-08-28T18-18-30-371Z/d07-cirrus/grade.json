@@ -1,0 +1,39 @@
+{
+  "caseId": "d07-cirrus",
+  "arm": "b1-chatbot",
+  "costUsd": 0.6466982499999999,
+  "wallMs": 267725,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 324,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-09-02[0] station: expected MAD, read ORD",
+    "2026-09-02[0] endStation: expected MAD, read ORD",
+    "2026-09-06[0] station: expected MAD, read JFK",
+    "2026-09-06[0] endStation: expected MAD, read JFK",
+    "2026-09-27[0] station: expected MAD, read SIN",
+    "2026-09-27[0] endStation: expected MAD, read SIN"
+  ],
+  "mandatoryTotal": 3,
+  "surfacedCount": 0,
+  "missed": [
+    "op-max-duty-13h@2026-09-11",
+    "op-max-duty-13h@2026-09-26",
+    "op-max-duty-13h@2026-09-28"
+  ],
+  "falseAlarms": [
+    "WOCL-ENCROACHMENT@2026-09-11",
+    "EARLY-START-SLEEP-ONSET@2026-09-19",
+    "CONSECUTIVE-EARLY-STARTS@2026-09-23",
+    "CIRCADIAN-SWING@2026-09-24",
+    "SHORT-LAYOVER-NO-ADAPT@2026-09-27",
+    "NIGHT-DEPARTURE-WAKEFULNESS@2026-09-03",
+    "ROSTER-DATA-AMBIGUITY@2026-09-24",
+    "ASSUMPTION-REPORT-OFFSET@2026-09-01",
+    "NO-OPERATOR-RULESET-SUPPLIED@2026-09-01"
+  ],
+  "planViolationCount": 4
+}

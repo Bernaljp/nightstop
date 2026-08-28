@@ -35,8 +35,8 @@
       "date": "2026-09-02",
       "kind": "off",
       "code": "OFF",
-      "station": "MAD",
-      "endStation": "MAD",
+      "station": "ORD",
+      "endStation": "ORD",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []
@@ -93,8 +93,8 @@
       "date": "2026-09-06",
       "kind": "off",
       "code": "OFF",
-      "station": "MAD",
-      "endStation": "MAD",
+      "station": "JFK",
+      "endStation": "JFK",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []
@@ -464,8 +464,8 @@
       "date": "2026-09-27",
       "kind": "off",
       "code": "OFF",
-      "station": "MAD",
-      "endStation": "MAD",
+      "station": "SIN",
+      "endStation": "SIN",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []

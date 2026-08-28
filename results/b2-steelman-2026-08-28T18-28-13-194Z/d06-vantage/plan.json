@@ -1,0 +1,530 @@
+{
+  "caseId": "d06-vantage",
+  "blocks": [
+    {
+      "kind": "main",
+      "startUtc": "2026-09-01T18:40:00Z",
+      "endUtc": "2026-09-02T02:10:00Z",
+      "station": "MAD",
+      "why": "Early night at 20:40 local to get a full 7h30 in before the 06:10 report — up at 04:10, out the door 04:35 for the 95-minute drive.",
+      "id": "b0",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-02T13:00:00Z",
+      "endUtc": "2026-09-02T14:30:00Z",
+      "station": "MAD",
+      "why": "Afternoon nap once I'm home to take the edge off the early, without wrecking tonight since tomorrow is a 15:25 report.",
+      "id": "b1",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-02T21:30:00Z",
+      "endUtc": "2026-09-03T05:00:00Z",
+      "station": "MAD",
+      "why": "Normal night — late report tomorrow means I can sleep to a civilised hour.",
+      "id": "b2",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-03T23:00:00Z",
+      "endUtc": "2026-09-04T06:30:00Z",
+      "station": "MAD",
+      "why": "Home at 23:35 local after the LHR turn; wind down and sleep in, day off tomorrow.",
+      "id": "b3",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-04T13:00:00Z",
+      "endUtc": "2026-09-04T14:00:00Z",
+      "station": "MAD",
+      "why": "One-hour top-up on the day off because I can't realistically be asleep before 20:30 tonight for a 05:05 report.",
+      "id": "b4",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-04T18:30:00Z",
+      "endUtc": "2026-09-05T01:05:00Z",
+      "station": "MAD",
+      "why": "Lights out 20:30 local, up at 03:05 for the 05:05 report — 6h35, propped up by this afternoon's nap.",
+      "id": "b5",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-05T12:30:00Z",
+      "endUtc": "2026-09-05T14:00:00Z",
+      "station": "MAD",
+      "why": "Deliberate top-up before tomorrow's 14h35 day — I want to start that one with sleep in the bank.",
+      "id": "b6",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-05T18:30:00Z",
+      "endUtc": "2026-09-06T01:05:00Z",
+      "station": "MAD",
+      "why": "Second early night in a row ahead of the four-sector day; the nap plus this gets me to about 8h.",
+      "id": "b7",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-06T20:00:00Z",
+      "endUtc": "2026-09-07T05:00:00Z",
+      "station": "MAD",
+      "why": "Straight to bed after a 14h35 duty and three days off ahead — take the full nine hours.",
+      "id": "b8",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-07T21:30:00Z",
+      "endUtc": "2026-09-08T05:00:00Z",
+      "station": "MAD",
+      "why": "Day off, normal nights to pay back the debt from the 5th and 6th.",
+      "id": "b9",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-08T21:30:00Z",
+      "endUtc": "2026-09-09T05:00:00Z",
+      "station": "MAD",
+      "why": "Day off, keeping the body clock anchored to a normal MAD night.",
+      "id": "b10",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-09T18:40:00Z",
+      "endUtc": "2026-09-10T02:10:00Z",
+      "station": "MAD",
+      "why": "Shift bedtime early on the last day off so the 06:10 report still gets a full 7h30.",
+      "id": "b11",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-10T12:00:00Z",
+      "endUtc": "2026-09-10T13:30:00Z",
+      "station": "MAD",
+      "why": "Short afternoon nap after the BCN turn; late report tomorrow so it costs me nothing tonight.",
+      "id": "b12",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-10T21:30:00Z",
+      "endUtc": "2026-09-11T05:00:00Z",
+      "station": "MAD",
+      "why": "Normal night ahead of a 15:25 report.",
+      "id": "b13",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-11T21:30:00Z",
+      "endUtc": "2026-09-12T06:30:00Z",
+      "station": "MAD",
+      "why": "Nine hours banked — tomorrow is four sectors ending at 03:02 local, straight through my worst body-clock window.",
+      "id": "b14",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-13T03:00:00Z",
+      "endUtc": "2026-09-13T09:30:00Z",
+      "station": "MAD",
+      "why": "Home at 04:37 local off the ARN night sector; sleep as long as the daylight lets me.",
+      "id": "b15",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-13T18:45:00Z",
+      "endUtc": "2026-09-14T01:40:00Z",
+      "station": "MAD",
+      "why": "Second sleep the same day to reset for a 05:40 report — split sleep is the only way to cover both ends of this.",
+      "id": "b16",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-14T19:15:00Z",
+      "endUtc": "2026-09-15T01:25:00Z",
+      "station": "MAD",
+      "why": "Only 6h10 available: home 21:05 local, straight to bed, up 03:25 to leave at 03:55 — this is the short one, see the conflict.",
+      "id": "b17",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-15T18:55:00Z",
+      "endUtc": "2026-09-16T01:05:00Z",
+      "station": "MAD",
+      "why": "Same squeeze again — bed the moment I'm through the door, 6h10 is all the roster leaves after the commute.",
+      "id": "b18",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-16T12:45:00Z",
+      "endUtc": "2026-09-16T14:15:00Z",
+      "station": "MAD",
+      "why": "Non-negotiable nap after two short nights, before the fourth early start in a row.",
+      "id": "b19",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-16T18:30:00Z",
+      "endUtc": "2026-09-17T01:00:00Z",
+      "station": "MAD",
+      "why": "Early to bed for the 05:05 report; nap plus this gets me back to about 8h in the 24.",
+      "id": "b20",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-17T19:30:00Z",
+      "endUtc": "2026-09-18T05:00:00Z",
+      "station": "MAD",
+      "why": "Big recovery sleep after four consecutive earlies — late report tomorrow, so take all of it.",
+      "id": "b21",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-18T21:30:00Z",
+      "endUtc": "2026-09-19T06:00:00Z",
+      "station": "MAD",
+      "why": "Three days off start now; sleep until I wake up.",
+      "id": "b22",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-19T21:30:00Z",
+      "endUtc": "2026-09-20T05:00:00Z",
+      "station": "MAD",
+      "why": "Day off, holding a normal night pattern.",
+      "id": "b23",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-20T21:30:00Z",
+      "endUtc": "2026-09-21T05:00:00Z",
+      "station": "MAD",
+      "why": "Day off, holding a normal night pattern.",
+      "id": "b24",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-21T21:30:00Z",
+      "endUtc": "2026-09-22T05:00:00Z",
+      "station": "MAD",
+      "why": "Late report tomorrow, so nothing needs to move.",
+      "id": "b25",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-22T21:30:00Z",
+      "endUtc": "2026-09-23T05:00:00Z",
+      "station": "MAD",
+      "why": "Straightforward night between two afternoon duties.",
+      "id": "b26",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-23T22:00:00Z",
+      "endUtc": "2026-09-24T05:30:00Z",
+      "station": "MAD",
+      "why": "Home 22:28 local off DUB; day off tomorrow so I let the clock run.",
+      "id": "b27",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-24T12:00:00Z",
+      "endUtc": "2026-09-24T13:00:00Z",
+      "station": "MAD",
+      "why": "An hour in the afternoon because tomorrow is a 04:35 report and I'll never sleep enough tonight to cover it.",
+      "id": "b28",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-24T18:00:00Z",
+      "endUtc": "2026-09-25T00:35:00Z",
+      "station": "MAD",
+      "why": "Bed at 20:00 local, alarm 02:35, out the door 03:00 for the 04:35 report — brutal but doable with the nap.",
+      "id": "b29",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-25T10:00:00Z",
+      "endUtc": "2026-09-25T11:30:00Z",
+      "station": "MAD",
+      "why": "Home by 11:12 local after the LIS turn — nap now, because tomorrow is a 12h30 four-sector day off a 06:10 report.",
+      "id": "b30",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-25T19:10:00Z",
+      "endUtc": "2026-09-26T02:10:00Z",
+      "station": "MAD",
+      "why": "Seven hours before the long day; up at 04:10 to leave at 04:35.",
+      "id": "b31",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-26T19:30:00Z",
+      "endUtc": "2026-09-27T05:00:00Z",
+      "station": "MAD",
+      "why": "Recovery after 12h30 and four sectors — day off tomorrow, no alarm.",
+      "id": "b32",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-27T18:40:00Z",
+      "endUtc": "2026-09-28T02:10:00Z",
+      "station": "MAD",
+      "why": "Early bed on the day off buys the full 7h30 before a 06:10 report.",
+      "id": "b33",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-28T13:45:00Z",
+      "endUtc": "2026-09-28T15:15:00Z",
+      "station": "MAD",
+      "why": "Nap once I'm home at 15:13 local, because tomorrow starts at 05:05 and I can't get 7h30 in tonight.",
+      "id": "b34",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-28T18:30:00Z",
+      "endUtc": "2026-09-29T01:00:00Z",
+      "station": "MAD",
+      "why": "Lights out 20:30 local for the 05:05 report; nap plus this makes about 8h.",
+      "id": "b35",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-29T12:00:00Z",
+      "endUtc": "2026-09-29T13:30:00Z",
+      "station": "MAD",
+      "why": "Same pattern again — nap in the early afternoon to cover the third early start of the block.",
+      "id": "b36",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-29T19:00:00Z",
+      "endUtc": "2026-09-30T01:35:00Z",
+      "station": "MAD",
+      "why": "Up at 03:35 to leave at 04:05 for the 05:40 report on the last day.",
+      "id": "b37",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-30T13:00:00Z",
+      "endUtc": "2026-09-30T14:30:00Z",
+      "station": "MAD",
+      "why": "Last duty done — nap off the accumulated early starts.",
+      "id": "b38",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-30T20:30:00Z",
+      "endUtc": "2026-10-01T04:30:00Z",
+      "station": "MAD",
+      "why": "Full night at the end of the roster to start clearing the month's debt.",
+      "id": "b39",
+      "ruleIds": []
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "date": "2026-09-15",
+      "statement": "Release 14SEP at 19:30 local and report 15SEP at 05:30 local is exactly 10h00 rest. Take 95 minutes home and 95 minutes back out and only 6h50 is left for sleep — 1h10 short of the eight uninterrupted hours the rest period has to provide.",
+      "options": [
+        "Notify the operator under 117.25(f) that this rest will not give you eight uninterrupted hours, and do not report until it does — the regulation puts that determination on you.",
+        "Ask crewing to pull the 15SEP report later by at least 1h10 (to 06:40 local or later), which also fixes the sub-6h sleep.",
+        "Ask for a hotel at MAD airport for the night of 14–15SEP: that removes 3h10 of commuting and turns 10h00 of rest into roughly 9h of usable sleep opportunity.",
+        "If you fly it as printed, the plan above gives you 6h10 in bed — protect it absolutely, no errands after landing, and take the 16SEP afternoon nap as scheduled."
+      ],
+      "where": "2026-09-15",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "date": "2026-09-16",
+      "statement": "Release 15SEP at 19:06 local and report 16SEP at 05:10 local is 10h04 rest. After the commute at both ends that is 6h54 of sleep opportunity — again more than an hour short of eight.",
+      "options": [
+        "Notify the operator under 117.25(f) before the 15SEP duty ends, so it can be fixed once rather than twice.",
+        "Ask for the 15SEP and 16SEP pairing to be broken — a single later report on 16SEP resolves both nights.",
+        "Airport hotel for the night of 15–16SEP, which recovers the 3h10 of commute.",
+        "Flying it as printed, the plan gives 6h10 in bed followed by a compulsory 1h30 nap on 16SEP afternoon."
+      ],
+      "where": "2026-09-16",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-06",
+      "statement": "The 06SEP duty is rostered at 14h35 (03:05Z report to 17:40Z release), which is 1h35 beyond the operator's own 13-hour planning ceiling — and it starts at 05:05 local, so the whole tail of it sits in the window where alertness is worst.",
+      "options": [
+        "Raise it with crewing now, before the day — a planned-duty overrun is a scheduling question, not a day-of one.",
+        "If it stands, the plan front-loads sleep: 1h30 nap on 05SEP afternoon plus 6h35 overnight, so you start the day near 8h.",
+        "Plan your food and caffeine around the DUB sector (14:30–17:10Z), which is the low point of the day."
+      ],
+      "where": "2026-09-06",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-12",
+      "statement": "The 12SEP duty is rostered at 14h42, ending at 03:02 local on the 13th — 1h42 over the 13-hour ceiling, and the last two hours land squarely in the 02:00–06:00 body-clock trough.",
+      "options": [
+        "Query the duty length with crewing; the ARN return is what pushes it over.",
+        "Sleep in on 12SEP as planned (9h to 08:30 local) — the report is not until 12:20 local, so this is free.",
+        "Arrange a lift home at 03:00 local, or a room at MAD, rather than driving 95 minutes at the worst hour of the night.",
+        "Controlled rest in the cruise is a flight-deck call on the day and is deliberately not in this calendar."
+      ],
+      "where": "2026-09-12",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-14",
+      "statement": "The 14SEP duty is 13h50, 50 minutes over the operator ceiling, and it is followed by only 10h00 of rest.",
+      "options": [
+        "Flag 14–15SEP to crewing as a pair — the long duty and the short rest are the same problem.",
+        "Ask for the fourth sector (VG715) to be re-crewed, which brings the duty inside 13h and lengthens the rest."
+      ],
+      "where": "2026-09-14",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-15",
+      "statement": "The 15SEP duty is 13h36, 36 minutes over the ceiling, and it comes after a 6h10 sleep and before another 10h rest.",
+      "options": [
+        "Include this in the same conversation with crewing as 14SEP and 16SEP; three consecutive days are affected.",
+        "If the duty stands, ask for the 16SEP report to move so at least the rest either side is honest."
+      ],
+      "where": "2026-09-15",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-3-early-starts",
+      "date": "2026-09-17",
+      "statement": "14SEP 05:40, 15SEP 05:30, 16SEP 05:10 and 17SEP 05:05 are four consecutive reports before 06:00 local — one more than company policy plans for, and 17SEP is also a 12h59 four-sector day.",
+      "options": [
+        "Ask crewing to move the 17SEP report after 06:00, which brings the block back inside policy.",
+        "Ask for 17SEP to be swapped with a later duty from 18SEP, which reports at 15:25.",
+        "If all four stand, the 16SEP afternoon nap and the 9h30 recovery sleep on the night of 17SEP are the load-bearing parts of this plan."
+      ],
+      "where": "2026-09-17",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "date": "2026-09-15",
+      "statement": "Rest at base on the night of 14–15SEP is 10h00, two hours short of the 12 hours company policy calls for at base.",
+      "options": [
+        "Cite §4.2.1 alongside the sleep-opportunity shortfall when you contact crewing — the two arguments reinforce each other.",
+        "Request the 15SEP report be pushed to 07:30 local, which would satisfy both the 12h policy and the 8h sleep opportunity."
+      ],
+      "where": "2026-09-15",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "date": "2026-09-16",
+      "statement": "Rest at base on the night of 15–16SEP is 10h04, again short of the 12 hours policy expects at base.",
+      "options": [
+        "Raise 14–16SEP as a single three-day problem rather than two separate nights.",
+        "Request a later 16SEP report or an airport hotel."
+      ],
+      "where": "2026-09-16",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "sleep-per-24h-7h",
+      "date": "2026-09-15",
+      "statement": "In the 24 hours before the 15SEP report there is only 6h10 of sleep available — the rest period is physically too short to reach 7h even with perfect sleep hygiene, and there is no gap for a nap.",
+      "options": [
+        "Fix the rest period (see far117-sleep-opportunity-8h for 15SEP) — nothing you do inside 10h of rest will produce 7h of sleep after a 3h10 commute.",
+        "If you fly it, treat 16SEP's afternoon nap as mandatory rather than optional."
+      ],
+      "where": "2026-09-15",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "sleep-per-24h-7h",
+      "date": "2026-09-16",
+      "statement": "The 24 hours before the 16SEP report also yield only 6h10, so you arrive at 16SEP with two consecutive sub-7h nights and a cumulative debt of roughly 2h.",
+      "options": [
+        "Same fix as 15SEP — the rest periods are the constraint, not the plan.",
+        "The 1h30 nap on 16SEP afternoon and the 9h30 sleep on the night of 17SEP are scheduled specifically to clear this debt; protect both."
+      ],
+      "where": "2026-09-16",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "date": "2026-09-15",
+      "statement": "Your own line is 9 hours between getting home and leaving again. On the night of 14–15SEP you get 6h50 door-to-door, so by your rule it is not worth going home.",
+      "options": [
+        "Book a room near MAD for that night instead of driving — you would sleep roughly 9h rather than 6h10.",
+        "Stay with someone closer to the airport for the 14–16SEP block.",
+        "Only you can move this line; if you choose to go home anyway, the plan above is what that looks like."
+      ],
+      "where": "2026-09-15",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "date": "2026-09-16",
+      "statement": "The night of 15–16SEP gives 6h54 at home, again below your 9-hour threshold.",
+      "options": [
+        "Treat 14SEP through 17SEP as one stay-out block near the airport rather than three round commutes.",
+        "Or accept the two short nights and take the scheduled naps."
+      ],
+      "where": "2026-09-16",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "pref-sleep-target-7h30",
+      "date": "2026-09-15",
+      "statement": "Your 7h30 target is missed on 15SEP and 16SEP (6h10 each). Everywhere else in the month the plan reaches 7h30 or better, using afternoon naps on 04, 05, 10, 16, 24, 25, 28, 29 and 30SEP to make up the early-start shortfalls.",
+      "options": [
+        "Accept 6h10 on those two nights as the cost of the 14–17SEP early block, with the naps covering it.",
+        "Or resolve the underlying rest shortfall and the target comes back within reach on both nights."
+      ],
+      "where": "2026-09-15",
+      "hardness": "preference"
+    }
+  ]
+}

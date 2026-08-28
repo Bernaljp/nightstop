@@ -1,0 +1,484 @@
+{
+  "caseId": "d03-polaris",
+  "blocks": [
+    {
+      "kind": "main",
+      "startUtc": "2026-08-31T22:30:00Z",
+      "endUtc": "2026-09-01T06:30:00Z",
+      "station": "LHR",
+      "why": "Last normal night in your own bed before a month that goes sideways — bank it while it's free.",
+      "id": "b0",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-01T12:00:00Z",
+      "endUtc": "2026-09-01T14:00:00Z",
+      "station": "LHR",
+      "why": "Afternoon nap before the 16:00Z report — GRU is a 13h40 duty that lands you at 02:10 local, so go in with sleep in the tank.",
+      "id": "b1",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-02T06:15:00Z",
+      "endUtc": "2026-09-02T13:15:00Z",
+      "station": "GRU",
+      "why": "Straight to bed at the hotel around 03:15 local; blackout the room and take the seven hours while your body still thinks it's mid-morning at home.",
+      "id": "b2",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-02T16:30:00Z",
+      "endUtc": "2026-09-02T18:00:00Z",
+      "station": "GRU",
+      "why": "Top-up before the 20:00Z report because you're about to fly another full night straight back to LHR.",
+      "id": "b3",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-03T11:00:00Z",
+      "endUtc": "2026-09-03T14:30:00Z",
+      "station": "LHR",
+      "why": "Home about 10:35Z after an all-nighter — three and a half hours only, then get up so you can still sleep tonight.",
+      "id": "b4",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-03T22:00:00Z",
+      "endUtc": "2026-09-04T06:30:00Z",
+      "station": "LHR",
+      "why": "Proper night at home to reset before the Chicago pairing starts.",
+      "id": "b5",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-04T12:00:00Z",
+      "endUtc": "2026-09-04T14:00:00Z",
+      "station": "LHR",
+      "why": "Nap before the 16:00Z report — you won't be in a bed again until 22:00 Chicago time.",
+      "id": "b6",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-05T03:30:00Z",
+      "endUtc": "2026-09-05T11:30:00Z",
+      "station": "ORD",
+      "why": "Bed at 22:30 local as soon as you're in the hotel; that's 04:30 body time so you'll drop straight off.",
+      "id": "b7",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-05T17:30:00Z",
+      "endUtc": "2026-09-05T18:15:00Z",
+      "station": "ORD",
+      "why": "Short lunchtime nap on the day off to bridge a long gap — keep it under an hour so it doesn't rob tonight.",
+      "id": "b8",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-06T01:30:00Z",
+      "endUtc": "2026-09-06T11:00:00Z",
+      "station": "ORD",
+      "why": "Early night, 20:30 to 06:00 local, ahead of the 08:45 local report — this one has to carry you until you're home past midnight UK time.",
+      "id": "b9",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-07T01:30:00Z",
+      "endUtc": "2026-09-07T09:00:00Z",
+      "station": "LHR",
+      "why": "In the door about 01:10Z, so straight to bed — this is your only real sleep before tonight's westbound.",
+      "id": "b10",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-07T15:00:00Z",
+      "endUtc": "2026-09-07T17:30:00Z",
+      "station": "LHR",
+      "why": "Non-negotiable nap before the 20:40Z report — the whole duty sits inside your window of circadian low and you land at 01:40 Chicago time.",
+      "id": "b11",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-08T07:45:00Z",
+      "endUtc": "2026-09-08T16:00:00Z",
+      "station": "ORD",
+      "why": "Off duty at 02:10 local after a full night awake — take a long one, you have the whole day free afterwards.",
+      "id": "b12",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-09T02:30:00Z",
+      "endUtc": "2026-09-09T11:00:00Z",
+      "station": "ORD",
+      "why": "Early to bed local time so you're rested for the 13:45Z report and the long day back to LHR.",
+      "id": "b13",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-10T01:30:00Z",
+      "endUtc": "2026-09-10T10:00:00Z",
+      "station": "LHR",
+      "why": "Home just after 01:00Z — sleep it off, then get outside in daylight to start pulling the body clock back east.",
+      "id": "b14",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-10T22:30:00Z",
+      "endUtc": "2026-09-11T06:30:00Z",
+      "station": "LHR",
+      "why": "First proper UK night after Chicago; it'll feel early but hold the line to get back on local time.",
+      "id": "b15",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-11T09:30:00Z",
+      "endUtc": "2026-09-11T10:30:00Z",
+      "station": "LHR",
+      "why": "Insurance nap before the 12:00Z standby window in case they call you late in it for something long.",
+      "id": "b16",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-11T22:00:00Z",
+      "endUtc": "2026-09-12T06:00:00Z",
+      "station": "LHR",
+      "why": "Standby released at 20:00Z with nothing on it — normal night, stay on local time.",
+      "id": "b17",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-12T09:30:00Z",
+      "endUtc": "2026-09-12T10:30:00Z",
+      "station": "LHR",
+      "why": "Same insurance nap before the second standby day.",
+      "id": "b18",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-12T22:00:00Z",
+      "endUtc": "2026-09-13T06:00:00Z",
+      "station": "LHR",
+      "why": "Ordinary night at home on a clear day.",
+      "id": "b19",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-13T21:00:00Z",
+      "endUtc": "2026-09-14T05:00:00Z",
+      "station": "LHR",
+      "why": "Go down an hour early — sim reports 07:00Z, which means the alarm at 06:00 local and out the door by 06:05Z.",
+      "id": "b20",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-14T16:30:00Z",
+      "endUtc": "2026-09-14T17:15:00Z",
+      "station": "LHR",
+      "why": "Short one after the sim to take the edge off, kept early enough not to spoil the night.",
+      "id": "b21",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-14T22:00:00Z",
+      "endUtc": "2026-09-15T06:00:00Z",
+      "station": "LHR",
+      "why": "Start of the long block of days off — settle into a fixed 23:00/07:00 local pattern.",
+      "id": "b22",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-15T22:00:00Z",
+      "endUtc": "2026-09-16T06:00:00Z",
+      "station": "LHR",
+      "why": "Days off — keep the same hours rather than drifting late, it's what makes the GRU trip survivable.",
+      "id": "b23",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-16T22:00:00Z",
+      "endUtc": "2026-09-17T06:00:00Z",
+      "station": "LHR",
+      "why": "Days off — same window, hold it.",
+      "id": "b24",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-17T22:00:00Z",
+      "endUtc": "2026-09-18T06:00:00Z",
+      "station": "LHR",
+      "why": "Days off — same window, hold it.",
+      "id": "b25",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-18T22:00:00Z",
+      "endUtc": "2026-09-19T06:00:00Z",
+      "station": "LHR",
+      "why": "Days off — same window, hold it.",
+      "id": "b26",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-19T22:00:00Z",
+      "endUtc": "2026-09-20T06:00:00Z",
+      "station": "LHR",
+      "why": "Days off — same window, hold it.",
+      "id": "b27",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-20T22:30:00Z",
+      "endUtc": "2026-09-21T07:00:00Z",
+      "station": "LHR",
+      "why": "Full eight and a half before the GRU day sector — you'll be awake from 07:00Z until the hotel at about 00:15Z, so this is the whole day's fuel.",
+      "id": "b28",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-22T00:30:00Z",
+      "endUtc": "2026-09-22T07:30:00Z",
+      "station": "GRU",
+      "why": "In the hotel by 21:15 local after a seventeen-hour day — sleep now, don't sit up.",
+      "id": "b29",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-22T15:00:00Z",
+      "endUtc": "2026-09-22T21:30:00Z",
+      "station": "GRU",
+      "why": "Long afternoon anchor sleep, 12:00 to 18:30 local, because tomorrow's report is 00:40Z and you're flying the whole night home.",
+      "id": "b30",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-23T16:00:00Z",
+      "endUtc": "2026-09-23T18:00:00Z",
+      "station": "LHR",
+      "why": "Two hours only after the 13:50Z landing — enough to be human for the evening, not enough to wreck the night.",
+      "id": "b31",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-23T22:30:00Z",
+      "endUtc": "2026-09-24T06:30:00Z",
+      "station": "LHR",
+      "why": "Back onto UK nights straight away with three clear days before Los Angeles.",
+      "id": "b32",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-24T22:00:00Z",
+      "endUtc": "2026-09-25T06:00:00Z",
+      "station": "LHR",
+      "why": "Day off — normal night, no lie-ins, you've got an early report coming.",
+      "id": "b33",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-25T21:30:00Z",
+      "endUtc": "2026-09-26T05:30:00Z",
+      "station": "LHR",
+      "why": "Down at 22:30 local for the 07:45Z report — sleep before an early is always short, so start it early.",
+      "id": "b34",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-26T21:30:00Z",
+      "endUtc": "2026-09-26T23:00:00Z",
+      "station": "LAX",
+      "why": "Ninety minutes on arrival at 14:30 local to take the edge off, then out into the afternoon light — don't let it become the night.",
+      "id": "b35",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-27T04:30:00Z",
+      "endUtc": "2026-09-27T12:00:00Z",
+      "station": "LAX",
+      "why": "Bed at 21:30 local; you only need to come halfway onto LA time because Monday's report is 08:45 local.",
+      "id": "b36",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-27T20:00:00Z",
+      "endUtc": "2026-09-27T21:00:00Z",
+      "station": "LAX",
+      "why": "Early-afternoon nap on the day off so you're not running on empty by the time tonight's main sleep comes round.",
+      "id": "b37",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-28T04:00:00Z",
+      "endUtc": "2026-09-28T13:30:00Z",
+      "station": "LAX",
+      "why": "Nine and a half hours, 21:00 to 06:30 local, before an eleven-hour night crossing that finishes at 04:45Z — take everything you can get and use the bunk on top.",
+      "id": "b38",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-29T06:00:00Z",
+      "endUtc": "2026-09-29T12:00:00Z",
+      "station": "LHR",
+      "why": "Home about 05:40Z with your body clock on LA time, so 07:00 to 13:00 local is the sleep you'll actually get.",
+      "id": "b39",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-29T19:30:00Z",
+      "endUtc": "2026-09-30T03:15:00Z",
+      "station": "LHR",
+      "why": "In bed by 20:30 local for a 04:15 alarm — it's only lunchtime to your body, so blackout, no caffeine after mid-afternoon, and treat anything you get as a bonus.",
+      "id": "b40",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-30T13:30:00Z",
+      "endUtc": "2026-09-30T14:30:00Z",
+      "station": "LHR",
+      "why": "If standby runs off at 13:00Z without a call, take an hour to pay back last night's short sleep.",
+      "id": "b41",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-30T21:30:00Z",
+      "endUtc": "2026-10-01T05:30:00Z",
+      "station": "LHR",
+      "why": "Close the month out on a normal UK night.",
+      "id": "b42",
+      "ruleIds": []
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "roster-internal-inconsistency",
+      "date": "2026-09-22",
+      "statement": "The 22 Sep line carries '+1' on every field (report 00:40Z+1, STD 02:10Z+1, STA 13:50Z+1), which places the duty on 23 Sep — but 23 Sep is printed OFF and the header's 'Days Off: 16' counts it as a day off. I have planned it as a 23 Sep duty; 22 Sep is a GRU layover day.",
+      "options": [
+        "Get crewing to reissue the line so the duty date and the OFF marker agree before you plan anything around 23 Sep",
+        "Confirm with ops whether PW344 is 02:10Z on 23 Sep as I've read it, and get it in writing",
+        "If it is genuinely intended as 22 Sep, refuse it on rest grounds — see the minimum-rest conflict on the same date",
+        "Assume 23 Sep for personal planning but do not commit to anything on 23 Sep until it's confirmed"
+      ],
+      "where": "2026-09-22",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "min-rest-between-duties",
+      "date": "2026-09-22",
+      "statement": "Read literally as 22 Sep, PW344 reports at 00:40Z just 50 minutes after off-duty at 23:50Z on 21 Sep at GRU — that is not a rest period, it's a coffee break, and it cannot be what was intended.",
+      "options": [
+        "Treat the literal reading as a printing error and work to the 23 Sep interpretation",
+        "Ask crewing to confirm the layover length at GRU in writing before you leave LHR on 21 Sep",
+        "If crewing insist on 22 Sep, decline on rest and let the operator resolve it"
+      ],
+      "where": "2026-09-22",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "wocl-night-duty",
+      "date": "2026-09-07",
+      "statement": "PW895 reports 20:40Z and runs to 07:10Z, sitting across 02:00–06:00 body time from end to end, on a body clock still set to London after only about 19 hours at home following a 00:15Z arrival the night before.",
+      "options": [
+        "Protect the 15:00–17:30Z nap absolutely — no errands, phone off, room blacked out",
+        "Plan controlled rest in the cruise with the other pilot and brief it before top of climb",
+        "Save caffeine for the second half of the sector rather than using it early",
+        "If the nap doesn't happen, call it in before report rather than after"
+      ],
+      "where": "2026-09-07",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "consecutive-night-duties-short-layover",
+      "date": "2026-09-02",
+      "statement": "Two back-to-back 13h40 night duties around a GRU layover of only about 14h20, with off-duty at 02:40 local and report at 17:00 local — one sleep opportunity, taken at a body time that's already out of phase.",
+      "options": [
+        "Ask the hotel for early check-in and a blackout room, and go straight up from the crew bus",
+        "Take the 13:30–15:00 local nap even if you don't feel you need it",
+        "Plan bunk rest on the return sector with the augmenting crew before departure",
+        "Flag the layover length to your fatigue reporting system whether or not it bites this time"
+      ],
+      "where": "2026-09-02",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "extended-wake-before-duty-end",
+      "date": "2026-09-21",
+      "statement": "Wake around 07:00Z for the 10:10Z report and you are not in the GRU hotel until about 00:15Z — roughly 17 hours 15 minutes awake, ending at 21:15 local in a station four hours behind you.",
+      "options": [
+        "Sleep to 07:00Z rather than getting up early, even if it's a slow morning",
+        "Take a bunk slot in the second half of the cruise so the awake period is broken",
+        "Eat properly in the cruise rather than arriving hungry and wired",
+        "Do not plan anything in GRU that evening — bus, room, bed"
+      ],
+      "where": "2026-09-21",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "early-start-after-timezone-shift",
+      "date": "2026-09-30",
+      "statement": "Standby starts 05:00Z, which means a 04:15 local alarm and leaving home at 04:05Z, roughly 24 hours after landing from Los Angeles with a body clock still eight hours west — the pre-standby sleep is scheduled at what your body reads as early afternoon and will be short.",
+      "options": [
+        "Ask crewing to move the standby window later in the day, or to swap it",
+        "Treat the 06:00–12:00Z sleep on 29 Sep as the real sleep and the evening block as a top-up",
+        "Blackout blinds, no caffeine after mid-afternoon on 29 Sep, and get bright morning light on 29 Sep to pull the clock east",
+        "If you're called out late in the window for a long duty, assess honestly against how much you actually slept and use the fatigue call if it isn't there"
+      ],
+      "where": "2026-09-30",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "reduced-home-recovery",
+      "date": "2026-09-07",
+      "statement": "Between the 09-06 arrival (off duty 00:15Z on 7 Sep) and the 09-07 report at 20:40Z you get one daytime sleep at home between two transatlantic duties, with no night in your own bed at a normal hour.",
+      "options": [
+        "Sleep as soon as you're through the door at about 01:10Z rather than winding down",
+        "Set no alarm before 09:00Z and clear the day of family or admin commitments",
+        "Ask crewing whether the 7 Sep sector can be swapped or given to reserve",
+        "File a fatigue report on the pairing construction regardless of the outcome"
+      ],
+      "where": "2026-09-07",
+      "hardness": "recommendation"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "caseId": "d06-vantage",
+  "arm": "b2-steelman",
+  "costUsd": 0.76185375,
+  "wallMs": 293271,
+  "humanSeconds": 0,
+  "bucket": "false_alarm",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 11,
+  "surfacedCount": 11,
+  "missed": [],
+  "falseAlarms": [
+    "sleep-per-24h-7h@2026-09-15",
+    "sleep-per-24h-7h@2026-09-16",
+    "pref-sleep-target-7h30@2026-09-15"
+  ],
+  "planViolationCount": 0
+}

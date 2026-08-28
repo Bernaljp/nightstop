@@ -1,0 +1,51 @@
+{
+  "caseId": "d03-polaris",
+  "arm": "b2-steelman",
+  "costUsd": 0.7744170000000001,
+  "wallMs": 337228,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 306,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-09-05[0] station: expected LHR, read ORD",
+    "2026-09-05[0] endStation: expected LHR, read ORD",
+    "2026-09-08[0] station: expected LHR, read ORD",
+    "2026-09-08[0] endStation: expected LHR, read ORD",
+    "2026-09-22[0] kind: expected flight, read off",
+    "2026-09-22[0] endStation: expected LHR, read GRU",
+    "2026-09-22[0] reportUtc: expected 2026-09-23T00:40:00.000Z, read (empty)",
+    "2026-09-22[0] endUtc: expected 2026-09-23T14:20:00.000Z, read (empty)",
+    "2026-09-22[0] sectorCount: expected 1, read 0",
+    "2026-09-22[0] sectorOrigins: expected GRU, read (empty)",
+    "2026-09-22[0] sectorDests: expected LHR, read (empty)",
+    "2026-09-22[0] sectorDepUtc: expected 2026-09-23T02:10:00.000Z, read (empty)",
+    "2026-09-22[0] sectorArrUtc: expected 2026-09-23T13:50:00.000Z, read (empty)",
+    "2026-09-23[0] kind: expected off, read flight",
+    "2026-09-23[0] station: expected LHR, read GRU",
+    "2026-09-23[0] reportUtc: expected (empty), read 2026-09-23T00:40:00.000Z",
+    "2026-09-23[0] endUtc: expected (empty), read 2026-09-23T14:20:00.000Z",
+    "2026-09-23[0] sectorCount: expected 0, read 1",
+    "2026-09-23[0] sectorOrigins: expected (empty), read GRU",
+    "2026-09-23[0] sectorDests: expected (empty), read LHR",
+    "2026-09-23[0] sectorDepUtc: expected (empty), read 2026-09-23T02:10:00.000Z",
+    "2026-09-23[0] sectorArrUtc: expected (empty), read 2026-09-23T13:50:00.000Z",
+    "2026-09-27[0] station: expected LHR, read LAX",
+    "2026-09-27[0] endStation: expected LHR, read LAX"
+  ],
+  "mandatoryTotal": 4,
+  "surfacedCount": 3,
+  "missed": [
+    "op-max-duty-13h@2026-09-22"
+  ],
+  "falseAlarms": [
+    "op-max-duty-13h@2026-09-23",
+    "far117-rest-10h@2026-09-22",
+    "sleep-per-24h-7h@2026-09-23",
+    "sleep-per-24h-7h@2026-09-29",
+    "pref-sleep-target-7h30@2026-09-03"
+  ],
+  "planViolationCount": 0
+}

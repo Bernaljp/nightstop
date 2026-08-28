@@ -1,0 +1,18 @@
+{
+  "byAgent": {
+    "steelman": {
+      "inputTokens": 4,
+      "outputTokens": 34733,
+      "cacheReadInputTokens": 5831,
+      "cacheCreationInputTokens": 4179,
+      "turns": 1
+    }
+  },
+  "total": {
+    "inputTokens": 4,
+    "outputTokens": 34733,
+    "cacheReadInputTokens": 5831,
+    "cacheCreationInputTokens": 4179,
+    "turns": 1
+  }
+}

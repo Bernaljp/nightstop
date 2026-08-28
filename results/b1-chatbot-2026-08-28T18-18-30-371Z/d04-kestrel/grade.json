@@ -1,0 +1,47 @@
+{
+  "caseId": "d04-kestrel",
+  "arm": "b1-chatbot",
+  "costUsd": 0.6810544999999999,
+  "wallMs": 283069,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 324,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-09-06[0] station: expected MAD, read JFK",
+    "2026-09-06[0] endStation: expected MAD, read JFK",
+    "2026-09-14[0] station: expected MAD, read DXB",
+    "2026-09-14[0] endStation: expected MAD, read DXB",
+    "2026-09-21[0] station: expected MAD, read ORD",
+    "2026-09-21[0] endStation: expected MAD, read ORD"
+  ],
+  "mandatoryTotal": 12,
+  "surfacedCount": 0,
+  "missed": [
+    "far117-sleep-opportunity-8h@2026-09-27",
+    "far117-sleep-opportunity-8h@2026-09-28",
+    "far117-sleep-opportunity-8h@2026-09-30",
+    "op-rest-12h-home@2026-09-27",
+    "op-rest-12h-home@2026-09-28",
+    "op-rest-12h-home@2026-09-30",
+    "op-max-duty-13h@2026-09-27",
+    "op-max-duty-13h@2026-09-28",
+    "op-max-duty-13h@2026-09-30",
+    "pref-sleep-window-9h@2026-09-27",
+    "pref-sleep-window-9h@2026-09-28",
+    "pref-sleep-window-9h@2026-09-30"
+  ],
+  "falseAlarms": [
+    "FTL.FDP.MAX@2026-09-27",
+    "FRM.SLEEP.OPPORTUNITY@2026-09-26",
+    "FRM.SLEEP.OPPORTUNITY@2026-09-27",
+    "FRM.SLEEP.OPPORTUNITY@2026-09-29",
+    "FRM.EARLY.START.CONSECUTIVE@2026-09-30",
+    "FRM.WOCL.NIGHT.CROSSING@2026-09-12",
+    "ROSTER.AMBIGUITY.DAYS-OFF@2026-09-06",
+    "FRM.BODYCLOCK.SHIFT@2026-09-15"
+  ],
+  "planViolationCount": 7
+}

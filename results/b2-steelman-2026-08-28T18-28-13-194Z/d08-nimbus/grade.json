@@ -1,0 +1,27 @@
+{
+  "caseId": "d08-nimbus",
+  "arm": "b2-steelman",
+  "costUsd": 0.707973,
+  "wallMs": 279270,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 322,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-10-12[0] station: expected MAD, read DXB",
+    "2026-10-12[0] endStation: expected MAD, read DXB",
+    "2026-10-22[0] station: expected MAD, read DXB",
+    "2026-10-22[0] endStation: expected MAD, read DXB",
+    "2026-10-30[0] station: expected MAD, read SIN",
+    "2026-10-30[0] endStation: expected MAD, read SIN",
+    "2026-11-02[0] station: expected MAD, read SIN",
+    "2026-11-02[0] endStation: expected MAD, read SIN"
+  ],
+  "mandatoryTotal": 7,
+  "surfacedCount": 7,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

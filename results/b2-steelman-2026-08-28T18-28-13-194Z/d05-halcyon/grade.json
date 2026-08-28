@@ -1,0 +1,33 @@
+{
+  "caseId": "d05-halcyon",
+  "arm": "b2-steelman",
+  "costUsd": 0.760498,
+  "wallMs": 301183,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 328,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-09-19[0] station: expected LHR, read SIN",
+    "2026-09-19[0] endStation: expected LHR, read SIN"
+  ],
+  "mandatoryTotal": 16,
+  "surfacedCount": 8,
+  "missed": [
+    "op-rest-12h-home@2026-09-22",
+    "op-rest-12h-home@2026-09-26",
+    "op-rest-12h-home@2026-09-27",
+    "op-max-duty-13h@2026-09-25",
+    "pref-sleep-window-9h@2026-09-21",
+    "pref-sleep-window-9h@2026-09-22",
+    "pref-sleep-window-9h@2026-09-26",
+    "pref-sleep-window-9h@2026-09-27"
+  ],
+  "falseAlarms": [
+    "sleep-per-24h-7h@2026-09-21",
+    "sleep-per-24h-7h@2026-09-25"
+  ],
+  "planViolationCount": 0
+}

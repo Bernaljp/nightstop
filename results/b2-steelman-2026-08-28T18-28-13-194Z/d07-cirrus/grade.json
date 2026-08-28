@@ -1,0 +1,31 @@
+{
+  "caseId": "d07-cirrus",
+  "arm": "b2-steelman",
+  "costUsd": 0.89737925,
+  "wallMs": 383743,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 324,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-09-02[0] station: expected MAD, read ORD",
+    "2026-09-02[0] endStation: expected MAD, read ORD",
+    "2026-09-06[0] station: expected MAD, read JFK",
+    "2026-09-06[0] endStation: expected MAD, read JFK",
+    "2026-09-27[0] station: expected MAD, read SIN",
+    "2026-09-27[0] endStation: expected MAD, read SIN"
+  ],
+  "mandatoryTotal": 3,
+  "surfacedCount": 3,
+  "missed": [],
+  "falseAlarms": [
+    "sleep-per-24h-7h@2026-09-04",
+    "sleep-per-24h-7h@2026-09-08",
+    "sleep-per-24h-7h@2026-09-12",
+    "sleep-per-24h-7h@2026-09-26",
+    "pref-sleep-target-7h30@2026-09-19"
+  ],
+  "planViolationCount": 0
+}

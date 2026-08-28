@@ -82,8 +82,8 @@
       "date": "2026-09-05",
       "kind": "off",
       "code": "OFF",
-      "station": "LHR",
-      "endStation": "LHR",
+      "station": "ORD",
+      "endStation": "ORD",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []
@@ -129,8 +129,8 @@
       "date": "2026-09-08",
       "kind": "off",
       "code": "OFF",
-      "station": "LHR",
-      "endStation": "LHR",
+      "station": "ORD",
+      "endStation": "ORD",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []
@@ -366,8 +366,8 @@
       "date": "2026-09-27",
       "kind": "off",
       "code": "OFF",
-      "station": "LHR",
-      "endStation": "LHR",
+      "station": "LAX",
+      "endStation": "LAX",
       "reportUtc": null,
       "endUtc": null,
       "sectors": []
