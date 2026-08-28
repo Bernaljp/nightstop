@@ -1,2 +1,0 @@
-{"seq":0,"ts":"2026-08-28T18:09:51.999Z","runId":"reference-2026-08-28T18-09-51-957Z","arm":"reference","caseId":"d07-cirrus","agent":"engine","kind":"note","message":"deterministic engine, no model involved","blocks":11,"conflicts":3}
-{"seq":1,"ts":"2026-08-28T18:09:51.999Z","runId":"reference-2026-08-28T18-09-51-957Z","arm":"reference","caseId":"d07-cirrus","agent":"engine","kind":"final","output":{"blocks":11,"conflicts":3}}

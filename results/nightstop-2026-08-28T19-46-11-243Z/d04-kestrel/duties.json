@@ -1,0 +1,484 @@
+[
+  {
+    "date": "2026-09-01",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-02",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-03",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-04",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-05",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "JFK",
+    "reportUtc": "2026-09-05T09:25:00Z",
+    "endUtc": "2026-09-05T19:10:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE413",
+        "origin": "MAD",
+        "dest": "JFK",
+        "depUtc": "2026-09-05T10:40:00Z",
+        "arrUtc": "2026-09-05T18:40:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-06",
+    "kind": "off",
+    "code": "OFF",
+    "station": "JFK",
+    "endStation": "JFK",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-07",
+    "kind": "flight",
+    "station": "JFK",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-07T15:25:00Z",
+    "endUtc": "2026-09-08T01:10:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE757",
+        "origin": "JFK",
+        "dest": "MAD",
+        "depUtc": "2026-09-07T16:40:00Z",
+        "arrUtc": "2026-09-08T00:40:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-08",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-10",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "BOS",
+    "reportUtc": "2026-09-10T09:25:00Z",
+    "endUtc": "2026-09-10T18:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE890",
+        "origin": "MAD",
+        "dest": "BOS",
+        "depUtc": "2026-09-10T10:40:00Z",
+        "arrUtc": "2026-09-10T18:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-11",
+    "kind": "flight",
+    "station": "BOS",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-12T02:25:00Z",
+    "endUtc": "2026-09-12T11:10:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE153",
+        "origin": "BOS",
+        "dest": "MAD",
+        "depUtc": "2026-09-12T03:10:00Z",
+        "arrUtc": "2026-09-12T10:40:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-13",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "DXB",
+    "reportUtc": "2026-09-13T18:35:00Z",
+    "endUtc": "2026-09-14T03:20:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE586",
+        "origin": "MAD",
+        "dest": "DXB",
+        "depUtc": "2026-09-13T19:50:00Z",
+        "arrUtc": "2026-09-14T02:50:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-14",
+    "kind": "off",
+    "code": "OFF",
+    "station": "DXB",
+    "endStation": "DXB",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-15",
+    "kind": "flight",
+    "station": "DXB",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-15T10:50:00Z",
+    "endUtc": "2026-09-15T19:35:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE590",
+        "origin": "DXB",
+        "dest": "MAD",
+        "depUtc": "2026-09-15T12:05:00Z",
+        "arrUtc": "2026-09-15T19:05:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-16",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-17",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-18",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-19",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-20",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "ORD",
+    "reportUtc": "2026-09-20T07:00:00Z",
+    "endUtc": "2026-09-20T17:45:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE290",
+        "origin": "MAD",
+        "dest": "ORD",
+        "depUtc": "2026-09-20T08:15:00Z",
+        "arrUtc": "2026-09-20T17:15:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-21",
+    "kind": "off",
+    "code": "OFF",
+    "station": "ORD",
+    "endStation": "ORD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-22",
+    "kind": "flight",
+    "station": "ORD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-23T01:35:00Z",
+    "endUtc": "2026-09-23T12:20:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE541",
+        "origin": "ORD",
+        "dest": "MAD",
+        "depUtc": "2026-09-23T02:50:00Z",
+        "arrUtc": "2026-09-23T11:50:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-23",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-24",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-25",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-26",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-26T02:35:00Z",
+    "endUtc": "2026-09-26T14:47:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE474",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-26T03:20:00Z",
+        "arrUtc": "2026-09-26T06:00:00Z"
+      },
+      {
+        "flightNo": "KE830",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-26T06:59:00Z",
+        "arrUtc": "2026-09-26T09:39:00Z"
+      },
+      {
+        "flightNo": "KE479",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-26T10:34:00Z",
+        "arrUtc": "2026-09-26T11:54:00Z"
+      },
+      {
+        "flightNo": "KE583",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-26T12:57:00Z",
+        "arrUtc": "2026-09-26T14:17:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-27",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-27T00:50:00Z",
+    "endUtc": "2026-09-27T17:19:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE274",
+        "origin": "MAD",
+        "dest": "ARN",
+        "depUtc": "2026-09-27T01:35:00Z",
+        "arrUtc": "2026-09-27T05:30:00Z"
+      },
+      {
+        "flightNo": "KE862",
+        "origin": "ARN",
+        "dest": "MAD",
+        "depUtc": "2026-09-27T06:10:00Z",
+        "arrUtc": "2026-09-27T10:05:00Z"
+      },
+      {
+        "flightNo": "KE526",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-09-27T10:55:00Z",
+        "arrUtc": "2026-09-27T13:20:00Z"
+      },
+      {
+        "flightNo": "KE490",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-09-27T14:24:00Z",
+        "arrUtc": "2026-09-27T16:49:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-28",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-28T03:20:00Z",
+    "endUtc": "2026-09-28T16:29:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE275",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-28T04:05:00Z",
+        "arrUtc": "2026-09-28T06:10:00Z"
+      },
+      {
+        "flightNo": "KE793",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-28T07:00:00Z",
+        "arrUtc": "2026-09-28T09:05:00Z"
+      },
+      {
+        "flightNo": "KE206",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-28T09:56:00Z",
+        "arrUtc": "2026-09-28T12:36:00Z"
+      },
+      {
+        "flightNo": "KE605",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-28T13:19:00Z",
+        "arrUtc": "2026-09-28T15:59:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-29",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-29T11:15:00Z",
+    "endUtc": "2026-09-29T16:12:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE281",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-29T12:00:00Z",
+        "arrUtc": "2026-09-29T13:20:00Z"
+      },
+      {
+        "flightNo": "KE539",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-29T14:22:00Z",
+        "arrUtc": "2026-09-29T15:42:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-30T02:15:00Z",
+    "endUtc": "2026-09-30T16:33:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE326",
+        "origin": "MAD",
+        "dest": "FRA",
+        "depUtc": "2026-09-30T03:00:00Z",
+        "arrUtc": "2026-09-30T05:35:00Z"
+      },
+      {
+        "flightNo": "KE693",
+        "origin": "FRA",
+        "dest": "MAD",
+        "depUtc": "2026-09-30T06:38:00Z",
+        "arrUtc": "2026-09-30T09:13:00Z"
+      },
+      {
+        "flightNo": "KE327",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-30T09:59:00Z",
+        "arrUtc": "2026-09-30T12:39:00Z"
+      },
+      {
+        "flightNo": "KE401",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-30T13:23:00Z",
+        "arrUtc": "2026-09-30T16:03:00Z"
+      }
+    ]
+  }
+]

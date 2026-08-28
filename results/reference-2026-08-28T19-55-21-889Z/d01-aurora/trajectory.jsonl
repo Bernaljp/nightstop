@@ -1,0 +1,2 @@
+{"seq":0,"ts":"2026-08-28T19:55:21.904Z","runId":"reference-2026-08-28T19-55-21-889Z","arm":"reference","caseId":"d01-aurora","agent":"engine","kind":"note","message":"deterministic engine, no model involved","blocks":19,"conflicts":10}
+{"seq":1,"ts":"2026-08-28T19:55:21.904Z","runId":"reference-2026-08-28T19-55-21-889Z","arm":"reference","caseId":"d01-aurora","agent":"engine","kind":"final","output":{"blocks":19,"conflicts":10}}
