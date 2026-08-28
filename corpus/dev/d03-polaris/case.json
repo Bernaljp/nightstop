@@ -1,0 +1,15 @@
+{
+  "caseId": "d03-polaris",
+  "operator": "POLARIS WORLD",
+  "coveredFrom": "2026-09-01",
+  "coveredTo": "2026-09-30",
+  "profile": {
+    "base": "LHR",
+    "baseTz": "Europe/London",
+    "commuteMinutes": {
+      "LHR": 55
+    },
+    "defaultCommuteMinutes": 35
+  },
+  "roster": "roster.pdf"
+}

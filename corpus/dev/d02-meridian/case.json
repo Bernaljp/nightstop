@@ -1,0 +1,15 @@
+{
+  "caseId": "d02-meridian",
+  "operator": "MERIDIAN LINEAS AEREAS",
+  "coveredFrom": "2026-09-01",
+  "coveredTo": "2026-09-30",
+  "profile": {
+    "base": "MAD",
+    "baseTz": "Europe/Madrid",
+    "commuteMinutes": {
+      "MAD": 55
+    },
+    "defaultCommuteMinutes": 35
+  },
+  "roster": "roster.pdf"
+}

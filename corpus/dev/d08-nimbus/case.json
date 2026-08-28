@@ -1,0 +1,15 @@
+{
+  "caseId": "d08-nimbus",
+  "operator": "NIMBUS INTERNATIONAL",
+  "coveredFrom": "2026-10-11",
+  "coveredTo": "2026-11-09",
+  "profile": {
+    "base": "MAD",
+    "baseTz": "Europe/Madrid",
+    "commuteMinutes": {
+      "MAD": 55
+    },
+    "defaultCommuteMinutes": 35
+  },
+  "roster": "roster.pdf"
+}
