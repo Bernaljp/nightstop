@@ -17,13 +17,13 @@ the run that produced it.
 
 | Metric | `b1-chatbot` | `b2-steelman` | `nightstop` | `reference` |
 |---|---|---|---|---|
-| **Trustworthy runs** (primary) | **0/8** | **1/8** | **7/8** | **8/8** |
-| **Silently wrong** (co-primary, target 0) | **8/8** | **3/8** | **1/8** | **0/8** |
+| **Trustworthy runs** (primary) | **0/8** | **1/8** | **8/8** | **8/8** |
+| **Silently wrong** (co-primary, target 0) | **8/8** | **3/8** | **0/8** | **0/8** |
 | Field-level parse accuracy | 99.3% | 99.3% | 100.0% | 100.0% |
 | Conflict recall | 0.0% | 77.5% | 100.0% | 100.0% |
 | False alarms raised | 69 | 37 | 0 | 0 |
-| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.64 | $0.00 |
-| Wall clock per roster | 268s | 324s | 205s | 0s |
+| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.61 | $0.00 |
+| Wall clock per roster | 268s | 324s | 165s | 0s |
 
 `reference` is not a baseline. It plans from ground-truth duties, so it answers the
 question the other numbers cannot: how much of any shortfall is the reading, and how
@@ -34,10 +34,10 @@ much is the planning.
 | Bucket | `b1-chatbot` | `b2-steelman` | `nightstop` | `reference` |
 |---|---|---|---|---|
 | `unusable` | 0 | 0 | 0 | 0 |
-| `misread` | 1 | 1 | 1 | 0 |
+| `misread` | 1 | 1 | 0 | 0 |
 | `missed` | 7 | 2 | 0 | 0 |
 | `false_alarm` | 0 | 4 | 0 | 0 |
-| `surfaced` | 0 | 1 | 7 | 8 |
+| `surfaced` | 0 | 1 | 8 | 8 |
 | `clean` | 0 | 0 | 0 | 0 |
 
 ### `b1-chatbot` — case by case
@@ -72,18 +72,18 @@ Run `b2-steelman-2026-08-28T18-28-13-194Z` · 2026-08-28 18:40 · git `3de5694c`
 
 ### `nightstop` — case by case
 
-Run `nightstop-2026-08-28T19-46-11-243Z` · 2026-08-28 19:53 · git `f09c422a` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+Run `nightstop-2026-08-28T20-00-03-466Z` · 2026-08-28 20:06 · git `5d387f94` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
-| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $0.55 |
-| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.87 |
-| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.36 |
-| `d04-kestrel` | `misread` | 329/330 | 12/12 | 0 | $0.66 |
-| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.58 |
-| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.97 |
-| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.60 |
-| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.55 |
+| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $0.54 |
+| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.90 |
+| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.37 |
+| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.71 |
+| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.51 |
+| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.62 |
+| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.66 |
+| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.57 |
 
 ### `reference` — case by case
 
@@ -99,3 +99,9 @@ Run `reference-2026-08-28T19-55-21-889Z` · 2026-08-28 19:55 · git `f09c422a` �
 | `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.00 |
 | `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.00 |
 | `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.00 |
+
+## Earlier runs
+
+Kept rather than deleted. Listed so nothing is quietly dropped from the record.
+
+- `nightstop-2026-08-28T19-46-11-243Z` (nightstop) — 7/8 trustworthy
