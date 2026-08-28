@@ -129,7 +129,7 @@ be read with that in mind until the repeats land.
 | **1 · give it the rules** | `b2-steelman`: same model and effort, handed the rule pack. Tests whether the whole problem is just that the model was under-informed. | 1/8 trustworthy · silently wrong 8→3 · **recall 0%→77.5%** · false alarms 69→37 | Kept, as the fair comparison arm. Most of the value is here — but 37 invented rules across 8 rosters, and a rule it made up is worse than one it missed. |
 | **2 · tools, not arithmetic** | Reader gets `to_utc` and `reconcile_totals`; the deterministic engine does the placing and the rule checking. | 7/8 trustworthy · silently wrong 3→1 · **recall 100%** · **false alarms 37→0** | Kept. Moving the rule check out of the model is what takes false alarms to zero: a deterministic checker cannot invent a rule. |
 | **3 · make it show its work** | Reader must record which values it **derived** rather than read, and say which rule it used. Motivated by the single remaining failure (below), and I expected it to only *surface* the error rather than fix it. | **8/8 trustworthy · 0/8 silently wrong** · d04-kestrel misread → surfaced | Kept, and it is the most surprising result here. Being asked to distinguish a value it read from one it inferred changed whether it inferred correctly. |
-| **Removed** | *(see `docs/removed-experiments.md`)* | | |
+| **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3
 
@@ -162,10 +162,10 @@ choice must be consistent across sectors of the same haul.
 
 ## Hot take
 
-**Our own primary metric would have rewarded us for being more dangerous, and a grader
-bug nearly manufactured the improvement before we started.**
+**A good metric is necessary and it is not sufficient — and the two worst bugs in this
+project were in the measuring apparatus, not the thing being measured.**
 
-Three things happened here that I did not expect, and they point the same way.
+Four things happened here that I did not expect, and they point the same way.
 
 The grader compared timestamps as strings, so `08:00:00.000Z` and `08:00:00Z` counted as
 a misread. It reported 78% field accuracy on a roster that had been read perfectly. Had
@@ -176,15 +176,24 @@ My answer key was wrong about days off — it recorded every one as being at bas
 flying MAD→ORD on the 1st means the 2nd is spent in Chicago. I found out because the
 reader disagreed with me on six fields and was right about all six.
 
-And the fix for the last failing case was not a rule or a check. It was asking the model
-to say which values it had worked out rather than read.
+The fix for the last failing case was not a rule or a check. It was asking the model to
+say which values it had worked out rather than read.
 
-So: in a safety-adjacent domain, the useful question is not *how good is the output* but
+And the experiment I removed did not lose on the scoreboard. I expected it to *beat* the
+primary metric while being more dangerous. Instead it tied on every number I report,
+while taking the count of values a crew member can check from 33 to 0 and costing 38%
+more. The metric could not see the difference — which is worse than being fooled by it,
+because being fooled at least leaves a trace.
+
+So: in a safety-adjacent domain the useful question is not *how good is the output* but
 *can the system tell the difference between something it knows and something it worked
-out* — and, one level up, **can your evaluation tell the difference between wrong and
-flagged.** Build the scoreboard before the agent, then distrust the scoreboard too. Both
-of my worst bugs were in the measuring apparatus, not the thing being measured, and both
-would have flattered the result.
+out* — and, one level up, **can your evaluation see the difference between a plan that
+was checkable and one that merely looked certain.** Mine could not, and the decision to
+cut the repair pass came from reading what a crew member would actually hold, not from
+any number in my results table.
+
+Build the scoreboard before the agent. Then distrust the scoreboard too, and go and look
+at the artefact.
 
 ## Running it
 

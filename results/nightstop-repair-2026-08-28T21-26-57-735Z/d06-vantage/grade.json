@@ -1,0 +1,18 @@
+{
+  "caseId": "d06-vantage",
+  "arm": "nightstop-repair",
+  "costUsd": 1.452278,
+  "wallMs": 345344,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 11,
+  "surfacedCount": 11,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

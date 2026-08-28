@@ -1,0 +1,18 @@
+{
+  "caseId": "d02-meridian",
+  "arm": "nightstop-repair",
+  "costUsd": 0.8697435,
+  "wallMs": 207042,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 8,
+  "surfacedCount": 8,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

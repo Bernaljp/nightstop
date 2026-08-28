@@ -34,30 +34,52 @@ division is not about capability. It is about which failures you can afford.
 
 ## 2. Letting the model repair rows it could not read
 
-**What I tried.** When the reader flags a row as unreadable, hand that row back to the
-model on its own, with more context, and ask it to work out what it says. Cheap, about
-forty lines, and it targets exactly the cases that were failing.
+**What I tried.** When the reader flags a value as uncertain — or as *derived* rather than
+read — hand it back to the model on its own, with the roster and everything the first pass
+produced, and ask it to resolve it. Cheap, about forty lines, and it targets exactly the
+values most likely to be wrong. Run it yourself with `--arm nightstop-repair`.
 
-**What happened.** It works. On the cases where the reader hesitated, the repair pass
-usually produced the right answer and the primary metric went **up**.
+**What I predicted.** That it would raise the primary metric while making the system more
+dangerous, and that the removal would therefore cost me points on my own headline number.
 
-**Why it was cut anyway.** Look at what it does to the *kind* of error. Before the repair
-pass, an unreadable row was flagged and put in front of the crew member. After it, the
-row was filled in confidently and the flag disappeared. The metric rewarded that, because
-most of the guesses were right. But the ones that were wrong were now invisible — turned
-from *"I could not read this, please check"* into an assertion of fact.
+**What actually happened.** Both arms scored **8/8 trustworthy, 0 silently wrong, 100%
+field accuracy, 100% conflict recall**. Identical. What differs is everything the metric
+does not look at:
 
-That is the trade this product exists to refuse. A crew member who is told the tool is
-unsure loses thirty seconds checking a roster they are holding. A crew member who is told
-the wrong report time confidently goes to bed at the wrong hour.
+| | shipped | with the repair pass |
+|---|---|---|
+| Trustworthy runs | 8/8 | 8/8 |
+| Silently wrong | 0/8 | 0/8 |
+| **Values the crew member is shown and can check** | **33** | **0** |
+| Cost per roster | $0.61 | $0.84 (+38%) |
 
-**What it taught.** This is where the hot take comes from: our own primary metric
-rewarded a change that made the system more dangerous. A binary "is it right" cannot see
-the difference between *wrong* and *flagged*, so the co-primary — silently wrong, target
-zero — exists precisely to make that difference visible. The removal is the evidence that
-the metric needed it.
+Thirty-three derived values across eight rosters — every one a number worked out rather
+than read, each with its reasoning attached — become zero. The pass resolves them,
+clears the flags, and hands over a plan that looks certain throughout. It costs 38% more
+to produce that.
+
+**Why it was cut.** On this corpus the repair pass happened to guess right every time, so
+nothing broke. That is not a reason to keep it; it is the reason it is dangerous. The
+behaviour is identical whether the guess is right or wrong — the flag is cleared either
+way — so the only thing standing between a crew member and a confidently wrong report
+time is that the model happened to be correct. Eight rosters is not evidence that it
+always will be, and a derived value is precisely the kind nothing in the document can
+check.
+
+**What it taught, which was not what I expected.** I predicted the metric would reward the
+dangerous change. It did something worse: **it could not see the change at all.** A
+scoreboard that scores only the plan is blind to whether the crew member was given
+anything to check it with, and my co-primary — silently wrong, target zero — did not
+catch this either, because on this corpus nothing *was* silently wrong.
+
+So the removal does not rest on a number in the results table. It rests on an argument
+about which failure the design refuses, and the honest version of the hot take is:
+**a good metric is necessary and it is not sufficient.** The thing that decided this was
+looking at what the crew member ends up holding, which no summary statistic here reports.
+If I kept building, "values surfaced for confirmation" would become a reported metric,
+precisely so this trade stops being invisible.
 
 There is a positive version of the same lesson in the changelog. The fix for the last
 failing case was not to let the model guess harder, but to make it **say which values it
 had worked out rather than read**. Same information, opposite direction: surfaced instead
-of buried, and it fixed the error rather than hiding it.
+of buried — and it fixed the error rather than hiding it.
