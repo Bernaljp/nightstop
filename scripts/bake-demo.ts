@@ -37,7 +37,11 @@ interface ArmView {
   fieldsCorrect: number;
   fieldsTotal: number;
   misreads: string[];
-  blocks: number;
+  blockCount: number;
+  /** The actual plan, so the demo can draw the schedule rather than describe it. */
+  blocks: { kind: string; startUtc: string; endUtc: string; station: string; why: string }[];
+  duties: { date: string; kind: string; station: string; endStation: string;
+            reportUtc: string | null; endUtc: string | null; sectors: unknown[] }[];
   /** Every collision it raised, marked against the truth. */
   raised: { date: string; hardness: string; statement: string; real: boolean }[];
   missed: { date: string; hardness: string; statement: string }[];
@@ -57,12 +61,20 @@ function armView(runId: string | null, caseId: string, truth: GroundTruth): ArmV
   const realKeys = new Set(mandatory.map(key));
   const raisedKeys = new Set((plan?.conflicts ?? []).map(key));
 
+  const duties = existsSync(join(dir, "duties.json"))
+    ? JSON.parse(readFileSync(join(dir, "duties.json"), "utf8"))
+    : truth.duties;
+
   return {
     bucket: grade.bucket,
     fieldsCorrect: grade.fieldsCorrect,
     fieldsTotal: grade.fieldsTotal,
     misreads: grade.mismatches.slice(0, 6),
-    blocks: plan?.blocks.length ?? 0,
+    blockCount: plan?.blocks.length ?? 0,
+    blocks: (plan?.blocks ?? []).map((b) => ({
+      kind: b.kind, startUtc: b.startUtc, endUtc: b.endUtc, station: b.station, why: b.why,
+    })),
+    duties,
     raised: (plan?.conflicts ?? []).map((c) => ({
       date: c.date,
       hardness: c.hardness,

@@ -132,9 +132,12 @@ export function buildBriefData(
   for (const d of duties) {
     if (!d.reportUtc || !d.endUtc) continue;
     const tz = tzOf(d.station);
+    // `sectors` is absent on plenty of real model output, including for duties it
+    // labelled "flight". Reading it unguarded threw after a plan had already rendered.
+    const sectors = Array.isArray(d.sectors) ? d.sectors : [];
     const label =
-      d.kind === "flight"
-        ? d.sectors.map((s) => `${s.origin}–${s.dest}`).join(" ")
+      d.kind === "flight" && sectors.length
+        ? sectors.map((s) => `${s.origin}–${s.dest}`).join(" ")
         : d.kind;
     addSpan(
       rows, "duty", d.reportUtc, d.endUtc, d.station, label,

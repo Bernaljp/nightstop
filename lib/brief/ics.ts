@@ -137,9 +137,14 @@ export function planToIcs(
   if (includeDuties) {
     for (const d of duties) {
       if (!d.reportUtc || !d.endUtc) continue;
+      // `sectors` is absent on plenty of real model output, including for duties it
+      // labelled "flight". Reading it without a guard threw AFTER the plan had already
+      // rendered, and the catch upstream then replaced a perfectly good plan with a
+      // failure message.
+      const sectors = Array.isArray(d.sectors) ? d.sectors : [];
       const label =
-        d.kind === "flight"
-          ? d.sectors.map((s) => `${s.origin}–${s.dest}`).join(" ")
+        d.kind === "flight" && sectors.length
+          ? sectors.map((s) => `${s.origin}–${s.dest}`).join(" ")
           : d.kind.charAt(0).toUpperCase() + d.kind.slice(1);
       // Duties are shown as free time so they never block the crew member's own calendar
       // — this is a plan about them, not an authority over their diary.

@@ -13,6 +13,7 @@
   --ground:#0d1117; --raised:#151c26; --sunk:#0a0e14; --line:#232c3a;
   --ink:#e8eef6; --ink-2:#93a1b5; --ink-3:#61708a;
   --sleep:#4d94ea; --duty:#e2703c; --nap:#23b183; --flag:#edb54a; --bad:#e05a5a;
+  --wocl:#ffffff14; --wocl-e:#ffffff33;
 }
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
@@ -20,6 +21,7 @@
     --ground:#f6f7f9; --raised:#ffffff; --sunk:#eceef2; --line:#dde1e8;
     --ink:#0d1117; --ink-2:#4e5a6e; --ink-3:#7b879a;
     --sleep:#2a78d6; --duty:#c9501f; --nap:#1baf7a; --flag:#a97400; --bad:#c0392f;
+    --wocl:#0d111714; --wocl-e:#0d111730;
   }
 }
 :root[data-theme="light"] {
@@ -27,6 +29,7 @@
   --ground:#f6f7f9; --raised:#ffffff; --sunk:#eceef2; --line:#dde1e8;
   --ink:#0d1117; --ink-2:#4e5a6e; --ink-3:#7b879a;
   --sleep:#2a78d6; --duty:#c9501f; --nap:#1baf7a; --flag:#a97400; --bad:#c0392f;
+  --wocl:#0d111714; --wocl-e:#0d111730;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);
@@ -91,6 +94,29 @@ select{background:var(--raised);color:var(--ink);border:1px solid var(--line);
 .mis{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--bad);
   padding:4px 0;border-top:1px solid var(--line);overflow-wrap:anywhere}
 
+.sched{padding:14px 16px;border-bottom:1px solid var(--line)}
+.rw{display:grid;grid-template-columns:64px 1fr;align-items:center;gap:9px;height:17px}
+.rw .g{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-3);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.rt{position:relative;height:12px;border-radius:2px;
+  background:linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:12.5% 100%}
+.rt i{position:absolute;display:block;border-radius:2px}
+.rt i.wocl{top:0;height:12px;background:var(--wocl);border-inline:1px solid var(--wocl-e);border-radius:0}
+.rt i.duty{top:0;height:5px;background:var(--duty)}
+.rt i.main{top:6px;height:6px;background:var(--sleep)}
+.rt i.pre-duty-nap,.rt i.recovery-nap{top:6px;height:6px;background:var(--nap)}
+.hours{display:grid;grid-template-columns:64px 1fr;font-size:9.5px;color:var(--ink-3);
+  margin-bottom:3px;font-family:"IBM Plex Mono",monospace}
+.hours>div:last-child{display:grid;grid-template-columns:repeat(8,1fr)}
+.hours span{border-left:1px solid var(--line);padding-left:3px}
+.rkey{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:11.5px;color:var(--ink-2)}
+.rkey i{display:inline-block;width:15px;height:6px;border-radius:2px;margin-right:5px;vertical-align:middle}
+.agenda{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.ag{display:grid;grid-template-columns:74px 96px 1fr;gap:10px;padding:6px 0;
+  border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);align-items:baseline}
+.ag:first-child{border-top:0}
+.ag b{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;color:var(--ink)}
+.ag .w{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
 .about{background:var(--sunk);border:1px solid var(--line);border-radius:9px;
   padding:13px 16px;margin-bottom:16px;color:var(--ink-2);font-size:14px}
 .about b{color:var(--ink)}
@@ -204,6 +230,76 @@ const E = globalThis.NightstopEngine;
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
 
+
+/* ---------------- the schedule ---------------- */
+
+/**
+ * Draws the plan, rather than describing it.
+ *
+ * Uses buildBriefData from the repository - the same function the printed briefing uses
+ * - so what a viewer sees here is laid out by the code that produced the real output,
+ * not a second implementation that could drift from it.
+ */
+function scheduleHtml(duties, blocks, base, commute, from, to, limit) {
+  const profile = {
+    base,
+    baseTz: (E.AIRPORTS[base] || {}).tz || "UTC",
+    commuteMinutes: { [base]: commute },
+    defaultCommuteMinutes: 35,
+  };
+  let data;
+  try {
+    data = E.buildBriefData("", duties, profile, { caseId: "", blocks, conflicts: [] }, { from, to });
+  } catch (e) {
+    return `<div class="body empty">Could not lay out the schedule: ${esc(e.message)}</div>`;
+  }
+
+  const days = limit ? data.days.slice(0, limit) : data.days;
+  const hours = [0, 3, 6, 9, 12, 15, 18, 21]
+    .map((h) => `<span>${String(h).padStart(2, "0")}</span>`).join("");
+
+  const rows = days.map((r) => {
+    const bars = r.spans.map((sp) => {
+      const l = (sp.from * 100).toFixed(2);
+      const w = Math.max(0.5, (sp.to - sp.from) * 100).toFixed(2);
+      return `<i class="${sp.kind}" style="left:${l}%;width:${w}%" title="${esc(sp.title)}"></i>`;
+    }).join("");
+    return `<div class="rw"><span class="g">${esc(r.dow)} ${esc(r.date.slice(8))} ${esc(r.station)}</span><div class="rt">${bars}</div></div>`;
+  }).join("");
+
+  // Every sleep block, in order, with the reason it sits where it does.
+  // The `why` line already names the station and the local hours, so the row does not
+  // repeat them - it carries the date, the span, and the reason.
+  const agenda = blocks
+    .slice()
+    .sort((a, b) => a.startUtc.localeCompare(b.startUtc))
+    .map((b) => {
+      const tz = (E.AIRPORTS[b.station] || {}).tz || "UTC";
+      const s = new Date(b.startUtc), e = new Date(b.endUtc);
+      const mins = Math.round((e - s) / 60000);
+      const hhmm = (d) => new Intl.DateTimeFormat("en-GB",
+        { timeZone: tz, hour: "2-digit", minute: "2-digit", hour12: false }).format(d);
+      const day = new Intl.DateTimeFormat("en-GB",
+        { timeZone: tz, weekday: "short", day: "2-digit", month: "short" }).format(s);
+      const name = { main: "Sleep", "pre-duty-nap": "Nap", "recovery-nap": "Recovery" }[b.kind] || b.kind;
+      return `<div class="ag"><b>${esc(day)}</b>
+        <span class="w">${esc(hhmm(s))}\u2192${esc(hhmm(e))} \u00b7 ${Math.floor(mins/60)}h${String(mins%60).padStart(2,"0")}</span>
+        <span>${esc(b.why)}</span></div>`;
+    }).join("");
+
+  return `<div class="sched">
+    <div class="hours"><div></div><div>${hours}</div></div>
+    ${rows}
+    <div class="rkey">
+      <span><i style="background:var(--sleep)"></i>sleep</span>
+      <span><i style="background:var(--nap)"></i>nap</span>
+      <span><i style="background:var(--duty)"></i>on duty</span>
+      <span><i style="background:var(--wocl);outline:1px solid var(--wocl-e)"></i>circadian low</span>
+    </div>
+    <div class="agenda">${agenda || '<div class="empty">No sleep blocks in this stretch.</div>'}</div>
+  </div>`;
+}
+
 /* ---------------- recorded ---------------- */
 let cur = DATA.cases[0];
 let version = "nightstop";
@@ -248,7 +344,7 @@ function renderRecorded() {
     <div class="stat ${wrong ? "bad" : "good"}"><b>${wrong}</b><span>fields read wrong</span></div>
     <div class="stat ${a.missed.length ? "bad" : "good"}"><b>${a.raised.filter(r=>r.real).length}/${cur.realConflicts}</b><span>real collisions surfaced</span></div>
     <div class="stat ${invented ? "bad" : "good"}"><b>${invented}</b><span>${version === "chatbot" ? "not traceable to a rule" : "rules invented"}</span></div>
-    <div class="stat"><b>${a.blocks}</b><span>sleep blocks</span></div>`;
+    <div class="stat"><b>${a.blockCount}</b><span>sleep blocks</span></div>`;
 
   const real = a.raised.filter((r) => r.real);
   const fake = a.raised.filter((r) => !r.real);
@@ -256,6 +352,9 @@ function renderRecorded() {
     `<div class="item ${cls}"><span class="d">${esc(c.date.slice(5))}</span><span>${esc(c.statement)}</span></div>`;
 
   $("out").innerHTML = `
+    <div class="grp"><h3>The schedule it produced
+      <span class="tag ${a.blockCount ? "t-ok" : "t-bad"}">${a.blockCount} blocks</span></h3></div>
+    ${scheduleHtml(a.duties, a.blocks, cur.base, cur.commute, cur.from, cur.to, 0)}
     <div class="grp">
       <h3>Surfaced, and real <span class="tag t-ok">${real.length}</span></h3>
       ${real.length ? real.slice(0, 6).map((c) => row(c, "real")).join("") : '<div class="empty">None.</div>'}
@@ -452,6 +551,9 @@ Return ONLY JSON: {"duties":[{"date":"YYYY-MM-DD","kind":"flight|positioning|sta
     const grouped = {};
     for (const c of plan.conflicts) (grouped[c.ruleId] ||= []).push(c);
     $("lout").innerHTML = `
+      <div class="grp"><h3>The schedule
+        <span class="tag ${plan.blocks.length ? "t-ok" : "t-bad"}">${plan.blocks.length} blocks</span></h3></div>
+      ${scheduleHtml(duties, plan.blocks, base, commute, from, to, 0)}
       <div class="grp">
         <h3>What needs your decision <span class="tag ${hard ? "t-bad" : "t-ok"}">${Object.keys(grouped).length}</span></h3>
         ${Object.values(grouped).length
@@ -476,8 +578,16 @@ Return ONLY JSON: {"duties":[{"date":"YYYY-MM-DD","kind":"flight|positioning|sta
       </div>`;
     // The calendar is produced here but goes nowhere until the viewer asks for it.
     // Importing the file is the approval gate, enforced by the shape of the thing.
-    lastIcs = E.planToIcs(plan, duties);
-    $("save").classList.toggle("hide", !downloads);
+    // Building the calendar must never be able to take down a plan that already
+    // rendered. It threw on a duty with no sectors array and the catch below replaced a
+    // perfectly good schedule with a failure message.
+    try {
+      lastIcs = E.planToIcs(plan, duties);
+      $("save").classList.toggle("hide", !downloads);
+    } catch (icsErr) {
+      lastIcs = null;
+      $("save").classList.add("hide");
+    }
     $("log").textContent =
       `Done. The model read the document; the engine placed ${plan.blocks.length} sleep blocks ` +
       `and found ${plan.conflicts.length} collisions.` +
