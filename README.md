@@ -231,6 +231,29 @@ What makes it instructive is what did *not* catch it:
 
 A document can only grade what it prints. A *derived* field has no checksum at all.
 
+## The calendar
+
+The plan is delivered as an `.ics` file alongside the briefing — every sleep block with
+its reasoning in the description, plus your duties for context, marked *free* so the plan
+never blocks out your own diary.
+
+```bash
+npm run brief -- results/<runId> d05-halcyon    # writes the briefing and the .ics
+```
+
+Google Calendar takes it under Settings → Import & export; macOS and iOS open it
+directly; Outlook imports it as an iCalendar file. Times are absolute UTC instants, so a
+phone renders them in whatever zone it is in — which is, by construction, the zone the
+crew member will be sleeping in.
+
+**Why a file rather than a Google Calendar API sync.** A sync needs an OAuth client, and
+an unverified one is capped at an allowlist of test users with refresh tokens that expire
+in seven days — anyone handed this plan would have to be added by hand first. The file
+works for everyone immediately, needs no account setup, and makes the human checkpoint
+structural: nothing reaches a calendar until a person imports it. API sync would be the
+right call for a product with a verified OAuth app behind it; it is the wrong call for
+something a judge should be able to run in five minutes.
+
 ## Main failure mode
 
 **Confident derivation.** Everything on the page can be checked against something else on
@@ -300,8 +323,10 @@ credentials; set `ANTHROPIC_API_KEY` in `.env.local` instead if you prefer.
 - **Advisory only.** No ruling on whether any duty is legal. The operator owns that.
 - **Synthetic data throughout.** Every airline, roster and crew reference in this
   repository is invented. No real person's schedule appears anywhere in it.
-- **Consequential actions are gated.** No model-facing tool can write to a calendar; the
-  briefing is produced, and writing it anywhere is a separate step behind approval.
+- **Consequential actions are gated.** No model-facing tool can write to a calendar. The
+  plan comes out as an `.ics` file, and importing it is the approval — a person opens it
+  and confirms, on their own device. The gate is the shape of the thing, not a prompt
+  asking a model to behave.
 - **Sources are public.** 14 CFR Part 117 from eCFR, ICAO Doc 9966, FAA AC 120-103A, UK
   CAA Paper 2003/8, Flight Safety Foundation controlled-rest guidance. Where a number is
   a reading of guidance rather than a quoted limit, the rule says so.

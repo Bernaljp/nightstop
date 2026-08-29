@@ -21,12 +21,13 @@ const entry = "demo-entry.ts";
 writeFileSync(
   entry,
   `import { buildPlan } from "./lib/plan/engine";
+import { planToIcs } from "./lib/brief/ics";
 import { mandatoryConflicts, restPeriods } from "./lib/eval/conflicts";
 import { BASELINE_PACK } from "./lib/rules/baseline-pack";
 import { OPERATOR_PACK, PREFERENCE_PACK, mergePacks } from "./lib/rules/operator-pack";
 import { AIRPORTS } from "./lib/corpus/network";
 (globalThis as Record<string, unknown>).NightstopEngine = {
-  buildPlan, mandatoryConflicts, restPeriods,
+  buildPlan, mandatoryConflicts, restPeriods, planToIcs,
   PACK: mergePacks(BASELINE_PACK, OPERATOR_PACK, PREFERENCE_PACK),
   AIRPORTS,
 };

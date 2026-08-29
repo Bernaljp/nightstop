@@ -4,11 +4,12 @@
  *   npx tsx scripts/brief.ts results/<runId> d05-halcyon [--out out/brief.html]
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
-import { join, dirname } from "node:path";
+import { join, dirname, basename } from "node:path";
 import type { GroundTruth } from "../lib/corpus/schema";
 import type { SleepPlan } from "../lib/plan/schema";
 import { buildBriefData } from "../lib/brief/data";
 import { renderBrief } from "../lib/brief/render";
+import { planToIcs } from "../lib/brief/ics";
 
 const [runDir, caseId] = process.argv.slice(2);
 if (!runDir || !caseId) {
@@ -36,9 +37,16 @@ const data = buildBriefData(
   { from: truth.coveredFrom, to: truth.coveredTo },
 );
 mkdirSync(dirname(out), { recursive: true });
-writeFileSync(out, renderBrief(data));
+const icsName = basename(out).replace(/\.html$/, ".ics");
+writeFileSync(out, renderBrief(data, undefined, icsName));
+
+const ics = out.replace(/\.html$/, ".ics");
+writeFileSync(ics, planToIcs(plan, duties));
+const events = (planToIcs(plan, duties).match(/BEGIN:VEVENT/g) ?? []).length;
+
 console.log(
   `${out}\n  ${data.days.length} days · ${data.stats.nights} nights planned · ` +
   `${data.conflicts.hard.length + data.conflicts.recommended.length + data.conflicts.preference.length} to decide · ` +
-  `${data.derivations.length} derived values flagged`,
+  `${data.derivations.length} derived values flagged\n` +
+  `${ics}\n  ${events} events — import into Google Calendar, Apple Calendar or Outlook`,
 );

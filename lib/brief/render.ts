@@ -114,6 +114,12 @@ th { text-align: left; font-size: 11px; letter-spacing: 0.06em; text-transform: 
 td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top;
      font-variant-numeric: tabular-nums; }
 td.note { font-variant-numeric: normal; color: var(--ink-2); }
+.cal { border: 1px solid var(--line); border-radius: 10px; padding: 15px 18px;
+       background: var(--raised); }
+.cal p { margin: 0 0 9px; }
+.cal ol { margin: 0 0 9px; padding-left: 19px; color: var(--ink-2); font-size: 14.5px; }
+.cal li { margin: 4px 0; }
+.cal .sub { font-size: 13.5px; color: var(--ink-3); margin: 0; }
 .confirm { border: 1px dashed var(--rec); border-radius: 10px; padding: 13px 15px; background: var(--raised); }
 .confirm p { margin: 0 0 8px; }
 footer { margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--line);
@@ -183,7 +189,7 @@ function conflictHtml(g: Grouped): string {
 </div>`;
 }
 
-export function renderBrief(d: BriefData, prose?: string): string {
+export function renderBrief(d: BriefData, prose?: string, icsName?: string): string {
   const all = groupConflicts([
     ...d.conflicts.hard, ...d.conflicts.recommended, ...d.conflicts.preference,
   ]);
@@ -226,6 +232,21 @@ ${d.derivations.map((x) => `<tr><td>${esc(x.date.slice(5))}</td><td>${esc(x.fiel
 ${d.uncertainties.map((u) => `<tr><td>—</td><td>unclear</td><td class="note" colspan="2">${esc(u)}</td></tr>`).join("")}
 </tbody></table>
 </div>` : ""}
+
+<h2>Put it in your calendar</h2>
+<div class="cal">
+  <p><strong>${icsName ? esc(icsName) : "The .ics file next to this page"}</strong> holds
+  every block below, plus your duties for context. Import it and the plan is on your phone
+  in whatever timezone your phone is in — which is the one you will be sleeping in.</p>
+  <ol>
+    <li><strong>Google Calendar</strong> — Settings → Import &amp; export → Import. Put it
+    in its own calendar so you can switch the whole plan off in one tap.</li>
+    <li><strong>iPhone / Mac</strong> — open the file; Calendar offers to add the events.</li>
+    <li><strong>Outlook</strong> — File → Open &amp; Export → Import an iCalendar file.</li>
+  </ol>
+  <p class="sub">Duties are marked <em>free</em> rather than busy, so this never blocks out
+  your own diary. Nothing is sent anywhere: importing is you deciding, on your device.</p>
+</div>
 
 <h2>The month</h2>
 <div class="ribbon">

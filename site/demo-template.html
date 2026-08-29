@@ -173,6 +173,7 @@ paste, using the actual reader prompt and the actual planning engine from the re
         <div class="bar" style="margin:12px 0 0">
           <button class="go" id="run">Read and plan it</button>
           <button class="ghost" id="load">Load a sample</button>
+          <button class="ghost hide" id="save">Download the calendar</button>
           <span class="hint" id="livestate"></span>
         </div>
         <div class="log" id="log"></div>
@@ -309,7 +310,12 @@ function setMode(m) {
 // not undefined, so it has to be looked up rather than optional-chained - and the whole
 // page must render without it, since the recorded runs need no model at all.
 let sample = null;
+let downloads = null;
+let lastIcs = null;
 const host = typeof claude !== "undefined" ? claude : null;
+if (host && typeof host.use === "function") {
+  Promise.resolve(host.use("downloads")).then((d) => { downloads = d; }).catch(() => {});
+}
 $("run").disabled = true;
 if (host && typeof host.use === "function") {
   Promise.resolve(host.use("sample"))
@@ -335,6 +341,17 @@ function loadSample() {
   $("input").dataset.to = c.to;
   $("input").dataset.commute = String(c.commute);
 }
+$("save").addEventListener("click", async () => {
+  if (!downloads || !lastIcs) return;
+  try {
+    await downloads.save({ filename: "nightstop-rest-plan.ics", data: lastIcs });
+    $("log").textContent =
+      "Saved. Import it into Google Calendar (Settings \u2192 Import & export), or just open " +
+      "it on a Mac or iPhone. Duties are marked free, so it never blocks out your own diary.";
+  } catch (err) {
+    if (err && err.code !== "cancelled") $("log").textContent = "The download was not saved.";
+  }
+});
 $("load").addEventListener("click", loadSample);
 loadSample();
 
@@ -411,7 +428,14 @@ Return ONLY JSON: {"duties":[{"date":"YYYY-MM-DD","kind":"flight|positioning|sta
           `<div class="item"><span class="d">${esc(b.startUtc.slice(5,10))}</span><span>${esc(b.why)}</span></div>`).join("")
           || '<div class="empty">No rest periods found.</div>'}
       </div>`;
-    $("log").textContent = `Done. The model read the document; the engine placed ${plan.blocks.length} sleep blocks and found ${plan.conflicts.length} collisions.`;
+    // The calendar is produced here but goes nowhere until the viewer asks for it.
+    // Importing the file is the approval gate, enforced by the shape of the thing.
+    lastIcs = E.planToIcs(plan, duties);
+    $("save").classList.toggle("hide", !downloads);
+    $("log").textContent =
+      `Done. The model read the document; the engine placed ${plan.blocks.length} sleep blocks ` +
+      `and found ${plan.conflicts.length} collisions.` +
+      (downloads ? " The calendar is ready to download." : "");
   } catch (err) {
     const code = err && err.code;
     $("log").textContent =
