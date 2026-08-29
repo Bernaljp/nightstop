@@ -10,6 +10,18 @@ someone it affects directly.
 
 ---
 
+## Try it
+
+An interactive demo replays every recorded run: pick any of the twelve rosters, switch
+between the first version and the last, and see exactly what each read, planned, surfaced
+and withheld — checked against the same ground truth the evaluation used. It also runs
+live on a roster you paste, using the real reader prompt and the real planning engine
+bundled from this repository.
+
+```bash
+npm run demo:data && npm run demo   # writes site/demo.html
+```
+
 ## Who has this problem
 
 Line pilots and cabin crew on rotating rosters that cross time zones. Every month a PDF

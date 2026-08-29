@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nightstop Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  color-scheme: dark;
+  --ground:#0d1117; --raised:#151c26; --sunk:#0a0e14; --line:#232c3a;
+  --ink:#e8eef6; --ink-2:#93a1b5; --ink-3:#61708a;
+  --sleep:#4d94ea; --duty:#e2703c; --nap:#23b183; --flag:#edb54a; --bad:#e05a5a;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --ground:#f6f7f9; --raised:#ffffff; --sunk:#eceef2; --line:#dde1e8;
+    --ink:#0d1117; --ink-2:#4e5a6e; --ink-3:#7b879a;
+    --sleep:#2a78d6; --duty:#c9501f; --nap:#1baf7a; --flag:#a97400; --bad:#c0392f;
+  }
+}
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ground:#f6f7f9; --raised:#ffffff; --sunk:#eceef2; --line:#dde1e8;
+  --ink:#0d1117; --ink-2:#4e5a6e; --ink-3:#7b879a;
+  --sleep:#2a78d6; --duty:#c9501f; --nap:#1baf7a; --flag:#a97400; --bad:#c0392f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font-family:Barlow,"Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.55}
+.wrap{max-width:1240px;margin:0 auto;padding:34px 20px 80px}
+h1{font-size:32px;font-weight:600;letter-spacing:-0.02em;margin:0 0 6px}
+.sub{color:var(--ink-2);max-width:74ch;margin:0 0 26px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+  font-weight:600;margin:0 0 9px}
+code,.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+button{font-family:inherit;font-size:inherit;cursor:pointer}
+button:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--sleep);outline-offset:2px}
+
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:16px}
+select{background:var(--raised);color:var(--ink);border:1px solid var(--line);
+  border-radius:7px;padding:9px 11px;font-family:inherit;font-size:14px;min-width:270px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden;background:var(--raised)}
+.seg button{background:none;border:0;color:var(--ink-2);padding:9px 15px;font-weight:500}
+.seg button[aria-pressed="true"]{background:var(--sleep);color:#fff}
+.seg button + button{border-left:1px solid var(--line)}
+.hint{color:var(--ink-3);font-size:13px}
+
+.grid{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:1000px){.grid{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr)}}
+.pane{background:var(--raised);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.pane header{padding:13px 16px;border-bottom:1px solid var(--line);display:flex;
+  justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.pane h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  font-weight:600;margin:0}
+.body{padding:15px 16px}
+.roster{font-family:"IBM Plex Mono",monospace;font-size:10.5px;line-height:1.5;
+  white-space:pre;overflow:auto;max-height:560px;padding:14px 16px;color:var(--ink-2);
+  background:var(--sunk)}
+
+.verdict{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:6px;
+  font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.v-good{background:var(--nap);color:#04150e}
+.v-bad{background:var(--bad);color:#fff}
+.v-warn{background:var(--flag);color:#231800}
+
+.stats{display:flex;flex-wrap:wrap;gap:20px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.stat b{display:block;font-family:"IBM Plex Mono",monospace;font-size:19px;font-weight:500;
+  font-variant-numeric:tabular-nums}
+.stat span{font-size:11.5px;color:var(--ink-3)}
+.stat.bad b{color:var(--bad)} .stat.good b{color:var(--nap)}
+
+.grp{padding:13px 16px;border-bottom:1px solid var(--line)}
+.grp:last-child{border-bottom:0}
+.grp h3{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  font-weight:600;margin:0 0 9px;display:flex;gap:8px;align-items:center}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:10px;padding:1px 6px;border-radius:4px;
+  letter-spacing:0}
+.t-ok{background:color-mix(in srgb,var(--nap) 22%,transparent);color:var(--nap)}
+.t-bad{background:color-mix(in srgb,var(--bad) 22%,transparent);color:var(--bad)}
+.t-warn{background:color-mix(in srgb,var(--flag) 22%,transparent);color:var(--flag)}
+.item{display:grid;grid-template-columns:52px 1fr;gap:11px;padding:7px 0;
+  border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.item:first-of-type{border-top:0}
+.item .d{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3)}
+.item.real .d{color:var(--nap)} .item.fake .d{color:var(--bad)}
+.empty{color:var(--ink-3);font-style:italic;font-size:14px}
+.mis{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--bad);
+  padding:4px 0;border-top:1px solid var(--line);overflow-wrap:anywhere}
+
+.about{background:var(--sunk);border:1px solid var(--line);border-radius:9px;
+  padding:13px 16px;margin-bottom:16px;color:var(--ink-2);font-size:14px}
+.about b{color:var(--ink)}
+.quirk{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  background:var(--raised);border:1px solid var(--line);border-radius:4px;
+  padding:1px 6px;margin:3px 4px 0 0;color:var(--ink-3)}
+
+textarea{width:100%;min-height:230px;background:var(--sunk);color:var(--ink-2);
+  border:1px solid var(--line);border-radius:8px;padding:13px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;line-height:1.5;resize:vertical}
+.go{background:var(--sleep);color:#fff;border:0;border-radius:7px;padding:11px 20px;
+  font-weight:600}
+.go[disabled]{opacity:.5;cursor:not-allowed}
+.ghost{background:var(--raised);color:var(--ink-2);border:1px solid var(--line);
+  border-radius:7px;padding:11px 16px}
+.log{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);
+  white-space:pre-wrap;margin-top:12px;line-height:1.6}
+.hide{display:none!important}
+footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+  color:var(--ink-3);font-size:13.5px}
+footer a{color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Nightstop — try it</h1>
+<p class="sub">Two ways in. <b>Recorded</b> replays real runs: pick any of the twelve
+rosters and switch between the first version and the last, with every output checked
+against the same ground truth the evaluation used. <b>Live</b> runs it on a roster you
+paste, using the actual reader prompt and the actual planning engine from the repo.</p>
+
+<div class="bar">
+  <div class="seg" role="group" aria-label="Mode">
+    <button id="m-rec" aria-pressed="true">Recorded runs</button>
+    <button id="m-live" aria-pressed="false">Try it live</button>
+  </div>
+  <span class="hint" id="mode-hint">Real outputs from the evaluation. No model calls.</span>
+</div>
+
+<!-- ---------------- recorded ---------------- -->
+<div id="recorded">
+  <div class="bar">
+    <select id="pick" aria-label="Roster"></select>
+    <div class="seg" role="group" aria-label="Version">
+      <button id="v-1" aria-pressed="false">v1 · one prompt</button>
+      <button id="v-4" aria-pressed="true">v4 · Nightstop</button>
+    </div>
+    <span class="hint" id="vhint"></span>
+  </div>
+
+  <div class="about" id="about"></div>
+
+  <div class="grid">
+    <div class="pane">
+      <header><h2>The roster that went in</h2><span class="hint" id="rmeta"></span></header>
+      <div class="roster" id="roster"></div>
+    </div>
+    <div class="pane">
+      <header><h2 id="outtitle">What it produced</h2><span id="verdict"></span></header>
+      <div class="stats" id="stats"></div>
+      <div id="out"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ---------------- live ---------------- -->
+<div id="live" class="hide">
+  <div class="about">
+    <b>This runs the real thing.</b> The page sends your roster to Claude with the same
+    reader prompt the evaluated system uses, then plans it with the same deterministic
+    engine, bundled from the repository. The model reads; the arithmetic does not.
+    Only stations in the demo's airport table are known — start from a sample and edit it.
+  </div>
+  <div class="grid">
+    <div class="pane">
+      <header><h2>Roster text</h2><span class="hint" id="livemeta"></span></header>
+      <div class="body">
+        <textarea id="input" spellcheck="false" aria-label="Roster text"></textarea>
+        <div class="bar" style="margin:12px 0 0">
+          <button class="go" id="run">Read and plan it</button>
+          <button class="ghost" id="load">Load a sample</button>
+          <span class="hint" id="livestate"></span>
+        </div>
+        <div class="log" id="log"></div>
+      </div>
+    </div>
+    <div class="pane">
+      <header><h2>What it produced</h2><span id="lverdict"></span></header>
+      <div class="stats" id="lstats"></div>
+      <div id="lout"><div class="body empty">Nothing yet. Press <b>Read and plan it</b>.</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <b>Advisory only.</b> Not a flight time limitations tool; it makes no ruling on whether
+  any duty is legal. Every airline and roster here is invented. Code, evaluation and
+  trajectories: <a href="https://github.com/Bernaljp/nightstop">github.com/Bernaljp/nightstop</a>
+</footer>
+
+</div>
+
+<script>/*{{ENGINE}}*/</script>
+<script>
+const DATA = "{{DATA}}";
+const READER_PROMPT = "{{READER_PROMPT}}";
+const E = globalThis.NightstopEngine;
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+
+/* ---------------- recorded ---------------- */
+let cur = DATA.cases[0];
+let version = "nightstop";
+
+const VLABEL = {
+  chatbot: "v1 · one prompt, the PDF, no rules, no tools. What a pilot gets today.",
+  nightstop: "v4 · model reads with tools, deterministic engine plans and checks the rules.",
+};
+
+const pick = $("pick");
+DATA.cases.forEach((c, i) => {
+  const o = document.createElement("option");
+  o.value = String(i);
+  o.textContent = `${c.set === "heldout" ? "held out · " : ""}${c.operator} — ${c.quirks[0]}`;
+  pick.appendChild(o);
+});
+
+function verdictHtml(bucket) {
+  const good = bucket === "surfaced" || bucket === "clean";
+  const cls = good ? "v-good" : bucket === "false_alarm" ? "v-warn" : "v-bad";
+  const word = {
+    surfaced: "trustworthy", clean: "trustworthy", missed: "hid a real collision",
+    misread: "read the roster wrong", false_alarm: "invented a rule", unusable: "no plan",
+  }[bucket] || bucket;
+  return `<span class="verdict ${cls}">${esc(word)}</span>`;
+}
+
+function renderRecorded() {
+  const a = cur[version];
+  $("rmeta").textContent = `${cur.from} to ${cur.to} · based ${cur.base} · ${cur.commute} min commute`;
+  $("roster").textContent = cur.rosterText;
+  $("about").innerHTML =
+    `<b>${esc(cur.operator)}</b> — ${esc(cur.intent)}<br>` +
+    cur.quirks.map((q) => `<span class="quirk">${esc(q)}</span>`).join("");
+  $("vhint").textContent = VLABEL[version];
+  $("outtitle").textContent = version === "chatbot" ? "What v1 produced" : "What v4 produced";
+  $("verdict").innerHTML = verdictHtml(a.bucket);
+
+  const wrong = a.fieldsTotal - a.fieldsCorrect;
+  const invented = a.raised.filter((r) => !r.real).length;
+  $("stats").innerHTML = `
+    <div class="stat ${wrong ? "bad" : "good"}"><b>${wrong}</b><span>fields read wrong</span></div>
+    <div class="stat ${a.missed.length ? "bad" : "good"}"><b>${a.raised.filter(r=>r.real).length}/${cur.realConflicts}</b><span>real collisions surfaced</span></div>
+    <div class="stat ${invented ? "bad" : "good"}"><b>${invented}</b><span>${version === "chatbot" ? "not traceable to a rule" : "rules invented"}</span></div>
+    <div class="stat"><b>${a.blocks}</b><span>sleep blocks</span></div>`;
+
+  const real = a.raised.filter((r) => r.real);
+  const fake = a.raised.filter((r) => !r.real);
+  const row = (c, cls) =>
+    `<div class="item ${cls}"><span class="d">${esc(c.date.slice(5))}</span><span>${esc(c.statement)}</span></div>`;
+
+  $("out").innerHTML = `
+    <div class="grp">
+      <h3>Surfaced, and real <span class="tag t-ok">${real.length}</span></h3>
+      ${real.length ? real.slice(0, 6).map((c) => row(c, "real")).join("") : '<div class="empty">None.</div>'}
+      ${real.length > 6 ? `<div class="empty" style="padding-top:7px">+ ${real.length - 6} more</div>` : ""}
+    </div>
+    <div class="grp">
+      <h3>Withheld — real, and never mentioned <span class="tag ${a.missed.length ? "t-bad" : "t-ok"}">${a.missed.length}</span></h3>
+      ${a.missed.length ? a.missed.slice(0, 6).map((c) => row(c, "")).join("") : '<div class="empty">Nothing hidden.</div>'}
+      ${a.missed.length > 6 ? `<div class="empty" style="padding-top:7px">+ ${a.missed.length - 6} more</div>` : ""}
+    </div>
+    <div class="grp">
+      <h3>${version === "chatbot" ? "Raised, but not traceable to any rule" : "Invented — cited at you, not real"}
+        <span class="tag ${fake.length ? "t-bad" : "t-ok"}">${fake.length}</span></h3>
+      ${version === "chatbot" && fake.length
+        ? `<div class="empty" style="padding-bottom:8px">Worth being fair about: v1 was never
+           shown the operator's manual or your own lines, so it cannot cite them. Several of
+           these are sensible fatigue observations. They are still unusable — a warning you
+           cannot look up is a warning you cannot act on, and some are attributed to rules
+           that do not exist.</div>`
+        : ""}
+      ${fake.length ? fake.slice(0, 5).map((c) => row(c, "fake")).join("") : '<div class="empty">None.</div>'}
+      ${fake.length > 5 ? `<div class="empty" style="padding-top:7px">+ ${fake.length - 5} more</div>` : ""}
+    </div>
+    ${a.misreads.length ? `<div class="grp"><h3>Read wrong <span class="tag t-bad">${wrong}</span></h3>
+      ${a.misreads.map((m) => `<div class="mis">${esc(m)}</div>`).join("")}</div>` : ""}`;
+}
+
+pick.addEventListener("change", () => { cur = DATA.cases[+pick.value]; renderRecorded(); });
+$("v-1").addEventListener("click", () => { version = "chatbot"; setV(); });
+$("v-4").addEventListener("click", () => { version = "nightstop"; setV(); });
+function setV() {
+  $("v-1").setAttribute("aria-pressed", String(version === "chatbot"));
+  $("v-4").setAttribute("aria-pressed", String(version === "nightstop"));
+  renderRecorded();
+}
+
+$("m-rec").addEventListener("click", () => setMode("rec"));
+$("m-live").addEventListener("click", () => setMode("live"));
+function setMode(m) {
+  const rec = m === "rec";
+  $("m-rec").setAttribute("aria-pressed", String(rec));
+  $("m-live").setAttribute("aria-pressed", String(!rec));
+  $("recorded").classList.toggle("hide", !rec);
+  $("live").classList.toggle("hide", rec);
+  $("mode-hint").textContent = rec
+    ? "Real outputs from the evaluation. No model calls."
+    : "Calls Claude with the real reader prompt, then plans with the real engine.";
+}
+
+/* ---------------- live ---------------- */
+// `claude` only exists inside the artifact host. A bare reference is a ReferenceError,
+// not undefined, so it has to be looked up rather than optional-chained - and the whole
+// page must render without it, since the recorded runs need no model at all.
+let sample = null;
+const host = typeof claude !== "undefined" ? claude : null;
+$("run").disabled = true;
+if (host && typeof host.use === "function") {
+  Promise.resolve(host.use("sample"))
+    .then((s) => {
+      sample = s;
+      $("run").disabled = !s;
+      $("livestate").textContent = s ? "" : "Live mode is not available in this view.";
+    })
+    .catch(() => {
+      $("livestate").textContent = "Live mode is not available in this view.";
+    });
+} else {
+  $("livestate").textContent =
+    "Live mode runs on claude.ai. Open the published page to use it — the recorded runs work anywhere.";
+}
+
+function loadSample() {
+  const c = DATA.cases[Math.floor(Math.random() * DATA.cases.length)];
+  $("input").value = c.rosterText.slice(0, 4200);
+  $("livemeta").textContent = `${c.operator} · based ${c.base}`;
+  $("input").dataset.base = c.base;
+  $("input").dataset.from = c.from;
+  $("input").dataset.to = c.to;
+  $("input").dataset.commute = String(c.commute);
+}
+$("load").addEventListener("click", loadSample);
+loadSample();
+
+$("run").addEventListener("click", async () => {
+  if (!sample) return;
+  const el = $("input");
+  const text = el.value.trim();
+  if (!text) return;
+  $("run").disabled = true;
+  $("log").textContent = "Reading the roster…";
+  $("lout").innerHTML = '<div class="body empty">Working…</div>';
+  $("lverdict").innerHTML = "";
+  $("lstats").innerHTML = "";
+
+  const base = el.dataset.base || "MAD";
+  const from = el.dataset.from || "2026-09-01";
+  const to = el.dataset.to || "2026-09-30";
+  const commute = Number(el.dataset.commute || 55);
+
+  try {
+    const res = await sample.json(
+      [{ role: "user", content:
+`${READER_PROMPT}
+
+You have no tools here, so state your timezone reasoning explicitly instead of calling one.
+
+Roster (${from} to ${to}, home base ${base}):
+
+${text}
+
+Return ONLY JSON: {"duties":[{"date":"YYYY-MM-DD","kind":"flight|positioning|standby|training|off","station":"IATA","endStation":"IATA","reportUtc":"ISO or null","endUtc":"ISO or null","sectors":[{"flightNo":"","origin":"","dest":"","depUtc":"ISO","arrUtc":"ISO"}]}],"derivations":[{"date":"","field":"","method":"","confidence":"high|medium|low"}],"uncertainties":[]}` }],
+      { modelTier: "complex", onText: () => { $("log").textContent = "Reading the roster… the model is working through the columns."; } },
+    );
+
+    const duties = res?.duties || [];
+    if (!duties.length) throw new Error("no duties came back");
+    $("log").textContent = `Read ${duties.length} duties. Planning with the deterministic engine…`;
+
+    const profile = { base, baseTz: (E.AIRPORTS[base] || {}).tz || "UTC",
+      commuteMinutes: { [base]: commute }, defaultCommuteMinutes: 35 };
+    const plan = E.buildPlan("live", duties, profile, E.PACK);
+
+    const derivs = res.derivations || [];
+    const hard = plan.conflicts.filter((c) => c.hardness === "hard-limit").length;
+    $("lverdict").innerHTML = `<span class="verdict v-good">plan produced</span>`;
+    $("lstats").innerHTML = `
+      <div class="stat"><b>${duties.length}</b><span>duties read</span></div>
+      <div class="stat"><b>${plan.blocks.length}</b><span>sleep blocks</span></div>
+      <div class="stat ${plan.conflicts.length ? "bad" : "good"}"><b>${plan.conflicts.length}</b><span>collisions found</span></div>
+      <div class="stat"><b>${derivs.length}</b><span>values it derived</span></div>`;
+
+    const grouped = {};
+    for (const c of plan.conflicts) (grouped[c.ruleId] ||= []).push(c);
+    $("lout").innerHTML = `
+      <div class="grp">
+        <h3>What needs your decision <span class="tag ${hard ? "t-bad" : "t-ok"}">${Object.keys(grouped).length}</span></h3>
+        ${Object.values(grouped).length
+          ? Object.values(grouped).slice(0, 6).map((g) =>
+              `<div class="item real"><span class="d">${esc(g[0].date.slice(5))}${g.length>1?`<br>+${g.length-1}`:""}</span>
+               <span>${esc(g[0].statement)}<br><span style="color:var(--ink-3);font-size:13px">${esc(g[0].options[0] || "")}</span></span></div>`).join("")
+          : '<div class="empty">Nothing collides with the rules on file.</div>'}
+      </div>
+      <div class="grp">
+        <h3>Worked out, not read <span class="tag ${derivs.length ? "t-warn" : "t-ok"}">${derivs.length}</span></h3>
+        ${derivs.length
+          ? derivs.slice(0, 5).map((d) =>
+              `<div class="item"><span class="d">${esc(String(d.date).slice(5))}</span>
+               <span><b>${esc(d.field)}</b> — ${esc(d.method)} <span class="tag t-warn">${esc(d.confidence)}</span></span></div>`).join("")
+          : '<div class="empty">Everything was printed on the page.</div>'}
+      </div>
+      <div class="grp">
+        <h3>First nights planned</h3>
+        ${plan.blocks.slice(0, 5).map((b) =>
+          `<div class="item"><span class="d">${esc(b.startUtc.slice(5,10))}</span><span>${esc(b.why)}</span></div>`).join("")
+          || '<div class="empty">No rest periods found.</div>'}
+      </div>`;
+    $("log").textContent = `Done. The model read the document; the engine placed ${plan.blocks.length} sleep blocks and found ${plan.conflicts.length} collisions.`;
+  } catch (err) {
+    const code = err && err.code;
+    $("log").textContent =
+      code === "not_granted" ? "Live mode needs your permission to call Claude."
+      : code === "rate_limited" ? "Rate limited — wait a moment and try again."
+      : `Could not finish: ${err && err.message ? err.message : err}`;
+    $("lout").innerHTML = '<div class="body empty">Nothing produced. The recorded runs still work.</div>';
+  } finally {
+    $("run").disabled = false;
+  }
+});
+
+setV();
+</script>
+</body>
+</html>
