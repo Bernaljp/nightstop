@@ -1,0 +1,22 @@
+{
+  "caseId": "d01-aurora",
+  "arm": "a-model-checks",
+  "costUsd": 0.8627692499999999,
+  "wallMs": 273819,
+  "humanSeconds": 0,
+  "bucket": "false_alarm",
+  "trustworthy": false,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 10,
+  "surfacedCount": 10,
+  "missed": [],
+  "falseAlarms": [
+    "sleep-per-24h-7h@2026-09-07",
+    "pref-sleep-target-7h30@2026-09-07",
+    "pref-sleep-target-7h30@2026-09-22"
+  ],
+  "planViolationCount": 0
+}

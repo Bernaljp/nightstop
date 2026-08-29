@@ -1,0 +1,25 @@
+{
+  "caseId": "d07-cirrus",
+  "arm": "a-model-checks",
+  "costUsd": 0.8853719999999999,
+  "wallMs": 248836,
+  "humanSeconds": 0,
+  "bucket": "false_alarm",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 3,
+  "surfacedCount": 3,
+  "missed": [],
+  "falseAlarms": [
+    "sleep-per-24h-7h@2026-09-11",
+    "pref-sleep-target-7h30@2026-09-11",
+    "sleep-per-24h-7h@2026-09-26",
+    "pref-sleep-target-7h30@2026-09-26",
+    "sleep-per-24h-7h@2026-09-28",
+    "pref-sleep-target-7h30@2026-09-28"
+  ],
+  "planViolationCount": 0
+}

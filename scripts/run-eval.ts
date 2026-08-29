@@ -7,6 +7,7 @@ import { REFERENCE_ARM, runArm, type Arm } from "../lib/eval/run";
 import { B1_CHATBOT, B2_STEELMAN } from "../lib/agents/baselines";
 import { NIGHTSTOP_ARM } from "../lib/agents/pipeline";
 import { NIGHTSTOP_REPAIR_ARM } from "../lib/agents/repair";
+import { ABLATION_MODEL_CHECKS } from "../lib/agents/ablation";
 import { BASELINE_PACK } from "../lib/rules/baseline-pack";
 import { OPERATOR_PACK, PREFERENCE_PACK, mergePacks } from "../lib/rules/operator-pack";
 import { BUCKET_SEVERITY } from "../lib/eval/grade";
@@ -17,6 +18,7 @@ const ARMS: Record<string, Arm> = {
   "b2-steelman": B2_STEELMAN,
   nightstop: NIGHTSTOP_ARM,
   "nightstop-repair": NIGHTSTOP_REPAIR_ARM,
+  "a-model-checks": ABLATION_MODEL_CHECKS,
 };
 
 function arg(name: string, fallback: string): string {

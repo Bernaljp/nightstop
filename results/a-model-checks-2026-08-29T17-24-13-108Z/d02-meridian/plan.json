@@ -1,0 +1,399 @@
+{
+  "caseId": "d02-meridian",
+  "blocks": [
+    {
+      "id": "main-2026-09-02",
+      "kind": "main",
+      "startUtc": "2026-09-01T14:00:00.000Z",
+      "endUtc": "2026-09-01T22:00:00.000Z",
+      "station": "MAD",
+      "why": "16:00 to 00:00 at MAD, covering 0h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-02",
+      "kind": "main",
+      "startUtc": "2026-09-02T07:23:00.000Z",
+      "endUtc": "2026-09-02T15:23:00.000Z",
+      "station": "MAD",
+      "why": "09:23 to 17:23 at MAD, covering 0h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-07",
+      "kind": "main",
+      "startUtc": "2026-09-03T21:00:00.000Z",
+      "endUtc": "2026-09-04T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-08",
+      "kind": "main",
+      "startUtc": "2026-09-07T18:45:00.000Z",
+      "endUtc": "2026-09-08T02:45:00.000Z",
+      "station": "MAD",
+      "why": "20:45 to 04:45 at MAD, covering 2h45 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-10",
+      "kind": "main",
+      "startUtc": "2026-09-08T21:00:00.000Z",
+      "endUtc": "2026-09-09T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-10",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-09T22:55:00.000Z",
+      "endUtc": "2026-09-10T00:55:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-10 runs 1h25 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-11",
+      "kind": "main",
+      "startUtc": "2026-09-10T21:00:00.000Z",
+      "endUtc": "2026-09-11T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-11",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-11T09:00:00.000Z",
+      "endUtc": "2026-09-11T11:00:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-11 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-13",
+      "kind": "main",
+      "startUtc": "2026-09-12T21:00:00.000Z",
+      "endUtc": "2026-09-13T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-18",
+      "kind": "main",
+      "startUtc": "2026-09-13T21:00:00.000Z",
+      "endUtc": "2026-09-14T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-19",
+      "kind": "main",
+      "startUtc": "2026-09-18T21:00:00.000Z",
+      "endUtc": "2026-09-19T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-19",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-19T09:00:00.000Z",
+      "endUtc": "2026-09-19T11:00:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-19 runs 2h43 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21",
+      "kind": "main",
+      "startUtc": "2026-09-20T21:00:00.000Z",
+      "endUtc": "2026-09-21T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23",
+      "kind": "main",
+      "startUtc": "2026-09-22T17:40:00.000Z",
+      "endUtc": "2026-09-23T01:40:00.000Z",
+      "station": "MAD",
+      "why": "19:40 to 03:40 at MAD, covering 1h40 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-25",
+      "kind": "main",
+      "startUtc": "2026-09-23T21:00:00.000Z",
+      "endUtc": "2026-09-24T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-29",
+      "kind": "main",
+      "startUtc": "2026-09-25T21:00:00.000Z",
+      "endUtc": "2026-09-26T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-30",
+      "kind": "main",
+      "startUtc": "2026-09-29T21:43:00.000Z",
+      "endUtc": "2026-09-30T05:43:00.000Z",
+      "station": "MAD",
+      "why": "23:43 to 07:43 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-30",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-30T07:35:00.000Z",
+      "endUtc": "2026-09-30T09:35:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-30 runs 1h22 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-11",
+      "statement": "The duty reporting 12:40Z on 11 Sep and releasing 04:51Z on 12 Sep runs 16h11, which is 3h11 beyond the 13h planning maximum.",
+      "options": [
+        "Drop the ARN night pairing (MD590/MD455) from the day",
+        "Split the four sectors across two duty periods",
+        "Re-crew the return sector at ARN"
+      ],
+      "where": "2026-09-11",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "sleep-per-24h-7h",
+      "date": "2026-09-11",
+      "statement": "With 16h11 on duty plus 55 min commute each end, only 5h59 of the surrounding 24 hours is ever free, so 7h of sleep in that 24h cannot be reached however sleep is arranged.",
+      "options": [
+        "Shorten the duty so at least 7h of off-duty time falls in the day",
+        "Trade the duty for a two-sector pattern",
+        "Accept the shortfall and protect a long sleep before and after"
+      ],
+      "where": "2026-09-11",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-target-7h30",
+      "date": "2026-09-11",
+      "statement": "The same 16h11 duty leaves at most 5h59 free in any 24h window, well short of the 7h30 you want.",
+      "options": [
+        "Ask for the duty to be shortened",
+        "Plan a recovery sleep on the 12 Sep day off"
+      ],
+      "where": "2026-09-11",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-18",
+      "statement": "Report 03:05Z, release 20:01Z — a 16h56 duty, 3h56 over the 13h maximum.",
+      "options": [
+        "Remove the ARN rotation (MD813/MD156)",
+        "Split into two duties with a rest in between",
+        "Move the first FRA rotation to another day"
+      ],
+      "where": "2026-09-18",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "sleep-per-24h-7h",
+      "date": "2026-09-18",
+      "statement": "Duty plus commute occupies 18h46, leaving only 5h14 free in any 24h window containing it — 7h of sleep is not achievable.",
+      "options": [
+        "Shorten the duty",
+        "Bank sleep on the 17 Sep day off and accept the deficit"
+      ],
+      "where": "2026-09-18",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-target-7h30",
+      "date": "2026-09-18",
+      "statement": "Only 5h14 of the 24 hours around this duty is free, so 7h30 of sleep is impossible on this day.",
+      "options": [
+        "Request a shorter duty",
+        "Extend the rest before the 19 Sep report"
+      ],
+      "where": "2026-09-18",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-19",
+      "statement": "Report 12:40Z on 19 Sep, release 02:43Z on 20 Sep — 14h03, 1h03 over the 13h maximum.",
+      "options": [
+        "Drop the LHR night rotation (MD473/MD411)",
+        "Re-time the DUB rotation earlier so the day closes sooner"
+      ],
+      "where": "2026-09-19",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-21",
+      "statement": "Report 10:20Z on 21 Sep, release 00:55Z on 22 Sep — 14h35, 1h35 over the 13h maximum.",
+      "options": [
+        "Drop the DUB rotation (MD681/MD521)",
+        "Bring the LHR rotation forward and shorten the turnarounds"
+      ],
+      "where": "2026-09-21",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-23",
+      "statement": "Report 02:35Z, release 19:37Z — a 17h02 duty, 4h02 over the 13h maximum and the longest on the roster.",
+      "options": [
+        "Remove the DUB rotation (MD163/MD247)",
+        "Split the ARN and DUB rotations across two days"
+      ],
+      "where": "2026-09-23",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "sleep-per-24h-7h",
+      "date": "2026-09-23",
+      "statement": "Duty plus commute occupies 18h52, so at most 5h08 of any 24h window is free — 7h of sleep cannot be obtained.",
+      "options": [
+        "Shorten the duty",
+        "Use the 24 Sep day off for recovery sleep"
+      ],
+      "where": "2026-09-23",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-target-7h30",
+      "date": "2026-09-23",
+      "statement": "At most 5h08 free in the 24h around this duty, far short of the 7h30 target.",
+      "options": [
+        "Request a shorter duty",
+        "Accept the deficit and recover on 24 Sep"
+      ],
+      "where": "2026-09-23",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-09-30",
+      "statement": "Report 11:15Z on 30 Sep, release 01:22Z on 1 Oct — 14h07, 1h07 over the 13h maximum.",
+      "options": [
+        "Drop the FCO rotation (MD238/MD802)",
+        "Move the FRA rotation to 29 Sep"
+      ],
+      "where": "2026-09-30",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "date": "2026-09-02",
+      "statement": "Release 12:54Z on 1 Sep to report 22:55Z the same day is 10h01 of rest at base — 1h59 short of the 12h company standard (the 10h regulatory floor is met by one minute).",
+      "options": [
+        "Delay the DUB night report to 00:54Z or later",
+        "Release the 1 Sep day duty earlier",
+        "Give the day off before the night duty"
+      ],
+      "where": "2026-09-02",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "date": "2026-09-02",
+      "statement": "That same 10h01 gap leaves 8h11 at home once the 55 min commute is taken off each end — under your 9h threshold for it being worth going home.",
+      "options": [
+        "Push the night report later to open a 9h window",
+        "Take hotel rest near MAD instead of going home"
+      ],
+      "where": "2026-09-02",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "date": "2026-09-02",
+      "statement": "Release 06:28Z to report 16:30Z on 2 Sep is 10h02 of rest at base — 1h58 short of the 12h company standard.",
+      "options": [
+        "Move the LHR duty to 2 Sep evening of the following day",
+        "Report later than 18:28Z",
+        "Insert a day off after the DUB night"
+      ],
+      "where": "2026-09-02",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "date": "2026-09-02",
+      "statement": "The 10h02 gap between the DUB night and the LHR evening duty leaves 8h12 at home after commuting — under the 9h you want.",
+      "options": [
+        "Delay the LHR report by an hour",
+        "Rest at a hotel by the airport to preserve the sleep window"
+      ],
+      "where": "2026-09-02",
+      "hardness": "preference"
+    }
+  ],
+  "readingUncertainties": [],
+  "derivations": [
+    {
+      "date": "2026-09-13",
+      "field": "reportUtc",
+      "method": "Not derived from an offset: the ENT (Entrenamiento simulador o tierra) row prints 08:00 in the Reporte column and 16:00 in Fin. Per the standing rule, training report time is the stated start of the window with no reporting offset applied, so 08:00 local MAD was converted directly.",
+      "confidence": "high"
+    }
+  ]
+}

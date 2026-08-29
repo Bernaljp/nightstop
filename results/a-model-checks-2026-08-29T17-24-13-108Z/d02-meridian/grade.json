@@ -1,0 +1,25 @@
+{
+  "caseId": "d02-meridian",
+  "arm": "a-model-checks",
+  "costUsd": 1.1501510000000001,
+  "wallMs": 301580,
+  "humanSeconds": 0,
+  "bucket": "false_alarm",
+  "trustworthy": false,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 8,
+  "surfacedCount": 8,
+  "missed": [],
+  "falseAlarms": [
+    "sleep-per-24h-7h@2026-09-11",
+    "pref-sleep-target-7h30@2026-09-11",
+    "sleep-per-24h-7h@2026-09-18",
+    "pref-sleep-target-7h30@2026-09-18",
+    "sleep-per-24h-7h@2026-09-23",
+    "pref-sleep-target-7h30@2026-09-23"
+  ],
+  "planViolationCount": 0
+}

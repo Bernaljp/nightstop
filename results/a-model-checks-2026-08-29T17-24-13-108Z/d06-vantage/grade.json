@@ -1,0 +1,27 @@
+{
+  "caseId": "d06-vantage",
+  "arm": "a-model-checks",
+  "costUsd": 1.2777112499999999,
+  "wallMs": 327109,
+  "humanSeconds": 0,
+  "bucket": "false_alarm",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 11,
+  "surfacedCount": 11,
+  "missed": [],
+  "falseAlarms": [
+    "sleep-per-24h-7h@2026-09-06",
+    "pref-sleep-target-7h30@2026-09-06",
+    "sleep-per-24h-7h@2026-09-12",
+    "pref-sleep-target-7h30@2026-09-12",
+    "sleep-per-24h-7h@2026-09-14",
+    "pref-sleep-target-7h30@2026-09-14",
+    "sleep-per-24h-7h@2026-09-15",
+    "pref-sleep-target-7h30@2026-09-15"
+  ],
+  "planViolationCount": 0
+}

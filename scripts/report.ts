@@ -28,7 +28,7 @@ interface RunFile {
   grades: CaseGrade[];
 }
 
-const ARM_ORDER = ["b1-chatbot", "b2-steelman", "nightstop", "reference"];
+const ARM_ORDER = ["b1-chatbot", "b2-steelman", "a-model-checks", "nightstop", "reference"];
 
 const runs: RunFile[] = readdirSync("results")
   .map((d) => join("results", d, "summary.json"))

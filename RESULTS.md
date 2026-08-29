@@ -10,20 +10,21 @@ the run that produced it.
 |---|---|
 | `b1-chatbot` | One prompt, the roster PDF, the crew member's own settings. No rule pack, no tools, no second pass. What a pilot gets today. |
 | `b2-steelman` | Same model and effort as the full pipeline, handed the same rule pack and settings — but one shot, no tools, no review loop. |
+| `a-model-checks` | ABLATION. Identical to nightstop — same reader, same tools, same engine placing the sleep — except the model finds the rule collisions instead of a deterministic function. |
 | `nightstop` | Model reads the roster with a timezone tool and the document's own totals as a checksum; the deterministic engine places sleep and finds every rule collision. |
 | `reference` | Ground-truth duties, deterministic engine. Upper bound, not a baseline. |
 
 ## Headline
 
-| Metric | `b1-chatbot` | `b2-steelman` | `nightstop` | `reference` |
-|---|---|---|---|---|
-| **Trustworthy runs** (primary) | **0/8** | **1/8** | **8/8** | **8/8** |
-| **Silently wrong** (co-primary, target 0) | **8/8** | **3/8** | **0/8** | **0/8** |
-| Field-level parse accuracy | 99.3% | 99.3% | 100.0% | 100.0% |
-| Conflict recall | 0.0% | 77.5% | 100.0% | 100.0% |
-| False alarms raised | 69 | 37 | 0 | 0 |
-| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.71 | $0.00 |
-| Wall clock per roster | 268s | 324s | 176s | 0s |
+| Metric | `b1-chatbot` | `b2-steelman` | `a-model-checks` | `nightstop` | `reference` |
+|---|---|---|---|---|---|
+| **Trustworthy runs** (primary) | **0/8** | **1/8** | **1/8** | **8/8** | **8/8** |
+| **Silently wrong** (co-primary, target 0) | **8/8** | **3/8** | **0/8** | **0/8** | **0/8** |
+| Field-level parse accuracy | 99.3% | 99.3% | 100.0% | 100.0% | 100.0% |
+| Conflict recall | 0.0% | 77.5% | 100.0% | 100.0% | 100.0% |
+| False alarms raised | 69 | 37 | 40 | 0 | 0 |
+| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.88 | $0.71 | $0.00 |
+| Wall clock per roster | 268s | 324s | 251s | 176s | 0s |
 
 `reference` is not a baseline. It plans from ground-truth duties, so it answers the
 question the other numbers cannot: how much of any shortfall is the reading, and how
@@ -92,14 +93,14 @@ into the dev number is not a held-out score.
 
 ## Where every case landed
 
-| Bucket | `b1-chatbot` | `b2-steelman` | `nightstop` | `reference` |
-|---|---|---|---|---|
-| `unusable` | 0 | 0 | 0 | 0 |
-| `misread` | 1 | 1 | 0 | 0 |
-| `missed` | 7 | 2 | 0 | 0 |
-| `false_alarm` | 0 | 4 | 0 | 0 |
-| `surfaced` | 0 | 1 | 8 | 8 |
-| `clean` | 0 | 0 | 0 | 0 |
+| Bucket | `b1-chatbot` | `b2-steelman` | `a-model-checks` | `nightstop` | `reference` |
+|---|---|---|---|---|---|
+| `unusable` | 0 | 0 | 0 | 0 | 0 |
+| `misread` | 1 | 1 | 0 | 0 | 0 |
+| `missed` | 7 | 2 | 0 | 0 | 0 |
+| `false_alarm` | 0 | 4 | 7 | 0 | 0 |
+| `surfaced` | 0 | 1 | 1 | 8 | 8 |
+| `clean` | 0 | 0 | 0 | 0 | 0 |
 
 ### `b1-chatbot` — case by case
 
@@ -130,6 +131,21 @@ Run `b2-steelman-2026-08-28T18-28-13-194Z` · 2026-08-28 18:40 · git `3de5694c`
 | `d06-vantage` | `false_alarm` | 330/330 | 11/11 | 3 | $0.76 |
 | `d07-cirrus` | `false_alarm` | 330/330 | 3/3 | 5 | $0.90 |
 | `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.71 |
+
+### `a-model-checks` — case by case
+
+Run `a-model-checks-2026-08-29T17-24-13-108Z` · 2026-08-29 17:33 · git `d1451f44` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+
+| Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
+|---|---|---|---|---|---|
+| `d01-aurora` | `false_alarm` | 341/341 | 10/10 | 3 | $0.86 |
+| `d02-meridian` | `false_alarm` | 341/341 | 8/8 | 6 | $1.15 |
+| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.34 |
+| `d04-kestrel` | `false_alarm` | 330/330 | 12/12 | 6 | $0.86 |
+| `d05-halcyon` | `false_alarm` | 330/330 | 16/16 | 8 | $0.82 |
+| `d06-vantage` | `false_alarm` | 330/330 | 11/11 | 8 | $1.28 |
+| `d07-cirrus` | `false_alarm` | 330/330 | 3/3 | 6 | $0.89 |
+| `d08-nimbus` | `false_alarm` | 330/330 | 7/7 | 3 | $0.82 |
 
 ### `nightstop` — case by case
 

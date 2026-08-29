@@ -1,0 +1,362 @@
+{
+  "caseId": "d08-nimbus",
+  "blocks": [
+    {
+      "id": "main-2026-10-13",
+      "kind": "main",
+      "startUtc": "2026-10-12T20:05:00.000Z",
+      "endUtc": "2026-10-13T04:05:00.000Z",
+      "station": "DXB",
+      "why": "00:05 to 08:05 local at DXB — which is about 1h37 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-21",
+      "kind": "main",
+      "startUtc": "2026-10-13T21:00:00.000Z",
+      "endUtc": "2026-10-14T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-10-21",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-21T15:30:00.000Z",
+      "endUtc": "2026-10-21T17:30:00.000Z",
+      "station": "MAD",
+      "why": "2026-10-21 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-10-23",
+      "kind": "main",
+      "startUtc": "2026-10-22T19:00:00.000Z",
+      "endUtc": "2026-10-23T03:00:00.000Z",
+      "station": "DXB",
+      "why": "23:00 to 07:00 at DXB, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-10-23",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-23T14:15:00.000Z",
+      "endUtc": "2026-10-23T16:15:00.000Z",
+      "station": "DXB",
+      "why": "2026-10-23 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-10-25",
+      "kind": "main",
+      "startUtc": "2026-10-24T21:00:00.000Z",
+      "endUtc": "2026-10-25T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 06:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-26",
+      "kind": "main",
+      "startUtc": "2026-10-25T23:35:00.000Z",
+      "endUtc": "2026-10-26T07:35:00.000Z",
+      "station": "GRU",
+      "why": "20:35 to 04:35 local at GRU — which is about 2h25 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-28",
+      "kind": "main",
+      "startUtc": "2026-10-27T21:35:00.000Z",
+      "endUtc": "2026-10-28T05:35:00.000Z",
+      "station": "MAD",
+      "why": "22:35 to 06:35 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-29",
+      "kind": "main",
+      "startUtc": "2026-10-28T22:00:00.000Z",
+      "endUtc": "2026-10-29T06:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-31",
+      "kind": "main",
+      "startUtc": "2026-10-30T16:05:00.000Z",
+      "endUtc": "2026-10-31T00:05:00.000Z",
+      "station": "SIN",
+      "why": "00:05 to 08:05 local at SIN — which is about 5h33 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-01",
+      "kind": "main",
+      "startUtc": "2026-10-31T22:00:00.000Z",
+      "endUtc": "2026-11-01T06:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-11-01",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-11-01T09:25:00.000Z",
+      "endUtc": "2026-11-01T11:25:00.000Z",
+      "station": "MAD",
+      "why": "2026-11-01 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-11-03",
+      "kind": "main",
+      "startUtc": "2026-11-02T18:30:00.000Z",
+      "endUtc": "2026-11-03T02:30:00.000Z",
+      "station": "SIN",
+      "why": "02:30 to 10:30 local at SIN — which is about 5h28 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-04",
+      "kind": "main",
+      "startUtc": "2026-11-03T20:05:00.000Z",
+      "endUtc": "2026-11-04T03:15:00.000Z",
+      "station": "MAD",
+      "why": "21:05 to 04:15 at MAD, covering 2h15 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-05",
+      "kind": "main",
+      "startUtc": "2026-11-04T18:35:00.000Z",
+      "endUtc": "2026-11-05T02:35:00.000Z",
+      "station": "MAD",
+      "why": "19:35 to 03:35 at MAD, covering 1h35 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-06",
+      "kind": "main",
+      "startUtc": "2026-11-05T22:00:00.000Z",
+      "endUtc": "2026-11-06T06:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-07",
+      "kind": "main",
+      "startUtc": "2026-11-07T00:05:00.000Z",
+      "endUtc": "2026-11-07T08:05:00.000Z",
+      "station": "BOG",
+      "why": "19:05 to 03:05 local at BOG — which is about 3h55 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-09",
+      "kind": "main",
+      "startUtc": "2026-11-08T18:40:00.000Z",
+      "endUtc": "2026-11-09T02:40:00.000Z",
+      "station": "MAD",
+      "why": "19:40 to 03:40 at MAD, covering 0h44 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-10-29",
+      "statement": "NB698 MAD-SIN is rostered 10:10Z report to 01:40Z release — a 15h30 flight duty period against the 13h planning ceiling, over by 2h30.",
+      "options": [
+        "Split the sector with a slip in an intermediate station",
+        "Roster it as an augmented crew duty with in-flight relief if the rule set allows a longer FDP for augmentation",
+        "Move the report later so the duty is planned within 13h"
+      ],
+      "where": "2026-10-29",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-10-31",
+      "statement": "NB261 SIN-MAD is rostered 00:45Z report to 16:15Z release — a 15h30 flight duty period, 2h30 beyond the 13h planning ceiling.",
+      "options": [
+        "Augment the crew for the sector",
+        "Break the rotation with a slip",
+        "Re-plan the pairing so no single FDP exceeds 13h"
+      ],
+      "where": "2026-10-31",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-11-01",
+      "statement": "NB777 MAD-SIN is rostered 13:35Z report to 05:05Z release — a 15h30 flight duty period, 2h30 beyond the 13h planning ceiling.",
+      "options": [
+        "Augment the crew for the sector",
+        "Re-plan the pairing so no single FDP exceeds 13h"
+      ],
+      "where": "2026-11-01",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "date": "2026-11-03",
+      "statement": "NB539 SIN-MAD is rostered 03:10Z report to 18:40Z release — a 15h30 flight duty period, 2h30 beyond the 13h planning ceiling.",
+      "options": [
+        "Augment the crew for the sector",
+        "Re-plan the pairing so no single FDP exceeds 13h"
+      ],
+      "where": "2026-11-03",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "date": "2026-11-04",
+      "statement": "Release from NB539 at 18:40Z on 3 Nov to report for NB696 at 04:40Z on 4 Nov is 10h00 of rest at MAD. With 85 minutes of commute at each end coming out of that rest, only 7h10 remains for sleep — 50 minutes short of the required 8 uninterrupted hours, and no arrangement of sleep inside the window can recover it.",
+      "options": [
+        "Push the 4 Nov report to 06:20Z or later",
+        "Pull the 3 Nov release earlier",
+        "Provide accommodation at the airport so the commute does not consume the rest",
+        "Remove the 4 Nov MAD-FCO-MAD duty from the pairing"
+      ],
+      "where": "2026-11-04",
+      "hardness": "hard-limit"
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "date": "2026-11-04",
+      "statement": "The rest at base between NB539 (release 18:40Z, 3 Nov) and NB696 (report 04:40Z, 4 Nov) is 10h00, two hours under the 12h company standard for home-base rest.",
+      "options": [
+        "Delay the 4 Nov report to 06:40Z or later",
+        "Reassign the 4 Nov FCO turn to another crew member"
+      ],
+      "where": "2026-11-04",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "date": "2026-11-04",
+      "statement": "Getting home and leaving again on the night of 3-4 Nov allows 7h10 between arrival at home and departure, against the 9 hours wanted.",
+      "options": [
+        "Delay the 4 Nov report to 06:20Z or later",
+        "Take airport-adjacent accommodation for that night instead of going home"
+      ],
+      "where": "2026-11-04",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "pref-sleep-target-7h30",
+      "date": "2026-10-29",
+      "statement": "The 24h ending at the 01:40Z release on 30 Oct is filled by 15h30 of duty; the 8h30 that remains yields at most 7h05 of sleep once the 85-minute commute to MAD is deducted, short of the 7h30 target.",
+      "options": [
+        "Shorten the FDP so more of the 24h is free",
+        "Add a nap in the free period before the commute, kept to 2h and finished 45 min before departure"
+      ],
+      "where": "2026-10-29",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "pref-sleep-target-7h30",
+      "date": "2026-11-01",
+      "statement": "The 24h ending at the 05:05Z release on 2 Nov is filled by 15h30 of duty; the remaining 8h30 yields at most 7h05 of sleep after the 85-minute MAD commute, short of the 7h30 target.",
+      "options": [
+        "Shorten the FDP so more of the 24h is free",
+        "Add a controlled pre-duty nap within the nap cap and inertia gap"
+      ],
+      "where": "2026-11-01",
+      "hardness": "preference"
+    },
+    {
+      "ruleId": "pref-sleep-target-7h30",
+      "date": "2026-11-04",
+      "statement": "The 24h ending at the 11:48Z release on 4 Nov contains only the 10h rest at MAD; after commute at both ends the maximum sleep available is 7h10, short of the 7h30 target.",
+      "options": [
+        "Delay the 4 Nov report",
+        "Take accommodation near MAD so the commute does not eat the window",
+        "Reassign the 4 Nov FCO turn"
+      ],
+      "where": "2026-11-04",
+      "hardness": "preference"
+    }
+  ],
+  "readingUncertainties": [],
+  "derivations": [
+    {
+      "date": "2026-10-12",
+      "field": "station",
+      "method": "OFF row prints no station; crew ended the 11/10 duty at DXB and operates DXB-MAD on 13/10, so this rest day is at DXB",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-10-22",
+      "field": "station",
+      "method": "OFF row prints no station; crew ended the 21/10 duty at DXB and operates DXB-MAD on 23/10, so this rest day is at DXB",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-10-30",
+      "field": "station",
+      "method": "OFF row prints no station; crew ended the 29/10 duty at SIN and operates SIN-MAD on 31/10, so this rest day is at SIN",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-11-02",
+      "field": "station",
+      "method": "OFF row prints no station; crew ended the 01/11 duty at SIN and operates SIN-MAD on 03/11, so this rest day is at SIN",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-11-04",
+      "field": "endUtc",
+      "method": "Off Duty 12:48 is printed only on the second (continuation) row, which repeats the date 04/11; attributed to the single two-sector duty that began with the 05:40 report",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-11-09",
+      "field": "endUtc",
+      "method": "Off Duty 12:20 is printed only on the second (continuation) row, which repeats the date 09/11; attributed to the single two-sector duty that began with the 05:05 report",
+      "confidence": "high"
+    }
+  ]
+}

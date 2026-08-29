@@ -1,0 +1,25 @@
+{
+  "caseId": "d04-kestrel",
+  "arm": "a-model-checks",
+  "costUsd": 0.8574157499999999,
+  "wallMs": 233626,
+  "humanSeconds": 0,
+  "bucket": "false_alarm",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 12,
+  "surfacedCount": 12,
+  "missed": [],
+  "falseAlarms": [
+    "sleep-per-24h-7h@2026-09-27",
+    "pref-sleep-target-7h30@2026-09-27",
+    "sleep-per-24h-7h@2026-09-28",
+    "pref-sleep-target-7h30@2026-09-28",
+    "sleep-per-24h-7h@2026-09-30",
+    "pref-sleep-target-7h30@2026-09-30"
+  ],
+  "planViolationCount": 0
+}

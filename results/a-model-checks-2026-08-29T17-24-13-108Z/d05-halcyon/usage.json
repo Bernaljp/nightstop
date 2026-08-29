@@ -1,0 +1,25 @@
+{
+  "byAgent": {
+    "reader": {
+      "inputTokens": 8,
+      "outputTokens": 17412,
+      "cacheReadInputTokens": 31412,
+      "cacheCreationInputTokens": 15837,
+      "turns": 1
+    },
+    "rule-checker": {
+      "inputTokens": 2,
+      "outputTokens": 8520,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 8509,
+      "turns": 1
+    }
+  },
+  "total": {
+    "inputTokens": 10,
+    "outputTokens": 25932,
+    "cacheReadInputTokens": 31412,
+    "cacheCreationInputTokens": 24346,
+    "turns": 2
+  }
+}
