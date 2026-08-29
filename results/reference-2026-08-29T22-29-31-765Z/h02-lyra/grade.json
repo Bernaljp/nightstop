@@ -1,0 +1,18 @@
+{
+  "caseId": "h02-lyra",
+  "arm": "reference",
+  "costUsd": 0,
+  "wallMs": 15,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 352,
+  "fieldsCorrect": 352,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 10,
+  "surfacedCount": 10,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

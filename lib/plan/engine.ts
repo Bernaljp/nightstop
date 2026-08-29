@@ -17,7 +17,7 @@ import { restPeriods, mandatoryConflicts, commuteFor } from "../eval/conflicts";
 import { phaseTrace, woclCoverageMinutes } from "./circadian";
 import { tzOf } from "../corpus/network";
 import {
-  addMinutes, minutesBetween, localHHmm, formatDuration, utcOffsetMinutes,
+  addMinutes, minutesBetween, localHHmm, localDate, formatDuration, utcOffsetMinutes, HOUR,
 } from "../tools/time";
 
 export interface EngineSettings {
@@ -48,50 +48,75 @@ function clamp(v: number, lo: number, hi: number): number {
 }
 
 /**
- * Place a main sleep inside a window.
+ * Place a main sleep on every night a window contains — not one per window.
  *
- * The ideal is the crew member's own night on their BODY clock. Where the window
- * cannot hold it, the block slides to sit inside the window rather than being trimmed
- * from one end — a sleep that starts at the right hour and is cut short is worth more
- * than one shifted onto the wrong side of the clock.
+ * The first version placed exactly one sleep per rest period, which is correct only when
+ * the rest period is a single night. It usually is not: four of the six rest periods on
+ * the first Aurora roster span two nights, and a block of days off spans several. Every
+ * one of those extra nights went unplanned, so a crew member on three days off was shown
+ * one night of sleep and nothing else. For a tool whose entire job is telling you when to
+ * sleep, that is most of the job missing.
+ *
+ * The ideal is the crew member's own night on their BODY clock. Where a candidate night
+ * falls partly outside the window it is clipped rather than dropped, because a short
+ * night that is flagged beats a night nobody planned.
  */
-function placeMainSleep(
+function placeMainSleeps(
   windowFrom: Date,
   windowTo: Date,
   bodyOffsetFromUtc: number,
   s: EngineSettings,
-): { from: Date; to: Date } | null {
-  const windowMinutes = minutesBetween(windowFrom, windowTo);
-  if (windowMinutes <= 0) return null;
+): Array<{ from: Date; to: Date }> {
+  if (minutesBetween(windowFrom, windowTo) <= 0) return [];
 
-  const length = Math.min(s.mainSleepTargetMinutes, windowMinutes);
-
-  // Where does the body think bedtime is, on the night this window covers?
+  // Body-clock midnight of the day the window opens, as a real instant.
   const bodyFrom = new Date(windowFrom.getTime() + bodyOffsetFromUtc * 60_000);
-  const dayStart = Date.UTC(
+  const bodyDayStart = Date.UTC(
     bodyFrom.getUTCFullYear(), bodyFrom.getUTCMonth(), bodyFrom.getUTCDate(),
   );
-  const idealBodyBed = dayStart + s.preferredBodyBedHour * 3600_000;
-  // If the window opens after the ideal bedtime, aim at the following night instead.
-  const candidates = [idealBodyBed - 24 * 3600_000, idealBodyBed, idealBodyBed + 24 * 3600_000]
-    .map((b) => new Date(b - bodyOffsetFromUtc * 60_000));
 
-  let best: { from: Date; to: Date } | null = null;
-  let bestScore = -Infinity;
-  for (const c of candidates) {
-    const from = new Date(
-      clamp(c.getTime(), windowFrom.getTime(), windowTo.getTime() - length * 60_000),
-    );
-    const to = addMinutes(from, length);
-    if (to > windowTo) continue;
-    // Prefer the placement that lands closest to the body's own bedtime.
-    const score = -Math.abs(from.getTime() - c.getTime());
-    if (score > bestScore) {
-      bestScore = score;
-      best = { from, to };
+  const out: Array<{ from: Date; to: Date }> = [];
+  // A rest period longer than a fortnight is not a rest period; the bound is a guard.
+  for (let day = -1; day <= 15; day++) {
+    const bedBody = bodyDayStart + day * 24 * HOUR + s.preferredBodyBedHour * HOUR;
+    const bed = new Date(bedBody - bodyOffsetFromUtc * 60_000);
+    let from = bed;
+    let to = addMinutes(bed, s.mainSleepTargetMinutes);
+
+    if (to <= windowFrom || from >= windowTo) continue;
+
+    const prev = out[out.length - 1];
+    const floor = prev ? Math.max(windowFrom.getTime(), prev.to.getTime()) : windowFrom.getTime();
+
+    // Before an early report, go to bed EARLIER rather than getting up short. Clipping
+    // the end instead produced 5h45 nights before 05:40 reports and then flagged them as
+    // the planner's own fault — when shifting bedtime back is precisely the advice a
+    // fatigue tool exists to give.
+    if (to > windowTo) {
+      const shifted = windowTo.getTime() - s.mainSleepTargetMinutes * 60_000;
+      from = new Date(Math.max(floor, shifted));
+      to = windowTo;
     }
+    // And the mirror: land at 02:35 after a night duty and the answer is not to wake at
+    // the usual hour having slept four hours. If the night is cut short at the START,
+    // extend the END to keep the length, up to the window and the next night's bedtime.
+    if (from.getTime() < floor) {
+      from = new Date(floor);
+      const wanted = addMinutes(from, s.mainSleepTargetMinutes);
+      const ceiling = Math.min(
+        windowTo.getTime(),
+        bedBody + 24 * HOUR - bodyOffsetFromUtc * 60_000,
+      );
+      if (wanted.getTime() > to.getTime()) to = new Date(Math.min(wanted.getTime(), ceiling));
+    }
+    if (to <= from) continue;
+
+    // A sliver at the edge of a window is not a night's sleep. Below four hours it is
+    // left out rather than dressed up as one.
+    if (minutesBetween(from, to) < 4 * 60) continue;
+    out.push({ from, to });
   }
-  return best;
+  return out;
 }
 
 export function buildPlan(
@@ -116,10 +141,13 @@ export function buildPlan(
     const localOffset = utcOffsetMinutes(from, stationTz);
     const bodyOffsetFromUtc = localOffset + (phase?.offsetFromLocalMinutes ?? 0);
 
-    const main = placeMainSleep(from, to, bodyOffsetFromUtc, settings);
-    if (!main) return;
+    const nights = placeMainSleeps(from, to, bodyOffsetFromUtc, settings);
+    if (!nights.length) return;
 
-    const len = minutesBetween(main.from, main.to);
+    nights.forEach((night, n) => {
+      const isLast = n === nights.length - 1;
+      const len = minutesBetween(night.from, night.to);
+      const main = night;
     const inWocl = woclCoverageMinutes(main.from, main.to, bodyOffsetFromUtc);
     const localBed = localHHmm(main.from, stationTz);
     const localWake = localHHmm(main.to, stationTz);
@@ -133,8 +161,8 @@ export function buildPlan(
         : `${localBed} to ${localWake} at ${r.prev.endStation}, covering ` +
           `${formatDuration(inWocl)} of your circadian low.`;
 
-    blocks.push({
-      id: `main-${r.next.date}`,
+      blocks.push({
+      id: `main-${localDate(night.from, stationTz)}`,
       kind: "main",
       startUtc: main.from.toISOString(),
       endUtc: main.to.toISOString(),
@@ -166,14 +194,16 @@ export function buildPlan(
       bodyOffsetFromUtc,
     );
 
-    const short = len < settings.mainSleepFloorMinutes;
-    const nightDuty = dutyWocl >= 60;
+      const short = len < settings.mainSleepFloorMinutes;
+      const nightDuty = dutyWocl >= 60;
 
-    if ((short || nightDuty) && room >= 90) {
-      const napLen = Math.min(settings.napCapMinutes, room - 60);
-      const napStart = addMinutes(napEnd, -napLen);
-      if (napLen >= 30) {
-        blocks.push({
+      // Only the last night of a rest period sits before the duty; a nap after any
+      // earlier one would be a nap in the middle of a day off.
+      if (isLast && (short || nightDuty) && room >= 90) {
+        const napLen = Math.min(settings.napCapMinutes, room - 60);
+        const napStart = addMinutes(napEnd, -napLen);
+        if (napLen >= 30) {
+          blocks.push({
           id: `nap-${r.next.date}`,
           kind: "pre-duty-nap",
           startUtc: napStart.toISOString(),
@@ -187,10 +217,11 @@ export function buildPlan(
             : `${r.next.date} runs ${formatDuration(dutyWocl)} through your circadian low. ` +
               `Take this ${formatDuration(napLen)} now, while you can still sleep — it ends ` +
               `${formatDuration(settings.napInertiaMinutes)} before you leave.`,
-          ruleIds: ["nap-inertia-gap-45m", "nap-cap-2h"],
-        });
+            ruleIds: ["nap-inertia-gap-45m", "nap-cap-2h"],
+          });
+        }
       }
-    }
+    });
   });
 
   const conflicts: Conflict[] = mandatoryConflicts(duties, profile, pack);

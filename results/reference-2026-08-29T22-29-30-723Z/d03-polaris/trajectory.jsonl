@@ -1,0 +1,2 @@
+{"seq":0,"ts":"2026-08-29T22:29:30.748Z","runId":"reference-2026-08-29T22-29-30-723Z","arm":"reference","caseId":"d03-polaris","agent":"engine","kind":"note","message":"deterministic engine, no model involved","blocks":31,"conflicts":4}
+{"seq":1,"ts":"2026-08-29T22:29:30.748Z","runId":"reference-2026-08-29T22-29-30-723Z","arm":"reference","caseId":"d03-polaris","agent":"engine","kind":"final","output":{"blocks":31,"conflicts":4}}

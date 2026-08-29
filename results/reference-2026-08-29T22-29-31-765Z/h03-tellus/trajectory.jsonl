@@ -1,0 +1,2 @@
+{"seq":0,"ts":"2026-08-29T22:29:31.790Z","runId":"reference-2026-08-29T22-29-31-765Z","arm":"reference","caseId":"h03-tellus","agent":"engine","kind":"note","message":"deterministic engine, no model involved","blocks":31,"conflicts":3}
+{"seq":1,"ts":"2026-08-29T22:29:31.790Z","runId":"reference-2026-08-29T22-29-31-765Z","arm":"reference","caseId":"h03-tellus","agent":"engine","kind":"final","output":{"blocks":31,"conflicts":3}}
