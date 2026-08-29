@@ -1,0 +1,19 @@
+{
+  "caseId": "h03-tellus",
+  "operator": "TELLUS LINEAS",
+  "coveredFrom": "2026-10-11",
+  "coveredTo": "2026-11-09",
+  "profile": {
+    "base": "MAD",
+    "baseTz": "Europe/Madrid",
+    "commuteMinutes": {
+      "MAD": 55
+    },
+    "defaultCommuteMinutes": 25,
+    "usualSleep": {
+      "bedHour": 22,
+      "wakeHour": 6
+    }
+  },
+  "roster": "roster.pdf"
+}

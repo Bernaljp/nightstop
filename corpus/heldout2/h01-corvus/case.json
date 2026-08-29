@@ -1,0 +1,19 @@
+{
+  "caseId": "h01-corvus",
+  "operator": "CORVUS AIRWAYS",
+  "coveredFrom": "2026-09-01",
+  "coveredTo": "2026-09-30",
+  "profile": {
+    "base": "MAD",
+    "baseTz": "Europe/Madrid",
+    "commuteMinutes": {
+      "MAD": 70
+    },
+    "defaultCommuteMinutes": 25,
+    "usualSleep": {
+      "bedHour": 23.5,
+      "wakeHour": 7.5
+    }
+  },
+  "roster": "roster.pdf"
+}

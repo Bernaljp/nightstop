@@ -29,7 +29,7 @@ async function main() {
   const set = arg("set", "dev");
   const seed = Number(arg("seed", "20260828"));
   const cases: FormatSpec[] =
-    set === "dev" ? DEV_CASES : set === "heldout" ? HELDOUT_CASES : [];
+    set === "dev" ? DEV_CASES : set.startsWith("heldout") ? HELDOUT_CASES : [];
   if (!cases.length) {
     console.error(`no cases defined for set "${set}"`);
     process.exit(1);

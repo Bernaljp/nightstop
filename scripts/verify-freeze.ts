@@ -10,7 +10,7 @@
  */
 import { execSync } from "node:child_process";
 
-const FREEZE = "7b77a67719996342d81034ec90be858a1e2b5aa7";
+const FREEZE = "577189ac0eea5ed1a8a113c00d1a83ed9f1f2b2f";
 
 /**
  * Everything a MODEL reads. The deterministic engine is checked separately below —
