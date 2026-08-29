@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nightstop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Dark first: the subject is a flight deck at 03:00 and a hotel room with the
+   curtains shut. Neutrals are pulled toward blue rather than left grey. */
+:root {
+  color-scheme: dark;
+  --ground: #0d1117;
+  --raised: #151c26;
+  --sunk:   #0a0e14;
+  --line:   #232c3a;
+  --line-2: #33405280;
+  --ink:    #e8eef6;
+  --ink-2:  #93a1b5;
+  --ink-3:  #61708a;
+  --sleep:  #4d94ea;
+  --duty:   #e2703c;
+  --nap:    #23b183;
+  --flag:   #edb54a;
+  --wocl:   #ffffff14;
+  --wocl-e: #ffffff2e;
+  --measure: 66ch;
+}
+:root[data-theme="light"], :root:not([data-theme="dark"]) {
+  color-scheme: light;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --ground: #f6f7f9;
+    --raised: #ffffff;
+    --sunk:   #eceef2;
+    --line:   #dde1e8;
+    --line-2: #c8cedb80;
+    --ink:    #0d1117;
+    --ink-2:  #4e5a6e;
+    --ink-3:  #7b879a;
+    --sleep:  #2a78d6;
+    --duty:   #c9501f;
+    --nap:    #1baf7a;
+    --flag:   #a97400;
+    --wocl:   #0d111714;
+    --wocl-e: #0d11172e;
+  }
+}
+:root[data-theme="light"] {
+  --ground: #f6f7f9; --raised: #ffffff; --sunk: #eceef2;
+  --line: #dde1e8; --line-2: #c8cedb80;
+  --ink: #0d1117; --ink-2: #4e5a6e; --ink-3: #7b879a;
+  --sleep: #2a78d6; --duty: #c9501f; --nap: #1baf7a; --flag: #a97400;
+  --wocl: #0d111714; --wocl-e: #0d11172e;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.62;
+}
+.wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px 96px; }
+.col { max-width: var(--measure); }
+p { margin: 0 0 1.05em; }
+a { color: var(--sleep); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--sleep); outline-offset: 3px; border-radius: 2px;
+}
+strong { font-weight: 600; }
+code, .mono { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+code { font-size: 0.88em; background: var(--sunk); padding: 0.1em 0.36em; border-radius: 3px; }
+
+h1, h2, h3, .eyebrow, .num b, th, .chip, .keyline {
+  font-family: Barlow, "Helvetica Neue", Arial, sans-serif;
+}
+h1 { font-size: clamp(44px, 8vw, 78px); font-weight: 600; line-height: 0.96;
+     letter-spacing: -0.028em; margin: 0 0 18px; text-wrap: balance; }
+h2 { font-size: clamp(26px, 3.4vw, 34px); font-weight: 600; letter-spacing: -0.02em;
+     line-height: 1.15; margin: 0 0 14px; text-wrap: balance; }
+h3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin: 34px 0 8px; }
+.eyebrow { font-size: 11.5px; font-weight: 600; letter-spacing: 0.15em;
+           text-transform: uppercase; color: var(--ink-3); margin: 0 0 12px; }
+.lede { font-size: 20.5px; line-height: 1.5; color: var(--ink-2); }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+header { padding: 76px 0 0; }
+.hgrid { display: grid; gap: 40px; grid-template-columns: 1fr; align-items: end; }
+@media (min-width: 940px) { .hgrid { grid-template-columns: 1.05fr 1fr; } }
+
+/* The hero is the drift itself: 30 days of one long-haul month, local time across,
+   the shaded band the body's own night. It does not stay put. */
+.ribbon { background: var(--raised); border: 1px solid var(--line); border-radius: 10px;
+          padding: 14px 16px 12px; }
+.rw { display: grid; grid-template-columns: 22px 34px 1fr; align-items: center;
+      gap: 8px; height: 15px; }
+.rw span, .rw b { font-family: "IBM Plex Mono", monospace; font-size: 9.5px;
+                  color: var(--ink-3); font-weight: 400; font-variant-numeric: tabular-nums; }
+.rt { position: relative; height: 10px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--line-2) 1px, transparent 1px);
+      background-size: 12.5% 100%; }
+.rt i { position: absolute; display: block; border-radius: 2px; }
+.rt i.wocl { top: 0; height: 10px; background: var(--wocl);
+             border-inline: 1px solid var(--wocl-e); border-radius: 0; }
+.rt i.duty { top: 0; height: 4px; background: var(--duty); }
+.rt i.main { top: 5px; height: 5px; background: var(--sleep); }
+.rt i.pre-duty-nap, .rt i.recovery-nap { top: 5px; height: 5px; background: var(--nap); }
+.rkey { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 11px;
+        font-family: Barlow, sans-serif; font-size: 11.5px; color: var(--ink-2); }
+.rkey i { display: inline-block; width: 15px; height: 6px; border-radius: 2px;
+          margin-right: 5px; vertical-align: middle; }
+.cap { font-size: 13.5px; color: var(--ink-3); margin-top: 12px; line-height: 1.5; }
+
+/* The two numbers that travel down the page. */
+.score { display: flex; gap: 10px; flex-wrap: wrap; margin: 26px 0 4px; }
+.chip { display: flex; align-items: baseline; gap: 8px; padding: 9px 13px;
+        border: 1px solid var(--line); border-radius: 7px; background: var(--raised);
+        font-size: 12px; letter-spacing: 0.03em; color: var(--ink-2); }
+.chip b { font-family: "IBM Plex Mono", monospace; font-size: 17px; font-weight: 500;
+          color: var(--ink); font-variant-numeric: tabular-nums; }
+.chip.bad b { color: var(--duty); }
+.chip.good b { color: var(--nap); }
+
+section { padding: 62px 0 0; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 62px 0 0; }
+
+.tw { overflow-x: auto; margin: 26px 0 8px; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 620px;
+        font-family: Barlow, sans-serif; font-size: 15px; }
+th { text-align: left; font-size: 11px; letter-spacing: 0.11em; text-transform: uppercase;
+     color: var(--ink-3); font-weight: 600; padding: 0 14px 9px 0; border-bottom: 1px solid var(--line); }
+td { padding: 11px 14px 11px 0; border-bottom: 1px solid var(--line);
+     font-variant-numeric: tabular-nums; color: var(--ink-2); vertical-align: top; }
+td:first-child { color: var(--ink); }
+td.n { font-family: "IBM Plex Mono", monospace; font-size: 14px; }
+tr.hi td { color: var(--ink); }
+tr.hi td.n { font-weight: 500; }
+.win { color: var(--nap); }
+.lose { color: var(--duty); }
+
+.note { border-left: 2px solid var(--flag); padding: 2px 0 2px 18px; margin: 26px 0;
+        color: var(--ink-2); font-size: 16px; }
+.note strong { color: var(--ink); }
+
+.keyline { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--ink-2);
+           background: var(--sunk); border: 1px solid var(--line); border-radius: 8px;
+           padding: 15px 17px; overflow-x: auto; white-space: pre; line-height: 1.65; }
+
+.cards { display: grid; gap: 14px; margin: 28px 0 0; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .cards { grid-template-columns: 1fr 1fr; } }
+.card { border: 1px solid var(--line); border-radius: 9px; padding: 19px 20px;
+        background: var(--raised); }
+.card h3 { margin: 0 0 7px; font-size: 16.5px; }
+.card p { margin: 0; font-size: 15.5px; color: var(--ink-2); line-height: 1.55; }
+
+footer { margin-top: 76px; padding-top: 26px; border-top: 1px solid var(--line);
+         color: var(--ink-3); font-size: 14.5px; }
+footer a { color: var(--ink-2); }
+@media (prefers-reduced-motion: no-preference) {
+  .rw { animation: rise .5s cubic-bezier(.2,.7,.3,1) backwards; }
+  @keyframes rise { from { opacity: 0; transform: translateY(4px); } }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="hgrid">
+    <div>
+      <p class="eyebrow">micro1 · agentic workflows hackathon</p>
+      <h1>Your body clock does not land when you do.</h1>
+      <p class="lede">Nightstop reads a flight crew roster it has never seen before and
+      plans the month's sleep around where the body actually is — then says plainly
+      which rules that month breaks, and leaves the choice with the person flying.</p>
+    </div>
+    <div>
+      <div class="ribbon">
+      <div class="rw"><span>01</span><b>LHR</b><div class="rt"></div></div>
+      <div class="rw"><span>02</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:25.69%;width:40.35%"></i><i class="main" style="left:81.25%;width:18.75%"></i></div></div>
+      <div class="rw"><span>03</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:21.18%;width:30.00%"></i><i class="main" style="left:0.00%;width:14.58%"></i><i class="main" style="left:95.83%;width:4.17%"></i></div></div>
+      <div class="rw"><span>04</span><b>LHR</b><div class="rt"><i class="wocl" style="left:92.92%;width:7.08%"></i><i class="duty" style="left:60.76%;width:39.24%"></i><i class="main" style="left:0.00%;width:29.17%"></i><i class="main" style="left:81.25%;width:18.75%"></i></div></div>
+      <div class="rw"><span>05</span><b>ORD</b><div class="rt"><i class="duty" style="left:0.00%;width:4.51%"></i><i class="duty" style="left:70.83%;width:29.17%"></i><i class="main" style="left:0.00%;width:14.58%"></i></div></div>
+      <div class="rw"><span>06</span><b>LHR</b><div class="rt"><i class="wocl" style="left:12.29%;width:16.67%"></i><i class="duty" style="left:0.00%;width:14.58%"></i></div></div>
+      <div class="rw"><span>07</span><b>LHR</b><div class="rt"><i class="duty" style="left:55.21%;width:44.79%"></i><i class="main" style="left:0.00%;width:33.13%"></i></div></div>
+      <div class="rw"><span>08</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:0.00%;width:1.88%"></i><i class="main" style="left:95.83%;width:4.17%"></i></div></div>
+      <div class="rw"><span>09</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:51.39%;width:30.90%"></i><i class="main" style="left:0.00%;width:29.17%"></i><i class="main" style="left:95.83%;width:4.17%"></i></div></div>
+      <div class="rw"><span>10</span><b>LHR</b><div class="rt"><i class="main" style="left:0.00%;width:29.17%"></i></div></div>
+      <div class="rw"><span>11</span><b>LHR</b><div class="rt"></div></div>
+      <div class="rw"><span>12</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:61.11%;width:21.81%"></i><i class="main" style="left:95.83%;width:4.17%"></i></div></div>
+      <div class="rw"><span>13</span><b>LHR</b><div class="rt"><i class="main" style="left:0.00%;width:29.17%"></i></div></div>
+      <div class="rw"><span>14</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:21.18%;width:44.58%"></i><i class="main" style="left:95.83%;width:4.17%"></i></div></div>
+      <div class="rw"><span>15</span><b>LHR</b><div class="rt"><i class="duty" style="left:90.28%;width:9.72%"></i><i class="main" style="left:0.00%;width:29.17%"></i></div></div>
+      <div class="rw"><span>16</span><b>JFK</b><div class="rt"><i class="wocl" style="left:97.71%;width:2.29%"></i><i class="duty" style="left:0.00%;width:29.51%"></i><i class="duty" style="left:84.72%;width:15.28%"></i><i class="main" style="left:10.42%;width:33.33%"></i></div></div>
+      <div class="rw"><span>17</span><b>LHR</b><div class="rt"><i class="wocl" style="left:13.75%;width:16.67%"></i><i class="duty" style="left:0.00%;width:23.96%"></i><i class="main" style="left:96.53%;width:3.47%"></i></div></div>
+      <div class="rw"><span>18</span><b>LHR</b><div class="rt"><i class="duty" style="left:36.46%;width:63.54%"></i><i class="main" style="left:0.00%;width:29.86%"></i></div></div>
+      <div class="rw"><span>19</span><b>SIN</b><div class="rt"><i class="wocl" style="left:36.46%;width:16.67%"></i></div></div>
+      <div class="rw"><span>20</span><b>SIN</b><div class="rt"><i class="duty" style="left:70.83%;width:29.17%"></i><i class="main" style="left:23.96%;width:33.33%"></i></div></div>
+      <div class="rw"><span>21</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:0.00%;width:34.72%"></i><i class="duty" style="left:47.22%;width:50.76%"></i><i class="main" style="left:12.15%;width:28.47%"></i></div></div>
+      <div class="rw"><span>22</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:39.93%;width:39.86%"></i><i class="main" style="left:4.58%;width:28.75%"></i><i class="main" style="left:95.83%;width:4.17%"></i></div></div>
+      <div class="rw"><span>23</span><b>LHR</b><div class="rt"><i class="main" style="left:0.00%;width:29.17%"></i></div></div>
+      <div class="rw"><span>24</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:23.61%;width:24.44%"></i><i class="main" style="left:81.25%;width:18.75%"></i></div></div>
+      <div class="rw"><span>25</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:21.18%;width:55.35%"></i><i class="main" style="left:0.00%;width:14.58%"></i><i class="main" style="left:83.13%;width:16.87%"></i></div></div>
+      <div class="rw"><span>26</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:18.40%;width:41.46%"></i><i class="main" style="left:0.00%;width:11.81%"></i><i class="main" style="left:66.46%;width:28.68%"></i></div></div>
+      <div class="rw"><span>27</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:1.74%;width:31.04%"></i><i class="main" style="left:93.40%;width:6.60%"></i></div></div>
+      <div class="rw"><span>28</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:33.33%;width:33.33%"></i><i class="main" style="left:0.00%;width:26.74%"></i></div></div>
+      <div class="rw"><span>29</span><b>LHR</b><div class="rt"></div></div>
+      <div class="rw"><span>30</span><b>LHR</b><div class="rt"></div></div>
+        <div class="rkey">
+          <span><i style="background:var(--sleep)"></i>sleep</span>
+          <span><i style="background:var(--duty)"></i>on duty</span>
+          <span><i style="background:var(--wocl);outline:1px solid var(--wocl-e)"></i>circadian low</span>
+        </div>
+      </div>
+      <p class="cap">One real month, planned by the system. Local time runs left to right.
+      Watch the shaded band — the body's own night — slide away from the clock on the wall
+      as the month crosses time zones, and drift back.</p>
+    </div>
+  </div>
+</header>
+
+<hr>
+
+<section>
+  <p class="eyebrow">the problem</p>
+  <div class="col">
+    <h2>Nobody answers the only question the crew member has.</h2>
+    <p>Every month a PDF arrives with thirty days of duty on it: early starts, night
+    sectors, standby windows, layovers in cities several hours from your own body clock.
+    Operator systems check whether the roster is <em>legal</em>, which is the company's
+    problem. The crew member's problem is <strong>when do I go to bed on the 14th</strong>,
+    and the answer depends on where their body clock has actually got to, how much sleep
+    debt has built up, and how much of the rest period the commute eats at both ends.</p>
+    <p>So they work it out by hand, or they paste the roster into a chatbot. I measured
+    the second one.</p>
+  </div>
+
+  <div class="score">
+    <div class="chip">reads the roster at <b>99.3%</b></div>
+    <div class="chip bad">trustworthy plans <b>0/8</b></div>
+    <div class="chip bad">silently wrong <b>8/8</b></div>
+  </div>
+
+  <div class="col">
+    <p class="cap" style="margin-top:16px">A chatbot reads an unfamiliar roster well and
+    still produces a plan you cannot rely on, in every case. Most of those read the month
+    perfectly and withheld every real collision — nobody had shown it your operator's
+    manual. It also cited <strong>69 rules that do not exist</strong>.</p>
+  </div>
+
+  <div class="note col">
+    <strong>The fatigue science is not the scarce thing.</strong> What is scarce is a
+    system that reads <em>your</em> roster exactly right, knows <em>your</em> rules, and
+    tells you which of them your month breaks.
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <p class="eyebrow">the design</p>
+  <div class="col">
+    <h2>The model reads. The arithmetic does not.</h2>
+    <p>Every airline lays a roster out differently — Spanish column headers, times in UTC
+    only, report time you have to derive from an offset table, continuation rows that drop
+    the date, a duty crossing midnight with nothing marking the day change. Reading that is
+    the one job here that genuinely needs a language model, and no per-airline parser
+    scales past the first airline.</p>
+    <p>Everything after it is arithmetic, and arithmetic from a model is arithmetic you
+    have to check anyway.</p>
+  </div>
+
+  <div class="keyline col" style="max-width:none">roster PDF ─► READER (model)         tools, not trust:
+                                      to_utc            the hours that repeat, and the ones that never happen
+                                      reconcile_totals  the document grading its own transcription
+              │
+              ▼
+         ENGINE (deterministic)        places sleep, finds every rule collision
+              │
+              ▼
+         BRIEFING                      what needs a decision, then the month, then the detail</div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>It always produces a schedule</h3>
+      <p>Where the roster forces a collision, it is stated with something you could
+      actually do about it. 14 CFR 117.25(f) puts the judgement about sleep opportunity
+      on the crew member by name — a tool that quietly decided would be taking a decision
+      the regulation says is theirs.</p>
+    </div>
+    <div class="card">
+      <h3>Three kinds of rule, never conflated</h3>
+      <p>A hard limit from your regulator, a recommendation from fatigue science or
+      company policy, and your own line that only you can move. Point it at your
+      operator's manual and it pulls out the four paragraphs that touch sleep.</p>
+    </div>
+    <div class="card">
+      <h3>It says what it worked out</h3>
+      <p>A value printed on the page and a value inferred from it are not the same kind
+      of fact, and only one can be checked against the document. Derived values are
+      labelled and shown for confirmation.</p>
+    </div>
+    <div class="card">
+      <h3>Nothing it can do is consequential</h3>
+      <p>No model-facing tool can write to a calendar. The briefing is produced; putting
+      it anywhere is a separate step behind a human.</p>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <p class="eyebrow">what it scored</p>
+  <h2>Eight rosters, one grader, the same task for every arm.</h2>
+  <div class="tw">
+    <table>
+      <thead><tr>
+        <th>&nbsp;</th><th>Chatbot</th><th>Same inputs, one shot</th><th>Nightstop</th>
+      </tr></thead>
+      <tbody>
+        <tr class="hi"><td>Trustworthy plans</td>
+          <td class="n lose">0/8</td><td class="n">1/8</td><td class="n win">8/8</td></tr>
+        <tr class="hi"><td>Silently wrong <span style="color:var(--ink-3)">(target 0)</span></td>
+          <td class="n lose">8/8</td><td class="n">3/8</td><td class="n win">0/8</td></tr>
+        <tr><td>Real collisions surfaced</td>
+          <td class="n">0%</td><td class="n">77%</td><td class="n win">100%</td></tr>
+        <tr><td>Rules it invented</td>
+          <td class="n lose">69</td><td class="n">37</td><td class="n win">0</td></tr>
+        <tr><td>Cost per roster</td>
+          <td class="n">—</td><td class="n">—</td><td class="n">$0.61</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <p class="cap">A plan counts as trustworthy only if every duty-bearing field matches
+    ground truth exactly, every collision the roster forces is surfaced, and nothing is
+    raised that is not real. <strong>Silently wrong</strong> is reported at equal size
+    because it is the only outcome that can hurt someone — a binary alone hides the
+    difference between <em>wrong</em> and <em>flagged</em>.</p>
+  </div>
+
+  <h3>Held out</h3>
+  <div class="col">
+    <p>Four more rosters, generated from a separate seed after every prompt was frozen and
+    not run against until the end — every hard feature at once, a roster printing no
+    totals so the reader's self-check is simply absent, Spanish labels on a
+    daylight-saving month, single-character codes where a day off is a bare hyphen.</p>
+  </div>
+  <div class="score">
+    <div class="chip bad">chatbot, trustworthy <b>0/4</b></div>
+    <div class="chip bad">chatbot, silently wrong <b>3/4</b></div>
+    <div class="chip good">nightstop, trustworthy <b>4/4</b></div>
+    <div class="chip good">nightstop, silently wrong <b>0/4</b></div>
+  </div>
+  <div class="note col">
+    <strong>How that number was reached.</strong> The first held-out run scored 3/4, and
+    the failure was a bug in <em>my corpus</em> — a UTC-only roster dated its rows by base
+    local day, so the date column and the time column disagreed with nothing to say which
+    to believe. The reader transcribed it as printed and flagged the overlap as probably a
+    source error, which was the better of the two readings. No prompt, tool or rule was
+    changed at any point, and <code>npm run verify:freeze</code> proves it rather than
+    asserting it.
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <p class="eyebrow">what i removed</p>
+  <div class="col">
+    <h2>The experiment that tied, and was cut anyway.</h2>
+    <p>When the reader flags a value as uncertain, hand it back to the model on its own
+    and ask it to resolve it. Forty lines, targets exactly the values most likely to be
+    wrong. I predicted it would beat the primary metric while making the system more
+    dangerous — a clean story about a metric rewarding the wrong thing.</p>
+    <p>It did something worse. It <strong>tied</strong>: same trustworthy count, same
+    silently-wrong count, identical field accuracy and recall.</p>
+  </div>
+  <div class="score">
+    <div class="chip">values a crew member can check, shipped <b>33</b></div>
+    <div class="chip bad">with the repair pass <b>0</b></div>
+    <div class="chip bad">cost <b>+38%</b></div>
+  </div>
+  <div class="col">
+    <p class="cap" style="margin-top:16px">Thirty-three derived values, each with its
+    reasoning attached, become zero. The pass guessed right every time on this corpus,
+    which is not a reason to keep it — the behaviour is identical whether the guess is
+    right or wrong, so the only thing between a pilot and a confidently wrong report time
+    is that the model happened to be correct.</p>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <p class="eyebrow">hot take</p>
+  <div class="col">
+    <h2>A good metric is necessary, and it is not sufficient.</h2>
+    <p>The two worst bugs in this project were in the measuring apparatus, not the thing
+    being measured, and both would have flattered the result.</p>
+    <p>The grader compared timestamps as strings, so <code>08:00:00.000Z</code> and
+    <code>08:00:00Z</code> counted as a misread — it reported 78% accuracy on a roster
+    read perfectly. My answer key was wrong about days off, recording every one as being
+    at base; the reader disagreed with me on six fields and was right about all six.</p>
+    <p>Then the fix for the last failing case turned out not to be a rule or a check, but
+    <strong>asking the model to say which values it had worked out rather than read</strong>.
+    Being made to show its work changed the work.</p>
+    <p>And the experiment I removed tied on every number I report while taking the count
+    of checkable values from 33 to zero. My metric could not see the difference — which
+    is worse than being fooled by it, because being fooled at least leaves a trace.</p>
+  </div>
+  <div class="note col">
+    Build the scoreboard before the agent. Then distrust the scoreboard too, and go and
+    look at what the person actually ends up holding.
+  </div>
+</section>
+
+<footer>
+  <div class="col">
+    <p><strong>Advisory only.</strong> Not a flight time limitations tool; it makes no
+    ruling on whether any duty is legal. Every airline, roster and crew reference in the
+    project is invented — no real person's schedule appears anywhere in it.</p>
+    <p>Code, evaluation harness, agent trajectories and the full improvement changelog:
+    <a href="https://github.com/Bernaljp/nightstop">github.com/Bernaljp/nightstop</a></p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>

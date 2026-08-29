@@ -1,0 +1,18 @@
+{
+  "caseId": "d02-meridian",
+  "arm": "nightstop",
+  "costUsd": 0.9240214999999999,
+  "wallMs": 216102,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 8,
+  "surfacedCount": 8,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}
