@@ -1,0 +1,18 @@
+{
+  "caseId": "d03-polaris",
+  "arm": "nightstop",
+  "costUsd": 0.23957974999999998,
+  "wallMs": 79805,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 4,
+  "surfacedCount": 4,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

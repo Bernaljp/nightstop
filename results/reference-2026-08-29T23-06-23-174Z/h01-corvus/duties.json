@@ -1,0 +1,673 @@
+[
+  {
+    "id": "2026-09-01-01",
+    "date": "2026-09-01",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-01T08:00:00.000Z",
+    "endUtc": "2026-09-01T22:32:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV704",
+        "origin": "MAD",
+        "dest": "LIS",
+        "depUtc": "2026-09-01T08:50:00.000Z",
+        "arrUtc": "2026-09-01T10:15:00.000Z"
+      },
+      {
+        "flightNo": "CV313",
+        "origin": "LIS",
+        "dest": "MAD",
+        "depUtc": "2026-09-01T11:01:00.000Z",
+        "arrUtc": "2026-09-01T12:26:00.000Z"
+      },
+      {
+        "flightNo": "CV826",
+        "origin": "MAD",
+        "dest": "ARN",
+        "depUtc": "2026-09-01T13:30:00.000Z",
+        "arrUtc": "2026-09-01T17:25:00.000Z"
+      },
+      {
+        "flightNo": "CV273",
+        "origin": "ARN",
+        "dest": "MAD",
+        "depUtc": "2026-09-01T18:07:00.000Z",
+        "arrUtc": "2026-09-01T22:02:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-02-02",
+    "date": "2026-09-02",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-02T08:35:00.000Z",
+    "endUtc": "2026-09-02T15:26:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV247",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-09-02T09:25:00.000Z",
+        "arrUtc": "2026-09-02T11:50:00.000Z"
+      },
+      {
+        "flightNo": "CV403",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-09-02T12:31:00.000Z",
+        "arrUtc": "2026-09-02T14:56:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-03-03",
+    "date": "2026-09-03",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-04-04",
+    "date": "2026-09-04",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-05-05",
+    "date": "2026-09-05",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "SIN",
+    "reportUtc": "2026-09-05T12:45:00.000Z",
+    "endUtc": "2026-09-06T04:05:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV669",
+        "origin": "MAD",
+        "dest": "SIN",
+        "depUtc": "2026-09-05T14:05:00.000Z",
+        "arrUtc": "2026-09-06T03:35:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-06-06",
+    "date": "2026-09-06",
+    "kind": "off",
+    "code": "DO",
+    "station": "SIN",
+    "endStation": "SIN",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-07-07",
+    "date": "2026-09-07",
+    "kind": "flight",
+    "station": "SIN",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-07T06:45:00.000Z",
+    "endUtc": "2026-09-07T22:05:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV280",
+        "origin": "SIN",
+        "dest": "MAD",
+        "depUtc": "2026-09-07T08:05:00.000Z",
+        "arrUtc": "2026-09-07T21:35:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-08-08",
+    "date": "2026-09-08",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-09-09",
+    "date": "2026-09-09",
+    "kind": "training",
+    "code": "TRN",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-09T06:00:00.000Z",
+    "endUtc": "2026-09-09T14:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-10-10",
+    "date": "2026-09-10",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-10T00:00:00.000Z",
+    "endUtc": "2026-09-10T13:55:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV833",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-10T00:50:00.000Z",
+        "arrUtc": "2026-09-10T03:30:00.000Z"
+      },
+      {
+        "flightNo": "CV110",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-10T04:10:00.000Z",
+        "arrUtc": "2026-09-10T06:50:00.000Z"
+      },
+      {
+        "flightNo": "CV627",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-09-10T07:37:00.000Z",
+        "arrUtc": "2026-09-10T10:02:00.000Z"
+      },
+      {
+        "flightNo": "CV728",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-09-10T11:00:00.000Z",
+        "arrUtc": "2026-09-10T13:25:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-10-11",
+    "date": "2026-09-10",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-10T23:55:00.000Z",
+    "endUtc": "2026-09-11T19:53:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV110",
+        "origin": "MAD",
+        "dest": "ARN",
+        "depUtc": "2026-09-11T00:45:00.000Z",
+        "arrUtc": "2026-09-11T04:40:00.000Z"
+      },
+      {
+        "flightNo": "CV755",
+        "origin": "ARN",
+        "dest": "MAD",
+        "depUtc": "2026-09-11T05:45:00.000Z",
+        "arrUtc": "2026-09-11T09:40:00.000Z"
+      },
+      {
+        "flightNo": "CV443",
+        "origin": "MAD",
+        "dest": "ARN",
+        "depUtc": "2026-09-11T10:32:00.000Z",
+        "arrUtc": "2026-09-11T14:27:00.000Z"
+      },
+      {
+        "flightNo": "CV257",
+        "origin": "ARN",
+        "dest": "MAD",
+        "depUtc": "2026-09-11T15:28:00.000Z",
+        "arrUtc": "2026-09-11T19:23:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-11-12",
+    "date": "2026-09-11",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-12-13",
+    "date": "2026-09-12",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "DXB",
+    "reportUtc": "2026-09-12T12:45:00.000Z",
+    "endUtc": "2026-09-12T21:35:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV587",
+        "origin": "MAD",
+        "dest": "DXB",
+        "depUtc": "2026-09-12T14:05:00.000Z",
+        "arrUtc": "2026-09-12T21:05:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-13-14",
+    "date": "2026-09-13",
+    "kind": "flight",
+    "station": "DXB",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-13T17:50:00.000Z",
+    "endUtc": "2026-09-14T02:40:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV216",
+        "origin": "DXB",
+        "dest": "MAD",
+        "depUtc": "2026-09-13T19:10:00.000Z",
+        "arrUtc": "2026-09-14T02:10:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-14-15",
+    "date": "2026-09-14",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-15-16",
+    "date": "2026-09-15",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-15T04:10:00.000Z",
+    "endUtc": "2026-09-15T17:58:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV530",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-09-15T05:00:00.000Z",
+        "arrUtc": "2026-09-15T07:25:00.000Z"
+      },
+      {
+        "flightNo": "CV217",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-09-15T08:29:00.000Z",
+        "arrUtc": "2026-09-15T10:54:00.000Z"
+      },
+      {
+        "flightNo": "CV667",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-09-15T11:57:00.000Z",
+        "arrUtc": "2026-09-15T14:22:00.000Z"
+      },
+      {
+        "flightNo": "CV330",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-09-15T15:03:00.000Z",
+        "arrUtc": "2026-09-15T17:28:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-16-17",
+    "date": "2026-09-16",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "BOG",
+    "reportUtc": "2026-09-16T06:55:00.000Z",
+    "endUtc": "2026-09-16T19:00:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV136",
+        "origin": "MAD",
+        "dest": "BOG",
+        "depUtc": "2026-09-16T08:15:00.000Z",
+        "arrUtc": "2026-09-16T18:30:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-17-18",
+    "date": "2026-09-17",
+    "kind": "off",
+    "code": "DO",
+    "station": "BOG",
+    "endStation": "BOG",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-18-19",
+    "date": "2026-09-18",
+    "kind": "off",
+    "code": "DO",
+    "station": "BOG",
+    "endStation": "BOG",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-19-20",
+    "date": "2026-09-19",
+    "kind": "flight",
+    "station": "BOG",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-19T01:30:00.000Z",
+    "endUtc": "2026-09-19T13:35:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV275",
+        "origin": "BOG",
+        "dest": "MAD",
+        "depUtc": "2026-09-19T02:50:00.000Z",
+        "arrUtc": "2026-09-19T13:05:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-20-21",
+    "date": "2026-09-20",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-20T11:15:00.000Z",
+    "endUtc": "2026-09-21T01:53:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV826",
+        "origin": "MAD",
+        "dest": "FRA",
+        "depUtc": "2026-09-20T12:05:00.000Z",
+        "arrUtc": "2026-09-20T14:40:00.000Z"
+      },
+      {
+        "flightNo": "CV688",
+        "origin": "FRA",
+        "dest": "MAD",
+        "depUtc": "2026-09-20T15:36:00.000Z",
+        "arrUtc": "2026-09-20T18:11:00.000Z"
+      },
+      {
+        "flightNo": "CV418",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-20T19:09:00.000Z",
+        "arrUtc": "2026-09-20T21:49:00.000Z"
+      },
+      {
+        "flightNo": "CV257",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-20T22:43:00.000Z",
+        "arrUtc": "2026-09-21T01:23:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-21-22",
+    "date": "2026-09-21",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-22-23",
+    "date": "2026-09-22",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-22T04:10:00.000Z",
+    "endUtc": "2026-09-22T09:13:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV467",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-22T05:00:00.000Z",
+        "arrUtc": "2026-09-22T06:20:00.000Z"
+      },
+      {
+        "flightNo": "CV161",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-22T07:23:00.000Z",
+        "arrUtc": "2026-09-22T08:43:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-22-24",
+    "date": "2026-09-22",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-22T19:15:00.000Z",
+    "endUtc": "2026-09-23T07:42:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV747",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-22T20:05:00.000Z",
+        "arrUtc": "2026-09-22T22:10:00.000Z"
+      },
+      {
+        "flightNo": "CV691",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-22T22:51:00.000Z",
+        "arrUtc": "2026-09-23T00:56:00.000Z"
+      },
+      {
+        "flightNo": "CV418",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-09-23T01:41:00.000Z",
+        "arrUtc": "2026-09-23T04:06:00.000Z"
+      },
+      {
+        "flightNo": "CV678",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-09-23T04:47:00.000Z",
+        "arrUtc": "2026-09-23T07:12:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-23-25",
+    "date": "2026-09-23",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-23T17:45:00.000Z",
+    "endUtc": "2026-09-24T05:58:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV824",
+        "origin": "MAD",
+        "dest": "FRA",
+        "depUtc": "2026-09-23T18:35:00.000Z",
+        "arrUtc": "2026-09-23T21:10:00.000Z"
+      },
+      {
+        "flightNo": "CV585",
+        "origin": "FRA",
+        "dest": "MAD",
+        "depUtc": "2026-09-23T21:55:00.000Z",
+        "arrUtc": "2026-09-24T00:30:00.000Z"
+      },
+      {
+        "flightNo": "CV797",
+        "origin": "MAD",
+        "dest": "LIS",
+        "depUtc": "2026-09-24T01:34:00.000Z",
+        "arrUtc": "2026-09-24T02:59:00.000Z"
+      },
+      {
+        "flightNo": "CV594",
+        "origin": "LIS",
+        "dest": "MAD",
+        "depUtc": "2026-09-24T04:03:00.000Z",
+        "arrUtc": "2026-09-24T05:28:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-24-26",
+    "date": "2026-09-24",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-24T16:00:00.000Z",
+    "endUtc": "2026-09-25T02:03:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV356",
+        "origin": "MAD",
+        "dest": "ARN",
+        "depUtc": "2026-09-24T16:50:00.000Z",
+        "arrUtc": "2026-09-24T20:45:00.000Z"
+      },
+      {
+        "flightNo": "CV156",
+        "origin": "ARN",
+        "dest": "MAD",
+        "depUtc": "2026-09-24T21:38:00.000Z",
+        "arrUtc": "2026-09-25T01:33:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-25-27",
+    "date": "2026-09-25",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-26-28",
+    "date": "2026-09-26",
+    "kind": "standby",
+    "code": "STBY",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-26T11:00:00.000Z",
+    "endUtc": "2026-09-26T17:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-27-29",
+    "date": "2026-09-27",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-28-30",
+    "date": "2026-09-28",
+    "kind": "standby",
+    "code": "STBY",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-28T03:00:00.000Z",
+    "endUtc": "2026-09-28T09:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-28-31",
+    "date": "2026-09-28",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-28T19:00:00.000Z",
+    "endUtc": "2026-09-29T04:26:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CV444",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-28T19:50:00.000Z",
+        "arrUtc": "2026-09-28T21:10:00.000Z"
+      },
+      {
+        "flightNo": "CV432",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-28T21:51:00.000Z",
+        "arrUtc": "2026-09-28T23:11:00.000Z"
+      },
+      {
+        "flightNo": "CV430",
+        "origin": "MAD",
+        "dest": "LIS",
+        "depUtc": "2026-09-29T00:06:00.000Z",
+        "arrUtc": "2026-09-29T01:31:00.000Z"
+      },
+      {
+        "flightNo": "CV578",
+        "origin": "LIS",
+        "dest": "MAD",
+        "depUtc": "2026-09-29T02:31:00.000Z",
+        "arrUtc": "2026-09-29T03:56:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-29-32",
+    "date": "2026-09-29",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-30-33",
+    "date": "2026-09-30",
+    "kind": "off",
+    "code": "DO",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  }
+]

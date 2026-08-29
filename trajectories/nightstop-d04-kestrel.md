@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-29T22-29-49-615Z/d04-kestrel/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-29T23-06-23-974Z/d04-kestrel/trajectory.jsonl -->
 
 > **Why this trajectory.** The reader on the roster that does not print report time. It has to be derived from the offset table in the header, and the offset differs by haul — the one case that failed before the reader was asked to declare its derivations.
 
 # Trajectory — d04-kestrel, arm `nightstop`
 
-Run `nightstop-2026-08-29T22-29-49-615Z`. 175 events.
+Run `nightstop-2026-08-29T23-06-23-974Z`. 174 events.
 
 
 ## reader
@@ -115,7 +115,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 
 ### Turn 1 — stop reason `null`
 
-I'll start by reading the roster document.
+I'll start by reading the roster.
 
 ### Turn 2 — stop reason `null`
 
@@ -150,7 +150,7 @@ I'll start by reading the roster document.
 
 ### Turn 5 — stop reason `null`
 
-Now let me convert every local time properly.
+PDF read. Let me convert every local time via the tool.
 
 ### Turn 6 — stop reason `null`
 
@@ -493,17 +493,6 @@ Now let me convert every local time properly.
 }
 ```
 
-### Turn 37 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-13T20:35"
-}
-```
-
 **tool answered**
 
 ```
@@ -513,6 +502,17 @@ Now let me convert every local time properly.
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-12T13:10\",\"utc\":\"2026-09-12T11:10:00.000Z\",\"notes\":[]}"
   }
 ]
+```
+
+### Turn 38 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-13T20:35"
+}
 ```
 
 **tool answered**
@@ -682,10 +682,6 @@ Now let me convert every local time properly.
 
 ### Turn 54 — stop reason `null`
 
-
-
-### Turn 55 — stop reason `null`
-
 **calls `mcp__nightstop__to_utc`**
 
 ```json
@@ -706,7 +702,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 57 — stop reason `null`
+### Turn 56 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -728,7 +724,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 59 — stop reason `null`
+### Turn 58 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -739,18 +735,7 @@ Now let me convert every local time properly.
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"ORD\",\"timezone\":\"America/Chicago\",\"localDateTime\":\"2026-09-20T12:15\",\"utc\":\"2026-09-20T17:15:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 61 — stop reason `null`
+### Turn 59 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -767,12 +752,23 @@ Now let me convert every local time properly.
 [
   {
     "type": "text",
+    "text": "{\"station\":\"ORD\",\"timezone\":\"America/Chicago\",\"localDateTime\":\"2026-09-20T12:15\",\"utc\":\"2026-09-20T17:15:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"ORD\",\"timezone\":\"America/Chicago\",\"localDateTime\":\"2026-09-20T12:45\",\"utc\":\"2026-09-20T17:45:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 63 — stop reason `null`
+### Turn 62 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -794,7 +790,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 65 — stop reason `null`
+### Turn 64 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -803,6 +799,17 @@ Now let me convert every local time properly.
   "station": "ORD",
   "localDateTime": "2026-09-22T21:50"
 }
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"ORD\",\"timezone\":\"America/Chicago\",\"localDateTime\":\"2026-09-22T21:50\",\"utc\":\"2026-09-23T02:50:00.000Z\",\"notes\":[]}"
+  }
+]
 ```
 
 ### Turn 66 — stop reason `null`
@@ -822,23 +829,12 @@ Now let me convert every local time properly.
 [
   {
     "type": "text",
-    "text": "{\"station\":\"ORD\",\"timezone\":\"America/Chicago\",\"localDateTime\":\"2026-09-22T21:50\",\"utc\":\"2026-09-23T02:50:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T13:50\",\"utc\":\"2026-09-23T11:50:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 69 — stop reason `null`
+### Turn 68 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -859,6 +855,10 @@ Now let me convert every local time properly.
   }
 ]
 ```
+
+### Turn 70 — stop reason `null`
+
+Now the short-haul days.
 
 ### Turn 71 — stop reason `null`
 
@@ -1157,17 +1157,6 @@ Now let me convert every local time properly.
 }
 ```
 
-### Turn 98 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-27T12:05"
-}
-```
-
 **tool answered**
 
 ```
@@ -1177,6 +1166,17 @@ Now let me convert every local time properly.
     "text": "{\"station\":\"ARN\",\"timezone\":\"Europe/Stockholm\",\"localDateTime\":\"2026-09-27T08:10\",\"utc\":\"2026-09-27T06:10:00.000Z\",\"notes\":[]}"
   }
 ]
+```
+
+### Turn 99 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-27T12:05"
+}
 ```
 
 **tool answered**
@@ -1531,17 +1531,6 @@ Now let me convert every local time properly.
 }
 ```
 
-### Turn 132 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-29T14:00"
-}
-```
-
 **tool answered**
 
 ```
@@ -1551,6 +1540,17 @@ Now let me convert every local time properly.
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-29T13:15\",\"utc\":\"2026-09-29T11:15:00.000Z\",\"notes\":[]}"
   }
 ]
+```
+
+### Turn 133 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-29T14:00"
+}
 ```
 
 **tool answered**
@@ -1795,6 +1795,17 @@ Now let me convert every local time properly.
 }
 ```
 
+### Turn 156 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DUB",
+  "localDateTime": "2026-09-30T14:23"
+}
+```
+
 **tool answered**
 
 ```
@@ -1804,17 +1815,6 @@ Now let me convert every local time properly.
     "text": "{\"station\":\"DUB\",\"timezone\":\"Europe/Dublin\",\"localDateTime\":\"2026-09-30T13:39\",\"utc\":\"2026-09-30T12:39:00.000Z\",\"notes\":[]}"
   }
 ]
-```
-
-### Turn 157 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DUB",
-  "localDateTime": "2026-09-30T14:23"
-}
 ```
 
 **tool answered**
@@ -1874,13 +1874,9 @@ Now let me convert every local time properly.
 
 ### Turn 163 — stop reason `null`
 
-
+Now reconciling against the header totals.
 
 ### Turn 164 — stop reason `null`
-
-Now let me check against the header totals.
-
-### Turn 165 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1906,23 +1902,26 @@ Now let me check against the header totals.
 ]
 ```
 
+### Turn 166 — stop reason `null`
+
+
+
 ### Turn 167 — stop reason `null`
 
-
-
-### Turn 168 — stop reason `null`
+Everything reconciles. 
 
 ```json
 {
-  "format": "Kestrel Europe prints one flat table (Date, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty) with dates as DD/MM/YYYY; all times are LOCAL to the station shown, report time is never printed and must be derived from the header offsets (45 min short haul, 75 min long haul), while 'Off Duty' is the printed end-of-duty local time at the arrival station.",
+  "format": "Kestrel Europe prints one line per sector under a single date column, with Act (blank for flights, 'OFF' for days off), flight number, sector pair, STD, STA, per-sector Block, and — only on the last sector of a duty — an Off Duty time and a total Duty length. All times are LOCAL to the station shown (header states this explicitly); dates are DD/MM/YYYY; report times are not printed and must be derived from the header's reporting offsets (short haul 45 min, long haul 75 min before STD).",
   "traps": [
-    "Report time is not printed anywhere. It must be derived from the header's 'REPORTING TIMES (before STD)' block, and the correct offset depends on whether the sector is short or long haul — 45 min for the intra-European rotations, 75 min for the JFK/BOS/DXB/ORD flights. I confirmed each choice by checking that report-to-Off-Duty equals the printed Duty figure.",
-    "Times are local to the station shown, and the STD and STA on one line are in different timezones (e.g. 05/09 MAD 12:40 -> JFK 14:40 is 8h00, not 2h00). The Block column is the only cross-check on this.",
-    "'+1' suffixes on STA and Off Duty mark the next calendar day (07/09, 11/09, 13/09, 22/09).",
-    "11/09 KE153 BOS-MAD departs 23:10 local on 11 Sep, which is already 12 Sep in UTC — both the sector and the derived report time (21:55 BOS) fall on 12 Sep UTC. Same effect on 22/09 ORD 21:50 -> 23 Sep UTC.",
-    "Multi-sector days (26-30 Sep) DO repeat the date on every row, but Off Duty and Duty appear only on the last row of the duty — a blank Off Duty is a continuation, not a missing value.",
-    "The Block column on 26/09 and elsewhere shows the same value on consecutive rows (2h40, 2h40) which looks like a duplica
-… [11203 more characters]
+    "Report time is never printed — it must be derived from the header offsets, and choosing the wrong one (45 vs 75 min) still reconciles against block hours because report time is not part of block.",
+    "Multi-sector days (26–30 Sep) repeat the date on every row, so the rows look independent; they are one duty each, identified by the single Off Duty/Duty figure on the last row of the group.",
+    "'+1' suffixes on STA and Off Duty mean the following calendar day (07, 11, 13, 22 Sep).",
+    "11/09 KE153 departs BOS at 23:10 local, which is already 12/09 in UTC — the whole duty (report, departure, arrival, off duty) falls on 12 September UTC despite the row being dated 11/09.",
+    "13/09 KE586 departs MAD 21:50 and lands DXB the next morning; the nightstop is at DXB on the night of 13–14, and 14/09 is printed OFF.",
+    "The Block column is per sector, not a running total — summing only the last row of each duty would badly undercount.",
+    "Sectors touching multiple zones: DUB is UTC+1 while MAD/BCN/FCO/FRA/CDG/ARN are UTC+2 
+… [11316 more characters]
 
 _finished: success_
 
@@ -1932,8 +1931,8 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "I'll start by reading the roster document.\nNow let me convert every local time properly.\nNow let me check against the header totals.\n```json\n{\n  \"format\": \"Kestrel Europe prints one flat table (Date, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty) with dates as DD/MM/YYYY; all times are LOCAL to the station shown, report time is never printed and must be derived from the header offsets (45 min short haul, 75 min long haul), while 'Off Duty' is the printed end-of-duty local time at the arrival station.\",\n  \"traps\": [\n    \"Report time is not printed anywhere. It must be derived from the header's 'REPORTING TIMES (before STD)' block, and the correct offset depends on whether the sector is short or long haul — 45 min for the intra-European rotations, 75 min for the JFK/BOS/DXB/ORD flights. I confirmed each choice by checking that report-to-Off-Duty equals the printed Duty figure.\",\n    \"Times are local to the station shown, and the STD and STA on one line are in different timezones (e.g. 05/09 MAD 12:40 -> JFK 14:40 is 8h00, not 2h00). The Block column is the only cross-check on this.\",\n    \"'+1' suffixes on STA and Off Duty mark the next calendar day (07/09, 11/09, 13/09, 22/09).\",\n    \"11/09 KE153 BOS-MAD departs 23:10 local on 11 Sep, which is already 12 Sep in UTC — both the sector and the derived report time (21:55 BOS) fall on 12 Sep UTC. Same effect on 22/09 ORD 21:50 -> 23 Sep UTC.\",\n    \"Multi-sector days (26-30 Sep) DO repeat the date on every row, but Off Duty and Duty appear only on the last row of the duty — a blank Off Duty is a continuation, not a missing value.\",\n    \"The Block column on 26/09 and elsewhere shows the same value on consecutive rows (2h40, 2h40) which looks like a duplicated line but is two genuinely distinct sectors of equal block time.\",\n    \"Days off on 06/09, 14/09 and 21/09 are downroute rest at JFK, DXB and ORD, not days off at base — the crew member is not at MAD.\",\n    \"No daylight-saving transition falls inside the period (Europe changes 25 Oct, US 1 Nov), so all conversions are on stable offsets.\",\n    \"Single page, header not repeated.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    { \"date\": \"2026-09-05\", \"field\": \"reportUtc\", \"method\": \"STD 12:40 MAD minus the 75 min long-haul offset = 11:25 local; cross-checks against printed Duty 9h45 to Off Duty 15:10 JFK\", \"confidence\": \"high\" },\n    { \"date\": \"2026-
-… [12146 more characters]
+  "text": "I'll start by reading the roster.\nPDF read. Let me convert every local time via the tool.\nNow the short-haul days.\nNow reconciling against the header totals.\nEverything reconciles. \n\n```json\n{\n  \"format\": \"Kestrel Europe prints one line per sector under a single date column, with Act (blank for flights, 'OFF' for days off), flight number, sector pair, STD, STA, per-sector Block, and — only on the last sector of a duty — an Off Duty time and a total Duty length. All times are LOCAL to the station shown (header states this explicitly); dates are DD/MM/YYYY; report times are not printed and must be derived from the header's reporting offsets (short haul 45 min, long haul 75 min before STD).\",\n  \"traps\": [\n    \"Report time is never printed — it must be derived from the header offsets, and choosing the wrong one (45 vs 75 min) still reconciles against block hours because report time is not part of block.\",\n    \"Multi-sector days (26–30 Sep) repeat the date on every row, so the rows look independent; they are one duty each, identified by the single Off Duty/Duty figure on the last row of the group.\",\n    \"'+1' suffixes on STA and Off Duty mean the following calendar day (07, 11, 13, 22 Sep).\",\n    \"11/09 KE153 departs BOS at 23:10 local, which is already 12/09 in UTC — the whole duty (report, departure, arrival, off duty) falls on 12 September UTC despite the row being dated 11/09.\",\n    \"13/09 KE586 departs MAD 21:50 and lands DXB the next morning; the nightstop is at DXB on the night of 13–14, and 14/09 is printed OFF.\",\n    \"The Block column is per sector, not a running total — summing only the last row of each duty would badly undercount.\",\n    \"Sectors touching multiple zones: DUB is UTC+1 while MAD/BCN/FCO/FRA/CDG/ARN are UTC+2 in September, so MAD-DUB block times look inconsistent with the clock difference.\",\n    \"The whole period sits inside European and US summer time (EU DST ends 25 Oct 2026, US 1 Nov 2026), so no DST transition occurs — but the two zones would diverge if the roster extended a month later.\",\n    \"Days off are counted by printed OFF rows: 12/09 and 23/09 are printed OFF even though the preceding duty's arrival and off-duty fall on those dates.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    { \"date\": \"2026-09-05\", \"field\": \"reportUtc\", \"method\": \"STD 12:40 MAD minus the 75 min long-haul offset = 11:25 local; cross-checked against print
+… [12287 more characters]
 ```
 
 _read complete_
@@ -1947,7 +1946,7 @@ _values worked out rather than read_
 
 ```json
 {
-  "blocks": 25,
+  "blocks": 33,
   "conflicts": 12,
   "byHardness": {
     "hard-limit": 6,

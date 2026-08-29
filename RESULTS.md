@@ -23,8 +23,8 @@ the run that produced it.
 | Field-level parse accuracy | 99.3% | 99.3% | 100.0% | 100.0% | 100.0% |
 | Conflict recall | 0.0% | 77.5% | 100.0% | 100.0% | 100.0% |
 | False alarms raised | 69 | 37 | 40 | 0 | 0 |
-| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.88 | $0.72 | $0.00 |
-| Wall clock per roster | 268s | 324s | 251s | 178s | 0s |
+| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.88 | $0.70 | $0.00 |
+| Wall clock per roster | 268s | 324s | 251s | 180s | 0s |
 
 `reference` is not a baseline. It plans from ground-truth duties, so it answers the
 question the other numbers cannot: how much of any shortfall is the reading, and how
@@ -44,18 +44,25 @@ Every run of the final arm, in order. At n=8 a single flake moves the primary by
 | `6-27-291Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.60 |
 | `4-00-108Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.70 |
 | `9-49-615Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.76 |
+| `6-23-974Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.60 |
 
 &sup1; From this run on, the reader declares which values it derived rather than read
 (commit `f7f13a4`). Runs above that line are a different configuration, not variance.
 
-The final configuration has run **6 times, 8/8 every time**, 0 silently wrong. No variance across repeats.
+The final configuration has run **7 times, 8/8 every time**, 0 silently wrong. No variance across repeats.
 
 ## Held out
 
-Four cases generated from a separate seed **after every agent prompt was frozen**
-(commit `7b77a67`), and not run against until the final evaluation. Reported
-separately and never pooled with the development set — a held-out score averaged
-into the dev number is not a held-out score.
+Reported separately and never pooled with the development set — a held-out score
+averaged into the dev number is not a held-out score.
+
+**Two sets, and the difference matters.** The first was frozen at `7b77a67`. The
+engine then changed four times (naps, night coverage, the two shift rules, the crew
+member's own hours), and each change made that set less held out, because it had
+already been seen. So the configuration was re-frozen at `577189a` and a **second**
+set generated from a seed never used before, and not run against until then. The
+first set is kept — it is still a fair test of the reading, which never changed —
+but the clean claim rests on the second.
 
 | Metric | `b1-chatbot` | `nightstop` | `reference` |
 |---|---|---|---|
@@ -83,7 +90,7 @@ into the dev number is not a held-out score.
 | `h03-tellus` | `surfaced` | 330/330 | 3/3 | 0 |
 | `h04-atria` | `clean` | 330/330 | 0/0 | 0 |
 
-**`reference`, case by case** — run `reference-2026-08-29T22-29-31-765Z`
+**`reference`, case by case** — run `reference-2026-08-29T23-05-52-439Z`
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms |
 |---|---|---|---|---|
@@ -91,6 +98,16 @@ into the dev number is not a held-out score.
 | `h02-lyra` | `surfaced` | 352/352 | 10/10 | 0 |
 | `h03-tellus` | `surfaced` | 330/330 | 3/3 | 0 |
 | `h04-atria` | `clean` | 330/330 | 0/0 | 0 |
+
+### Held out, second set — frozen at `577189a`, never previously run
+
+| Metric | `b1-chatbot` | `nightstop` | `reference` |
+|---|---|---|---|
+| **Trustworthy runs** | **0/4** | **4/4** | **4/4** |
+| **Silently wrong** | **4/4** | **0/4** | **0/4** |
+| Field-level parse accuracy | 99.7% | 100.0% | 100.0% |
+| Conflict recall | 0.0% | 100.0% | 100.0% |
+| False alarms raised | 38 | 0 | 0 |
 
 ## Where every case landed
 
@@ -150,22 +167,22 @@ Run `a-model-checks-2026-08-29T17-24-13-108Z` · 2026-08-29 17:33 · git `d1451f
 
 ### `nightstop` — case by case
 
-Run `nightstop-2026-08-29T22-29-49-615Z` · 2026-08-29 22:36 · git `ba167fd4` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+Run `nightstop-2026-08-29T23-06-23-974Z` · 2026-08-29 23:13 · git `bc801bdf` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
-| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $1.07 |
-| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.92 |
-| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.27 |
-| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.70 |
-| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.54 |
-| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $1.01 |
-| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.64 |
-| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.61 |
+| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $1.12 |
+| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.88 |
+| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.24 |
+| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.67 |
+| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.47 |
+| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.95 |
+| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.67 |
+| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.60 |
 
 ### `reference` — case by case
 
-Run `reference-2026-08-29T22-29-30-723Z` · 2026-08-29 22:29 · git `dc216387` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+Run `reference-2026-08-29T23-05-51-499Z` · 2026-08-29 23:05 · git `017f1677` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
@@ -204,3 +221,6 @@ Kept rather than deleted. Listed so nothing is quietly dropped from the record.
 - `reference-2026-08-29T17-03-46-556Z` (reference, heldout) — 4/4 trustworthy
 - `nightstop-2026-08-29T17-04-00-108Z` (nightstop, dev) — 8/8 trustworthy
 - `nightstop-2026-08-29T17-10-46-563Z` (nightstop, heldout) — 4/4 trustworthy
+- `reference-2026-08-29T22-29-30-723Z` (reference, dev) — 8/8 trustworthy
+- `reference-2026-08-29T22-29-31-765Z` (reference, heldout) — 4/4 trustworthy
+- `nightstop-2026-08-29T22-29-49-615Z` (nightstop, dev) — 8/8 trustworthy

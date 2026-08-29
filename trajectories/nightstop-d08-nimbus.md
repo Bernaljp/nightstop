@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-29T22-29-49-615Z/d08-nimbus/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-29T23-06-23-974Z/d08-nimbus/trajectory.jsonl -->
 
 > **Why this trajectory.** A month spanning both the European and North American daylight-saving changes, with transatlantic sectors whose offset changes mid-trip.
 
 # Trajectory — d08-nimbus, arm `nightstop`
 
-Run `nightstop-2026-08-29T22-29-49-615Z`. 145 events.
+Run `nightstop-2026-08-29T23-06-23-974Z`. 148 events.
 
 
 ## reader
@@ -150,7 +150,7 @@ I'll start by reading the roster document.
 
 ### Turn 5 — stop reason `null`
 
-Now let me convert every local time properly.
+Now let me convert every local time. First batch — MAD:
 
 ### Turn 6 — stop reason `null`
 
@@ -202,100 +202,23 @@ Now let me convert every local time properly.
 
 ```json
 {
-  "station": "DXB",
-  "localDateTime": "2026-10-12T01:05"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-12T01:05\",\"utc\":\"2026-10-11T21:05:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 12 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-12T01:35"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-12T01:35\",\"utc\":\"2026-10-11T21:35:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 14 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-13T08:45"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-13T08:45\",\"utc\":\"2026-10-13T04:45:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 16 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-13T10:15"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-13T10:15\",\"utc\":\"2026-10-13T06:15:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 18 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
   "station": "MAD",
   "localDateTime": "2026-10-13T15:15"
 }
 ```
 
-### Turn 19 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-13T15:15\",\"utc\":\"2026-10-13T13:15:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 12 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -312,23 +235,12 @@ Now let me convert every local time properly.
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-13T15:15\",\"utc\":\"2026-10-13T13:15:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-13T15:45\",\"utc\":\"2026-10-13T13:45:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 22 — stop reason `null`
+### Turn 14 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -350,7 +262,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 24 — stop reason `null`
+### Turn 16 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -372,95 +284,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 26 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-22T08:10"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-22T08:10\",\"utc\":\"2026-10-22T04:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 28 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-22T08:40"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-22T08:40\",\"utc\":\"2026-10-22T04:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 30 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-23T21:40"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-23T21:40\",\"utc\":\"2026-10-23T17:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 32 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-23T23:10"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-23T23:10\",\"utc\":\"2026-10-23T19:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 34 — stop reason `null`
+### Turn 18 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -482,7 +306,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 36 — stop reason `null`
+### Turn 20 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -493,18 +317,7 @@ Now let me convert every local time properly.
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-24T04:40\",\"utc\":\"2026-10-24T02:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 38 — stop reason `null`
+### Turn 21 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -521,12 +334,23 @@ Now let me convert every local time properly.
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-24T04:40\",\"utc\":\"2026-10-24T02:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-25T08:45\",\"utc\":\"2026-10-25T07:45:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 40 — stop reason `null`
+### Turn 24 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -548,95 +372,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 42 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "GRU",
-  "localDateTime": "2026-10-25T16:35"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-25T16:35\",\"utc\":\"2026-10-25T19:35:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 44 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "GRU",
-  "localDateTime": "2026-10-25T17:05"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-25T17:05\",\"utc\":\"2026-10-25T20:05:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 46 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "GRU",
-  "localDateTime": "2026-10-26T11:10"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-26T11:10\",\"utc\":\"2026-10-26T14:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 48 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "GRU",
-  "localDateTime": "2026-10-26T12:40"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-26T12:40\",\"utc\":\"2026-10-26T15:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 50 — stop reason `null`
+### Turn 26 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -658,7 +394,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 52 — stop reason `null`
+### Turn 28 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -680,7 +416,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 54 — stop reason `null`
+### Turn 30 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -702,7 +438,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 56 — stop reason `null`
+### Turn 32 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -724,7 +460,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 58 — stop reason `null`
+### Turn 34 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -735,7 +471,18 @@ Now let me convert every local time properly.
 }
 ```
 
-### Turn 59 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-29T11:10\",\"utc\":\"2026-10-29T10:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 36 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -752,111 +499,12 @@ Now let me convert every local time properly.
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-29T11:10\",\"utc\":\"2026-10-29T10:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-29T12:40\",\"utc\":\"2026-10-29T11:40:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 62 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "SIN",
-  "localDateTime": "2026-10-30T09:10"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-10-30T09:10\",\"utc\":\"2026-10-30T01:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 64 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "SIN",
-  "localDateTime": "2026-10-30T09:40"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-10-30T09:40\",\"utc\":\"2026-10-30T01:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 66 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "SIN",
-  "localDateTime": "2026-10-31T08:45"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-10-31T08:45\",\"utc\":\"2026-10-31T00:45:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 68 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "SIN",
-  "localDateTime": "2026-10-31T10:15"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-10-31T10:15\",\"utc\":\"2026-10-31T02:15:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 70 — stop reason `null`
+### Turn 38 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -878,7 +526,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 72 — stop reason `null`
+### Turn 40 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -900,7 +548,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 74 — stop reason `null`
+### Turn 42 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -922,7 +570,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 76 — stop reason `null`
+### Turn 44 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -944,95 +592,11 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 78 — stop reason `null`
+### Turn 46 — stop reason `null`
 
-**calls `mcp__nightstop__to_utc`**
+Second batch — remaining MAD plus DXB:
 
-```json
-{
-  "station": "SIN",
-  "localDateTime": "2026-11-02T12:35"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-02T12:35\",\"utc\":\"2026-11-02T04:35:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 80 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "SIN",
-  "localDateTime": "2026-11-02T13:05"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-02T13:05\",\"utc\":\"2026-11-02T05:05:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 82 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "SIN",
-  "localDateTime": "2026-11-03T11:10"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-03T11:10\",\"utc\":\"2026-11-03T03:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 84 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "SIN",
-  "localDateTime": "2026-11-03T12:40"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-03T12:40\",\"utc\":\"2026-11-03T04:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 86 — stop reason `null`
+### Turn 47 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1054,7 +618,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 88 — stop reason `null`
+### Turn 49 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1076,7 +640,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 90 — stop reason `null`
+### Turn 51 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1098,7 +662,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 92 — stop reason `null`
+### Turn 53 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1120,40 +684,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 94 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "FCO",
-  "localDateTime": "2026-11-04T09:05"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"FCO\",\"timezone\":\"Europe/Rome\",\"localDateTime\":\"2026-11-04T09:05\",\"utc\":\"2026-11-04T08:05:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 96 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "FCO",
-  "localDateTime": "2026-11-04T09:53"
-}
-```
-
-### Turn 97 — stop reason `null`
+### Turn 55 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1170,23 +701,12 @@ Now let me convert every local time properly.
 [
   {
     "type": "text",
-    "text": "{\"station\":\"FCO\",\"timezone\":\"Europe/Rome\",\"localDateTime\":\"2026-11-04T09:53\",\"utc\":\"2026-11-04T08:53:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-11-04T12:18\",\"utc\":\"2026-11-04T11:18:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 100 — stop reason `null`
+### Turn 57 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1208,7 +728,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 102 — stop reason `null`
+### Turn 59 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1230,7 +750,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 104 — stop reason `null`
+### Turn 61 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1252,7 +772,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 106 — stop reason `null`
+### Turn 63 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1263,18 +783,7 @@ Now let me convert every local time properly.
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-11-06T11:10\",\"utc\":\"2026-11-06T10:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 108 — stop reason `null`
+### Turn 64 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1291,100 +800,23 @@ Now let me convert every local time properly.
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-11-06T11:10\",\"utc\":\"2026-11-06T10:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-11-06T12:40\",\"utc\":\"2026-11-06T11:40:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 110 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "BOG",
-  "localDateTime": "2026-11-06T16:55"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-06T16:55\",\"utc\":\"2026-11-06T21:55:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 112 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "BOG",
-  "localDateTime": "2026-11-06T17:25"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-06T17:25\",\"utc\":\"2026-11-06T22:25:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 114 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "BOG",
-  "localDateTime": "2026-11-07T08:45"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-07T08:45\",\"utc\":\"2026-11-07T13:45:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 116 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "BOG",
-  "localDateTime": "2026-11-07T10:15"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-07T10:15\",\"utc\":\"2026-11-07T15:15:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 118 — stop reason `null`
+### Turn 67 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1406,7 +838,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 120 — stop reason `null`
+### Turn 69 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1428,7 +860,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 122 — stop reason `null`
+### Turn 71 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1450,7 +882,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 124 — stop reason `null`
+### Turn 73 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1472,51 +904,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 126 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "LHR",
-  "localDateTime": "2026-11-09T07:30"
-}
-```
-
-### Turn 127 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "LHR",
-  "localDateTime": "2026-11-09T08:25"
-}
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"LHR\",\"timezone\":\"Europe/London\",\"localDateTime\":\"2026-11-09T07:30\",\"utc\":\"2026-11-09T07:30:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"LHR\",\"timezone\":\"Europe/London\",\"localDateTime\":\"2026-11-09T08:25\",\"utc\":\"2026-11-09T08:25:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 130 — stop reason `null`
+### Turn 75 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1538,7 +926,7 @@ Now let me convert every local time properly.
 ]
 ```
 
-### Turn 132 — stop reason `null`
+### Turn 77 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1560,11 +948,635 @@ Now let me convert every local time properly.
 ]
 ```
 
+### Turn 79 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-12T01:05"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-12T01:05\",\"utc\":\"2026-10-11T21:05:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 81 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-12T01:35"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-12T01:35\",\"utc\":\"2026-10-11T21:35:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 83 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-13T08:45"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-13T08:45\",\"utc\":\"2026-10-13T04:45:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 85 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-13T10:15"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-13T10:15\",\"utc\":\"2026-10-13T06:15:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 87 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-22T08:10"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-22T08:10\",\"utc\":\"2026-10-22T04:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 89 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-22T08:40"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-22T08:40\",\"utc\":\"2026-10-22T04:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 91 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-23T21:40"
+}
+```
+
+### Turn 92 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-23T23:10"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-23T21:40\",\"utc\":\"2026-10-23T17:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-10-23T23:10\",\"utc\":\"2026-10-23T19:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 95 — stop reason `null`
+
+Third batch — GRU, SIN, FCO, LHR, BOG:
+
+### Turn 96 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "GRU",
+  "localDateTime": "2026-10-25T16:35"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-25T16:35\",\"utc\":\"2026-10-25T19:35:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 98 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "GRU",
+  "localDateTime": "2026-10-25T17:05"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-25T17:05\",\"utc\":\"2026-10-25T20:05:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 100 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "GRU",
+  "localDateTime": "2026-10-26T11:10"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-26T11:10\",\"utc\":\"2026-10-26T14:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 102 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "GRU",
+  "localDateTime": "2026-10-26T12:40"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-26T12:40\",\"utc\":\"2026-10-26T15:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 104 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "SIN",
+  "localDateTime": "2026-10-30T09:10"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-10-30T09:10\",\"utc\":\"2026-10-30T01:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 106 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "SIN",
+  "localDateTime": "2026-10-30T09:40"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-10-30T09:40\",\"utc\":\"2026-10-30T01:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 108 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "SIN",
+  "localDateTime": "2026-10-31T08:45"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-10-31T08:45\",\"utc\":\"2026-10-31T00:45:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 110 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "SIN",
+  "localDateTime": "2026-10-31T10:15"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-10-31T10:15\",\"utc\":\"2026-10-31T02:15:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 112 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "SIN",
+  "localDateTime": "2026-11-02T12:35"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-02T12:35\",\"utc\":\"2026-11-02T04:35:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 114 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "SIN",
+  "localDateTime": "2026-11-02T13:05"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-02T13:05\",\"utc\":\"2026-11-02T05:05:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 116 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "SIN",
+  "localDateTime": "2026-11-03T11:10"
+}
+```
+
+### Turn 117 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "SIN",
+  "localDateTime": "2026-11-03T12:40"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-03T11:10\",\"utc\":\"2026-11-03T03:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-03T12:40\",\"utc\":\"2026-11-03T04:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 120 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "FCO",
+  "localDateTime": "2026-11-04T09:05"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"FCO\",\"timezone\":\"Europe/Rome\",\"localDateTime\":\"2026-11-04T09:05\",\"utc\":\"2026-11-04T08:05:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 122 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "FCO",
+  "localDateTime": "2026-11-04T09:53"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"FCO\",\"timezone\":\"Europe/Rome\",\"localDateTime\":\"2026-11-04T09:53\",\"utc\":\"2026-11-04T08:53:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 124 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "LHR",
+  "localDateTime": "2026-11-09T07:30"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"LHR\",\"timezone\":\"Europe/London\",\"localDateTime\":\"2026-11-09T07:30\",\"utc\":\"2026-11-09T07:30:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 126 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "LHR",
+  "localDateTime": "2026-11-09T08:25"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"LHR\",\"timezone\":\"Europe/London\",\"localDateTime\":\"2026-11-09T08:25\",\"utc\":\"2026-11-09T08:25:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 128 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "BOG",
+  "localDateTime": "2026-11-06T16:55"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-06T16:55\",\"utc\":\"2026-11-06T21:55:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 130 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "BOG",
+  "localDateTime": "2026-11-06T17:25"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-06T17:25\",\"utc\":\"2026-11-06T22:25:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 132 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "BOG",
+  "localDateTime": "2026-11-07T08:45"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-07T08:45\",\"utc\":\"2026-11-07T13:45:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
 ### Turn 134 — stop reason `null`
 
-Now let me reconcile against the header totals.
+**calls `mcp__nightstop__to_utc`**
 
-### Turn 135 — stop reason `null`
+```json
+{
+  "station": "BOG",
+  "localDateTime": "2026-11-07T10:15"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-07T10:15\",\"utc\":\"2026-11-07T15:15:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 136 — stop reason `null`
+
+
+
+### Turn 137 — stop reason `null`
+
+All conversions are in. Now checking against the header totals:
+
+### Turn 138 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1590,24 +1602,24 @@ Now let me reconcile against the header totals.
 ]
 ```
 
-### Turn 137 — stop reason `null`
+### Turn 140 — stop reason `null`
 
 
 
-### Turn 138 — stop reason `null`
+### Turn 141 — stop reason `null`
 
-All four header totals reconcile.
+All four header totals reconcile. Here is my reading.
+
+**Document notes:** Columns are Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop. Dates are DD/MM/YYYY. The header states all times are **local to the station shown**, so STD/Report are local at the departure airport and STA/Off Duty are local at the arrival airport. Report time is **printed**, not derived — no offset arithmetic was needed (the printed offsets happen to be 90 min on long-haul and 60 min on the FCO/LHR turns, but I read the values rather than compute them).
+
+**Traps handled:** `+1` suffixes on STA/Off Duty push those times to the next calendar day (11/10, 21/10, 23/10, 26/10, 29/10, 01/11, 07/11). On 04/11 and 09/11 the date *is* repeated on the second row, but that row has no Report time and no Nightstop — it is a continuation sector of the duty above, not a separate duty. The period crosses the European DST end on 25/10, so MAD/FCO/LHR shift from UTC+2/+1 to UTC+1/+0 mid-roster; GRU, SIN, DXB and BOG do not observe DST at all. Single page, no repeated header.
 
 ```json
 {
-  "format": "Nimbus International prints one line per calendar day in a fixed-width table: Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop. Dates are DD/MM/YYYY, all times are LOCAL to the station shown (STD/Report local to the origin, STA/Off Duty local to the destination), and a trailing \"+1\" marks a time falling on the next calendar day. Report and Off Duty are both printed, so duty start and end are read, not derived.",
+  "format": "Nimbus prints one duty per dated row in a fixed-width table (Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop), with all times local to the station shown and a '+1' suffix marking times falling on the following calendar day. Multi-sector duties get an extra row that repeats the date but leaves Report blank.",
   "traps": [
-    "Times are local to DIFFERENT stations on the same row: Report/STD are origin-local, STA/Off Duty are destination-local. Treating a row as single-timezone corrupts every long-haul sector.",
-    "The '+1' suffix on STA and Off Duty is the only marker that a duty spans two calendar days (e.g. 11/10 NB869 arrives 01:05+1 DXB, 23/10 NB779 arrives 04:10+1 MAD). Seven duties end on the day after their row's date.",
-    "Multi-sector days repeat the date on the continuation row (04/11 and 09/11) but leave Report and Nightstop blank. The second row is NOT a separate duty — it belongs to the duty above and shares its report time.",
-    "The covered period crosses the European DST end on 25/10/2026. MAD is UTC+2 through 24/10 and UTC+1 from 25/10; the 25/10 MAD-GRU duty is the first post-change duty. GRU, BOG, SIN and DXB have no DST at all, so their offsets are constant while Madrid's changes underneath them.",
-    "Off-duty on a nightstop lands on a date whose own row says OFF (e.g. 12/10, 22/10). The OFF row is a genuine day off per the roster, not a continuation of
-… [11107 more characters]
+    "'+1' suffix on STA and Off Duty means the next calendar day; seven duties end on a date later than their row date (11/10, 21/10, 23/10, 26/10, 29
+… [8671 more characters]
 
 _finished: success_
 
@@ -1617,8 +1629,8 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "I'll start by reading the roster document.\nNow let me convert every local time properly.\nNow let me reconcile against the header totals.\nAll four header totals reconcile.\n\n```json\n{\n  \"format\": \"Nimbus International prints one line per calendar day in a fixed-width table: Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop. Dates are DD/MM/YYYY, all times are LOCAL to the station shown (STD/Report local to the origin, STA/Off Duty local to the destination), and a trailing \\\"+1\\\" marks a time falling on the next calendar day. Report and Off Duty are both printed, so duty start and end are read, not derived.\",\n  \"traps\": [\n    \"Times are local to DIFFERENT stations on the same row: Report/STD are origin-local, STA/Off Duty are destination-local. Treating a row as single-timezone corrupts every long-haul sector.\",\n    \"The '+1' suffix on STA and Off Duty is the only marker that a duty spans two calendar days (e.g. 11/10 NB869 arrives 01:05+1 DXB, 23/10 NB779 arrives 04:10+1 MAD). Seven duties end on the day after their row's date.\",\n    \"Multi-sector days repeat the date on the continuation row (04/11 and 09/11) but leave Report and Nightstop blank. The second row is NOT a separate duty — it belongs to the duty above and shares its report time.\",\n    \"The covered period crosses the European DST end on 25/10/2026. MAD is UTC+2 through 24/10 and UTC+1 from 25/10; the 25/10 MAD-GRU duty is the first post-change duty. GRU, BOG, SIN and DXB have no DST at all, so their offsets are constant while Madrid's changes underneath them.\",\n    \"Off-duty on a nightstop lands on a date whose own row says OFF (e.g. 12/10, 22/10). The OFF row is a genuine day off per the roster, not a continuation of the previous duty.\",\n    \"Report offset is not uniform: 90 minutes on long-haul/widebody rotations, 60 minutes on the two European short-haul days (04/11 and 09/11). Do not assume one offset. (Both are printed, so this only matters as a sanity check.)\",\n    \"The 28/10 SIM and 05/11 SBY rows show a sector of 'MAD-MAD' with no flight number and no block time — these are training and standby, not flights, and their start times carry no reporting offset.\",\n    \"Table is on a single page; no repeated header rows to mistake for data.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    {\n      \"date\": \"2026-10-11\",\n      \"field\": \"endUtc\",\n      \"method\": \"Of
-… [12097 more characters]
+  "text": "I'll start by reading the roster document.\nNow let me convert every local time. First batch — MAD:\nSecond batch — remaining MAD plus DXB:\nThird batch — GRU, SIN, FCO, LHR, BOG:\nAll conversions are in. Now checking against the header totals:\nAll four header totals reconcile. Here is my reading.\n\n**Document notes:** Columns are Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop. Dates are DD/MM/YYYY. The header states all times are **local to the station shown**, so STD/Report are local at the departure airport and STA/Off Duty are local at the arrival airport. Report time is **printed**, not derived — no offset arithmetic was needed (the printed offsets happen to be 90 min on long-haul and 60 min on the FCO/LHR turns, but I read the values rather than compute them).\n\n**Traps handled:** `+1` suffixes on STA/Off Duty push those times to the next calendar day (11/10, 21/10, 23/10, 26/10, 29/10, 01/11, 07/11). On 04/11 and 09/11 the date *is* repeated on the second row, but that row has no Report time and no Nightstop — it is a continuation sector of the duty above, not a separate duty. The period crosses the European DST end on 25/10, so MAD/FCO/LHR shift from UTC+2/+1 to UTC+1/+0 mid-roster; GRU, SIN, DXB and BOG do not observe DST at all. Single page, no repeated header.\n\n```json\n{\n  \"format\": \"Nimbus prints one duty per dated row in a fixed-width table (Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop), with all times local to the station shown and a '+1' suffix marking times falling on the following calendar day. Multi-sector duties get an extra row that repeats the date but leaves Report blank.\",\n  \"traps\": [\n    \"'+1' suffix on STA and Off Duty means the next calendar day; seven duties end on a date later than their row date (11/10, 21/10, 23/10, 26/10, 29/10, 01/11, 07/11).\",\n    \"04/11 and 09/11 each occupy two rows with the date repeated; the second row has no Report and no Nightstop, so it is a continuation sector of the same duty, not a second duty.\",\n    \"Times are local to the station shown, so within one row STD is local at origin and STA is local at destination — the two are in different zones on every long-haul sector.\",\n    \"The European DST change on 25/10 falls inside the period: MAD is UTC+2 up to 24/10 and UTC+1 from 25/10, and LHR is UTC+0 by 09/11. The 25/10 MAD departure is already on winter time.\",\n    \"Days marked OFF can still be prece
+… [9342 more characters]
 ```
 
 _read complete_
@@ -1632,7 +1644,7 @@ _values worked out rather than read_
 
 ```json
 {
-  "blocks": 30,
+  "blocks": 40,
   "conflicts": 7,
   "byHardness": {
     "hard-limit": 5,

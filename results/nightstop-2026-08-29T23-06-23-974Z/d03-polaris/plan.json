@@ -1,0 +1,437 @@
+{
+  "caseId": "d03-polaris",
+  "blocks": [
+    {
+      "id": "main-2026-09-03",
+      "kind": "main",
+      "startUtc": "2026-09-03T20:30:00.000Z",
+      "endUtc": "2026-09-04T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-04",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-04T12:20:00.000Z",
+      "endUtc": "2026-09-04T14:20:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-04 runs 1h30 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "recovery-2026-09-04",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-04T05:30:00.000Z",
+      "endUtc": "2026-09-04T07:30:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-02 took 8h00 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
+      "ruleIds": [
+        "sleep-per-24h-7h"
+      ]
+    },
+    {
+      "id": "main-2026-09-04",
+      "kind": "main",
+      "startUtc": "2026-09-05T02:55:00.000Z",
+      "endUtc": "2026-09-05T10:55:00.000Z",
+      "station": "ORD",
+      "why": "21:55 to 05:55 local at ORD — close to your usual 21:30, but about 3h27 later on your body clock, which has not caught up with where you are.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-05",
+      "kind": "main",
+      "startUtc": "2026-09-05T23:03:00.000Z",
+      "endUtc": "2026-09-06T07:03:00.000Z",
+      "station": "ORD",
+      "why": "18:03 to 02:03 at ORD — about 3h27 earlier than your usual 21:30. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-07",
+      "kind": "main",
+      "startUtc": "2026-09-07T01:10:00.000Z",
+      "endUtc": "2026-09-07T09:10:00.000Z",
+      "station": "LHR",
+      "why": "02:10 to 10:10 at LHR — about 4h40 later than your usual 21:30. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-07",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-07T17:00:00.000Z",
+      "endUtc": "2026-09-07T19:00:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-07 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "recovery-2026-09-07",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-07T10:10:00.000Z",
+      "endUtc": "2026-09-07T12:10:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-06 took 3h40 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
+      "ruleIds": [
+        "sleep-per-24h-7h"
+      ]
+    },
+    {
+      "id": "main-2026-09-08",
+      "kind": "main",
+      "startUtc": "2026-09-08T23:05:00.000Z",
+      "endUtc": "2026-09-09T07:05:00.000Z",
+      "station": "ORD",
+      "why": "18:05 to 02:05 at ORD — about 3h25 earlier than your usual 21:30. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-2026-09-09",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-09T08:05:00.000Z",
+      "endUtc": "2026-09-09T10:05:00.000Z",
+      "station": "ORD",
+      "why": "2026-09-07 took 4h40 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
+      "ruleIds": [
+        "sleep-per-24h-7h"
+      ]
+    },
+    {
+      "id": "main-2026-09-10",
+      "kind": "main",
+      "startUtc": "2026-09-10T01:10:00.000Z",
+      "endUtc": "2026-09-10T09:10:00.000Z",
+      "station": "LHR",
+      "why": "02:10 to 10:10 at LHR — about 4h40 later than your usual 21:30. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-2026-09-10",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-10T10:10:00.000Z",
+      "endUtc": "2026-09-10T12:10:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-09 took 3h40 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
+      "ruleIds": [
+        "sleep-per-24h-7h"
+      ]
+    },
+    {
+      "id": "main-2026-09-10",
+      "kind": "main",
+      "startUtc": "2026-09-10T21:22:00.000Z",
+      "endUtc": "2026-09-11T05:22:00.000Z",
+      "station": "LHR",
+      "why": "22:22 to 06:22 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-11",
+      "kind": "main",
+      "startUtc": "2026-09-11T20:55:00.000Z",
+      "endUtc": "2026-09-12T04:55:00.000Z",
+      "station": "LHR",
+      "why": "21:55 to 05:55 at LHR, your usual hours, covering 3h55 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-12",
+      "kind": "main",
+      "startUtc": "2026-09-12T20:55:00.000Z",
+      "endUtc": "2026-09-13T04:55:00.000Z",
+      "station": "LHR",
+      "why": "21:55 to 05:55 at LHR, your usual hours, covering 3h55 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-13",
+      "kind": "main",
+      "startUtc": "2026-09-13T20:30:00.000Z",
+      "endUtc": "2026-09-14T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-14",
+      "kind": "main",
+      "startUtc": "2026-09-14T20:30:00.000Z",
+      "endUtc": "2026-09-15T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-15",
+      "kind": "main",
+      "startUtc": "2026-09-15T20:30:00.000Z",
+      "endUtc": "2026-09-16T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-16",
+      "kind": "main",
+      "startUtc": "2026-09-16T20:30:00.000Z",
+      "endUtc": "2026-09-17T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-17",
+      "kind": "main",
+      "startUtc": "2026-09-17T20:30:00.000Z",
+      "endUtc": "2026-09-18T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-18",
+      "kind": "main",
+      "startUtc": "2026-09-18T20:30:00.000Z",
+      "endUtc": "2026-09-19T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-19",
+      "kind": "main",
+      "startUtc": "2026-09-19T20:30:00.000Z",
+      "endUtc": "2026-09-20T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-20",
+      "kind": "main",
+      "startUtc": "2026-09-20T20:30:00.000Z",
+      "endUtc": "2026-09-21T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21",
+      "kind": "main",
+      "startUtc": "2026-09-22T00:30:00.000Z",
+      "endUtc": "2026-09-22T08:30:00.000Z",
+      "station": "GRU",
+      "why": "21:30 to 05:30 at GRU, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-23",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-22T21:30:00.000Z",
+      "endUtc": "2026-09-22T23:30:00.000Z",
+      "station": "GRU",
+      "why": "2026-09-23 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23",
+      "kind": "main",
+      "startUtc": "2026-09-23T22:54:00.000Z",
+      "endUtc": "2026-09-24T06:54:00.000Z",
+      "station": "LHR",
+      "why": "23:54 to 07:54 at LHR — about 2h24 later than your usual 21:30. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-2026-09-24",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-24T07:54:00.000Z",
+      "endUtc": "2026-09-24T09:54:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-23 took 3h50 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
+      "ruleIds": [
+        "sleep-per-24h-7h"
+      ]
+    },
+    {
+      "id": "main-2026-09-24",
+      "kind": "main",
+      "startUtc": "2026-09-24T22:54:00.000Z",
+      "endUtc": "2026-09-25T06:54:00.000Z",
+      "station": "LHR",
+      "why": "23:54 to 07:54 at LHR — about 2h24 later than your usual 21:30. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-25",
+      "kind": "main",
+      "startUtc": "2026-09-25T22:50:00.000Z",
+      "endUtc": "2026-09-26T06:50:00.000Z",
+      "station": "LHR",
+      "why": "23:50 to 07:50 at LHR — about 2h20 later than your usual 21:30. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-26",
+      "kind": "main",
+      "startUtc": "2026-09-27T03:48:00.000Z",
+      "endUtc": "2026-09-27T11:48:00.000Z",
+      "station": "LAX",
+      "why": "20:48 to 04:48 at LAX, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-2026-09-27",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-27T12:48:00.000Z",
+      "endUtc": "2026-09-27T14:48:00.000Z",
+      "station": "LAX",
+      "why": "2026-09-26 took 4h50 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
+      "ruleIds": [
+        "sleep-per-24h-7h"
+      ]
+    },
+    {
+      "id": "main-2026-09-27",
+      "kind": "main",
+      "startUtc": "2026-09-28T03:48:00.000Z",
+      "endUtc": "2026-09-28T11:48:00.000Z",
+      "station": "LAX",
+      "why": "20:48 to 04:48 at LAX, your usual hours, covering 3h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-29",
+      "kind": "main",
+      "startUtc": "2026-09-29T05:40:00.000Z",
+      "endUtc": "2026-09-29T13:40:00.000Z",
+      "station": "LHR",
+      "why": "06:40 to 14:40 at LHR — about 9h10 later than your usual 21:30. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-2026-09-29",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-29T14:40:00.000Z",
+      "endUtc": "2026-09-29T16:40:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-28 took 8h00 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
+      "ruleIds": [
+        "sleep-per-24h-7h"
+      ]
+    },
+    {
+      "id": "main-2026-09-29",
+      "kind": "main",
+      "startUtc": "2026-09-29T20:05:00.000Z",
+      "endUtc": "2026-09-30T04:05:00.000Z",
+      "station": "LHR",
+      "why": "21:05 to 05:05 local at LHR — close to your usual 21:30, but about 4h58 earlier on your body clock, which has not caught up with where you are.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-01",
+      "statement": "2026-09-01 is a 13h40 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-02",
+      "statement": "2026-09-02 is a 13h40 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-21",
+      "statement": "2026-09-21 is a 13h40 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-23",
+      "statement": "2026-09-23 is a 13h40 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    }
+  ],
+  "readingUncertainties": [],
+  "derivations": []
+}

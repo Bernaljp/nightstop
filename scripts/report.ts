@@ -46,6 +46,7 @@ const latestIn = (set: string) => {
 };
 const ordered = latestIn("dev");
 const heldout = latestIn("heldout");
+const heldout2 = latestIn("heldout2");
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const col = (r: RunFile, f: (s: EvalSummary) => string) => f(r.summary);
@@ -127,10 +128,16 @@ const lines: string[] = [
     ? [
         "## Held out",
         "",
-        "Four cases generated from a separate seed **after every agent prompt was frozen**",
-        "(commit `7b77a67`), and not run against until the final evaluation. Reported",
-        "separately and never pooled with the development set — a held-out score averaged",
-        "into the dev number is not a held-out score.",
+        "Reported separately and never pooled with the development set — a held-out score",
+        "averaged into the dev number is not a held-out score.",
+        "",
+        "**Two sets, and the difference matters.** The first was frozen at `7b77a67`. The",
+        "engine then changed four times (naps, night coverage, the two shift rules, the crew",
+        "member's own hours), and each change made that set less held out, because it had",
+        "already been seen. So the configuration was re-frozen at `577189a` and a **second**",
+        "set generated from a seed never used before, and not run against until then. The",
+        "first set is kept — it is still a fair test of the reading, which never changed —",
+        "but the clean claim rests on the second.",
         "",
         "| Metric | " + heldout.map((r) => `\`${r.arm}\``).join(" | ") + " |",
         "|---|" + heldout.map(() => "---").join("|") + "|",
@@ -157,6 +164,25 @@ const lines: string[] = [
           ),
           "",
         ]),
+      ]
+    : []),
+  ...(heldout2.length
+    ? [
+        "### Held out, second set — frozen at `577189a`, never previously run",
+        "",
+        "| Metric | " + heldout2.map((r) => `\`${r.arm}\``).join(" | ") + " |",
+        "|---|" + heldout2.map(() => "---").join("|") + "|",
+        "| **Trustworthy runs** | " +
+          heldout2.map((r) => col(r, (s) => `**${s.trustworthy}/${s.cases}**`)).join(" | ") + " |",
+        "| **Silently wrong** | " +
+          heldout2.map((r) => col(r, (s) => `**${s.silentlyWrong}/${s.cases}**`)).join(" | ") + " |",
+        "| Field-level parse accuracy | " +
+          heldout2.map((r) => col(r, (s) => pct(s.fieldAccuracy))).join(" | ") + " |",
+        "| Conflict recall | " +
+          heldout2.map((r) => col(r, (s) => pct(s.conflictRecall))).join(" | ") + " |",
+        "| False alarms raised | " +
+          heldout2.map((r) => col(r, (s) => String(s.falseAlarmCount))).join(" | ") + " |",
+        "",
       ]
     : []),
   "## Where every case landed",
@@ -188,7 +214,7 @@ for (const r of ordered) {
   );
 }
 
-const shown = new Set([...ordered, ...heldout].map((r) => r.runId));
+const shown = new Set([...ordered, ...heldout, ...heldout2].map((r) => r.runId));
 const superseded = runs.filter((r) => !shown.has(r.runId));
 if (superseded.length) {
   lines.push(
@@ -208,7 +234,7 @@ writeFileSync("RESULTS.md", lines.join("\n"));
 console.log(
   `RESULTS.md — ${ordered.length} dev arms, ${heldout.length} held-out arms, ${runs.length} runs on disk`,
 );
-for (const r of [...ordered, ...heldout]) {
+for (const r of [...ordered, ...heldout, ...heldout2]) {
   console.log(
     `  ${r.set.padEnd(8)} ${r.arm.padEnd(14)} trustworthy ${r.summary.trustworthy}/${r.summary.cases}  ` +
     `silentlyWrong ${r.summary.silentlyWrong}  recall ${pct(r.summary.conflictRecall)}  ` +

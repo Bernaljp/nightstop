@@ -1,0 +1,29 @@
+{
+  "caseId": "h02-lyra",
+  "arm": "b1-chatbot",
+  "costUsd": 0.5925885,
+  "wallMs": 224086,
+  "humanSeconds": 0,
+  "bucket": "missed",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 1,
+  "surfacedCount": 0,
+  "missed": [
+    "op-max-duty-13h@2026-09-07"
+  ],
+  "falseAlarms": [
+    "circadian-flip-late-to-early@2026-09-05",
+    "consecutive-early-starts@2026-09-07",
+    "fdp-length-vs-wocl-report@2026-09-07",
+    "min-rest-before-early@2026-09-15",
+    "consecutive-early-starts@2026-09-18",
+    "standby-window-sleep-uncertainty@2026-09-08",
+    "circadian-flip-late-to-early@2026-09-25",
+    "wocl-encroachment-late-finish@2026-09-04"
+  ],
+  "planViolationCount": 0
+}

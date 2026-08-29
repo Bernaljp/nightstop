@@ -1,0 +1,18 @@
+{
+  "caseId": "d08-nimbus",
+  "arm": "nightstop",
+  "costUsd": 0.5961365000000001,
+  "wallMs": 160655,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 7,
+  "surfacedCount": 7,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

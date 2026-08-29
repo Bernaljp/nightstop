@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-29T22-29-49-615Z/d07-cirrus/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-29T23-06-23-974Z/d07-cirrus/trajectory.jsonl -->
 
 > **Why this trajectory.** A duty printed 23:30 → 05:25 on one dated row with nothing marking the day change, and continuation rows carrying no date either. Watch it use to_utc rather than doing the arithmetic itself.
 
 # Trajectory — d07-cirrus, arm `nightstop`
 
-Run `nightstop-2026-08-29T22-29-49-615Z`. 164 events.
+Run `nightstop-2026-08-29T23-06-23-974Z`. 160 events.
 
 
 ## reader
@@ -115,10 +115,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 
 ### Turn 1 — stop reason `null`
 
-I'll start by reading the roster document.
-
-### Turn 2 — stop reason `null`
-
 **calls `Read`**
 
 ```json
@@ -144,15 +140,15 @@ I'll start by reading the roster document.
 … [4092 more characters]
 ```
 
+### Turn 3 — stop reason `null`
+
+
+
 ### Turn 4 — stop reason `null`
 
-
+I've read the PDF. Now converting every local time with the timezone tool.
 
 ### Turn 5 — stop reason `null`
-
-Now let me convert every local time. Batch 1 (long-haul duties):
-
-### Turn 6 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -163,18 +159,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-01T17:00\",\"utc\":\"2026-09-01T15:00:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 8 — stop reason `null`
+### Turn 6 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -191,12 +176,23 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-01T17:00\",\"utc\":\"2026-09-01T15:00:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-01T18:30\",\"utc\":\"2026-09-01T16:30:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 10 — stop reason `null`
+### Turn 9 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -218,7 +214,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 12 — stop reason `null`
+### Turn 11 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -240,7 +236,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 14 — stop reason `null`
+### Turn 13 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -262,7 +258,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 16 — stop reason `null`
+### Turn 15 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -284,7 +280,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 18 — stop reason `null`
+### Turn 17 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -306,7 +302,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 20 — stop reason `null`
+### Turn 19 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -328,7 +324,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 22 — stop reason `null`
+### Turn 21 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -337,6 +333,17 @@ Now let me convert every local time. Batch 1 (long-haul duties):
   "station": "MAD",
   "localDateTime": "2026-09-05T11:10"
 }
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-05T11:10\",\"utc\":\"2026-09-05T09:10:00.000Z\",\"notes\":[]}"
+  }
+]
 ```
 
 ### Turn 23 — stop reason `null`
@@ -356,23 +363,12 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-05T11:10\",\"utc\":\"2026-09-05T09:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-05T12:40\",\"utc\":\"2026-09-05T10:40:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 26 — stop reason `null`
+### Turn 25 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -394,7 +390,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 28 — stop reason `null`
+### Turn 27 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -416,7 +412,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 30 — stop reason `null`
+### Turn 29 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -438,7 +434,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 32 — stop reason `null`
+### Turn 31 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -460,7 +456,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 34 — stop reason `null`
+### Turn 33 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -482,7 +478,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 36 — stop reason `null`
+### Turn 35 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -504,11 +500,7 @@ Now let me convert every local time. Batch 1 (long-haul duties):
 ]
 ```
 
-### Turn 38 — stop reason `null`
-
-Batch 2 (short-haul duties 11/09 and 19/09):
-
-### Turn 39 — stop reason `null`
+### Turn 37 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -530,7 +522,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 41 — stop reason `null`
+### Turn 39 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -552,7 +544,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 43 — stop reason `null`
+### Turn 41 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -574,7 +566,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 45 — stop reason `null`
+### Turn 43 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -596,7 +588,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 47 — stop reason `null`
+### Turn 45 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -618,7 +610,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 49 — stop reason `null`
+### Turn 47 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -640,7 +632,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 51 — stop reason `null`
+### Turn 49 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -662,7 +654,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 53 — stop reason `null`
+### Turn 51 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -684,7 +676,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 55 — stop reason `null`
+### Turn 53 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -706,7 +698,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 57 — stop reason `null`
+### Turn 55 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -728,7 +720,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 59 — stop reason `null`
+### Turn 57 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -736,17 +728,6 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 {
   "station": "MAD",
   "localDateTime": "2026-09-19T05:05"
-}
-```
-
-### Turn 60 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-19T06:05"
 }
 ```
 
@@ -761,18 +742,18 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-**tool answered**
+### Turn 59 — stop reason `null`
 
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-19T06:05\",\"utc\":\"2026-09-19T04:05:00.000Z\",\"notes\":[]}"
-  }
-]
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-19T06:05"
+}
 ```
 
-### Turn 63 — stop reason `null`
+### Turn 60 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -789,12 +770,23 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-19T06:05\",\"utc\":\"2026-09-19T04:05:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"BCN\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-19T07:25\",\"utc\":\"2026-09-19T05:25:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 65 — stop reason `null`
+### Turn 63 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -816,7 +808,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 67 — stop reason `null`
+### Turn 65 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -838,7 +830,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 69 — stop reason `null`
+### Turn 67 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -860,7 +852,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 71 — stop reason `null`
+### Turn 69 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -882,7 +874,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 73 — stop reason `null`
+### Turn 71 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -904,7 +896,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 75 — stop reason `null`
+### Turn 73 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -926,7 +918,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 77 — stop reason `null`
+### Turn 75 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -948,11 +940,7 @@ Batch 2 (short-haul duties 11/09 and 19/09):
 ]
 ```
 
-### Turn 79 — stop reason `null`
-
-Batch 3 (20/09 through 28/09):
-
-### Turn 80 — stop reason `null`
+### Turn 77 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -974,7 +962,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 82 — stop reason `null`
+### Turn 79 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -996,7 +984,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 84 — stop reason `null`
+### Turn 81 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1018,7 +1006,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 86 — stop reason `null`
+### Turn 83 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1040,7 +1028,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 88 — stop reason `null`
+### Turn 85 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1062,7 +1050,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 90 — stop reason `null`
+### Turn 87 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1084,7 +1072,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 92 — stop reason `null`
+### Turn 89 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1106,7 +1094,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 94 — stop reason `null`
+### Turn 91 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1117,7 +1105,18 @@ Batch 3 (20/09 through 28/09):
 }
 ```
 
-### Turn 95 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-22T06:40\",\"utc\":\"2026-09-22T04:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 93 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1134,23 +1133,12 @@ Batch 3 (20/09 through 28/09):
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-22T06:40\",\"utc\":\"2026-09-22T04:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"CDG\",\"timezone\":\"Europe/Paris\",\"localDateTime\":\"2026-09-22T08:45\",\"utc\":\"2026-09-22T06:45:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 98 — stop reason `null`
+### Turn 95 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1172,7 +1160,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 100 — stop reason `null`
+### Turn 97 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1194,7 +1182,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 102 — stop reason `null`
+### Turn 99 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1205,18 +1193,7 @@ Batch 3 (20/09 through 28/09):
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-22T12:03\",\"utc\":\"2026-09-22T10:03:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 104 — stop reason `null`
+### Turn 100 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1233,12 +1210,23 @@ Batch 3 (20/09 through 28/09):
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-22T12:03\",\"utc\":\"2026-09-22T10:03:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T04:35\",\"utc\":\"2026-09-23T02:35:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 106 — stop reason `null`
+### Turn 103 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1260,7 +1248,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 108 — stop reason `null`
+### Turn 105 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1282,7 +1270,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 110 — stop reason `null`
+### Turn 107 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1304,7 +1292,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 112 — stop reason `null`
+### Turn 109 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1326,7 +1314,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 114 — stop reason `null`
+### Turn 111 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1348,7 +1336,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 116 — stop reason `null`
+### Turn 113 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1370,7 +1358,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 118 — stop reason `null`
+### Turn 115 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1392,7 +1380,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 120 — stop reason `null`
+### Turn 117 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1414,7 +1402,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 122 — stop reason `null`
+### Turn 119 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1436,7 +1424,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 124 — stop reason `null`
+### Turn 121 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1458,7 +1446,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 126 — stop reason `null`
+### Turn 123 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1480,7 +1468,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 128 — stop reason `null`
+### Turn 125 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1502,7 +1490,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 130 — stop reason `null`
+### Turn 127 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1524,7 +1512,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 132 — stop reason `null`
+### Turn 129 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1535,7 +1523,18 @@ Batch 3 (20/09 through 28/09):
 }
 ```
 
-### Turn 133 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-24T23:44\",\"utc\":\"2026-09-24T21:44:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 131 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1552,23 +1551,12 @@ Batch 3 (20/09 through 28/09):
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-24T23:44\",\"utc\":\"2026-09-24T21:44:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-25T00:14\",\"utc\":\"2026-09-24T22:14:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 136 — stop reason `null`
+### Turn 133 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1590,7 +1578,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 138 — stop reason `null`
+### Turn 135 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1612,7 +1600,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 140 — stop reason `null`
+### Turn 137 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1623,18 +1611,7 @@ Batch 3 (20/09 through 28/09):
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-09-27T08:10\",\"utc\":\"2026-09-27T00:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 142 — stop reason `null`
+### Turn 138 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1651,12 +1628,23 @@ Batch 3 (20/09 through 28/09):
 [
   {
     "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-09-27T08:10\",\"utc\":\"2026-09-27T00:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-09-27T08:40\",\"utc\":\"2026-09-27T00:40:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 144 — stop reason `null`
+### Turn 141 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1678,7 +1666,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 146 — stop reason `null`
+### Turn 143 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1700,7 +1688,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 148 — stop reason `null`
+### Turn 145 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1722,7 +1710,7 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 150 — stop reason `null`
+### Turn 147 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1744,15 +1732,11 @@ Batch 3 (20/09 through 28/09):
 ]
 ```
 
-### Turn 152 — stop reason `null`
+### Turn 149 — stop reason `null`
 
 
 
-### Turn 153 — stop reason `null`
-
-All block times verify against the printed Block column. Now reconciling:
-
-### Turn 154 — stop reason `null`
+### Turn 150 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1778,23 +1762,23 @@ All block times verify against the printed Block column. Now reconciling:
 ]
 ```
 
-### Turn 156 — stop reason `null`
+### Turn 152 — stop reason `null`
 
 
 
-### Turn 157 — stop reason `null`
-
-All four header totals reconcile.
+### Turn 153 — stop reason `null`
 
 ```json
 {
-  "format": "CIRRUS CONNECT monthly roster: one row per day (DD/MM/YYYY), with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Multi-sector duties print the flight rows beneath the dated first row without repeating the date, and the header states explicitly that all times are LOCAL to the station shown — so STD is local at the origin and STA is local at the destination of the same row.",
+  "format": "CIRRUS CONNECT monthly roster: one plain table, columns Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Duty. Dates are DD/MM/YYYY, all times are LOCAL to the station shown (header states this explicitly), report time and off-duty time are both printed so nothing about the duty window has to be derived from an offset.",
   "traps": [
-    "Times are local to the station shown, and this changes column-by-column: on a sector row STD is origin-local and STA is destination-local. Report is origin-local; Off Duty is local at the last arrival station (ORD on 01/09, JFK on 05/09, SIN on 26/09).",
-    "Continuation sector rows carry no date. On 11/09, 19/09, 22/09, 23/09 and 24/09 the rows under the dated row belong to the duty above them.",
-    "Several duties roll past midnight with no date marking. 03/09 ORD-MAD departs 21:50 and arrives 13:50 the NEXT day (04/09); 07/09 JFK-MAD 23:10 arrives 13:10 on 08/09; on 11/09 sectors CR866 and CR563 (23:55 dep onwards) fall on 12/09; 24/09's Off Duty 00:14 is on 25/09; 26/09 MAD-SIN arrives 08:10 on 27/09. The rollover was resolved using the printed Block figure, not by comparing STD/STA digits.",
-    "Days that are printed OFF can still be occupied by the tail of the previous duty: 04/09 is marked OFF yet the ORD-MAD duty is airborne until 11:50 UTC that morning, and 27/09 is marked OFF yet the SIN arrival lands at 00:10 UTC that day. Both are reported as printed (OFF) and counted as such; days off 
-… [10454 more characters]
+    "Multi-sector duties print the date, Report and Off Duty/Duty only on the first row; the following flight rows are bare continuation rows belonging to the duty above (11/09 has 4 sectors, 19/09 and 24/09 likewise).",
+    "STA is local at the ARRIVAL station, so it can look 'earlier' than STD (03/09 ORD-MAD 21:50 -> 13:50) — that is a 9h00 eastbound sector landing the NEXT calendar day, not a same-day one.",
+    "Several rows silently roll past midnight and the roster never marks a +1: 03/09 and 07/09 arrive the following day, 11/09 sectors 3 and 4 (23:55 dep, 02:20/03:23/05:48) are on 12/09, 24/09's Off Duty 00:14 is on 25/09, and 26/09 MAD-SIN arrives 08:10 on 27/09.",
+    "On the outstation legs (03/09 ORD, 07/09 JFK, 28/09 SIN) the printed Report and STD are local at that outstation, not at MAD — reading them as Madrid time shifts the duty by 5-8 hours.",
+    "The days after a long-haul outbound (02/09, 06/09, 27/09) are printed OFF but the crew member is down-route, so those days off end at ORD/JFK/SIN, not MAD.",
+    "The reporting offset is not constant: 90 minutes before STD on long-haul (01, 03, 05, 07, 26, 28/09) and 60 minutes on short-haul. Since report is printed, this only matters as
+… [11792 more characters]
 
 _finished: success_
 
@@ -1804,8 +1788,8 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "I'll start by reading the roster document.\nNow let me convert every local time. Batch 1 (long-haul duties):\nBatch 2 (short-haul duties 11/09 and 19/09):\nBatch 3 (20/09 through 28/09):\nAll block times verify against the printed Block column. Now reconciling:\nAll four header totals reconcile.\n\n```json\n{\n  \"format\": \"CIRRUS CONNECT monthly roster: one row per day (DD/MM/YYYY), with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Multi-sector duties print the flight rows beneath the dated first row without repeating the date, and the header states explicitly that all times are LOCAL to the station shown — so STD is local at the origin and STA is local at the destination of the same row.\",\n  \"traps\": [\n    \"Times are local to the station shown, and this changes column-by-column: on a sector row STD is origin-local and STA is destination-local. Report is origin-local; Off Duty is local at the last arrival station (ORD on 01/09, JFK on 05/09, SIN on 26/09).\",\n    \"Continuation sector rows carry no date. On 11/09, 19/09, 22/09, 23/09 and 24/09 the rows under the dated row belong to the duty above them.\",\n    \"Several duties roll past midnight with no date marking. 03/09 ORD-MAD departs 21:50 and arrives 13:50 the NEXT day (04/09); 07/09 JFK-MAD 23:10 arrives 13:10 on 08/09; on 11/09 sectors CR866 and CR563 (23:55 dep onwards) fall on 12/09; 24/09's Off Duty 00:14 is on 25/09; 26/09 MAD-SIN arrives 08:10 on 27/09. The rollover was resolved using the printed Block figure, not by comparing STD/STA digits.\",\n    \"Days that are printed OFF can still be occupied by the tail of the previous duty: 04/09 is marked OFF yet the ORD-MAD duty is airborne until 11:50 UTC that morning, and 27/09 is marked OFF yet the SIN arrival lands at 00:10 UTC that day. Both are reported as printed (OFF) and counted as such; days off tally 18, matching the header.\",\n    \"September 2026 contains no DST transition in Europe, the US or Singapore, so no ambiguous or non-existent local times arise — but the UTC offsets differ between the European stations (+2 / +1 for DUB and LIS) and must not be assumed uniform.\",\n    \"The reporting offset is not uniform: 90 minutes on the long-haul duties (01, 03, 05, 07, 26, 28 Sep) and 60 minutes on the short-haul ones. Because Report is printed on every duty row, no offset had to be assumed.\",\n    \"Flight number CR893 is reused for two different sectors (MAD-DUB on 23/09 and MAD-LIS
-… [11416 more characters]
+  "text": "I've read the PDF. Now converting every local time with the timezone tool.\n```json\n{\n  \"format\": \"CIRRUS CONNECT monthly roster: one plain table, columns Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Duty. Dates are DD/MM/YYYY, all times are LOCAL to the station shown (header states this explicitly), report time and off-duty time are both printed so nothing about the duty window has to be derived from an offset.\",\n  \"traps\": [\n    \"Multi-sector duties print the date, Report and Off Duty/Duty only on the first row; the following flight rows are bare continuation rows belonging to the duty above (11/09 has 4 sectors, 19/09 and 24/09 likewise).\",\n    \"STA is local at the ARRIVAL station, so it can look 'earlier' than STD (03/09 ORD-MAD 21:50 -> 13:50) — that is a 9h00 eastbound sector landing the NEXT calendar day, not a same-day one.\",\n    \"Several rows silently roll past midnight and the roster never marks a +1: 03/09 and 07/09 arrive the following day, 11/09 sectors 3 and 4 (23:55 dep, 02:20/03:23/05:48) are on 12/09, 24/09's Off Duty 00:14 is on 25/09, and 26/09 MAD-SIN arrives 08:10 on 27/09.\",\n    \"On the outstation legs (03/09 ORD, 07/09 JFK, 28/09 SIN) the printed Report and STD are local at that outstation, not at MAD — reading them as Madrid time shifts the duty by 5-8 hours.\",\n    \"The days after a long-haul outbound (02/09, 06/09, 27/09) are printed OFF but the crew member is down-route, so those days off end at ORD/JFK/SIN, not MAD.\",\n    \"The reporting offset is not constant: 90 minutes before STD on long-haul (01, 03, 05, 07, 26, 28/09) and 60 minutes on short-haul. Since report is printed, this only matters as a sanity check — do not impose one offset on all duties.\",\n    \"No DST transition occurs anywhere in the covered period (Europe changes 25/10, US 01/11), so no repeated or missing hour here.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    {\n      \"date\": \"2026-09-03\",\n      \"field\": \"reportUtc\",\n      \"method\": \"Report 20:20 is printed; derived only its timezone — the duty starts at ORD, so it was converted as America/Chicago local, not MAD. Cross-check: report->off-duty = 11h00, matching the printed Duty column.\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"date\": \"2026-09-03\",\n      \"field\": \"endUtc\",\n      \"method\": \"Off Duty 14:20 carries no date; derived as 04/09 MAD local because the secto
+… [12825 more characters]
 ```
 
 _read complete_
@@ -1819,7 +1803,7 @@ _values worked out rather than read_
 
 ```json
 {
-  "blocks": 27,
+  "blocks": 34,
   "conflicts": 3,
   "byHardness": {
     "hard-limit": 3

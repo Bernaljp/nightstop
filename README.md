@@ -177,7 +177,16 @@ hyphen.
 | Conflict recall | 0% | 100% | 100% |
 | False alarms | 39 | **0** | 0 |
 
-**How that number was reached, because it matters.** The first held-out run scored 3/4,
+**Two held-out sets, and why.** The engine changed several times after the first freeze —
+naps, night coverage, the two shift rules, the crew member's own hours — and each change
+made that first set less held out, because it had already been seen. Amending a
+pre-registration once is honest; doing it four times and still calling the number held out
+is not. So the configuration was re-frozen at `577189a` and a **second** set generated from
+a seed never used before: **4/4 trustworthy, 0 silently wrong, against the chatbot's 0/4
+and 4/4 silently wrong.** The first set is kept in `RESULTS.md` — it remains a fair test of
+the reading, which never changed — but the clean claim rests on the second.
+
+**How the first set's number was reached, because it matters.** The first held-out run scored 3/4,
 and the failing case turned out to be a bug in *my corpus*, not the reader: the generator
 dated rows by base local day while printing times in UTC, so the date column and the time
 column disagreed with nothing on the page to say which to believe. The reader transcribed
@@ -246,9 +255,10 @@ untrustworthy, and it costs *more* to do it.
 **The last column changes one thing.** The rule check moves out of the model and into a
 deterministic function. Invented rules: 40 → 0. Trustworthy: 1/8 → 8/8. Cheaper, too.
 
-Two of the six stages moved neither headline number. Both were real defects — a planner
-that never suggested a nap, and one that left every day off unplanned — and both were found
-by rendering the output and looking at it. That is the argument for the hot take below as
+Three of the seven stages moved neither headline number. All three were real defects — a planner that never suggested a nap, one that left every day
+off unplanned, and one that gave every crew member the same bedtime regardless of what they
+told it — and all three were found by rendering the output and looking at it, never by a
+metric. That is the argument for the hot take below as
 much as any of the numbers above.
 
 > The model was never the bottleneck on **finding** collisions. It was the bottleneck on
@@ -271,6 +281,7 @@ job it should not be doing — and the tools that let it do the other half exact
 | **4 · own rules in** | The distiller: read a rules document once, reduce it to a pack with a hardness on every rule, and never show the planner the source. | Part 117 ~7,021 → ~711 tokens (**−89.9%**); 3/3 recall against the hand-written reference, plus one rule it had missed | Kept. The refusals matter as much as the extractions — it declines to collapse a table-driven limit into a number. |
 | **5 · a nap you would actually take** | The planner had never recommended a nap in twelve rosters — the rule only fired below a six-hour night, and the tightest window is 6h50. Added a prophylactic nap before any duty running an hour or more through the circadian low. Found by building the demo, not by reading a metric. | 2–6 naps per roster (0 on the short-haul European case, correctly); primary and co-primary **unchanged** at 8/8 and 0 | Kept. It moved no number I report, which is the point: the summary statistics could not see that a whole class of advice was missing. |
 | **6 · every night, not one per gap** | The planner placed one main sleep per *rest period*, which is right only when the rest period is one night — and four of the first six on the Aurora roster span two. Every day off had no sleep at all. Found by someone looking at the calendar, not by a metric. | Night coverage ~19 → 20–27 per month; plan violations 70 → 15 → **0** as the two shift rules landed; primary and co-primary **unchanged** at 8/8 and 0 | Kept. The second stage running that moved no number I report. |
+| **7 · their hours, not a default** | Everyone was being given a 23:00 bedtime — a hardcoded default the crew member had no say in. Real crew differ by hours. `usualSleep` is now part of the profile, every night is anchored to it, and recovery sleep follows a duty that took 90 minutes or more out of the hours they normally keep. | Recovery sleep produced for the first time (it was declared in the schema and never emitted); the advice changes from *"23:00 to 07:00"* to *"about 3h27 later than your usual 21:30 — the roster leaves no room to keep your normal hours here"*; primary and co-primary again **unchanged** | Kept. Third stage in a row that moved no headline number. |
 | **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3
