@@ -23,7 +23,7 @@ the run that produced it.
 | Conflict recall | 0.0% | 77.5% | 100.0% | 100.0% |
 | False alarms raised | 69 | 37 | 0 | 0 |
 | Cost per roster (USD, list price) | $0.65 | $0.80 | $0.70 | $0.00 |
-| Wall clock per roster | 268s | 324s | 179s | 0s |
+| Wall clock per roster | 268s | 324s | 180s | 0s |
 
 `reference` is not a baseline. It plans from ground-truth duties, so it answers the
 question the other numbers cannot: how much of any shortfall is the reading, and how
@@ -31,23 +31,21 @@ much is the planning.
 
 ## Repeats
 
-The final configuration run 2 times over the same eight cases. At n=8 a
-single flake moves the primary by 12.5 points, so every run is listed rather than
-averaged. A repeat means the same configuration — runs from before the reader was
-asked to declare its derivations are a different system and are listed separately
-below, not pooled in as variance.
+Every run of the final arm, in order. At n=8 a single flake moves the primary by
+12.5 points, so nothing is averaged and nothing is dropped.
 
 | Run | Trustworthy | Silently wrong | Field accuracy | Conflict recall | Cost |
 |---|---|---|---|---|---|
+| `6-11-243Z` | 7/8 | 1/8 | 100.0% | 100.0% | $5.13 |
+| `0-03-466Z` &sup1; | 8/8 | 0/8 | 100.0% | 100.0% | $4.89 |
 | `0-58-275Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.70 |
 | `7-42-487Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.59 |
+| `6-27-291Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.60 |
 
-Identical on every run: **8/8 trustworthy, 0 silently wrong**, no variance across repeats.
+&sup1; From this run on, the reader declares which values it derived rather than read
+(commit `f7f13a4`). Runs above that line are a different configuration, not variance.
 
-Earlier configuration, before the derivation change:
-
-- `6-11-243Z` — 7/8 trustworthy, 1 silently wrong
-- `0-03-466Z` — 8/8 trustworthy, 0 silently wrong
+The final configuration has run **4 times, 8/8 every time**, 0 silently wrong. No variance across repeats.
 
 ## Held out
 
@@ -134,18 +132,18 @@ Run `b2-steelman-2026-08-28T18-28-13-194Z` · 2026-08-28 18:40 · git `3de5694c`
 
 ### `nightstop` — case by case
 
-Run `nightstop-2026-08-29T15-07-42-487Z` · 2026-08-29 15:14 · git `f47cb886` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+Run `nightstop-2026-08-29T15-16-27-291Z` · 2026-08-29 15:23 · git `6ec2896f` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
-| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $1.15 |
-| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.85 |
-| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.23 |
-| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.66 |
-| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.47 |
-| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.97 |
-| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.67 |
-| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.58 |
+| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $1.07 |
+| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.86 |
+| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.25 |
+| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.65 |
+| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.64 |
+| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.95 |
+| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.64 |
+| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.53 |
 
 ### `reference` — case by case
 
@@ -179,3 +177,4 @@ Kept rather than deleted. Listed so nothing is quietly dropped from the record.
 - `nightstop-2026-08-28T21-45-47-942Z` (nightstop, heldout) — 3/4 trustworthy
 - `b1-chatbot-2026-08-28T21-45-53-042Z` (b1-chatbot, heldout) — 0/4 trustworthy
 - `nightstop-2026-08-29T15-00-58-275Z` (nightstop, dev) — 8/8 trustworthy
+- `nightstop-2026-08-29T15-07-42-487Z` (nightstop, dev) — 8/8 trustworthy

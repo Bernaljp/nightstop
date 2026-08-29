@@ -1,0 +1,442 @@
+{
+  "caseId": "d05-halcyon",
+  "blocks": [
+    {
+      "id": "main-2026-09-03",
+      "kind": "main",
+      "startUtc": "2026-09-02T18:30:00.000Z",
+      "endUtc": "2026-09-03T02:30:00.000Z",
+      "station": "LHR",
+      "why": "19:30 to 03:30 at LHR, covering 1h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-04",
+      "kind": "main",
+      "startUtc": "2026-09-03T22:00:00.000Z",
+      "endUtc": "2026-09-04T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-05",
+      "kind": "main",
+      "startUtc": "2026-09-05T00:30:00.000Z",
+      "endUtc": "2026-09-05T08:30:00.000Z",
+      "station": "ORD",
+      "why": "19:30 to 03:30 local at ORD — which is about 3h42 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-07",
+      "kind": "main",
+      "startUtc": "2026-09-06T22:57:00.000Z",
+      "endUtc": "2026-09-07T06:57:00.000Z",
+      "station": "LHR",
+      "why": "23:57 to 07:57 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-09",
+      "kind": "main",
+      "startUtc": "2026-09-08T22:00:00.000Z",
+      "endUtc": "2026-09-09T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-12",
+      "kind": "main",
+      "startUtc": "2026-09-09T22:00:00.000Z",
+      "endUtc": "2026-09-10T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-14",
+      "kind": "main",
+      "startUtc": "2026-09-12T22:00:00.000Z",
+      "endUtc": "2026-09-13T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-15",
+      "kind": "main",
+      "startUtc": "2026-09-14T22:00:00.000Z",
+      "endUtc": "2026-09-15T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-16",
+      "kind": "main",
+      "startUtc": "2026-09-16T06:30:00.000Z",
+      "endUtc": "2026-09-16T14:30:00.000Z",
+      "station": "JFK",
+      "why": "02:30 to 10:30 local at JFK — which is about 2h33 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-18",
+      "kind": "main",
+      "startUtc": "2026-09-17T22:10:00.000Z",
+      "endUtc": "2026-09-18T06:10:00.000Z",
+      "station": "LHR",
+      "why": "23:10 to 07:10 local at LHR — which is about 1h18 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-20",
+      "kind": "main",
+      "startUtc": "2026-09-19T21:45:00.000Z",
+      "endUtc": "2026-09-20T05:45:00.000Z",
+      "station": "SIN",
+      "why": "05:45 to 13:45 local at SIN — which is about 6h45 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21",
+      "kind": "main",
+      "startUtc": "2026-09-21T01:55:00.000Z",
+      "endUtc": "2026-09-21T08:45:00.000Z",
+      "station": "LHR",
+      "why": "02:55 to 09:45 at LHR, covering 3h05 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-22",
+      "kind": "main",
+      "startUtc": "2026-09-22T00:06:00.000Z",
+      "endUtc": "2026-09-22T07:00:00.000Z",
+      "station": "LHR",
+      "why": "01:06 to 08:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-24",
+      "kind": "main",
+      "startUtc": "2026-09-22T22:00:00.000Z",
+      "endUtc": "2026-09-23T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-25",
+      "kind": "main",
+      "startUtc": "2026-09-24T18:30:00.000Z",
+      "endUtc": "2026-09-25T02:30:00.000Z",
+      "station": "LHR",
+      "why": "19:30 to 03:30 at LHR, covering 1h30 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-26",
+      "kind": "main",
+      "startUtc": "2026-09-25T18:57:00.000Z",
+      "endUtc": "2026-09-26T01:50:00.000Z",
+      "station": "LHR",
+      "why": "19:57 to 02:50 at LHR, covering 0h50 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-27",
+      "kind": "main",
+      "startUtc": "2026-09-26T14:57:00.000Z",
+      "endUtc": "2026-09-26T21:50:00.000Z",
+      "station": "LHR",
+      "why": "15:57 to 22:50 at LHR, covering 0h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-28",
+      "kind": "main",
+      "startUtc": "2026-09-27T21:25:00.000Z",
+      "endUtc": "2026-09-28T05:25:00.000Z",
+      "station": "LHR",
+      "why": "22:25 to 06:25 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "hardness": "hard-limit",
+      "date": "2026-09-21",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-21 you have 10h00 off, but 3h10 of it is travel — that leaves 6h50 to sleep in, against 8h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    },
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "hardness": "hard-limit",
+      "date": "2026-09-22",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-22 you have 10h04 off, but 3h10 of it is travel — that leaves 6h54 to sleep in, against 8h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    },
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "hardness": "hard-limit",
+      "date": "2026-09-26",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-26 you have 10h03 off, but 3h10 of it is travel — that leaves 6h53 to sleep in, against 8h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    },
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "hardness": "hard-limit",
+      "date": "2026-09-27",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-27 you have 10h03 off, but 3h10 of it is travel — that leaves 6h53 to sleep in, against 8h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "hardness": "recommendation",
+      "date": "2026-09-21",
+      "where": "rest:undefined..undefined",
+      "statement": "Only 10h00 off between 2026-09-20 and 2026-09-21 — 12h00 is the floor.",
+      "options": [
+        "Tell your operator: this looks like a rostering error worth querying.",
+        "Fly it and let me protect as much sleep as the window allows."
+      ]
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "hardness": "recommendation",
+      "date": "2026-09-22",
+      "where": "rest:undefined..undefined",
+      "statement": "Only 10h04 off between 2026-09-21 and 2026-09-22 — 12h00 is the floor.",
+      "options": [
+        "Tell your operator: this looks like a rostering error worth querying.",
+        "Fly it and let me protect as much sleep as the window allows."
+      ]
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "hardness": "recommendation",
+      "date": "2026-09-26",
+      "where": "rest:undefined..undefined",
+      "statement": "Only 10h03 off between 2026-09-25 and 2026-09-26 — 12h00 is the floor.",
+      "options": [
+        "Tell your operator: this looks like a rostering error worth querying.",
+        "Fly it and let me protect as much sleep as the window allows."
+      ]
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "hardness": "recommendation",
+      "date": "2026-09-27",
+      "where": "rest:undefined..undefined",
+      "statement": "Only 10h03 off between 2026-09-26 and 2026-09-27 — 12h00 is the floor.",
+      "options": [
+        "Tell your operator: this looks like a rostering error worth querying.",
+        "Fly it and let me protect as much sleep as the window allows."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-18",
+      "statement": "2026-09-18 is a 15h20 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-20",
+      "statement": "2026-09-20 is a 15h20 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-25",
+      "statement": "2026-09-25 is a 13h17 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-3-early-starts",
+      "hardness": "recommendation",
+      "date": "2026-09-27",
+      "statement": "4 early starts back to back, ending 2026-09-27. Sleep debt builds across a run like this faster than any one night shows.",
+      "options": [
+        "Bring bedtime forward across the whole run, not just the night before.",
+        "Protect a recovery sleep on the far side of it."
+      ]
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "hardness": "preference",
+      "date": "2026-09-21",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-21 you have 10h00 off, but 3h10 of it is travel — that leaves 6h50 to sleep in, against 9h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "hardness": "preference",
+      "date": "2026-09-22",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-22 you have 10h04 off, but 3h10 of it is travel — that leaves 6h54 to sleep in, against 9h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "hardness": "preference",
+      "date": "2026-09-26",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-26 you have 10h03 off, but 3h10 of it is travel — that leaves 6h53 to sleep in, against 9h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "hardness": "preference",
+      "date": "2026-09-27",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-27 you have 10h03 off, but 3h10 of it is travel — that leaves 6h53 to sleep in, against 9h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    }
+  ],
+  "readingUncertainties": [],
+  "derivations": [
+    {
+      "date": "2026-09-16",
+      "field": "reportUtc",
+      "method": "Report is printed as '20:20/00:20Z' at JFK with no day marker. Converted local 2026-09-16T20:20 at JFK via to_utc, giving 2026-09-17T00:20Z — the printed Zulu time of day is correct but falls on the following calendar day.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-27",
+      "field": "reportUtc",
+      "method": "Report is printed as '00:25/23:25Z' at LHR. Converted local 2026-09-27T00:25 (BST) via to_utc, giving 2026-09-26T23:25Z — the Zulu date is the PREVIOUS day.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-04",
+      "field": "endUtc",
+      "method": "Off duty printed '19:05/00:05Z' at ORD with no '+1'. Converted local 2026-09-04T19:05 via to_utc, giving 2026-09-05T00:05Z.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-07",
+      "field": "endUtc",
+      "method": "Off duty printed '00:27/23:27Z+1'. The '+1' belongs to the local reading; to_utc on 2026-09-08T00:27 at LHR returns 2026-09-07T23:27Z, so the UTC date is unchanged.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-18",
+      "field": "endUtc",
+      "method": "STA/off duty printed '06:35/22:35Z+1' and '07:05/23:05Z+1' at SIN. to_utc on 2026-09-19T06:35 and 07:05 Singapore returns 2026-09-18T22:35Z and 2026-09-18T23:05Z — same UTC day despite the '+1'.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-20",
+      "field": "endUtc",
+      "method": "STA '00:50/23:50Z+1' converts to 2026-09-20T23:50Z (same UTC day) while off duty '01:20/00:20Z+1' converts to 2026-09-21T00:20Z (next UTC day) — the two '+1' markers resolve to different Zulu dates.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-05",
+      "field": "endUtc",
+      "method": "Off duty '09:30/08:30Z+1' at LHR after an overnight ORD-LHR sector; to_utc on 2026-09-06T09:30 gives 2026-09-06T08:30Z.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-15",
+      "field": "endUtc",
+      "method": "Off duty '02:05/06:05Z+1' at JFK; to_utc on 2026-09-16T02:05 gives 2026-09-16T06:05Z.",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-28",
+      "field": "reportUtc",
+      "method": "SIM training: report taken as the printed window start 08:00/07:00Z with NO reporting offset applied, since the crew member is due at the simulator venue rather than reporting for a flight.",
+      "confidence": "high"
+    }
+  ]
+}

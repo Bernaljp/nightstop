@@ -1,0 +1,277 @@
+{
+  "caseId": "d02-meridian",
+  "blocks": [
+    {
+      "id": "main-2026-09-02",
+      "kind": "main",
+      "startUtc": "2026-09-01T14:00:00.000Z",
+      "endUtc": "2026-09-01T22:00:00.000Z",
+      "station": "MAD",
+      "why": "16:00 to 00:00 at MAD, covering 0h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-02",
+      "kind": "main",
+      "startUtc": "2026-09-02T07:23:00.000Z",
+      "endUtc": "2026-09-02T15:23:00.000Z",
+      "station": "MAD",
+      "why": "09:23 to 17:23 at MAD, covering 0h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-07",
+      "kind": "main",
+      "startUtc": "2026-09-03T21:00:00.000Z",
+      "endUtc": "2026-09-04T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-08",
+      "kind": "main",
+      "startUtc": "2026-09-07T18:45:00.000Z",
+      "endUtc": "2026-09-08T02:45:00.000Z",
+      "station": "MAD",
+      "why": "20:45 to 04:45 at MAD, covering 2h45 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-10",
+      "kind": "main",
+      "startUtc": "2026-09-08T21:00:00.000Z",
+      "endUtc": "2026-09-09T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-11",
+      "kind": "main",
+      "startUtc": "2026-09-10T21:00:00.000Z",
+      "endUtc": "2026-09-11T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-13",
+      "kind": "main",
+      "startUtc": "2026-09-12T21:00:00.000Z",
+      "endUtc": "2026-09-13T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-18",
+      "kind": "main",
+      "startUtc": "2026-09-13T21:00:00.000Z",
+      "endUtc": "2026-09-14T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-19",
+      "kind": "main",
+      "startUtc": "2026-09-18T21:00:00.000Z",
+      "endUtc": "2026-09-19T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21",
+      "kind": "main",
+      "startUtc": "2026-09-20T21:00:00.000Z",
+      "endUtc": "2026-09-21T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23",
+      "kind": "main",
+      "startUtc": "2026-09-22T17:40:00.000Z",
+      "endUtc": "2026-09-23T01:40:00.000Z",
+      "station": "MAD",
+      "why": "19:40 to 03:40 at MAD, covering 1h40 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-25",
+      "kind": "main",
+      "startUtc": "2026-09-23T21:00:00.000Z",
+      "endUtc": "2026-09-24T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-29",
+      "kind": "main",
+      "startUtc": "2026-09-25T21:00:00.000Z",
+      "endUtc": "2026-09-26T05:00:00.000Z",
+      "station": "MAD",
+      "why": "23:00 to 07:00 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-30",
+      "kind": "main",
+      "startUtc": "2026-09-29T21:43:00.000Z",
+      "endUtc": "2026-09-30T05:43:00.000Z",
+      "station": "MAD",
+      "why": "23:43 to 07:43 at MAD, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-rest-12h-home",
+      "hardness": "recommendation",
+      "date": "2026-09-02",
+      "where": "rest:undefined..undefined",
+      "statement": "Only 10h01 off between 2026-09-01 and 2026-09-02 — 12h00 is the floor.",
+      "options": [
+        "Tell your operator: this looks like a rostering error worth querying.",
+        "Fly it and let me protect as much sleep as the window allows."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-11",
+      "statement": "2026-09-11 is a 16h11 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-18",
+      "statement": "2026-09-18 is a 16h56 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-19",
+      "statement": "2026-09-19 is a 14h03 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-21",
+      "statement": "2026-09-21 is a 14h35 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-23",
+      "statement": "2026-09-23 is a 17h02 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-30",
+      "statement": "2026-09-30 is a 14h07 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "hardness": "preference",
+      "date": "2026-09-02",
+      "where": "rest:undefined..undefined",
+      "statement": "Before 2026-09-02 you have 10h01 off, but 1h50 of it is travel — that leaves 8h11 to sleep in, against 9h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    }
+  ],
+  "readingUncertainties": [],
+  "derivations": [
+    {
+      "date": "2026-09-02",
+      "field": "sectors[1].arrUtc date",
+      "method": "MD511 arrival printed '01:10+1' on a row dated 02/09; the +1 marker places the local arrival on 03/09 at MAD, then converted",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-11",
+      "field": "sectors[2].arrUtc / sectors[3] dates",
+      "method": "MD590 arr '01:37+1' and MD455 '02:26+1'→'06:21+1' on continuation rows carrying no date; the +1 markers place them on 12/09 local at ARN and MAD respectively",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-19",
+      "field": "sectors[3].depUtc/arrUtc dates",
+      "method": "MD411 printed '00:48+1'→'04:13+1' on an undated continuation row; the +1 places both on 20/09 local (LHR then MAD)",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-21",
+      "field": "sectors[3].arrUtc date",
+      "method": "MD521 arrival '02:25+1' places the MAD arrival on 22/09 local",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-30",
+      "field": "sectors[3].depUtc/arrUtc and endUtc dates",
+      "method": "MD802 '00:27+1'→'02:52+1' and Fin '03:22+1' place them on 01/10 local, one day past the roster period",
+      "confidence": "high"
+    }
+  ]
+}

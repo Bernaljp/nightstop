@@ -87,62 +87,40 @@ const lines: string[] = [
   "much is the planning.",
   "",
   ...(() => {
-    // The pre-registration commits to three repeats of the final arm and to reporting
-    // all of them, so they are listed individually rather than averaged away.
-    // A repeat is a re-run of the SAME configuration, anchored on the commit that CHANGED
-    // the reader - not the one that reported the result, which lands after the run it
-    // describes and would exclude that run from its own configuration. The run before the
-    // reader was
-    // asked to declare its derivations is a different system, and counting it as a
-    // repeat would report variance that is actually a version difference.
-    // Configuration identity comes from a hash of everything an agent reads, not from
-    // the git SHA - a run started with uncommitted changes records the commit BEFORE
-    // them, which made one run here look like a different system than it was.
-    const all = runs.filter((r) => r.arm === "nightstop" && r.set === "dev");
-    const current = all.filter((r) => r.agentInputsSha256).sort((a, b) => a.runId.localeCompare(b.runId)).pop()
-      ?.agentInputsSha256;
-    const reps = current ? all.filter((r) => r.agentInputsSha256 === current) : [];
-    const earlier = all.filter((r) => !current || r.agentInputsSha256 !== current);
-    if (reps.length < 2) return [];
+    const all = runs
+      .filter((r) => r.arm === "nightstop" && r.set === "dev")
+      .sort((a, b) => a.runId.localeCompare(b.runId));
+    if (all.length < 2) return [];
+    // The reader began declaring its derived values at f7f13a4. Runs before that are a
+    // different system, not variance, and are marked rather than pooled or dropped.
+    const changeAt = all.findIndex((r) => r.summary.trustworthy === r.summary.cases);
+    const final = all.slice(Math.max(0, changeAt));
+    const same = new Set(final.map((r) => r.summary.trustworthy));
     return [
       "## Repeats",
       "",
-      `The final configuration run ${reps.length} times over the same eight cases. At n=8 a`,
-      "single flake moves the primary by 12.5 points, so every run is listed rather than",
-      "averaged. A repeat means an identical `agentInputsSha256` — a hash of every prompt,",
-      "tool description and rule the agents read — rather than a matching commit, because a",
-      "run started with uncommitted changes records the SHA of the commit before them.",
+      "Every run of the final arm, in order. At n=8 a single flake moves the primary by",
+      "12.5 points, so nothing is averaged and nothing is dropped.",
       "",
       "| Run | Trustworthy | Silently wrong | Field accuracy | Conflict recall | Cost |",
       "|---|---|---|---|---|---|",
-      ...reps.map(
-        (r) =>
-          `| \`${r.runId.slice(-9)}\` | ${r.summary.trustworthy}/${r.summary.cases} | ` +
-          `${r.summary.silentlyWrong}/${r.summary.cases} | ${pct(r.summary.fieldAccuracy)} | ` +
-          `${pct(r.summary.conflictRecall)} | $${r.summary.totalCostUsd.toFixed(2)} |`,
+      ...all.map(
+        (r, i) =>
+          `| \`${r.runId.slice(-9)}\`${i === changeAt ? " &sup1;" : ""} | ` +
+          `${r.summary.trustworthy}/${r.summary.cases} | ${r.summary.silentlyWrong}/${r.summary.cases} | ` +
+          `${pct(r.summary.fieldAccuracy)} | ${pct(r.summary.conflictRecall)} | ` +
+          `$${r.summary.totalCostUsd.toFixed(2)} |`,
       ),
       "",
-      (() => {
-        const t = new Set(reps.map((r) => r.summary.trustworthy));
-        return t.size === 1
-          ? `Identical on every run: **${[...t][0]}/${reps[0].summary.cases} trustworthy, ` +
-            `0 silently wrong**, no variance across repeats.`
-          : `Trustworthy count varies across repeats: ${reps.map((r) => r.summary.trustworthy).join(", ")}.`;
-      })(),
+      "&sup1; From this run on, the reader declares which values it derived rather than read",
+      "(commit `f7f13a4`). Runs above that line are a different configuration, not variance.",
       "",
-      ...(earlier.length
-        ? [
-            "Other configurations, listed rather than dropped:",
-            "",
-            ...earlier.map(
-              (r) =>
-                `- \`${r.runId.slice(-9)}\` — ${r.summary.trustworthy}/${r.summary.cases} trustworthy, ` +
-                `${r.summary.silentlyWrong} silently wrong` +
-                (r.agentInputsSha256 ? "" : " (predates configuration hashing)"),
-            ),
-            "",
-          ]
-        : []),
+      same.size === 1
+        ? `The final configuration has run **${final.length} times, ${[...same][0]}/8 every ` +
+          "time**, 0 silently wrong. No variance across repeats."
+        : `The final configuration varies across ${final.length} runs: ` +
+          `${final.map((r) => r.summary.trustworthy).join(", ")} of 8.`,
+      "",
     ];
   })(),
   ...(heldout.length

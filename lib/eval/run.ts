@@ -88,17 +88,27 @@ function gitSha(): string {
  * actually was. This hash does not care about commit hygiene.
  */
 function agentInputsSha(): string {
-  const roots = ["lib/agents", "lib/rules", "docs/sources"];
+  // Listed explicitly rather than by directory. Hashing all of lib/agents/ meant adding
+  // an unrelated agent - the distiller, which the planning arms never call - changed the
+  // hash and made two identical runs look like different configurations. An identity
+  // that moves when something irrelevant changes is not an identity.
+  const files = [
+    "lib/agents/reader.ts",
+    "lib/agents/pipeline.ts",
+    "lib/agents/tools.ts",
+    "lib/agents/sdk-runtime.ts",
+    "lib/agents/baselines.ts",
+    "lib/agents/prompts/output-contract.ts",
+    "lib/rules/baseline-pack.ts",
+    "lib/rules/operator-pack.ts",
+    "lib/plan/engine.ts",
+    "lib/plan/circadian.ts",
+    "lib/eval/conflicts.ts",
+  ];
   const h = createHash("sha256");
-  const walk = (dir: string): void => {
-    if (!existsSync(dir)) return;
-    for (const e of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
-      const full = join(dir, e.name);
-      if (e.isDirectory()) walk(full);
-      else h.update(full).update(readFileSync(full));
-    }
-  };
-  for (const r of roots) walk(r);
+  for (const f of files) {
+    if (existsSync(f)) h.update(f).update(readFileSync(f));
+  }
   return h.digest("hex");
 }
 

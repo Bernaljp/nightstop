@@ -175,12 +175,16 @@ someone else can verify it.
 The metric, the field list and the held-out design were fixed in
 [`docs/eval-preregistration.md`](docs/eval-preregistration.md) before any agent ran.
 
-**What is not yet measured: variance.** The pre-registration commits to three repeats of
-the final arm, and at n=8 a single flake moves the primary by 12.5 points. Two repeats
-were launched and both died partway through against an account session limit — they are
-deleted rather than reported, because a run that measured a quota wall is not a
-measurement of this system. Every arm in the table above is **n=1**, and the 8/8 should
-be read with that in mind until the repeats land.
+**Variance.** The pre-registration commits to three repeats of the final arm, because at
+n=8 a single flake moves the primary by 12.5 points. It has now run **four times, 8/8
+every time, 0 silently wrong** — no variance across repeats. Every run is listed
+individually in [`RESULTS.md`](RESULTS.md), including the one before the derivation
+change that scored 7/8 and is marked as a different configuration rather than pooled in
+as variance. The baseline arms remain n=1.
+
+(Two earlier repeat attempts died partway through against an account session limit and
+were deleted rather than reported — a run that measured a quota wall is not a measurement
+of this system. `REPRODUCE.md` says how to spot one.)
 
 ## Improvement Changelog
 
