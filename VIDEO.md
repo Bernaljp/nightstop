@@ -71,9 +71,11 @@ judge may be watching at.
 
 | Screen | Say |
 |---|---|
-| **Tab 3**, the briefing, scrolled to the top. | "This is what comes out." |
+| **Tab 2**, still on v4, **scroll to the phone calendar** and page one week forward. | "And here's the plan as you'd actually see it — a week on a phone. Blue is sleep, green a nap before a night duty, orange the flying. The dashed band behind them is the circadian low." |
+| **Tab 3**, the briefing, scrolled to the top. | "Same plan, printable." |
 | **Point at the stat row**, then at *What needs your decision*. | "Decisions first — five things to settle, not sixteen, because the same collision on four nights is one decision, not four." |
 | **Scroll to the ribbon.** Move the cursor slowly left to right across the **19th and 20th**, the Singapore days. | "Now watch the grey band. That's the circadian low — drawn from the *body* clock, not the wall clock. On the Singapore layover it sits mid-morning local, then drifts back over the following week. That's the whole problem in one picture, and it's the reason 'sleep at 11pm local' is advice for a body that's been there a week." |
+| **Scroll to a green nap block** in the ribbon, then to its line in the day-by-day table. | "And where a duty runs through that low, it puts a nap in front of it — take this two hours now, while you can still sleep. That rule only exists because building the demo showed the planner had never once suggested a nap in twelve rosters." |
 | **Scroll to *Put it in your calendar*.** | "And it comes out as a calendar file. Every block carries its reasoning; duties come along marked free so it never blocks out your own diary. Importing it is the approval — nothing reaches a calendar until a person opens it." |
 
 ## 3:10 – 3:50 · The change that mattered most
@@ -102,6 +104,7 @@ judge may be watching at.
 | Screen | Say |
 |---|---|
 | **Tab 2**, click **Try it live**, press **Read and plan it**, let it stream. | "And it isn't a recording. This page calls the model with the real reader prompt and plans with the real engine, bundled out of the repo." |
+| When the calendar draws, **scroll the phone view** and hit **next week** once. | "Same plan, on a phone. Sleep, naps, duties, and the circadian low behind them." |
 | When it finishes, click **Download the calendar**. | "Same code that produced every number you just saw." |
 
 ⚠️ Only include this if it succeeds on a rehearsal. It is a live model call and it can be

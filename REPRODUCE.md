@@ -101,7 +101,7 @@ Each arm runs its eight cases four at a time. Add `--case d04-kestrel` for one c
 | `nightstop` | 22 min | $4.89 | $0.61 |
 | `reference` | <1 s | $0.00 | — |
 
-**Reproducing the full table costs about $17 and takes about 100 minutes.** Figures are
+**Reproducing the full table costs about $18 and takes about 100 minutes.** (Every run in this repository together came to $70 across 405 minutes of wall clock, including the iterations that were thrown away.) Figures are
 `claude-opus-5` list price, as reported by the SDK; running through the Agent SDK bills
 a Claude Code subscription rather than API credits, but the equivalent is what is
 reported so the numbers mean the same thing either way.

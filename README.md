@@ -10,6 +10,16 @@ someone it affects directly.
 
 ---
 
+## How agents built this
+
+The brief rewards purposeful agent use and asks for trajectories from every agent used.
+Agents appear twice here: inside the product, and in the building of it.
+[`docs/how-agents-built-this.md`](docs/how-agents-built-this.md) is the second half, and it
+leads with what *did not* happen — no `/wayfinder` map, no custom skills, no ADRs, and the
+empty directories that prove it. What did shape the build: four bundled skills, each with a
+visible consequence in the repository, and four planning subagents, one of which is the
+reason this evaluation has a co-primary metric at all.
+
 ## Try it
 
 **[Open the demo](https://claude.ai/code/artifact/379e642f-93fb-456f-9226-51f0b57b2567)** ·
@@ -210,6 +220,7 @@ of this system. `REPRODUCE.md` says how to spot one.)
 | **2 · tools, not arithmetic** | Reader gets `to_utc` and `reconcile_totals`; the deterministic engine does the placing and the rule checking. | 7/8 trustworthy · silently wrong 3→1 · **recall 100%** · **false alarms 37→0** | Kept. Moving the rule check out of the model is what takes false alarms to zero: a deterministic checker cannot invent a rule. |
 | **3 · make it show its work** | Reader must record which values it **derived** rather than read, and say which rule it used. Motivated by the single remaining failure (below), and I expected it to only *surface* the error rather than fix it. | **8/8 trustworthy · 0/8 silently wrong** · d04-kestrel misread → surfaced | Kept, and it is the most surprising result here. Being asked to distinguish a value it read from one it inferred changed whether it inferred correctly. |
 | **4 · own rules in** | The distiller: read a rules document once, reduce it to a pack with a hardness on every rule, and never show the planner the source. | Part 117 ~7,021 → ~711 tokens (**−89.9%**); 3/3 recall against the hand-written reference, plus one rule it had missed | Kept. The refusals matter as much as the extractions — it declines to collapse a table-driven limit into a number. |
+| **5 · a nap you would actually take** | The planner had never recommended a nap in twelve rosters — the rule only fired below a six-hour night, and the tightest window is 6h50. Added a prophylactic nap before any duty running an hour or more through the circadian low. Found by building the demo, not by reading a metric. | 2–6 naps per roster (0 on the short-haul European case, correctly); primary and co-primary **unchanged** at 8/8 and 0 | Kept. It moved no number I report, which is the point: the summary statistics could not see that a whole class of advice was missing. |
 | **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3

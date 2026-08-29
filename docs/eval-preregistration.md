@@ -108,6 +108,33 @@ The final arm runs three times over the full corpus and all three are reported. 
 n=12, a single flake moves the primary by 8 points, and a submission that reports one
 run has not measured its own variance.
 
+## Amendment, recorded after the fact
+
+Stated here rather than quietly folded into the results, because the whole point of a
+pre-registration is that departures from it are visible.
+
+**After the held-out evaluation had been run, the sleep engine was changed.** Building the
+demo made something obvious that twelve cases of summary statistics had not: the planner
+had never once recommended a nap. The rule only fired when a main sleep came in under six
+hours, and the tightest window in the corpus is 6h50, so it was dead code. A fatigue
+planner that never suggests a nap is missing the tool crew reach for most, so a
+prophylactic nap was added before any duty running an hour or more through the circadian
+low.
+
+Every arm was then re-run on both corpora. The results did not move — 8/8 dev, 4/4
+held-out, zero silently wrong, no false alarms — and the reference arm confirms the new
+blocks violate none of the rules in the pack.
+
+**What this costs: the held-out set is no longer strictly unseen.** It had already been run
+once before this change. The 4/4 above is a re-run against a configuration edited after
+that first look. The edit was not made in response to a held-out failure — it was made in
+response to the demo showing no naps at all, and it changed the plans on every case
+including the eight development ones — but a held-out score is only worth what its
+provenance is worth, and this one now has a caveat that the first one did not. Both runs
+are in `results/` and `RESULTS.md` lists them.
+
+Anyone re-freezing this would generate a fresh held-out set from a new seed.
+
 ## What would falsify the claim
 
 Stated now so it cannot be quietly dropped later:
