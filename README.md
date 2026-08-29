@@ -77,11 +77,36 @@ Rules come from three places and they are not the same kind of thing:
 | **recommendation** | fatigue science or company policy says it is a bad idea |
 | **preference** | your own line, and only you can move it |
 
-You can supply your own. Point it at your operator's manual and the rule distiller pulls
-out the handful of paragraphs that touch sleep — a flight crew manual is three hundred
-pages of uniform standards, expenses and security procedures with four paragraphs that
-matter here, and putting the whole thing in front of the planner every month would be
-absurd.
+You can supply your own. Point it at your operator's manual and the rule distiller reads
+it **once** and reduces it to a pack — because a flight crew manual is mostly uniform
+standards, expense claims and security procedures, and putting the whole thing in front
+of the planner every month would be absurd.
+
+```bash
+npm run distill -- docs/sources/far-117.txt
+```
+
+| Document | In | Out | Planner carries |
+|---|---|---|---|
+| Synthetic operator manual | ~2,841 tokens | ~586 tokens | **79.4% less** |
+| 14 CFR Part 117 (real, from eCFR) | ~7,021 tokens | ~711 tokens | **89.9% less** |
+
+Size alone would be a hole rather than a saving, so recall is measured too. Against
+`lib/rules/operator-pack.ts` — the reference distillation written by hand *before* the
+distiller existed — it recovered **3 of 3** rules, and found a fourth the reference had
+missed (minimum rest away from base, ten hours plus travel at both ends).
+
+The more interesting output is what it refuses. Asked for Part 117's duty limits it
+returns them as *not encodable*:
+
+> Table B (unaugmented FDP limits, 9–14 hours) and Table C (augmented, 13–19 hours):
+> these are keyed on acclimated report time and either segment count or number of
+> pilots… inventing one would attribute a limit to the FAA that the FAA did not set.
+
+And on hardness, unprompted: *"No recommendations were produced: this is a regulator's
+text throughout, phrased as 'no certificate holder may' / 'must', with no operator policy
+layered above it."* Which is the right reading — whether a rule is a limit or advice
+depends on who wrote the document, not on how the sentence is phrased.
 
 ## Results
 
@@ -165,6 +190,7 @@ be read with that in mind until the repeats land.
 | **1 · give it the rules** | `b2-steelman`: same model and effort, handed the rule pack. Tests whether the whole problem is just that the model was under-informed. | 1/8 trustworthy · silently wrong 8→3 · **recall 0%→77.5%** · false alarms 69→37 | Kept, as the fair comparison arm. Most of the value is here — but 37 invented rules across 8 rosters, and a rule it made up is worse than one it missed. |
 | **2 · tools, not arithmetic** | Reader gets `to_utc` and `reconcile_totals`; the deterministic engine does the placing and the rule checking. | 7/8 trustworthy · silently wrong 3→1 · **recall 100%** · **false alarms 37→0** | Kept. Moving the rule check out of the model is what takes false alarms to zero: a deterministic checker cannot invent a rule. |
 | **3 · make it show its work** | Reader must record which values it **derived** rather than read, and say which rule it used. Motivated by the single remaining failure (below), and I expected it to only *surface* the error rather than fix it. | **8/8 trustworthy · 0/8 silently wrong** · d04-kestrel misread → surfaced | Kept, and it is the most surprising result here. Being asked to distinguish a value it read from one it inferred changed whether it inferred correctly. |
+| **4 · own rules in** | The distiller: read a rules document once, reduce it to a pack with a hardness on every rule, and never show the planner the source. | Part 117 ~7,021 → ~711 tokens (**−89.9%**); 3/3 recall against the hand-written reference, plus one rule it had missed | Kept. The refusals matter as much as the extractions — it declines to collapse a table-driven limit into a number. |
 | **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3
@@ -243,6 +269,7 @@ npm run verify:grader   # 42 assertions proving the scoreboard — no API key ne
 npm run verify:freeze   # proves the held-out set was not tuned against
 npm run eval -- --arm reference    # the deterministic ceiling — no API key needed
 npm run eval -- --arm nightstop    # the full pipeline (needs credentials)
+npm run distill -- docs/sources/far-117.txt   # a regulation into a rule pack
 npm run report          # rebuild RESULTS.md from the runs on disk
 ```
 

@@ -1,0 +1,29 @@
+{
+  "doc": "docs/sources/far-117.txt",
+  "sourceChars": 28082,
+  "packChars": 2844,
+  "rules": 5,
+  "skipped": [
+    "Table B (unaugmented FDP limits, 9–14 hours) and Table C (augmented FDP limits, 13–19 hours): these are keyed on acclimated report time and either segment count or rest-facility class and pilot count. There is no single number to put in max_duty_minutes, and inventing one would attribute a limit to the FAA that the FAA did not set.",
+    "Table A flight time limits (8 or 9 hours by report time) and § 117.11(a)(2)-(3) (13 h for 3-pilot, 17 h for 4-pilot crews): these cap flight time, not duty length or rest, and none of the available check kinds measures flight time.",
+    "§ 117.13(b) and § 117.17(b) 30-minute reduction when not acclimated: a modifier to the Table B/C values, meaningless without the tables.",
+    "§ 117.19 flight duty period extensions of up to 2 hours for unforeseen circumstances: again a modifier to table-derived limits, not a standalone number.",
+    "§ 117.23 cumulative limits (100 flight hours per 672 hours, 1,000 per 365 days, 60 FDP hours per 168 hours, 190 per 672 hours): no check kind covers rolling cumulative totals.",
+    "§ 117.25(b) 30 consecutive hours free from all duty in the past 168 hours, and § 117.25(c) 36 hours of rest to become acclimated: these are days-off / free-from-duty requirements, not a rest interval between two specific duties, and there is no check kind for them.",
+    "§ 117.25(d) 56 consecutive hours of rest on return to home base: this only bites when you have crossed more than 60° longitude and been away over 168 hours. min_rest_between_duties carries no condition, so encoding 3,360 minutes would apply it to every duty pair and would be plainly wrong.",
+    "§ 117.25(g) deadhead rest equal to the length of the deadhead transportation, and § 117.29(d) rest equal to the actual FDP or 24 hours whichever is less: both are variable quantities computed from the preceding duty, not fixed minute values.",
+    "§ 117.27 consecutive nighttime operations (three, or five with a 2-hour suitable-accommodation rest, consecutive FDPs infringing the window of circadian low 0200–0559): max_consecutive_early_starts counts duties starting before a given local hour, which is not the same as duties that infringe the WOCL — a duty can overlap 0200–0559 while starting at 2200. Encoding it would silently change the rule.",
+    "§ 117.17(c) in-flight rest on augmented crews (two consecutive hours in the second half for the landing pilot flying, 90 consecutive minutes for the monitoring pilot) and § 117.15(b) three-hour split-duty rest between 2200 and 0500: these are sleep opportunities scheduled inside a duty. no_sleep_during_duty asserts the opposite, and the other kinds do not model an in-duty rest window with a time-of-day constraint.",
+    "§ 117.21(d) 12-hour notice of report time for long-call reserve when the duty begins before and operates into the window of circadian low: a notification requirement, not a rest or duty-length limit.",
+    "§ 117.5 fitness for duty and the definition of a physiological night's rest (10 hours encompassing 0100–0700 local): the first is a subjective self-assessment obligation with no measurable threshold; the second is a definition anchored to clock hours, which none of the check kinds can express.",
+    "No recommendations were produced: this is a regulator's text throughout, phrased as \"no certificate holder may\" / \"must\", with no operator policy layered above the regulatory floor."
+  ],
+  "usage": {
+    "inputTokens": 2,
+    "outputTokens": 4300,
+    "cacheReadInputTokens": 915,
+    "cacheCreationInputTokens": 10064,
+    "turns": 1
+  },
+  "wallMs": 52796
+}

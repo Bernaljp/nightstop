@@ -1,0 +1,47 @@
+{
+  "id": "distilled-distill-2026-08-29T15-17-41-885Z",
+  "origin": "docs/sources/operator-manual.md",
+  "rules": [
+    {
+      "id": "company-fdp-planning-limit-13h",
+      "statement": "Your flight duty period should not be planned longer than 13 hours — a pairing needing more than that cannot be published.",
+      "source": "4.1.3 Company planning limit — \"Notwithstanding the regulatory maximum, HALCYON AIR does not plan any flight duty period beyond 13 hours. A pairing that would require an FDP longer than 13 hours shall not be published.\"",
+      "hardness": "recommendation",
+      "check": {
+        "kind": "max_duty_minutes",
+        "minutes": 780
+      }
+    },
+    {
+      "id": "min-rest-at-base-12h",
+      "statement": "You should have at least 12 hours between the end of one duty and reporting for the next when resting at base.",
+      "source": "4.2.1 Minimum rest at base — \"The minimum rest period at base is 12 hours, measured from thirty minutes after on-blocks of the final sector to the report time of the next duty. This is a company standard and exceeds the regulatory minimum.\"",
+      "hardness": "recommendation",
+      "check": {
+        "kind": "min_rest_between_duties",
+        "minutes": 720
+      }
+    },
+    {
+      "id": "min-rest-away-from-base-10h-plus-travel",
+      "statement": "On a nightstop you must have at least 10 hours of rest on top of the travel time between airport and hotel in both directions.",
+      "source": "4.2.2 Minimum rest away from base — \"The minimum rest period away from base is the length of the preceding duty period or ten hours, whichever is the greater, plus travelling time between the airport and the accommodation in both directions.\"",
+      "hardness": "hard-limit",
+      "check": {
+        "kind": "min_sleep_opportunity",
+        "minutes": 600
+      }
+    },
+    {
+      "id": "max-three-consecutive-early-starts",
+      "statement": "You must not be rostered more than three duties in a row that report before 06:00 local.",
+      "source": "4.3.2 Consecutive early starts — \"No crew member shall be rostered more than three consecutive duties reporting before 06:00 local time.\"",
+      "hardness": "hard-limit",
+      "check": {
+        "kind": "max_consecutive_early_starts",
+        "count": 3,
+        "beforeLocalHour": 6
+      }
+    }
+  ]
+}

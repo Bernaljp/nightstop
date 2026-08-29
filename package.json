@@ -13,7 +13,8 @@
     "trajectories": "tsx scripts/trajectories.ts",
     "typecheck": "tsc --noEmit",
     "verify:freeze": "tsx scripts/verify-freeze.ts",
-    "site": "tsx scripts/build-site.ts"
+    "site": "tsx scripts/build-site.ts",
+    "distill": "tsx scripts/distill.ts"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "^0.3.250",

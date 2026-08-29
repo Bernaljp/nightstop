@@ -1,0 +1,56 @@
+{
+  "id": "distilled-distill-2026-08-29T15-18-25-548Z",
+  "origin": "docs/sources/far-117.txt",
+  "rules": [
+    {
+      "id": "min-rest-10h-before-duty",
+      "statement": "You must have at least 10 consecutive hours of rest immediately before you report for any reserve or flight duty period, measured from the moment you were released from your previous duty.",
+      "source": "§ 117.25(e) — \"unless the flightcrew member is given a rest period of at least 10 consecutive hours immediately before beginning the reserve or flight duty period measured from the time the flightcrew member is released from duty\"",
+      "hardness": "hard-limit",
+      "check": {
+        "kind": "min_rest_between_duties",
+        "minutes": 600
+      }
+    },
+    {
+      "id": "min-8h-sleep-opportunity",
+      "statement": "Within that 10-hour rest period you must actually have 8 uninterrupted hours available for sleep, and if you judge that you will not, you must tell the operator and cannot report until you get a compliant rest period.",
+      "source": "§ 117.25(e) — \"The 10 hour rest period must provide the flightcrew member with a minimum of 8 uninterrupted hours of sleep opportunity\"; § 117.25(f)",
+      "hardness": "hard-limit",
+      "check": {
+        "kind": "min_sleep_opportunity",
+        "minutes": 480
+      }
+    },
+    {
+      "id": "split-duty-combined-14h",
+      "statement": "If your duty includes a scheduled split-duty rest in a suitable accommodation, the flight duty period and that rest opportunity together may not exceed 14 hours.",
+      "source": "§ 117.15(f) — \"The combined time of the flight duty period and the rest opportunity provided in this section does not exceed 14 hours.\"",
+      "hardness": "hard-limit",
+      "check": {
+        "kind": "max_duty_minutes",
+        "minutes": 840
+      }
+    },
+    {
+      "id": "reserve-availability-period-14h",
+      "statement": "A short-call reserve availability period may not last more than 14 hours.",
+      "source": "§ 117.21(c)(1) — \"The reserve availability period may not exceed 14 hours.\"",
+      "hardness": "hard-limit",
+      "check": {
+        "kind": "max_duty_minutes",
+        "minutes": 840
+      }
+    },
+    {
+      "id": "short-call-fdp-plus-rap-16h",
+      "statement": "On short-call reserve in an unaugmented operation, your reserve availability period plus your flight duty period may never total more than 16 hours measured from the start of the reserve availability period.",
+      "source": "§ 117.21(c)(3) — \"may not exceed the lesser of the maximum applicable flight duty period in Table B of this part plus 4 hours, or 16 hours, as measured from the beginning of the reserve availability period\"",
+      "hardness": "hard-limit",
+      "check": {
+        "kind": "max_duty_minutes",
+        "minutes": 960
+      }
+    }
+  ]
+}

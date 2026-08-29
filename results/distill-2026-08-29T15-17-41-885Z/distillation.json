@@ -1,0 +1,26 @@
+{
+  "doc": "docs/sources/operator-manual.md",
+  "sourceChars": 11364,
+  "packChars": 2345,
+  "rules": 4,
+  "skipped": [
+    "4.1.1 Maximum daily FDP — set by a regulatory table keyed on report time and sector count. There is no single number in the document and inventing one would attribute a limit to the regulator that it did not set.",
+    "4.1.2 Commander's discretion to extend an FDP after it has commenced — a conditional in-flight authority, not a schedulable limit; no check kind expresses it.",
+    "4.2.2 (part) The alternative limb 'the length of the preceding duty period, whichever is the greater' — a variable that depends on the previous duty. Only the fixed 10-hour floor is encoded; on a long preceding duty the true minimum is higher than the encoded value.",
+    "4.2.1 (part) The measurement convention that rest at base runs from thirty minutes AFTER on-blocks, not from on-blocks. min_rest_between_duties measures end-of-duty to report, so the extra 30 minutes cannot be represented.",
+    "4.3.1 Days off — eight days free of duty per calendar month, with two blocks of two or more consecutive days. A monthly roster-shape rule; no check kind covers days off.",
+    "4.3.3 Late-to-early transition — 34 hours free of duty between a duty reporting after 16:00 and one reporting before 06:00. This is conditional on both report times; encoding it as a blanket min_rest_between_duties of 2040 minutes would wrongly apply it to every duty pair.",
+    "4.2.3 Accommodation standard (quiet, dark, temperature controlled room) — affects sleep quality, not timing; not expressible as any listed check.",
+    "4.4.1 / 4.4.2 Standby — home standby counts at 25 per cent towards duty, two hours' notice from call to report. Bears on whether you can sleep on standby, but no check kind represents notice periods or partial duty accrual.",
+    "2.2 Reporting times — 45 / 75 / 60 minutes before scheduled departure. Needed to compute a report time and therefore a pickup, but it is an input to the schedule, not a constraint on sleep.",
+    "2.3 Fitness to operate — a crew member shall not report if fatigued to a degree that may endanger safety. A duty of self-assessment, not a measurable threshold."
+  ],
+  "usage": {
+    "inputTokens": 2,
+    "outputTokens": 2484,
+    "cacheReadInputTokens": 0,
+    "cacheCreationInputTokens": 5208,
+    "turns": 1
+  },
+  "wallMs": 30470
+}
