@@ -22,8 +22,8 @@ the run that produced it.
 | Field-level parse accuracy | 99.3% | 99.3% | 100.0% | 100.0% |
 | Conflict recall | 0.0% | 77.5% | 100.0% | 100.0% |
 | False alarms raised | 69 | 37 | 0 | 0 |
-| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.70 | $0.00 |
-| Wall clock per roster | 268s | 324s | 180s | 0s |
+| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.71 | $0.00 |
+| Wall clock per roster | 268s | 324s | 176s | 0s |
 
 `reference` is not a baseline. It plans from ground-truth duties, so it answers the
 question the other numbers cannot: how much of any shortfall is the reading, and how
@@ -41,11 +41,12 @@ Every run of the final arm, in order. At n=8 a single flake moves the primary by
 | `0-58-275Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.70 |
 | `7-42-487Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.59 |
 | `6-27-291Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.60 |
+| `4-00-108Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.70 |
 
 &sup1; From this run on, the reader declares which values it derived rather than read
 (commit `f7f13a4`). Runs above that line are a different configuration, not variance.
 
-The final configuration has run **4 times, 8/8 every time**, 0 silently wrong. No variance across repeats.
+The final configuration has run **5 times, 8/8 every time**, 0 silently wrong. No variance across repeats.
 
 ## Held out
 
@@ -71,7 +72,7 @@ into the dev number is not a held-out score.
 | `h03-tellus` | `missed` | 330/330 | 0/3 | 8 |
 | `h04-atria` | `false_alarm` | 330/330 | 0/0 | 10 |
 
-**`nightstop`, case by case** — run `nightstop-2026-08-28T22-29-07-162Z`
+**`nightstop`, case by case** — run `nightstop-2026-08-29T17-10-46-563Z`
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms |
 |---|---|---|---|---|
@@ -80,7 +81,7 @@ into the dev number is not a held-out score.
 | `h03-tellus` | `surfaced` | 330/330 | 3/3 | 0 |
 | `h04-atria` | `clean` | 330/330 | 0/0 | 0 |
 
-**`reference`, case by case** — run `reference-2026-08-28T22-29-05-849Z`
+**`reference`, case by case** — run `reference-2026-08-29T17-03-46-556Z`
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms |
 |---|---|---|---|---|
@@ -132,22 +133,22 @@ Run `b2-steelman-2026-08-28T18-28-13-194Z` · 2026-08-28 18:40 · git `3de5694c`
 
 ### `nightstop` — case by case
 
-Run `nightstop-2026-08-29T15-16-27-291Z` · 2026-08-29 15:23 · git `6ec2896f` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+Run `nightstop-2026-08-29T17-04-00-108Z` · 2026-08-29 17:10 · git `371f427b` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
-| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $1.07 |
-| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.86 |
-| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.25 |
-| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.65 |
-| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.64 |
-| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.95 |
-| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.64 |
-| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.53 |
+| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $1.08 |
+| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.91 |
+| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.29 |
+| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.73 |
+| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.49 |
+| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.99 |
+| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.66 |
+| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.55 |
 
 ### `reference` — case by case
 
-Run `reference-2026-08-28T22-29-05-195Z` · 2026-08-28 22:29 · git `c2632d26` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+Run `reference-2026-08-29T17-03-45-898Z` · 2026-08-29 17:03 · git `3eb85e68` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
@@ -175,6 +176,10 @@ Kept rather than deleted. Listed so nothing is quietly dropped from the record.
 - `reference-2026-08-28T21-45-27-292Z` (reference, dev) — 8/8 trustworthy
 - `reference-2026-08-28T21-45-27-905Z` (reference, heldout) — 4/4 trustworthy
 - `nightstop-2026-08-28T21-45-47-942Z` (nightstop, heldout) — 3/4 trustworthy
+- `reference-2026-08-28T22-29-05-195Z` (reference, dev) — 8/8 trustworthy
+- `reference-2026-08-28T22-29-05-849Z` (reference, heldout) — 4/4 trustworthy
 - `b1-chatbot-2026-08-28T21-45-53-042Z` (b1-chatbot, heldout) — 0/4 trustworthy
+- `nightstop-2026-08-28T22-29-07-162Z` (nightstop, heldout) — 4/4 trustworthy
 - `nightstop-2026-08-29T15-00-58-275Z` (nightstop, dev) — 8/8 trustworthy
 - `nightstop-2026-08-29T15-07-42-487Z` (nightstop, dev) — 8/8 trustworthy
+- `nightstop-2026-08-29T15-16-27-291Z` (nightstop, dev) — 8/8 trustworthy

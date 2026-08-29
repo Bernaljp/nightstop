@@ -14,6 +14,11 @@
   --ink:#e8eef6; --ink-2:#93a1b5; --ink-3:#61708a;
   --sleep:#4d94ea; --duty:#e2703c; --nap:#23b183; --flag:#edb54a; --bad:#e05a5a;
   --wocl:#ffffff14; --wocl-e:#ffffff33;
+  --phone-shell:#2b3440; --cal-bg:#11161d; --cal-line:#242c37;
+  --cal-ink:#e8eef6; --cal-ink-2:#93a1b5; --cal-ink-3:#68758a;
+  --cal-hover:#ffffff12; --cal-accent:#4d94ea;
+  --cal-sleep:#3f7fd4; --cal-nap:#1d9a72; --cal-duty:#c8622f;
+  --cal-low:#ffffff0f; --cal-low-e:#ffffff2b;
 }
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
@@ -22,6 +27,11 @@
     --ink:#0d1117; --ink-2:#4e5a6e; --ink-3:#7b879a;
     --sleep:#2a78d6; --duty:#c9501f; --nap:#1baf7a; --flag:#a97400; --bad:#c0392f;
     --wocl:#0d111714; --wocl-e:#0d111730;
+    --phone-shell:#d7dce4; --cal-bg:#ffffff; --cal-line:#e6e9ef;
+    --cal-ink:#1f2430; --cal-ink-2:#5b6577; --cal-ink-3:#8d97a8;
+    --cal-hover:#0d11170f; --cal-accent:#1a73e8;
+    --cal-sleep:#3f7fd4; --cal-nap:#12855f; --cal-duty:#c05621;
+    --cal-low:#0d11170a; --cal-low-e:#0d111726;
   }
 }
 :root[data-theme="light"] {
@@ -30,6 +40,11 @@
   --ink:#0d1117; --ink-2:#4e5a6e; --ink-3:#7b879a;
   --sleep:#2a78d6; --duty:#c9501f; --nap:#1baf7a; --flag:#a97400; --bad:#c0392f;
   --wocl:#0d111714; --wocl-e:#0d111730;
+  --phone-shell:#d7dce4; --cal-bg:#ffffff; --cal-line:#e6e9ef;
+  --cal-ink:#1f2430; --cal-ink-2:#5b6577; --cal-ink-3:#8d97a8;
+  --cal-hover:#0d11170f; --cal-accent:#1a73e8;
+  --cal-sleep:#3f7fd4; --cal-nap:#12855f; --cal-duty:#c05621;
+  --cal-low:#0d11170a; --cal-low-e:#0d111726;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--ground);color:var(--ink);
@@ -94,29 +109,69 @@ select{background:var(--raised);color:var(--ink);border:1px solid var(--line);
 .mis{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--bad);
   padding:4px 0;border-top:1px solid var(--line);overflow-wrap:anywhere}
 
-.sched{padding:14px 16px;border-bottom:1px solid var(--line)}
-.rw{display:grid;grid-template-columns:64px 1fr;align-items:center;gap:9px;height:17px}
-.rw .g{font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-3);
-  white-space:nowrap;font-variant-numeric:tabular-nums}
-.rt{position:relative;height:12px;border-radius:2px;
-  background:linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:12.5% 100%}
-.rt i{position:absolute;display:block;border-radius:2px}
-.rt i.wocl{top:0;height:12px;background:var(--wocl);border-inline:1px solid var(--wocl-e);border-radius:0}
-.rt i.duty{top:0;height:5px;background:var(--duty)}
-.rt i.main{top:6px;height:6px;background:var(--sleep)}
-.rt i.pre-duty-nap,.rt i.recovery-nap{top:6px;height:6px;background:var(--nap)}
-.hours{display:grid;grid-template-columns:64px 1fr;font-size:9.5px;color:var(--ink-3);
-  margin-bottom:3px;font-family:"IBM Plex Mono",monospace}
-.hours>div:last-child{display:grid;grid-template-columns:repeat(8,1fr)}
-.hours span{border-left:1px solid var(--line);padding-left:3px}
-.rkey{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;font-size:11.5px;color:var(--ink-2)}
-.rkey i{display:inline-block;width:15px;height:6px;border-radius:2px;margin-right:5px;vertical-align:middle}
-.agenda{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
-.ag{display:grid;grid-template-columns:74px 96px 1fr;gap:10px;padding:6px 0;
-  border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);align-items:baseline}
-.ag:first-child{border-top:0}
-.ag b{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;color:var(--ink)}
-.ag .w{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3)}
+.sched{padding:18px 16px;border-bottom:1px solid var(--line);
+  display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
+
+/* A phone, because that is where a crew member reads this - in a hotel corridor at
+   05:00, not at a desk. The frame is deliberate: it says "this is the thing you will
+   actually hold", which a chart in a panel does not. */
+.phone{width:330px;flex:0 0 auto;border-radius:26px;padding:9px;
+  background:var(--phone-shell);box-shadow:0 8px 30px #0000002e}
+.screen{background:var(--cal-bg);border-radius:19px;overflow:hidden;
+  font-family:Barlow,system-ui,sans-serif}
+.cal-top{display:flex;align-items:center;justify-content:space-between;
+  padding:12px 13px 8px}
+.cal-top b{font-size:17px;font-weight:600;color:var(--cal-ink);letter-spacing:-.01em}
+.cal-nav{display:flex;gap:3px}
+.cal-nav button{width:27px;height:27px;border-radius:50%;border:0;background:none;
+  color:var(--cal-ink-2);font-size:15px;line-height:1;padding:0}
+.cal-nav button:hover{background:var(--cal-hover)}
+.cal-nav button[disabled]{opacity:.28}
+.dow{display:grid;grid-template-columns:30px repeat(7,1fr);padding:0 6px 6px;
+  border-bottom:1px solid var(--cal-line)}
+.dow div{text-align:center}
+.dow span{display:block;font-size:9.5px;letter-spacing:.05em;color:var(--cal-ink-3);
+  text-transform:uppercase}
+.dow b{display:inline-flex;align-items:center;justify-content:center;
+  width:25px;height:25px;border-radius:50%;font-size:13px;font-weight:500;
+  color:var(--cal-ink);margin-top:2px}
+.dow .on b{background:var(--cal-accent);color:#fff;font-weight:600}
+.gridwrap{height:392px;overflow-y:auto;overscroll-behavior:contain;position:relative}
+.gridwrap::-webkit-scrollbar{width:0}
+.cgrid{position:relative;display:grid;grid-template-columns:30px repeat(7,1fr);
+  height:1152px}
+.gutter{position:relative}
+.gutter u{position:absolute;right:5px;font-size:8.5px;color:var(--cal-ink-3);
+  text-decoration:none;transform:translateY(-4px);font-variant-numeric:tabular-nums}
+.col{position:relative;border-left:1px solid var(--cal-line)}
+.hline{position:absolute;left:0;right:0;border-top:1px solid var(--cal-line)}
+.ev{position:absolute;left:1px;right:1px;border-radius:4px;padding:2px 3px;
+  font-size:8.5px;line-height:1.2;overflow:hidden;color:#fff;font-weight:500}
+.ev.main,.ev.recovery-nap{background:var(--cal-sleep)}
+.ev.pre-duty-nap{background:var(--cal-nap)}
+.ev.duty{background:var(--cal-duty)}
+.ev b{display:block;font-weight:600}
+.lowband{position:absolute;left:0;right:0;background:var(--cal-low);
+  border-block:1px dashed var(--cal-low-e);pointer-events:none}
+.cal-key{display:flex;gap:11px;flex-wrap:wrap;padding:9px 12px 12px;
+  font-size:10.5px;color:var(--cal-ink-2);border-top:1px solid var(--cal-line)}
+.cal-key i{display:inline-block;width:9px;height:9px;border-radius:2px;
+  margin-right:4px;vertical-align:-1px}
+
+.agenda{flex:1 1 300px;min-width:280px;max-width:430px}
+.agenda h4{font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:600;margin:2px 0 9px}
+.ag{padding:8px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
+.ag:first-of-type{border-top:0}
+.ag .hd{display:flex;gap:9px;align-items:baseline;margin-bottom:2px}
+.ag .hd b{font-size:13px;color:var(--ink);font-weight:600}
+.ag .hd span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);
+  font-variant-numeric:tabular-nums}
+.ag .pill{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;padding:1px 5px;
+  border-radius:3px;font-weight:600}
+.pill.main{background:color-mix(in srgb,var(--sleep) 20%,transparent);color:var(--sleep)}
+.pill.pre-duty-nap{background:color-mix(in srgb,var(--nap) 22%,transparent);color:var(--nap)}
+.pill.recovery-nap{background:color-mix(in srgb,var(--nap) 22%,transparent);color:var(--nap)}
 .about{background:var(--sunk);border:1px solid var(--line);border-radius:9px;
   padding:13px 16px;margin-bottom:16px;color:var(--ink-2);font-size:14px}
 .about b{color:var(--ink)}
@@ -234,70 +289,148 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&":"&amp;","<":"&lt;"
 /* ---------------- the schedule ---------------- */
 
 /**
- * Draws the plan, rather than describing it.
+ * The plan as a week in a calendar, on a phone.
  *
- * Uses buildBriefData from the repository - the same function the printed briefing uses
- * - so what a viewer sees here is laid out by the code that produced the real output,
- * not a second implementation that could drift from it.
+ * A crew member reads this in a hotel corridor at five in the morning, so it is drawn
+ * the way it will actually be seen. Layout comes from buildBriefData in the repository —
+ * the same function the printed briefing uses — so the demo cannot drift from the real
+ * output.
  */
-function scheduleHtml(duties, blocks, base, commute, from, to, limit) {
+const SCHED = { weekStart: 0, ctx: null };
+const DOWL = ["S", "M", "T", "W", "T", "F", "S"];
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function buildSchedule(duties, blocks, base, commute, from, to) {
   const profile = {
     base,
     baseTz: (E.AIRPORTS[base] || {}).tz || "UTC",
     commuteMinutes: { [base]: commute },
     defaultCommuteMinutes: 35,
   };
-  let data;
   try {
-    data = E.buildBriefData("", duties, profile, { caseId: "", blocks, conflicts: [] }, { from, to });
+    const data = E.buildBriefData("", duties, profile, { caseId: "", blocks, conflicts: [] }, { from, to });
+    // Open on the first week that actually contains sleep, not on an empty one.
+    const firstBusy = data.days.findIndex((d) => d.spans.some((x) => x.kind !== "wocl"));
+    SCHED.ctx = { data, blocks, weeks: Math.ceil(data.days.length / 7) };
+    SCHED.weekStart = Math.max(0, Math.floor(Math.max(0, firstBusy) / 7) * 7);
+    return true;
   } catch (e) {
-    return `<div class="body empty">Could not lay out the schedule: ${esc(e.message)}</div>`;
+    SCHED.ctx = null;
+    SCHED.error = e.message;
+    return false;
   }
+}
 
-  const days = limit ? data.days.slice(0, limit) : data.days;
-  const hours = [0, 3, 6, 9, 12, 15, 18, 21]
-    .map((h) => `<span>${String(h).padStart(2, "0")}</span>`).join("");
+function hhmm(iso, station) {
+  const tz = (E.AIRPORTS[station] || {}).tz || "UTC";
+  return new Intl.DateTimeFormat("en-GB",
+    { timeZone: tz, hour: "2-digit", minute: "2-digit", hour12: false }).format(new Date(iso));
+}
 
-  const rows = days.map((r) => {
-    const bars = r.spans.map((sp) => {
-      const l = (sp.from * 100).toFixed(2);
-      const w = Math.max(0.5, (sp.to - sp.from) * 100).toFixed(2);
-      return `<i class="${sp.kind}" style="left:${l}%;width:${w}%" title="${esc(sp.title)}"></i>`;
-    }).join("");
-    return `<div class="rw"><span class="g">${esc(r.dow)} ${esc(r.date.slice(8))} ${esc(r.station)}</span><div class="rt">${bars}</div></div>`;
+function scheduleHtml() {
+  if (!SCHED.ctx) return `<div class="body empty">Could not lay out the schedule: ${esc(SCHED.error || "")}</div>`;
+  const { data, blocks } = SCHED.ctx;
+  const week = data.days.slice(SCHED.weekStart, SCHED.weekStart + 7);
+  if (!week.length) return '<div class="body empty">Nothing in this week.</div>';
+
+  const first = week[0].date, last = week[week.length - 1].date;
+  const label = first.slice(5, 7) === last.slice(5, 7)
+    ? `${MON[+first.slice(5, 7) - 1]} ${+first.slice(8)}–${+last.slice(8)}`
+    : `${MON[+first.slice(5, 7) - 1]} ${+first.slice(8)} – ${MON[+last.slice(5, 7) - 1]} ${+last.slice(8)}`;
+
+  // Day headers, Google's circled date on the first day carrying anything.
+  const busy = week.findIndex((d) => d.spans.some((x) => x.kind !== "wocl"));
+  const heads = week.map((d, i) => {
+    const dow = new Date(`${d.date}T12:00:00Z`).getUTCDay();
+    return `<div class="${i === busy ? "on" : ""}"><span>${DOWL[dow]}</span><b>${+d.date.slice(8)}</b></div>`;
   }).join("");
 
-  // Every sleep block, in order, with the reason it sits where it does.
-  // The `why` line already names the station and the local hours, so the row does not
-  // repeat them - it carries the date, the span, and the reason.
-  const agenda = blocks
-    .slice()
-    .sort((a, b) => a.startUtc.localeCompare(b.startUtc))
-    .map((b) => {
-      const tz = (E.AIRPORTS[b.station] || {}).tz || "UTC";
-      const s = new Date(b.startUtc), e = new Date(b.endUtc);
-      const mins = Math.round((e - s) / 60000);
-      const hhmm = (d) => new Intl.DateTimeFormat("en-GB",
-        { timeZone: tz, hour: "2-digit", minute: "2-digit", hour12: false }).format(d);
-      const day = new Intl.DateTimeFormat("en-GB",
-        { timeZone: tz, weekday: "short", day: "2-digit", month: "short" }).format(s);
-      const name = { main: "Sleep", "pre-duty-nap": "Nap", "recovery-nap": "Recovery" }[b.kind] || b.kind;
-      return `<div class="ag"><b>${esc(day)}</b>
-        <span class="w">${esc(hhmm(s))}\u2192${esc(hhmm(e))} \u00b7 ${Math.floor(mins/60)}h${String(mins%60).padStart(2,"0")}</span>
-        <span>${esc(b.why)}</span></div>`;
+  const hours = Array.from({ length: 24 }, (_, h) =>
+    h ? `<u style="top:${(h / 24) * 100}%">${String(h).padStart(2, "0")}</u>` : "").join("");
+  const lines = Array.from({ length: 24 }, (_, h) =>
+    `<div class="hline" style="top:${(h / 24) * 100}%"></div>`).join("");
+
+  const cols = week.map((d) => {
+    const bands = d.spans.filter((x) => x.kind === "wocl").map((x) =>
+      `<div class="lowband" style="top:${(x.from * 100).toFixed(2)}%;height:${((x.to - x.from) * 100).toFixed(2)}%"></div>`).join("");
+    const evs = d.spans.filter((x) => x.kind !== "wocl").map((x) => {
+      const top = (x.from * 100).toFixed(2);
+      const h = Math.max(1.6, (x.to - x.from) * 100).toFixed(2);
+      const name = { main: "Sleep", "pre-duty-nap": "Nap", "recovery-nap": "Recovery", duty: "Duty" }[x.kind];
+      // A four-sector day is four airport pairs, which in a 40px column becomes a
+      // vertical stack of unreadable codes. Show the first and count the rest.
+      let label = x.label || "";
+      if (x.kind === "duty" && label.includes(" ")) {
+        const legs = label.split(" ").filter(Boolean);
+        label = legs.length > 1 ? `${legs[0]} +${legs.length - 1}` : legs[0];
+      }
+      return `<div class="ev ${x.kind}" style="top:${top}%;height:${h}%" title="${esc(x.title)}">
+        <b>${name}</b>${esc(label)}</div>`;
     }).join("");
+    return `<div class="col">${lines}${bands}${evs}</div>`;
+  }).join("");
+
+  const atStart = SCHED.weekStart === 0;
+  const atEnd = SCHED.weekStart + 7 >= data.days.length;
+
+  // The agenda beside it: every block in the week, and why it sits there.
+  const inWeek = blocks
+    .filter((b) => b.startUtc.slice(0, 10) >= first && b.startUtc.slice(0, 10) <= last)
+    .sort((a, b) => a.startUtc.localeCompare(b.startUtc));
+  const agenda = inWeek.map((b) => {
+    const mins = Math.round((new Date(b.endUtc) - new Date(b.startUtc)) / 60000);
+    const name = { main: "Main sleep", "pre-duty-nap": "Pre-duty nap", "recovery-nap": "Recovery sleep" }[b.kind] || b.kind;
+    const day = new Date(`${b.startUtc.slice(0, 10)}T12:00:00Z`);
+    return `<div class="ag">
+      <div class="hd"><b>${DOWL[day.getUTCDay()]} ${+b.startUtc.slice(8, 10)}</b>
+        <span>${hhmm(b.startUtc, b.station)}\u2192${hhmm(b.endUtc, b.station)} · ${Math.floor(mins/60)}h${String(mins%60).padStart(2,"0")}</span>
+        <span class="pill ${b.kind}">${esc(name)}</span></div>
+      <div>${esc(b.why)}</div></div>`;
+  }).join("");
 
   return `<div class="sched">
-    <div class="hours"><div></div><div>${hours}</div></div>
-    ${rows}
-    <div class="rkey">
-      <span><i style="background:var(--sleep)"></i>sleep</span>
-      <span><i style="background:var(--nap)"></i>nap</span>
-      <span><i style="background:var(--duty)"></i>on duty</span>
-      <span><i style="background:var(--wocl);outline:1px solid var(--wocl-e)"></i>circadian low</span>
-    </div>
-    <div class="agenda">${agenda || '<div class="empty">No sleep blocks in this stretch.</div>'}</div>
+    <div class="phone"><div class="screen">
+      <div class="cal-top"><b>${esc(label)}</b>
+        <div class="cal-nav">
+          <button id="wk-prev" ${atStart ? "disabled" : ""} aria-label="Previous week">&#8249;</button>
+          <button id="wk-next" ${atEnd ? "disabled" : ""} aria-label="Next week">&#8250;</button>
+        </div></div>
+      <div class="dow"><div></div>${heads}</div>
+      <div class="gridwrap" id="gridwrap"><div class="cgrid">
+        <div class="gutter">${hours}</div>${cols}
+      </div></div>
+      <div class="cal-key">
+        <span><i style="background:var(--cal-sleep)"></i>sleep</span>
+        <span><i style="background:var(--cal-nap)"></i>nap</span>
+        <span><i style="background:var(--cal-duty)"></i>duty</span>
+        <span><i style="background:var(--cal-low);outline:1px dashed var(--cal-low-e)"></i>circadian low</span>
+      </div>
+    </div></div>
+    <div class="agenda"><h4>This week, and why</h4>
+      ${agenda || '<div class="empty">Nothing scheduled in this week.</div>'}</div>
   </div>`;
+}
+
+/** Wire week navigation and open the grid on the night, not on midnight. */
+function mountSchedule(host) {
+  const scroll = () => {
+    const g = document.getElementById("gridwrap");
+    if (!g) return;
+    // Frame the night rather than a fixed hour. A fixed scrollTop clamps against the
+    // bottom of a 24-hour grid, which is how a window aimed at 20:00 ended up showing
+    // 16:00. Take the earliest event in the week and put it a little below the top.
+    // Includes events sitting at 00:00 — those are the second half of a sleep that
+    // began the previous evening, and they are exactly what should be on screen.
+    const tops = [...g.querySelectorAll(".ev")].map((el) => parseFloat(el.style.top) || 0);
+    const earliest = tops.length ? Math.min(...tops) : 60;
+    const target = g.scrollHeight * (earliest / 100) - g.clientHeight * 0.18;
+    g.scrollTop = Math.max(0, Math.min(target, g.scrollHeight - g.clientHeight));
+  };
+  const prev = document.getElementById("wk-prev");
+  const next = document.getElementById("wk-next");
+  if (prev) prev.onclick = () => { SCHED.weekStart -= 7; host(); };
+  if (next) next.onclick = () => { SCHED.weekStart += 7; host(); };
+  scroll();
 }
 
 /* ---------------- recorded ---------------- */
@@ -354,7 +487,7 @@ function renderRecorded() {
   $("out").innerHTML = `
     <div class="grp"><h3>The schedule it produced
       <span class="tag ${a.blockCount ? "t-ok" : "t-bad"}">${a.blockCount} blocks</span></h3></div>
-    ${scheduleHtml(a.duties, a.blocks, cur.base, cur.commute, cur.from, cur.to, 0)}
+    ${buildSchedule(a.duties, a.blocks, cur.base, cur.commute, cur.from, cur.to) ? scheduleHtml() : scheduleHtml()}
     <div class="grp">
       <h3>Surfaced, and real <span class="tag t-ok">${real.length}</span></h3>
       ${real.length ? real.slice(0, 6).map((c) => row(c, "real")).join("") : '<div class="empty">None.</div>'}
@@ -380,6 +513,14 @@ function renderRecorded() {
     </div>
     ${a.misreads.length ? `<div class="grp"><h3>Read wrong <span class="tag t-bad">${wrong}</span></h3>
       ${a.misreads.map((m) => `<div class="mis">${esc(m)}</div>`).join("")}</div>` : ""}`;
+
+  mountSchedule(() => {
+    // Re-render only the schedule when the week changes, so the panel does not jump.
+    const holder = $("out").querySelector(".sched");
+    if (!holder) return;
+    holder.outerHTML = scheduleHtml();
+    mountSchedule(arguments.callee ? renderRecorded : renderRecorded);
+  });
 }
 
 pick.addEventListener("change", () => { cur = DATA.cases[+pick.value]; renderRecorded(); });
@@ -553,7 +694,7 @@ Return ONLY JSON: {"duties":[{"date":"YYYY-MM-DD","kind":"flight|positioning|sta
     $("lout").innerHTML = `
       <div class="grp"><h3>The schedule
         <span class="tag ${plan.blocks.length ? "t-ok" : "t-bad"}">${plan.blocks.length} blocks</span></h3></div>
-      ${scheduleHtml(duties, plan.blocks, base, commute, from, to, 0)}
+      ${buildSchedule(duties, plan.blocks, base, commute, from, to) ? scheduleHtml() : scheduleHtml()}
       <div class="grp">
         <h3>What needs your decision <span class="tag ${hard ? "t-bad" : "t-ok"}">${Object.keys(grouped).length}</span></h3>
         ${Object.values(grouped).length
@@ -588,6 +729,12 @@ Return ONLY JSON: {"duties":[{"date":"YYYY-MM-DD","kind":"flight|positioning|sta
       lastIcs = null;
       $("save").classList.add("hide");
     }
+    mountSchedule(() => {
+      const holder = $("lout").querySelector(".sched");
+      if (!holder) return;
+      holder.outerHTML = scheduleHtml();
+      mountSchedule(() => {});
+    });
     $("log").textContent =
       `Done. The model read the document; the engine placed ${plan.blocks.length} sleep blocks ` +
       `and found ${plan.conflicts.length} collisions.` +

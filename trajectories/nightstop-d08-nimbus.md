@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-29T15-16-27-291Z/d08-nimbus/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-29T17-04-00-108Z/d08-nimbus/trajectory.jsonl -->
 
 > **Why this trajectory.** A month spanning both the European and North American daylight-saving changes, with transatlantic sectors whose offset changes mid-trip.
 
 # Trajectory — d08-nimbus, arm `nightstop`
 
-Run `nightstop-2026-08-29T15-16-27-291Z`. 144 events.
+Run `nightstop-2026-08-29T17-04-00-108Z`. 147 events.
 
 
 ## reader
@@ -150,7 +150,7 @@ I'll start by reading the roster document.
 
 ### Turn 5 — stop reason `null`
 
-The document is read. Let me note the structure and convert every local time properly.
+Now let me convert every local time. Starting with the October duties:
 
 ### Turn 6 — stop reason `null`
 
@@ -185,17 +185,6 @@ The document is read. Let me note the structure and convert every local time pro
 }
 ```
 
-### Turn 9 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-12T01:05"
-}
-```
-
 **tool answered**
 
 ```
@@ -205,6 +194,17 @@ The document is read. Let me note the structure and convert every local time pro
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-11T16:05\",\"utc\":\"2026-10-11T14:05:00.000Z\",\"notes\":[]}"
   }
 ]
+```
+
+### Turn 10 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-12T01:05"
+}
 ```
 
 **tool answered**
@@ -506,6 +506,14 @@ The document is read. Let me note the structure and convert every local time pro
 
 ### Turn 38 — stop reason `null`
 
+
+
+### Turn 39 — stop reason `null`
+
+The 25 October MAD duty falls on the European DST change day — converting the rest:
+
+### Turn 40 — stop reason `null`
+
 **calls `mcp__nightstop__to_utc`**
 
 ```json
@@ -526,7 +534,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 40 — stop reason `null`
+### Turn 42 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -537,7 +545,18 @@ The document is read. Let me note the structure and convert every local time pro
 }
 ```
 
-### Turn 41 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-25T10:15\",\"utc\":\"2026-10-25T09:15:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 44 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -554,23 +573,12 @@ The document is read. Let me note the structure and convert every local time pro
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-25T10:15\",\"utc\":\"2026-10-25T09:15:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-25T16:35\",\"utc\":\"2026-10-25T19:35:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 44 — stop reason `null`
+### Turn 46 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -592,7 +600,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 46 — stop reason `null`
+### Turn 48 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -614,7 +622,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 48 — stop reason `null`
+### Turn 50 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -636,7 +644,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 50 — stop reason `null`
+### Turn 52 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -658,7 +666,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 52 — stop reason `null`
+### Turn 54 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -680,7 +688,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 54 — stop reason `null`
+### Turn 56 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -691,18 +699,7 @@ The document is read. Let me note the structure and convert every local time pro
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-28T08:00\",\"utc\":\"2026-10-28T07:00:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 56 — stop reason `null`
+### Turn 57 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -719,12 +716,23 @@ The document is read. Let me note the structure and convert every local time pro
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-28T08:00\",\"utc\":\"2026-10-28T07:00:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-28T16:00\",\"utc\":\"2026-10-28T15:00:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 58 — stop reason `null`
+### Turn 60 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -746,7 +754,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 60 — stop reason `null`
+### Turn 62 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -768,7 +776,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 62 — stop reason `null`
+### Turn 64 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -790,7 +798,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 64 — stop reason `null`
+### Turn 66 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -812,7 +820,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 66 — stop reason `null`
+### Turn 68 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -834,7 +842,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 68 — stop reason `null`
+### Turn 70 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -856,7 +864,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 70 — stop reason `null`
+### Turn 72 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -878,7 +886,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 72 — stop reason `null`
+### Turn 74 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -900,7 +908,11 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 74 — stop reason `null`
+### Turn 76 — stop reason `null`
+
+Now the November duties:
+
+### Turn 77 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -922,7 +934,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 76 — stop reason `null`
+### Turn 79 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -944,7 +956,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 78 — stop reason `null`
+### Turn 81 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -966,7 +978,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 80 — stop reason `null`
+### Turn 83 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -977,7 +989,7 @@ The document is read. Let me note the structure and convert every local time pro
 }
 ```
 
-### Turn 81 — stop reason `null`
+### Turn 84 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1010,7 +1022,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 84 — stop reason `null`
+### Turn 87 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1032,7 +1044,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 86 — stop reason `null`
+### Turn 89 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1054,7 +1066,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 88 — stop reason `null`
+### Turn 91 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1076,7 +1088,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 90 — stop reason `null`
+### Turn 93 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1098,7 +1110,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 92 — stop reason `null`
+### Turn 95 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1120,7 +1132,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 94 — stop reason `null`
+### Turn 97 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1142,7 +1154,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 96 — stop reason `null`
+### Turn 99 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1164,7 +1176,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 98 — stop reason `null`
+### Turn 101 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1186,7 +1198,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 100 — stop reason `null`
+### Turn 103 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1208,7 +1220,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 102 — stop reason `null`
+### Turn 105 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1230,7 +1242,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 104 — stop reason `null`
+### Turn 107 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1252,7 +1264,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 106 — stop reason `null`
+### Turn 109 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1274,7 +1286,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 108 — stop reason `null`
+### Turn 111 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1296,7 +1308,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 110 — stop reason `null`
+### Turn 113 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1318,7 +1330,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 112 — stop reason `null`
+### Turn 115 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1329,7 +1341,7 @@ The document is read. Let me note the structure and convert every local time pro
 }
 ```
 
-### Turn 113 — stop reason `null`
+### Turn 116 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1362,7 +1374,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 116 — stop reason `null`
+### Turn 119 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1384,7 +1396,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 118 — stop reason `null`
+### Turn 121 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1406,7 +1418,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 120 — stop reason `null`
+### Turn 123 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1428,7 +1440,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 122 — stop reason `null`
+### Turn 125 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1450,7 +1462,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 124 — stop reason `null`
+### Turn 127 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1472,7 +1484,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 126 — stop reason `null`
+### Turn 129 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1494,7 +1506,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 128 — stop reason `null`
+### Turn 131 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1516,7 +1528,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 130 — stop reason `null`
+### Turn 133 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1538,7 +1550,7 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 132 — stop reason `null`
+### Turn 135 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1560,11 +1572,11 @@ The document is read. Let me note the structure and convert every local time pro
 ]
 ```
 
-### Turn 134 — stop reason `null`
+### Turn 137 — stop reason `null`
 
-Now let me verify against the header totals.
+Now let me verify against the header totals:
 
-### Turn 135 — stop reason `null`
+### Turn 138 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1575,8 +1587,8 @@ Now let me verify against the header totals.
   "headerDaysOff": 14,
   "headerStandbyDays": 1,
   "headerNightstops": 6,
-  "duties": "[\n{\"date\":\"2026-10-11\",\"kind\":\"flight\",\"endStation\":\"DXB\",\"sectors\":[{\"depUtc\":\"2026-10-11T14:05Z\",\"arrUtc\":\"2026-10-11T21:05Z\"}]},\n{\"date\":\"2026-10-12\",\"kind\":\"off\",\"endStation\":\"DXB\",\"sectors\":[]},\n{\"date\":\"2026-10-13\",\"kind\":\"flight\",\"endStation\":\"MAD\",\"sectors\":[{\"depUtc\":\"2026-10-13T06:15Z\",\"arrUtc\":\"2026-10-13T13:15Z\"}]},\n{\"date\":\"2026-10-14\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-15\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-16\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-17\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-18\",\"kind\":\"of
-… [2859 more characters]
+  "duties": "[\n{\"date\":\"2026-10-11\",\"kind\":\"flight\",\"endStation\":\"DXB\",\"sectors\":[{\"depUtc\":\"2026-10-11T14:05:00Z\",\"arrUtc\":\"2026-10-11T21:05:00Z\"}]},\n{\"date\":\"2026-10-12\",\"kind\":\"off\",\"endStation\":\"DXB\",\"sectors\":[]},\n{\"date\":\"2026-10-13\",\"kind\":\"flight\",\"endStation\":\"MAD\",\"sectors\":[{\"depUtc\":\"2026-10-13T06:15:00Z\",\"arrUtc\":\"2026-10-13T13:15:00Z\"}]},\n{\"date\":\"2026-10-14\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-15\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-16\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-17\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-18\",\
+… [2955 more characters]
 ```
 
 **tool answered**
@@ -1590,24 +1602,22 @@ Now let me verify against the header totals.
 ]
 ```
 
-### Turn 137 — stop reason `null`
+### Turn 140 — stop reason `null`
 
 
 
-### Turn 138 — stop reason `null`
+### Turn 141 — stop reason `null`
 
-All four header totals reconcile exactly.
+All four header totals reconcile exactly. Here is my reading.
 
-```json
-{
-  "format": "NIMBUS INTERNATIONAL prints one line per calendar day in a fixed-width table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop; dates are DD/MM/YYYY and the header states all times are LOCAL to the station shown, so a single row can mix two timezones (STD at the origin, STA at the destination). Report and Off Duty are printed explicitly, never derived, and next-day times carry a '+1' suffix.",
-  "traps": [
-    "Multi-sector duties print the date again on the continuation row (04/11 and 09/11 each appear twice). The repeated date is NOT a second duty — the blank Report cell and the single Off Duty time on the last row show both sectors belong to one duty.",
-    "Times are local to the station named in that cell, so within one row STD is origin-local and STA is destination-local (e.g. 23/10 NB779 departs 23:10 DXB and arrives 04:10+1 MAD).",
-    "'+1' on STA/Off Duty means the following calendar day; five duties end on a date after their printed row date (11/10, 21/10, 23/10, 26/10 via 27/10, 29/10, 01/11, 07/11).",
-    "The period crosses the European DST change on 25/10/2026 at 03:00 local. MAD/FCO go UTC+2 to UTC+1 and LHR UTC+1 to UTC+0 mid-roster; the 25/10 MAD departure is already CET. GRU (Brazil, no DST since 2019), DXB, SIN and BOG are unaffected, so the MAD-relative offsets to those stations shift on 25/10.",
-    "The reporting offset is not uniform: 90 minutes before STD on long-haul, 60 minutes on the FCO and LHR short-haul turns. Since Report is printed, this matt
-… [7809 more characters]
+**Document structure:** Fixed-width text table, columns `Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop`. Dates are DD/MM/YYYY. The header states plainly that *all times are LOCAL to the station shown* — so STD and Report are local to the departure airport, while STA and Off Duty are local to the **arrival** airport. Report time is printed on the page for every duty, so nothing had to be derived from an offset (the printed offsets happen to be 90 min on long-haul and 60 min on the FCO/LHR turns, but I used the printed values, not the pattern).
+
+**Traps I had to handle:**
+- 04/11 and 09/11 each occupy **two rows that repeat the same date**. The second row has a blank Report column — it is a continuation sector of the duty above, not a separate duty. Each of those days is one two-sector flight duty with a single report time and one Off Duty time on the last row.
+- `+1` suffixes on STA/Off Duty mark arrival on the following calendar day, at the arrival station's local date (e.g. 21/10 MAD 23:10 → DXB 08:10+1).
+- **Europe's DST ends 25 October 2026**, mid-roster. The MAD–GRU departure on 25/10 is at 10:15 local, after the 03:00 changeover, so Madrid is already on UTC+1. Every European time from 25/10 onward shifts by an hour relative to the earlier ones — the identical clock times on 13/10 (10:15 → 13:15Z arrival) and 31/10 look the same on the page but are an hour apart in UTC. LHR on 09/11 is on GMT, so its local times equal UTC.
+- GRU (no Brazilian DST since 2019) and BOG (never 
+… [9239 more characters]
 
 _finished: success_
 
@@ -1617,8 +1627,8 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "I'll start by reading the roster document.\nThe document is read. Let me note the structure and convert every local time properly.\nNow let me verify against the header totals.\nAll four header totals reconcile exactly.\n\n```json\n{\n  \"format\": \"NIMBUS INTERNATIONAL prints one line per calendar day in a fixed-width table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop; dates are DD/MM/YYYY and the header states all times are LOCAL to the station shown, so a single row can mix two timezones (STD at the origin, STA at the destination). Report and Off Duty are printed explicitly, never derived, and next-day times carry a '+1' suffix.\",\n  \"traps\": [\n    \"Multi-sector duties print the date again on the continuation row (04/11 and 09/11 each appear twice). The repeated date is NOT a second duty — the blank Report cell and the single Off Duty time on the last row show both sectors belong to one duty.\",\n    \"Times are local to the station named in that cell, so within one row STD is origin-local and STA is destination-local (e.g. 23/10 NB779 departs 23:10 DXB and arrives 04:10+1 MAD).\",\n    \"'+1' on STA/Off Duty means the following calendar day; five duties end on a date after their printed row date (11/10, 21/10, 23/10, 26/10 via 27/10, 29/10, 01/11, 07/11).\",\n    \"The period crosses the European DST change on 25/10/2026 at 03:00 local. MAD/FCO go UTC+2 to UTC+1 and LHR UTC+1 to UTC+0 mid-roster; the 25/10 MAD departure is already CET. GRU (Brazil, no DST since 2019), DXB, SIN and BOG are unaffected, so the MAD-relative offsets to those stations shift on 25/10.\",\n    \"The reporting offset is not uniform: 90 minutes before STD on long-haul, 60 minutes on the FCO and LHR short-haul turns. Since Report is printed, this matters only as a cross-check.\",\n    \"SIM (28/10) and SBY (05/11) carry no Block and no Flight number; their end time sits in the Off Duty column and their start in the Report column. They are training and standby, not flights, and take no reporting offset.\",\n    \"The 'Nightstop' column marks where the crew stays that night, so the following day's duty starts down-route, not at MAD (13/10 starts DXB, 26/10 GRU, 31/10 and 03/11 SIN, 07/11 BOG).\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [],\n  \"duties\": [\n    {\n      \"date\": \"2026-10-11\", \"kind\": \"flight\", \"station\": \"MAD\", \"endStation\": \"DXB\",\n      \"reportUtc\": \"2
-… [8413 more characters]
+  "text": "I'll start by reading the roster document.\nNow let me convert every local time. Starting with the October duties:\nThe 25 October MAD duty falls on the European DST change day — converting the rest:\nNow the November duties:\nNow let me verify against the header totals:\nAll four header totals reconcile exactly. Here is my reading.\n\n**Document structure:** Fixed-width text table, columns `Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop`. Dates are DD/MM/YYYY. The header states plainly that *all times are LOCAL to the station shown* — so STD and Report are local to the departure airport, while STA and Off Duty are local to the **arrival** airport. Report time is printed on the page for every duty, so nothing had to be derived from an offset (the printed offsets happen to be 90 min on long-haul and 60 min on the FCO/LHR turns, but I used the printed values, not the pattern).\n\n**Traps I had to handle:**\n- 04/11 and 09/11 each occupy **two rows that repeat the same date**. The second row has a blank Report column — it is a continuation sector of the duty above, not a separate duty. Each of those days is one two-sector flight duty with a single report time and one Off Duty time on the last row.\n- `+1` suffixes on STA/Off Duty mark arrival on the following calendar day, at the arrival station's local date (e.g. 21/10 MAD 23:10 → DXB 08:10+1).\n- **Europe's DST ends 25 October 2026**, mid-roster. The MAD–GRU departure on 25/10 is at 10:15 local, after the 03:00 changeover, so Madrid is already on UTC+1. Every European time from 25/10 onward shifts by an hour relative to the earlier ones — the identical clock times on 13/10 (10:15 → 13:15Z arrival) and 31/10 look the same on the page but are an hour apart in UTC. LHR on 09/11 is on GMT, so its local times equal UTC.\n- GRU (no Brazilian DST since 2019) and BOG (never observes) stay fixed at UTC−3 and UTC−5 across the US changeover on 1 November.\n- 28/10 `SIM` and 05/11 `SBY` show MAD–MAD with no flight number, no STD/STA and no block time — training and standby respectively, whose report is the stated window start with no offset applied.\n\n```json\n{\n  \"format\": \"Nimbus prints a fixed-width monthly table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop, one row per sector, in DD/MM/YYYY. All clock times are local to the station they refer to — Report and STD to the departure airport, STA and Off Duty to the arrival airpo
+… [9950 more characters]
 ```
 
 _read complete_
@@ -1630,7 +1640,7 @@ _read complete_
 
 ```json
 {
-  "blocks": 15,
+  "blocks": 18,
   "conflicts": 7,
   "byHardness": {
     "hard-limit": 5,

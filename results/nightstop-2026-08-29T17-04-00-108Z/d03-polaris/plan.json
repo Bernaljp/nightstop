@@ -1,0 +1,259 @@
+{
+  "caseId": "d03-polaris",
+  "blocks": [
+    {
+      "id": "main-2026-09-02",
+      "kind": "main",
+      "startUtc": "2026-09-02T06:05:00.000Z",
+      "endUtc": "2026-09-02T14:05:00.000Z",
+      "station": "GRU",
+      "why": "03:05 to 11:05 local at GRU — which is about 3h09 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-02",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-02T16:50:00.000Z",
+      "endUtc": "2026-09-02T18:50:00.000Z",
+      "station": "GRU",
+      "why": "2026-09-02 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-04",
+      "kind": "main",
+      "startUtc": "2026-09-03T22:00:00.000Z",
+      "endUtc": "2026-09-04T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-04",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-04T12:20:00.000Z",
+      "endUtc": "2026-09-04T14:20:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-04 runs 1h30 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-06",
+      "kind": "main",
+      "startUtc": "2026-09-06T00:33:00.000Z",
+      "endUtc": "2026-09-06T08:33:00.000Z",
+      "station": "ORD",
+      "why": "19:33 to 03:33 local at ORD — which is about 3h27 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-07",
+      "kind": "main",
+      "startUtc": "2026-09-07T01:10:00.000Z",
+      "endUtc": "2026-09-07T09:10:00.000Z",
+      "station": "LHR",
+      "why": "02:10 to 10:10 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-07",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-07T17:00:00.000Z",
+      "endUtc": "2026-09-07T19:00:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-07 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-09",
+      "kind": "main",
+      "startUtc": "2026-09-09T00:35:00.000Z",
+      "endUtc": "2026-09-09T08:35:00.000Z",
+      "station": "ORD",
+      "why": "19:35 to 03:35 local at ORD — which is about 3h25 later on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-11",
+      "kind": "main",
+      "startUtc": "2026-09-10T22:52:00.000Z",
+      "endUtc": "2026-09-11T06:52:00.000Z",
+      "station": "LHR",
+      "why": "23:52 to 07:52 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-12",
+      "kind": "main",
+      "startUtc": "2026-09-11T22:00:00.000Z",
+      "endUtc": "2026-09-12T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-14",
+      "kind": "main",
+      "startUtc": "2026-09-12T22:00:00.000Z",
+      "endUtc": "2026-09-13T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21",
+      "kind": "main",
+      "startUtc": "2026-09-14T22:00:00.000Z",
+      "endUtc": "2026-09-15T06:00:00.000Z",
+      "station": "LHR",
+      "why": "23:00 to 07:00 at LHR, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23",
+      "kind": "main",
+      "startUtc": "2026-09-22T02:00:00.000Z",
+      "endUtc": "2026-09-22T10:00:00.000Z",
+      "station": "GRU",
+      "why": "23:00 to 07:00 at GRU, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-23",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-22T21:30:00.000Z",
+      "endUtc": "2026-09-22T23:30:00.000Z",
+      "station": "GRU",
+      "why": "2026-09-23 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-26",
+      "kind": "main",
+      "startUtc": "2026-09-24T00:24:00.000Z",
+      "endUtc": "2026-09-24T08:24:00.000Z",
+      "station": "LHR",
+      "why": "01:24 to 09:24 local at LHR — which is about 2h24 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-28",
+      "kind": "main",
+      "startUtc": "2026-09-27T05:18:00.000Z",
+      "endUtc": "2026-09-27T13:18:00.000Z",
+      "station": "LAX",
+      "why": "22:18 to 06:18 at LAX, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-30",
+      "kind": "main",
+      "startUtc": "2026-09-29T05:40:00.000Z",
+      "endUtc": "2026-09-29T13:40:00.000Z",
+      "station": "LHR",
+      "why": "06:40 to 14:40 local at LHR — which is about 4h58 earlier on your body clock, because it has not caught up with where you are yet.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "nap-2026-09-30",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-30T01:20:00.000Z",
+      "endUtc": "2026-09-30T03:20:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-30 runs 4h00 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-01",
+      "statement": "2026-09-01 is a 13h40 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-02",
+      "statement": "2026-09-02 is a 13h40 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-21",
+      "statement": "2026-09-21 is a 13h40 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-23",
+      "statement": "2026-09-23 is a 13h40 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    }
+  ],
+  "readingUncertainties": [],
+  "derivations": [
+    {
+      "date": "2026-09-01",
+      "field": "endUtc",
+      "method": "No derivation of report time was needed anywhere on this roster — Report is printed in its own column for every duty. The only values worked out rather than read are calendar dates for times carrying a '+1' marker: the printed clock time is kept and the row's date advanced by one day (e.g. 2026-09-01 off duty 05:40Z+1 = 2026-09-02T05:40Z). No timezone arithmetic was involved because the header declares all times UTC.",
+      "confidence": "high"
+    }
+  ]
+}

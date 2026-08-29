@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-29T15-16-27-291Z/d07-cirrus/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-29T17-04-00-108Z/d07-cirrus/trajectory.jsonl -->
 
 > **Why this trajectory.** A duty printed 23:30 → 05:25 on one dated row with nothing marking the day change, and continuation rows carrying no date either. Watch it use to_utc rather than doing the arithmetic itself.
 
 # Trajectory — d07-cirrus, arm `nightstop`
 
-Run `nightstop-2026-08-29T15-16-27-291Z`. 159 events.
+Run `nightstop-2026-08-29T17-04-00-108Z`. 159 events.
 
 
 ## reader
@@ -331,6 +331,17 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
+### Turn 21 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-05T12:40"
+}
+```
+
 **tool answered**
 
 ```
@@ -340,17 +351,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-05T11:10\",\"utc\":\"2026-09-05T09:10:00.000Z\",\"notes\":[]}"
   }
 ]
-```
-
-### Turn 22 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-05T12:40"
-}
 ```
 
 **tool answered**
@@ -463,17 +463,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 33 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-08T13:40"
-}
-```
-
 **tool answered**
 
 ```
@@ -483,6 +472,17 @@ Every date in the covered period appears, including days off. Set `reconciled` t
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-08T13:10\",\"utc\":\"2026-09-08T11:10:00.000Z\",\"notes\":[]}"
   }
 ]
+```
+
+### Turn 34 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-08T13:40"
+}
 ```
 
 **tool answered**
@@ -727,6 +727,17 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
+### Turn 57 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-19T06:05"
+}
+```
+
 **tool answered**
 
 ```
@@ -736,17 +747,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-19T05:05\",\"utc\":\"2026-09-19T03:05:00.000Z\",\"notes\":[]}"
   }
 ]
-```
-
-### Turn 58 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-19T06:05"
-}
 ```
 
 **tool answered**
@@ -771,17 +771,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 61 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "BCN",
-  "localDateTime": "2026-09-19T08:20"
-}
-```
-
 **tool answered**
 
 ```
@@ -791,6 +780,17 @@ Every date in the covered period appears, including days off. Set `reconciled` t
     "text": "{\"station\":\"BCN\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-19T07:25\",\"utc\":\"2026-09-19T05:25:00.000Z\",\"notes\":[]}"
   }
 ]
+```
+
+### Turn 62 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "BCN",
+  "localDateTime": "2026-09-19T08:20"
+}
 ```
 
 **tool answered**
@@ -1189,17 +1189,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 99 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-23T04:35"
-}
-```
-
 **tool answered**
 
 ```
@@ -1211,6 +1200,28 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
+### Turn 100 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-23T04:35"
+}
+```
+
+### Turn 101 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-23T05:35"
+}
+```
+
 **tool answered**
 
 ```
@@ -1220,17 +1231,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T04:35\",\"utc\":\"2026-09-23T02:35:00.000Z\",\"notes\":[]}"
   }
 ]
-```
-
-### Turn 102 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-23T05:35"
-}
 ```
 
 **tool answered**
@@ -1475,17 +1475,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 125 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "FCO",
-  "localDateTime": "2026-09-24T21:19"
-}
-```
-
 **tool answered**
 
 ```
@@ -1495,6 +1484,17 @@ Every date in the covered period appears, including days off. Set `reconciled` t
     "text": "{\"station\":\"FCO\",\"timezone\":\"Europe/Rome\",\"localDateTime\":\"2026-09-24T20:35\",\"utc\":\"2026-09-24T18:35:00.000Z\",\"notes\":[]}"
   }
 ]
+```
+
+### Turn 126 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "FCO",
+  "localDateTime": "2026-09-24T21:19"
+}
 ```
 
 **tool answered**
@@ -1764,17 +1764,19 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 
 ### Turn 152 — stop reason `null`
 
+Everything reconciles. Here is the reading.
+
 ```json
 {
-  "format": "CIRRUS CONNECT prints one monthly table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty; dates are DD/MM/YYYY and the header states explicitly that all times are LOCAL to the station shown, with report time printed (not derived) and the duty-end time printed in the 'Off Duty' column. Multi-sector duties put the date and Report only on the first row, with continuation sectors on undated rows and the Off Duty / Duty totals on the last row of the duty; days off are marked 'OFF' in the Act column.",
+  "format": "CIRRUS CONNECT monthly roster: one line per calendar date (DD/MM/YYYY) with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Multi-sector duties put extra sectors on continuation rows that carry no date, and the Off Duty / Duty totals appear only on the last sector row. The header states explicitly that all times are LOCAL to the station shown, so STD/Report are local at the origin and STA/Off Duty are local at the arrival station; report time is printed, never derived.",
   "traps": [
-    "Continuation rows carry no date — the sectors on 11/09, 19/09, 20/09, 22/09, 23/09 and 24/09 belong to the duty whose date is on the row above.",
-    "Times are local to each station, so origin and destination times are in different zones (e.g. MAD-ORD 18:30-20:30 is a 9h00 sector, not 2h00).",
-    "Several duties silently roll past midnight: 03/09 STA 13:50 and Off Duty 14:20 are on 04/09 MAD; 07/09 STD 23:10 JFK arrives 13:10 on 08/09 MAD; 11/09 sectors CR866/CR563 (23:55, 02:20, 03:23, 05:48) and Off Duty 06:18 fall on 12/09; 24/09 Off Duty 00:14 is on 25/09; 26/09 STA 08:10 and Off Duty 08:40 are on 27/09 SIN. The roster prints no +1 marker.",
-    "The Report time on 03/09 (20:20), 07/09 (21:40) and 28/09 (11:10) is local to the downroute station (ORD, JFK, SIN), not MAD.",
-    "Reporting offset is not uniform: 90 minutes on the long-haul duties (01, 03, 05, 07, 26, 28 Sep), 60 minutes on short-haul — but every report time is printed, so no offset needs applying.",
-    "Flight number CR893 is reused on 23/0
-… [9737 more characters]
+    "Continuation sector rows are undated — sectors on 11/09, 19/09, 20/09, 22/09, 23/09 and 24/09 belong to the duty on the dated row above them.",
+    "Times are local to DIFFERENT stations within the same row (STD at origin, STA at destination), so a westbound row like 01/09 MAD-ORD 18:30->20:30 is a 9h00 sector, not 2 hours.",
+    "Several duties cross midnight without any date marking: 03/09 STD 21:50 ORD arrives 13:50 on 04/09; 07/09 STD 23:10 JFK arrives 13:10 on 08/09; 11/09 sectors CR866/CR563 and the 06:18 off-duty fall on 12/09; 24/09 off-duty 00:14 falls on 25/09; 26/09 STA 08:10 SIN is on 27/09.",
+    "The report offset is not constant: long-haul rows use STD minus 90 min (e.g. 01/09, 26/09) while short-haul rows use STD minus 60 min. Both are printed, so neither was assumed.",
+    "The 'OFF' token sits in the Act column, not the Flight column, and days off on 02/09, 06/09 and 27/09 are downroute layover days at ORD, JFK and SIN respectively, not at base.",
+    "Single page, no repeated 
+… [10028 more characters]
 
 _finished: success_
 
@@ -1784,8 +1786,8 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "```json\n{\n  \"format\": \"CIRRUS CONNECT prints one monthly table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty; dates are DD/MM/YYYY and the header states explicitly that all times are LOCAL to the station shown, with report time printed (not derived) and the duty-end time printed in the 'Off Duty' column. Multi-sector duties put the date and Report only on the first row, with continuation sectors on undated rows and the Off Duty / Duty totals on the last row of the duty; days off are marked 'OFF' in the Act column.\",\n  \"traps\": [\n    \"Continuation rows carry no date — the sectors on 11/09, 19/09, 20/09, 22/09, 23/09 and 24/09 belong to the duty whose date is on the row above.\",\n    \"Times are local to each station, so origin and destination times are in different zones (e.g. MAD-ORD 18:30-20:30 is a 9h00 sector, not 2h00).\",\n    \"Several duties silently roll past midnight: 03/09 STA 13:50 and Off Duty 14:20 are on 04/09 MAD; 07/09 STD 23:10 JFK arrives 13:10 on 08/09 MAD; 11/09 sectors CR866/CR563 (23:55, 02:20, 03:23, 05:48) and Off Duty 06:18 fall on 12/09; 24/09 Off Duty 00:14 is on 25/09; 26/09 STA 08:10 and Off Duty 08:40 are on 27/09 SIN. The roster prints no +1 marker.\",\n    \"The Report time on 03/09 (20:20), 07/09 (21:40) and 28/09 (11:10) is local to the downroute station (ORD, JFK, SIN), not MAD.\",\n    \"Reporting offset is not uniform: 90 minutes on the long-haul duties (01, 03, 05, 07, 26, 28 Sep), 60 minutes on short-haul — but every report time is printed, so no offset needs applying.\",\n    \"Flight number CR893 is reused on 23/09 (MAD-DUB) and 24/09 (MAD-LIS).\",\n    \"September 2026 contains no DST transition in any of the zones used; Europe changes on 25 Oct and the US on 1 Nov, so no repeated or missing hours arise.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    { \"date\": \"2026-09-03\", \"field\": \"sectors[0].arrUtc / endUtc\", \"method\": \"STA 13:50 and Off Duty 14:20 are printed without a date; assigned to 04/09 MAD local because the sector departs 21:50 ORD and the printed block is 9h00\", \"confidence\": \"high\" },\n    { \"date\": \"2026-09-07\", \"field\": \"sectors[0].arrUtc / endUtc\", \"method\": \"STD 23:10 JFK on 07/09; STA 13:10 and Off Duty 13:40 assigned to 08/09 MAD local, consistent with the printed 8h00 block\", \"confidence\": \"high\" },\n    { \"date\": \"2026-09-11\", \"field\": \"sectors[2].arrUtc, sect
-… [10403 more characters]
+  "text": "Everything reconciles. Here is the reading.\n\n```json\n{\n  \"format\": \"CIRRUS CONNECT monthly roster: one line per calendar date (DD/MM/YYYY) with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Multi-sector duties put extra sectors on continuation rows that carry no date, and the Off Duty / Duty totals appear only on the last sector row. The header states explicitly that all times are LOCAL to the station shown, so STD/Report are local at the origin and STA/Off Duty are local at the arrival station; report time is printed, never derived.\",\n  \"traps\": [\n    \"Continuation sector rows are undated — sectors on 11/09, 19/09, 20/09, 22/09, 23/09 and 24/09 belong to the duty on the dated row above them.\",\n    \"Times are local to DIFFERENT stations within the same row (STD at origin, STA at destination), so a westbound row like 01/09 MAD-ORD 18:30->20:30 is a 9h00 sector, not 2 hours.\",\n    \"Several duties cross midnight without any date marking: 03/09 STD 21:50 ORD arrives 13:50 on 04/09; 07/09 STD 23:10 JFK arrives 13:10 on 08/09; 11/09 sectors CR866/CR563 and the 06:18 off-duty fall on 12/09; 24/09 off-duty 00:14 falls on 25/09; 26/09 STA 08:10 SIN is on 27/09.\",\n    \"The report offset is not constant: long-haul rows use STD minus 90 min (e.g. 01/09, 26/09) while short-haul rows use STD minus 60 min. Both are printed, so neither was assumed.\",\n    \"The 'OFF' token sits in the Act column, not the Flight column, and days off on 02/09, 06/09 and 27/09 are downroute layover days at ORD, JFK and SIN respectively, not at base.\",\n    \"Single page, no repeated header; no DST transition falls inside September 2026 for any station used.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    {\n      \"date\": \"2026-09-03\",\n      \"field\": \"endUtc\",\n      \"method\": \"Row dated 03/09 with report 20:20 ORD; STD 21:50 ORD plus block 9h00 lands at STA 13:50 MAD on the following calendar day, so the arrival and 14:20 off-duty are assigned to 04/09.\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"date\": \"2026-09-07\",\n      \"field\": \"endUtc\",\n      \"method\": \"STD 23:10 JFK on 07/09 plus block 8h00 gives STA 13:10 MAD on 08/09; off-duty 13:40 MAD likewise dated 08/09.\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"date\": \"2026-09-11\",\n      \"field\": \"endUtc\",\n      \"method\": \"Undated continuation rows CR866 (MAD 23:55) and CR563
+… [10778 more characters]
 ```
 
 _read complete_
@@ -1799,7 +1801,7 @@ _values worked out rather than read_
 
 ```json
 {
-  "blocks": 11,
+  "blocks": 14,
   "conflicts": 3,
   "byHardness": {
     "hard-limit": 3

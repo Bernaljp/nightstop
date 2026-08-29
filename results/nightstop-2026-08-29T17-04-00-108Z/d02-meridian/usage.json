@@ -1,0 +1,18 @@
+{
+  "byAgent": {
+    "reader": {
+      "inputTokens": 12,
+      "outputTokens": 24943,
+      "cacheReadInputTokens": 91453,
+      "cacheCreationInputTokens": 37970,
+      "turns": 1
+    }
+  },
+  "total": {
+    "inputTokens": 12,
+    "outputTokens": 24943,
+    "cacheReadInputTokens": 91453,
+    "cacheCreationInputTokens": 37970,
+    "turns": 1
+  }
+}

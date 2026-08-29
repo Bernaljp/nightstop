@@ -3,7 +3,7 @@
  *
  *   npx tsx scripts/brief.ts results/<runId> d05-halcyon [--out out/brief.html]
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname, basename } from "node:path";
 import type { GroundTruth } from "../lib/corpus/schema";
 import type { SleepPlan } from "../lib/plan/schema";
@@ -24,7 +24,20 @@ const set = si >= 0 ? process.argv[si + 1] : "dev";
 const truth: GroundTruth = JSON.parse(
   readFileSync(join("corpus", "truth", set, `${caseId}.json`), "utf8"),
 );
-const plan: SleepPlan = JSON.parse(readFileSync(join(runDir, caseId, "plan.json"), "utf8"));
+const planPath = join(runDir, caseId, "plan.json");
+if (!existsSync(planPath)) {
+  const had = existsSync(runDir)
+    ? readdirSync(runDir).filter((d) => /^[dh]\d/.test(d)).join(", ")
+    : "(no such run)";
+  console.error(
+    `${runDir} has no ${caseId}.\n` +
+      `That run covers: ${had}\n` +
+      `Held-out and development runs live in separate directories — pick one that has ` +
+      `the case you want.`,
+  );
+  process.exit(1);
+}
+const plan: SleepPlan = JSON.parse(readFileSync(planPath, "utf8"));
 const dutiesPath = join(runDir, caseId, "duties.json");
 // Render what the system READ, not the answer key — a briefing built from ground truth
 // would hide exactly the errors this is meant to make visible.
