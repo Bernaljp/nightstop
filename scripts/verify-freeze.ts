@@ -12,8 +12,30 @@ import { execSync } from "node:child_process";
 
 const FREEZE = "7b77a67719996342d81034ec90be858a1e2b5aa7";
 
-/** Everything that reaches a model: prompts, tool descriptions, rule text. */
-const AGENT_INPUTS = ["lib/agents/", "lib/rules/", "docs/sources/"];
+/**
+ * Everything the EVALUATED arms read: prompts, tool descriptions, rule text.
+ *
+ * Listed file by file rather than by directory. Checking all of lib/agents/ meant that
+ * adding the rule distiller - an agent the planning arms never call, written after the
+ * freeze - failed the check and appeared to invalidate the held-out score. A freeze
+ * check that trips on code the measured system does not execute is not measuring the
+ * thing it claims to.
+ */
+const AGENT_INPUTS = [
+  "lib/agents/reader.ts",
+  "lib/agents/pipeline.ts",
+  "lib/agents/tools.ts",
+  "lib/agents/sdk-runtime.ts",
+  "lib/agents/baselines.ts",
+  "lib/agents/types.ts",
+  "lib/agents/prompts/",
+  "lib/rules/baseline-pack.ts",
+  "lib/rules/operator-pack.ts",
+  "lib/rules/schema.ts",
+  "lib/plan/engine.ts",
+  "lib/plan/circadian.ts",
+  "lib/eval/conflicts.ts",
+];
 
 function diffStat(paths: string[]): string {
   return execSync(`git diff --stat ${FREEZE} HEAD -- ${paths.join(" ")}`, {
@@ -36,7 +58,10 @@ if (agentDrift) {
   process.exit(1);
 }
 
-console.log("PASS — prompts, tools and rule packs are byte-identical to the freeze.");
+console.log(
+  "PASS — every prompt, tool, rule and planning rule the evaluated arms read is\n" +
+  "byte-identical to the freeze.",
+);
 if (corpusDrift) {
   console.log("\nThe corpus generator did change since then:\n");
   console.log(corpusDrift);

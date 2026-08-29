@@ -24,7 +24,7 @@ interface Pick {
  * only shows a clean pass teaches a reader nothing about how the thing behaves when
  * the document fights back.
  */
-const PICKS: Array<Omit<Pick, "file" | "runId">> = [
+const PICKS: Array<Omit<Pick, "file" | "runId"> & { set?: string }> = [
   {
     arm: "nightstop", caseId: "d04-kestrel",
     why:
@@ -60,11 +60,13 @@ const PICKS: Array<Omit<Pick, "file" | "runId">> = [
 ];
 
 const runs = readdirSync("results").filter((d) => existsSync(join("results", d, "summary.json")));
-const latestFor = (arm: string): string | null => {
+const latestFor = (arm: string, set = "dev"): string | null => {
+  // Match the SET as well as the arm: the newest b1-chatbot run is a held-out one, and
+  // asking it for a development case silently produced no trajectory at all.
   const matching = runs
     .filter((d) => {
       const s = JSON.parse(readFileSync(join("results", d, "summary.json"), "utf8"));
-      return s.arm === arm;
+      return s.arm === arm && s.set === set;
     })
     .sort();
   return matching.length ? matching[matching.length - 1] : null;
@@ -86,7 +88,7 @@ const index: string[] = [
 
 let written = 0;
 for (const p of PICKS) {
-  const runId = latestFor(p.arm);
+  const runId = latestFor(p.arm, p.set ?? "dev");
   if (!runId) {
     console.log(`  skipped ${p.arm}/${p.caseId} — no run on disk`);
     continue;

@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-29T15-16-27-291Z/d04-kestrel/trajectory.jsonl -->
+<!-- rendered from results/nightstop-repair-2026-08-28T21-26-57-735Z/d04-kestrel/trajectory.jsonl -->
 
-> **Why this trajectory.** The reader on the roster that does not print report time. It has to be derived from the offset table in the header, and the offset differs by haul — the one case that failed before the reader was asked to declare its derivations.
+> **Why this trajectory.** The removed experiment. The `revise` event is the moment a flagged uncertainty gets resolved instead of surfaced — the behaviour this design refuses.
 
-# Trajectory — d04-kestrel, arm `nightstop`
+# Trajectory — d04-kestrel, arm `nightstop-repair`
 
-Run `nightstop-2026-08-29T15-16-27-291Z`. 171 events.
+Run `nightstop-repair-2026-08-28T21-26-57-735Z`. 194 events.
 
 
 ## reader
@@ -115,6 +115,10 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 
 ### Turn 1 — stop reason `null`
 
+I'll start by reading the roster document.
+
+### Turn 2 — stop reason `null`
+
 **calls `Read`**
 
 ```json
@@ -140,11 +144,15 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 … [4297 more characters]
 ```
 
-### Turn 3 — stop reason `null`
-
-
-
 ### Turn 4 — stop reason `null`
+
+
+
+### Turn 5 — stop reason `null`
+
+Now let me convert every local time via `to_utc`. Batch 1 — the long-haul block:
+
+### Turn 6 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -166,7 +174,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 6 — stop reason `null`
+### Turn 8 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -188,7 +196,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 8 — stop reason `null`
+### Turn 10 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -210,7 +218,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 10 — stop reason `null`
+### Turn 12 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -232,7 +240,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 12 — stop reason `null`
+### Turn 14 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -254,7 +262,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 14 — stop reason `null`
+### Turn 16 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -276,7 +284,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 16 — stop reason `null`
+### Turn 18 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -284,17 +292,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 {
   "station": "MAD",
   "localDateTime": "2026-09-08T02:40"
-}
-```
-
-### Turn 17 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-08T03:10"
 }
 ```
 
@@ -309,18 +306,18 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-08T03:10\",\"utc\":\"2026-09-08T01:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
 ### Turn 20 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-08T03:10"
+}
+```
+
+### Turn 21 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -337,12 +334,23 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-08T03:10\",\"utc\":\"2026-09-08T01:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-10T11:25\",\"utc\":\"2026-09-10T09:25:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 22 — stop reason `null`
+### Turn 24 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -364,7 +372,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 24 — stop reason `null`
+### Turn 26 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -386,7 +394,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 26 — stop reason `null`
+### Turn 28 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -408,14 +416,14 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 28 — stop reason `null`
+### Turn 30 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
 ```json
 {
   "station": "BOS",
-  "localDateTime": "2026-09-11T21:55"
+  "localDateTime": "2026-09-11T22:25"
 }
 ```
 
@@ -425,12 +433,12 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
-    "text": "{\"station\":\"BOS\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-11T21:55\",\"utc\":\"2026-09-12T01:55:00.000Z\",\"notes\":[]}"
+    "text": "{\"station\":\"BOS\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-11T22:25\",\"utc\":\"2026-09-12T02:25:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 30 — stop reason `null`
+### Turn 32 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -452,7 +460,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 32 — stop reason `null`
+### Turn 34 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -474,7 +482,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 34 — stop reason `null`
+### Turn 36 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -496,7 +504,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 36 — stop reason `null`
+### Turn 38 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -518,7 +526,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 38 — stop reason `null`
+### Turn 40 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -540,7 +548,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 40 — stop reason `null`
+### Turn 42 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -562,7 +570,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 42 — stop reason `null`
+### Turn 44 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -584,7 +592,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 44 — stop reason `null`
+### Turn 46 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -606,7 +614,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 46 — stop reason `null`
+### Turn 48 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -628,7 +636,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 48 — stop reason `null`
+### Turn 50 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -636,17 +644,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 {
   "station": "MAD",
   "localDateTime": "2026-09-15T21:05"
-}
-```
-
-### Turn 49 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-15T21:35"
 }
 ```
 
@@ -661,18 +658,18 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-15T21:35\",\"utc\":\"2026-09-15T19:35:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
 ### Turn 52 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-15T21:35"
+}
+```
+
+### Turn 53 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -689,12 +686,23 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-15T21:35\",\"utc\":\"2026-09-15T19:35:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-20T09:00\",\"utc\":\"2026-09-20T07:00:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 54 — stop reason `null`
+### Turn 56 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -716,7 +724,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 56 — stop reason `null`
+### Turn 58 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -738,7 +746,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 58 — stop reason `null`
+### Turn 60 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -760,7 +768,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 60 — stop reason `null`
+### Turn 62 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -782,7 +790,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 62 — stop reason `null`
+### Turn 64 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -804,7 +812,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 64 — stop reason `null`
+### Turn 66 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -826,7 +834,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 66 — stop reason `null`
+### Turn 68 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -848,7 +856,11 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 68 — stop reason `null`
+### Turn 70 — stop reason `null`
+
+Batch 2 — the short-haul multi-sector days:
+
+### Turn 71 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -870,7 +882,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 70 — stop reason `null`
+### Turn 73 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -892,7 +904,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 72 — stop reason `null`
+### Turn 75 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -914,7 +926,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 74 — stop reason `null`
+### Turn 77 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -936,7 +948,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 76 — stop reason `null`
+### Turn 79 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -958,7 +970,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 78 — stop reason `null`
+### Turn 81 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -980,7 +992,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 80 — stop reason `null`
+### Turn 83 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1002,7 +1014,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 82 — stop reason `null`
+### Turn 85 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1024,7 +1036,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 84 — stop reason `null`
+### Turn 87 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1046,7 +1058,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 86 — stop reason `null`
+### Turn 89 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1054,6 +1066,17 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 {
   "station": "MAD",
   "localDateTime": "2026-09-26T16:47"
+}
+```
+
+### Turn 90 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-09-27T02:50"
 }
 ```
 
@@ -1068,18 +1091,18 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 88 — stop reason `null`
+**tool answered**
 
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-09-27T02:50"
-}
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-27T02:50\",\"utc\":\"2026-09-27T00:50:00.000Z\",\"notes\":[]}"
+  }
+]
 ```
 
-### Turn 89 — stop reason `null`
+### Turn 93 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1096,23 +1119,12 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-27T02:50\",\"utc\":\"2026-09-27T00:50:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-27T03:35\",\"utc\":\"2026-09-27T01:35:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 92 — stop reason `null`
+### Turn 95 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1134,7 +1146,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 94 — stop reason `null`
+### Turn 97 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1156,7 +1168,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 96 — stop reason `null`
+### Turn 99 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1178,7 +1190,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 98 — stop reason `null`
+### Turn 101 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1200,7 +1212,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 100 — stop reason `null`
+### Turn 103 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1222,7 +1234,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 102 — stop reason `null`
+### Turn 105 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1244,7 +1256,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 104 — stop reason `null`
+### Turn 107 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1266,7 +1278,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 106 — stop reason `null`
+### Turn 109 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1288,7 +1300,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 108 — stop reason `null`
+### Turn 111 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1310,7 +1322,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 110 — stop reason `null`
+### Turn 113 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1332,7 +1344,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 112 — stop reason `null`
+### Turn 115 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1354,7 +1366,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 114 — stop reason `null`
+### Turn 117 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1376,7 +1388,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 116 — stop reason `null`
+### Turn 119 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1398,7 +1410,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 118 — stop reason `null`
+### Turn 121 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1409,18 +1421,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-28T11:56\",\"utc\":\"2026-09-28T09:56:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 120 — stop reason `null`
+### Turn 122 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1437,12 +1438,23 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-28T11:56\",\"utc\":\"2026-09-28T09:56:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"DUB\",\"timezone\":\"Europe/Dublin\",\"localDateTime\":\"2026-09-28T13:36\",\"utc\":\"2026-09-28T12:36:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 122 — stop reason `null`
+### Turn 125 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1453,7 +1465,18 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 123 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DUB\",\"timezone\":\"Europe/Dublin\",\"localDateTime\":\"2026-09-28T14:19\",\"utc\":\"2026-09-28T13:19:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 127 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1470,23 +1493,12 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
-    "text": "{\"station\":\"DUB\",\"timezone\":\"Europe/Dublin\",\"localDateTime\":\"2026-09-28T14:19\",\"utc\":\"2026-09-28T13:19:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-28T17:59\",\"utc\":\"2026-09-28T15:59:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 126 — stop reason `null`
+### Turn 129 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1508,7 +1520,11 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 128 — stop reason `null`
+### Turn 131 — stop reason `null`
+
+Batch 3 — 29 and 30 September:
+
+### Turn 132 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1530,7 +1546,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 130 — stop reason `null`
+### Turn 134 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1552,7 +1568,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 132 — stop reason `null`
+### Turn 136 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1574,7 +1590,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 134 — stop reason `null`
+### Turn 138 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1596,7 +1612,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 136 — stop reason `null`
+### Turn 140 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1618,7 +1634,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 138 — stop reason `null`
+### Turn 142 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1629,18 +1645,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-29T18:12\",\"utc\":\"2026-09-29T16:12:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 140 — stop reason `null`
+### Turn 143 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1657,12 +1662,23 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-29T18:12\",\"utc\":\"2026-09-29T16:12:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-30T04:15\",\"utc\":\"2026-09-30T02:15:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 142 — stop reason `null`
+### Turn 146 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1684,7 +1700,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 144 — stop reason `null`
+### Turn 148 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1706,7 +1722,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 146 — stop reason `null`
+### Turn 150 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1728,7 +1744,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 148 — stop reason `null`
+### Turn 152 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1739,7 +1755,18 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 149 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-30T11:13\",\"utc\":\"2026-09-30T09:13:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 154 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1756,23 +1783,12 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-30T11:13\",\"utc\":\"2026-09-30T09:13:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-30T11:59\",\"utc\":\"2026-09-30T09:59:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 152 — stop reason `null`
+### Turn 156 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1794,7 +1810,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 154 — stop reason `null`
+### Turn 158 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1816,7 +1832,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 156 — stop reason `null`
+### Turn 160 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1838,7 +1854,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 158 — stop reason `null`
+### Turn 162 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1860,11 +1876,11 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 160 — stop reason `null`
+### Turn 164 — stop reason `null`
 
+Now let me check everything against the header totals.
 
-
-### Turn 161 — stop reason `null`
+### Turn 165 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1890,23 +1906,25 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 163 — stop reason `null`
+### Turn 167 — stop reason `null`
 
 
 
-### Turn 164 — stop reason `null`
+### Turn 168 — stop reason `null`
+
+All four header totals reconcile.
 
 ```json
 {
-  "format": "Kestrel Europe prints one flat table — Date, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty — with dates as DD/MM/YYYY and every time LOCAL to the station shown (STD local at origin, STA/Off Duty local at destination). Days off are single rows with 'OFF' in the Act column; multi-sector days repeat the same date on every row, with the Off Duty and Duty totals printed only on the last sector of the duty.",
+  "format": "Kestrel Europe prints one line per sector under a single date column in DD/MM/YYYY, with STD/STA in LOCAL time at the station shown; multi-sector days repeat the same date on every row, and the Off Duty and Duty-length columns are filled in only on the last sector of a duty. Report time is never printed — the header states offsets before STD (45 min short haul, 75 min long haul) from which it must be derived.",
   "traps": [
-    "Report time is never printed: only STD is. It must be derived from the header offsets (45 min short haul, 75 min long haul).",
-    "A '+1' suffix on STA/Off Duty means the following calendar day (e.g. 07/09 JFK-MAD 12:40 -> 02:40+1, 11/09 BOS-MAD 23:10 -> 12:40+1, 22/09 ORD-MAD 21:50 -> 13:50+1).",
-    "The date column repeats on every sector row of a multi-sector day, so a naive 'only first row carries the date' assumption is wrong here — but the Off Duty/Duty totals appearing only on the last row is what delimits the duty.",
-    "The day AFTER an overnight westbound/eastbound return is still printed 'OFF' even though the duty dated the previous day physically ends on it (08/09, 12/09, 14/09, 23/09). These OFF rows are genuine roster days off and are counted in the header's 17.",
-    "Times are LOCAL at differing stations within one row: MAD/BCN/FCO/CDG/FRA/ARN are CEST (UTC+2), DUB is IST (UTC+1), JFK/BOS EDT (UTC-4), ORD CDT (UTC-5), DXB (UTC+4). The one-hour MAD/DUB gap makes DUB turnarounds look shorter than they are.",
-    "September 2026 contains no European or US DST transition (EU changes 25/10), so no repeated or miss
-… [11298 more characters]
+    "Times are local to the station shown, and each row mixes two timezones: STD is local at the origin, STA is local at the destination. The same clock reading means different UTC instants within one row.",
+    "The '+1' suffix on STA and Off Duty marks a duty running into the next calendar day (07/09, 11/09, 13/09, 22/09). The duty keeps the date of its first row; e.g. KE153 dated 11/09 departs BOS 23:10 local = 12/09 03:10Z and lands MAD 12/09.",
+    "Days that carry a '+1' arrival are followed by a row marked OFF (08, 12, 14, 23 Sep). Those OFF rows are genuine days off — the header's 17 counts them — even though the preceding duty ends on that morning.",
+    "On multi-sector days the Block column is per sector, and the outbound/inbound pairs coincidentally show identical values (2h40/2h40, 3h55/3h55). It is easy to read one of a pair as a duty subtotal and drop a sector; summing all sectors is what gives 106h20.",
+    "Only the final sector of a multi-sector day carries Off Duty and Duty; blank cells on rows above are continuation, not missing data.",
+    "The reporting offset is not per-row 
+… [11933 more characters]
 
 _finished: success_
 
@@ -1916,27 +1934,301 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "```json\n{\n  \"format\": \"Kestrel Europe prints one flat table — Date, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty — with dates as DD/MM/YYYY and every time LOCAL to the station shown (STD local at origin, STA/Off Duty local at destination). Days off are single rows with 'OFF' in the Act column; multi-sector days repeat the same date on every row, with the Off Duty and Duty totals printed only on the last sector of the duty.\",\n  \"traps\": [\n    \"Report time is never printed: only STD is. It must be derived from the header offsets (45 min short haul, 75 min long haul).\",\n    \"A '+1' suffix on STA/Off Duty means the following calendar day (e.g. 07/09 JFK-MAD 12:40 -> 02:40+1, 11/09 BOS-MAD 23:10 -> 12:40+1, 22/09 ORD-MAD 21:50 -> 13:50+1).\",\n    \"The date column repeats on every sector row of a multi-sector day, so a naive 'only first row carries the date' assumption is wrong here — but the Off Duty/Duty totals appearing only on the last row is what delimits the duty.\",\n    \"The day AFTER an overnight westbound/eastbound return is still printed 'OFF' even though the duty dated the previous day physically ends on it (08/09, 12/09, 14/09, 23/09). These OFF rows are genuine roster days off and are counted in the header's 17.\",\n    \"Times are LOCAL at differing stations within one row: MAD/BCN/FCO/CDG/FRA/ARN are CEST (UTC+2), DUB is IST (UTC+1), JFK/BOS EDT (UTC-4), ORD CDT (UTC-5), DXB (UTC+4). The one-hour MAD/DUB gap makes DUB turnarounds look shorter than they are.\",\n    \"September 2026 contains no European or US DST transition (EU changes 25/10), so no repeated or missing hours in this period.\",\n    \"The Block column is printed per sector, not cumulative; out-and-back pairs show identical block values which can look like duplicated rows.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    { \"date\": \"2026-09-05\", \"field\": \"reportUtc\", \"method\": \"STD 12:40 MAD minus the 75 min long-haul offset = 11:25 local; long haul chosen because MAD-JFK is intercontinental. Cross-checked: 11:25 MAD to Off Duty 15:10 JFK = 9h45 = printed Duty.\", \"confidence\": \"high\" },\n    { \"date\": \"2026-09-07\", \"field\": \"reportUtc\", \"method\": \"STD 12:40 JFK minus 75 min long-haul = 11:25 local JFK; verified against printed Duty 9h45 to Off Duty 03:10+1 MAD.\", \"confidence\": \"high\" },\n    { \"date\": \"2026-09-10\", \"field\": \"reportUtc\", \"method\": \"STD 12:40 MAD minus 
-… [12099 more characters]
+  "text": "I'll start by reading the roster document.\nNow let me convert every local time via `to_utc`. Batch 1 — the long-haul block:\nBatch 2 — the short-haul multi-sector days:\nBatch 3 — 29 and 30 September:\nNow let me check everything against the header totals.\nAll four header totals reconcile.\n\n```json\n{\n  \"format\": \"Kestrel Europe prints one line per sector under a single date column in DD/MM/YYYY, with STD/STA in LOCAL time at the station shown; multi-sector days repeat the same date on every row, and the Off Duty and Duty-length columns are filled in only on the last sector of a duty. Report time is never printed — the header states offsets before STD (45 min short haul, 75 min long haul) from which it must be derived.\",\n  \"traps\": [\n    \"Times are local to the station shown, and each row mixes two timezones: STD is local at the origin, STA is local at the destination. The same clock reading means different UTC instants within one row.\",\n    \"The '+1' suffix on STA and Off Duty marks a duty running into the next calendar day (07/09, 11/09, 13/09, 22/09). The duty keeps the date of its first row; e.g. KE153 dated 11/09 departs BOS 23:10 local = 12/09 03:10Z and lands MAD 12/09.\",\n    \"Days that carry a '+1' arrival are followed by a row marked OFF (08, 12, 14, 23 Sep). Those OFF rows are genuine days off — the header's 17 counts them — even though the preceding duty ends on that morning.\",\n    \"On multi-sector days the Block column is per sector, and the outbound/inbound pairs coincidentally show identical values (2h40/2h40, 3h55/3h55). It is easy to read one of a pair as a duty subtotal and drop a sector; summing all sectors is what gives 106h20.\",\n    \"Only the final sector of a multi-sector day carries Off Duty and Duty; blank cells on rows above are continuation, not missing data.\",\n    \"The reporting offset is not per-row — the correct one has to be chosen by haul type, and the roster never labels which flights are long haul.\",\n    \"September 2026 is entirely within summer time in Europe and North America (EU changes 25 Oct, US 1 Nov), so no DST transition falls in the period despite several overnight sectors.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [\n    \"The Act (activity code) column is present in the header but empty on every row, so no operator activity codes could be read; 'OFF' is printed in the Flight column position for days off and is recorded as the code.\",\n    \"Long-haul vs sh
+… [13002 more characters]
 ```
 
-_read complete_
 
-_values worked out rather than read_
+## repair
+
+> ### ↩︎ Sent back (attempt 1)
+> **Why:** resolving what the reader flagged rather than showing it
+>
+> [
+>   "The Act (activity code) column is present in the header but empty on every row, so no operator activity codes could be read; 'OFF' is printed in the Flight column position for days off and is recorded as the code.",
+>   "Long-haul vs short-haul is not labelled. I classified MAD-JFK/BOS/DXB/ORD as long haul (block 7h00-9h00) and all European sectors as short haul; this is corroborated below, not read."
+> ]
+
+### What it was told
+
+<details><summary>system prompt</summary>
+
+```
+You resolve single uncertain values on an airline roster that has already been read once.
+
+You are given the roster, what the first pass read, and what it was unsure about. Work
+out the most likely correct value and commit to it. Use to_utc for any conversion.
+```
+
+</details>
+
+**Tools available:** `mcp__nightstop__to_utc`, `mcp__nightstop__reconcile_totals`, `Read`
+
+**Task:**
+
+```
+Roster: /Users/bernaljp/Documents/Brain-Personal/Projects/nightstop/corpus/dev/d04-kestrel/roster.pdf
+
+The first pass was unsure about these:
+- The Act (activity code) column is present in the header but empty on every row, so no operator activity codes could be read; 'OFF' is printed in the Flight column position for days off and is recorded as the code.
+- Long-haul vs short-haul is not labelled. I classified MAD-JFK/BOS/DXB/ORD as long haul (block 7h00-9h00) and all European sectors as short haul; this is corroborated below, not read.
+
+Here is what it read:
+```json
+[
+  {
+    "date": "2026-09-01",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-02",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-03",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-04",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-09-05",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "JFK",
+    "reportUtc": "2026-09-05T09:25:00Z",
+    "endUtc": "2026-09-05T19:10:00Z",
+    "sectors": [
+      {
+        "flightNo": "KE413",
+        "origin": "MAD",
+        "dest": "JFK",
+        "depUtc": "2026-09-05T10:40:00Z",
+        "arrUtc": "2026-09-05T18:40:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-06",
+    "kind": "off",
+    "code": "OFF",
+    "station": "JFK",
+    "endStation": "JFK",
+   
+… [9297 more characters]
+```
+
+### Turn 174 — stop reason `null`
+
+I'll read the roster to resolve these.
+
+### Turn 175 — stop reason `null`
+
+**calls `Read`**
+
+```json
+{
+  "file_path": "/Users/bernaljp/Documents/Brain-Personal/Projects/nightstop/corpus/dev/d04-kestrel/roster.pdf"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "PDF file read: /Users/bernaljp/Documents/Brain-Personal/Projects/nightstop/corpus/dev/d04-kestrel/roster.pdf (3.6KB)"
+  },
+  {
+    "type": "document",
+    "source": {
+      "type": "base64",
+      "media_type": "application/pdf",
+      "data": "JVBERi0xLjMKJf////8KNyAwIG9iago8PAovVHlwZSAvUGFnZQovUGFyZW50IDEgMCBSCi9NZWRpYUJveCBbMCAwIDU5NS4yOCA4NDEuODldCi9Db250ZW50cyA1IDAgUgovUmVzb3VyY2VzIDYgMCBSCi9Vc2VyVW5pdCAxCj4+CmVuZG9iago2IDAgb2JqCjw8Ci9Qcm9jU2V0IFsvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJXQovRm9udCA8PAovRjIgOCAwIFIKL0YzIDkgMCBSCj4+Ci9Db2xvclNwYWNlIDw8Cj4+Cj4+CmVuZG9iago1IDAgb2JqCjw8Ci9MZW5ndGggMjEyMAovRmlsdGVyIC9GbGF0ZURlY29kZQo+PgpzdHJlYW0KeJytXMuOJDcOvNdX5A84VyIpSgkYezBgH3xbbN8WPnRXdZ48hz359w09sqe9W6G2KGGAwdRjgkwqGCKZyvKb29z2g9/clsTv6dju327/vflnb//00t73G8uWnNuP6LeXb7d//EKb99vLefvPj/ImIXCQQBLkTk5CCIHkDE7CPzf32/by6+3nl9u//p6RePjd0XEZOZqNh5zy
+… [4297 more characters]
+```
+
+### Turn 177 — stop reason `null`
 
 
-## engine
+
+### Turn 178 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "BOS",
+  "localDateTime": "2026-09-11T21:55"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"BOS\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-11T21:55\",\"utc\":\"2026-09-12T01:55:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 180 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "BOS",
+  "localDateTime": "2026-09-11T23:10"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"BOS\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-11T23:10\",\"utc\":\"2026-09-12T03:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 182 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "ORD",
+  "localDateTime": "2026-09-22T20:35"
+}
+```
+
+### Turn 183 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-09-15T14:50"
+}
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"ORD\",\"timezone\":\"America/Chicago\",\"localDateTime\":\"2026-09-22T20:35\",\"utc\":\"2026-09-23T01:35:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"DXB\",\"timezone\":\"Asia/Dubai\",\"localDateTime\":\"2026-09-15T14:50\",\"utc\":\"2026-09-15T10:50:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 186 — stop reason `null`
+
+
+
+### Turn 187 — stop reason `null`
+
+**calls `mcp__nightstop__reconcile_totals`**
+
+```json
+{
+  "base": "MAD",
+  "headerBlockHours": "106h20",
+  "headerDaysOff": 17,
+  "headerStandbyDays": 0,
+  "headerNightstops": 4,
+  "duties": "[{\"date\":\"2026-09-01\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},{\"date\":\"2026-09-02\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},{\"date\":\"2026-09-03\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},{\"date\":\"2026-09-04\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},{\"date\":\"2026-09-05\",\"kind\":\"flight\",\"endStation\":\"JFK\",\"sectors\":[{\"depUtc\":\"2026-09-05T10:40:00Z\",\"arrUtc\":\"2026-09-05T18:40:00Z\"}]},{\"date\":\"2026-09-06\",\"kind\":\"off\",\"endStation\":\"JFK\",\"sectors\":[]},{\"date\":\"2026-09-07\",\"kind\":\"flight\",\"endStation\":\"MAD\",\"sectors\":[{\"depUtc\":\"2026-09-07T16:40:00Z\",\"arrUtc\":\"2026-09-08T00:40:00Z\"}]},{\"date\":\"2026-09-08\",\"kind\":\"off\",
+… [3622 more characters]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\n  \"duties\": 30,\n  \"checks\": [\n    \"block hours: you have 106h20, header says 106h20 — OK\",\n    \"days off: you have 17, header says 17 — OK\",\n    \"standby days: you have 0, header says 0 — OK\",\n    \"nightstops: you have 4, header says 4 — OK\"\n  ],\n  \"reconciled\": true,\n  \"problems\": []\n}"
+  }
+]
+```
+
+### Turn 189 — stop reason `null`
+
+
+
+### Turn 190 — stop reason `null`
+
+Resolved:
+
+- **Act column**: genuinely empty on every row — no operator activity codes exist in this roster. `"OFF"` is printed in the **Flight** column for days off, so keeping `code: "OFF"` on off days and no code on flight duties is correct.
+- **Long-haul vs short-haul**: confirmed by arithmetic, not guessed. The header gives report = STD−75 (LH) / STD−45 (SH). MAD‑JFK/BOS/DXB/ORD reconcile only with 75 min (e.g. 05/09: 11:25 MAD = 09:25Z → off duty 15:10 JFK = 19:10Z = 9h45 ✓); every European sector reconciles with 45 min (e.g. 29/09: 13:15 = 11:15Z → 18:12 = 16:12Z = 4h57 ✓).
+- **Bug found & fixed**: 11/09 BOS‑MAD was given a 45‑min short‑haul report (02:25Z). It is long haul: 75 min before 23:10 EDT = 21:55 EDT = **01:55Z on 12/09**, which matches the printed 9h15 duty against off‑duty 11:10Z.
+
+Totals reconcile: 106h20 block, 17 days off, 0 standby, 4 nightstops (JFK, BOS, DXB, ORD).
+
+```json
+{
+  "duties": [
+    { "date": "2026-09-01", "kind": "off", "code": "OFF", "station": "MAD", "endStation": "MAD", "reportUtc": null, "endUtc": null, "sectors": [] },
+    { "date": "2026-09-02", "kind": "off", "code": "OFF", "station": "MAD", "endStation": "MAD", "reportUtc": null, "endUtc": null, "sectors": [] },
+    { "date": "2026-09-03", "kind": "off", "code": "OFF", "station": "MAD", "endStation": "MAD", "reportUtc": null, "endUtc": null, "sectors": [] },
+    { "date": "2026-09-04", "kind": "off", "code": "OFF", "station": "MAD", "endStation": "MAD", "reportUtc": null, "endUtc": null, "sectors": [] },
+    {
+      "date": "2026-09-05", "kind": "flight", "station": "MAD", "endSt
+… [7828 more characters]
+
+_finished: success_
 
 ### Result
 
 ```json
 {
-  "blocks": 12,
-  "conflicts": 12,
-  "byHardness": {
-    "hard-limit": 6,
-    "recommendation": 3,
-    "preference": 3
-  }
-}
+  "text": "I'll read the roster to resolve these.\nResolved:\n\n- **Act column**: genuinely empty on every row — no operator activity codes exist in this roster. `\"OFF\"` is printed in the **Flight** column for days off, so keeping `code: \"OFF\"` on off days and no code on flight duties is correct.\n- **Long-haul vs short-haul**: confirmed by arithmetic, not guessed. The header gives report = STD−75 (LH) / STD−45 (SH). MAD‑JFK/BOS/DXB/ORD reconcile only with 75 min (e.g. 05/09: 11:25 MAD = 09:25Z → off duty 15:10 JFK = 19:10Z = 9h45 ✓); every European sector reconciles with 45 min (e.g. 29/09: 13:15 = 11:15Z → 18:12 = 16:12Z = 4h57 ✓).\n- **Bug found & fixed**: 11/09 BOS‑MAD was given a 45‑min short‑haul report (02:25Z). It is long haul: 75 min before 23:10 EDT = 21:55 EDT = **01:55Z on 12/09**, which matches the printed 9h15 duty against off‑duty 11:10Z.\n\nTotals reconcile: 106h20 block, 17 days off, 0 standby, 4 nightstops (JFK, BOS, DXB, ORD).\n\n```json\n{\n  \"duties\": [\n    { \"date\": \"2026-09-01\", \"kind\": \"off\", \"code\": \"OFF\", \"station\": \"MAD\", \"endStation\": \"MAD\", \"reportUtc\": null, \"endUtc\": null, \"sectors\": [] },\n    { \"date\": \"2026-09-02\", \"kind\": \"off\", \"code\": \"OFF\", \"station\": \"MAD\", \"endStation\": \"MAD\", \"reportUtc\": null, \"endUtc\": null, \"sectors\": [] },\n    { \"date\": \"2026-09-03\", \"kind\": \"off\", \"code\": \"OFF\", \"station\": \"MAD\", \"endStation\": \"MAD\", \"reportUtc\": null, \"endUtc\": null, \"sectors\": [] },\n    { \"date\": \"2026-09-04\", \"kind\": \"off\", \"code\": \"OFF\", \"station\": \"MAD\", \"endStation\": \"MAD\", \"reportUtc\": null, \"endUtc\": null, \"sectors\": [] },\n    {\n      \"date\": \"2026-09-05\", \"kind\": \"flight\", \"station\": \"MAD\", \"endStation\": \"JFK\",\n      \"reportUtc\": \"2026-09-05T09:25:00Z\", \"endUtc\": \"2026-09-05T19:10:00Z\",\n      \"sectors\": [ { \"flightNo\": \"KE413\", \"origin\": \"MAD\", \"dest\": \"JFK\", \"depUtc\": \"2026-09-05T10:40:00Z\", \"arrUtc\": \"2026-09-05T18:40:00Z\" } ]\n    },\n    { \"date\": \"2026-09-06\", \"kind\": \"off\", \"code\": \"OFF\", \"station\": \"JFK\", \"endStation\": \"JFK\", \"reportUtc\": null, \"endUtc\": null, \"sectors\": [] },\n    {\n      \"date\": \"2026-09-07\", \"kind\": \"flight\", \"station\": \"JFK\", \"endStation\": \"MAD\",\n      \"reportUtc\": \"2026-09-07T15:25:00Z\", \"endUtc\": \"2026-09-08T01:10:00Z\",\n      \"sectors\": [ { \"flightNo\": \"KE757\", \"origin
+… [8463 more characters]
 ```
+
+_flags cleared_

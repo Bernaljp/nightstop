@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-28T20-00-03-466Z/d08-nimbus/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-29T15-16-27-291Z/d08-nimbus/trajectory.jsonl -->
 
 > **Why this trajectory.** A month spanning both the European and North American daylight-saving changes, with transatlantic sectors whose offset changes mid-trip.
 
 # Trajectory — d08-nimbus, arm `nightstop`
 
-Run `nightstop-2026-08-28T20-00-03-466Z`. 145 events.
+Run `nightstop-2026-08-29T15-16-27-291Z`. 144 events.
 
 
 ## reader
@@ -150,7 +150,7 @@ I'll start by reading the roster document.
 
 ### Turn 5 — stop reason `null`
 
-Now let me convert every local time. The DST change on 25/10 (Europe) falls inside this period, so I'll convert each one explicitly.
+The document is read. Let me note the structure and convert every local time properly.
 
 ### Turn 6 — stop reason `null`
 
@@ -185,6 +185,17 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 }
 ```
 
+### Turn 9 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "DXB",
+  "localDateTime": "2026-10-12T01:05"
+}
+```
+
 **tool answered**
 
 ```
@@ -194,17 +205,6 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-11T16:05\",\"utc\":\"2026-10-11T14:05:00.000Z\",\"notes\":[]}"
   }
 ]
-```
-
-### Turn 10 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "DXB",
-  "localDateTime": "2026-10-12T01:05"
-}
 ```
 
 **tool answered**
@@ -295,17 +295,6 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 }
 ```
 
-### Turn 19 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-10-13T15:45"
-}
-```
-
 **tool answered**
 
 ```
@@ -315,6 +304,17 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-13T15:15\",\"utc\":\"2026-10-13T13:15:00.000Z\",\"notes\":[]}"
   }
 ]
+```
+
+### Turn 20 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-10-13T15:45"
+}
 ```
 
 **tool answered**
@@ -506,10 +506,6 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 
 ### Turn 38 — stop reason `null`
 
-
-
-### Turn 39 — stop reason `null`
-
 **calls `mcp__nightstop__to_utc`**
 
 ```json
@@ -530,7 +526,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 41 — stop reason `null`
+### Turn 40 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -541,18 +537,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-25T10:15\",\"utc\":\"2026-10-25T09:15:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 43 — stop reason `null`
+### Turn 41 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -569,12 +554,23 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-25T10:15\",\"utc\":\"2026-10-25T09:15:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-25T16:35\",\"utc\":\"2026-10-25T19:35:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 45 — stop reason `null`
+### Turn 44 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -596,7 +592,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 47 — stop reason `null`
+### Turn 46 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -605,6 +601,17 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
   "station": "GRU",
   "localDateTime": "2026-10-26T11:10"
 }
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-26T11:10\",\"utc\":\"2026-10-26T14:10:00.000Z\",\"notes\":[]}"
+  }
+]
 ```
 
 ### Turn 48 — stop reason `null`
@@ -624,23 +631,12 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 [
   {
     "type": "text",
-    "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-26T11:10\",\"utc\":\"2026-10-26T14:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"GRU\",\"timezone\":\"America/Sao_Paulo\",\"localDateTime\":\"2026-10-26T12:40\",\"utc\":\"2026-10-26T15:40:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 51 — stop reason `null`
+### Turn 50 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -662,7 +658,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 53 — stop reason `null`
+### Turn 52 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -684,7 +680,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 55 — stop reason `null`
+### Turn 54 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -706,7 +702,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 57 — stop reason `null`
+### Turn 56 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -728,7 +724,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 59 — stop reason `null`
+### Turn 58 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -750,7 +746,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 61 — stop reason `null`
+### Turn 60 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -772,7 +768,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 63 — stop reason `null`
+### Turn 62 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -794,7 +790,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 65 — stop reason `null`
+### Turn 64 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -816,7 +812,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 67 — stop reason `null`
+### Turn 66 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -838,7 +834,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 69 — stop reason `null`
+### Turn 68 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -860,7 +856,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 71 — stop reason `null`
+### Turn 70 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -882,7 +878,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 73 — stop reason `null`
+### Turn 72 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -904,7 +900,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 75 — stop reason `null`
+### Turn 74 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -926,7 +922,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 77 — stop reason `null`
+### Turn 76 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -948,7 +944,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 79 — stop reason `null`
+### Turn 78 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -970,7 +966,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 81 — stop reason `null`
+### Turn 80 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -981,18 +977,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-02T13:05\",\"utc\":\"2026-11-02T05:05:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 83 — stop reason `null`
+### Turn 81 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1009,12 +994,23 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 [
   {
     "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-02T13:05\",\"utc\":\"2026-11-02T05:05:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-03T11:10\",\"utc\":\"2026-11-03T03:10:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 85 — stop reason `null`
+### Turn 84 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1036,7 +1032,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 87 — stop reason `null`
+### Turn 86 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1058,7 +1054,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 89 — stop reason `null`
+### Turn 88 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1080,7 +1076,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 91 — stop reason `null`
+### Turn 90 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1102,7 +1098,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 93 — stop reason `null`
+### Turn 92 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1124,7 +1120,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 95 — stop reason `null`
+### Turn 94 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1146,7 +1142,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 97 — stop reason `null`
+### Turn 96 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1168,7 +1164,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 99 — stop reason `null`
+### Turn 98 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1177,6 +1173,17 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
   "station": "MAD",
   "localDateTime": "2026-11-04T12:18"
 }
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-11-04T12:18\",\"utc\":\"2026-11-04T11:18:00.000Z\",\"notes\":[]}"
+  }
+]
 ```
 
 ### Turn 100 — stop reason `null`
@@ -1196,23 +1203,12 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-11-04T12:18\",\"utc\":\"2026-11-04T11:18:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-11-04T12:48\",\"utc\":\"2026-11-04T11:48:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 103 — stop reason `null`
+### Turn 102 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1234,7 +1230,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 105 — stop reason `null`
+### Turn 104 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1256,7 +1252,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 107 — stop reason `null`
+### Turn 106 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1278,7 +1274,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 109 — stop reason `null`
+### Turn 108 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1300,7 +1296,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 111 — stop reason `null`
+### Turn 110 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1322,7 +1318,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 113 — stop reason `null`
+### Turn 112 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1333,18 +1329,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-06T17:25\",\"utc\":\"2026-11-06T22:25:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 115 — stop reason `null`
+### Turn 113 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1361,12 +1346,23 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 [
   {
     "type": "text",
+    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-06T17:25\",\"utc\":\"2026-11-06T22:25:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-07T08:45\",\"utc\":\"2026-11-07T13:45:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 117 — stop reason `null`
+### Turn 116 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1388,7 +1384,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 119 — stop reason `null`
+### Turn 118 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1410,7 +1406,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 121 — stop reason `null`
+### Turn 120 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1432,7 +1428,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 123 — stop reason `null`
+### Turn 122 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1454,7 +1450,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 125 — stop reason `null`
+### Turn 124 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1476,7 +1472,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 127 — stop reason `null`
+### Turn 126 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1498,7 +1494,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 129 — stop reason `null`
+### Turn 128 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1520,7 +1516,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 131 — stop reason `null`
+### Turn 130 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1542,7 +1538,7 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
-### Turn 133 — stop reason `null`
+### Turn 132 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1564,11 +1560,11 @@ Now let me convert every local time. The DST change on 25/10 (Europe) falls insi
 ]
 ```
 
+### Turn 134 — stop reason `null`
+
+Now let me verify against the header totals.
+
 ### Turn 135 — stop reason `null`
-
-Now let me reconcile against the header totals.
-
-### Turn 136 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1579,8 +1575,8 @@ Now let me reconcile against the header totals.
   "headerDaysOff": 14,
   "headerStandbyDays": 1,
   "headerNightstops": 6,
-  "duties": "[\n{\"date\":\"2026-10-11\",\"kind\":\"flight\",\"endStation\":\"DXB\",\"sectors\":[{\"depUtc\":\"2026-10-11T14:05:00Z\",\"arrUtc\":\"2026-10-11T21:05:00Z\"}]},\n{\"date\":\"2026-10-12\",\"kind\":\"off\",\"endStation\":\"DXB\",\"sectors\":[]},\n{\"date\":\"2026-10-13\",\"kind\":\"flight\",\"endStation\":\"MAD\",\"sectors\":[{\"depUtc\":\"2026-10-13T06:15:00Z\",\"arrUtc\":\"2026-10-13T13:15:00Z\"}]},\n{\"date\":\"2026-10-14\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-15\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-16\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-17\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-18\",\
-… [2955 more characters]
+  "duties": "[\n{\"date\":\"2026-10-11\",\"kind\":\"flight\",\"endStation\":\"DXB\",\"sectors\":[{\"depUtc\":\"2026-10-11T14:05Z\",\"arrUtc\":\"2026-10-11T21:05Z\"}]},\n{\"date\":\"2026-10-12\",\"kind\":\"off\",\"endStation\":\"DXB\",\"sectors\":[]},\n{\"date\":\"2026-10-13\",\"kind\":\"flight\",\"endStation\":\"MAD\",\"sectors\":[{\"depUtc\":\"2026-10-13T06:15Z\",\"arrUtc\":\"2026-10-13T13:15Z\"}]},\n{\"date\":\"2026-10-14\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-15\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-16\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-17\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-10-18\",\"kind\":\"of
+… [2859 more characters]
 ```
 
 **tool answered**
@@ -1594,27 +1590,24 @@ Now let me reconcile against the header totals.
 ]
 ```
 
+### Turn 137 — stop reason `null`
+
+
+
 ### Turn 138 — stop reason `null`
 
-
-
-### Turn 139 — stop reason `null`
-
-Everything reconciles. Here is the reading.
-
-**Document structure:** Ten columns — Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop. The header states plainly "All times are LOCAL to the station shown," so departure times are local to the origin and arrival/off-duty times local to the destination. Dates are DD/MM/YYYY. Report time and Off Duty time are both **printed**, not derived — so there are no derivations in this reading.
-
-**Traps I checked for:**
-- The `+1` suffix marks a next-calendar-day time. On 11/10 the arrival reads `01:05+1` in DXB local, but DXB is ahead of UTC, so in UTC that instant is still 11 October — the "+1" is a *local* day rollover only.
-- 04/11 and 09/11 each print the date twice, but the second row has an empty Report column. Those are continuation sectors of the duty above, not separate duties — two-sector out-and-backs (MAD-FCO-MAD, MAD-LHR-MAD).
-- The reporting offset is not constant: 90 minutes on the long-haul sectors, 60 minutes on the FCO and LHR turns. Since Report is printed I used the printed value throughout and did not apply an offset, but anyone deriving it from a single assumed offset would get 04/11 and 09/11 wrong by 30 minutes.
-- The European DST change falls on 25/10, mid-roster — the day of the MAD-GRU departure. MAD is UTC+2 before it and UTC+1 after; Brazil, Colombia, Dubai and Singapore have no DST.
-- 07/11's duty ends at 03:00 on 08/11, a day the roster marks OFF. I kept 08/11 as a day off per the page.
+All four header totals reconcile exactly.
 
 ```json
 {
-  "format": "Nimbus prints one flat table, one row per sector, with Report and Off Duty ti
-… [7354 more characters]
+  "format": "NIMBUS INTERNATIONAL prints one line per calendar day in a fixed-width table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop; dates are DD/MM/YYYY and the header states all times are LOCAL to the station shown, so a single row can mix two timezones (STD at the origin, STA at the destination). Report and Off Duty are printed explicitly, never derived, and next-day times carry a '+1' suffix.",
+  "traps": [
+    "Multi-sector duties print the date again on the continuation row (04/11 and 09/11 each appear twice). The repeated date is NOT a second duty — the blank Report cell and the single Off Duty time on the last row show both sectors belong to one duty.",
+    "Times are local to the station named in that cell, so within one row STD is origin-local and STA is destination-local (e.g. 23/10 NB779 departs 23:10 DXB and arrives 04:10+1 MAD).",
+    "'+1' on STA/Off Duty means the following calendar day; five duties end on a date after their printed row date (11/10, 21/10, 23/10, 26/10 via 27/10, 29/10, 01/11, 07/11).",
+    "The period crosses the European DST change on 25/10/2026 at 03:00 local. MAD/FCO go UTC+2 to UTC+1 and LHR UTC+1 to UTC+0 mid-roster; the 25/10 MAD departure is already CET. GRU (Brazil, no DST since 2019), DXB, SIN and BOG are unaffected, so the MAD-relative offsets to those stations shift on 25/10.",
+    "The reporting offset is not uniform: 90 minutes before STD on long-haul, 60 minutes on the FCO and LHR short-haul turns. Since Report is printed, this matt
+… [7809 more characters]
 
 _finished: success_
 
@@ -1624,8 +1617,8 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "I'll start by reading the roster document.\nNow let me convert every local time. The DST change on 25/10 (Europe) falls inside this period, so I'll convert each one explicitly.\nNow let me reconcile against the header totals.\nEverything reconciles. Here is the reading.\n\n**Document structure:** Ten columns — Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop. The header states plainly \"All times are LOCAL to the station shown,\" so departure times are local to the origin and arrival/off-duty times local to the destination. Dates are DD/MM/YYYY. Report time and Off Duty time are both **printed**, not derived — so there are no derivations in this reading.\n\n**Traps I checked for:**\n- The `+1` suffix marks a next-calendar-day time. On 11/10 the arrival reads `01:05+1` in DXB local, but DXB is ahead of UTC, so in UTC that instant is still 11 October — the \"+1\" is a *local* day rollover only.\n- 04/11 and 09/11 each print the date twice, but the second row has an empty Report column. Those are continuation sectors of the duty above, not separate duties — two-sector out-and-backs (MAD-FCO-MAD, MAD-LHR-MAD).\n- The reporting offset is not constant: 90 minutes on the long-haul sectors, 60 minutes on the FCO and LHR turns. Since Report is printed I used the printed value throughout and did not apply an offset, but anyone deriving it from a single assumed offset would get 04/11 and 09/11 wrong by 30 minutes.\n- The European DST change falls on 25/10, mid-roster — the day of the MAD-GRU departure. MAD is UTC+2 before it and UTC+1 after; Brazil, Colombia, Dubai and Singapore have no DST.\n- 07/11's duty ends at 03:00 on 08/11, a day the roster marks OFF. I kept 08/11 as a day off per the page.\n\n```json\n{\n  \"format\": \"Nimbus prints one flat table, one row per sector, with Report and Off Duty times explicitly printed rather than derived from an offset. All times are local to the station shown, dates are DD/MM/YYYY, and a '+1' suffix marks a time falling on the next local calendar day.\",\n  \"traps\": [\n    \"Report offset is not uniform: 90 minutes before STD on long-haul, 60 minutes on the FCO and LHR turns. Report is printed, so use the printed value; assuming one offset misreads 04/11 and 09/11 by 30 minutes.\",\n    \"04/11 and 09/11 repeat the date on a second row, but that row has a blank Report column - it is a continuation sector of the duty above, not a new duty. Each is a two-sector out-and-back.\",\n    \"The 
-… [7893 more characters]
+  "text": "I'll start by reading the roster document.\nThe document is read. Let me note the structure and convert every local time properly.\nNow let me verify against the header totals.\nAll four header totals reconcile exactly.\n\n```json\n{\n  \"format\": \"NIMBUS INTERNATIONAL prints one line per calendar day in a fixed-width table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop; dates are DD/MM/YYYY and the header states all times are LOCAL to the station shown, so a single row can mix two timezones (STD at the origin, STA at the destination). Report and Off Duty are printed explicitly, never derived, and next-day times carry a '+1' suffix.\",\n  \"traps\": [\n    \"Multi-sector duties print the date again on the continuation row (04/11 and 09/11 each appear twice). The repeated date is NOT a second duty — the blank Report cell and the single Off Duty time on the last row show both sectors belong to one duty.\",\n    \"Times are local to the station named in that cell, so within one row STD is origin-local and STA is destination-local (e.g. 23/10 NB779 departs 23:10 DXB and arrives 04:10+1 MAD).\",\n    \"'+1' on STA/Off Duty means the following calendar day; five duties end on a date after their printed row date (11/10, 21/10, 23/10, 26/10 via 27/10, 29/10, 01/11, 07/11).\",\n    \"The period crosses the European DST change on 25/10/2026 at 03:00 local. MAD/FCO go UTC+2 to UTC+1 and LHR UTC+1 to UTC+0 mid-roster; the 25/10 MAD departure is already CET. GRU (Brazil, no DST since 2019), DXB, SIN and BOG are unaffected, so the MAD-relative offsets to those stations shift on 25/10.\",\n    \"The reporting offset is not uniform: 90 minutes before STD on long-haul, 60 minutes on the FCO and LHR short-haul turns. Since Report is printed, this matters only as a cross-check.\",\n    \"SIM (28/10) and SBY (05/11) carry no Block and no Flight number; their end time sits in the Off Duty column and their start in the Report column. They are training and standby, not flights, and take no reporting offset.\",\n    \"The 'Nightstop' column marks where the crew stays that night, so the following day's duty starts down-route, not at MAD (13/10 starts DXB, 26/10 GRU, 31/10 and 03/11 SIN, 07/11 BOG).\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [],\n  \"duties\": [\n    {\n      \"date\": \"2026-10-11\", \"kind\": \"flight\", \"station\": \"MAD\", \"endStation\": \"DXB\",\n      \"reportUtc\": \"2
+… [8413 more characters]
 ```
 
 _read complete_
