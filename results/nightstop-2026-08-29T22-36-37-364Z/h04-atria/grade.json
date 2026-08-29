@@ -1,0 +1,18 @@
+{
+  "caseId": "h04-atria",
+  "arm": "nightstop",
+  "costUsd": 1.0839257500000001,
+  "wallMs": 260076,
+  "humanSeconds": 0,
+  "bucket": "clean",
+  "trustworthy": true,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 0,
+  "surfacedCount": 0,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

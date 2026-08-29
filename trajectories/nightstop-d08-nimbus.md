@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-29T17-04-00-108Z/d08-nimbus/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-29T22-29-49-615Z/d08-nimbus/trajectory.jsonl -->
 
 > **Why this trajectory.** A month spanning both the European and North American daylight-saving changes, with transatlantic sectors whose offset changes mid-trip.
 
 # Trajectory — d08-nimbus, arm `nightstop`
 
-Run `nightstop-2026-08-29T17-04-00-108Z`. 147 events.
+Run `nightstop-2026-08-29T22-29-49-615Z`. 145 events.
 
 
 ## reader
@@ -150,7 +150,7 @@ I'll start by reading the roster document.
 
 ### Turn 5 — stop reason `null`
 
-Now let me convert every local time. Starting with the October duties:
+Now let me convert every local time properly.
 
 ### Turn 6 — stop reason `null`
 
@@ -295,6 +295,17 @@ Now let me convert every local time. Starting with the October duties:
 }
 ```
 
+### Turn 19 — stop reason `null`
+
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "MAD",
+  "localDateTime": "2026-10-13T15:45"
+}
+```
+
 **tool answered**
 
 ```
@@ -304,17 +315,6 @@ Now let me convert every local time. Starting with the October duties:
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-13T15:15\",\"utc\":\"2026-10-13T13:15:00.000Z\",\"notes\":[]}"
   }
 ]
-```
-
-### Turn 20 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "MAD",
-  "localDateTime": "2026-10-13T15:45"
-}
 ```
 
 **tool answered**
@@ -506,14 +506,6 @@ Now let me convert every local time. Starting with the October duties:
 
 ### Turn 38 — stop reason `null`
 
-
-
-### Turn 39 — stop reason `null`
-
-The 25 October MAD duty falls on the European DST change day — converting the rest:
-
-### Turn 40 — stop reason `null`
-
 **calls `mcp__nightstop__to_utc`**
 
 ```json
@@ -534,7 +526,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 42 — stop reason `null`
+### Turn 40 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -556,7 +548,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 44 — stop reason `null`
+### Turn 42 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -578,7 +570,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 46 — stop reason `null`
+### Turn 44 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -600,7 +592,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 48 — stop reason `null`
+### Turn 46 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -622,7 +614,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 50 — stop reason `null`
+### Turn 48 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -644,7 +636,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 52 — stop reason `null`
+### Turn 50 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -666,7 +658,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 54 — stop reason `null`
+### Turn 52 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -688,7 +680,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 56 — stop reason `null`
+### Turn 54 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -699,7 +691,18 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 }
 ```
 
-### Turn 57 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-28T08:00\",\"utc\":\"2026-10-28T07:00:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 56 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -716,23 +719,12 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-28T08:00\",\"utc\":\"2026-10-28T07:00:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-28T16:00\",\"utc\":\"2026-10-28T15:00:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 60 — stop reason `null`
+### Turn 58 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -743,18 +735,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-29T11:10\",\"utc\":\"2026-10-29T10:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 62 — stop reason `null`
+### Turn 59 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -771,12 +752,23 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-29T11:10\",\"utc\":\"2026-10-29T10:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-10-29T12:40\",\"utc\":\"2026-10-29T11:40:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 64 — stop reason `null`
+### Turn 62 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -798,7 +790,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 66 — stop reason `null`
+### Turn 64 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -820,7 +812,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 68 — stop reason `null`
+### Turn 66 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -842,7 +834,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 70 — stop reason `null`
+### Turn 68 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -864,7 +856,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 72 — stop reason `null`
+### Turn 70 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -886,7 +878,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 74 — stop reason `null`
+### Turn 72 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -908,11 +900,7 @@ The 25 October MAD duty falls on the European DST change day — converting the 
 ]
 ```
 
-### Turn 76 — stop reason `null`
-
-Now the November duties:
-
-### Turn 77 — stop reason `null`
+### Turn 74 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -934,7 +922,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 79 — stop reason `null`
+### Turn 76 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -956,7 +944,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 81 — stop reason `null`
+### Turn 78 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -978,7 +966,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 83 — stop reason `null`
+### Turn 80 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -989,7 +977,18 @@ Now the November duties:
 }
 ```
 
-### Turn 84 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-02T13:05\",\"utc\":\"2026-11-02T05:05:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 82 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1006,23 +1005,12 @@ Now the November duties:
 [
   {
     "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-02T13:05\",\"utc\":\"2026-11-02T05:05:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-11-03T11:10\",\"utc\":\"2026-11-03T03:10:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 87 — stop reason `null`
+### Turn 84 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1044,7 +1032,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 89 — stop reason `null`
+### Turn 86 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1066,7 +1054,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 91 — stop reason `null`
+### Turn 88 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1088,7 +1076,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 93 — stop reason `null`
+### Turn 90 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1110,7 +1098,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 95 — stop reason `null`
+### Turn 92 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1132,7 +1120,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 97 — stop reason `null`
+### Turn 94 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1154,7 +1142,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 99 — stop reason `null`
+### Turn 96 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1165,18 +1153,7 @@ Now the November duties:
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"FCO\",\"timezone\":\"Europe/Rome\",\"localDateTime\":\"2026-11-04T09:53\",\"utc\":\"2026-11-04T08:53:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 101 — stop reason `null`
+### Turn 97 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1193,12 +1170,23 @@ Now the November duties:
 [
   {
     "type": "text",
+    "text": "{\"station\":\"FCO\",\"timezone\":\"Europe/Rome\",\"localDateTime\":\"2026-11-04T09:53\",\"utc\":\"2026-11-04T08:53:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-11-04T12:18\",\"utc\":\"2026-11-04T11:18:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 103 — stop reason `null`
+### Turn 100 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1220,7 +1208,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 105 — stop reason `null`
+### Turn 102 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1242,7 +1230,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 107 — stop reason `null`
+### Turn 104 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1264,7 +1252,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 109 — stop reason `null`
+### Turn 106 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1286,7 +1274,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 111 — stop reason `null`
+### Turn 108 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1308,7 +1296,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 113 — stop reason `null`
+### Turn 110 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1330,7 +1318,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 115 — stop reason `null`
+### Turn 112 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1341,7 +1329,18 @@ Now the November duties:
 }
 ```
 
-### Turn 116 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-06T17:25\",\"utc\":\"2026-11-06T22:25:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 114 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1358,23 +1357,12 @@ Now the November duties:
 [
   {
     "type": "text",
-    "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-06T17:25\",\"utc\":\"2026-11-06T22:25:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"BOG\",\"timezone\":\"America/Bogota\",\"localDateTime\":\"2026-11-07T08:45\",\"utc\":\"2026-11-07T13:45:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 119 — stop reason `null`
+### Turn 116 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1396,7 +1384,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 121 — stop reason `null`
+### Turn 118 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1418,7 +1406,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 123 — stop reason `null`
+### Turn 120 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1440,7 +1428,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 125 — stop reason `null`
+### Turn 122 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1462,7 +1450,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 127 — stop reason `null`
+### Turn 124 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1484,7 +1472,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 129 — stop reason `null`
+### Turn 126 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1495,18 +1483,7 @@ Now the November duties:
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"LHR\",\"timezone\":\"Europe/London\",\"localDateTime\":\"2026-11-09T07:30\",\"utc\":\"2026-11-09T07:30:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 131 — stop reason `null`
+### Turn 127 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1523,12 +1500,23 @@ Now the November duties:
 [
   {
     "type": "text",
+    "text": "{\"station\":\"LHR\",\"timezone\":\"Europe/London\",\"localDateTime\":\"2026-11-09T07:30\",\"utc\":\"2026-11-09T07:30:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"LHR\",\"timezone\":\"Europe/London\",\"localDateTime\":\"2026-11-09T08:25\",\"utc\":\"2026-11-09T08:25:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 133 — stop reason `null`
+### Turn 130 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1550,7 +1538,7 @@ Now the November duties:
 ]
 ```
 
-### Turn 135 — stop reason `null`
+### Turn 132 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1572,11 +1560,11 @@ Now the November duties:
 ]
 ```
 
-### Turn 137 — stop reason `null`
+### Turn 134 — stop reason `null`
 
-Now let me verify against the header totals:
+Now let me reconcile against the header totals.
 
-### Turn 138 — stop reason `null`
+### Turn 135 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1602,22 +1590,24 @@ Now let me verify against the header totals:
 ]
 ```
 
-### Turn 140 — stop reason `null`
+### Turn 137 — stop reason `null`
 
 
 
-### Turn 141 — stop reason `null`
+### Turn 138 — stop reason `null`
 
-All four header totals reconcile exactly. Here is my reading.
+All four header totals reconcile.
 
-**Document structure:** Fixed-width text table, columns `Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop`. Dates are DD/MM/YYYY. The header states plainly that *all times are LOCAL to the station shown* — so STD and Report are local to the departure airport, while STA and Off Duty are local to the **arrival** airport. Report time is printed on the page for every duty, so nothing had to be derived from an offset (the printed offsets happen to be 90 min on long-haul and 60 min on the FCO/LHR turns, but I used the printed values, not the pattern).
-
-**Traps I had to handle:**
-- 04/11 and 09/11 each occupy **two rows that repeat the same date**. The second row has a blank Report column — it is a continuation sector of the duty above, not a separate duty. Each of those days is one two-sector flight duty with a single report time and one Off Duty time on the last row.
-- `+1` suffixes on STA/Off Duty mark arrival on the following calendar day, at the arrival station's local date (e.g. 21/10 MAD 23:10 → DXB 08:10+1).
-- **Europe's DST ends 25 October 2026**, mid-roster. The MAD–GRU departure on 25/10 is at 10:15 local, after the 03:00 changeover, so Madrid is already on UTC+1. Every European time from 25/10 onward shifts by an hour relative to the earlier ones — the identical clock times on 13/10 (10:15 → 13:15Z arrival) and 31/10 look the same on the page but are an hour apart in UTC. LHR on 09/11 is on GMT, so its local times equal UTC.
-- GRU (no Brazilian DST since 2019) and BOG (never 
-… [9239 more characters]
+```json
+{
+  "format": "Nimbus International prints one line per calendar day in a fixed-width table: Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop. Dates are DD/MM/YYYY, all times are LOCAL to the station shown (STD/Report local to the origin, STA/Off Duty local to the destination), and a trailing \"+1\" marks a time falling on the next calendar day. Report and Off Duty are both printed, so duty start and end are read, not derived.",
+  "traps": [
+    "Times are local to DIFFERENT stations on the same row: Report/STD are origin-local, STA/Off Duty are destination-local. Treating a row as single-timezone corrupts every long-haul sector.",
+    "The '+1' suffix on STA and Off Duty is the only marker that a duty spans two calendar days (e.g. 11/10 NB869 arrives 01:05+1 DXB, 23/10 NB779 arrives 04:10+1 MAD). Seven duties end on the day after their row's date.",
+    "Multi-sector days repeat the date on the continuation row (04/11 and 09/11) but leave Report and Nightstop blank. The second row is NOT a separate duty — it belongs to the duty above and shares its report time.",
+    "The covered period crosses the European DST end on 25/10/2026. MAD is UTC+2 through 24/10 and UTC+1 from 25/10; the 25/10 MAD-GRU duty is the first post-change duty. GRU, BOG, SIN and DXB have no DST at all, so their offsets are constant while Madrid's changes underneath them.",
+    "Off-duty on a nightstop lands on a date whose own row says OFF (e.g. 12/10, 22/10). The OFF row is a genuine day off per the roster, not a continuation of
+… [11107 more characters]
 
 _finished: success_
 
@@ -1627,11 +1617,13 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "I'll start by reading the roster document.\nNow let me convert every local time. Starting with the October duties:\nThe 25 October MAD duty falls on the European DST change day — converting the rest:\nNow the November duties:\nNow let me verify against the header totals:\nAll four header totals reconcile exactly. Here is my reading.\n\n**Document structure:** Fixed-width text table, columns `Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop`. Dates are DD/MM/YYYY. The header states plainly that *all times are LOCAL to the station shown* — so STD and Report are local to the departure airport, while STA and Off Duty are local to the **arrival** airport. Report time is printed on the page for every duty, so nothing had to be derived from an offset (the printed offsets happen to be 90 min on long-haul and 60 min on the FCO/LHR turns, but I used the printed values, not the pattern).\n\n**Traps I had to handle:**\n- 04/11 and 09/11 each occupy **two rows that repeat the same date**. The second row has a blank Report column — it is a continuation sector of the duty above, not a separate duty. Each of those days is one two-sector flight duty with a single report time and one Off Duty time on the last row.\n- `+1` suffixes on STA/Off Duty mark arrival on the following calendar day, at the arrival station's local date (e.g. 21/10 MAD 23:10 → DXB 08:10+1).\n- **Europe's DST ends 25 October 2026**, mid-roster. The MAD–GRU departure on 25/10 is at 10:15 local, after the 03:00 changeover, so Madrid is already on UTC+1. Every European time from 25/10 onward shifts by an hour relative to the earlier ones — the identical clock times on 13/10 (10:15 → 13:15Z arrival) and 31/10 look the same on the page but are an hour apart in UTC. LHR on 09/11 is on GMT, so its local times equal UTC.\n- GRU (no Brazilian DST since 2019) and BOG (never observes) stay fixed at UTC−3 and UTC−5 across the US changeover on 1 November.\n- 28/10 `SIM` and 05/11 `SBY` show MAD–MAD with no flight number, no STD/STA and no block time — training and standby respectively, whose report is the stated window start with no offset applied.\n\n```json\n{\n  \"format\": \"Nimbus prints a fixed-width monthly table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Nightstop, one row per sector, in DD/MM/YYYY. All clock times are local to the station they refer to — Report and STD to the departure airport, STA and Off Duty to the arrival airpo
-… [9950 more characters]
+  "text": "I'll start by reading the roster document.\nNow let me convert every local time properly.\nNow let me reconcile against the header totals.\nAll four header totals reconcile.\n\n```json\n{\n  \"format\": \"Nimbus International prints one line per calendar day in a fixed-width table: Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Nightstop. Dates are DD/MM/YYYY, all times are LOCAL to the station shown (STD/Report local to the origin, STA/Off Duty local to the destination), and a trailing \\\"+1\\\" marks a time falling on the next calendar day. Report and Off Duty are both printed, so duty start and end are read, not derived.\",\n  \"traps\": [\n    \"Times are local to DIFFERENT stations on the same row: Report/STD are origin-local, STA/Off Duty are destination-local. Treating a row as single-timezone corrupts every long-haul sector.\",\n    \"The '+1' suffix on STA and Off Duty is the only marker that a duty spans two calendar days (e.g. 11/10 NB869 arrives 01:05+1 DXB, 23/10 NB779 arrives 04:10+1 MAD). Seven duties end on the day after their row's date.\",\n    \"Multi-sector days repeat the date on the continuation row (04/11 and 09/11) but leave Report and Nightstop blank. The second row is NOT a separate duty — it belongs to the duty above and shares its report time.\",\n    \"The covered period crosses the European DST end on 25/10/2026. MAD is UTC+2 through 24/10 and UTC+1 from 25/10; the 25/10 MAD-GRU duty is the first post-change duty. GRU, BOG, SIN and DXB have no DST at all, so their offsets are constant while Madrid's changes underneath them.\",\n    \"Off-duty on a nightstop lands on a date whose own row says OFF (e.g. 12/10, 22/10). The OFF row is a genuine day off per the roster, not a continuation of the previous duty.\",\n    \"Report offset is not uniform: 90 minutes on long-haul/widebody rotations, 60 minutes on the two European short-haul days (04/11 and 09/11). Do not assume one offset. (Both are printed, so this only matters as a sanity check.)\",\n    \"The 28/10 SIM and 05/11 SBY rows show a sector of 'MAD-MAD' with no flight number and no block time — these are training and standby, not flights, and their start times carry no reporting offset.\",\n    \"Table is on a single page; no repeated header rows to mistake for data.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    {\n      \"date\": \"2026-10-11\",\n      \"field\": \"endUtc\",\n      \"method\": \"Of
+… [12097 more characters]
 ```
 
 _read complete_
+
+_values worked out rather than read_
 
 
 ## engine
@@ -1640,7 +1632,7 @@ _read complete_
 
 ```json
 {
-  "blocks": 18,
+  "blocks": 30,
   "conflicts": 7,
   "byHardness": {
     "hard-limit": 5,

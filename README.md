@@ -246,6 +246,11 @@ untrustworthy, and it costs *more* to do it.
 **The last column changes one thing.** The rule check moves out of the model and into a
 deterministic function. Invented rules: 40 → 0. Trustworthy: 1/8 → 8/8. Cheaper, too.
 
+Two of the six stages moved neither headline number. Both were real defects — a planner
+that never suggested a nap, and one that left every day off unplanned — and both were found
+by rendering the output and looking at it. That is the argument for the hot take below as
+much as any of the numbers above.
+
 > The model was never the bottleneck on **finding** collisions. It was the bottleneck on
 > **not inventing** them. A deterministic checker cannot invent a rule — the failure mode
 > is removed by construction rather than discouraged by prompting.
@@ -265,6 +270,7 @@ job it should not be doing — and the tools that let it do the other half exact
 | **3 · make it show its work** | Reader must record which values it **derived** rather than read, and say which rule it used. Motivated by the single remaining failure (below), and I expected it to only *surface* the error rather than fix it. | **8/8 trustworthy · 0/8 silently wrong** · d04-kestrel misread → surfaced | Kept, and it is the most surprising result here. Being asked to distinguish a value it read from one it inferred changed whether it inferred correctly. |
 | **4 · own rules in** | The distiller: read a rules document once, reduce it to a pack with a hardness on every rule, and never show the planner the source. | Part 117 ~7,021 → ~711 tokens (**−89.9%**); 3/3 recall against the hand-written reference, plus one rule it had missed | Kept. The refusals matter as much as the extractions — it declines to collapse a table-driven limit into a number. |
 | **5 · a nap you would actually take** | The planner had never recommended a nap in twelve rosters — the rule only fired below a six-hour night, and the tightest window is 6h50. Added a prophylactic nap before any duty running an hour or more through the circadian low. Found by building the demo, not by reading a metric. | 2–6 naps per roster (0 on the short-haul European case, correctly); primary and co-primary **unchanged** at 8/8 and 0 | Kept. It moved no number I report, which is the point: the summary statistics could not see that a whole class of advice was missing. |
+| **6 · every night, not one per gap** | The planner placed one main sleep per *rest period*, which is right only when the rest period is one night — and four of the first six on the Aurora roster span two. Every day off had no sleep at all. Found by someone looking at the calendar, not by a metric. | Night coverage ~19 → 20–27 per month; plan violations 70 → 15 → **0** as the two shift rules landed; primary and co-primary **unchanged** at 8/8 and 0 | Kept. The second stage running that moved no number I report. |
 | **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3

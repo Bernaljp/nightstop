@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-29T17-04-00-108Z/d07-cirrus/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-29T22-29-49-615Z/d07-cirrus/trajectory.jsonl -->
 
 > **Why this trajectory.** A duty printed 23:30 → 05:25 on one dated row with nothing marking the day change, and continuation rows carrying no date either. Watch it use to_utc rather than doing the arithmetic itself.
 
 # Trajectory — d07-cirrus, arm `nightstop`
 
-Run `nightstop-2026-08-29T17-04-00-108Z`. 159 events.
+Run `nightstop-2026-08-29T22-29-49-615Z`. 164 events.
 
 
 ## reader
@@ -115,6 +115,10 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 
 ### Turn 1 — stop reason `null`
 
+I'll start by reading the roster document.
+
+### Turn 2 — stop reason `null`
+
 **calls `Read`**
 
 ```json
@@ -140,11 +144,15 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 … [4092 more characters]
 ```
 
-### Turn 3 — stop reason `null`
-
-
-
 ### Turn 4 — stop reason `null`
+
+
+
+### Turn 5 — stop reason `null`
+
+Now let me convert every local time. Batch 1 (long-haul duties):
+
+### Turn 6 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -166,7 +174,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 6 — stop reason `null`
+### Turn 8 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -188,7 +196,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 8 — stop reason `null`
+### Turn 10 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -210,7 +218,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 10 — stop reason `null`
+### Turn 12 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -232,7 +240,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 12 — stop reason `null`
+### Turn 14 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -254,7 +262,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 14 — stop reason `null`
+### Turn 16 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -276,7 +284,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 16 — stop reason `null`
+### Turn 18 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -298,7 +306,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 18 — stop reason `null`
+### Turn 20 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -320,7 +328,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 20 — stop reason `null`
+### Turn 22 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -331,7 +339,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 21 — stop reason `null`
+### Turn 23 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -364,7 +372,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 24 — stop reason `null`
+### Turn 26 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -386,7 +394,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 26 — stop reason `null`
+### Turn 28 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -408,7 +416,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 28 — stop reason `null`
+### Turn 30 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -430,7 +438,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 30 — stop reason `null`
+### Turn 32 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -452,7 +460,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 32 — stop reason `null`
+### Turn 34 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -474,7 +482,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 34 — stop reason `null`
+### Turn 36 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -496,7 +504,11 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 36 — stop reason `null`
+### Turn 38 — stop reason `null`
+
+Batch 2 (short-haul duties 11/09 and 19/09):
+
+### Turn 39 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -518,7 +530,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 38 — stop reason `null`
+### Turn 41 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -540,7 +552,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 40 — stop reason `null`
+### Turn 43 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -562,7 +574,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 42 — stop reason `null`
+### Turn 45 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -584,7 +596,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 44 — stop reason `null`
+### Turn 47 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -606,7 +618,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 46 — stop reason `null`
+### Turn 49 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -628,7 +640,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 48 — stop reason `null`
+### Turn 51 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -650,7 +662,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 50 — stop reason `null`
+### Turn 53 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -672,7 +684,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 52 — stop reason `null`
+### Turn 55 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -694,7 +706,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 54 — stop reason `null`
+### Turn 57 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -716,7 +728,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 56 — stop reason `null`
+### Turn 59 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -727,7 +739,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 57 — stop reason `null`
+### Turn 60 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -760,7 +772,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 60 — stop reason `null`
+### Turn 63 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -782,7 +794,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 62 — stop reason `null`
+### Turn 65 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -804,7 +816,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 64 — stop reason `null`
+### Turn 67 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -826,7 +838,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 66 — stop reason `null`
+### Turn 69 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -848,7 +860,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 68 — stop reason `null`
+### Turn 71 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -870,7 +882,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 70 — stop reason `null`
+### Turn 73 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -892,7 +904,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 72 — stop reason `null`
+### Turn 75 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -914,7 +926,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 74 — stop reason `null`
+### Turn 77 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -936,7 +948,11 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 76 — stop reason `null`
+### Turn 79 — stop reason `null`
+
+Batch 3 (20/09 through 28/09):
+
+### Turn 80 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -958,7 +974,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 78 — stop reason `null`
+### Turn 82 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -980,7 +996,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 80 — stop reason `null`
+### Turn 84 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1002,7 +1018,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 82 — stop reason `null`
+### Turn 86 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1024,7 +1040,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 84 — stop reason `null`
+### Turn 88 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1046,7 +1062,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 86 — stop reason `null`
+### Turn 90 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1068,7 +1084,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 88 — stop reason `null`
+### Turn 92 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1090,7 +1106,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 90 — stop reason `null`
+### Turn 94 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1101,18 +1117,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-22T06:40\",\"utc\":\"2026-09-22T04:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 92 — stop reason `null`
+### Turn 95 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1129,12 +1134,23 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-22T06:40\",\"utc\":\"2026-09-22T04:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"CDG\",\"timezone\":\"Europe/Paris\",\"localDateTime\":\"2026-09-22T08:45\",\"utc\":\"2026-09-22T06:45:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 94 — stop reason `null`
+### Turn 98 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1156,7 +1172,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 96 — stop reason `null`
+### Turn 100 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1178,7 +1194,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 98 — stop reason `null`
+### Turn 102 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1200,7 +1216,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 100 — stop reason `null`
+### Turn 104 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1211,7 +1227,18 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-### Turn 101 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T04:35\",\"utc\":\"2026-09-23T02:35:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 106 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1228,23 +1255,12 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T04:35\",\"utc\":\"2026-09-23T02:35:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T05:35\",\"utc\":\"2026-09-23T03:35:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 104 — stop reason `null`
+### Turn 108 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1266,7 +1282,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 106 — stop reason `null`
+### Turn 110 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1288,7 +1304,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 108 — stop reason `null`
+### Turn 112 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1310,7 +1326,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 110 — stop reason `null`
+### Turn 114 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1332,7 +1348,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 112 — stop reason `null`
+### Turn 116 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1354,7 +1370,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 114 — stop reason `null`
+### Turn 118 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1376,7 +1392,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 116 — stop reason `null`
+### Turn 120 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1398,7 +1414,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 118 — stop reason `null`
+### Turn 122 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1420,7 +1436,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 120 — stop reason `null`
+### Turn 124 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1442,7 +1458,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 122 — stop reason `null`
+### Turn 126 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1464,7 +1480,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 124 — stop reason `null`
+### Turn 128 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1486,7 +1502,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 126 — stop reason `null`
+### Turn 130 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1508,7 +1524,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 128 — stop reason `null`
+### Turn 132 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1519,18 +1535,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-24T23:44\",\"utc\":\"2026-09-24T21:44:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 130 — stop reason `null`
+### Turn 133 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1547,12 +1552,23 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-24T23:44\",\"utc\":\"2026-09-24T21:44:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-25T00:14\",\"utc\":\"2026-09-24T22:14:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 132 — stop reason `null`
+### Turn 136 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1574,7 +1590,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 134 — stop reason `null`
+### Turn 138 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1596,7 +1612,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 136 — stop reason `null`
+### Turn 140 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1618,7 +1634,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 138 — stop reason `null`
+### Turn 142 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1640,7 +1656,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 140 — stop reason `null`
+### Turn 144 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1662,7 +1678,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 142 — stop reason `null`
+### Turn 146 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1684,7 +1700,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 144 — stop reason `null`
+### Turn 148 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1706,7 +1722,7 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 146 — stop reason `null`
+### Turn 150 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1728,11 +1744,15 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 148 — stop reason `null`
+### Turn 152 — stop reason `null`
 
 
 
-### Turn 149 — stop reason `null`
+### Turn 153 — stop reason `null`
+
+All block times verify against the printed Block column. Now reconciling:
+
+### Turn 154 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1758,25 +1778,23 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 ]
 ```
 
-### Turn 151 — stop reason `null`
+### Turn 156 — stop reason `null`
 
 
 
-### Turn 152 — stop reason `null`
+### Turn 157 — stop reason `null`
 
-Everything reconciles. Here is the reading.
+All four header totals reconcile.
 
 ```json
 {
-  "format": "CIRRUS CONNECT monthly roster: one line per calendar date (DD/MM/YYYY) with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Multi-sector duties put extra sectors on continuation rows that carry no date, and the Off Duty / Duty totals appear only on the last sector row. The header states explicitly that all times are LOCAL to the station shown, so STD/Report are local at the origin and STA/Off Duty are local at the arrival station; report time is printed, never derived.",
+  "format": "CIRRUS CONNECT monthly roster: one row per day (DD/MM/YYYY), with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Multi-sector duties print the flight rows beneath the dated first row without repeating the date, and the header states explicitly that all times are LOCAL to the station shown — so STD is local at the origin and STA is local at the destination of the same row.",
   "traps": [
-    "Continuation sector rows are undated — sectors on 11/09, 19/09, 20/09, 22/09, 23/09 and 24/09 belong to the duty on the dated row above them.",
-    "Times are local to DIFFERENT stations within the same row (STD at origin, STA at destination), so a westbound row like 01/09 MAD-ORD 18:30->20:30 is a 9h00 sector, not 2 hours.",
-    "Several duties cross midnight without any date marking: 03/09 STD 21:50 ORD arrives 13:50 on 04/09; 07/09 STD 23:10 JFK arrives 13:10 on 08/09; 11/09 sectors CR866/CR563 and the 06:18 off-duty fall on 12/09; 24/09 off-duty 00:14 falls on 25/09; 26/09 STA 08:10 SIN is on 27/09.",
-    "The report offset is not constant: long-haul rows use STD minus 90 min (e.g. 01/09, 26/09) while short-haul rows use STD minus 60 min. Both are printed, so neither was assumed.",
-    "The 'OFF' token sits in the Act column, not the Flight column, and days off on 02/09, 06/09 and 27/09 are downroute layover days at ORD, JFK and SIN respectively, not at base.",
-    "Single page, no repeated 
-… [10028 more characters]
+    "Times are local to the station shown, and this changes column-by-column: on a sector row STD is origin-local and STA is destination-local. Report is origin-local; Off Duty is local at the last arrival station (ORD on 01/09, JFK on 05/09, SIN on 26/09).",
+    "Continuation sector rows carry no date. On 11/09, 19/09, 22/09, 23/09 and 24/09 the rows under the dated row belong to the duty above them.",
+    "Several duties roll past midnight with no date marking. 03/09 ORD-MAD departs 21:50 and arrives 13:50 the NEXT day (04/09); 07/09 JFK-MAD 23:10 arrives 13:10 on 08/09; on 11/09 sectors CR866 and CR563 (23:55 dep onwards) fall on 12/09; 24/09's Off Duty 00:14 is on 25/09; 26/09 MAD-SIN arrives 08:10 on 27/09. The rollover was resolved using the printed Block figure, not by comparing STD/STA digits.",
+    "Days that are printed OFF can still be occupied by the tail of the previous duty: 04/09 is marked OFF yet the ORD-MAD duty is airborne until 11:50 UTC that morning, and 27/09 is marked OFF yet the SIN arrival lands at 00:10 UTC that day. Both are reported as printed (OFF) and counted as such; days off 
+… [10454 more characters]
 
 _finished: success_
 
@@ -1786,8 +1804,8 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "Everything reconciles. Here is the reading.\n\n```json\n{\n  \"format\": \"CIRRUS CONNECT monthly roster: one line per calendar date (DD/MM/YYYY) with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Multi-sector duties put extra sectors on continuation rows that carry no date, and the Off Duty / Duty totals appear only on the last sector row. The header states explicitly that all times are LOCAL to the station shown, so STD/Report are local at the origin and STA/Off Duty are local at the arrival station; report time is printed, never derived.\",\n  \"traps\": [\n    \"Continuation sector rows are undated — sectors on 11/09, 19/09, 20/09, 22/09, 23/09 and 24/09 belong to the duty on the dated row above them.\",\n    \"Times are local to DIFFERENT stations within the same row (STD at origin, STA at destination), so a westbound row like 01/09 MAD-ORD 18:30->20:30 is a 9h00 sector, not 2 hours.\",\n    \"Several duties cross midnight without any date marking: 03/09 STD 21:50 ORD arrives 13:50 on 04/09; 07/09 STD 23:10 JFK arrives 13:10 on 08/09; 11/09 sectors CR866/CR563 and the 06:18 off-duty fall on 12/09; 24/09 off-duty 00:14 falls on 25/09; 26/09 STA 08:10 SIN is on 27/09.\",\n    \"The report offset is not constant: long-haul rows use STD minus 90 min (e.g. 01/09, 26/09) while short-haul rows use STD minus 60 min. Both are printed, so neither was assumed.\",\n    \"The 'OFF' token sits in the Act column, not the Flight column, and days off on 02/09, 06/09 and 27/09 are downroute layover days at ORD, JFK and SIN respectively, not at base.\",\n    \"Single page, no repeated header; no DST transition falls inside September 2026 for any station used.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    {\n      \"date\": \"2026-09-03\",\n      \"field\": \"endUtc\",\n      \"method\": \"Row dated 03/09 with report 20:20 ORD; STD 21:50 ORD plus block 9h00 lands at STA 13:50 MAD on the following calendar day, so the arrival and 14:20 off-duty are assigned to 04/09.\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"date\": \"2026-09-07\",\n      \"field\": \"endUtc\",\n      \"method\": \"STD 23:10 JFK on 07/09 plus block 8h00 gives STA 13:10 MAD on 08/09; off-duty 13:40 MAD likewise dated 08/09.\",\n      \"confidence\": \"high\"\n    },\n    {\n      \"date\": \"2026-09-11\",\n      \"field\": \"endUtc\",\n      \"method\": \"Undated continuation rows CR866 (MAD 23:55) and CR563
-… [10778 more characters]
+  "text": "I'll start by reading the roster document.\nNow let me convert every local time. Batch 1 (long-haul duties):\nBatch 2 (short-haul duties 11/09 and 19/09):\nBatch 3 (20/09 through 28/09):\nAll block times verify against the printed Block column. Now reconciling:\nAll four header totals reconcile.\n\n```json\n{\n  \"format\": \"CIRRUS CONNECT monthly roster: one row per day (DD/MM/YYYY), with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Multi-sector duties print the flight rows beneath the dated first row without repeating the date, and the header states explicitly that all times are LOCAL to the station shown — so STD is local at the origin and STA is local at the destination of the same row.\",\n  \"traps\": [\n    \"Times are local to the station shown, and this changes column-by-column: on a sector row STD is origin-local and STA is destination-local. Report is origin-local; Off Duty is local at the last arrival station (ORD on 01/09, JFK on 05/09, SIN on 26/09).\",\n    \"Continuation sector rows carry no date. On 11/09, 19/09, 22/09, 23/09 and 24/09 the rows under the dated row belong to the duty above them.\",\n    \"Several duties roll past midnight with no date marking. 03/09 ORD-MAD departs 21:50 and arrives 13:50 the NEXT day (04/09); 07/09 JFK-MAD 23:10 arrives 13:10 on 08/09; on 11/09 sectors CR866 and CR563 (23:55 dep onwards) fall on 12/09; 24/09's Off Duty 00:14 is on 25/09; 26/09 MAD-SIN arrives 08:10 on 27/09. The rollover was resolved using the printed Block figure, not by comparing STD/STA digits.\",\n    \"Days that are printed OFF can still be occupied by the tail of the previous duty: 04/09 is marked OFF yet the ORD-MAD duty is airborne until 11:50 UTC that morning, and 27/09 is marked OFF yet the SIN arrival lands at 00:10 UTC that day. Both are reported as printed (OFF) and counted as such; days off tally 18, matching the header.\",\n    \"September 2026 contains no DST transition in Europe, the US or Singapore, so no ambiguous or non-existent local times arise — but the UTC offsets differ between the European stations (+2 / +1 for DUB and LIS) and must not be assumed uniform.\",\n    \"The reporting offset is not uniform: 90 minutes on the long-haul duties (01, 03, 05, 07, 26, 28 Sep) and 60 minutes on the short-haul ones. Because Report is printed on every duty row, no offset had to be assumed.\",\n    \"Flight number CR893 is reused for two different sectors (MAD-DUB on 23/09 and MAD-LIS
+… [11416 more characters]
 ```
 
 _read complete_
@@ -1801,7 +1819,7 @@ _values worked out rather than read_
 
 ```json
 {
-  "blocks": 14,
+  "blocks": 27,
   "conflicts": 3,
   "byHardness": {
     "hard-limit": 3

@@ -1,0 +1,18 @@
+{
+  "caseId": "d05-halcyon",
+  "arm": "nightstop",
+  "costUsd": 0.538246,
+  "wallMs": 155899,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 16,
+  "surfacedCount": 16,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}
