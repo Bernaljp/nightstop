@@ -93,6 +93,21 @@ export interface CrewProfile {
   commuteMinutes: Record<Station, number>;
   /** Default for any station not listed above. */
   defaultCommuteMinutes: number;
+  /**
+   * When this crew member normally sleeps, in their own local time at base.
+   *
+   * This is theirs, and it varies more than people expect: one pilot is reliably asleep
+   * by 21:30 and up at 05:30, another does not settle until midnight. A plan that moves
+   * everyone to the same hours is not planning their sleep, it is planning a stranger's —
+   * and the cost of a duty is not how early it starts but how far it drags them off the
+   * rhythm they actually keep.
+   */
+  usualSleep: {
+    /** Local hour they normally go to bed, e.g. 22.5 for 22:30. */
+    bedHour: number;
+    /** Local hour they normally wake. */
+    wakeHour: number;
+  };
 }
 
 /** The answer key for one case. Never shown to any agent. */

@@ -55,11 +55,15 @@ async function main() {
   function profileFor(spec: FormatSpec): CrewProfile {
     const r = new Rng(seedFrom(spec.caseId, seed ^ 0x5eed));
     const homeCommute = r.pick([40, 55, 70, 85, 95]);
+    // Real crew differ by hours, not minutes. Early-to-bed and late-to-bed are both
+    // normal, and the plan has to hold whichever this person actually keeps.
+    const bedHour = r.pick([21, 21.5, 22, 22.5, 23, 23.5, 0]);
     return {
       base: spec.operator.base,
       baseTz: tzOf(spec.operator.base),
       commuteMinutes: { [spec.operator.base]: homeCommute },
       defaultCommuteMinutes: r.pick([25, 30, 40]),
+      usualSleep: { bedHour, wakeHour: (bedHour + 8) % 24 },
     };
   }
 

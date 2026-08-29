@@ -1,0 +1,2 @@
+{"seq":0,"ts":"2026-08-29T23:05:52.587Z","runId":"reference-2026-08-29T23-05-52-439Z","arm":"reference","caseId":"h04-atria","agent":"engine","kind":"note","message":"deterministic engine, no model involved","blocks":32,"conflicts":0}
+{"seq":1,"ts":"2026-08-29T23:05:52.588Z","runId":"reference-2026-08-29T23-05-52-439Z","arm":"reference","caseId":"h04-atria","agent":"engine","kind":"final","output":{"blocks":32,"conflicts":0}}

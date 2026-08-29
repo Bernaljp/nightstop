@@ -9,7 +9,11 @@
     "commuteMinutes": {
       "LHR": 55
     },
-    "defaultCommuteMinutes": 40
+    "defaultCommuteMinutes": 30,
+    "usualSleep": {
+      "bedHour": 23.5,
+      "wakeHour": 7.5
+    }
   },
   "roster": "roster.pdf"
 }

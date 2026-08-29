@@ -1,0 +1,2 @@
+{"seq":0,"ts":"2026-08-29T23:05:51.776Z","runId":"reference-2026-08-29T23-05-51-499Z","arm":"reference","caseId":"d08-nimbus","agent":"engine","kind":"note","message":"deterministic engine, no model involved","blocks":40,"conflicts":7}
+{"seq":1,"ts":"2026-08-29T23:05:51.776Z","runId":"reference-2026-08-29T23-05-51-499Z","arm":"reference","caseId":"d08-nimbus","agent":"engine","kind":"final","output":{"blocks":40,"conflicts":7}}

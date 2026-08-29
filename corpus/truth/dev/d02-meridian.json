@@ -9,7 +9,11 @@
     "commuteMinutes": {
       "MAD": 55
     },
-    "defaultCommuteMinutes": 30
+    "defaultCommuteMinutes": 25,
+    "usualSleep": {
+      "bedHour": 22,
+      "wakeHour": 6
+    }
   },
   "duties": [
     {

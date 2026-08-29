@@ -29,9 +29,18 @@ export interface EngineSettings {
   napCapMinutes: number;
   /** A nap must end this long before the crew member leaves for the airport. */
   napInertiaMinutes: number;
-  /** Preferred bedtime and wake time, in BODY-clock hours. */
+  /**
+   * Fallback bedtime, used only when a crew member has told us nothing. Their own hours
+   * from `CrewProfile.usualSleep` take precedence — a plan anchored to a house default is
+   * planning a stranger's sleep.
+   */
   preferredBodyBedHour: number;
   preferredBodyWakeHour: number;
+  /**
+   * How much of their usual sleep window a duty has to eat before recovery sleep is
+   * offered afterwards.
+   */
+  disruptionMinutes: number;
 }
 
 export const DEFAULT_SETTINGS: EngineSettings = {
@@ -41,6 +50,7 @@ export const DEFAULT_SETTINGS: EngineSettings = {
   napInertiaMinutes: 45,
   preferredBodyBedHour: 23,
   preferredBodyWakeHour: 7,
+  disruptionMinutes: 90,
 };
 
 function clamp(v: number, lo: number, hi: number): number {
@@ -66,6 +76,7 @@ function placeMainSleeps(
   windowTo: Date,
   bodyOffsetFromUtc: number,
   s: EngineSettings,
+  bedHour: number,
 ): Array<{ from: Date; to: Date }> {
   if (minutesBetween(windowFrom, windowTo) <= 0) return [];
 
@@ -78,7 +89,7 @@ function placeMainSleeps(
   const out: Array<{ from: Date; to: Date }> = [];
   // A rest period longer than a fortnight is not a rest period; the bound is a guard.
   for (let day = -1; day <= 15; day++) {
-    const bedBody = bodyDayStart + day * 24 * HOUR + s.preferredBodyBedHour * HOUR;
+    const bedBody = bodyDayStart + day * 24 * HOUR + bedHour * HOUR;
     const bed = new Date(bedBody - bodyOffsetFromUtc * 60_000);
     let from = bed;
     let to = addMinutes(bed, s.mainSleepTargetMinutes);
@@ -119,6 +130,28 @@ function placeMainSleeps(
   return out;
 }
 
+/**
+ * Minutes a duty overlaps the hours this crew member normally sleeps.
+ *
+ * Handles the usual case of a window that crosses midnight, which almost all of them do.
+ */
+function usualWindowOverlap(
+  from: Date, to: Date, tz: string, bedHour: number, wakeHour: number,
+): number {
+  let total = 0;
+  // Walk the duty in ten-minute steps; exact enough for a threshold, and immune to the
+  // off-by-one errors that midnight-crossing interval arithmetic invites.
+  for (let t = from.getTime(); t < to.getTime(); t += 10 * 60_000) {
+    const hhmm = localHHmm(new Date(t), tz);
+    const h = Number(hhmm.slice(0, 2)) + Number(hhmm.slice(3)) / 60;
+    const inWindow = bedHour < wakeHour
+      ? h >= bedHour && h < wakeHour
+      : h >= bedHour || h < wakeHour;
+    if (inWindow) total += 10;
+  }
+  return total;
+}
+
 export function buildPlan(
   caseId: string,
   duties: Duty[],
@@ -129,6 +162,20 @@ export function buildPlan(
   const rests = restPeriods(duties, profile);
   const phases = phaseTrace(duties, profile);
   const blocks: SleepBlock[] = [];
+
+  // Their hours, not the house default.
+  const usualBed = profile.usualSleep?.bedHour ?? settings.preferredBodyBedHour;
+  const usualWake = profile.usualSleep?.wakeHour ?? settings.preferredBodyWakeHour;
+
+  /** How far a night sits from the hour they normally go to bed, in minutes. */
+  const displacementFrom = (start: Date, tz: string): number => {
+    const hhmm = localHHmm(start, tz);
+    const hour = Number(hhmm.slice(0, 2)) + Number(hhmm.slice(3)) / 60;
+    let diff = hour - usualBed;
+    while (diff > 12) diff -= 24;
+    while (diff < -12) diff += 24;
+    return Math.round(diff * 60);
+  };
 
   rests.forEach((r, i) => {
     const from = new Date(r.sleepWindowFromUtc);
@@ -141,7 +188,7 @@ export function buildPlan(
     const localOffset = utcOffsetMinutes(from, stationTz);
     const bodyOffsetFromUtc = localOffset + (phase?.offsetFromLocalMinutes ?? 0);
 
-    const nights = placeMainSleeps(from, to, bodyOffsetFromUtc, settings);
+    const nights = placeMainSleeps(from, to, bodyOffsetFromUtc, settings, usualBed);
     if (!nights.length) return;
 
     nights.forEach((night, n) => {
@@ -153,13 +200,22 @@ export function buildPlan(
     const localWake = localHHmm(main.to, stationTz);
     const drift = Math.round(phase?.offsetFromLocalMinutes ?? 0);
 
-    const why =
-      Math.abs(drift) >= 60
-        ? `${localBed} to ${localWake} local at ${r.prev.endStation} — which is about ` +
-          `${formatDuration(Math.abs(drift))} ${drift > 0 ? "later" : "earlier"} on your body ` +
-          `clock, because it has not caught up with where you are yet.`
-        : `${localBed} to ${localWake} at ${r.prev.endStation}, covering ` +
-          `${formatDuration(inWocl)} of your circadian low.`;
+      const off = displacementFrom(main.from, stationTz);
+      const usual = `${String(Math.floor(usualBed)).padStart(2, "0")}:${String(Math.round((usualBed % 1) * 60)).padStart(2, "0")}`;
+
+      // Say it in their terms: not "this is 23:00" but "this is two hours off your usual".
+      const why =
+        Math.abs(off) >= 60
+          ? `${localBed} to ${localWake} at ${r.prev.endStation} — about ` +
+            `${formatDuration(Math.abs(off))} ${off > 0 ? "later" : "earlier"} than your ` +
+            `usual ${usual}. The roster leaves no room to keep your normal hours here.`
+          : Math.abs(drift) >= 60
+            ? `${localBed} to ${localWake} local at ${r.prev.endStation} — close to your ` +
+              `usual ${usual}, but about ${formatDuration(Math.abs(drift))} ` +
+              `${drift > 0 ? "later" : "earlier"} on your body clock, which has not caught ` +
+              `up with where you are.`
+            : `${localBed} to ${localWake} at ${r.prev.endStation}, your usual hours, ` +
+              `covering ${formatDuration(inWocl)} of your circadian low.`;
 
       blocks.push({
       id: `main-${localDate(night.from, stationTz)}`,
@@ -219,6 +275,35 @@ export function buildPlan(
               `${formatDuration(settings.napInertiaMinutes)} before you leave.`,
             ruleIds: ["nap-inertia-gap-45m", "nap-cap-2h"],
           });
+        }
+      }
+
+      // Recovery sleep, on the first night after a duty that took their usual window off
+      // them. A duty ending at 03:00 does not just cost that night's sleep — the debt is
+      // still there the next day, and the place to repay it is the morning after.
+      if (n === 0 && r.prev.reportUtc && r.prev.endUtc) {
+        const prevTz = tzOf(r.prev.endStation);
+        const ate = usualWindowOverlap(
+          new Date(r.prev.reportUtc), new Date(r.prev.endUtc), prevTz, usualBed, usualWake,
+        );
+        const gap = minutesBetween(night.to, new Date(r.sleepWindowToUtc));
+        if (ate >= settings.disruptionMinutes && gap >= 120) {
+          const recStart = addMinutes(night.to, 60);
+          const recLen = Math.min(settings.napCapMinutes, gap - 90);
+          if (recLen >= 45) {
+            blocks.push({
+              id: `recovery-${localDate(recStart, stationTz)}`,
+              kind: "recovery-nap",
+              startUtc: recStart.toISOString(),
+              endUtc: addMinutes(recStart, recLen).toISOString(),
+              station: r.prev.endStation,
+              why:
+                `${r.prev.date} took ${formatDuration(ate)} out of the hours you normally ` +
+                `sleep. This ${formatDuration(recLen)} pays some of that back — you are ` +
+                `carrying it into the rest of the week otherwise.`,
+              ruleIds: ["sleep-per-24h-7h"],
+            });
+          }
         }
       }
     });
