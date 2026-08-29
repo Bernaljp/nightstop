@@ -143,17 +143,35 @@ export function buildPlan(
       ruleIds: ["far117-sleep-opportunity-8h"],
     });
 
-    // Where the main sleep fell short of the floor and the window still has room
-    // before the next report, add a pre-duty nap rather than simply accepting the debt.
-    if (len < settings.mainSleepFloorMinutes) {
-      const pickup = addMinutes(
-        new Date(r.next.reportUtc!), -commuteFor(profile, r.next.station),
-      );
-      const napEnd = addMinutes(pickup, -settings.napInertiaMinutes);
-      const napStart = new Date(
-        Math.max(main.to.getTime() + 60 * 60_000, napEnd.getTime() - settings.napCapMinutes * 60_000),
-      );
-      const napLen = minutesBetween(napStart, napEnd);
+    // A pre-duty nap, on the two occasions crew actually take one.
+    //
+    // The first version only offered a nap when the main sleep came in under the
+    // six-hour floor, which never once happened across twelve rosters - the tightest
+    // window in the corpus is 6h50. The rule was dead code, and a fatigue planner that
+    // never suggests a nap is missing the tool crew reach for most.
+    //
+    // The one that matters is prophylactic: a nap before a duty that runs through the
+    // circadian low, taken while you can still sleep, so you are not meeting 03:00 body
+    // time on whatever you managed the night before (UK CAA Paper 2003/8).
+    const pickup = addMinutes(
+      new Date(r.next.reportUtc!), -commuteFor(profile, r.next.station),
+    );
+    const napEnd = addMinutes(pickup, -settings.napInertiaMinutes);
+    const room = minutesBetween(main.to, napEnd);
+
+    // How much of the coming duty runs through the body's own night?
+    const dutyWocl = woclCoverageMinutes(
+      new Date(r.next.reportUtc!),
+      new Date(r.next.endUtc!),
+      bodyOffsetFromUtc,
+    );
+
+    const short = len < settings.mainSleepFloorMinutes;
+    const nightDuty = dutyWocl >= 60;
+
+    if ((short || nightDuty) && room >= 90) {
+      const napLen = Math.min(settings.napCapMinutes, room - 60);
+      const napStart = addMinutes(napEnd, -napLen);
       if (napLen >= 30) {
         blocks.push({
           id: `nap-${r.next.date}`,
@@ -161,11 +179,14 @@ export function buildPlan(
           startUtc: napStart.toISOString(),
           endUtc: napEnd.toISOString(),
           station: r.next.station,
-          why:
-            `Only ${formatDuration(len)} of main sleep fits before ${r.next.date}, so this ` +
-            `${formatDuration(napLen)} nap takes the edge off. It finishes ` +
-            `${formatDuration(settings.napInertiaMinutes)} before you leave so you are not ` +
-            `driving on sleep inertia.`,
+          why: short
+            ? `Only ${formatDuration(len)} of main sleep fits before ${r.next.date}, so this ` +
+              `${formatDuration(napLen)} nap takes the edge off. It ends ` +
+              `${formatDuration(settings.napInertiaMinutes)} before you leave, so you are not ` +
+              `driving on sleep inertia.`
+            : `${r.next.date} runs ${formatDuration(dutyWocl)} through your circadian low. ` +
+              `Take this ${formatDuration(napLen)} now, while you can still sleep — it ends ` +
+              `${formatDuration(settings.napInertiaMinutes)} before you leave.`,
           ruleIds: ["nap-inertia-gap-45m", "nap-cap-2h"],
         });
       }
