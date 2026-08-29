@@ -1,0 +1,400 @@
+[
+  {
+    "date": "2026-10-11",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "DXB",
+    "reportUtc": "2026-10-11T12:35:00Z",
+    "endUtc": "2026-10-11T21:35:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB869",
+        "origin": "MAD",
+        "dest": "DXB",
+        "depUtc": "2026-10-11T14:05:00Z",
+        "arrUtc": "2026-10-11T21:05:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-12",
+    "kind": "off",
+    "station": "DXB",
+    "endStation": "DXB",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-13",
+    "kind": "flight",
+    "station": "DXB",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-13T04:45:00Z",
+    "endUtc": "2026-10-13T13:45:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB210",
+        "origin": "DXB",
+        "dest": "MAD",
+        "depUtc": "2026-10-13T06:15:00Z",
+        "arrUtc": "2026-10-13T13:15:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-14",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-15",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-16",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-17",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-18",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-19",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-20",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-21",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "DXB",
+    "reportUtc": "2026-10-21T19:40:00Z",
+    "endUtc": "2026-10-22T04:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB214",
+        "origin": "MAD",
+        "dest": "DXB",
+        "depUtc": "2026-10-21T21:10:00Z",
+        "arrUtc": "2026-10-22T04:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-22",
+    "kind": "off",
+    "station": "DXB",
+    "endStation": "DXB",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-23",
+    "kind": "flight",
+    "station": "DXB",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-23T17:40:00Z",
+    "endUtc": "2026-10-24T02:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB779",
+        "origin": "DXB",
+        "dest": "MAD",
+        "depUtc": "2026-10-23T19:10:00Z",
+        "arrUtc": "2026-10-24T02:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-25",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "GRU",
+    "reportUtc": "2026-10-25T07:45:00Z",
+    "endUtc": "2026-10-25T20:05:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB139",
+        "origin": "MAD",
+        "dest": "GRU",
+        "depUtc": "2026-10-25T09:15:00Z",
+        "arrUtc": "2026-10-25T19:35:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-26",
+    "kind": "flight",
+    "station": "GRU",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-26T14:10:00Z",
+    "endUtc": "2026-10-27T02:30:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB491",
+        "origin": "GRU",
+        "dest": "MAD",
+        "depUtc": "2026-10-26T15:40:00Z",
+        "arrUtc": "2026-10-27T02:00:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-27",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-28",
+    "kind": "training",
+    "code": "SIM",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-28T07:00:00Z",
+    "endUtc": "2026-10-28T15:00:00Z",
+    "sectors": []
+  },
+  {
+    "date": "2026-10-29",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "SIN",
+    "reportUtc": "2026-10-29T10:10:00Z",
+    "endUtc": "2026-10-30T01:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB698",
+        "origin": "MAD",
+        "dest": "SIN",
+        "depUtc": "2026-10-29T11:40:00Z",
+        "arrUtc": "2026-10-30T01:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-30",
+    "kind": "off",
+    "station": "SIN",
+    "endStation": "SIN",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-31",
+    "kind": "flight",
+    "station": "SIN",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-31T00:45:00Z",
+    "endUtc": "2026-10-31T16:15:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB261",
+        "origin": "SIN",
+        "dest": "MAD",
+        "depUtc": "2026-10-31T02:15:00Z",
+        "arrUtc": "2026-10-31T15:45:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-01",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "SIN",
+    "reportUtc": "2026-11-01T13:35:00Z",
+    "endUtc": "2026-11-02T05:05:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB777",
+        "origin": "MAD",
+        "dest": "SIN",
+        "depUtc": "2026-11-01T15:05:00Z",
+        "arrUtc": "2026-11-02T04:35:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-02",
+    "kind": "off",
+    "station": "SIN",
+    "endStation": "SIN",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-11-03",
+    "kind": "flight",
+    "station": "SIN",
+    "endStation": "MAD",
+    "reportUtc": "2026-11-03T03:10:00Z",
+    "endUtc": "2026-11-03T18:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB539",
+        "origin": "SIN",
+        "dest": "MAD",
+        "depUtc": "2026-11-03T04:40:00Z",
+        "arrUtc": "2026-11-03T18:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-04",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-11-04T04:40:00Z",
+    "endUtc": "2026-11-04T11:48:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB696",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-11-04T05:40:00Z",
+        "arrUtc": "2026-11-04T08:05:00Z"
+      },
+      {
+        "flightNo": "NB206",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-11-04T08:53:00Z",
+        "arrUtc": "2026-11-04T11:18:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-05",
+    "kind": "standby",
+    "code": "SBY",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-11-05T04:00:00Z",
+    "endUtc": "2026-11-05T13:00:00Z",
+    "sectors": []
+  },
+  {
+    "date": "2026-11-06",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "BOG",
+    "reportUtc": "2026-11-06T10:10:00Z",
+    "endUtc": "2026-11-06T22:25:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB111",
+        "origin": "MAD",
+        "dest": "BOG",
+        "depUtc": "2026-11-06T11:40:00Z",
+        "arrUtc": "2026-11-06T21:55:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-07",
+    "kind": "flight",
+    "station": "BOG",
+    "endStation": "MAD",
+    "reportUtc": "2026-11-07T13:45:00Z",
+    "endUtc": "2026-11-08T02:00:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB721",
+        "origin": "BOG",
+        "dest": "MAD",
+        "depUtc": "2026-11-07T15:15:00Z",
+        "arrUtc": "2026-11-08T01:30:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-08",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-11-09",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-11-09T04:05:00Z",
+    "endUtc": "2026-11-09T11:20:00Z",
+    "sectors": [
+      {
+        "flightNo": "NB278",
+        "origin": "MAD",
+        "dest": "LHR",
+        "depUtc": "2026-11-09T05:05:00Z",
+        "arrUtc": "2026-11-09T07:30:00Z"
+      },
+      {
+        "flightNo": "NB370",
+        "origin": "LHR",
+        "dest": "MAD",
+        "depUtc": "2026-11-09T08:25:00Z",
+        "arrUtc": "2026-11-09T10:50:00Z"
+      }
+    ]
+  }
+]

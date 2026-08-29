@@ -8,6 +8,7 @@
 import { readFileSync, readdirSync, existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { execSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import type { GroundTruth } from "../corpus/schema";
 import type { RulePack } from "../rules/schema";
 import type { SleepPlan } from "../plan/schema";
@@ -75,6 +76,38 @@ function gitSha(): string {
     return execSync("git rev-parse HEAD", { encoding: "utf8" }).trim();
   } catch {
     return "unknown";
+  }
+}
+
+/**
+ * A hash of everything an agent reads: prompts, tool descriptions, rule text.
+ *
+ * The git SHA alone is not enough to identify a configuration, because a run started
+ * with uncommitted changes records the SHA of the commit BEFORE them. That happened
+ * here, and it made one run look like a different configuration than the one it
+ * actually was. This hash does not care about commit hygiene.
+ */
+function agentInputsSha(): string {
+  const roots = ["lib/agents", "lib/rules", "docs/sources"];
+  const h = createHash("sha256");
+  const walk = (dir: string): void => {
+    if (!existsSync(dir)) return;
+    for (const e of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
+      const full = join(dir, e.name);
+      if (e.isDirectory()) walk(full);
+      else h.update(full).update(readFileSync(full));
+    }
+  };
+  for (const r of roots) walk(r);
+  return h.digest("hex");
+}
+
+/** Whether the working tree had uncommitted changes when the run started. */
+function treeDirty(): boolean {
+  try {
+    return execSync("git status --porcelain", { encoding: "utf8" }).trim().length > 0;
+  } catch {
+    return false;
   }
 }
 
@@ -173,6 +206,8 @@ export async function runArm(
         describes: arm.describes,
         at: new Date().toISOString(),
         gitSha: gitSha(),
+        treeDirty: treeDirty(),
+        agentInputsSha256: agentInputsSha(),
         corpusManifestSha256: manifestSha(set),
         model: arm.usesModel ? MODEL : null,
         rulePack: { id: pack.id, rules: pack.rules.length },
