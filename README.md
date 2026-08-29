@@ -12,7 +12,10 @@ someone it affects directly.
 
 ## Try it
 
-An interactive demo replays every recorded run: pick any of the twelve rosters, switch
+**[Open the demo](https://claude.ai/code/artifact/379e642f-93fb-456f-9226-51f0b57b2567)** ·
+**[Read the submission page](https://claude.ai/code/artifact/95f33aff-4fbc-49c6-bd88-ee53f12c7adb)**
+
+The demo replays every recorded run: pick any of the twelve rosters, switch
 between the first version and the last, and see exactly what each read, planned, surfaced
 and withheld — checked against the same ground truth the evaluation used. It also runs
 live on a roster you paste, using the real reader prompt and the real planning engine

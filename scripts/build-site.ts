@@ -50,7 +50,8 @@ const ribbon = brief.days
 
 const pct = (x: number) => `${(x * 100).toFixed(0)}%`;
 const page = readFileSync("site/template.html", "utf8")
-  .replace(/\{\{DEMO_URL\}\}/g, process.env.DEMO_URL ?? "demo.html")
+  .replace(/\{\{DEMO_URL\}\}/g, process.env.DEMO_URL ??
+      "https://claude.ai/code/artifact/379e642f-93fb-456f-9226-51f0b57b2567")
   .replace(/\{\{RIBBON\}\}/g, ribbon)
   .replace(/\{\{B1_TRUST\}\}/g, `${dev.b1.trustworthy}/${dev.b1.cases}`)
   .replace(/\{\{B1_WRONG\}\}/g, `${dev.b1.silentlyWrong}/${dev.b1.cases}`)
