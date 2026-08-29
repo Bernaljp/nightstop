@@ -142,8 +142,12 @@ td:first-child { color: var(--ink); }
 td.n { font-family: "IBM Plex Mono", monospace; font-size: 14px; }
 tr.hi td { color: var(--ink); }
 tr.hi td.n { font-weight: 500; }
-.win { color: var(--nap); }
-.lose { color: var(--duty); }
+/* Specificity: `tr.hi td` (0,1,2) outranks a bare `.win` (0,1,0), so the emphasis on the
+   two headline rows was being silently cancelled by the row-highlight rule. `tr td.win`
+   matches that specificity and is declared later, so it wins. Qualifying only the class
+   was not enough - a first fix that looked right and changed nothing. */
+tr td.win { color: var(--nap); }
+tr td.lose { color: var(--duty); }
 
 .note { border-left: 2px solid var(--flag); padding: 2px 0 2px 18px; margin: 26px 0;
         color: var(--ink-2); font-size: 16px; }
@@ -296,10 +300,11 @@ footer a { color: var(--ink-2); }
       the regulation says is theirs.</p>
     </div>
     <div class="card">
-      <h3>Three kinds of rule, never conflated</h3>
-      <p>A hard limit from your regulator, a recommendation from fatigue science or
-      company policy, and your own line that only you can move. Point it at your
-      operator's manual and it pulls out the four paragraphs that touch sleep.</p>
+      <h3>Your hours, not a default</h3>
+      <p>You tell it when you normally sleep — 21:30 or midnight, they differ by hours —
+      and it holds that rhythm where the roster allows, says how far it had to move you
+      where it does not, and puts recovery sleep after a duty that took your usual window
+      off you.</p>
     </div>
     <div class="card">
       <h3>It says what it worked out</h3>
@@ -319,56 +324,79 @@ footer a { color: var(--ink-2); }
 <hr>
 
 <section>
-  <p class="eyebrow">what it scored</p>
-  <h2>Eight rosters, one grader, the same task for every arm.</h2>
+  <p class="eyebrow">what each change was worth</p>
+  <h2>Four arms, each one change apart.</h2>
+  <div class="col">
+    <p>Same eight rosters, same grader, same task. The third column exists only to answer a
+    question the other three cannot: the step that added tools also moved the rule check out
+    of the model, so the gain could have belonged to either. This holds the reader, the
+    tools and the engine identical and gives <em>only</em> the rule check back to the model.</p>
+  </div>
   <div class="tw">
     <table>
       <thead><tr>
-        <th>&nbsp;</th><th>Chatbot</th><th>Same inputs, one shot</th><th>Nightstop</th>
+        <th>&nbsp;</th><th>one prompt</th><th>+ the rules</th><th>+ tools</th><th>+ deterministic checking</th>
       </tr></thead>
       <tbody>
         <tr class="hi"><td>Trustworthy plans</td>
-          <td class="n lose">0/8</td><td class="n">1/8</td><td class="n win">8/8</td></tr>
+          <td class="n lose">0/8</td><td class="n">1/8</td>
+          <td class="n">1/8</td><td class="n win">8/8</td></tr>
         <tr class="hi"><td>Silently wrong <span style="color:var(--ink-3)">(target 0)</span></td>
-          <td class="n lose">8/8</td><td class="n">3/8</td><td class="n win">0/8</td></tr>
-        <tr><td>Real collisions surfaced</td>
-          <td class="n">0%</td><td class="n">77%</td><td class="n win">100%</td></tr>
-        <tr><td>Rules it invented</td>
-          <td class="n lose">69</td><td class="n">37</td><td class="n win">0</td></tr>
+          <td class="n lose">8/8</td><td class="n">3/8</td>
+          <td class="n win">0/8</td><td class="n win">0/8</td></tr>
+        <tr><td>Reads the roster</td>
+          <td class="n">99.3%</td><td class="n">99.3%</td>
+          <td class="n win">100.0%</td><td class="n win">100.0%</td></tr>
+        <tr><td>Finds real collisions</td>
+          <td class="n lose">0%</td><td class="n">77%</td>
+          <td class="n win">100%</td><td class="n win">100%</td></tr>
+        <tr class="hi"><td>Invents rules</td>
+          <td class="n lose">69</td><td class="n lose">37</td>
+          <td class="n lose">40</td><td class="n win">0</td></tr>
         <tr><td>Cost per roster</td>
-          <td class="n">—</td><td class="n">—</td><td class="n">$0.70</td></tr>
+          <td class="n">$0.65</td><td class="n">$0.80</td>
+          <td class="n">$0.88</td><td class="n">$0.70</td></tr>
       </tbody>
     </table>
   </div>
+
   <div class="col">
-    <p class="cap">A plan counts as trustworthy only if every duty-bearing field matches
-    ground truth exactly, every collision the roster forces is surfaced, and nothing is
-    raised that is not real. <strong>Silently wrong</strong> is reported at equal size
-    because it is the only outcome that can hurt someone — a binary alone hides the
-    difference between <em>wrong</em> and <em>flagged</em>.</p>
+    <p>Read across it. Giving it the rules is most of the value and nowhere near enough.
+    Tools fix the reading completely, and it stays fixed. <strong>And then the model finds
+    every single real collision — 100% recall — and still fails seven of eight cases</strong>,
+    because it invents forty more, and costs more doing it.</p>
+    <p>The last column changes one thing: the rule check moves out of the model and into a
+    function.</p>
+  </div>
+
+  <div class="note col">
+    <strong>The model was never the bottleneck on <em>finding</em> collisions. It was the
+    bottleneck on not inventing them.</strong> A deterministic checker cannot invent a rule —
+    the failure mode is removed by construction rather than discouraged by prompting. So the
+    biggest single improvement here came from taking work <em>away</em> from the model.
   </div>
 
   <h3>Held out</h3>
   <div class="col">
-    <p>Four more rosters, generated from a separate seed after every prompt was frozen and
-    not run against until the end — every hard feature at once, a roster printing no
-    totals so the reader's self-check is simply absent, Spanish labels on a
-    daylight-saving month, single-character codes where a day off is a bare hyphen.</p>
+    <p>Four more rosters from a seed never used before, generated after the configuration
+    was re-frozen and run once — every hard feature at once, a roster printing no totals so
+    the reader's self-check is simply absent, Spanish labels on a daylight-saving month,
+    single-character codes where a day off is a bare hyphen.</p>
   </div>
   <div class="score">
     <div class="chip bad">chatbot, trustworthy <b>0/4</b></div>
-    <div class="chip bad">chatbot, silently wrong <b>3/4</b></div>
+    <div class="chip bad">chatbot, silently wrong <b>4/4</b></div>
     <div class="chip good">nightstop, trustworthy <b>4/4</b></div>
     <div class="chip good">nightstop, silently wrong <b>0/4</b></div>
   </div>
   <div class="note col">
-    <strong>How that number was reached.</strong> The first held-out run scored 3/4, and
-    the failure was a bug in <em>my corpus</em> — a UTC-only roster dated its rows by base
-    local day, so the date column and the time column disagreed with nothing to say which
-    to believe. The reader transcribed it as printed and flagged the overlap as probably a
-    source error, which was the better of the two readings. No prompt, tool or rule was
-    changed at any point, and <code>npm run verify:freeze</code> proves it rather than
-    asserting it.
+    <strong>Why a second set.</strong> There was an earlier one, frozen sooner. The engine
+    then changed four times — naps, night coverage, two rules about shifting bedtime, and
+    planning around the hours each crew member actually keeps — and every change made that
+    set less held out, because it had already been seen. Amending a pre-registration once is
+    honest; doing it four times and still calling the number held out is not. Both sets are
+    reported and never pooled. <code>npm run verify:freeze</code> checks the claim rather
+    than asserting it.
   </div>
 </section>
 

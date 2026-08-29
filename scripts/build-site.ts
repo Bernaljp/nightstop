@@ -24,8 +24,14 @@ const pick = (arm: string, set: string): EvalSummary => {
   return m[m.length - 1].summary;
 };
 
-const dev = { b1: pick("b1-chatbot", "dev"), b2: pick("b2-steelman", "dev"), ns: pick("nightstop", "dev") };
-const ho = { b1: pick("b1-chatbot", "heldout"), ns: pick("nightstop", "heldout") };
+const dev = {
+  b1: pick("b1-chatbot", "dev"),
+  b2: pick("b2-steelman", "dev"),
+  abl: pick("a-model-checks", "dev"),
+  ns: pick("nightstop", "dev"),
+};
+// The clean held-out claim is the SECOND set, generated after the re-freeze.
+const ho = { b1: pick("b1-chatbot", "heldout2"), ns: pick("nightstop", "heldout2") };
 
 /* ---- the hero ribbon, from a real month ------------------------------------ */
 const truth: GroundTruth = JSON.parse(readFileSync("corpus/truth/dev/d05-halcyon.json", "utf8"));
@@ -62,6 +68,14 @@ const page = readFileSync("site/template.html", "utf8")
   .replace(/\{\{B2_WRONG\}\}/g, `${dev.b2.silentlyWrong}/${dev.b2.cases}`)
   .replace(/\{\{B2_RECALL\}\}/g, pct(dev.b2.conflictRecall))
   .replace(/\{\{B2_FALSE\}\}/g, String(dev.b2.falseAlarmCount))
+  .replace(/\{\{AB_TRUST\}\}/g, `${dev.abl.trustworthy}/${dev.abl.cases}`)
+  .replace(/\{\{AB_WRONG\}\}/g, `${dev.abl.silentlyWrong}/${dev.abl.cases}`)
+  .replace(/\{\{AB_RECALL\}\}/g, pct(dev.abl.conflictRecall))
+  .replace(/\{\{AB_FALSE\}\}/g, String(dev.abl.falseAlarmCount))
+  .replace(/\{\{AB_FIELDS\}\}/g, `${(dev.abl.fieldAccuracy * 100).toFixed(1)}%`)
+  .replace(/\{\{AB_COST\}\}/g, `$${(dev.abl.totalCostUsd / dev.abl.cases).toFixed(2)}`)
+  .replace(/\{\{B1_COST\}\}/g, `$${(dev.b1.totalCostUsd / dev.b1.cases).toFixed(2)}`)
+  .replace(/\{\{B2_COST\}\}/g, `$${(dev.b2.totalCostUsd / dev.b2.cases).toFixed(2)}`)
   .replace(/\{\{NS_TRUST\}\}/g, `${dev.ns.trustworthy}/${dev.ns.cases}`)
   .replace(/\{\{NS_WRONG\}\}/g, `${dev.ns.silentlyWrong}/${dev.ns.cases}`)
   .replace(/\{\{NS_RECALL\}\}/g, pct(dev.ns.conflictRecall))
