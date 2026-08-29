@@ -333,10 +333,36 @@ if (host && typeof host.use === "function") {
     "Live mode runs on claude.ai. Open the published page to use it — the recorded runs work anywhere.";
 }
 
+/**
+ * Trim to whole days rather than a character count.
+ *
+ * A full month is ~2,800 output tokens on top of adaptive thinking, which is a long
+ * enough generation for the stream to drop — that is what "the connection was lost"
+ * was. Ten days keeps it under a thousand and reliably finishes. Slicing at a fixed
+ * character count also cut a row in half, which is not a roster.
+ */
+function trimToDays(text, days) {
+  const lines = text.split("\n");
+  const seen = new Set();
+  const out = [];
+  for (const line of lines) {
+    const m = line.match(/\b(\d{2}[\/A-Z]\d{2}[\/A-Z]?\d{0,4}|\d{4}-\d{2}-\d{2}|\d{2}[A-Z]{3})\b/);
+    if (m) {
+      if (!seen.has(m[1])) {
+        if (seen.size >= days) break;
+        seen.add(m[1]);
+      }
+    }
+    out.push(line);
+  }
+  return { text: out.join("\n"), days: seen.size };
+}
+
 function loadSample() {
   const c = DATA.cases[Math.floor(Math.random() * DATA.cases.length)];
-  $("input").value = c.rosterText.slice(0, 4200);
-  $("livemeta").textContent = `${c.operator} · based ${c.base}`;
+  const t = trimToDays(c.rosterText, 10);
+  $("input").value = t.text;
+  $("livemeta").textContent = `${c.operator} · based ${c.base} · first ${t.days} days`;
   $("input").dataset.base = c.base;
   $("input").dataset.from = c.from;
   $("input").dataset.to = c.to;
@@ -372,8 +398,7 @@ $("run").addEventListener("click", async () => {
   const to = el.dataset.to || "2026-09-30";
   const commute = Number(el.dataset.commute || 55);
 
-  try {
-    const res = await sample.json(
+  const ask = (label) => sample.json(
       [{ role: "user", content:
 `${READER_PROMPT}
 
@@ -384,8 +409,29 @@ Roster (${from} to ${to}, home base ${base}):
 ${text}
 
 Return ONLY JSON: {"duties":[{"date":"YYYY-MM-DD","kind":"flight|positioning|standby|training|off","station":"IATA","endStation":"IATA","reportUtc":"ISO or null","endUtc":"ISO or null","sectors":[{"flightNo":"","origin":"","dest":"","depUtc":"ISO","arrUtc":"ISO"}]}],"derivations":[{"date":"","field":"","method":"","confidence":"high|medium|low"}],"uncertainties":[]}` }],
-      { modelTier: "complex", onText: () => { $("log").textContent = "Reading the roster… the model is working through the columns."; } },
+      {
+        modelTier: "complex",
+        // Real progress. A static string for ninety seconds is indistinguishable from
+        // a page that has died, which is how the first version read when it failed.
+        onText: ({ text }) => {
+          const rows = (text.match(/"date"/g) || []).length;
+          $("log").textContent = rows
+            ? `${label}Reading… ${rows} duties transcribed so far.`
+            : `${label}Reading the roster — working through the columns.`;
+        },
+      },
     );
+
+  try {
+    let res;
+    try {
+      res = await ask("");
+    } catch (first) {
+      // A dropped stream is worth one retry; a refusal or a rate limit is not.
+      if (first && (first.code === "not_granted" || first.code === "rate_limited")) throw first;
+      $("log").textContent = "The connection dropped. Trying once more…";
+      res = await ask("Retry · ");
+    }
 
     const duties = res?.duties || [];
     if (!duties.length) throw new Error("no duties came back");
@@ -441,8 +487,11 @@ Return ONLY JSON: {"duties":[{"date":"YYYY-MM-DD","kind":"flight|positioning|sta
     const code = err && err.code;
     $("log").textContent =
       code === "not_granted" ? "Live mode needs your permission to call Claude."
-      : code === "rate_limited" ? "Rate limited — wait a moment and try again."
-      : `Could not finish: ${err && err.message ? err.message : err}`;
+      : code === "rate_limited" ? "Rate limited — wait a minute and try again."
+      : code === "cancelled" ? "Stopped."
+      : "That did not finish, twice. Long rosters are the usual cause — press " +
+        "Load a sample for a shorter one, or trim what is in the box to a week. " +
+        "The recorded runs need no model at all and always work.";
     $("lout").innerHTML = '<div class="body empty">Nothing produced. The recorded runs still work.</div>';
   } finally {
     $("run").disabled = false;
