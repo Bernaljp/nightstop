@@ -1,0 +1,53 @@
+{
+  "caseId": "h01-corvus",
+  "arm": "b1-chatbot",
+  "costUsd": 0.77684375,
+  "wallMs": 330396,
+  "humanSeconds": 0,
+  "bucket": "misread",
+  "trustworthy": false,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 331,
+  "fieldsExact": false,
+  "mismatches": [
+    "2026-09-05[0] reportUtc: expected 2026-09-05T04:00:00.000Z, read 2026-09-05T14:00:00.000Z",
+    "2026-09-05[0] endUtc: expected 2026-09-05T14:00:00.000Z, read 2026-09-06T00:00:00.000Z",
+    "2026-09-06[0] reportUtc: expected 2026-09-06T12:00:00.000Z, read 2026-09-06T18:00:00.000Z",
+    "2026-09-06[0] endUtc: expected 2026-09-06T18:00:00.000Z, read 2026-09-07T00:00:00.000Z",
+    "2026-09-10[0] reportUtc: expected 2026-09-10T12:00:00.000Z, read 2026-09-10T19:00:00.000Z",
+    "2026-09-10[0] endUtc: expected 2026-09-10T19:00:00.000Z, read 2026-09-11T02:00:00.000Z",
+    "2026-09-11[0] reportUtc: expected 2026-09-11T11:00:00.000Z, read 2026-09-11T19:00:00.000Z",
+    "2026-09-11[0] endUtc: expected 2026-09-11T19:00:00.000Z, read 2026-09-12T03:00:00.000Z",
+    "2026-09-18[0] reportUtc: expected 2026-09-18T12:00:00.000Z, read 2026-09-18T19:00:00.000Z",
+    "2026-09-18[0] endUtc: expected 2026-09-18T19:00:00.000Z, read 2026-09-19T02:00:00.000Z"
+  ],
+  "mandatoryTotal": 12,
+  "surfacedCount": 0,
+  "missed": [
+    "far117-sleep-opportunity-8h@2026-09-19",
+    "far117-sleep-opportunity-8h@2026-09-20",
+    "far117-sleep-opportunity-8h@2026-09-21",
+    "op-rest-12h-home@2026-09-19",
+    "op-rest-12h-home@2026-09-20",
+    "op-rest-12h-home@2026-09-21",
+    "op-max-duty-13h@2026-09-19",
+    "op-max-duty-13h@2026-09-24",
+    "op-max-duty-13h@2026-09-26",
+    "pref-sleep-window-9h@2026-09-19",
+    "pref-sleep-window-9h@2026-09-20",
+    "pref-sleep-window-9h@2026-09-21"
+  ],
+  "falseAlarms": [
+    "REST-STANDBY-TO-REPORT@2026-09-19",
+    "REST-STANDBY-TO-REPORT@2026-09-07",
+    "WOCL-CONSECUTIVE-NIGHTS@2026-09-20",
+    "DUTY-LENGTH-NIGHT@2026-09-19",
+    "REST-BETWEEN-DUTIES@2026-09-19",
+    "EARLY-START@2026-09-13",
+    "WOCL-REDEYE@2026-09-09",
+    "ULTRA-LONG-DUTY@2026-09-24",
+    "DAY-OFF-ENCROACHMENT@2026-09-22",
+    "ROSTER-DATA-AMBIGUITY@2026-09-19"
+  ],
+  "planViolationCount": 13
+}

@@ -30,12 +30,18 @@ const runs: RunFile[] = readdirSync("results")
   .map((d) => join("results", d, "summary.json"))
   .filter(existsSync)
   .map((p) => JSON.parse(readFileSync(p, "utf8")) as RunFile)
-  .filter((r) => r.grades?.length >= 8)
+  .filter((r) => r.grades?.length >= 4)
   .sort((a, b) => a.at.localeCompare(b.at));
 
-const latest = new Map<string, RunFile>();
-for (const r of runs) latest.set(r.arm, r);
-const ordered = ARM_ORDER.filter((a) => latest.has(a)).map((a) => latest.get(a)!);
+// Dev and held-out are reported separately and never pooled. A held-out score averaged
+// into the development number is not a held-out score.
+const latestIn = (set: string) => {
+  const m = new Map<string, RunFile>();
+  for (const r of runs.filter((x) => x.set === set)) m.set(r.arm, r);
+  return ARM_ORDER.filter((a) => m.has(a)).map((a) => m.get(a)!);
+};
+const ordered = latestIn("dev");
+const heldout = latestIn("heldout");
 
 const pct = (x: number) => `${(x * 100).toFixed(1)}%`;
 const col = (r: RunFile, f: (s: EvalSummary) => string) => f(r.summary);
@@ -76,6 +82,42 @@ const lines: string[] = [
   "question the other numbers cannot: how much of any shortfall is the reading, and how",
   "much is the planning.",
   "",
+  ...(heldout.length
+    ? [
+        "## Held out",
+        "",
+        "Four cases generated from a separate seed **after every agent prompt was frozen**",
+        "(commit `7b77a67`), and not run against until the final evaluation. Reported",
+        "separately and never pooled with the development set — a held-out score averaged",
+        "into the dev number is not a held-out score.",
+        "",
+        "| Metric | " + heldout.map((r) => `\`${r.arm}\``).join(" | ") + " |",
+        "|---|" + heldout.map(() => "---").join("|") + "|",
+        "| **Trustworthy runs** | " +
+          heldout.map((r) => col(r, (s) => `**${s.trustworthy}/${s.cases}**`)).join(" | ") + " |",
+        "| **Silently wrong** | " +
+          heldout.map((r) => col(r, (s) => `**${s.silentlyWrong}/${s.cases}**`)).join(" | ") + " |",
+        "| Field-level parse accuracy | " +
+          heldout.map((r) => col(r, (s) => pct(s.fieldAccuracy))).join(" | ") + " |",
+        "| Conflict recall | " +
+          heldout.map((r) => col(r, (s) => pct(s.conflictRecall))).join(" | ") + " |",
+        "| False alarms raised | " +
+          heldout.map((r) => col(r, (s) => String(s.falseAlarmCount))).join(" | ") + " |",
+        "",
+        ...heldout.flatMap((r) => [
+          `**\`${r.arm}\`, case by case** — run \`${r.runId}\``,
+          "",
+          "| Case | Bucket | Fields correct | Conflicts surfaced | False alarms |",
+          "|---|---|---|---|---|",
+          ...r.grades.map(
+            (g) =>
+              `| \`${g.caseId}\` | \`${g.bucket}\` | ${g.fieldsCorrect}/${g.fieldsTotal} | ` +
+              `${g.surfacedCount}/${g.mandatoryTotal} | ${g.falseAlarms.length} |`,
+          ),
+          "",
+        ]),
+      ]
+    : []),
   "## Where every case landed",
   "",
   "| Bucket | " + ordered.map((r) => `\`${r.arm}\``).join(" | ") + " |",
@@ -105,7 +147,8 @@ for (const r of ordered) {
   );
 }
 
-const superseded = runs.filter((r) => latest.get(r.arm)?.runId !== r.runId);
+const shown = new Set([...ordered, ...heldout].map((r) => r.runId));
+const superseded = runs.filter((r) => !shown.has(r.runId));
 if (superseded.length) {
   lines.push(
     "## Earlier runs",
@@ -113,17 +156,20 @@ if (superseded.length) {
     "Kept rather than deleted. Listed so nothing is quietly dropped from the record.",
     "",
     ...superseded.map(
-      (r) => `- \`${r.runId}\` (${r.arm}) — ${r.summary.trustworthy}/${r.summary.cases} trustworthy`,
+      (r) =>
+        `- \`${r.runId}\` (${r.arm}, ${r.set}) — ${r.summary.trustworthy}/${r.summary.cases} trustworthy`,
     ),
     "",
   );
 }
 
 writeFileSync("RESULTS.md", lines.join("\n"));
-console.log(`RESULTS.md — ${ordered.length} arms, ${runs.length} runs on disk`);
-for (const r of ordered) {
+console.log(
+  `RESULTS.md — ${ordered.length} dev arms, ${heldout.length} held-out arms, ${runs.length} runs on disk`,
+);
+for (const r of [...ordered, ...heldout]) {
   console.log(
-    `  ${r.arm.padEnd(14)} trustworthy ${r.summary.trustworthy}/${r.summary.cases}  ` +
+    `  ${r.set.padEnd(8)} ${r.arm.padEnd(14)} trustworthy ${r.summary.trustworthy}/${r.summary.cases}  ` +
     `silentlyWrong ${r.summary.silentlyWrong}  recall ${pct(r.summary.conflictRecall)}  ` +
     `falseAlarms ${r.summary.falseAlarmCount}`,
   );

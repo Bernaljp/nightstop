@@ -29,6 +29,48 @@ the run that produced it.
 question the other numbers cannot: how much of any shortfall is the reading, and how
 much is the planning.
 
+## Held out
+
+Four cases generated from a separate seed **after every agent prompt was frozen**
+(commit `7b77a67`), and not run against until the final evaluation. Reported
+separately and never pooled with the development set — a held-out score averaged
+into the dev number is not a held-out score.
+
+| Metric | `b1-chatbot` | `nightstop` | `reference` |
+|---|---|---|---|
+| **Trustworthy runs** | **0/4** | **4/4** | **4/4** |
+| **Silently wrong** | **3/4** | **0/4** | **0/4** |
+| Field-level parse accuracy | 99.3% | 100.0% | 100.0% |
+| Conflict recall | 0.0% | 100.0% | 100.0% |
+| False alarms raised | 39 | 0 | 0 |
+
+**`b1-chatbot`, case by case** — run `b1-chatbot-2026-08-28T22-29-11-660Z`
+
+| Case | Bucket | Fields correct | Conflicts surfaced | False alarms |
+|---|---|---|---|---|
+| `h01-corvus` | `misread` | 331/341 | 0/12 | 10 |
+| `h02-lyra` | `missed` | 352/352 | 0/10 | 11 |
+| `h03-tellus` | `missed` | 330/330 | 0/3 | 8 |
+| `h04-atria` | `false_alarm` | 330/330 | 0/0 | 10 |
+
+**`nightstop`, case by case** — run `nightstop-2026-08-28T22-29-07-162Z`
+
+| Case | Bucket | Fields correct | Conflicts surfaced | False alarms |
+|---|---|---|---|---|
+| `h01-corvus` | `surfaced` | 341/341 | 12/12 | 0 |
+| `h02-lyra` | `surfaced` | 352/352 | 10/10 | 0 |
+| `h03-tellus` | `surfaced` | 330/330 | 3/3 | 0 |
+| `h04-atria` | `clean` | 330/330 | 0/0 | 0 |
+
+**`reference`, case by case** — run `reference-2026-08-28T22-29-05-849Z`
+
+| Case | Bucket | Fields correct | Conflicts surfaced | False alarms |
+|---|---|---|---|---|
+| `h01-corvus` | `surfaced` | 341/341 | 12/12 | 0 |
+| `h02-lyra` | `surfaced` | 352/352 | 10/10 | 0 |
+| `h03-tellus` | `surfaced` | 330/330 | 3/3 | 0 |
+| `h04-atria` | `clean` | 330/330 | 0/0 | 0 |
+
 ## Where every case landed
 
 | Bucket | `b1-chatbot` | `b2-steelman` | `nightstop` | `reference` |
@@ -87,7 +129,7 @@ Run `nightstop-2026-08-28T20-00-03-466Z` · 2026-08-28 20:06 · git `5d387f94` �
 
 ### `reference` — case by case
 
-Run `reference-2026-08-28T21-22-22-312Z` · 2026-08-28 21:22 · git `279cfc1f` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
+Run `reference-2026-08-28T22-29-05-195Z` · 2026-08-28 22:29 · git `c2632d26` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (12 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
@@ -104,5 +146,14 @@ Run `reference-2026-08-28T21-22-22-312Z` · 2026-08-28 21:22 · git `279cfc1f` �
 
 Kept rather than deleted. Listed so nothing is quietly dropped from the record.
 
-- `nightstop-2026-08-28T19-46-11-243Z` (nightstop) — 7/8 trustworthy
-- `reference-2026-08-28T19-55-21-889Z` (reference) — 8/8 trustworthy
+- `nightstop-2026-08-28T19-46-11-243Z` (nightstop, dev) — 7/8 trustworthy
+- `reference-2026-08-28T19-55-21-889Z` (reference, dev) — 8/8 trustworthy
+- `reference-2026-08-28T21-22-22-312Z` (reference, dev) — 8/8 trustworthy
+- `nightstop-repair-2026-08-28T21-26-57-735Z` (nightstop-repair, dev) — 8/8 trustworthy
+- `reference-2026-08-28T21-39-21-858Z` (reference, dev) — 8/8 trustworthy
+- `nightstop-2026-08-28T21-38-15-412Z` (nightstop, heldout) — 3/4 trustworthy
+- `b1-chatbot-2026-08-28T21-38-25-431Z` (b1-chatbot, heldout) — 0/4 trustworthy
+- `reference-2026-08-28T21-45-27-292Z` (reference, dev) — 8/8 trustworthy
+- `reference-2026-08-28T21-45-27-905Z` (reference, heldout) — 4/4 trustworthy
+- `nightstop-2026-08-28T21-45-47-942Z` (nightstop, heldout) — 3/4 trustworthy
+- `b1-chatbot-2026-08-28T21-45-53-042Z` (b1-chatbot, heldout) — 0/4 trustworthy

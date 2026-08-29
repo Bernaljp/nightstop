@@ -1,0 +1,29 @@
+{
+  "caseId": "h04-atria",
+  "arm": "b1-chatbot",
+  "costUsd": 0.6227535000000001,
+  "wallMs": 251349,
+  "humanSeconds": 0,
+  "bucket": "false_alarm",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 0,
+  "surfacedCount": 0,
+  "missed": [],
+  "falseAlarms": [
+    "early-start-restricted-sleep@2026-09-10",
+    "late-finish-into-early-start@2026-09-14",
+    "late-finish-into-early-start@2026-09-17",
+    "consecutive-early-starts@2026-09-18",
+    "late-finish-into-early-start@2026-09-21",
+    "reduced-rest-commute-adjusted@2026-09-23",
+    "wocl-duty-window@2026-09-24",
+    "wocl-duty-window@2026-09-26",
+    "early-start-after-days-off@2026-09-30",
+    "roster-interpretation-assumption@2026-09-05"
+  ],
+  "planViolationCount": 5
+}

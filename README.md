@@ -111,6 +111,42 @@ real. **Silently wrong** is reported at equal prominence because it is the only 
 that can hurt someone: a plan delivered off a misread roster, or one that withheld a real
 collision. A binary primary alone hides the difference between *wrong* and *flagged*.
 
+### Held out
+
+Four more rosters, generated from a separate seed **after every agent prompt was frozen**
+and not run against until the end. They recombine the same documented layout differences
+into shapes the development set does not contain — every hard feature at once, a roster
+printing no totals at all so the reader's self-check is simply absent, Spanish labels on
+a daylight-saving month, and single-character activity codes where a day off is a bare
+hyphen.
+
+| | `b1-chatbot` | **`nightstop`** | `reference` |
+|---|---|---|---|
+| Trustworthy runs | 0/4 | **4/4** | 4/4 |
+| Silently wrong | 3/4 | **0/4** | 0/4 |
+| Conflict recall | 0% | 100% | 100% |
+| False alarms | 39 | **0** | 0 |
+
+**How that number was reached, because it matters.** The first held-out run scored 3/4,
+and the failing case turned out to be a bug in *my corpus*, not the reader: the generator
+dated rows by base local day while printing times in UTC, so the date column and the time
+column disagreed with nothing on the page to say which to believe. The reader transcribed
+it exactly as printed and flagged the resulting overlap as probably an error in the source
+roster — the more defensible of the two readings. My answer key was wrong. Fixing it
+exposed a second bug (the re-dating collided with day-off filling, printing a flight and a
+day off on the same date), and the set was re-run after that too.
+
+**No agent prompt, tool or rule was changed at any point.** That is checkable rather than
+promised:
+
+```bash
+npm run verify:freeze
+```
+
+It diffs everything an agent reads against the freeze commit and fails if anything moved.
+Fixing a fixture is not tuning a system, but the distinction is only worth anything if
+someone else can verify it.
+
 The metric, the field list and the held-out design were fixed in
 [`docs/eval-preregistration.md`](docs/eval-preregistration.md) before any agent ran.
 
@@ -204,6 +240,7 @@ short version:
 npm install
 npm run corpus          # regenerate the 8 rosters from a seed, byte-identical
 npm run verify:grader   # 42 assertions proving the scoreboard — no API key needed
+npm run verify:freeze   # proves the held-out set was not tuned against
 npm run eval -- --arm reference    # the deterministic ceiling — no API key needed
 npm run eval -- --arm nightstop    # the full pipeline (needs credentials)
 npm run report          # rebuild RESULTS.md from the runs on disk

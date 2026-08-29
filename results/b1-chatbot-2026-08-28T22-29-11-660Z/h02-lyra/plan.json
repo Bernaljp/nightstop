@@ -1,0 +1,520 @@
+{
+  "caseId": "h02-lyra",
+  "blocks": [
+    {
+      "kind": "main",
+      "startUtc": "2026-09-01T19:45:00Z",
+      "endUtc": "2026-09-02T03:25:00Z",
+      "station": "LHR",
+      "why": "Early night on the day off so you get a full run at sleep before a 06:10 report and the 55-minute drive in.",
+      "id": "b0",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-02T18:15:00Z",
+      "endUtc": "2026-09-03T02:20:00Z",
+      "station": "LHR",
+      "why": "Straight to bed after the four-sector day — tomorrow's 05:05 report means lights out before 20:00 local.",
+      "id": "b1",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-03T12:00:00Z",
+      "endUtc": "2026-09-03T16:30:00Z",
+      "station": "LHR",
+      "why": "Big afternoon anchor sleep in a blacked-out room; this is the sleep that gets you through the ARN all-nighter, not the couple of hours you had last night.",
+      "id": "b2",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-04T09:30:00Z",
+      "endUtc": "2026-09-04T16:00:00Z",
+      "station": "LHR",
+      "why": "Home from the night duty and straight down — eyeshades, phone off, and you're back up in time to eat before the 19:10 report.",
+      "id": "b3",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-05T01:15:00Z",
+      "endUtc": "2026-09-05T08:05:00Z",
+      "station": "LHR",
+      "why": "Short but genuine night in bed after the FRA turn; the 10:50 report is the latest you'll see for days so use it.",
+      "id": "b4",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-05T23:30:00Z",
+      "endUtc": "2026-09-06T08:00:00Z",
+      "station": "LHR",
+      "why": "First unbroken night of the month with a day off in front of it — no alarm beyond 09:00 local so you can still get down early tonight.",
+      "id": "b5",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-06T19:00:00Z",
+      "endUtc": "2026-09-07T02:55:00Z",
+      "station": "LHR",
+      "why": "Deliberately early bedtime on the day off, because a 13h53 duty starting at 05:40 is unforgiving if you go into it short.",
+      "id": "b6",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-07T20:30:00Z",
+      "endUtc": "2026-09-08T05:30:00Z",
+      "station": "LHR",
+      "why": "Long lie-in after fourteen hours on duty; nothing to get up for until the afternoon.",
+      "id": "b7",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-08T11:00:00Z",
+      "endUtc": "2026-09-08T12:45:00Z",
+      "station": "LHR",
+      "why": "Nap before the drive in — today finishes at 02:56 local and you'll be flying the last BCN sector in the middle of your night.",
+      "id": "b8",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-09T03:15:00Z",
+      "endUtc": "2026-09-09T09:30:00Z",
+      "station": "LHR",
+      "why": "Post-night sleep on arriving home, capped at mid-morning so tonight's early bedtime is still possible.",
+      "id": "b9",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-09T18:30:00Z",
+      "endUtc": "2026-09-10T02:20:00Z",
+      "station": "LHR",
+      "why": "Second sleep of the day off, pulled early to cover the 05:05 report.",
+      "id": "b10",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-10T15:00:00Z",
+      "endUtc": "2026-09-10T15:45:00Z",
+      "station": "LHR",
+      "why": "Forty minutes on the bed after the early — takes the edge off without wrecking tonight.",
+      "id": "b11",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-10T21:00:00Z",
+      "endUtc": "2026-09-11T05:15:00Z",
+      "station": "LHR",
+      "why": "Full night before the sim; you want to be sharp for eight hours in the box.",
+      "id": "b12",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-11T17:00:00Z",
+      "endUtc": "2026-09-11T23:15:00Z",
+      "station": "LHR",
+      "why": "Sleep at 18:00 local straight off the sim — with a 02:00 report there is no other window, so treat it as the night, not a nap.",
+      "id": "b13",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-12T13:00:00Z",
+      "endUtc": "2026-09-12T19:15:00Z",
+      "station": "LHR",
+      "why": "The only real sleep between two duties on the same date — curtains shut, do not let this one slip, because the next duty runs thirteen hours straight through the back of the clock.",
+      "id": "b14",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-13T12:00:00Z",
+      "endUtc": "2026-09-13T16:30:00Z",
+      "station": "LHR",
+      "why": "Home from the all-nighter and down for the afternoon; four days off behind it so no need to force a normal night immediately.",
+      "id": "b15",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-13T22:00:00Z",
+      "endUtc": "2026-09-14T07:00:00Z",
+      "station": "LHR",
+      "why": "Back onto a normal London night to start rebuilding after the 12th.",
+      "id": "b16",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-14T22:00:00Z",
+      "endUtc": "2026-09-15T06:30:00Z",
+      "station": "LHR",
+      "why": "Routine night off — daylight and exercise in the morning to lock the body clock back down.",
+      "id": "b17",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-15T22:00:00Z",
+      "endUtc": "2026-09-16T06:30:00Z",
+      "station": "LHR",
+      "why": "Routine night off, keeping the pattern steady.",
+      "id": "b18",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-16T22:30:00Z",
+      "endUtc": "2026-09-17T07:30:00Z",
+      "station": "LHR",
+      "why": "Slightly later night because tomorrow is an afternoon report with a 02:07 finish.",
+      "id": "b19",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-17T10:30:00Z",
+      "endUtc": "2026-09-17T12:00:00Z",
+      "station": "LHR",
+      "why": "Ninety minutes before you leave — the ARN return lands you at 01:37 local and that nap is what flies it.",
+      "id": "b20",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-18T02:30:00Z",
+      "endUtc": "2026-09-18T08:30:00Z",
+      "station": "LHR",
+      "why": "Sleep as soon as you're through the door, but out by mid-morning: you have to be asleep again by 20:30 for Saturday's early.",
+      "id": "b21",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-18T18:30:00Z",
+      "endUtc": "2026-09-19T02:55:00Z",
+      "station": "LHR",
+      "why": "Second sleep of the day off, timed for the 05:40 report — this is the one that's hardest to get, so no screens after the afternoon.",
+      "id": "b22",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-19T12:30:00Z",
+      "endUtc": "2026-09-19T13:30:00Z",
+      "station": "LHR",
+      "why": "An hour down after the BCN turn, then up and moving, because you're going again at 05:05 tomorrow.",
+      "id": "b23",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-19T18:15:00Z",
+      "endUtc": "2026-09-20T02:20:00Z",
+      "station": "LHR",
+      "why": "Second consecutive very early bedtime for a second consecutive early start.",
+      "id": "b24",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-20T11:15:00Z",
+      "endUtc": "2026-09-20T12:15:00Z",
+      "station": "LHR",
+      "why": "Short nap on getting home to pay back two truncated nights.",
+      "id": "b25",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-20T21:30:00Z",
+      "endUtc": "2026-09-21T07:00:00Z",
+      "station": "LHR",
+      "why": "Long night with a midday report to follow — the first chance this week to sleep to a civilised hour.",
+      "id": "b26",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-21T21:30:00Z",
+      "endUtc": "2026-09-22T06:30:00Z",
+      "station": "LHR",
+      "why": "Normal night into the day off.",
+      "id": "b27",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-22T19:30:00Z",
+      "endUtc": "2026-09-23T03:25:00Z",
+      "station": "LHR",
+      "why": "Early to bed on the day off ahead of a 06:10 report and a thirteen-hour day out to FCO.",
+      "id": "b28",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-23T20:30:00Z",
+      "endUtc": "2026-09-24T06:30:00Z",
+      "station": "LHR",
+      "why": "Sleep in as long as you like — four days off start here.",
+      "id": "b29",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-24T22:00:00Z",
+      "endUtc": "2026-09-25T06:30:00Z",
+      "station": "LHR",
+      "why": "Normal night off.",
+      "id": "b30",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-25T22:00:00Z",
+      "endUtc": "2026-09-26T06:30:00Z",
+      "station": "LHR",
+      "why": "Normal night off.",
+      "id": "b31",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-26T21:30:00Z",
+      "endUtc": "2026-09-27T05:30:00Z",
+      "station": "LHR",
+      "why": "Start walking bedtime back an hour tonight so Monday's 05:05 report doesn't hit cold.",
+      "id": "b32",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-27T14:00:00Z",
+      "endUtc": "2026-09-27T14:45:00Z",
+      "station": "LHR",
+      "why": "Short afternoon nap on the last day off to insure against not falling asleep at 20:00.",
+      "id": "b33",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-27T19:00:00Z",
+      "endUtc": "2026-09-28T02:20:00Z",
+      "station": "LHR",
+      "why": "Lights out at 20:00 local for an 05:05 report — the alarm is at 03:20 and the drive is 55 minutes.",
+      "id": "b34",
+      "ruleIds": []
+    },
+    {
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-28T16:00:00Z",
+      "endUtc": "2026-09-28T16:45:00Z",
+      "station": "LHR",
+      "why": "Quick nap home from the four-sector early to stop you crashing out at 19:00.",
+      "id": "b35",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-28T21:00:00Z",
+      "endUtc": "2026-09-29T06:30:00Z",
+      "station": "LHR",
+      "why": "Proper night in — tomorrow is an afternoon report finishing at 23:37, so bank it now.",
+      "id": "b36",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-29T10:00:00Z",
+      "endUtc": "2026-09-29T10:45:00Z",
+      "station": "LHR",
+      "why": "Forty-five minutes before you leave, so the last DUB sector at 21:42 isn't flown on fifteen hours awake.",
+      "id": "b37",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-30T00:00:00Z",
+      "endUtc": "2026-09-30T08:00:00Z",
+      "station": "LHR",
+      "why": "Home just after midnight and straight down; nothing until an afternoon report.",
+      "id": "b38",
+      "ruleIds": []
+    },
+    {
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-30T11:30:00Z",
+      "endUtc": "2026-09-30T12:15:00Z",
+      "station": "LHR",
+      "why": "Short top-up before the last duty — mainly so the drive home at 20:30 local is a safe one.",
+      "id": "b39",
+      "ruleIds": []
+    },
+    {
+      "kind": "main",
+      "startUtc": "2026-09-30T21:30:00Z",
+      "endUtc": "2026-10-01T06:00:00Z",
+      "station": "LHR",
+      "why": "End of the roster period — full night, no alarm.",
+      "id": "b40",
+      "ruleIds": []
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "ORO.FTL.235(b)",
+      "date": "2026-09-03",
+      "statement": "Two duties on 3 September with only 10h02 between them (off duty 10:28Z, next report 20:30Z), and the second is an 11h37 overnight — after the commute at both ends that leaves roughly 8 hours at home, in the afternoon, when sleep is hardest to get.",
+      "options": [
+        "Ask crewing to confirm the rest calculation and whether the minimum is 12h at home base",
+        "Request the 05:05 BCN turn be dropped so the day is the night duty only",
+        "Protect a full blacked-out afternoon sleep 13:00–17:30 local and be prepared to call fatigued if you don't get it"
+      ],
+      "where": "2026-09-03",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.235(b)",
+      "date": "2026-09-04",
+      "statement": "Report at 18:10Z on 4 September is only 10h03 after coming off an 11h37 night duty at 08:07Z, and all of that rest falls in daylight with none of it in a local night.",
+      "options": [
+        "Query the rest period against the length of the preceding night duty",
+        "Ask for the FRA turn on the 4th to be reallocated",
+        "Sleep 10:30–17:00 local in a fully darkened room and report your actual sleep obtained"
+      ],
+      "where": "2026-09-04",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.235(b)",
+      "date": "2026-09-05",
+      "statement": "Off duty 23:50Z on the 4th, report 09:50Z on the 5th — 10h00, which after two 55-minute commutes gives about 7 hours in bed, and it is the third disturbed night running.",
+      "options": [
+        "Query the rest with crewing",
+        "Ask for a later report on the 5th",
+        "Accept the shortened night but keep the 5th's 12h11 duty under review for a fatigue report"
+      ],
+      "where": "2026-09-05",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.235(b)",
+      "date": "2026-09-12",
+      "statement": "Sim finishes 15:00Z on 11 September and the next report is 01:00Z on the 12th — 10h00 rest, and the duty starts inside the window of circadian low with no prior night's sleep to draw on.",
+      "options": [
+        "Ask for the sim to be moved off the 11th",
+        "Ask for the 02:00 local departure to be crewed by someone off a rest day",
+        "Take an evening anchor sleep 18:00–00:15 local and declare it if you cannot sleep at that hour"
+      ],
+      "where": "2026-09-12",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.235(b)",
+      "date": "2026-09-12",
+      "statement": "Two duties again on 12 September: the first ends 11:35Z, the second reports 21:35Z — 10h00 apart — and the second runs 13h04 to 10:39Z the next morning, covering the entire 02:00–06:00 body-clock low in flight.",
+      "options": [
+        "Ask crewing to split these across two crew members",
+        "Request removal of the ARN sector at the end of the second duty",
+        "Sleep 14:00–20:15 local, plan in-seat controlled rest with the other pilot, and file a fatigue report either way"
+      ],
+      "where": "2026-09-12",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.205 (Table 2, max daily FDP)",
+      "date": "2026-09-07",
+      "statement": "13h53 flight duty with four sectors from an 05:40 local report; the acclimatised table indicates around 11h30 for that start and sector count, so this looks roughly 2h20 over before any extension.",
+      "options": [
+        "Ask the operator to confirm the FDP calculation and what extension or augmentation is assumed",
+        "Request a sector be removed",
+        "Plan for a fatigue report at the end of the duty and do not accept further extension on the day"
+      ],
+      "where": "2026-09-07",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.205 (Table 2, max daily FDP)",
+      "date": "2026-09-12",
+      "statement": "13h04 flight duty with four sectors from a 22:35 local report; a night start with four sectors indicates around 10h00, so this is about 3 hours over on the face of it.",
+      "options": [
+        "Ask crewing to confirm how this duty is constructed",
+        "Request the last ARN sector be removed",
+        "Confirm before report whether augmented crew or in-flight rest is planned"
+      ],
+      "where": "2026-09-12",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.205 (Table 2, max daily FDP)",
+      "date": "2026-09-03",
+      "statement": "The 3 September night duty is 11h37 with four sectors from a 21:30 local report, where the table indicates around 10h00.",
+      "options": [
+        "Query the FDP with crewing",
+        "Ask for the CDG turn at the end of the night to be removed",
+        "Confirm what extension is being applied and on what basis"
+      ],
+      "where": "2026-09-03",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.205 (Table 2, max daily FDP)",
+      "date": "2026-09-08",
+      "statement": "Several duties sit slightly over the indicative table figures for their report time and four sectors: 8 Sep 11h31 (indicative ~11h00), 17 Sep 11h27 (~11h15), 23 Sep 12h55 (~12h00), 5 Sep 12h11 (~12h00) and the 02:00 duty on 12 Sep 10h35 (~10h00).",
+      "options": [
+        "Send crewing one query covering all of them and ask which extension provision each relies on",
+        "Treat each as a day where you should not accept a commander's discretion extension",
+        "Keep a note of actual on-blocks times to support a fatigue report if any run late"
+      ],
+      "where": "2026-09-08",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ORO.FTL.235(d) (extended recovery rest)",
+      "date": "2026-09-10",
+      "statement": "From the 2nd to the 13th there is no clear 36-hour break containing two full local nights — the day off on the 6th gives 30h39, and the break around the 9th ends with an 05:05 report so the second local night is cut short.",
+      "options": [
+        "Ask crewing to confirm where the weekly extended recovery rest falls in this block",
+        "Request the 10th off, which would give a genuine two-night break",
+        "Flag the cumulative picture from 2–13 September rather than any single duty"
+      ],
+      "where": "2026-09-10",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "CS FTL.1.235 (consecutive disruptive schedules)",
+      "date": "2026-09-19",
+      "statement": "An 02:07 local finish on the 18th, one day off, then early reports of 05:40 and 05:05 on consecutive days — three restricted sleep opportunities in a row and a rising sleep debt into the week.",
+      "options": [
+        "Ask for the 20th to be swapped to a later report",
+        "Take the recovery naps as planned on the 19th and 20th",
+        "File a fatigue report if the second early start feels degraded rather than pushing through"
+      ],
+      "where": "2026-09-19",
+      "hardness": "recommendation"
+    },
+    {
+      "ruleId": "ADVISORY.SLEEP.WOCL",
+      "date": "2026-09-13",
+      "statement": "Nothing in the roster was unreadable — local and UTC pairs are consistent throughout (LHR/DUB +1, BCN/CDG/FRA/ARN/FCO +2) — but note this month contains no nightstops, so every recovery sleep is at home and every early report carries the full 55-minute commute.",
+      "options": [
+        "Use the printed Z times as the source of truth as this plan does",
+        "Set alarms in UTC to avoid a local-time slip on the +1 duties",
+        "Tell family in advance which afternoons on the 3rd, 4th and 12th are protected sleep"
+      ],
+      "where": "2026-09-13",
+      "hardness": "recommendation"
+    }
+  ]
+}

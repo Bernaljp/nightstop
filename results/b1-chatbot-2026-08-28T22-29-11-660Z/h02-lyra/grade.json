@@ -1,0 +1,41 @@
+{
+  "caseId": "h02-lyra",
+  "arm": "b1-chatbot",
+  "costUsd": 0.808748,
+  "wallMs": 347918,
+  "humanSeconds": 0,
+  "bucket": "missed",
+  "trustworthy": false,
+  "fieldsTotal": 352,
+  "fieldsCorrect": 352,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 10,
+  "surfacedCount": 0,
+  "missed": [
+    "op-rest-12h-home@2026-09-03",
+    "op-rest-12h-home@2026-09-04",
+    "op-rest-12h-home@2026-09-05",
+    "op-rest-12h-home@2026-09-12",
+    "op-max-duty-13h@2026-09-07",
+    "op-max-duty-13h@2026-09-12",
+    "pref-sleep-window-9h@2026-09-03",
+    "pref-sleep-window-9h@2026-09-04",
+    "pref-sleep-window-9h@2026-09-05",
+    "pref-sleep-window-9h@2026-09-12"
+  ],
+  "falseAlarms": [
+    "ORO.FTL.235(b)@2026-09-03",
+    "ORO.FTL.235(b)@2026-09-04",
+    "ORO.FTL.235(b)@2026-09-05",
+    "ORO.FTL.235(b)@2026-09-12",
+    "ORO.FTL.205 (Table 2, max daily FDP)@2026-09-07",
+    "ORO.FTL.205 (Table 2, max daily FDP)@2026-09-12",
+    "ORO.FTL.205 (Table 2, max daily FDP)@2026-09-03",
+    "ORO.FTL.205 (Table 2, max daily FDP)@2026-09-08",
+    "ORO.FTL.235(d) (extended recovery rest)@2026-09-10",
+    "CS FTL.1.235 (consecutive disruptive schedules)@2026-09-19",
+    "ADVISORY.SLEEP.WOCL@2026-09-13"
+  ],
+  "planViolationCount": 2
+}

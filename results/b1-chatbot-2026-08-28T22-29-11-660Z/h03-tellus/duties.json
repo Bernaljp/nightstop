@@ -1,0 +1,397 @@
+[
+  {
+    "date": "2026-10-11",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "JFK",
+    "reportUtc": "2026-10-11T18:20:00Z",
+    "endUtc": "2026-10-12T04:20:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL811",
+        "origin": "MAD",
+        "dest": "JFK",
+        "depUtc": "2026-10-11T19:50:00Z",
+        "arrUtc": "2026-10-12T03:50:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-12",
+    "kind": "flight",
+    "station": "JFK",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-13T00:20:00Z",
+    "endUtc": "2026-10-13T10:20:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL374",
+        "origin": "JFK",
+        "dest": "MAD",
+        "depUtc": "2026-10-13T01:50:00Z",
+        "arrUtc": "2026-10-13T09:50:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-13",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-14",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-14T03:40:00Z",
+    "endUtc": "2026-10-14T17:59:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL231",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-10-14T04:40:00Z",
+        "arrUtc": "2026-10-14T07:05:00Z"
+      },
+      {
+        "flightNo": "TL292",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-10-14T08:03:00Z",
+        "arrUtc": "2026-10-14T10:28:00Z"
+      },
+      {
+        "flightNo": "TL723",
+        "origin": "MAD",
+        "dest": "FRA",
+        "depUtc": "2026-10-14T11:30:00Z",
+        "arrUtc": "2026-10-14T14:05:00Z"
+      },
+      {
+        "flightNo": "TL265",
+        "origin": "FRA",
+        "dest": "MAD",
+        "depUtc": "2026-10-14T14:54:00Z",
+        "arrUtc": "2026-10-14T17:29:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-15",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "SIN",
+    "reportUtc": "2026-10-15T09:10:00Z",
+    "endUtc": "2026-10-16T00:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL257",
+        "origin": "MAD",
+        "dest": "SIN",
+        "depUtc": "2026-10-15T10:40:00Z",
+        "arrUtc": "2026-10-16T00:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-16",
+    "kind": "off",
+    "station": "SIN",
+    "endStation": "SIN",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-17",
+    "kind": "flight",
+    "station": "SIN",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-17T03:10:00Z",
+    "endUtc": "2026-10-17T18:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL433",
+        "origin": "SIN",
+        "dest": "MAD",
+        "depUtc": "2026-10-17T04:40:00Z",
+        "arrUtc": "2026-10-17T18:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-18",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-19",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-20",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-21",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-22",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "DXB",
+    "reportUtc": "2026-10-22T18:20:00Z",
+    "endUtc": "2026-10-23T03:20:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL775",
+        "origin": "MAD",
+        "dest": "DXB",
+        "depUtc": "2026-10-22T19:50:00Z",
+        "arrUtc": "2026-10-23T02:50:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-23",
+    "kind": "off",
+    "station": "DXB",
+    "endStation": "DXB",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "flight",
+    "station": "DXB",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-24T17:40:00Z",
+    "endUtc": "2026-10-25T02:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL640",
+        "origin": "DXB",
+        "dest": "MAD",
+        "depUtc": "2026-10-24T19:10:00Z",
+        "arrUtc": "2026-10-25T02:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-25",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-26",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "GRU",
+    "reportUtc": "2026-10-26T13:35:00Z",
+    "endUtc": "2026-10-27T01:55:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL186",
+        "origin": "MAD",
+        "dest": "GRU",
+        "depUtc": "2026-10-26T15:05:00Z",
+        "arrUtc": "2026-10-27T01:25:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-27",
+    "kind": "flight",
+    "station": "GRU",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-27T17:35:00Z",
+    "endUtc": "2026-10-28T05:55:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL806",
+        "origin": "GRU",
+        "dest": "MAD",
+        "depUtc": "2026-10-27T19:05:00Z",
+        "arrUtc": "2026-10-28T05:25:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-28",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-29",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-10-30",
+    "kind": "standby",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-10-30T12:00:00Z",
+    "endUtc": "2026-10-30T21:00:00Z",
+    "sectors": []
+  },
+  {
+    "date": "2026-10-31",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-11-01",
+    "kind": "standby",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-11-01T04:00:00Z",
+    "endUtc": "2026-11-01T13:00:00Z",
+    "sectors": []
+  },
+  {
+    "date": "2026-11-02",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "DXB",
+    "reportUtc": "2026-11-02T10:10:00Z",
+    "endUtc": "2026-11-02T19:10:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL268",
+        "origin": "MAD",
+        "dest": "DXB",
+        "depUtc": "2026-11-02T11:40:00Z",
+        "arrUtc": "2026-11-02T18:40:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-03",
+    "kind": "off",
+    "station": "DXB",
+    "endStation": "DXB",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-11-04",
+    "kind": "flight",
+    "station": "DXB",
+    "endStation": "MAD",
+    "reportUtc": "2026-11-04T17:40:00Z",
+    "endUtc": "2026-11-05T02:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL396",
+        "origin": "DXB",
+        "dest": "MAD",
+        "depUtc": "2026-11-04T19:10:00Z",
+        "arrUtc": "2026-11-05T02:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-05",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-11-06",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "BOS",
+    "reportUtc": "2026-11-06T10:10:00Z",
+    "endUtc": "2026-11-06T19:40:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL514",
+        "origin": "MAD",
+        "dest": "BOS",
+        "depUtc": "2026-11-06T11:40:00Z",
+        "arrUtc": "2026-11-06T19:10:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-07",
+    "kind": "flight",
+    "station": "BOS",
+    "endStation": "MAD",
+    "reportUtc": "2026-11-07T19:35:00Z",
+    "endUtc": "2026-11-08T05:05:00Z",
+    "sectors": [
+      {
+        "flightNo": "TL862",
+        "origin": "BOS",
+        "dest": "MAD",
+        "depUtc": "2026-11-07T21:05:00Z",
+        "arrUtc": "2026-11-08T04:35:00Z"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-08",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "date": "2026-11-09",
+    "kind": "off",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  }
+]

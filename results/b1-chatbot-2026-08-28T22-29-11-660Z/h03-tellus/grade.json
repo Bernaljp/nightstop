@@ -1,0 +1,31 @@
+{
+  "caseId": "h03-tellus",
+  "arm": "b1-chatbot",
+  "costUsd": 0.5822115,
+  "wallMs": 248230,
+  "humanSeconds": 0,
+  "bucket": "missed",
+  "trustworthy": false,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 3,
+  "surfacedCount": 0,
+  "missed": [
+    "op-max-duty-13h@2026-10-14",
+    "op-max-duty-13h@2026-10-15",
+    "op-max-duty-13h@2026-10-17"
+  ],
+  "falseAlarms": [
+    "day-off-encroached-by-duty@2026-10-13",
+    "wocl-sleep-opportunity-misaligned@2026-10-14",
+    "report-offset-inconsistent@2026-10-14",
+    "long-duty-with-early-report@2026-10-14",
+    "dst-transition-during-duty@2026-10-25",
+    "short-layover-with-large-time-shift@2026-10-27",
+    "standby-window-in-wocl@2026-11-01",
+    "consecutive-night-finishes@2026-11-07"
+  ],
+  "planViolationCount": 9
+}
