@@ -34,6 +34,14 @@ export interface Span {
   to: number;
   label: string;
   title: string;
+  /**
+   * Sleep taken somewhere other than base — a hotel, not their own bed.
+   *
+   * Drawn in its own colour because it is the single fact a crew member scans a month
+   * for. Which nights are at home is the shape of the month, and it was invisible when
+   * every night was the same blue.
+   */
+  away?: boolean;
 }
 
 export interface DayRow {
@@ -95,6 +103,7 @@ function addSpan(
   tz: string,
   label: string,
   title: string,
+  away = false,
 ): void {
   const a = new Date(startUtc);
   const b = new Date(endUtc);
@@ -105,7 +114,7 @@ function addSpan(
     const from = dayFraction(a, date, tz) ?? 0;
     const to = dayFraction(b, date, tz) ?? 1;
     if (to - from < 0.004) continue;
-    row.spans.push({ kind, from, to, label, title });
+    row.spans.push({ kind, from, to, label, title, away });
   }
 }
 
@@ -204,8 +213,13 @@ export function buildBriefData(
     if (b.kind === "main") shortest = Math.min(shortest, mins);
     const label = range(b.startUtc, b.endUtc);
     // The station rides along as a place, never as a second set of hours.
-    const where = tzOf(b.station) === tz ? "" : ` · you are at ${b.station}`;
-    addSpan(rows, b.kind, b.startUtc, b.endUtc, tz, label, `${label} ${zone.label} time${where}. ${b.why}`);
+    const away = b.station !== profile.base;
+    const where = away ? ` · you are at ${b.station}, not at ${profile.base}` : "";
+    addSpan(
+      rows, b.kind, b.startUtc, b.endUtc, tz, label,
+      `${label} ${zone.label} time${where}. ${b.why}`,
+      away && b.kind === "main",
+    );
     const row = rows.get(localDate(new Date(b.startUtc), tz));
     if (row) {
       row.sleepText = [row.sleepText, `${label} (${formatDuration(mins)})`]

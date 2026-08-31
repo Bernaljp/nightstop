@@ -145,6 +145,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-09-15T18:12",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-15T18:12:00.000Z",
+      "endUtc": "2026-09-15T19:00:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-15 took 3h00 out of the hours you normally sleep, and you are 4h48 from your next proper night. Take this 48m now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-09-15T23:00",
       "kind": "main",
       "startUtc": "2026-09-15T23:00:00.000Z",
@@ -167,6 +179,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-09-17T11:02",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-17T11:02:00.000Z",
+      "endUtc": "2026-09-17T13:02:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-17 took 3h00 out of the hours you normally sleep, and you are 8h58 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-09-17T20:00",
       "kind": "main",
       "startUtc": "2026-09-17T20:00:00.000Z",
@@ -175,6 +199,18 @@
       "why": "An early night: you leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-09-18T10:55",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-18T10:55:00.000Z",
+      "endUtc": "2026-09-18T12:55:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-18 took 2h20 out of the hours you normally sleep, and you are 12h05 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
       ]
     },
     {
@@ -208,6 +244,18 @@
       "why": "An early night: you leave for the airport the moment this ends. 6h48 rather than a full night — you will only have been up 13h37 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-09-21T12:51",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-21T12:51:00.000Z",
+      "endUtc": "2026-09-21T14:51:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-21 took 3h00 out of the hours you normally sleep, and you are 10h09 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
       ]
     },
     {
@@ -263,6 +311,18 @@
       "why": "An early night: you leave for the airport the moment this ends. 6h25 rather than a full night — you will only have been up 12h49 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-09-26T13:12",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-26T13:12:00.000Z",
+      "endUtc": "2026-09-26T15:12:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-26 took 1h50 out of the hours you normally sleep, and you are 9h48 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
       ]
     },
     {

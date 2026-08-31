@@ -101,6 +101,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-09-10T11:57",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-10T11:57:00.000Z",
+      "endUtc": "2026-09-10T13:57:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-10 took 1h30 out of the hours you normally sleep, and you are 8h03 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-09-10T20:00",
       "kind": "main",
       "startUtc": "2026-09-10T20:00:00.000Z",
@@ -120,6 +132,18 @@
       "why": "2026-09-11 runs 4h00 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-09-12T06:31",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-12T06:31:00.000Z",
+      "endUtc": "2026-09-12T08:31:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-11 took 8h00 out of the hours you normally sleep, and you are 13h29 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
         "nap-cap-2h"
       ]
     },
@@ -209,6 +233,18 @@
       "why": "2026-09-19 runs 2h43 through your circadian low. Take this 1h19 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-09-20T04:23",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-20T04:23:00.000Z",
+      "endUtc": "2026-09-20T06:23:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-19 took 6h50 out of the hours you normally sleep, and you are 15h37 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
         "nap-cap-2h"
       ]
     },

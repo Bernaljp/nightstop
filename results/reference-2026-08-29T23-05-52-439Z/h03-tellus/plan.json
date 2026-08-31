@@ -2,6 +2,18 @@
   "caseId": "h03-tellus",
   "blocks": [
     {
+      "id": "recovery-nap-2026-10-12T05:35",
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-12T05:35:00.000Z",
+      "endUtc": "2026-10-12T07:35:00.000Z",
+      "station": "JFK",
+      "why": "2026-10-11 took 3h20 out of the hours you normally sleep, and you are 10h15 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-10-12T15:50",
       "kind": "main",
       "startUtc": "2026-10-12T15:50:00.000Z",
@@ -10,6 +22,18 @@
       "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-10-13T12:30",
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-13T12:30:00.000Z",
+      "endUtc": "2026-10-13T14:15:00.000Z",
+      "station": "MAD",
+      "why": "2026-10-12 took 2h40 out of the hours you normally sleep, and you are 5h45 from your next proper night. Take this 1h45 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
       ]
     },
     {
@@ -32,6 +56,18 @@
       "why": "The earliest you could be asleep — the rest window opens 45m before this, which is the time it takes to get through the door.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-10-16T01:55",
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-16T01:55:00.000Z",
+      "endUtc": "2026-10-16T03:55:00.000Z",
+      "station": "SIN",
+      "why": "2026-10-15 took 8h00 out of the hours you normally sleep, and you are 15h48 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
       ]
     },
     {
@@ -113,6 +149,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-10-23T04:35",
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-23T04:35:00.000Z",
+      "endUtc": "2026-10-23T06:35:00.000Z",
+      "station": "DXB",
+      "why": "2026-10-22 took 6h40 out of the hours you normally sleep, and you are 12h25 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-10-23T17:00",
       "kind": "main",
       "startUtc": "2026-10-23T17:00:00.000Z",
@@ -132,6 +180,18 @@
       "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends. 6h00 rather than a full night — you will only have been up 10h10 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-10-25T04:50",
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-25T04:50:00.000Z",
+      "endUtc": "2026-10-25T06:50:00.000Z",
+      "station": "MAD",
+      "why": "2026-10-24 took 7h40 out of the hours you normally sleep, and you are 15h07 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
       ]
     },
     {
@@ -165,6 +225,18 @@
       "why": "2026-10-27 runs 2h00 through your circadian low. Take this 1h10 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-10-28T08:05",
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-28T08:05:00.000Z",
+      "endUtc": "2026-10-28T10:05:00.000Z",
+      "station": "MAD",
+      "why": "2026-10-27 took 8h00 out of the hours you normally sleep, and you are 13h40 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
         "nap-cap-2h"
       ]
     },
@@ -254,6 +326,18 @@
       "why": "2026-11-04 runs 2h55 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-11-05T04:50",
+      "kind": "recovery-nap",
+      "startUtc": "2026-11-05T04:50:00.000Z",
+      "endUtc": "2026-11-05T06:50:00.000Z",
+      "station": "MAD",
+      "why": "2026-11-04 took 6h40 out of the hours you normally sleep, and you are 15h10 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
         "nap-cap-2h"
       ]
     },

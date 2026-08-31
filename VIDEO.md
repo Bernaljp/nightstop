@@ -3,7 +3,14 @@
 Up to five minutes. Two columns throughout: **what is on screen** and **what you say over
 it**. Nothing here needs slides — every shot is a real page or a real terminal.
 
-Runs about **4:55** at an unhurried pace.
+Runs about **4:40** at an unhurried pace, against a five-minute cap. That is tighter than
+it should be, so the cut list at the bottom is not optional advice — rehearse once with a
+timer, and if you land over 4:45, take cuts 1 and 2 before recording for real.
+
+**What the brief asks this video to contain**, so none of it gets lost in the trimming:
+the problem, the simple baseline, **one realistic execution start to finish**, the final
+comparison, a brief word on the changelog, the change that contributed most, and one
+experiment you removed. Every one of those has a marked shot below.
 
 ---
 
@@ -59,11 +66,11 @@ judge may be watching at.
 > This cut is the single most persuasive three seconds in the video. Do not rush it and do
 > not talk over it.
 
-## 1:50 – 2:35 · What it actually is
+## 1:50 – 2:35 · One execution, start to finish
 
 | Screen | Say |
 |---|---|
-| **Tab 5**, terminal. Type and run: `npm run eval -- --arm nightstop --set dev --case d07-cirrus` | "Here it is running. The model does the reading — that's the part no per-airline parser scales to, because every airline prints a roster differently." |
+| **Tab 5**, terminal. Type and run: `npm run eval -- --arm nightstop --set dev --case d07-cirrus` | "Here is a whole run, start to finish: a roster PDF goes in, a graded plan comes out. The model does the reading — that's the part no per-airline parser scales to, because every airline prints a roster differently." |
 | While it runs, **switch to tab 2** and pick **CIRRUS CONNECT** from the roster list, still on v4. **Point at the STD/STA columns** on a row where the times run 23:55 → 02:20. | "This one prints a duty crossing midnight with nothing marking the day change, and continuation rows that don't repeat the date. Read that end time as same-day and you've shortened the duty by twenty-four hours." |
 | Back to **tab 5** when it finishes. | "It doesn't do arithmetic, though. Timezone conversion goes to a tool that knows about the hours that repeat and the ones that never happen — and it checks itself against the totals the document prints about itself." |
 
@@ -74,15 +81,15 @@ judge may be watching at.
 | **Tab 2**, still on v4, **scroll to the phone calendar** and page one week forward. Then **change the `shown in` picker** from the home base to a layover station and let it redraw. | "And here's the plan as you'd actually see it — a week on a phone. Blue is sleep, green a nap before a night duty, orange the flying. The dashed band behind them is the circadian low. One clock throughout — and if you want to read the month in the timezone you're actually standing in, you change it for the whole view, never for one block at a time." |
 | **Tab 3**, the briefing, scrolled to the top. | "Same plan, printable." |
 | **Point at the stat row**, then at *What needs your decision*. | "Decisions first — five things to settle, not sixteen, because the same collision on four nights is one decision, not four." |
-| **Scroll to the ribbon.** Move the cursor slowly left to right across the **19th and 20th**, the Singapore days. | "Now watch the grey band. That's the circadian low — drawn from the *body* clock, not the wall clock. On the Singapore layover it sits mid-morning local, then drifts back over the following week. That's the whole problem in one picture, and it's the reason 'sleep at 11pm local' is advice for a body that's been there a week." |
-| **Scroll to a green nap block** in the ribbon, then to its line in the day-by-day table. | "And where a duty runs through that low, it puts a nap in front of it — take this two hours now, while you can still sleep. That rule only exists because building the demo showed the planner had never once suggested a nap in twelve rosters." |
+| **Scroll to the ribbon.** Move the cursor slowly across the **19th and 20th**, the Singapore days, then over a **violet** sleep block. | "Watch the grey band — the circadian low, drawn from the *body* clock, not the wall clock. On the Singapore layover it sits mid-morning local, then drifts back over the week. That's the whole problem in one picture. Violet is a night in a hotel, blue is your own bed." |
+| **Scroll to a green nap block** in the ribbon, then to its line in the day-by-day table. | "And where a duty runs through that low, there's a nap in front of it — take this now, while you can still sleep. That rule exists because building the demo showed the planner had never once suggested a nap in twelve rosters." |
 | **Scroll to *Put it in your calendar*.** | "And it comes out as a calendar file. Every block carries its reasoning; duties come along marked free so it never blocks out your own diary. Importing it is the approval — nothing reaches a calendar until a person opens it." |
 
 ## 3:10 – 3:50 · The change that mattered most
 
 | Screen | Say |
 |---|---|
-| **Tab 4**, `RESULTS.md`, at the headline table. | "Eight rosters, one grader, same task for every arm. Chatbot: nothing trustworthy. Hand the same model the rule pack in one shot and recall goes zero to seventy-seven percent — most of the value is right there. But it invents thirty-seven rules. Move the rule check into a deterministic function and that goes to zero, because a deterministic checker *cannot* invent a rule." |
+| **Tab 4**, `RESULTS.md`, at the headline table. **The changelog in the README is one scroll below it — flick to it for two seconds as you say the first sentence, then come back.** | "Twelve stages, each one an entry with its own evidence. Eight rosters, one grader, same task for every arm. Chatbot: nothing trustworthy. Hand the same model the rule pack in one shot and recall goes zero to seventy-seven percent — most of the value is right there. But it invents thirty-seven rules. Move the rule check into a deterministic function and that goes to zero, because a deterministic checker *cannot* invent a rule." |
 | **Scroll to *Repeats*.** | "Eight of eight, four runs, no variance. Four more rosters generated after every prompt was frozen: four of four." |
 | **Switch to tab 1**, the Kestrel header block again — same shot as 0:15. | "After the third iteration exactly one case still failed. This one. The reader used the forty-five minute short-haul offset on a long-haul sector. One report time, half an hour late — three hundred and twenty-nine of three hundred and thirty fields correct, and still untrustworthy." |
 | Stay on the header. | "Here's what didn't catch it. The header totals reconciled, because report time isn't part of block hours. And the reader said it was certain. **A document can only check what it prints. A derived value has no checksum at all.**" |
@@ -94,7 +101,7 @@ judge may be watching at.
 |---|---|
 | **Tab 6**, `docs/removed-experiments.md`, scrolled to experiment 2. | "One more. When the reader flags something as uncertain, you can hand it back and ask it to resolve it. Forty lines. I predicted it would beat my metric while making the system more dangerous." |
 | **Point at the comparison table** in that file — the row reading 33 → 0. | "It did something worse. It *tied*. Same trustworthy count, same silently-wrong count. What changed is invisible to every number I report: values the pilot can check go from thirty-three to zero, and it costs thirty-eight percent more. It guessed right every time here — which isn't a reason to keep it, because the behaviour is identical whether the guess is right or wrong." |
-| **Switch to tab 2**, the demo, and scroll the phone calendar. | "And here is the number I did not expect to be reporting. Eight of my twelve stages moved neither headline number — a planner that never suggested a nap, one that asked for twenty-four hours of sleep in a forty-six hour layover, a calendar that drew a pilot asleep before they landed. All eight were real. **None was caught by a metric.** Seven were caught by someone reading the output — including the one where I fixed the calendar, said so, and had left half of it still broken." |
+| **Switch to tab 2**, the demo, and scroll the phone calendar. | "And here is the number I did not expect to be reporting. Nine of my thirteen stages moved neither headline number — a planner that never suggested a nap, one that asked for twenty-four hours of sleep in a forty-six hour layover, a calendar that drew a pilot asleep before they landed. All nine were real. **None was caught by a metric.** Eight were caught by someone reading the output — including the one where I fixed the calendar, said so, and had left half of it still broken." |
 | **Switch to tab 3**, the briefing, and leave it on screen. | "So: build the scoreboard before the agent. Then distrust the scoreboard too. Both of my worst bugs were in the measuring apparatus, not the thing being measured — and the decision to cut that experiment came from looking at what the pilot ends up holding, which no number in my results table reports." |
 | Hold on the briefing. Stop. | *(end)* |
 
@@ -120,8 +127,10 @@ Cut in this order:
 1. The live tag (0:20)
 2. The Cirrus midnight-rollover aside at 2:10 (0:20)
 3. The *Repeats* / held-out lines at 3:25 (0:15)
-4. The eight-of-twelve line at 4:10 (0:20) — only if you must; it is the strongest
+4. The nine-of-thirteen line at 4:10 (0:20) — only if you must; it is the strongest
    evidence in the video that the evaluation was run honestly
+
+Cuts 1 and 2 bring it to **4:00** with every one of the brief's required beats intact.
 
 **Do not cut** the v1 → v4 switch at 1:20, the Kestrel failure at 3:25, or the removed
 experiment. Those are the three the brief specifically asks for, and they carry the hot

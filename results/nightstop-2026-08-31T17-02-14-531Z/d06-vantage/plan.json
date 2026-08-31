@@ -35,6 +35,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-09-05T12:31",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-05T12:31:00.000Z",
+      "endUtc": "2026-09-05T13:30:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-05 took 2h00 out of the hours you normally sleep, and you are 4h59 from your next proper night. Take this 59m now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-09-05T17:30",
       "kind": "main",
       "startUtc": "2026-09-05T17:30:00.000Z",
@@ -255,6 +267,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-09-25T09:57",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-25T09:57:00.000Z",
+      "endUtc": "2026-09-25T11:57:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-25 took 2h30 out of the hours you normally sleep, and you are 8h38 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-09-25T18:35",
       "kind": "main",
       "startUtc": "2026-09-25T18:35:00.000Z",
@@ -296,6 +320,18 @@
       "why": "An early night: you leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-09-29T11:57",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-29T11:57:00.000Z",
+      "endUtc": "2026-09-29T13:57:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-29 took 2h00 out of the hours you normally sleep, and you are 6h08 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
       ]
     },
     {

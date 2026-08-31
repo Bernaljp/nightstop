@@ -47,7 +47,7 @@ const ribbon = brief.days
       .map((s) => {
         const l = (s.from * 100).toFixed(2);
         const w = Math.max(0.5, (s.to - s.from) * 100).toFixed(2);
-        return `<i class="${s.kind}" style="left:${l}%;width:${w}%"></i>`;
+        return `<i class="${s.kind}${s.away ? " away" : ""}" style="left:${l}%;width:${w}%"></i>`;
       })
       .join("");
     return `<div class="rw"><span>${r.date.slice(8)}</span><b>${r.station}</b><div class="rt">${bars}</div></div>`;

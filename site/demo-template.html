@@ -17,7 +17,7 @@
   --phone-shell:#2b3440; --cal-bg:#11161d; --cal-line:#242c37;
   --cal-ink:#e8eef6; --cal-ink-2:#93a1b5; --cal-ink-3:#68758a;
   --cal-hover:#ffffff12; --cal-accent:#4d94ea;
-  --cal-sleep:#3f7fd4; --cal-nap:#1d9a72; --cal-duty:#c8622f;
+  --cal-sleep:#3f7fd4; --cal-away:#8064d6; --cal-nap:#1d9a72; --cal-duty:#c8622f;
   --cal-low:#ffffff0f; --cal-low-e:#ffffff2b;
 }
 @media (prefers-color-scheme: light) {
@@ -30,7 +30,7 @@
     --phone-shell:#d7dce4; --cal-bg:#ffffff; --cal-line:#e6e9ef;
     --cal-ink:#1f2430; --cal-ink-2:#5b6577; --cal-ink-3:#8d97a8;
     --cal-hover:#0d11170f; --cal-accent:#1a73e8;
-    --cal-sleep:#3f7fd4; --cal-nap:#12855f; --cal-duty:#c05621;
+    --cal-sleep:#3f7fd4; --cal-away:#6b4fc4; --cal-nap:#12855f; --cal-duty:#c05621;
     --cal-low:#0d11170a; --cal-low-e:#0d111726;
   }
 }
@@ -43,7 +43,7 @@
   --phone-shell:#d7dce4; --cal-bg:#ffffff; --cal-line:#e6e9ef;
   --cal-ink:#1f2430; --cal-ink-2:#5b6577; --cal-ink-3:#8d97a8;
   --cal-hover:#0d11170f; --cal-accent:#1a73e8;
-  --cal-sleep:#3f7fd4; --cal-nap:#12855f; --cal-duty:#c05621;
+  --cal-sleep:#3f7fd4; --cal-away:#6b4fc4; --cal-nap:#12855f; --cal-duty:#c05621;
   --cal-low:#0d11170a; --cal-low-e:#0d111726;
 }
 *{box-sizing:border-box}
@@ -155,8 +155,12 @@ select{background:var(--raised);color:var(--ink);border:1px solid var(--line);
 .hline{position:absolute;left:0;right:0;border-top:1px solid var(--cal-line)}
 .ev{position:absolute;left:1px;right:1px;border-radius:4px;padding:2px 3px;
   font-size:8.5px;line-height:1.2;overflow:hidden;color:#fff;font-weight:500}
-.ev.main,.ev.recovery-nap{background:var(--cal-sleep)}
-.ev.pre-duty-nap{background:var(--cal-nap)}
+/* Blue is your own bed, violet is a hotel — the thing a crew member scans a month for.
+   Both naps are green: the chip already says which kind, and a fifth colour on a 40px
+   column stops being information. */
+.ev.main{background:var(--cal-sleep)}
+.ev.main.away{background:var(--cal-away)}
+.ev.pre-duty-nap,.ev.recovery-nap{background:var(--cal-nap)}
 .ev.duty{background:var(--cal-duty)}
 .ev b{display:block;font-weight:600}
 .lowband{position:absolute;left:0;right:0;background:var(--cal-low);
@@ -178,6 +182,7 @@ select{background:var(--raised);color:var(--ink);border:1px solid var(--line);
 .ag .pill{font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;padding:1px 5px;
   border-radius:3px;font-weight:600}
 .pill.main{background:color-mix(in srgb,var(--sleep) 20%,transparent);color:var(--sleep)}
+.ag .pill.away{background:color-mix(in srgb,var(--cal-away) 24%,transparent);color:var(--cal-away)}
 .pill.pre-duty-nap{background:color-mix(in srgb,var(--nap) 22%,transparent);color:var(--nap)}
 .pill.recovery-nap{background:color-mix(in srgb,var(--nap) 22%,transparent);color:var(--nap)}
 .about{background:var(--sunk);border:1px solid var(--line);border-radius:9px;
@@ -392,7 +397,7 @@ function scheduleHtml() {
         const legs = label.split(" ").filter(Boolean);
         label = legs.length > 1 ? `${legs[0]} +${legs.length - 1}` : legs[0];
       }
-      return `<div class="ev ${x.kind}" style="top:${top}%;height:${h}%" title="${esc(x.title)}">
+      return `<div class="ev ${x.kind}${x.away ? " away" : ""}" style="top:${top}%;height:${h}%" title="${esc(x.title)}">
         <b>${name}</b>${esc(label)}</div>`;
     }).join("");
     return `<div class="col">${lines}${bands}${evs}</div>`;
@@ -415,12 +420,12 @@ function scheduleHtml() {
     const name = { main: "Main sleep", "pre-duty-nap": "Pre-duty nap", "recovery-nap": "Recovery sleep" }[b.kind] || b.kind;
     const d = vdate(b.startUtc);
     const day = new Date(`${d}T12:00:00Z`);
-    const away = b.station && (E.AIRPORTS[b.station] || {}).tz !== vtz;
+    const cur0 = { base: data.base };
     return `<div class="ag">
       <div class="hd"><b>${DOWL[day.getUTCDay()]} ${+d.slice(8)}</b>
         <span>${hhmm(b.startUtc, vtz)}\u2192${hhmm(b.endUtc, vtz)} · ${Math.floor(mins/60)}h${String(mins%60).padStart(2,"0")}</span>
-        <span class="pill ${b.kind}">${esc(name)}</span>
-        ${away ? `<span class="pill at">at ${esc(b.station)}</span>` : ""}</div>
+        <span class="pill ${b.kind}${b.kind === "main" && b.station !== cur0.base ? " away" : ""}">${esc(name)}</span>
+        ${b.station !== cur0.base ? `<span class="pill at">at ${esc(b.station)}</span>` : ""}</div>
       <div>${esc(b.why)}</div></div>`;
   }).join("");
 
@@ -440,7 +445,8 @@ function scheduleHtml() {
         <div class="gutter">${hours}</div>${cols}
       </div></div>
       <div class="cal-key">
-        <span><i style="background:var(--cal-sleep)"></i>sleep</span>
+        <span><i style="background:var(--cal-sleep)"></i>sleep at ${esc(data.base)}</span>
+        <span><i style="background:var(--cal-away)"></i>sleep away</span>
         <span><i style="background:var(--cal-nap)"></i>nap</span>
         <span><i style="background:var(--cal-duty)"></i>duty</span>
         <span><i style="background:var(--cal-low);outline:1px dashed var(--cal-low-e)"></i>circadian low</span>

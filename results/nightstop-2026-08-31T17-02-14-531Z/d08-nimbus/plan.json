@@ -124,6 +124,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-10-22T05:55",
+      "kind": "recovery-nap",
+      "startUtc": "2026-10-22T05:55:00.000Z",
+      "endUtc": "2026-10-22T07:55:00.000Z",
+      "station": "DXB",
+      "why": "2026-10-21 took 7h50 out of the hours you normally sleep, and you are 13h35 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-10-22T19:30",
       "kind": "main",
       "startUtc": "2026-10-22T19:30:00.000Z",
@@ -258,6 +270,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-11-02T06:20",
+      "kind": "recovery-nap",
+      "startUtc": "2026-11-02T06:20:00.000Z",
+      "endUtc": "2026-11-02T08:20:00.000Z",
+      "station": "SIN",
+      "why": "2026-11-01 took 8h00 out of the hours you normally sleep, and you are 12h20 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-11-02T18:40",
       "kind": "main",
       "startUtc": "2026-11-02T18:40:00.000Z",
@@ -288,6 +312,18 @@
       "why": "Late on purpose, so you are rested for a duty that runs 1h00 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-11-05T15:10",
+      "kind": "recovery-nap",
+      "startUtc": "2026-11-05T15:10:00.000Z",
+      "endUtc": "2026-11-05T17:10:00.000Z",
+      "station": "MAD",
+      "why": "2026-11-05 took 2h30 out of the hours you normally sleep, and you are 7h20 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
       ]
     },
     {

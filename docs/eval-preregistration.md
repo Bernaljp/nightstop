@@ -113,17 +113,19 @@ run has not measured its own variance.
 Stated here rather than folded into the results, because the point of a pre-registration
 is that departures from it are visible.
 
-**The planner changed seven times after the first held-out set had been run.** In order:
+**The planner changed eight times after the first held-out set had been run.** In order:
 a prophylactic nap before duties running through the circadian low; planning every night
 in a window rather than one per rest period; shifting bedtime earlier before an early
 report and later after a late arrival; anchoring the plan to the hours each crew member
 actually keeps, with recovery sleep after a duty that takes those hours off them;
 limiting a rest period to one supplementary sleep, separated by four hours; allowing time
-to get through the door before sleep starts; and buying sleep with time awake at roughly
-2:1 rather than giving every body-clock night a full eight hours.
+to get through the door before sleep starts; buying sleep with time awake at roughly
+2:1 rather than giving every body-clock night a full eight hours; and giving recovery and
+pre-duty naps separate slots, after that one-supplementary-sleep cap turned out to leave a
+crew member nine hours awake off a red-eye with nothing offered until midnight.
 
-Every one was a real defect. None was found by a metric — all seven came from rendering
-the output and looking at it, six of them from someone else looking. Every arm was
+Every one was a real defect. None was found by a metric — all eight came from rendering
+the output and looking at it, seven of them from someone else looking. Every arm was
 re-run on every corpus after each, and the headline numbers did not move.
 
 Two further changes touched no plan at all. The briefing drew each block in its own

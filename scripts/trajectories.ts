@@ -16,6 +16,8 @@ interface Pick {
   runId: string;
   caseId: string;
   arm: string;
+  /** The agent itself. Deliverable 4 is indexed by agent, not by the arm that ran it. */
+  agent: string;
   why: string;
 }
 
@@ -26,33 +28,54 @@ interface Pick {
  */
 const PICKS: Array<Omit<Pick, "file" | "runId"> & { set?: string }> = [
   {
-    arm: "nightstop", caseId: "d04-kestrel",
+    agent: "reader", arm: "nightstop", caseId: "d04-kestrel",
     why:
       "The reader on the roster that does not print report time. It has to be derived " +
       "from the offset table in the header, and the offset differs by haul — the one " +
       "case that failed before the reader was asked to declare its derivations.",
   },
   {
-    arm: "nightstop", caseId: "d07-cirrus",
+    agent: "reader", arm: "nightstop", caseId: "d07-cirrus",
     why:
       "A duty printed 23:30 → 05:25 on one dated row with nothing marking the day " +
       "change, and continuation rows carrying no date either. Watch it use to_utc " +
       "rather than doing the arithmetic itself.",
   },
   {
-    arm: "nightstop", caseId: "d08-nimbus",
+    agent: "reader", arm: "nightstop", caseId: "d08-nimbus",
     why:
       "A month spanning both the European and North American daylight-saving changes, " +
       "with transatlantic sectors whose offset changes mid-trip.",
   },
   {
-    arm: "b1-chatbot", caseId: "d01-aurora",
+    agent: "chatbot", arm: "b1-chatbot", caseId: "d01-aurora",
     why:
       "The baseline for comparison: one prompt, no tools, no rule pack. It reads the " +
       "roster well and then cites rules that do not exist.",
   },
   {
-    arm: "nightstop-repair", caseId: "d04-kestrel",
+    agent: "steelman", arm: "b2-steelman", caseId: "d02-meridian",
+    why:
+      "The fairness arm, and the one that makes the case for taking the rule check away " +
+      "from the model. Same model, same effort, handed the same rule pack — it finds real " +
+      "collisions, and in the same breath cites limits nobody set.",
+  },
+  {
+    agent: "rule-checker", arm: "a-model-checks", caseId: "d01-aurora",
+    why:
+      "The ablation's `rule-checker`. Identical to the full system except a model finds " +
+      "the collisions instead of a function. It finds every real one on this roster, then " +
+      "adds several that are not there — the failure a deterministic checker cannot have.",
+  },
+  {
+    agent: "distiller", arm: "distill", caseId: ".", set: "-",
+    why:
+      "The `distiller`, run once per rules document rather than per roster. A 200-page " +
+      "regulation becomes a compact rule pack, each rule carrying the clause it came from " +
+      "so nothing in the plan is traceable to a rule nobody can look up.",
+  },
+  {
+    agent: "repair", arm: "nightstop-repair", caseId: "d04-kestrel",
     why:
       "The removed experiment. The `revise` event is the moment a flagged uncertainty " +
       "gets resolved instead of surfaced — the behaviour this design refuses.",
@@ -60,6 +83,18 @@ const PICKS: Array<Omit<Pick, "file" | "runId"> & { set?: string }> = [
 ];
 
 const runs = readdirSync("results").filter((d) => existsSync(join("results", d, "summary.json")));
+
+/**
+ * The distiller does not run per roster, so its run directory has no summary.json and no
+ * case folders — the trajectory sits at the top of it. Deliverable 4 asks for every agent
+ * used, and "it does not fit the folder shape the others use" is not a reason to omit one.
+ */
+const looseRun = (prefix: string): string | null => {
+  const m = readdirSync("results")
+    .filter((d) => d.startsWith(`${prefix}-`) && existsSync(join("results", d, "trajectory.jsonl")))
+    .sort();
+  return m.length ? m[m.length - 1] : null;
+};
 const latestFor = (arm: string, set = "dev"): string | null => {
   // Match the SET as well as the arm: the newest b1-chatbot run is a held-out one, and
   // asking it for a development case silently produced no trajectory at all.
@@ -82,23 +117,26 @@ const index: string[] = [
   "",
   "The raw JSONL sits beside each run at `results/<runId>/<case>/trajectory.jsonl`.",
   "",
-  "| Agent | Case | Why this one |",
+  "| Agent | Where it ran | Why this one |",
   "|---|---|---|",
 ];
 
 let written = 0;
 for (const p of PICKS) {
-  const runId = latestFor(p.arm, p.set ?? "dev");
+  const loose = p.caseId === ".";
+  const runId = loose ? looseRun(p.arm) : latestFor(p.arm, p.set ?? "dev");
   if (!runId) {
     console.log(`  skipped ${p.arm}/${p.caseId} — no run on disk`);
     continue;
   }
-  const src = join("results", runId, p.caseId, "trajectory.jsonl");
+  const src = loose
+    ? join("results", runId, "trajectory.jsonl")
+    : join("results", runId, p.caseId, "trajectory.jsonl");
   if (!existsSync(src)) {
     console.log(`  skipped ${p.arm}/${p.caseId} — no trajectory in ${runId}`);
     continue;
   }
-  const name = `${p.arm}-${p.caseId}.md`;
+  const name = loose ? `${p.agent}.md` : `${p.agent}-${p.caseId}.md`;
   const body = renderTrajectoryMarkdown(src);
   writeFileSync(
     join("trajectories", name),
@@ -106,8 +144,10 @@ for (const p of PICKS) {
       `> **Why this trajectory.** ${p.why}\n\n` +
       body,
   );
-  index.push(`| \`${p.arm}\` | \`${p.caseId}\` | ${p.why} | `.replace(/ \| $/, " |"));
-  index[index.length - 1] = `| [\`${p.arm}\`](${name}) | \`${p.caseId}\` | ${p.why} |`;
+  index.push(
+    `| [\`${p.agent}\`](${name}) | ` +
+    `${loose ? "the rules document" : `\`${p.arm}\` on \`${p.caseId}\``} | ${p.why} |`,
+  );
   written++;
   console.log(`  trajectories/${name}`);
 }

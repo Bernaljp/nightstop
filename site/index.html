@@ -21,6 +21,7 @@
   --ink-2:  #93a1b5;
   --ink-3:  #61708a;
   --sleep:  #4d94ea;
+  --away:   #8064d6;
   --duty:   #e2703c;
   --nap:    #23b183;
   --flag:   #edb54a;
@@ -42,6 +43,7 @@
     --ink-2:  #4e5a6e;
     --ink-3:  #7b879a;
     --sleep:  #2a78d6;
+    --away:   #6b4fc4;
     --duty:   #c9501f;
     --nap:    #1baf7a;
     --flag:   #a97400;
@@ -53,7 +55,7 @@
   --ground: #f6f7f9; --raised: #ffffff; --sunk: #eceef2;
   --line: #dde1e8; --line-2: #c8cedb80;
   --ink: #0d1117; --ink-2: #4e5a6e; --ink-3: #7b879a;
-  --sleep: #2a78d6; --duty: #c9501f; --nap: #1baf7a; --flag: #a97400;
+  --sleep: #2a78d6; --away: #6b4fc4; --duty: #c9501f; --nap: #1baf7a; --flag: #a97400;
   --wocl: #0d111714; --wocl-e: #0d11172e;
 }
 
@@ -111,6 +113,9 @@ header { padding: 76px 0 0; }
              border-inline: 1px solid var(--wocl-e); border-radius: 0; }
 .rt i.duty { top: 0; height: 4px; background: var(--duty); }
 .rt i.main { top: 5px; height: 5px; background: var(--sleep); }
+/* Your own bed against a hotel room — on a month-long ribbon that is the shape of the
+   month, and one colour for both hid it entirely. */
+.rt i.main.away { background: var(--away); }
 .rt i.pre-duty-nap, .rt i.recovery-nap { top: 5px; height: 5px; background: var(--nap); }
 .rkey { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 11px;
         font-family: Barlow, sans-serif; font-size: 11.5px; color: var(--ink-2); }
@@ -228,8 +233,8 @@ footer a { color: var(--ink-2); }
       <div class="rw"><span>02</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:25.69%;width:40.35%"></i><i class="main" style="left:81.25%;width:18.75%"></i></div></div>
       <div class="rw"><span>03</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:21.18%;width:30.00%"></i><i class="main" style="left:0.00%;width:14.58%"></i><i class="main" style="left:89.58%;width:10.42%"></i></div></div>
       <div class="rw"><span>04</span><b>LHR</b><div class="rt"><i class="wocl" style="left:17.92%;width:16.67%"></i><i class="duty" style="left:60.76%;width:39.24%"></i><i class="main" style="left:0.00%;width:22.92%"></i></div></div>
-      <div class="rw"><span>05</span><b>ORD</b><div class="rt"><i class="duty" style="left:0.00%;width:4.51%"></i><i class="duty" style="left:95.83%;width:4.17%"></i><i class="main" style="left:9.72%;width:33.33%"></i><i class="pre-duty-nap" style="left:82.29%;width:8.33%"></i></div></div>
-      <div class="rw"><span>06</span><b>LHR</b><div class="rt"><i class="wocl" style="left:12.29%;width:16.67%"></i><i class="duty" style="left:0.00%;width:39.58%"></i><i class="main" style="left:93.54%;width:6.46%"></i></div></div>
+      <div class="rw"><span>05</span><b>ORD</b><div class="rt"><i class="duty" style="left:0.00%;width:4.51%"></i><i class="duty" style="left:95.83%;width:4.17%"></i><i class="main away" style="left:9.72%;width:33.33%"></i><i class="pre-duty-nap" style="left:82.29%;width:8.33%"></i></div></div>
+      <div class="rw"><span>06</span><b>LHR</b><div class="rt"><i class="wocl" style="left:12.29%;width:16.67%"></i><i class="duty" style="left:0.00%;width:39.58%"></i><i class="recovery-nap" style="left:49.31%;width:8.33%"></i><i class="main" style="left:93.54%;width:6.46%"></i></div></div>
       <div class="rw"><span>07</span><b>LHR</b><div class="rt"><i class="duty" style="left:55.21%;width:44.79%"></i><i class="main" style="left:0.00%;width:26.88%"></i></div></div>
       <div class="rw"><span>08</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:0.00%;width:1.88%"></i><i class="main" style="left:11.60%;width:33.33%"></i><i class="main" style="left:89.58%;width:10.42%"></i></div></div>
       <div class="rw"><span>09</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:51.39%;width:30.90%"></i><i class="main" style="left:0.00%;width:14.58%"></i><i class="main" style="left:92.01%;width:7.99%"></i></div></div>
@@ -239,23 +244,25 @@ footer a { color: var(--ink-2); }
       <div class="rw"><span>13</span><b>LHR</b><div class="rt"><i class="main" style="left:0.00%;width:25.97%"></i><i class="main" style="left:85.07%;width:14.93%"></i></div></div>
       <div class="rw"><span>14</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:21.18%;width:44.58%"></i><i class="main" style="left:0.00%;width:14.58%"></i><i class="main" style="left:89.58%;width:10.42%"></i></div></div>
       <div class="rw"><span>15</span><b>LHR</b><div class="rt"><i class="duty" style="left:90.28%;width:9.72%"></i><i class="main" style="left:0.00%;width:22.92%"></i><i class="pre-duty-nap" style="left:72.22%;width:8.33%"></i></div></div>
-      <div class="rw"><span>16</span><b>JFK</b><div class="rt"><i class="wocl" style="left:18.54%;width:16.67%"></i><i class="duty" style="left:0.00%;width:29.51%"></i><i class="main" style="left:70.14%;width:29.86%"></i></div></div>
-      <div class="rw"><span>17</span><b>LHR</b><div class="rt"><i class="wocl" style="left:13.75%;width:16.67%"></i><i class="duty" style="left:5.56%;width:39.24%"></i><i class="main" style="left:0.00%;width:3.47%"></i><i class="main" style="left:95.00%;width:5.00%"></i></div></div>
+      <div class="rw"><span>16</span><b>JFK</b><div class="rt"><i class="wocl" style="left:18.54%;width:16.67%"></i><i class="duty" style="left:0.00%;width:29.51%"></i><i class="recovery-nap" style="left:34.72%;width:8.33%"></i><i class="main away" style="left:70.14%;width:29.86%"></i></div></div>
+      <div class="rw"><span>17</span><b>LHR</b><div class="rt"><i class="wocl" style="left:13.75%;width:16.67%"></i><i class="duty" style="left:5.56%;width:39.24%"></i><i class="main away" style="left:0.00%;width:3.47%"></i><i class="recovery-nap" style="left:54.51%;width:8.33%"></i><i class="main" style="left:95.00%;width:5.00%"></i></div></div>
       <div class="rw"><span>18</span><b>LHR</b><div class="rt"><i class="duty" style="left:36.46%;width:63.54%"></i><i class="main" style="left:0.00%;width:28.33%"></i></div></div>
-      <div class="rw"><span>19</span><b>SIN</b><div class="rt"><i class="wocl" style="left:7.29%;width:16.67%"></i><i class="main" style="left:5.56%;width:33.33%"></i><i class="main" style="left:88.54%;width:11.46%"></i></div></div>
-      <div class="rw"><span>20</span><b>SIN</b><div class="rt"><i class="duty" style="left:41.67%;width:58.33%"></i><i class="main" style="left:0.00%;width:13.54%"></i></div></div>
+      <div class="rw"><span>19</span><b>SIN</b><div class="rt"><i class="wocl" style="left:7.29%;width:16.67%"></i><i class="main away" style="left:5.56%;width:33.33%"></i><i class="main away" style="left:88.54%;width:11.46%"></i></div></div>
+      <div class="rw"><span>20</span><b>SIN</b><div class="rt"><i class="duty" style="left:41.67%;width:58.33%"></i><i class="main away" style="left:0.00%;width:13.54%"></i></div></div>
       <div class="rw"><span>21</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:0.00%;width:5.56%"></i><i class="duty" style="left:47.22%;width:50.76%"></i><i class="main" style="left:15.28%;width:25.35%"></i></div></div>
       <div class="rw"><span>22</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:39.93%;width:39.86%"></i><i class="main" style="left:7.71%;width:25.62%"></i><i class="main" style="left:89.58%;width:10.42%"></i></div></div>
       <div class="rw"><span>23</span><b>LHR</b><div class="rt"><i class="main" style="left:0.00%;width:22.92%"></i><i class="main" style="left:85.63%;width:14.38%"></i></div></div>
       <div class="rw"><span>24</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:23.61%;width:24.44%"></i><i class="main" style="left:0.00%;width:17.01%"></i><i class="main" style="left:81.25%;width:18.75%"></i></div></div>
       <div class="rw"><span>25</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:21.18%;width:55.35%"></i><i class="main" style="left:0.00%;width:14.58%"></i><i class="main" style="left:86.25%;width:13.75%"></i></div></div>
       <div class="rw"><span>26</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:18.40%;width:41.46%"></i><i class="main" style="left:0.00%;width:11.81%"></i><i class="main" style="left:69.58%;width:25.56%"></i></div></div>
-      <div class="rw"><span>27</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:1.74%;width:31.04%"></i><i class="main" style="left:89.58%;width:10.42%"></i></div></div>
+      <div class="rw"><span>27</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:1.74%;width:31.04%"></i><i class="recovery-nap" style="left:42.50%;width:8.33%"></i><i class="main" style="left:89.58%;width:10.42%"></i></div></div>
       <div class="rw"><span>28</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:33.33%;width:33.33%"></i><i class="main" style="left:0.00%;width:22.92%"></i></div></div>
       <div class="rw"><span>29</span><b>LHR</b><div class="rt"></div></div>
       <div class="rw"><span>30</span><b>LHR</b><div class="rt"></div></div>
         <div class="rkey">
-          <span><i style="background:var(--sleep)"></i>sleep</span>
+          <span><i style="background:var(--sleep)"></i>sleep at base</span>
+          <span><i style="background:var(--away)"></i>sleep away</span>
+          <span><i style="background:var(--nap)"></i>nap</span>
           <span><i style="background:var(--duty)"></i>on duty</span>
           <span><i style="background:var(--wocl);outline:1px solid var(--wocl-e)"></i>circadian low</span>
         </div>
@@ -476,8 +483,8 @@ footer a { color: var(--ink-2); }
 <section>
   <p class="eyebrow">what no number caught</p>
   <div class="col">
-    <h2>Eight of twelve stages moved neither headline number.</h2>
-    <p>All eight were real defects. A planner that never once suggested a nap. One that
+    <h2>Nine of thirteen stages moved neither headline number.</h2>
+    <p>All nine were real defects. A planner that never once suggested a nap. One that
     left every day off unplanned. One that gave every crew member the same bedtime whatever
     they had told it. One that stacked three sleeps into thirteen hours with a five-minute
     gap. One that had people asleep the minute they walked through the door. One that asked
@@ -495,11 +502,17 @@ footer a { color: var(--ink-2); }
     One clock now sets position, label and list together, with a picker that moves the whole
     view at once &mdash; and the reasons carry durations only, never a clock reading that
     could contradict it.</p>
+    <p>And the fix for one of those defects caused the next. Capping a rest period at a
+    single extra nap stopped three sleeps stacking up, and left a crew member landing off a
+    red-eye at 14:20 with nothing offered until midnight. Nine hours awake, no nap. The two
+    naps have their own slots now &mdash; recovery before the first night, pre-duty after
+    the last &mdash; and recovery sleep across sixteen rosters went from none to
+    sixty-six.</p>
   </div>
   <div class="score">
-    <div class="chip bad">defects a metric caught <b>0 of 8</b></div>
-    <div class="chip">found by reading the output <b>8</b></div>
-    <div class="chip">found by someone other than the author <b>7</b></div>
+    <div class="chip bad">defects a metric caught <b>0 of 9</b></div>
+    <div class="chip">found by reading the output <b>9</b></div>
+    <div class="chip">found by someone other than the author <b>8</b></div>
   </div>
   <div class="note col">
     Twelve rosters, a pre-registered metric, an independent grader, four repeats and two

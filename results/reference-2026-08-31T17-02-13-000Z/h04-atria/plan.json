@@ -13,6 +13,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-09-03T07:50",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-03T07:50:00.000Z",
+      "endUtc": "2026-09-03T09:50:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-03 took 3h30 out of the hours you normally sleep, and you are 11h05 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-09-03T18:55",
       "kind": "main",
       "startUtc": "2026-09-03T18:55:00.000Z",
@@ -91,6 +103,18 @@
       ]
     },
     {
+      "id": "recovery-nap-2026-09-09T06:30",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-09T06:30:00.000Z",
+      "endUtc": "2026-09-09T08:30:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-09 took 5h00 out of the hours you normally sleep, and you are 14h00 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
       "id": "main-2026-09-09T20:30",
       "kind": "main",
       "startUtc": "2026-09-09T20:30:00.000Z",
@@ -165,6 +189,18 @@
       "why": "2026-09-15 runs 2h29 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "recovery-nap-2026-09-16T04:54",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-16T04:54:00.000Z",
+      "endUtc": "2026-09-16T06:54:00.000Z",
+      "station": "LHR",
+      "why": "2026-09-15 took 7h00 out of the hours you normally sleep, and you are 15h36 from your next proper night. Take this 2h00 now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
         "nap-cap-2h"
       ]
     },

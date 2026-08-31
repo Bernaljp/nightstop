@@ -401,21 +401,27 @@ export function buildPlan(
       });
     });
 
-    // Then AT MOST ONE supplementary block for the whole rest period.
+    // Then the supplementary sleep: a nap before a duty, a nap after one, or both.
     //
-    // The first version placed a recovery nap an hour after waking and a pre-duty nap
-    // five minutes after that, giving eight hours of sleep followed by two more and then
-    // two more again. Nobody sleeps like that, and being told to is worse than being told
-    // nothing. Three rules fix it: only one extra block per rest period; it must sit at
-    // least four hours clear of any night; and it is only offered when there is something
-    // for it to do.
+    // The first version placed a recovery nap an hour after waking and a pre-duty nap five
+    // minutes after that, giving eight hours of sleep followed by two more and then two
+    // more again. The fix for that was to allow only ONE extra block per rest period,
+    // which stopped the stacking and quietly created a second problem: land at 14:20 off
+    // an overnight sector that ate half your night, and the plan offered nothing at all
+    // until midnight. Nine hours awake, straight off a red-eye, and no nap.
+    //
+    // The stacking was never really about the count. It was about placement. So the two
+    // naps now have their own slots and cannot collide: recovery goes in the gap BEFORE
+    // the first night, a pre-duty nap in the gap AFTER the last one, each of them four
+    // hours clear of the sleep it sits beside, and neither offered unless its slot is
+    // genuinely open. A window can now hold both, separated by a night, which is what a
+    // long layover after a disruptive duty actually calls for.
     const slept = nights.reduce((a, x) => a + minutesBetween(x.from, x.to), 0);
+    const firstNight = nights[0];
     const lastNight = nights[nights.length - 1];
     const pickup = addMinutes(
       new Date(r.next.reportUtc!), -commuteFor(profile, r.next.station),
     );
-    const napEnd = addMinutes(pickup, -settings.napInertiaMinutes);
-    const earliest = addMinutes(lastNight.to, settings.napSeparationMinutes);
 
     const prevAte = r.prev.reportUtc && r.prev.endUtc
       ? usualWindowOverlap(
@@ -424,48 +430,78 @@ export function buildPlan(
         )
       : 0;
 
-    // A pre-duty nap is time-critical and wins where both would apply: it has to be taken
-    // before this particular duty, where recovery could be taken on any of several days.
-    const wantPreDuty = dutyWocl >= 60 || slept < settings.mainSleepFloorMinutes;
-    // Recovery repays a debt. If the nights in this window already got them to target,
-    // there is no debt and nothing to repay.
-    const wantRecovery = prevAte >= settings.disruptionMinutes
-      && slept < settings.mainSleepTargetMinutes;
+    const addNap = (
+      kind: "pre-duty-nap" | "recovery-nap",
+      napStart: Date, napEnd: Date, station: string, why: string, ruleIds: string[],
+    ) => {
+      blocks.push({
+        id: `${kind}-${napStart.toISOString().slice(0, 16)}`,
+        kind,
+        startUtc: napStart.toISOString(),
+        endUtc: napEnd.toISOString(),
+        station,
+        why,
+        ruleIds,
+      });
+    };
 
-    if (wantPreDuty || wantRecovery) {
+    // Recovery, in the gap between getting in and the first night.
+    //
+    // The debt was run up BEFORE this window opened, so the old test — offer recovery only
+    // if the nights here fall short of target — had it backwards. A full eight hours
+    // tonight does not give back the four the duty took out of last night, and it is no
+    // help at all during the nine hours before it starts.
+    if (prevAte >= settings.disruptionMinutes) {
+      const from = addMinutes(new Date(r.sleepWindowFromUtc), settings.settleMinutes);
+      const until = addMinutes(firstNight.from, -settings.napSeparationMinutes);
+      const room = minutesBetween(from, until);
+      if (room >= 45) {
+        // Taken as soon as they are through the door, and kept short: sleep now is what
+        // repays the debt, and a nap that drifts towards the evening starts costing the
+        // night it is meant to protect.
+        const len = Math.min(settings.napCapMinutes, room);
+        addNap(
+          "recovery-nap", from, addMinutes(from, len), r.prev.endStation,
+          `${r.prev.date} took ${formatDuration(prevAte)} out of the hours you normally ` +
+            `sleep, and you are ${formatDuration(minutesBetween(from, firstNight.from))} ` +
+            `from your next proper night. Take this ${formatDuration(len)} now, while the ` +
+            `pressure is still there — it is short on purpose, so it does not cost you ` +
+            `tonight.`,
+          ["sleep-per-24h-7h", "nap-cap-2h"],
+        );
+      }
+    }
+
+    // Pre-duty, in the gap between the last night and leaving for the airport.
+    const wantPreDuty = dutyWocl >= 60 || slept < settings.mainSleepFloorMinutes;
+    if (wantPreDuty) {
+      const napEnd = addMinutes(pickup, -settings.napInertiaMinutes);
+      const earliest = addMinutes(lastNight.to, settings.napSeparationMinutes);
       const room = minutesBetween(earliest, napEnd);
       if (room >= 45) {
-        const napLen = Math.min(settings.napCapMinutes, room);
-        const napStart = addMinutes(napEnd, -napLen);
-        const kind = wantPreDuty ? "pre-duty-nap" : "recovery-nap";
-        blocks.push({
-          id: `${kind}-${napStart.toISOString().slice(0, 16)}`,
-          kind,
-          startUtc: napStart.toISOString(),
-          endUtc: napEnd.toISOString(),
-          station: r.next.station,
-          why: wantPreDuty
-            ? (slept < settings.mainSleepFloorMinutes
-                ? `Only ${formatDuration(slept)} of sleep fits before ${r.next.date}, so ` +
-                  `this ${formatDuration(napLen)} takes the edge off. It ends ` +
-                  `${formatDuration(settings.napInertiaMinutes)} before you leave, so you ` +
-                  `are not driving on sleep inertia.`
-                : `${r.next.date} runs ${formatDuration(dutyWocl)} through your circadian ` +
-                  `low. Take this ${formatDuration(napLen)} beforehand, while you can still ` +
-                  `sleep — it ends ${formatDuration(settings.napInertiaMinutes)} before you leave.`)
-            : `${r.prev.date} took ${formatDuration(prevAte)} out of the hours you normally ` +
-              `sleep, and this window only gets you ${formatDuration(slept)}. This ` +
-              `${formatDuration(napLen)} pays some of it back rather than carrying it into ` +
-              `the week.`,
-          ruleIds: wantPreDuty
-            ? ["nap-inertia-gap-45m", "nap-cap-2h"]
-            : ["sleep-per-24h-7h"],
-        });
+        const len = Math.min(settings.napCapMinutes, room);
+        addNap(
+          "pre-duty-nap", addMinutes(napEnd, -len), napEnd, r.next.station,
+          slept < settings.mainSleepFloorMinutes
+            ? `Only ${formatDuration(slept)} of sleep fits before ${r.next.date}, so ` +
+              `this ${formatDuration(len)} takes the edge off. It ends ` +
+              `${formatDuration(settings.napInertiaMinutes)} before you leave, so you ` +
+              `are not driving on sleep inertia.`
+            : `${r.next.date} runs ${formatDuration(dutyWocl)} through your circadian ` +
+              `low. Take this ${formatDuration(len)} beforehand, while you can still ` +
+              `sleep — it ends ${formatDuration(settings.napInertiaMinutes)} before you leave.`,
+          ["nap-inertia-gap-45m", "nap-cap-2h"],
+        );
       }
     }
   });
 
   const conflicts: Conflict[] = mandatoryConflicts(duties, profile, pack);
+
+  // Chronological. Naps are appended after the nights of their own rest period, so the
+  // raw order is neither the order they happen in nor the order anything downstream
+  // wants to read them in.
+  blocks.sort((a, b) => a.startUtc.localeCompare(b.startUtc));
 
   return { caseId, blocks, conflicts };
 }

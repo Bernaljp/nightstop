@@ -87,6 +87,44 @@ you which of them your month breaks.
                                           the month, then the detail.
 ```
 
+### Every agent, and what it is told
+
+Six agents exist in this repository; four of them are here to be beaten. Each one's
+instructions are a single exported string, so what shaped it can be read without running
+anything, and each has a rendered trajectory showing it from those instructions to its
+result — including the turns where a tool answered and changed what it did next.
+
+| Agent | Its job | Instructions | Trajectory |
+|---|---|---|---|
+| `reader` | Roster document → structured duties, with derivations declared | [`lib/agents/reader.ts`](lib/agents/reader.ts) | [kestrel](trajectories/reader-d04-kestrel.md) · [cirrus](trajectories/reader-d07-cirrus.md) · [nimbus](trajectories/reader-d08-nimbus.md) |
+| `distiller` | Rules document → compact rule pack, each rule with its clause | [`lib/agents/distiller.ts`](lib/agents/distiller.ts) | [the rules document](trajectories/distiller.md) |
+| `chatbot` | **Baseline.** One prompt, the PDF, no rules, no tools | [`lib/agents/baselines.ts`](lib/agents/baselines.ts) | [aurora](trajectories/chatbot-d01-aurora.md) |
+| `steelman` | **Fairness arm.** Same model and effort, handed the rule pack, one shot | [`lib/agents/baselines.ts`](lib/agents/baselines.ts) | [meridian](trajectories/steelman-d02-meridian.md) |
+| `rule-checker` | **Ablation.** The full system with a model finding collisions instead of a function | [`lib/agents/ablation.ts`](lib/agents/ablation.ts) | [aurora](trajectories/rule-checker-d01-aurora.md) |
+| `repair` | **Removed.** Resolves flagged uncertainties instead of surfacing them | [`lib/agents/repair.ts`](lib/agents/repair.ts) | [kestrel](trajectories/repair-d04-kestrel.md) |
+
+Only the first two are in the product. The other four exist so that every claim about what
+the design is worth has an arm that was actually run, rather than an argument.
+
+### What comes out
+
+A month of sleep, in blocks, each carrying the reason it sits where it does:
+
+- **Main sleep**, anchored to the hours *you* keep — you say 21:30 or midnight, and they
+  differ by hours between crew — held there wherever the roster allows, and moved with an
+  explanation where it does not.
+- **A pre-duty sleep or nap** before a duty that runs through your circadian low, ending
+  far enough ahead of the drive that you are not setting off on sleep inertia.
+- **Recovery sleep** after a duty that took your usual hours off you, placed as soon as
+  you are through the door and kept short, so it does not cost you the night.
+- **The circadian low itself**, drawn from your *body* clock rather than the wall clock,
+  because on the third day of a layover those are hours apart.
+
+The calendar is drawn on **one timezone at a time** — your base by default, any station on
+the roster if you want to read the month in the clock you are standing in — and sleep away
+from base is a different colour from sleep in your own bed, because which nights are at
+home is the shape of the month.
+
 **It always produces a schedule.** Where the roster forces a collision with a rule, the
 collision is stated with something you could actually do about it, and the choice is
 left to you. That is not a design preference: 14 CFR 117.25(f) puts the judgement about
@@ -255,19 +293,20 @@ untrustworthy, and it costs *more* to do it.
 **The last column changes one thing.** The rule check moves out of the model and into a
 deterministic function. Invented rules: 40 → 0. Trustworthy: 1/8 → 8/8. Cheaper, too.
 
-Eight of the twelve stages moved neither headline number. All eight were real defects: a
+Nine of the thirteen stages moved neither headline number. All nine were real defects: a
 planner that never suggested a nap; one that left every day off unplanned; one that gave
 every crew member the same bedtime whatever they told it; one that stacked three sleeps
 into thirteen hours with a five-minute gap; one that had people asleep the minute they
 walked through the door; one that asked for twenty-four hours of sleep in forty-six and
-blamed the roster for it; a calendar that drew a crew member asleep before they landed; and
-then the same calendar still mixing timezones in its labels after I had declared that one
-fixed. **None was found by a metric.** All eight came from rendering the output and looking
-at it, and seven of the eight were found by someone other than the author.
+blamed the roster for it; a calendar that drew a crew member asleep before they landed;
+the same calendar still mixing timezones in its labels after I had declared that one
+fixed; and a plan that left a crew member nine hours awake off a red-eye with no nap in
+sight. **None was found by a metric.** All nine came from rendering the output and looking
+at it, and eight of the nine were found by someone other than the author.
 
 That is the finding this evaluation produced about itself, and it is worth more than any
 row in the table above. Twelve cases, a pre-registered metric, an independent grader, four
-repeats and two held-out sets — and every one of those eight defects sailed through. The
+repeats and two held-out sets — and every one of those nine defects sailed through. The
 grader checks that a plan contains no violation. It never asked whether the plan was
 coherent, whether a person could actually follow it, or whether the picture of it told the
 truth. That is the argument for the hot take below as much as any of the numbers above.
@@ -298,6 +337,7 @@ job it should not be doing — and the tools that let it do the other half exact
 | **10 · a night's sleep costs a day awake** | Two things, both reported from the calendar. The planner gave every body-clock night the full eight hours, so a 46-hour Chicago layover came out as **24 hours of sleep in three goes** — and the explanation printed onto it read *"the roster leaves no room to keep your normal hours"*, which on a 46-hour window is simply false. Sleep is now bought with time awake at roughly 2:1, floored at the rule pack's own six hours, and every block explains itself from why it landed where it did rather than from where it ended up. | Most-slept rest window **72% → 63%**; d07-cirrus over that layover 24h → 20h40; plan violations **0 either way**; primary and co-primary **unchanged** | Kept. Sixth stage running that moved no headline number, and the second where the fault was in what the plan *said* rather than where it put the sleep. |
 | **11 · one clock draws the calendar** | Each span was positioned in its own station's timezone, so the Madrid–JFK sector was drawn ending at 21:10 Madrid time and the New York sleep after it starting at 19:56 New York time. The picture showed a crew member asleep an hour and a half before they landed. The plan was correct; the calendar was not. Reported by a reader, from the demo. | The grid is now drawn on one clock and labelled with it, blocks away from base carrying their station; no arrangement of stations can now draw a false overlap. Nothing in the plan changed, so **no metric moved at all** | Kept. The one class of mistake this calendar must not make, and there was no number anywhere in the evaluation that could have caught it. |
 | **12 · the same mistake, moved into the text** | Stage 11 fixed the geometry and left the labels alone, so a block positioned at 00:41 on the base-time axis was captioned *"ORD 17:41"*, and the agenda beside it read in station time while the grid read in home time. Reported by the same reader, on the next look: *"it is mixing time zones."* They were right, and my fix had been half a fix. | One clock now sets position, label, agenda and day-by-day table together — plus a picker for home, any station on the roster, or UTC, which moves the **whole** view at once. A block's station rides along as a place, never as a second set of hours. The block reasons carry no clock readings at all now, only durations, so they cannot contradict whichever zone the reader picked. **No metric moved** | Kept. Eighth stage running that moved no headline number, and the one that taught me the most: a partial fix to a display bug looks exactly like a complete one from the terminal. |
+| **13 · a nap after the duty, not only before it** | Stage 8's rule — at most one supplementary sleep per rest period — stopped naps stacking and quietly created the opposite problem: land at 14:20 off an overnight sector that ate half your night, and the plan offered nothing at all until midnight. Nine hours awake, straight off a red-eye, no nap. Reported from the calendar. The stacking was never about the count, it was about placement, so the two naps now have separate slots — recovery in the gap *before* the first night, pre-duty in the gap *after* the last — each four hours clear of the sleep beside it. The old gate was backwards too: it withheld recovery when the window's own nights reached target, as though a full night tonight repaid the four hours yesterday's duty took. | Recovery sleep across sixteen rosters **0 → 66**, pre-duty naps 12 → 31, plan violations **0 either way**; primary and co-primary **unchanged**. Sleep away from base is now drawn in its own colour, which is not a defect fix — it was asked for, and which nights are at home turns out to be the shape of the month | Kept. Ninth stage running that moved no headline number. |
 | **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3

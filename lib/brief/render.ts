@@ -31,6 +31,7 @@ const CSS = `
   --ink-2: #52514e;
   --ink-3: #86847d;
   --sleep: #2a78d6;
+  --away: #6b4fc4;
   --duty: #eb6834;
   --nap: #1baf7a;
   --wocl: #1a1a1914;
@@ -44,7 +45,7 @@ const CSS = `
     color-scheme: dark;
     --surface: #1a1a19; --raised: #232322; --line: #34342f;
     --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #8d8c83;
-    --sleep: #3987e5; --duty: #d95926; --nap: #199e70;
+    --sleep: #3987e5; --away: #8064d6; --duty: #d95926; --nap: #199e70;
     --wocl: #ffffff1a; --wocl-line: #ffffff33;
     --hard: #e66767; --rec: #c98500; --pref: #9085e9;
   }
@@ -53,7 +54,7 @@ const CSS = `
   color-scheme: dark;
   --surface: #1a1a19; --raised: #232322; --line: #34342f;
   --ink: #ffffff; --ink-2: #c3c2b7; --ink-3: #8d8c83;
-  --sleep: #3987e5; --duty: #d95926; --nap: #199e70;
+  --sleep: #3987e5; --away: #8064d6; --duty: #d95926; --nap: #199e70;
   --wocl: #ffffff1a; --wocl-line: #ffffff33;
   --hard: #e66767; --rec: #c98500; --pref: #9085e9;
 }
@@ -102,6 +103,9 @@ h2 { font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase; color: 
                 border-right: 1px solid var(--wocl-line); border-radius: 0; height: 14px; }
 .track i.duty { background: var(--duty); top: 0; height: 6px; }
 .track i.main { background: var(--sleep); top: 7px; height: 7px; }
+/* Your own bed against a hotel room. On a month-long ribbon that distinction is the
+   shape of the month, and one colour for both hid it completely. */
+.track i.main.away { background: var(--away); }
 .track i.pre-duty-nap, .track i.recovery-nap { background: var(--nap); top: 7px; height: 7px;
   outline: 2px solid var(--raised); }
 .key { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px; font-size: 12px; color: var(--ink-2); }
@@ -135,7 +139,7 @@ footer { margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--line);
 function spanHtml(s: Span): string {
   const left = (s.from * 100).toFixed(3);
   const width = Math.max(0.4, (s.to - s.from) * 100).toFixed(3);
-  return `<i class="${s.kind}" style="left:${left}%;width:${width}%" title="${esc(s.title)}"></i>`;
+  return `<i class="${s.kind}${s.away ? " away" : ""}" style="left:${left}%;width:${width}%" title="${esc(s.title)}"></i>`;
 }
 
 interface Grouped {
@@ -253,7 +257,8 @@ ${d.uncertainties.map((u) => `<tr><td>—</td><td>unclear</td><td class="note" c
   <div class="hours"><div></div><div>${hours}</div></div>
   ${d.days.map((r) => `<div class="day"><div class="g">${r.dow} ${esc(r.date.slice(8))} ${esc(r.station)}</div><div class="track">${r.spans.map(spanHtml).join("")}</div></div>`).join("\n  ")}
   <div class="key">
-    <span><b style="background:var(--sleep)"></b>main sleep</span>
+    <span><b style="background:var(--sleep)"></b>main sleep at ${esc(d.base)}</span>
+    <span><b style="background:var(--away)"></b>main sleep away</span>
     <span><b style="background:var(--nap)"></b>nap</span>
     <span><b style="background:var(--duty)"></b>on duty</span>
     <span><b style="background:var(--wocl);outline:1px solid var(--wocl-line)"></b>your circadian low</span>

@@ -21,6 +21,7 @@
   --ink-2:  #93a1b5;
   --ink-3:  #61708a;
   --sleep:  #4d94ea;
+  --away:   #8064d6;
   --duty:   #e2703c;
   --nap:    #23b183;
   --flag:   #edb54a;
@@ -42,6 +43,7 @@
     --ink-2:  #4e5a6e;
     --ink-3:  #7b879a;
     --sleep:  #2a78d6;
+    --away:   #6b4fc4;
     --duty:   #c9501f;
     --nap:    #1baf7a;
     --flag:   #a97400;
@@ -53,7 +55,7 @@
   --ground: #f6f7f9; --raised: #ffffff; --sunk: #eceef2;
   --line: #dde1e8; --line-2: #c8cedb80;
   --ink: #0d1117; --ink-2: #4e5a6e; --ink-3: #7b879a;
-  --sleep: #2a78d6; --duty: #c9501f; --nap: #1baf7a; --flag: #a97400;
+  --sleep: #2a78d6; --away: #6b4fc4; --duty: #c9501f; --nap: #1baf7a; --flag: #a97400;
   --wocl: #0d111714; --wocl-e: #0d11172e;
 }
 
@@ -111,6 +113,9 @@ header { padding: 76px 0 0; }
              border-inline: 1px solid var(--wocl-e); border-radius: 0; }
 .rt i.duty { top: 0; height: 4px; background: var(--duty); }
 .rt i.main { top: 5px; height: 5px; background: var(--sleep); }
+/* Your own bed against a hotel room — on a month-long ribbon that is the shape of the
+   month, and one colour for both hid it entirely. */
+.rt i.main.away { background: var(--away); }
 .rt i.pre-duty-nap, .rt i.recovery-nap { top: 5px; height: 5px; background: var(--nap); }
 .rkey { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 11px;
         font-family: Barlow, sans-serif; font-size: 11.5px; color: var(--ink-2); }
@@ -226,7 +231,9 @@ footer a { color: var(--ink-2); }
       <div class="ribbon">
       {{RIBBON}}
         <div class="rkey">
-          <span><i style="background:var(--sleep)"></i>sleep</span>
+          <span><i style="background:var(--sleep)"></i>sleep at base</span>
+          <span><i style="background:var(--away)"></i>sleep away</span>
+          <span><i style="background:var(--nap)"></i>nap</span>
           <span><i style="background:var(--duty)"></i>on duty</span>
           <span><i style="background:var(--wocl);outline:1px solid var(--wocl-e)"></i>circadian low</span>
         </div>
@@ -447,8 +454,8 @@ footer a { color: var(--ink-2); }
 <section>
   <p class="eyebrow">what no number caught</p>
   <div class="col">
-    <h2>Eight of twelve stages moved neither headline number.</h2>
-    <p>All eight were real defects. A planner that never once suggested a nap. One that
+    <h2>Nine of thirteen stages moved neither headline number.</h2>
+    <p>All nine were real defects. A planner that never once suggested a nap. One that
     left every day off unplanned. One that gave every crew member the same bedtime whatever
     they had told it. One that stacked three sleeps into thirteen hours with a five-minute
     gap. One that had people asleep the minute they walked through the door. One that asked
@@ -466,11 +473,17 @@ footer a { color: var(--ink-2); }
     One clock now sets position, label and list together, with a picker that moves the whole
     view at once &mdash; and the reasons carry durations only, never a clock reading that
     could contradict it.</p>
+    <p>And the fix for one of those defects caused the next. Capping a rest period at a
+    single extra nap stopped three sleeps stacking up, and left a crew member landing off a
+    red-eye at 14:20 with nothing offered until midnight. Nine hours awake, no nap. The two
+    naps have their own slots now &mdash; recovery before the first night, pre-duty after
+    the last &mdash; and recovery sleep across sixteen rosters went from none to
+    sixty-six.</p>
   </div>
   <div class="score">
-    <div class="chip bad">defects a metric caught <b>0 of 8</b></div>
-    <div class="chip">found by reading the output <b>8</b></div>
-    <div class="chip">found by someone other than the author <b>7</b></div>
+    <div class="chip bad">defects a metric caught <b>0 of 9</b></div>
+    <div class="chip">found by reading the output <b>9</b></div>
+    <div class="chip">found by someone other than the author <b>8</b></div>
   </div>
   <div class="note col">
     Twelve rosters, a pre-registered metric, an independent grader, four repeats and two
