@@ -1,0 +1,305 @@
+{
+  "caseId": "h02-lyra",
+  "blocks": [
+    {
+      "id": "main-2026-09-02T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-02T23:00:00.000Z",
+      "endUtc": "2026-09-03T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-03T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-03T23:00:00.000Z",
+      "endUtc": "2026-09-04T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-05T01:52",
+      "kind": "main",
+      "startUtc": "2026-09-05T01:52:00.000Z",
+      "endUtc": "2026-09-05T09:52:00.000Z",
+      "station": "LHR",
+      "why": "02:52 to 10:52 at LHR — about 2h52 later than your usual 00:00. You were still on duty at 00:00; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-05T18:55",
+      "kind": "main",
+      "startUtc": "2026-09-05T18:55:00.000Z",
+      "endUtc": "2026-09-06T02:55:00.000Z",
+      "station": "LHR",
+      "why": "19:55 to 03:55 at LHR — about 4h05 earlier than your usual 00:00. You were still on duty at 00:00; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-06T18:55",
+      "kind": "main",
+      "startUtc": "2026-09-06T18:55:00.000Z",
+      "endUtc": "2026-09-07T02:55:00.000Z",
+      "station": "LHR",
+      "why": "19:55 to 03:55 at LHR — about 4h05 earlier than your usual 00:00. You were still on duty at 00:00; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-07T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-07T23:00:00.000Z",
+      "endUtc": "2026-09-08T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-09T00:25",
+      "kind": "main",
+      "startUtc": "2026-09-09T00:25:00.000Z",
+      "endUtc": "2026-09-09T08:25:00.000Z",
+      "station": "LHR",
+      "why": "01:25 to 09:25 at LHR — about 1h25 later than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-09T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-09T23:00:00.000Z",
+      "endUtc": "2026-09-10T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-10T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-10T23:00:00.000Z",
+      "endUtc": "2026-09-11T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-11T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-11T23:00:00.000Z",
+      "endUtc": "2026-09-12T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-12T23:11",
+      "kind": "main",
+      "startUtc": "2026-09-12T23:11:00.000Z",
+      "endUtc": "2026-09-13T07:11:00.000Z",
+      "station": "LHR",
+      "why": "00:11 to 08:11 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-13T18:55",
+      "kind": "main",
+      "startUtc": "2026-09-13T18:55:00.000Z",
+      "endUtc": "2026-09-14T02:55:00.000Z",
+      "station": "LHR",
+      "why": "19:55 to 03:55 at LHR — about 4h05 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-14T19:25",
+      "kind": "main",
+      "startUtc": "2026-09-14T19:25:00.000Z",
+      "endUtc": "2026-09-15T03:25:00.000Z",
+      "station": "LHR",
+      "why": "20:25 to 04:25 at LHR — about 3h35 earlier than your usual 00:00. You were still on duty at 00:00; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-15T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-15T23:00:00.000Z",
+      "endUtc": "2026-09-16T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-16T19:25",
+      "kind": "main",
+      "startUtc": "2026-09-16T19:25:00.000Z",
+      "endUtc": "2026-09-17T03:25:00.000Z",
+      "station": "LHR",
+      "why": "20:25 to 04:25 at LHR — about 3h35 earlier than your usual 00:00. You were still on duty at 00:00; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-17T20:00",
+      "kind": "main",
+      "startUtc": "2026-09-17T20:00:00.000Z",
+      "endUtc": "2026-09-18T04:00:00.000Z",
+      "station": "LHR",
+      "why": "21:00 to 05:00 at LHR — about 3h00 earlier than your usual 00:00. You were still on duty at 00:00; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-18T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-18T23:00:00.000Z",
+      "endUtc": "2026-09-19T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-19T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-19T23:00:00.000Z",
+      "endUtc": "2026-09-20T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-20T19:25",
+      "kind": "main",
+      "startUtc": "2026-09-20T19:25:00.000Z",
+      "endUtc": "2026-09-21T03:25:00.000Z",
+      "station": "LHR",
+      "why": "20:25 to 04:25 at LHR — about 3h35 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-21T23:00:00.000Z",
+      "endUtc": "2026-09-22T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-22T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-22T23:00:00.000Z",
+      "endUtc": "2026-09-23T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-23T23:00:00.000Z",
+      "endUtc": "2026-09-24T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-25T01:16",
+      "kind": "main",
+      "startUtc": "2026-09-25T01:16:00.000Z",
+      "endUtc": "2026-09-25T09:16:00.000Z",
+      "station": "LHR",
+      "why": "02:16 to 10:16 at LHR — about 2h16 later than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-25T20:30",
+      "kind": "main",
+      "startUtc": "2026-09-25T20:30:00.000Z",
+      "endUtc": "2026-09-26T04:30:00.000Z",
+      "station": "LHR",
+      "why": "21:30 to 05:30 at LHR — about 2h30 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-26T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-26T23:00:00.000Z",
+      "endUtc": "2026-09-27T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-27T23:00",
+      "kind": "main",
+      "startUtc": "2026-09-27T23:00:00.000Z",
+      "endUtc": "2026-09-28T07:00:00.000Z",
+      "station": "LHR",
+      "why": "00:00 to 08:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-07",
+      "statement": "2026-09-07 is a 13h34 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    }
+  ],
+  "readingUncertainties": [],
+  "derivations": []
+}

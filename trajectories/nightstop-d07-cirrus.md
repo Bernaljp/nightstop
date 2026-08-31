@@ -1,10 +1,10 @@
-<!-- rendered from results/nightstop-2026-08-31T16-25-30-509Z/d07-cirrus/trajectory.jsonl -->
+<!-- rendered from results/nightstop-2026-08-31T17-02-14-531Z/d07-cirrus/trajectory.jsonl -->
 
 > **Why this trajectory.** A duty printed 23:30 → 05:25 on one dated row with nothing marking the day change, and continuation rows carrying no date either. Watch it use to_utc rather than doing the arithmetic itself.
 
 # Trajectory — d07-cirrus, arm `nightstop`
 
-Run `nightstop-2026-08-31T16-25-30-509Z`. 163 events.
+Run `nightstop-2026-08-31T17-02-14-531Z`. 160 events.
 
 
 ## reader
@@ -115,10 +115,6 @@ Every date in the covered period appears, including days off. Set `reconciled` t
 
 ### Turn 1 — stop reason `null`
 
-I'll start by reading the roster document.
-
-### Turn 2 — stop reason `null`
-
 **calls `Read`**
 
 ```json
@@ -144,15 +140,15 @@ I'll start by reading the roster document.
 … [4092 more characters]
 ```
 
+### Turn 3 — stop reason `null`
+
+
+
 ### Turn 4 — stop reason `null`
 
-
+I've read the layout. Now converting every local time via the tool.
 
 ### Turn 5 — stop reason `null`
-
-The document is one page. Let me convert every local time properly.
-
-### Turn 6 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -174,7 +170,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 8 — stop reason `null`
+### Turn 7 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -196,7 +192,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 10 — stop reason `null`
+### Turn 9 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -218,7 +214,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 12 — stop reason `null`
+### Turn 11 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -240,7 +236,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 14 — stop reason `null`
+### Turn 13 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -262,7 +258,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 16 — stop reason `null`
+### Turn 15 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -284,7 +280,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 18 — stop reason `null`
+### Turn 17 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -306,7 +302,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 20 — stop reason `null`
+### Turn 19 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -328,7 +324,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 22 — stop reason `null`
+### Turn 21 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -350,7 +346,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 24 — stop reason `null`
+### Turn 23 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -372,7 +368,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 26 — stop reason `null`
+### Turn 25 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -383,18 +379,7 @@ The document is one page. Let me convert every local time properly.
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"JFK\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-05T14:40\",\"utc\":\"2026-09-05T18:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 28 — stop reason `null`
+### Turn 26 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -411,12 +396,23 @@ The document is one page. Let me convert every local time properly.
 [
   {
     "type": "text",
+    "text": "{\"station\":\"JFK\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-05T14:40\",\"utc\":\"2026-09-05T18:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"JFK\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-05T15:10\",\"utc\":\"2026-09-05T19:10:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 30 — stop reason `null`
+### Turn 29 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -438,7 +434,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 32 — stop reason `null`
+### Turn 31 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -447,6 +443,17 @@ The document is one page. Let me convert every local time properly.
   "station": "JFK",
   "localDateTime": "2026-09-07T23:10"
 }
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"JFK\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-07T23:10\",\"utc\":\"2026-09-08T03:10:00.000Z\",\"notes\":[]}"
+  }
+]
 ```
 
 ### Turn 33 — stop reason `null`
@@ -466,23 +473,12 @@ The document is one page. Let me convert every local time properly.
 [
   {
     "type": "text",
-    "text": "{\"station\":\"JFK\",\"timezone\":\"America/New_York\",\"localDateTime\":\"2026-09-07T23:10\",\"utc\":\"2026-09-08T03:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-08T13:10\",\"utc\":\"2026-09-08T11:10:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 36 — stop reason `null`
+### Turn 35 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -504,11 +500,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 38 — stop reason `null`
-
-
-
-### Turn 39 — stop reason `null`
+### Turn 37 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -530,7 +522,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 41 — stop reason `null`
+### Turn 39 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -552,7 +544,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 43 — stop reason `null`
+### Turn 41 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -574,7 +566,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 45 — stop reason `null`
+### Turn 43 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -596,7 +588,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 47 — stop reason `null`
+### Turn 45 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -618,7 +610,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 49 — stop reason `null`
+### Turn 47 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -640,7 +632,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 51 — stop reason `null`
+### Turn 49 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -662,7 +654,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 53 — stop reason `null`
+### Turn 51 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -684,7 +676,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 55 — stop reason `null`
+### Turn 53 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -706,7 +698,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 57 — stop reason `null`
+### Turn 55 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -728,7 +720,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 59 — stop reason `null`
+### Turn 57 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -750,7 +742,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 61 — stop reason `null`
+### Turn 59 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -772,7 +764,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 63 — stop reason `null`
+### Turn 61 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -780,17 +772,6 @@ The document is one page. Let me convert every local time properly.
 {
   "station": "BCN",
   "localDateTime": "2026-09-19T07:25"
-}
-```
-
-### Turn 64 — stop reason `null`
-
-**calls `mcp__nightstop__to_utc`**
-
-```json
-{
-  "station": "BCN",
-  "localDateTime": "2026-09-19T08:20"
 }
 ```
 
@@ -805,18 +786,18 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-**tool answered**
+### Turn 63 — stop reason `null`
 
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"BCN\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-19T08:20\",\"utc\":\"2026-09-19T06:20:00.000Z\",\"notes\":[]}"
-  }
-]
+**calls `mcp__nightstop__to_utc`**
+
+```json
+{
+  "station": "BCN",
+  "localDateTime": "2026-09-19T08:20"
+}
 ```
 
-### Turn 67 — stop reason `null`
+### Turn 64 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -833,12 +814,23 @@ The document is one page. Let me convert every local time properly.
 [
   {
     "type": "text",
+    "text": "{\"station\":\"BCN\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-19T08:20\",\"utc\":\"2026-09-19T06:20:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-19T09:40\",\"utc\":\"2026-09-19T07:40:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 69 — stop reason `null`
+### Turn 67 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -860,7 +852,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 71 — stop reason `null`
+### Turn 69 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -882,7 +874,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 73 — stop reason `null`
+### Turn 71 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -904,7 +896,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 75 — stop reason `null`
+### Turn 73 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -926,7 +918,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 77 — stop reason `null`
+### Turn 75 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -948,7 +940,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 79 — stop reason `null`
+### Turn 77 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -970,7 +962,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 81 — stop reason `null`
+### Turn 79 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -992,7 +984,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 83 — stop reason `null`
+### Turn 81 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1014,7 +1006,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 85 — stop reason `null`
+### Turn 83 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1036,7 +1028,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 87 — stop reason `null`
+### Turn 85 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1047,7 +1039,18 @@ The document is one page. Let me convert every local time properly.
 }
 ```
 
-### Turn 88 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-20T19:59\",\"utc\":\"2026-09-20T17:59:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 87 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1064,23 +1067,12 @@ The document is one page. Let me convert every local time properly.
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-20T19:59\",\"utc\":\"2026-09-20T17:59:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-20T20:29\",\"utc\":\"2026-09-20T18:29:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 91 — stop reason `null`
+### Turn 89 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1102,7 +1094,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 93 — stop reason `null`
+### Turn 91 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1124,7 +1116,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 95 — stop reason `null`
+### Turn 93 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1146,7 +1138,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 97 — stop reason `null`
+### Turn 95 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1168,7 +1160,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 99 — stop reason `null`
+### Turn 97 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1190,7 +1182,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 101 — stop reason `null`
+### Turn 99 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1212,7 +1204,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 103 — stop reason `null`
+### Turn 101 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1234,7 +1226,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 105 — stop reason `null`
+### Turn 103 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1245,18 +1237,7 @@ The document is one page. Let me convert every local time properly.
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T05:35\",\"utc\":\"2026-09-23T03:35:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 107 — stop reason `null`
+### Turn 104 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1273,12 +1254,23 @@ The document is one page. Let me convert every local time properly.
 [
   {
     "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T05:35\",\"utc\":\"2026-09-23T03:35:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"DUB\",\"timezone\":\"Europe/Dublin\",\"localDateTime\":\"2026-09-23T07:15\",\"utc\":\"2026-09-23T06:15:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 109 — stop reason `null`
+### Turn 107 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1300,7 +1292,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 111 — stop reason `null`
+### Turn 109 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1311,7 +1303,18 @@ The document is one page. Let me convert every local time properly.
 }
 ```
 
-### Turn 112 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T11:41\",\"utc\":\"2026-09-23T09:41:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 111 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1328,23 +1331,12 @@ The document is one page. Let me convert every local time properly.
 [
   {
     "type": "text",
-    "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T11:41\",\"utc\":\"2026-09-23T09:41:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-23T12:11\",\"utc\":\"2026-09-23T10:11:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 115 — stop reason `null`
+### Turn 113 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1366,7 +1358,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 117 — stop reason `null`
+### Turn 115 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1388,7 +1380,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 119 — stop reason `null`
+### Turn 117 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1410,7 +1402,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 121 — stop reason `null`
+### Turn 119 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1432,7 +1424,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 123 — stop reason `null`
+### Turn 121 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1454,7 +1446,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 125 — stop reason `null`
+### Turn 123 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1476,7 +1468,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 127 — stop reason `null`
+### Turn 125 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1498,7 +1490,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 129 — stop reason `null`
+### Turn 127 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1520,7 +1512,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 131 — stop reason `null`
+### Turn 129 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1542,7 +1534,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 133 — stop reason `null`
+### Turn 131 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1564,7 +1556,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 135 — stop reason `null`
+### Turn 133 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1586,7 +1578,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 137 — stop reason `null`
+### Turn 135 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1608,7 +1600,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 139 — stop reason `null`
+### Turn 137 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1619,18 +1611,7 @@ The document is one page. Let me convert every local time properly.
 }
 ```
 
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-09-27T08:10\",\"utc\":\"2026-09-27T00:10:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-### Turn 141 — stop reason `null`
+### Turn 138 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1647,12 +1628,23 @@ The document is one page. Let me convert every local time properly.
 [
   {
     "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-09-27T08:10\",\"utc\":\"2026-09-27T00:10:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
     "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-09-27T08:40\",\"utc\":\"2026-09-27T00:40:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 143 — stop reason `null`
+### Turn 141 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1674,7 +1666,7 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 145 — stop reason `null`
+### Turn 143 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1685,7 +1677,18 @@ The document is one page. Let me convert every local time properly.
 }
 ```
 
-### Turn 146 — stop reason `null`
+**tool answered**
+
+```
+[
+  {
+    "type": "text",
+    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-09-28T12:40\",\"utc\":\"2026-09-28T04:40:00.000Z\",\"notes\":[]}"
+  }
+]
+```
+
+### Turn 145 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1702,23 +1705,12 @@ The document is one page. Let me convert every local time properly.
 [
   {
     "type": "text",
-    "text": "{\"station\":\"SIN\",\"timezone\":\"Asia/Singapore\",\"localDateTime\":\"2026-09-28T12:40\",\"utc\":\"2026-09-28T04:40:00.000Z\",\"notes\":[]}"
-  }
-]
-```
-
-**tool answered**
-
-```
-[
-  {
-    "type": "text",
     "text": "{\"station\":\"MAD\",\"timezone\":\"Europe/Madrid\",\"localDateTime\":\"2026-09-28T20:10\",\"utc\":\"2026-09-28T18:10:00.000Z\",\"notes\":[]}"
   }
 ]
 ```
 
-### Turn 149 — stop reason `null`
+### Turn 147 — stop reason `null`
 
 **calls `mcp__nightstop__to_utc`**
 
@@ -1740,15 +1732,11 @@ The document is one page. Let me convert every local time properly.
 ]
 ```
 
-### Turn 151 — stop reason `null`
+### Turn 149 — stop reason `null`
 
 
 
-### Turn 152 — stop reason `null`
-
-Now let me check against the header totals.
-
-### Turn 153 — stop reason `null`
+### Turn 150 — stop reason `null`
 
 **calls `mcp__nightstop__reconcile_totals`**
 
@@ -1759,8 +1747,8 @@ Now let me check against the header totals.
   "headerDaysOff": 18,
   "headerStandbyDays": 0,
   "headerNightstops": 3,
-  "duties": "[\n{\"date\":\"2026-09-01\",\"kind\":\"flight\",\"endStation\":\"ORD\",\"sectors\":[{\"depUtc\":\"2026-09-01T16:30:00Z\",\"arrUtc\":\"2026-09-02T01:30:00Z\"}]},\n{\"date\":\"2026-09-02\",\"kind\":\"off\",\"endStation\":\"ORD\",\"sectors\":[]},\n{\"date\":\"2026-09-03\",\"kind\":\"flight\",\"endStation\":\"MAD\",\"sectors\":[{\"depUtc\":\"2026-09-04T02:50:00Z\",\"arrUtc\":\"2026-09-04T11:50:00Z\"}]},\n{\"date\":\"2026-09-04\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-09-05\",\"kind\":\"flight\",\"endStation\":\"JFK\",\"sectors\":[{\"depUtc\":\"2026-09-05T10:40:00Z\",\"arrUtc\":\"2026-09-05T18:40:00Z\"}]},\n{\"date\":\"2026-09-06\",\"kind\":\"off\",\"endStation\":\"JFK\",\"sectors\":[]},\n{\"date\":\"2026-09-07\",\"kind\":
-… [3533 more characters]
+  "duties": "[\n{\"date\":\"2026-09-01\",\"kind\":\"flight\",\"endStation\":\"ORD\",\"sectors\":[{\"depUtc\":\"2026-09-01T16:30Z\",\"arrUtc\":\"2026-09-02T01:30Z\"}]},\n{\"date\":\"2026-09-02\",\"kind\":\"off\",\"endStation\":\"ORD\",\"sectors\":[]},\n{\"date\":\"2026-09-03\",\"kind\":\"flight\",\"endStation\":\"MAD\",\"sectors\":[{\"depUtc\":\"2026-09-04T02:50Z\",\"arrUtc\":\"2026-09-04T11:50Z\"}]},\n{\"date\":\"2026-09-04\",\"kind\":\"off\",\"endStation\":\"MAD\",\"sectors\":[]},\n{\"date\":\"2026-09-05\",\"kind\":\"flight\",\"endStation\":\"JFK\",\"sectors\":[{\"depUtc\":\"2026-09-05T10:40Z\",\"arrUtc\":\"2026-09-05T18:40Z\"}]},\n{\"date\":\"2026-09-06\",\"kind\":\"off\",\"endStation\":\"JFK\",\"sectors\":[]},\n{\"date\":\"2026-09-07\",\"kind\":\"flight\",\"endSt
+… [3389 more characters]
 ```
 
 **tool answered**
@@ -1774,25 +1762,23 @@ Now let me check against the header totals.
 ]
 ```
 
-### Turn 155 — stop reason `null`
+### Turn 152 — stop reason `null`
 
 
 
-### Turn 156 — stop reason `null`
-
-Reconciled on all four header totals. Building the answer.
+### Turn 153 — stop reason `null`
 
 ```json
 {
-  "format": "Cirrus Connect prints one table with columns Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Duty; the header states all times are LOCAL to the station shown, so Report and STD are local at the departure airport while STA and Off Duty are local at the arrival airport. Dates are DD/MM/YYYY and only the first row of a multi-sector duty carries the date; the Act column holds OFF for days off and is blank for flying.",
+  "format": "CIRRUS CONNECT monthly roster: one plain table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Dates are DD/MM/YYYY, every calendar day gets a row (days off carry the code OFF in the Act column), and the header states explicitly that all times are LOCAL to the station shown — so Report/STD are local at the departure station and STA/Off Duty are local at the arrival station.",
   "traps": [
-    "Only the first line of a duty carries a date — the unlabelled rows on 11/09, 19/09, 20/09, 22/09, 23/09 and 24/09 are continuation sectors of the duty above, not separate duties.",
-    "No arrival dates are printed anywhere. STA and Off Duty are bare clock times and frequently land on the following calendar day: 03/09 arrives MAD 13:50 on 04/09, 07/09 arrives MAD 13:10 on 08/09, 11/09's last two sectors and Off Duty 06:18 fall on 12/09, 24/09's Off Duty 00:14 is 25/09 local, and 26/09 arrives SIN 08:10 on 27/09.",
-    "Report and STA columns mix timezones within one row — e.g. 03/09 'Report 20:20' is Chicago local, 'STA 13:50' is Madrid local. Reading the row in a single timezone gives nonsense durations.",
-    "07/09's duty ends at 13:40 MAD on 08/09, but 08/09 is itself printed as OFF; the day-off row overlaps the tail of the previous duty.",
-    "Days marked OFF on 02/09, 06/09 and 27/09 are downroute rest at ORD, JFK and SIN, not days off at base — these are the three nightstops the header counts.",
-    "Block figures are stated in Xh MM
-… [12862 more characters]
+    "Times are local to each station, not a single reference zone: STD is origin-local and STA is destination-local, so a westbound sector like MAD-ORD 18:30 -> 20:30 is 9h00 of block, not 2h.",
+    "Multi-sector duties print the date only on the first row; the following flight rows are continuations belonging to the duty above (11, 19, 20, 22, 23 and 24 Sep).",
+    "Nothing marks a day rollover. ORD-MAD 21:50 -> 13:50 on 03/09 lands 04/09; JFK-MAD 23:10 -> 13:10 on 07/09 lands 08/09; MAD-SIN 12:40 -> 08:10 on 26/09 lands 27/09; on 11/09 the third sector departs MAD 23:55 and the duty ends 06:18 on 12/09; on 24/09 the Off Duty 00:14 is 25/09 local.",
+    "The calendar day on which a nightstop duty ends is separately printed OFF (02, 04, 06, 08, 27 Sep) even though a duty is still in progress into that morning — the OFF row is a rest day, not a second duty.",
+    "Report offsets are not uniform: 90 minutes on the long-haul duties (ORD, JFK, SIN) and 60 minutes on the European ones. They are printed, so no offset should be applied by hand.",
+    "September 2026 contains no daylight-saving transition in Europe or North America (EU change
+… [9478 more characters]
 
 _finished: success_
 
@@ -1802,8 +1788,8 @@ _hit the 40-turn ceiling_
 
 ```json
 {
-  "text": "I'll start by reading the roster document.\nThe document is one page. Let me convert every local time properly.\nNow let me check against the header totals.\nReconciled on all four header totals. Building the answer.\n\n```json\n{\n  \"format\": \"Cirrus Connect prints one table with columns Date | Report | Act | Flight | Sector | STD | STA | Block | Off Duty | Duty; the header states all times are LOCAL to the station shown, so Report and STD are local at the departure airport while STA and Off Duty are local at the arrival airport. Dates are DD/MM/YYYY and only the first row of a multi-sector duty carries the date; the Act column holds OFF for days off and is blank for flying.\",\n  \"traps\": [\n    \"Only the first line of a duty carries a date — the unlabelled rows on 11/09, 19/09, 20/09, 22/09, 23/09 and 24/09 are continuation sectors of the duty above, not separate duties.\",\n    \"No arrival dates are printed anywhere. STA and Off Duty are bare clock times and frequently land on the following calendar day: 03/09 arrives MAD 13:50 on 04/09, 07/09 arrives MAD 13:10 on 08/09, 11/09's last two sectors and Off Duty 06:18 fall on 12/09, 24/09's Off Duty 00:14 is 25/09 local, and 26/09 arrives SIN 08:10 on 27/09.\",\n    \"Report and STA columns mix timezones within one row — e.g. 03/09 'Report 20:20' is Chicago local, 'STA 13:50' is Madrid local. Reading the row in a single timezone gives nonsense durations.\",\n    \"07/09's duty ends at 13:40 MAD on 08/09, but 08/09 is itself printed as OFF; the day-off row overlaps the tail of the previous duty.\",\n    \"Days marked OFF on 02/09, 06/09 and 27/09 are downroute rest at ORD, JFK and SIN, not days off at base — these are the three nightstops the header counts.\",\n    \"Block figures are stated in Xh MM notation (2h40, 13h30); summing them as decimals understates the month.\",\n    \"The covered period is entirely within CEST/BST/WEST and US DST, so no clock change falls inside it — the DST trap is absent here despite the September/October proximity.\",\n    \"The flight number CR893 appears twice with different routings (MAD-DUB on 23/09, MAD-LIS on 24/09); it is not a duplicated row.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [\n    \"The Act column is blank on every flying row, so the operator's activity code for flight duties is unknown; only OFF is ever printed.\",\n    \"Reused flight number CR893 on 23/09 (MAD-DUB) and 24/09 (MAD-LIS) is read as printed, but one of the tw
-… [14036 more characters]
+  "text": "I've read the layout. Now converting every local time via the tool.\n```json\n{\n  \"format\": \"CIRRUS CONNECT monthly roster: one plain table with columns Date, Report, Act, Flight, Sector, STD, STA, Block, Off Duty, Duty. Dates are DD/MM/YYYY, every calendar day gets a row (days off carry the code OFF in the Act column), and the header states explicitly that all times are LOCAL to the station shown — so Report/STD are local at the departure station and STA/Off Duty are local at the arrival station.\",\n  \"traps\": [\n    \"Times are local to each station, not a single reference zone: STD is origin-local and STA is destination-local, so a westbound sector like MAD-ORD 18:30 -> 20:30 is 9h00 of block, not 2h.\",\n    \"Multi-sector duties print the date only on the first row; the following flight rows are continuations belonging to the duty above (11, 19, 20, 22, 23 and 24 Sep).\",\n    \"Nothing marks a day rollover. ORD-MAD 21:50 -> 13:50 on 03/09 lands 04/09; JFK-MAD 23:10 -> 13:10 on 07/09 lands 08/09; MAD-SIN 12:40 -> 08:10 on 26/09 lands 27/09; on 11/09 the third sector departs MAD 23:55 and the duty ends 06:18 on 12/09; on 24/09 the Off Duty 00:14 is 25/09 local.\",\n    \"The calendar day on which a nightstop duty ends is separately printed OFF (02, 04, 06, 08, 27 Sep) even though a duty is still in progress into that morning — the OFF row is a rest day, not a second duty.\",\n    \"Report offsets are not uniform: 90 minutes on the long-haul duties (ORD, JFK, SIN) and 60 minutes on the European ones. They are printed, so no offset should be applied by hand.\",\n    \"September 2026 contains no daylight-saving transition in Europe or North America (EU changes 25 Oct), so no ambiguous or non-existent local times arise.\"\n  ],\n  \"reconciled\": true,\n  \"uncertainties\": [],\n  \"derivations\": [\n    { \"date\": \"2026-09-03\", \"field\": \"endUtc\", \"method\": \"Off Duty 14:20 is printed with no date; the sector ORD-MAD departs 21:50 on 03/09 with 9h00 block and arrives MAD 13:50, so both arrival and off-duty fall on 04/09 local MAD\", \"confidence\": \"high\" },\n    { \"date\": \"2026-09-07\", \"field\": \"endUtc\", \"method\": \"Departure JFK 23:10 on 07/09 plus 8h00 block puts arrival and Off Duty 13:40 on 08/09 local MAD\", \"confidence\": \"high\" },\n    { \"date\": \"2026-09-11\", \"field\": \"endUtc\", \"method\": \"Sectors 3 and 4 (MAD-FCO 23:55, FCO-MAD 03:23) fall after midnight; Off Duty 06:18 is therefore 12/09 local
+… [10210 more characters]
 ```
 
 _read complete_
@@ -1817,7 +1803,7 @@ _values worked out rather than read_
 
 ```json
 {
-  "blocks": 28,
+  "blocks": 27,
   "conflicts": 3,
   "byHardness": {
     "hard-limit": 3

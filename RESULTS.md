@@ -23,8 +23,8 @@ the run that produced it.
 | Field-level parse accuracy | 99.3% | 99.3% | 100.0% | 100.0% | 100.0% |
 | Conflict recall | 0.0% | 77.5% | 100.0% | 100.0% | 100.0% |
 | False alarms raised | 69 | 37 | 40 | 0 | 0 |
-| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.88 | $0.67 | $0.00 |
-| Wall clock per roster | 268s | 324s | 251s | 172s | 0s |
+| Cost per roster (USD, list price) | $0.65 | $0.80 | $0.88 | $0.59 | $0.00 |
+| Wall clock per roster | 268s | 324s | 251s | 162s | 0s |
 
 `reference` is not a baseline. It plans from ground-truth duties, so it answers the
 question the other numbers cannot: how much of any shortfall is the reading, and how
@@ -46,11 +46,12 @@ Every run of the final arm, in order. At n=8 a single flake moves the primary by
 | `9-49-615Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.76 |
 | `6-23-974Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.60 |
 | `5-30-509Z` | 8/8 | 0/8 | 100.0% | 100.0% | $5.39 |
+| `2-14-531Z` | 8/8 | 0/8 | 100.0% | 100.0% | $4.74 |
 
 &sup1; From this run on, the reader declares which values it derived rather than read
 (commit `f7f13a4`). Runs above that line are a different configuration, not variance.
 
-The final configuration has run **8 times, 8/8 every time**, 0 silently wrong. No variance across repeats.
+The final configuration has run **9 times, 8/8 every time**, 0 silently wrong. No variance across repeats.
 
 ## Held out
 
@@ -168,22 +169,22 @@ Run `a-model-checks-2026-08-29T17-24-13-108Z` · 2026-08-29 17:33 · git `d1451f
 
 ### `nightstop` — case by case
 
-Run `nightstop-2026-08-31T16-25-30-509Z` · 2026-08-31 16:31 · git `ef9e6571` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (13 rules)
+Run `nightstop-2026-08-31T17-02-14-531Z` · 2026-08-31 17:08 · git `3e5a5f9e` · claude-opus-5 · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (13 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
-| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $0.63 |
-| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.91 |
-| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.26 |
-| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.69 |
-| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.58 |
-| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.98 |
-| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.76 |
-| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.57 |
+| `d01-aurora` | `surfaced` | 341/341 | 10/10 | 0 | $0.57 |
+| `d02-meridian` | `surfaced` | 341/341 | 8/8 | 0 | $0.81 |
+| `d03-polaris` | `surfaced` | 330/330 | 4/4 | 0 | $0.25 |
+| `d04-kestrel` | `surfaced` | 330/330 | 12/12 | 0 | $0.65 |
+| `d05-halcyon` | `surfaced` | 330/330 | 16/16 | 0 | $0.52 |
+| `d06-vantage` | `surfaced` | 330/330 | 11/11 | 0 | $0.76 |
+| `d07-cirrus` | `surfaced` | 330/330 | 3/3 | 0 | $0.63 |
+| `d08-nimbus` | `surfaced` | 330/330 | 7/7 | 0 | $0.55 |
 
 ### `reference` — case by case
 
-Run `reference-2026-08-31T16-25-06-766Z` · 2026-08-31 16:25 · git `35e80374` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (13 rules)
+Run `reference-2026-08-31T17-02-11-623Z` · 2026-08-31 17:02 · git `d0682054` · no model · rule pack `baseline-public+operator-manual-synthetic+crew-preferences` (13 rules)
 
 | Case | Bucket | Fields correct | Conflicts surfaced | False alarms | Cost |
 |---|---|---|---|---|---|
@@ -229,3 +230,7 @@ Kept rather than deleted. Listed so nothing is quietly dropped from the record.
 - `reference-2026-08-29T23-06-23-174Z` (reference, heldout2) — 4/4 trustworthy
 - `nightstop-2026-08-29T23-06-23-974Z` (nightstop, dev) — 8/8 trustworthy
 - `nightstop-2026-08-29T23-13-04-466Z` (nightstop, heldout2) — 4/4 trustworthy
+- `reference-2026-08-31T16-25-06-766Z` (reference, dev) — 8/8 trustworthy
+- `reference-2026-08-31T16-25-08-627Z` (reference, heldout2) — 4/4 trustworthy
+- `nightstop-2026-08-31T16-25-30-509Z` (nightstop, dev) — 8/8 trustworthy
+- `nightstop-2026-08-31T16-31-58-836Z` (nightstop, heldout2) — 4/4 trustworthy

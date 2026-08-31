@@ -1,0 +1,18 @@
+{
+  "caseId": "h01-corvus",
+  "arm": "nightstop",
+  "costUsd": 0.656582,
+  "wallMs": 224220,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 363,
+  "fieldsCorrect": 363,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 24,
+  "surfacedCount": 24,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}
