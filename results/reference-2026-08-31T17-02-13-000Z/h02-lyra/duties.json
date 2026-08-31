@@ -1,0 +1,668 @@
+[
+  {
+    "id": "2026-09-01-01",
+    "date": "2026-09-01",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-02-02",
+    "date": "2026-09-02",
+    "kind": "training",
+    "code": "SIM",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-02T07:00:00.000Z",
+    "endUtc": "2026-09-02T15:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-03-03",
+    "date": "2026-09-03",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-03T11:20:00.000Z",
+    "endUtc": "2026-09-03T16:13:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY608",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-03T12:20:00.000Z",
+        "arrUtc": "2026-09-03T13:40:00.000Z"
+      },
+      {
+        "flightNo": "LY716",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-03T14:23:00.000Z",
+        "arrUtc": "2026-09-03T15:43:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-04-04",
+    "date": "2026-09-04",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-04T14:25:00.000Z",
+    "endUtc": "2026-09-05T00:27:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY301",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-04T15:25:00.000Z",
+        "arrUtc": "2026-09-04T17:05:00.000Z"
+      },
+      {
+        "flightNo": "LY623",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-04T17:59:00.000Z",
+        "arrUtc": "2026-09-04T19:39:00.000Z"
+      },
+      {
+        "flightNo": "LY224",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-04T20:37:00.000Z",
+        "arrUtc": "2026-09-04T21:57:00.000Z"
+      },
+      {
+        "flightNo": "LY311",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-04T22:37:00.000Z",
+        "arrUtc": "2026-09-04T23:57:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-05-05",
+    "date": "2026-09-05",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-06-06",
+    "date": "2026-09-06",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-06T03:35:00.000Z",
+    "endUtc": "2026-09-06T15:24:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY794",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-06T04:35:00.000Z",
+        "arrUtc": "2026-09-06T05:55:00.000Z"
+      },
+      {
+        "flightNo": "LY570",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-06T06:47:00.000Z",
+        "arrUtc": "2026-09-06T08:07:00.000Z"
+      },
+      {
+        "flightNo": "LY853",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-06T09:13:00.000Z",
+        "arrUtc": "2026-09-06T11:38:00.000Z"
+      },
+      {
+        "flightNo": "LY115",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-06T12:29:00.000Z",
+        "arrUtc": "2026-09-06T14:54:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-07-07",
+    "date": "2026-09-07",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-07T03:35:00.000Z",
+    "endUtc": "2026-09-07T17:09:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY148",
+        "origin": "LHR",
+        "dest": "BCN",
+        "depUtc": "2026-09-07T04:35:00.000Z",
+        "arrUtc": "2026-09-07T06:40:00.000Z"
+      },
+      {
+        "flightNo": "LY495",
+        "origin": "BCN",
+        "dest": "LHR",
+        "depUtc": "2026-09-07T07:29:00.000Z",
+        "arrUtc": "2026-09-07T09:34:00.000Z"
+      },
+      {
+        "flightNo": "LY781",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-07T10:42:00.000Z",
+        "arrUtc": "2026-09-07T13:17:00.000Z"
+      },
+      {
+        "flightNo": "LY651",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-07T14:04:00.000Z",
+        "arrUtc": "2026-09-07T16:39:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-08-08",
+    "date": "2026-09-08",
+    "kind": "standby",
+    "code": "SBY",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-08T13:00:00.000Z",
+    "endUtc": "2026-09-08T23:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-09-09",
+    "date": "2026-09-09",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-10-10",
+    "date": "2026-09-10",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-11-11",
+    "date": "2026-09-11",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-12-12",
+    "date": "2026-09-12",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-12T14:25:00.000Z",
+    "endUtc": "2026-09-12T21:46:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY887",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-12T15:25:00.000Z",
+        "arrUtc": "2026-09-12T18:00:00.000Z"
+      },
+      {
+        "flightNo": "LY712",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-12T18:41:00.000Z",
+        "arrUtc": "2026-09-12T21:16:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-13-13",
+    "date": "2026-09-13",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-14-14",
+    "date": "2026-09-14",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-14T03:35:00.000Z",
+    "endUtc": "2026-09-14T15:34:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY297",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-14T04:35:00.000Z",
+        "arrUtc": "2026-09-14T07:00:00.000Z"
+      },
+      {
+        "flightNo": "LY549",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-14T08:00:00.000Z",
+        "arrUtc": "2026-09-14T10:25:00.000Z"
+      },
+      {
+        "flightNo": "LY824",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-14T11:25:00.000Z",
+        "arrUtc": "2026-09-14T12:45:00.000Z"
+      },
+      {
+        "flightNo": "LY755",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-14T13:44:00.000Z",
+        "arrUtc": "2026-09-14T15:04:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-15-15",
+    "date": "2026-09-15",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-15T04:05:00.000Z",
+    "endUtc": "2026-09-15T16:47:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY123",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-15T05:05:00.000Z",
+        "arrUtc": "2026-09-15T06:45:00.000Z"
+      },
+      {
+        "flightNo": "LY751",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-15T07:35:00.000Z",
+        "arrUtc": "2026-09-15T09:15:00.000Z"
+      },
+      {
+        "flightNo": "LY831",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-15T10:22:00.000Z",
+        "arrUtc": "2026-09-15T12:57:00.000Z"
+      },
+      {
+        "flightNo": "LY886",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-15T13:42:00.000Z",
+        "arrUtc": "2026-09-15T16:17:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-16-16",
+    "date": "2026-09-16",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-17-17",
+    "date": "2026-09-17",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-17T04:05:00.000Z",
+    "endUtc": "2026-09-17T09:37:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY540",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-17T05:05:00.000Z",
+        "arrUtc": "2026-09-17T06:45:00.000Z"
+      },
+      {
+        "flightNo": "LY453",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-17T07:27:00.000Z",
+        "arrUtc": "2026-09-17T09:07:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-18-18",
+    "date": "2026-09-18",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-18T04:40:00.000Z",
+    "endUtc": "2026-09-18T09:30:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY809",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-18T05:40:00.000Z",
+        "arrUtc": "2026-09-18T07:00:00.000Z"
+      },
+      {
+        "flightNo": "LY716",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-18T07:40:00.000Z",
+        "arrUtc": "2026-09-18T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-19-19",
+    "date": "2026-09-19",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-19T14:25:00.000Z",
+    "endUtc": "2026-09-19T19:26:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY270",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-19T15:25:00.000Z",
+        "arrUtc": "2026-09-19T16:45:00.000Z"
+      },
+      {
+        "flightNo": "LY193",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-19T17:36:00.000Z",
+        "arrUtc": "2026-09-19T18:56:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-20-20",
+    "date": "2026-09-20",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-21-21",
+    "date": "2026-09-21",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-21T04:05:00.000Z",
+    "endUtc": "2026-09-21T11:26:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY415",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-21T05:05:00.000Z",
+        "arrUtc": "2026-09-21T07:40:00.000Z"
+      },
+      {
+        "flightNo": "LY671",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-21T08:21:00.000Z",
+        "arrUtc": "2026-09-21T10:56:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-22-22",
+    "date": "2026-09-22",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-22T11:20:00.000Z",
+    "endUtc": "2026-09-22T17:40:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY712",
+        "origin": "LHR",
+        "dest": "BCN",
+        "depUtc": "2026-09-22T12:20:00.000Z",
+        "arrUtc": "2026-09-22T14:25:00.000Z"
+      },
+      {
+        "flightNo": "LY364",
+        "origin": "BCN",
+        "dest": "LHR",
+        "depUtc": "2026-09-22T15:05:00.000Z",
+        "arrUtc": "2026-09-22T17:10:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-23-23",
+    "date": "2026-09-23",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-23T11:20:00.000Z",
+    "endUtc": "2026-09-23T21:25:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY685",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-23T12:20:00.000Z",
+        "arrUtc": "2026-09-23T14:00:00.000Z"
+      },
+      {
+        "flightNo": "LY195",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-23T14:49:00.000Z",
+        "arrUtc": "2026-09-23T16:29:00.000Z"
+      },
+      {
+        "flightNo": "LY196",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-23T17:15:00.000Z",
+        "arrUtc": "2026-09-23T18:35:00.000Z"
+      },
+      {
+        "flightNo": "LY385",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-23T19:35:00.000Z",
+        "arrUtc": "2026-09-23T20:55:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-24-24",
+    "date": "2026-09-24",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-24T14:25:00.000Z",
+    "endUtc": "2026-09-24T23:51:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY617",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-24T15:25:00.000Z",
+        "arrUtc": "2026-09-24T16:45:00.000Z"
+      },
+      {
+        "flightNo": "LY251",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-24T17:34:00.000Z",
+        "arrUtc": "2026-09-24T18:54:00.000Z"
+      },
+      {
+        "flightNo": "LY884",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-24T19:54:00.000Z",
+        "arrUtc": "2026-09-24T21:14:00.000Z"
+      },
+      {
+        "flightNo": "LY452",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-24T22:01:00.000Z",
+        "arrUtc": "2026-09-24T23:21:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-25-25",
+    "date": "2026-09-25",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-26-26",
+    "date": "2026-09-26",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-26T05:10:00.000Z",
+    "endUtc": "2026-09-26T11:47:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY464",
+        "origin": "LHR",
+        "dest": "BCN",
+        "depUtc": "2026-09-26T06:10:00.000Z",
+        "arrUtc": "2026-09-26T08:15:00.000Z"
+      },
+      {
+        "flightNo": "LY146",
+        "origin": "BCN",
+        "dest": "LHR",
+        "depUtc": "2026-09-26T09:12:00.000Z",
+        "arrUtc": "2026-09-26T11:17:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-27-27",
+    "date": "2026-09-27",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-27T14:25:00.000Z",
+    "endUtc": "2026-09-27T20:14:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY542",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-27T15:25:00.000Z",
+        "arrUtc": "2026-09-27T17:05:00.000Z"
+      },
+      {
+        "flightNo": "LY383",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-27T18:04:00.000Z",
+        "arrUtc": "2026-09-27T19:44:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-28-28",
+    "date": "2026-09-28",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-28T11:20:00.000Z",
+    "endUtc": "2026-09-28T16:27:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "LY460",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-28T12:20:00.000Z",
+        "arrUtc": "2026-09-28T13:40:00.000Z"
+      },
+      {
+        "flightNo": "LY891",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-28T14:37:00.000Z",
+        "arrUtc": "2026-09-28T15:57:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-29-29",
+    "date": "2026-09-29",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-30-30",
+    "date": "2026-09-30",
+    "kind": "off",
+    "code": "OFF",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  }
+]

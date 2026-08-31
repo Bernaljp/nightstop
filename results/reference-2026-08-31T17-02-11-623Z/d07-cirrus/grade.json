@@ -1,0 +1,18 @@
+{
+  "caseId": "d07-cirrus",
+  "arm": "reference",
+  "costUsd": 0,
+  "wallMs": 194,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 330,
+  "fieldsCorrect": 330,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 3,
+  "surfacedCount": 3,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

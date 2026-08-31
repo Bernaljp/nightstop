@@ -1,0 +1,18 @@
+{
+  "caseId": "h01-corvus",
+  "arm": "reference",
+  "costUsd": 0,
+  "wallMs": 325,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 363,
+  "fieldsCorrect": 363,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 24,
+  "surfacedCount": 24,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

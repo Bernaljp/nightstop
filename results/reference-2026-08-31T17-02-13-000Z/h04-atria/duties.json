@@ -1,0 +1,735 @@
+[
+  {
+    "id": "2026-09-01-01",
+    "date": "2026-09-01",
+    "kind": "off",
+    "code": "-",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-02-02",
+    "date": "2026-09-02",
+    "kind": "training",
+    "code": "T",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-02T07:00:00.000Z",
+    "endUtc": "2026-09-02T15:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-03-03",
+    "date": "2026-09-03",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-03T01:00:00.000Z",
+    "endUtc": "2026-09-03T06:25:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT773",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-03T01:40:00.000Z",
+        "arrUtc": "2026-09-03T03:20:00.000Z"
+      },
+      {
+        "flightNo": "AT411",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-03T04:15:00.000Z",
+        "arrUtc": "2026-09-03T05:55:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-04-04",
+    "date": "2026-09-04",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-04T03:35:00.000Z",
+    "endUtc": "2026-09-04T15:36:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT713",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-04T04:15:00.000Z",
+        "arrUtc": "2026-09-04T06:40:00.000Z"
+      },
+      {
+        "flightNo": "AT146",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-04T07:29:00.000Z",
+        "arrUtc": "2026-09-04T09:54:00.000Z"
+      },
+      {
+        "flightNo": "AT844",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-04T10:53:00.000Z",
+        "arrUtc": "2026-09-04T12:33:00.000Z"
+      },
+      {
+        "flightNo": "AT899",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-04T13:26:00.000Z",
+        "arrUtc": "2026-09-04T15:06:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-05-05",
+    "date": "2026-09-05",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-05T13:40:00.000Z",
+    "endUtc": "2026-09-06T02:43:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT804",
+        "origin": "LHR",
+        "dest": "BCN",
+        "depUtc": "2026-09-05T14:20:00.000Z",
+        "arrUtc": "2026-09-05T16:25:00.000Z"
+      },
+      {
+        "flightNo": "AT663",
+        "origin": "BCN",
+        "dest": "LHR",
+        "depUtc": "2026-09-05T17:23:00.000Z",
+        "arrUtc": "2026-09-05T19:28:00.000Z"
+      },
+      {
+        "flightNo": "AT611",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-05T20:29:00.000Z",
+        "arrUtc": "2026-09-05T22:54:00.000Z"
+      },
+      {
+        "flightNo": "AT329",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-05T23:48:00.000Z",
+        "arrUtc": "2026-09-06T02:13:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-06-06",
+    "date": "2026-09-06",
+    "kind": "off",
+    "code": "-",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-07-07",
+    "date": "2026-09-07",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-07T11:20:00.000Z",
+    "endUtc": "2026-09-07T22:49:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT397",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-07T12:00:00.000Z",
+        "arrUtc": "2026-09-07T14:35:00.000Z"
+      },
+      {
+        "flightNo": "AT459",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-07T15:18:00.000Z",
+        "arrUtc": "2026-09-07T17:53:00.000Z"
+      },
+      {
+        "flightNo": "AT255",
+        "origin": "LHR",
+        "dest": "DUB",
+        "depUtc": "2026-09-07T18:38:00.000Z",
+        "arrUtc": "2026-09-07T20:03:00.000Z"
+      },
+      {
+        "flightNo": "AT534",
+        "origin": "DUB",
+        "dest": "LHR",
+        "depUtc": "2026-09-07T20:54:00.000Z",
+        "arrUtc": "2026-09-07T22:19:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-08-08",
+    "date": "2026-09-08",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-08T08:50:00.000Z",
+    "endUtc": "2026-09-08T13:33:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT392",
+        "origin": "LHR",
+        "dest": "DUB",
+        "depUtc": "2026-09-08T09:30:00.000Z",
+        "arrUtc": "2026-09-08T10:55:00.000Z"
+      },
+      {
+        "flightNo": "AT771",
+        "origin": "DUB",
+        "dest": "LHR",
+        "depUtc": "2026-09-08T11:38:00.000Z",
+        "arrUtc": "2026-09-08T13:03:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-09-09",
+    "date": "2026-09-09",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-08T23:35:00.000Z",
+    "endUtc": "2026-09-09T05:05:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT607",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-09T00:15:00.000Z",
+        "arrUtc": "2026-09-09T01:55:00.000Z"
+      },
+      {
+        "flightNo": "AT274",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-09T02:55:00.000Z",
+        "arrUtc": "2026-09-09T04:35:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-10-10",
+    "date": "2026-09-10",
+    "kind": "training",
+    "code": "T",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-10T07:00:00.000Z",
+    "endUtc": "2026-09-10T15:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-11-11",
+    "date": "2026-09-11",
+    "kind": "off",
+    "code": "-",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-12-12",
+    "date": "2026-09-12",
+    "kind": "off",
+    "code": "-",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-13-13",
+    "date": "2026-09-13",
+    "kind": "training",
+    "code": "T",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-13T07:00:00.000Z",
+    "endUtc": "2026-09-13T15:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-14-14",
+    "date": "2026-09-14",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-14T04:05:00.000Z",
+    "endUtc": "2026-09-14T14:40:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT386",
+        "origin": "LHR",
+        "dest": "DUB",
+        "depUtc": "2026-09-14T04:45:00.000Z",
+        "arrUtc": "2026-09-14T06:10:00.000Z"
+      },
+      {
+        "flightNo": "AT487",
+        "origin": "DUB",
+        "dest": "LHR",
+        "depUtc": "2026-09-14T07:01:00.000Z",
+        "arrUtc": "2026-09-14T08:26:00.000Z"
+      },
+      {
+        "flightNo": "AT413",
+        "origin": "LHR",
+        "dest": "BCN",
+        "depUtc": "2026-09-14T09:14:00.000Z",
+        "arrUtc": "2026-09-14T11:19:00.000Z"
+      },
+      {
+        "flightNo": "AT836",
+        "origin": "BCN",
+        "dest": "LHR",
+        "depUtc": "2026-09-14T12:05:00.000Z",
+        "arrUtc": "2026-09-14T14:10:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-15-15",
+    "date": "2026-09-15",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-15T14:25:00.000Z",
+    "endUtc": "2026-09-16T03:29:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT562",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-15T15:05:00.000Z",
+        "arrUtc": "2026-09-15T17:30:00.000Z"
+      },
+      {
+        "flightNo": "AT326",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-15T18:32:00.000Z",
+        "arrUtc": "2026-09-15T20:57:00.000Z"
+      },
+      {
+        "flightNo": "AT341",
+        "origin": "LHR",
+        "dest": "BCN",
+        "depUtc": "2026-09-15T21:53:00.000Z",
+        "arrUtc": "2026-09-15T23:58:00.000Z"
+      },
+      {
+        "flightNo": "AT650",
+        "origin": "BCN",
+        "dest": "LHR",
+        "depUtc": "2026-09-16T00:54:00.000Z",
+        "arrUtc": "2026-09-16T02:59:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-16-16",
+    "date": "2026-09-16",
+    "kind": "off",
+    "code": "-",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-17-17",
+    "date": "2026-09-17",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-17T05:10:00.000Z",
+    "endUtc": "2026-09-17T10:23:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT393",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-17T05:50:00.000Z",
+        "arrUtc": "2026-09-17T07:30:00.000Z"
+      },
+      {
+        "flightNo": "AT578",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-17T08:13:00.000Z",
+        "arrUtc": "2026-09-17T09:53:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-18-18",
+    "date": "2026-09-18",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-18T03:35:00.000Z",
+    "endUtc": "2026-09-18T10:22:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT256",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-18T04:15:00.000Z",
+        "arrUtc": "2026-09-18T06:40:00.000Z"
+      },
+      {
+        "flightNo": "AT890",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-18T07:27:00.000Z",
+        "arrUtc": "2026-09-18T09:52:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-18-19",
+    "date": "2026-09-18",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-18T20:25:00.000Z",
+    "endUtc": "2026-09-19T03:48:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT549",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-18T21:05:00.000Z",
+        "arrUtc": "2026-09-18T23:40:00.000Z"
+      },
+      {
+        "flightNo": "AT306",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-19T00:43:00.000Z",
+        "arrUtc": "2026-09-19T03:18:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-19-20",
+    "date": "2026-09-19",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-19T13:50:00.000Z",
+    "endUtc": "2026-09-19T23:53:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT201",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-19T14:30:00.000Z",
+        "arrUtc": "2026-09-19T15:50:00.000Z"
+      },
+      {
+        "flightNo": "AT236",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-19T16:55:00.000Z",
+        "arrUtc": "2026-09-19T18:15:00.000Z"
+      },
+      {
+        "flightNo": "AT215",
+        "origin": "LHR",
+        "dest": "FRA",
+        "depUtc": "2026-09-19T19:13:00.000Z",
+        "arrUtc": "2026-09-19T20:53:00.000Z"
+      },
+      {
+        "flightNo": "AT869",
+        "origin": "FRA",
+        "dest": "LHR",
+        "depUtc": "2026-09-19T21:43:00.000Z",
+        "arrUtc": "2026-09-19T23:23:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-20-21",
+    "date": "2026-09-20",
+    "kind": "off",
+    "code": "-",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-21-22",
+    "date": "2026-09-21",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-21T03:35:00.000Z",
+    "endUtc": "2026-09-21T16:26:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT872",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-21T04:15:00.000Z",
+        "arrUtc": "2026-09-21T06:40:00.000Z"
+      },
+      {
+        "flightNo": "AT143",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-21T07:41:00.000Z",
+        "arrUtc": "2026-09-21T10:06:00.000Z"
+      },
+      {
+        "flightNo": "AT799",
+        "origin": "LHR",
+        "dest": "BCN",
+        "depUtc": "2026-09-21T11:04:00.000Z",
+        "arrUtc": "2026-09-21T13:09:00.000Z"
+      },
+      {
+        "flightNo": "AT673",
+        "origin": "BCN",
+        "dest": "LHR",
+        "depUtc": "2026-09-21T13:51:00.000Z",
+        "arrUtc": "2026-09-21T15:56:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-22-23",
+    "date": "2026-09-22",
+    "kind": "off",
+    "code": "-",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-23-24",
+    "date": "2026-09-23",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-23T03:35:00.000Z",
+    "endUtc": "2026-09-23T13:01:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT620",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-23T04:15:00.000Z",
+        "arrUtc": "2026-09-23T05:35:00.000Z"
+      },
+      {
+        "flightNo": "AT334",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-23T06:29:00.000Z",
+        "arrUtc": "2026-09-23T07:49:00.000Z"
+      },
+      {
+        "flightNo": "AT270",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-23T08:54:00.000Z",
+        "arrUtc": "2026-09-23T10:14:00.000Z"
+      },
+      {
+        "flightNo": "AT280",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-23T11:11:00.000Z",
+        "arrUtc": "2026-09-23T12:31:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-24-25",
+    "date": "2026-09-24",
+    "kind": "training",
+    "code": "T",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-24T07:00:00.000Z",
+    "endUtc": "2026-09-24T15:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-25-26",
+    "date": "2026-09-25",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-25T01:00:00.000Z",
+    "endUtc": "2026-09-25T14:41:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT273",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-25T01:40:00.000Z",
+        "arrUtc": "2026-09-25T04:05:00.000Z"
+      },
+      {
+        "flightNo": "AT600",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-25T04:52:00.000Z",
+        "arrUtc": "2026-09-25T07:17:00.000Z"
+      },
+      {
+        "flightNo": "AT756",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-25T08:10:00.000Z",
+        "arrUtc": "2026-09-25T10:45:00.000Z"
+      },
+      {
+        "flightNo": "AT451",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-25T11:36:00.000Z",
+        "arrUtc": "2026-09-25T14:11:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-26-27",
+    "date": "2026-09-26",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-26T00:45:00.000Z",
+    "endUtc": "2026-09-26T14:47:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT674",
+        "origin": "LHR",
+        "dest": "ARN",
+        "depUtc": "2026-09-26T01:25:00.000Z",
+        "arrUtc": "2026-09-26T03:50:00.000Z"
+      },
+      {
+        "flightNo": "AT894",
+        "origin": "ARN",
+        "dest": "LHR",
+        "depUtc": "2026-09-26T04:46:00.000Z",
+        "arrUtc": "2026-09-26T07:11:00.000Z"
+      },
+      {
+        "flightNo": "AT433",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-26T08:02:00.000Z",
+        "arrUtc": "2026-09-26T10:37:00.000Z"
+      },
+      {
+        "flightNo": "AT335",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-26T11:42:00.000Z",
+        "arrUtc": "2026-09-26T14:17:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-27-28",
+    "date": "2026-09-27",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-27T13:40:00.000Z",
+    "endUtc": "2026-09-27T18:19:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT126",
+        "origin": "LHR",
+        "dest": "CDG",
+        "depUtc": "2026-09-27T14:20:00.000Z",
+        "arrUtc": "2026-09-27T15:40:00.000Z"
+      },
+      {
+        "flightNo": "AT130",
+        "origin": "CDG",
+        "dest": "LHR",
+        "depUtc": "2026-09-27T16:29:00.000Z",
+        "arrUtc": "2026-09-27T17:49:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-28-29",
+    "date": "2026-09-28",
+    "kind": "training",
+    "code": "T",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-28T07:00:00.000Z",
+    "endUtc": "2026-09-28T15:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-29-30",
+    "date": "2026-09-29",
+    "kind": "training",
+    "code": "T",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-29T07:00:00.000Z",
+    "endUtc": "2026-09-29T15:00:00.000Z",
+    "sectors": []
+  },
+  {
+    "id": "2026-09-30-31",
+    "date": "2026-09-30",
+    "kind": "flight",
+    "station": "LHR",
+    "endStation": "LHR",
+    "reportUtc": "2026-09-30T05:10:00.000Z",
+    "endUtc": "2026-09-30T12:23:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "AT197",
+        "origin": "LHR",
+        "dest": "FCO",
+        "depUtc": "2026-09-30T05:50:00.000Z",
+        "arrUtc": "2026-09-30T08:25:00.000Z"
+      },
+      {
+        "flightNo": "AT756",
+        "origin": "FCO",
+        "dest": "LHR",
+        "depUtc": "2026-09-30T09:18:00.000Z",
+        "arrUtc": "2026-09-30T11:53:00.000Z"
+      }
+    ]
+  }
+]

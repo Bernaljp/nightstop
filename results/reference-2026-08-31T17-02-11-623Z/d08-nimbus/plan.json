@@ -1,0 +1,419 @@
+{
+  "caseId": "d08-nimbus",
+  "blocks": [
+    {
+      "id": "main-2026-10-11T22:50",
+      "kind": "main",
+      "startUtc": "2026-10-11T22:50:00.000Z",
+      "endUtc": "2026-10-12T06:50:00.000Z",
+      "station": "DXB",
+      "why": "02:50 to 10:50 at DXB — about 3h20 later than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-12T20:15",
+      "kind": "main",
+      "startUtc": "2026-10-12T20:15:00.000Z",
+      "endUtc": "2026-10-13T04:15:00.000Z",
+      "station": "DXB",
+      "why": "00:15 to 08:15 local at DXB — close to your usual 23:30, but about 1h37 earlier on your body clock, which has not caught up with where you are.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-13T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-13T21:30:00.000Z",
+      "endUtc": "2026-10-14T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-14T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-14T21:30:00.000Z",
+      "endUtc": "2026-10-15T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-15T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-15T21:30:00.000Z",
+      "endUtc": "2026-10-16T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-16T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-16T21:30:00.000Z",
+      "endUtc": "2026-10-17T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-17T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-17T21:30:00.000Z",
+      "endUtc": "2026-10-18T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-18T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-18T21:30:00.000Z",
+      "endUtc": "2026-10-19T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-19T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-19T21:30:00.000Z",
+      "endUtc": "2026-10-20T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-20T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-20T21:30:00.000Z",
+      "endUtc": "2026-10-21T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "pre-duty-nap-2026-10-21T15:30",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-21T15:30:00.000Z",
+      "endUtc": "2026-10-21T17:30:00.000Z",
+      "station": "MAD",
+      "why": "2026-10-21 runs 4h00 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-10-22T19:30",
+      "kind": "main",
+      "startUtc": "2026-10-22T19:30:00.000Z",
+      "endUtc": "2026-10-23T03:30:00.000Z",
+      "station": "DXB",
+      "why": "23:30 to 07:30 at DXB, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "pre-duty-nap-2026-10-23T14:25",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-10-23T14:25:00.000Z",
+      "endUtc": "2026-10-23T16:25:00.000Z",
+      "station": "DXB",
+      "why": "2026-10-23 runs 4h00 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-10-24T04:50",
+      "kind": "main",
+      "startUtc": "2026-10-24T04:50:00.000Z",
+      "endUtc": "2026-10-24T12:50:00.000Z",
+      "station": "MAD",
+      "why": "06:50 to 14:50 at MAD — about 7h20 later than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-24T21:30",
+      "kind": "main",
+      "startUtc": "2026-10-24T21:30:00.000Z",
+      "endUtc": "2026-10-25T05:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-26T00:05",
+      "kind": "main",
+      "startUtc": "2026-10-26T00:05:00.000Z",
+      "endUtc": "2026-10-26T08:05:00.000Z",
+      "station": "GRU",
+      "why": "21:05 to 05:05 at GRU — about 2h25 earlier than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-27T04:40",
+      "kind": "main",
+      "startUtc": "2026-10-27T04:40:00.000Z",
+      "endUtc": "2026-10-27T12:40:00.000Z",
+      "station": "MAD",
+      "why": "05:40 to 13:40 at MAD — about 6h10 later than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-27T21:35",
+      "kind": "main",
+      "startUtc": "2026-10-27T21:35:00.000Z",
+      "endUtc": "2026-10-28T05:35:00.000Z",
+      "station": "MAD",
+      "why": "22:35 to 06:35 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-28T22:30",
+      "kind": "main",
+      "startUtc": "2026-10-28T22:30:00.000Z",
+      "endUtc": "2026-10-29T06:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-30T02:55",
+      "kind": "main",
+      "startUtc": "2026-10-30T02:55:00.000Z",
+      "endUtc": "2026-10-30T10:55:00.000Z",
+      "station": "SIN",
+      "why": "10:55 to 18:55 at SIN — about 11h25 later than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-30T16:15",
+      "kind": "main",
+      "startUtc": "2026-10-30T16:15:00.000Z",
+      "endUtc": "2026-10-31T00:15:00.000Z",
+      "station": "SIN",
+      "why": "00:15 to 08:15 local at SIN — close to your usual 23:30, but about 5h33 earlier on your body clock, which has not caught up with where you are.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-10-31T22:30",
+      "kind": "main",
+      "startUtc": "2026-10-31T22:30:00.000Z",
+      "endUtc": "2026-11-01T06:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "pre-duty-nap-2026-11-01T10:30",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-11-01T10:30:00.000Z",
+      "endUtc": "2026-11-01T11:25:00.000Z",
+      "station": "MAD",
+      "why": "2026-11-01 runs 4h00 through your circadian low. Take this 0h55 beforehand, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-11-02T18:40",
+      "kind": "main",
+      "startUtc": "2026-11-02T18:40:00.000Z",
+      "endUtc": "2026-11-03T02:40:00.000Z",
+      "station": "SIN",
+      "why": "02:40 to 10:40 at SIN — about 3h10 later than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-03T20:50",
+      "kind": "main",
+      "startUtc": "2026-11-03T20:50:00.000Z",
+      "endUtc": "2026-11-04T03:15:00.000Z",
+      "station": "MAD",
+      "why": "21:50 to 04:15 at MAD — about 1h40 earlier than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-04T18:35",
+      "kind": "main",
+      "startUtc": "2026-11-04T18:35:00.000Z",
+      "endUtc": "2026-11-05T02:35:00.000Z",
+      "station": "MAD",
+      "why": "19:35 to 03:35 at MAD — about 3h55 earlier than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-05T22:30",
+      "kind": "main",
+      "startUtc": "2026-11-05T22:30:00.000Z",
+      "endUtc": "2026-11-06T06:30:00.000Z",
+      "station": "MAD",
+      "why": "23:30 to 07:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-07T00:35",
+      "kind": "main",
+      "startUtc": "2026-11-07T00:35:00.000Z",
+      "endUtc": "2026-11-07T08:35:00.000Z",
+      "station": "BOG",
+      "why": "19:35 to 03:35 at BOG — about 3h55 earlier than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-08T04:10",
+      "kind": "main",
+      "startUtc": "2026-11-08T04:10:00.000Z",
+      "endUtc": "2026-11-08T12:10:00.000Z",
+      "station": "MAD",
+      "why": "05:10 to 13:10 at MAD — about 5h40 later than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-11-08T18:40",
+      "kind": "main",
+      "startUtc": "2026-11-08T18:40:00.000Z",
+      "endUtc": "2026-11-09T02:40:00.000Z",
+      "station": "MAD",
+      "why": "19:40 to 03:40 at MAD — about 3h50 earlier than your usual 23:30. You were still on duty at 23:30; this is the first chance you get.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "far117-sleep-opportunity-8h",
+      "hardness": "hard-limit",
+      "date": "2026-11-04",
+      "where": "rest:2026-11-03-24..2026-11-04-25",
+      "statement": "Before 2026-11-04 you have 10h00 off, but 2h50 of it is travel — that leaves 7h10 to sleep in, against 8h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    },
+    {
+      "ruleId": "op-rest-12h-home",
+      "hardness": "recommendation",
+      "date": "2026-11-04",
+      "where": "rest:2026-11-03-24..2026-11-04-25",
+      "statement": "Only 10h00 off between 2026-11-03 and 2026-11-04 — 12h00 is the floor.",
+      "options": [
+        "Tell your operator: this looks like a rostering error worth querying.",
+        "Fly it and let me protect as much sleep as the window allows."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-10-29",
+      "where": "2026-10-29-19",
+      "statement": "2026-10-29 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-10-31",
+      "where": "2026-10-31-21",
+      "statement": "2026-10-31 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-11-01",
+      "where": "2026-11-01-22",
+      "statement": "2026-11-01 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-11-03",
+      "where": "2026-11-03-24",
+      "statement": "2026-11-03 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "pref-sleep-window-9h",
+      "hardness": "preference",
+      "date": "2026-11-04",
+      "where": "rest:2026-11-03-24..2026-11-04-25",
+      "statement": "Before 2026-11-04 you have 10h00 off, but 2h50 of it is travel — that leaves 7h10 to sleep in, against 9h00.",
+      "options": [
+        "Sleep at the airport hotel instead of going home, if that is an option.",
+        "Take the shortfall and add a pre-duty nap where one fits.",
+        "Query the pairing with crewing."
+      ]
+    }
+  ]
+}

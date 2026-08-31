@@ -1,0 +1,18 @@
+{
+  "caseId": "d02-meridian",
+  "arm": "reference",
+  "costUsd": 0,
+  "wallMs": 219,
+  "humanSeconds": 0,
+  "bucket": "surfaced",
+  "trustworthy": true,
+  "fieldsTotal": 341,
+  "fieldsCorrect": 341,
+  "fieldsExact": true,
+  "mismatches": [],
+  "mandatoryTotal": 8,
+  "surfacedCount": 8,
+  "missed": [],
+  "falseAlarms": [],
+  "planViolationCount": 0
+}

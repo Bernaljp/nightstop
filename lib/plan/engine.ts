@@ -46,6 +46,19 @@ export interface EngineSettings {
    * an hour after waking is not a nap, it is a fragmented night.
    */
   napSeparationMinutes: number;
+  /**
+   * Time between reaching the hotel or the front door and actually being asleep.
+   *
+   * The rest window opens the moment the commute ends, and the planner was placing sleep
+   * on that exact instant — asleep the second you walk in, having not eaten, showered or
+   * come down off a ten-hour duty. Nobody does that, and a plan that assumes it overstates
+   * every night it touches.
+   *
+   * This is a planning realism allowance, deliberately NOT subtracted from the sleep
+   * opportunity the regulation measures — 14 CFR 117.25(e) defines that window, and
+   * narrowing it here would be reinterpreting the regulation rather than planning inside it.
+   */
+  settleMinutes: number;
 }
 
 export const DEFAULT_SETTINGS: EngineSettings = {
@@ -57,6 +70,7 @@ export const DEFAULT_SETTINGS: EngineSettings = {
   preferredBodyWakeHour: 7,
   disruptionMinutes: 90,
   napSeparationMinutes: 4 * 60,
+  settleMinutes: 45,
 };
 
 function clamp(v: number, lo: number, hi: number): number {
@@ -189,7 +203,8 @@ export function buildPlan(
   };
 
   rests.forEach((r, i) => {
-    const from = new Date(r.sleepWindowFromUtc);
+    // Sleep cannot begin the instant the commute ends; allow time to settle.
+    const from = addMinutes(new Date(r.sleepWindowFromUtc), settings.settleMinutes);
     const to = new Date(r.sleepWindowToUtc);
     if (minutesBetween(from, to) <= 0) return;
 
@@ -212,11 +227,23 @@ export function buildPlan(
       const off = displacementFrom(night.from, stationTz);
       const usual = `${String(Math.floor(usualBed)).padStart(2, "0")}:${String(Math.round((usualBed % 1) * 60)).padStart(2, "0")}`;
 
+      // If they were still on duty at their usual bedtime, say that rather than leaving
+      // "the roster leaves no room" to be taken on trust.
+      const onDutyThen = r.prev.reportUtc && r.prev.endUtc
+        ? usualWindowOverlap(
+            new Date(r.prev.reportUtc), new Date(r.prev.endUtc),
+            tzOf(r.prev.endStation), usualBed, usualWake,
+          ) >= 60
+        : false;
+
       const why =
         Math.abs(off) >= 60
           ? `${localBed} to ${localWake} at ${r.prev.endStation} — about ` +
             `${formatDuration(Math.abs(off))} ${off > 0 ? "later" : "earlier"} than your ` +
-            `usual ${usual}. The roster leaves no room to keep your normal hours here.`
+            `usual ${usual}. ` +
+            (onDutyThen
+              ? `You were still on duty at ${usual}; this is the first chance you get.`
+              : `The roster leaves no room to keep your normal hours here.`)
           : Math.abs(drift) >= 60
             ? `${localBed} to ${localWake} local at ${r.prev.endStation} — close to your ` +
               `usual ${usual}, but about ${formatDuration(Math.abs(drift))} ` +
