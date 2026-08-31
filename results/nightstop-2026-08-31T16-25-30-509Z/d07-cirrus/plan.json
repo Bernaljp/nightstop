@@ -1,0 +1,407 @@
+{
+  "caseId": "d07-cirrus",
+  "blocks": [
+    {
+      "id": "main-2026-09-02T02:40",
+      "kind": "main",
+      "startUtc": "2026-09-02T02:40:00.000Z",
+      "endUtc": "2026-09-02T10:40:00.000Z",
+      "station": "ORD",
+      "why": "21:40 to 05:40 at ORD — about 2h20 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-02T22:41",
+      "kind": "main",
+      "startUtc": "2026-09-02T22:41:00.000Z",
+      "endUtc": "2026-09-03T06:41:00.000Z",
+      "station": "ORD",
+      "why": "17:41 to 01:41 at ORD — about 6h19 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-03T16:40",
+      "kind": "main",
+      "startUtc": "2026-09-03T16:40:00.000Z",
+      "endUtc": "2026-09-04T00:40:00.000Z",
+      "station": "ORD",
+      "why": "11:40 to 19:40 at ORD — about 11h40 later than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-04T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-04T22:00:00.000Z",
+      "endUtc": "2026-09-05T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-05T23:56",
+      "kind": "main",
+      "startUtc": "2026-09-05T23:56:00.000Z",
+      "endUtc": "2026-09-06T07:56:00.000Z",
+      "station": "JFK",
+      "why": "19:56 to 03:56 at JFK — about 4h04 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-06T23:56",
+      "kind": "main",
+      "startUtc": "2026-09-06T23:56:00.000Z",
+      "endUtc": "2026-09-07T07:56:00.000Z",
+      "station": "JFK",
+      "why": "19:56 to 03:56 at JFK — about 4h04 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-07T17:00",
+      "kind": "main",
+      "startUtc": "2026-09-07T17:00:00.000Z",
+      "endUtc": "2026-09-08T01:00:00.000Z",
+      "station": "JFK",
+      "why": "13:00 to 21:00 at JFK — about 11h00 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-08T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-08T22:00:00.000Z",
+      "endUtc": "2026-09-09T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-09T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-09T22:00:00.000Z",
+      "endUtc": "2026-09-10T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-10T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-10T22:00:00.000Z",
+      "endUtc": "2026-09-11T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "pre-duty-nap-2026-09-11T10:00",
+      "kind": "pre-duty-nap",
+      "startUtc": "2026-09-11T10:00:00.000Z",
+      "endUtc": "2026-09-11T11:15:00.000Z",
+      "station": "MAD",
+      "why": "2026-09-11 runs 4h00 through your circadian low. Take this 1h15 beforehand, while you can still sleep — it ends 0h45 before you leave.",
+      "ruleIds": [
+        "nap-inertia-gap-45m",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-12T05:43",
+      "kind": "main",
+      "startUtc": "2026-09-12T05:43:00.000Z",
+      "endUtc": "2026-09-12T13:43:00.000Z",
+      "station": "MAD",
+      "why": "07:43 to 15:43 at MAD — about 7h43 later than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-12T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-12T22:00:00.000Z",
+      "endUtc": "2026-09-13T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-13T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-13T22:00:00.000Z",
+      "endUtc": "2026-09-14T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-14T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-14T22:00:00.000Z",
+      "endUtc": "2026-09-15T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-15T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-15T22:00:00.000Z",
+      "endUtc": "2026-09-16T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-16T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-16T22:00:00.000Z",
+      "endUtc": "2026-09-17T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-17T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-17T22:00:00.000Z",
+      "endUtc": "2026-09-18T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-18T17:40",
+      "kind": "main",
+      "startUtc": "2026-09-18T17:40:00.000Z",
+      "endUtc": "2026-09-19T01:40:00.000Z",
+      "station": "MAD",
+      "why": "19:40 to 03:40 at MAD — about 4h20 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-19T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-19T22:00:00.000Z",
+      "endUtc": "2026-09-20T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-20T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-20T22:00:00.000Z",
+      "endUtc": "2026-09-21T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21T18:15",
+      "kind": "main",
+      "startUtc": "2026-09-21T18:15:00.000Z",
+      "endUtc": "2026-09-22T02:15:00.000Z",
+      "station": "MAD",
+      "why": "20:15 to 04:15 at MAD — about 3h45 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-22T17:10",
+      "kind": "main",
+      "startUtc": "2026-09-22T17:10:00.000Z",
+      "endUtc": "2026-09-23T01:10:00.000Z",
+      "station": "MAD",
+      "why": "19:10 to 03:10 at MAD — about 4h50 earlier than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-23T22:00:00.000Z",
+      "endUtc": "2026-09-24T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-24T23:39",
+      "kind": "main",
+      "startUtc": "2026-09-24T23:39:00.000Z",
+      "endUtc": "2026-09-25T07:39:00.000Z",
+      "station": "MAD",
+      "why": "01:39 to 09:39 at MAD — about 1h39 later than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-25T22:00",
+      "kind": "main",
+      "startUtc": "2026-09-25T22:00:00.000Z",
+      "endUtc": "2026-09-26T06:00:00.000Z",
+      "station": "MAD",
+      "why": "00:00 to 08:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-27T01:20",
+      "kind": "main",
+      "startUtc": "2026-09-27T01:20:00.000Z",
+      "endUtc": "2026-09-27T09:20:00.000Z",
+      "station": "SIN",
+      "why": "09:20 to 17:20 at SIN — about 9h20 later than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-27T18:30",
+      "kind": "main",
+      "startUtc": "2026-09-27T18:30:00.000Z",
+      "endUtc": "2026-09-28T02:30:00.000Z",
+      "station": "SIN",
+      "why": "02:30 to 10:30 at SIN — about 2h30 later than your usual 00:00. The roster leaves no room to keep your normal hours here.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    }
+  ],
+  "conflicts": [
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-11",
+      "statement": "2026-09-11 is a 14h53 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-26",
+      "statement": "2026-09-26 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    },
+    {
+      "ruleId": "op-max-duty-13h",
+      "hardness": "hard-limit",
+      "date": "2026-09-28",
+      "statement": "2026-09-28 is a 15h30 duty, against a 13h00 limit.",
+      "options": [
+        "Query it with crewing before the day.",
+        "Plan a pre-duty nap and protect the sleep either side."
+      ]
+    }
+  ],
+  "readingUncertainties": [
+    "The Act column is blank on every flying row, so the operator's activity code for flight duties is unknown; only OFF is ever printed.",
+    "Reused flight number CR893 on 23/09 (MAD-DUB) and 24/09 (MAD-LIS) is read as printed, but one of the two may be a typo in the source.",
+    "No positioning, standby or training rows appear at all, consistent with the header's Standby Days: 0."
+  ],
+  "derivations": [
+    {
+      "date": "2026-09-01",
+      "field": "endUtc",
+      "method": "Off Duty 21:00 carries no date; block 9h00 from STD 18:30 MAD puts arrival at 20:30 ORD still on 01/09, so Off Duty is 01/09 local at ORD = 2026-09-02T02:00Z",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-03",
+      "field": "reportUtc",
+      "method": "Report 20:20 has no station; header says times are local to the station shown, and the sector departs ORD, so it is Chicago local on 03/09 = 2026-09-04T01:20Z. Report is printed, not offset-derived; only the timezone was inferred",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-03",
+      "field": "endUtc",
+      "method": "STA 13:50 and Off Duty 14:20 are undated; 9h00 block from 21:50 ORD lands 04/09 in MAD, so Off Duty = 04/09 14:20 MAD = 2026-09-04T12:20Z (duty 11h00 matches the printed Duty column)",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-07",
+      "field": "reportUtc",
+      "method": "Report 21:40 taken as JFK local on 07/09 (departure station) = 2026-09-08T01:40Z; printed Duty 10h00 to Off Duty confirms",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-07",
+      "field": "endUtc",
+      "method": "Departure 23:10 JFK on 07/09 plus 8h00 block arrives MAD 13:10 on 08/09; Off Duty 13:40 MAD on 08/09 = 2026-09-08T11:40Z",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-11",
+      "field": "endUtc",
+      "method": "Sectors 3 and 4 roll past midnight (MAD 23:55 to FCO 02:20, then FCO 03:23 to MAD 05:48 on 12/09); Off Duty 06:18 MAD on 12/09 = 2026-09-12T04:18Z, and report-to-off-duty then equals the printed 14h53",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-24",
+      "field": "endUtc",
+      "method": "Off Duty 00:14 is earlier than the last STA 23:44, so it belongs to the following local day: 25/09 00:14 MAD = 2026-09-24T22:14Z; printed Duty 11h54 confirms",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-26",
+      "field": "endUtc",
+      "method": "STA 08:10 SIN with 13h30 block from MAD 12:40 falls on 27/09; Off Duty 08:40 SIN on 27/09 = 2026-09-27T00:40Z, matching the printed 15h30 duty",
+      "confidence": "high"
+    },
+    {
+      "date": "2026-09-28",
+      "field": "reportUtc",
+      "method": "Report 11:10 taken as SIN local (the departure station on the return leg), = 2026-09-28T03:10Z; printed Duty 15h30 to Off Duty 20:40 MAD confirms",
+      "confidence": "high"
+    }
+  ]
+}
