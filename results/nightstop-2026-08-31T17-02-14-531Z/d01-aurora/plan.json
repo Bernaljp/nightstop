@@ -7,7 +7,7 @@
       "startUtc": "2026-09-01T21:23:00.000Z",
       "endUtc": "2026-09-02T04:50:00.000Z",
       "station": "MAD",
-      "why": "23:23 to 06:50 at MAD — the earliest you could be asleep here is 22:38.",
+      "why": "The earliest you could be asleep — the rest window opens 45m before this, which is the time it takes to get through the door.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -18,7 +18,7 @@
       "startUtc": "2026-09-02T20:30:00.000Z",
       "endUtc": "2026-09-03T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -29,7 +29,7 @@
       "startUtc": "2026-09-03T20:30:00.000Z",
       "endUtc": "2026-09-04T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -40,7 +40,7 @@
       "startUtc": "2026-09-04T19:20:00.000Z",
       "endUtc": "2026-09-05T02:45:00.000Z",
       "station": "MAD",
-      "why": "21:20 to 04:45 at MAD — an early night, because you report at 05:40. 7h25 rather than a full night — you will only have been up 14h50 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h25 rather than a full night — you will only have been up 14h50 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -51,7 +51,7 @@
       "startUtc": "2026-09-05T20:30:00.000Z",
       "endUtc": "2026-09-06T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -62,7 +62,7 @@
       "startUtc": "2026-09-06T19:20:00.000Z",
       "endUtc": "2026-09-07T02:45:00.000Z",
       "station": "MAD",
-      "why": "21:20 to 04:45 at MAD — an early night, because you report at 05:40. 7h25 rather than a full night — you will only have been up 14h50 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h25 rather than a full night — you will only have been up 14h50 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -73,7 +73,7 @@
       "startUtc": "2026-09-07T22:12:00.000Z",
       "endUtc": "2026-09-08T06:12:00.000Z",
       "station": "MAD",
-      "why": "00:12 to 08:12 at MAD — you were still on duty at 22:30, so this is the first chance you get.",
+      "why": "You were still on duty at your usual 22:30, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -84,7 +84,7 @@
       "startUtc": "2026-09-08T19:31:00.000Z",
       "endUtc": "2026-09-09T02:10:00.000Z",
       "station": "MAD",
-      "why": "21:31 to 04:10 at MAD — an early night, because you report at 05:05. 6h39 rather than a full night — you will only have been up 13h19 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 6h39 rather than a full night — you will only have been up 13h19 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -95,7 +95,7 @@
       "startUtc": "2026-09-09T20:30:00.000Z",
       "endUtc": "2026-09-10T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD — late on purpose, so you are rested for a duty running 1h01 through your circadian low. You report at 13:15.",
+      "why": "Late on purpose, so you are rested for a duty that runs 1h01 through your circadian low. You leave for the airport 5h50 after this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -106,7 +106,7 @@
       "startUtc": "2026-09-10T08:30:00.000Z",
       "endUtc": "2026-09-10T09:35:00.000Z",
       "station": "MAD",
-      "why": "2026-09-10 runs 1h01 through your circadian low. Take this 1h05 beforehand, while you can still sleep — it ends 0h45 before you leave.",
+      "why": "2026-09-10 runs 1h01 through your circadian low. Take this 1h05 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
         "nap-cap-2h"
@@ -118,7 +118,7 @@
       "startUtc": "2026-09-11T02:41:00.000Z",
       "endUtc": "2026-09-11T10:41:00.000Z",
       "station": "MAD",
-      "why": "04:41 to 12:41 at MAD — you were still on duty at 22:30, so this is the first chance you get.",
+      "why": "You were still on duty at your usual 22:30, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -129,7 +129,7 @@
       "startUtc": "2026-09-11T20:45:00.000Z",
       "endUtc": "2026-09-12T02:45:00.000Z",
       "station": "MAD",
-      "why": "22:45 to 04:45 at MAD — an early night, because you report at 05:40. 6h00 rather than a full night — you will only have been up 10h04 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 6h00 rather than a full night — you will only have been up 10h04 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -140,7 +140,7 @@
       "startUtc": "2026-09-12T20:30:00.000Z",
       "endUtc": "2026-09-13T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -151,7 +151,7 @@
       "startUtc": "2026-09-13T20:30:00.000Z",
       "endUtc": "2026-09-14T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -162,7 +162,7 @@
       "startUtc": "2026-09-14T19:33:00.000Z",
       "endUtc": "2026-09-15T03:05:00.000Z",
       "station": "MAD",
-      "why": "21:33 to 05:05 at MAD — an early night, because you report at 06:00. 7h32 rather than a full night — you will only have been up 15h03 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h32 rather than a full night — you will only have been up 15h03 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -173,7 +173,7 @@
       "startUtc": "2026-09-16T20:30:00.000Z",
       "endUtc": "2026-09-17T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -184,7 +184,7 @@
       "startUtc": "2026-09-17T18:57:00.000Z",
       "endUtc": "2026-09-18T02:10:00.000Z",
       "station": "MAD",
-      "why": "20:57 to 04:10 at MAD — an early night, because you report at 05:05. 7h13 rather than a full night — you will only have been up 14h27 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h13 rather than a full night — you will only have been up 14h27 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -195,7 +195,7 @@
       "startUtc": "2026-09-18T20:30:00.000Z",
       "endUtc": "2026-09-19T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD — late on purpose, so you are rested for a duty running 3h41 through your circadian low. You report at 15:25.",
+      "why": "Late on purpose, so you are rested for a duty that runs 3h41 through your circadian low. You leave for the airport 8h00 after this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -206,7 +206,7 @@
       "startUtc": "2026-09-19T09:45:00.000Z",
       "endUtc": "2026-09-19T11:45:00.000Z",
       "station": "MAD",
-      "why": "2026-09-19 runs 3h41 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 0h45 before you leave.",
+      "why": "2026-09-19 runs 3h41 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
         "nap-cap-2h"
@@ -218,7 +218,7 @@
       "startUtc": "2026-09-20T20:30:00.000Z",
       "endUtc": "2026-09-21T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -229,7 +229,7 @@
       "startUtc": "2026-09-21T19:15:00.000Z",
       "endUtc": "2026-09-22T03:15:00.000Z",
       "station": "MAD",
-      "why": "21:15 to 05:15 at MAD — an early night, because you report at 06:10.",
+      "why": "An early night: you leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -240,7 +240,7 @@
       "startUtc": "2026-09-22T20:51:00.000Z",
       "endUtc": "2026-09-23T04:51:00.000Z",
       "station": "MAD",
-      "why": "22:51 to 06:51 at MAD — the earliest you could be asleep here is 22:06.",
+      "why": "The earliest you could be asleep — the rest window opens 45m before this, which is the time it takes to get through the door.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -251,7 +251,7 @@
       "startUtc": "2026-09-23T19:04:00.000Z",
       "endUtc": "2026-09-24T02:10:00.000Z",
       "station": "MAD",
-      "why": "21:04 to 04:10 at MAD — an early night, because you report at 05:05. 7h06 rather than a full night — you will only have been up 14h13 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h06 rather than a full night — you will only have been up 14h13 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -262,7 +262,7 @@
       "startUtc": "2026-09-24T20:30:00.000Z",
       "endUtc": "2026-09-25T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -273,7 +273,7 @@
       "startUtc": "2026-09-25T18:37:00.000Z",
       "endUtc": "2026-09-26T01:40:00.000Z",
       "station": "MAD",
-      "why": "20:37 to 03:40 at MAD — late on purpose, so you are rested for a duty running 1h25 through your circadian low. You report at 04:35. 7h03 rather than a full night — you will only have been up 14h07 by then.",
+      "why": "Late on purpose, so you are rested for a duty that runs 1h25 through your circadian low. You leave for the airport the moment this ends. 7h03 rather than a full night — you will only have been up 14h07 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -284,7 +284,7 @@
       "startUtc": "2026-09-26T20:30:00.000Z",
       "endUtc": "2026-09-27T04:30:00.000Z",
       "station": "MAD",
-      "why": "22:30 to 06:30 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -295,7 +295,7 @@
       "startUtc": "2026-09-28T00:36:00.000Z",
       "endUtc": "2026-09-28T08:36:00.000Z",
       "station": "MAD",
-      "why": "02:36 to 10:36 at MAD — you were still on duty at 22:30, so this is the first chance you get.",
+      "why": "You were still on duty at your usual 22:30, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -306,7 +306,7 @@
       "startUtc": "2026-09-28T20:10:00.000Z",
       "endUtc": "2026-09-29T02:10:00.000Z",
       "station": "MAD",
-      "why": "22:10 to 04:10 at MAD — an early night, because you report at 05:05. 6h00 rather than a full night — you will only have been up 11h34 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 6h00 rather than a full night — you will only have been up 11h34 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -317,7 +317,7 @@
       "startUtc": "2026-09-29T18:10:00.000Z",
       "endUtc": "2026-09-30T02:10:00.000Z",
       "station": "MAD",
-      "why": "20:10 to 04:10 at MAD — an early night, because you report at 05:05.",
+      "why": "An early night: you leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]

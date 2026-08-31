@@ -1,20 +1,23 @@
 /**
  * Turns a plan into the rows a briefing renders.
  *
- * ONE TIMEZONE DRAWS THE GRID. Every span is positioned in the crew member's base time,
- * and the times written on it are local to wherever they will be.
+ * ONE CLOCK, FOR EVERYTHING. Position on the grid, the hours written on each block, the
+ * day-by-day table: all of it in a single timezone, the crew member's base by default and
+ * any station on the roster if they choose one. Nothing in the view is ever in a second
+ * zone.
  *
- * The first version placed each span in its own station's timezone, which reads well
- * until a westbound duty and the sleep after it land on the same column: the Madrid–JFK
- * sector was drawn ending at 21:10 (Madrid) and the sleep in New York starting at 19:56
- * (New York), so the picture showed a crew member asleep an hour and a half before they
- * landed. Nothing was wrong with the plan. A calendar drawn in more than one timezone at
- * once will eventually draw two things overlapping that never overlapped, and on this
- * particular calendar that is the one mistake it must not make.
+ * It took two goes to get here, and both failures are worth keeping written down. The
+ * first version placed each span in its OWN station's timezone, which reads well until a
+ * westbound duty and the sleep after it land on the same column: the Madrid–JFK sector
+ * was drawn ending at 21:10 (Madrid) and the sleep in New York starting at 19:56 (New
+ * York), so the picture showed a crew member asleep an hour and a half before they landed.
+ * The second version fixed the geometry but kept station-local times in the labels, so a
+ * block sitting at 00:41 on the axis was captioned "ORD 17:41" — the same mistake, moved
+ * from the geometry into the text, and just as unreadable.
  *
- * So the geometry comes from a single clock, and the label on each block carries the
- * local time — with the station in front of it whenever that is a different clock from
- * the one the grid is on.
+ * The rule that holds is simpler than either attempt: a view has one clock. Where the
+ * reader needs another, they change the clock for the whole view, and the station stays
+ * on the block as a PLACE — never as a second set of hours.
  */
 import type { Duty, CrewProfile } from "../corpus/schema";
 import type { SleepPlan, Conflict } from "../plan/schema";
@@ -43,13 +46,23 @@ export interface DayRow {
   sleepText: string;
 }
 
+/** A clock the whole view can be drawn on. */
+export interface Zone {
+  /** IANA name, e.g. "Europe/Madrid". */
+  tz: string;
+  /** What to call it: a station code, or UTC. */
+  label: string;
+}
+
 export interface BriefData {
   operator: string;
   from: string;
   to: string;
   base: string;
-  /** The clock the grid is drawn on, named for the reader. */
-  gridStation: string;
+  /** The single clock every time in this data is written on. */
+  zone: Zone;
+  /** The clocks a reader can switch to: base first, then every station visited, then UTC. */
+  zones: Zone[];
   days: DayRow[];
   conflicts: { hard: Conflict[]; recommended: Conflict[]; preference: Conflict[] };
   derivations: NonNullable<SleepPlan["derivations"]>;
@@ -102,11 +115,29 @@ export function buildBriefData(
   profile: CrewProfile,
   plan: SleepPlan,
   covered: { from: string; to: string },
+  /** Which clock to draw the whole view on. Defaults to home. */
+  viewTz?: string,
 ): BriefData {
-  const gridTz = profile.baseTz || tzOf(profile.base);
-  /** The local clock at a station, and whether it differs from the one the grid uses. */
-  const away = (station: string) => tzOf(station) !== gridTz;
-  const at = (instant: Date, station: string) => localHHmm(instant, tzOf(station));
+  const homeTz = profile.baseTz || tzOf(profile.base);
+
+  // Every station the roster touches, base first, then UTC. These are the clocks a reader
+  // may switch the WHOLE view to; there is no way to ask for two of them at once.
+  const zones: Zone[] = [];
+  const addZone = (label: string, tz: string) => {
+    if (!zones.some((z) => z.tz === tz)) zones.push({ label, tz });
+  };
+  addZone(profile.base, homeTz);
+  for (const d of duties) {
+    for (const st of [d.station, d.endStation]) {
+      if (st) addZone(st, tzOf(st));
+    }
+  }
+  addZone("UTC", "UTC");
+
+  const tz = zones.some((z) => z.tz === viewTz) ? viewTz! : homeTz;
+  const zone = zones.find((z) => z.tz === tz)!;
+  const hhmm = (instant: Date) => localHHmm(instant, tz);
+  const range = (a: string, b: string) => `${hhmm(new Date(a))}–${hhmm(new Date(b))}`;
 
   const rows = new Map<string, DayRow>();
   for (const date of dateRange(covered.from, covered.to)) {
@@ -138,7 +169,7 @@ export function buildBriefData(
     const from = new Date(bodyMidnight + 2 * 60 * 60_000 - bodyOffset * 60_000);
     addSpan(
       rows, "wocl", from.toISOString(), new Date(from.getTime() + 4 * 60 * 60_000).toISOString(),
-      gridTz, "",
+      tz, "",
       `Your circadian low, 02:00–06:00 body time` +
         (Math.abs(drift) >= 45
           ? ` — about ${formatDuration(Math.abs(drift))} ${drift > 0 ? "later" : "earlier"} than the local clock, because your body has not caught up yet.`
@@ -148,7 +179,6 @@ export function buildBriefData(
 
   for (const d of duties) {
     if (!d.reportUtc || !d.endUtc) continue;
-    const tz = tzOf(d.station);
     // `sectors` is absent on plenty of real model output, including for duties it
     // labelled "flight". Reading it unguarded threw after a plan had already rendered.
     const sectors = Array.isArray(d.sectors) ? d.sectors : [];
@@ -156,17 +186,14 @@ export function buildBriefData(
       d.kind === "flight" && sectors.length
         ? sectors.map((s) => `${s.origin}–${s.dest}`).join(" ")
         : d.kind;
+    // The station codes are places, and they stay. The hours are the view's hours.
     addSpan(
-      rows, "duty", d.reportUtc, d.endUtc, gridTz, label,
-      `On duty ${at(new Date(d.reportUtc), d.station)} ${d.station} → ` +
-        `${at(new Date(d.endUtc), d.endStation)} ${d.endStation} · ${label}`,
+      rows, "duty", d.reportUtc, d.endUtc, tz, label,
+      `On duty ${range(d.reportUtc, d.endUtc)} ${zone.label} time · ` +
+        `${d.station} → ${d.endStation} · ${label}`,
     );
-    const row = rows.get(d.date);
-    if (row) {
-      row.dutyText =
-        `${localHHmm(new Date(d.reportUtc), tz)}–` +
-        `${localHHmm(new Date(d.endUtc), tzOf(d.endStation))} ${label}`;
-    }
+    const row = rows.get(localDate(new Date(d.reportUtc), tz));
+    if (row) row.dutyText = `${range(d.reportUtc, d.endUtc)} ${label}`;
   }
 
   let totalSleep = 0;
@@ -175,14 +202,11 @@ export function buildBriefData(
     const mins = minutesBetween(new Date(b.startUtc), new Date(b.endUtc));
     totalSleep += mins;
     if (b.kind === "main") shortest = Math.min(shortest, mins);
-    const tz = tzOf(b.station);
-    const clock = `${localHHmm(new Date(b.startUtc), tz)}–${localHHmm(new Date(b.endUtc), tz)}`;
-    // Away from base the block sits on the grid at base time but reads in local time, so
-    // the station goes in front of the hours. Without it the chip says 17:41 while sitting
-    // at midnight on the axis, and the reader has no way to know which one to believe.
-    const label = away(b.station) ? `${b.station} ${clock}` : clock;
-    addSpan(rows, b.kind, b.startUtc, b.endUtc, gridTz, label, b.why);
-    const row = rows.get(localDate(new Date(b.startUtc), gridTz));
+    const label = range(b.startUtc, b.endUtc);
+    // The station rides along as a place, never as a second set of hours.
+    const where = tzOf(b.station) === tz ? "" : ` · you are at ${b.station}`;
+    addSpan(rows, b.kind, b.startUtc, b.endUtc, tz, label, `${label} ${zone.label} time${where}. ${b.why}`);
+    const row = rows.get(localDate(new Date(b.startUtc), tz));
     if (row) {
       row.sleepText = [row.sleepText, `${label} (${formatDuration(mins)})`]
         .filter(Boolean)
@@ -201,7 +225,8 @@ export function buildBriefData(
     from: covered.from,
     to: covered.to,
     base: profile.base,
-    gridStation: profile.base,
+    zone,
+    zones,
     days: [...rows.values()],
     conflicts: {
       hard: by("hard-limit"),

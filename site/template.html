@@ -78,7 +78,7 @@ strong { font-weight: 600; }
 code, .mono { font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
 code { font-size: 0.88em; background: var(--sunk); padding: 0.1em 0.36em; border-radius: 3px; }
 
-h1, h2, h3, .eyebrow, .num b, th, .chip, .keyline {
+h1, h2, h3, .eyebrow, .num b, th, .chip {
   font-family: Barlow, "Helvetica Neue", Arial, sans-serif;
 }
 h1 { font-size: clamp(44px, 8vw, 78px); font-weight: 600; line-height: 0.96;
@@ -153,9 +153,46 @@ tr td.lose { color: var(--duty); }
         color: var(--ink-2); font-size: 16px; }
 .note strong { color: var(--ink); }
 
-.keyline { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--ink-2);
-           background: var(--sunk); border: 1px solid var(--line); border-radius: 8px;
-           padding: 15px 17px; overflow-x: auto; white-space: pre; line-height: 1.65; }
+/* The pipeline, as four stops on one line.
+   It was ASCII art in a <pre>, which needed a monospace grid to hold its shape and fell
+   apart the moment the viewport was narrower than the widest line. This is the same four
+   stages drawn with a rail and dots, so it reflows instead of scrolling sideways, and the
+   colour of each dot says which stops involve a model and which cannot. */
+.flow { margin: 30px 0 4px; }
+.stages { list-style: none; margin: 0; padding: 0; }
+.stage { position: relative; padding: 0 0 26px 30px; --dot: var(--ink-3); }
+.stage:last-child { padding-bottom: 0; }
+.stage::before { content: ""; position: absolute; left: 0; top: 7px; width: 11px;
+                 height: 11px; border-radius: 50%; background: var(--ground);
+                 border: 2px solid var(--dot); }
+/* Rail drawn per gap rather than as one bar down the list, so it always ends on the last
+   dot instead of on a hand-guessed offset that only holds at one viewport width. */
+.stage:not(:last-child)::after { content: ""; position: absolute; left: 7px; top: 22px;
+                                 bottom: -7px; width: 1px; background: var(--line); }
+.stage.model { --dot: var(--sleep); }
+.stage.engine { --dot: var(--nap); }
+.stage.out { --dot: var(--flag); }
+.stage .body { display: grid; gap: 14px 30px; grid-template-columns: 1fr; }
+@media (min-width: 860px) {
+  .stage.has-tools .body { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); }
+}
+.stage .tag { display: inline-block; font-family: Barlow, sans-serif; font-size: 10.5px;
+              font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase;
+              color: var(--dot); background: color-mix(in srgb, var(--dot) 13%, transparent);
+              border-radius: 4px; padding: 2px 7px; vertical-align: 2px; margin-left: 9px; }
+.stage h3 { margin: 0; font-size: 18px; display: inline; }
+/* :not(.tools) matters — without it this outranks `.tools .tlabel` on element count and
+   silently restyles the tools heading. */
+.stage .body > div:not(.tools) > p { margin: 6px 0 0; font-size: 15.5px;
+                                     color: var(--ink-2); line-height: 1.55; max-width: 46ch; }
+.tools { border-left: 1px solid var(--line); padding-left: 20px; }
+.tools .tlabel { font-family: Barlow, sans-serif; font-size: 11px; font-weight: 600;
+                 letter-spacing: 0.13em; text-transform: uppercase; color: var(--ink-3);
+                 margin: 0 0 9px; }
+.tools dl { margin: 0; display: grid; gap: 3px 0; grid-template-columns: 1fr; }
+.tools dt { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--ink); }
+.tools dd { margin: 0 0 11px; font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+.tools dd:last-child { margin-bottom: 0; }
 
 .cards { display: grid; gap: 14px; margin: 28px 0 0; grid-template-columns: 1fr; }
 @media (min-width: 760px) { .cards { grid-template-columns: 1fr 1fr; } }
@@ -252,15 +289,48 @@ footer a { color: var(--ink-2); }
     have to check anyway.</p>
   </div>
 
-  <div class="keyline col" style="max-width:none">roster PDF ─► READER (model)         tools, not trust:
-                                      to_utc            the hours that repeat, and the ones that never happen
-                                      reconcile_totals  the document grading its own transcription
-              │
-              ▼
-         ENGINE (deterministic)        places sleep, finds every rule collision
-              │
-              ▼
-         BRIEFING                      what needs a decision, then the month, then the detail</div>
+  <div class="flow">
+    <ol class="stages">
+      <li class="stage">
+        <div class="body"><div>
+          <h3>Roster PDF</h3><span class="tag">what you upload</span>
+          <p>A month of flying, laid out however your airline happens to lay it out.</p>
+        </div></div>
+      </li>
+      <li class="stage model has-tools">
+        <div class="body">
+          <div>
+            <h3>Reader</h3><span class="tag">model</span>
+            <p>Turns an unfamiliar document into structured duties — and declares which
+            values it worked out rather than read.</p>
+          </div>
+          <div class="tools">
+            <p class="tlabel">Tools, not trust</p>
+            <dl>
+              <dt>to_utc</dt>
+              <dd>The hours that repeat, and the ones that never happen.</dd>
+              <dt>reconcile_totals</dt>
+              <dd>The document grading its own transcription.</dd>
+            </dl>
+          </div>
+        </div>
+      </li>
+      <li class="stage engine">
+        <div class="body"><div>
+          <h3>Engine</h3><span class="tag">deterministic</span>
+          <p>Places every night and nap, and finds every rule collision. No model runs
+          here, so it cannot invent a rule that does not exist.</p>
+        </div></div>
+      </li>
+      <li class="stage out">
+        <div class="body"><div>
+          <h3>Briefing</h3><span class="tag">what you hold</span>
+          <p>What needs a decision, then the month, then the detail — and an
+          <code>.ics</code> you import yourself.</p>
+        </div></div>
+      </li>
+    </ol>
+  </div>
 
   <div class="cards">
     <div class="card">
@@ -377,8 +447,8 @@ footer a { color: var(--ink-2); }
 <section>
   <p class="eyebrow">what no number caught</p>
   <div class="col">
-    <h2>Seven of eleven stages moved neither headline number.</h2>
-    <p>All seven were real defects. A planner that never once suggested a nap. One that
+    <h2>Eight of twelve stages moved neither headline number.</h2>
+    <p>All eight were real defects. A planner that never once suggested a nap. One that
     left every day off unplanned. One that gave every crew member the same bedtime whatever
     they had told it. One that stacked three sleeps into thirteen hours with a five-minute
     gap. One that had people asleep the minute they walked through the door. One that asked
@@ -389,11 +459,18 @@ footer a { color: var(--ink-2); }
     Madrid&ndash;New York sector ended at 21:10 and the sleep after it began at 19:56.
     The picture showed a crew member asleep an hour and a half before they landed. The plan
     was right. The drawing of it was not, and a drawing is the whole product.</p>
+    <p>Then I fixed the geometry, left the captions in station time, and shipped a block
+    sitting at 00:41 on the axis labelled <em>&ldquo;ORD 17:41&rdquo;</em>. The same reader
+    found the same bug a second time. <strong>A partial fix to a display bug is
+    indistinguishable from a complete one if you only ever check it from a terminal.</strong>
+    One clock now sets position, label and list together, with a picker that moves the whole
+    view at once &mdash; and the reasons carry durations only, never a clock reading that
+    could contradict it.</p>
   </div>
   <div class="score">
-    <div class="chip bad">defects a metric caught <b>0 of 7</b></div>
-    <div class="chip">found by reading the output <b>7</b></div>
-    <div class="chip">found by someone other than the author <b>6</b></div>
+    <div class="chip bad">defects a metric caught <b>0 of 8</b></div>
+    <div class="chip">found by reading the output <b>8</b></div>
+    <div class="chip">found by someone other than the author <b>7</b></div>
   </div>
   <div class="note col">
     Twelve rosters, a pre-registered metric, an independent grader, four repeats and two

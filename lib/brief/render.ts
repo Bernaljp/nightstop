@@ -259,7 +259,7 @@ ${d.uncertainties.map((u) => `<tr><td>—</td><td>unclear</td><td class="note" c
     <span><b style="background:var(--wocl);outline:1px solid var(--wocl-line)"></b>your circadian low</span>
   </div>
 </div>
-<p class="sub" style="margin-top:9px">Drawn on ${esc(d.gridStation)} time, so nothing overlaps that did not overlap. Blocks away from ${esc(d.gridStation)} carry the local time and the station. Hover any block for the reason it sits there.</p>
+<p class="sub" style="margin-top:9px">Every time on this page is <strong>${esc(d.zone.label)} time</strong> — one clock throughout, so nothing overlaps here that did not overlap in the air. Station codes say where you are, not what the clock there reads. Hover any block for the reason it sits there.</p>
 
 <h2>Day by day</h2>
 <table><thead><tr><th>Date</th><th>At</th><th>Duty</th><th>Sleep</th></tr></thead><tbody>

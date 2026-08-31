@@ -98,6 +98,8 @@ interface Night {
   clippedEnd: boolean;
   /** The start was pushed out because the window opened late, or a night came before it. */
   clippedStart: boolean;
+  /** True when what pushed it was the window opening, not a night already placed. */
+  floorWasWindow: boolean;
   /** Set when the length was cut back because they will not have been up long. */
   trimmedAwake?: number;
   /** Set on the sleep that exists to get them through a night duty. */
@@ -132,6 +134,7 @@ function placeMainSleeps(
     if (to <= windowFrom || from >= windowTo) continue;
 
     const prev = out[out.length - 1];
+    let floorWasWindow = false;
     const floor = prev
       ? Math.max(windowFrom.getTime(), prev.to.getTime() + s.napSeparationMinutes * 60_000)
       : windowFrom.getTime();
@@ -152,6 +155,7 @@ function placeMainSleeps(
     if (from.getTime() < floor) {
       from = new Date(floor);
       clippedStart = true;
+      floorWasWindow = !prev;
       const wanted = addMinutes(from, s.mainSleepTargetMinutes);
       // Stop short of crowding the following night. Extending right up to the next
       // bedtime produced two main sleeps an hour apart, which is one fragmented night
@@ -167,7 +171,7 @@ function placeMainSleeps(
     // A sliver at the edge of a window is not a night's sleep. Below four hours it is
     // left out rather than dressed up as one.
     if (minutesBetween(from, to) < 4 * 60) continue;
-    out.push({ from, to, clippedEnd, clippedStart });
+    out.push({ from, to, clippedEnd, clippedStart, floorWasWindow });
   }
   return out;
 }
@@ -246,6 +250,26 @@ function usualWindowOverlap(
   return total;
 }
 
+/**
+ * Where a block falls in the day at the station, said in words rather than in digits.
+ *
+ * A reason has to survive being read next to a calendar the crew member may have switched
+ * to a different clock, so it names the time of day instead of quoting one.
+ */
+function partOfDay(instant: Date, tz: string): string {
+  const hour = Number(localHHmm(instant, tz).slice(0, 2));
+  if (hour < 5) return "the early hours";
+  if (hour < 12) return "the morning";
+  if (hour < 17) return "the afternoon";
+  if (hour < 21) return "the evening";
+  return "the late evening";
+}
+
+/** How long after waking they set off, or that they set off straight away. */
+function leaveText(minutes: number): string {
+  return minutes <= 5 ? "the moment this ends" : `${formatDuration(minutes)} after this ends`;
+}
+
 export function buildPlan(
   caseId: string,
   duties: Duty[],
@@ -295,8 +319,9 @@ export function buildPlan(
     trimForTimeAwake(nights, dutyWocl >= 60 ? nights.length - 1 : -1, settings.mainSleepFloorMinutes);
 
     const usual = `${String(Math.floor(usualBed)).padStart(2, "0")}:${String(Math.round((usualBed % 1) * 60)).padStart(2, "0")}`;
-    const reportLocal = localHHmm(new Date(r.next.reportUtc!), tzOf(r.next.station));
-    const windowOpens = localHHmm(new Date(r.sleepWindowFromUtc), stationTz);
+    const leaveFor = addMinutes(
+      new Date(r.next.reportUtc!), -commuteFor(profile, r.next.station),
+    );
 
     // If they were still on duty at their usual bedtime, say that rather than leaving
     // "the roster leaves no room" to be taken on trust.
@@ -311,12 +336,10 @@ export function buildPlan(
     nights.forEach((night) => {
       const len = minutesBetween(night.from, night.to);
       const inWocl = woclCoverageMinutes(night.from, night.to, bodyOffsetFromUtc);
-      const localBed = localHHmm(night.from, stationTz);
-      const localWake = localHHmm(night.to, stationTz);
       const drift = Math.round(phase?.offsetFromLocalMinutes ?? 0);
       const off = displacementFrom(night.from, stationTz);
       const at = r.prev.endStation;
-      const span = `${localBed} to ${localWake} at ${at}`;
+      const beforeReport = minutesBetween(night.to, leaveFor);
 
       // The explanation is built from WHY the block landed where it did, not guessed at
       // from where it ended up. The version that guessed printed "the roster leaves no
@@ -324,31 +347,42 @@ export function buildPlan(
       // small wording problem: it told a crew member the roster was to blame for a bedtime
       // their own body clock had chosen, and there was no way to tell from the plan that
       // it was wrong.
+      //
+      // It also carries NO clock readings. The times are printed once, by whatever is
+      // displaying the block, on whatever clock the reader has chosen. A reason that
+      // quotes 17:41 while the calendar beside it shows 00:41 is the same timezone
+      // mixing in prose, and it reads as a contradiction rather than an explanation.
+      // What survives here are durations, which mean the same thing in every zone, and
+      // station names, which are places rather than times.
       let why: string;
       if (night.preDuty) {
         why =
-          `${span} — late on purpose, so you are rested for a duty running ` +
-          `${formatDuration(dutyWocl)} through your circadian low. You report at ${reportLocal}.`;
+          `Late on purpose, so you are rested for a duty that runs ` +
+          `${formatDuration(dutyWocl)} through your circadian low. You leave for the ` +
+          `airport ${leaveText(beforeReport)}.`;
       } else if (night.clippedEnd) {
-        why = `${span} — an early night, because you report at ${reportLocal}.`;
-      } else if (night.clippedStart) {
+        why = `An early night: you leave for the airport ${leaveText(beforeReport)}.`;
+      } else if (night.clippedStart && night.floorWasWindow) {
         why = onDutyThen
-          ? `${span} — you were still on duty at ${usual}, so this is the first chance you get.`
-          : `${span} — the earliest you could be asleep here is ${windowOpens}.`;
+          ? `You were still on duty at your usual ${usual}, so this is the first chance ` +
+            `you get.`
+          : `The earliest you could be asleep — the rest window opens ` +
+            `${formatDuration(settings.settleMinutes)} before this, which is the time it ` +
+            `takes to get through the door.`;
       } else if (Math.abs(drift) >= 60) {
         why = Math.abs(off) >= 60
-          ? `${span}. Your body is still ${formatDuration(Math.abs(drift))} ` +
+          ? `Your body is still ${formatDuration(Math.abs(drift))} ` +
             `${drift > 0 ? "ahead of" : "behind"} the clock at ${at}, so this IS your usual ` +
-            `${usual} — it just lands at ${localBed} here.`
-          : `${span} — close to your usual ${usual}, but about ` +
+            `${usual} — at ${at} it falls in ${partOfDay(night.from, stationTz)}.`
+          : `Close to your usual ${usual}, but about ` +
             `${formatDuration(Math.abs(drift))} ${drift > 0 ? "later" : "earlier"} on your ` +
             `body clock, which has not caught up with where you are.`;
       } else if (Math.abs(off) >= 60) {
         why =
-          `${span} — about ${formatDuration(Math.abs(off))} ` +
+          `About ${formatDuration(Math.abs(off))} ` +
           `${off > 0 ? "later" : "earlier"} than your usual ${usual}.`;
       } else {
-        why = `${span}, your usual hours, covering ${formatDuration(inWocl)} of your circadian low.`;
+        why = `Your usual hours, covering ${formatDuration(inWocl)} of your circadian low.`;
       }
       if (night.trimmedAwake) {
         why +=

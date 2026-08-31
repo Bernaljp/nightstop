@@ -71,7 +71,7 @@ judge may be watching at.
 
 | Screen | Say |
 |---|---|
-| **Tab 2**, still on v4, **scroll to the phone calendar** and page one week forward. | "And here's the plan as you'd actually see it — a week on a phone. Blue is sleep, green a nap before a night duty, orange the flying. The dashed band behind them is the circadian low." |
+| **Tab 2**, still on v4, **scroll to the phone calendar** and page one week forward. Then **change the `shown in` picker** from the home base to a layover station and let it redraw. | "And here's the plan as you'd actually see it — a week on a phone. Blue is sleep, green a nap before a night duty, orange the flying. The dashed band behind them is the circadian low. One clock throughout — and if you want to read the month in the timezone you're actually standing in, you change it for the whole view, never for one block at a time." |
 | **Tab 3**, the briefing, scrolled to the top. | "Same plan, printable." |
 | **Point at the stat row**, then at *What needs your decision*. | "Decisions first — five things to settle, not sixteen, because the same collision on four nights is one decision, not four." |
 | **Scroll to the ribbon.** Move the cursor slowly left to right across the **19th and 20th**, the Singapore days. | "Now watch the grey band. That's the circadian low — drawn from the *body* clock, not the wall clock. On the Singapore layover it sits mid-morning local, then drifts back over the following week. That's the whole problem in one picture, and it's the reason 'sleep at 11pm local' is advice for a body that's been there a week." |
@@ -94,7 +94,7 @@ judge may be watching at.
 |---|---|
 | **Tab 6**, `docs/removed-experiments.md`, scrolled to experiment 2. | "One more. When the reader flags something as uncertain, you can hand it back and ask it to resolve it. Forty lines. I predicted it would beat my metric while making the system more dangerous." |
 | **Point at the comparison table** in that file — the row reading 33 → 0. | "It did something worse. It *tied*. Same trustworthy count, same silently-wrong count. What changed is invisible to every number I report: values the pilot can check go from thirty-three to zero, and it costs thirty-eight percent more. It guessed right every time here — which isn't a reason to keep it, because the behaviour is identical whether the guess is right or wrong." |
-| **Switch to tab 2**, the demo, and scroll the phone calendar. | "And here is the number I did not expect to be reporting. Seven of my eleven stages moved neither headline number — a planner that never suggested a nap, one that asked for twenty-four hours of sleep in a forty-six hour layover, a calendar that drew a pilot asleep before they landed. All seven were real. **None was caught by a metric.** Six were caught by someone reading the output." |
+| **Switch to tab 2**, the demo, and scroll the phone calendar. | "And here is the number I did not expect to be reporting. Eight of my twelve stages moved neither headline number — a planner that never suggested a nap, one that asked for twenty-four hours of sleep in a forty-six hour layover, a calendar that drew a pilot asleep before they landed. All eight were real. **None was caught by a metric.** Seven were caught by someone reading the output — including the one where I fixed the calendar, said so, and had left half of it still broken." |
 | **Switch to tab 3**, the briefing, and leave it on screen. | "So: build the scoreboard before the agent. Then distrust the scoreboard too. Both of my worst bugs were in the measuring apparatus, not the thing being measured — and the decision to cut that experiment came from looking at what the pilot ends up holding, which no number in my results table reports." |
 | Hold on the briefing. Stop. | *(end)* |
 
@@ -120,7 +120,7 @@ Cut in this order:
 1. The live tag (0:20)
 2. The Cirrus midnight-rollover aside at 2:10 (0:20)
 3. The *Repeats* / held-out lines at 3:25 (0:15)
-4. The seven-of-eleven line at 4:10 (0:20) — only if you must; it is the strongest
+4. The eight-of-twelve line at 4:10 (0:20) — only if you must; it is the strongest
    evidence in the video that the evaluation was run honestly
 
 **Do not cut** the v1 → v4 switch at 1:20, the Kestrel failure at 3:25, or the removed

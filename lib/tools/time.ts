@@ -119,6 +119,8 @@ export function minutesBetween(a: Date, b: Date): number {
 export function formatDuration(minutes: number): string {
   const sign = minutes < 0 ? "-" : "";
   const m = Math.abs(minutes);
+  // Under an hour, "0h45" reads like a malformed clock time rather than a length.
+  if (m < 60) return `${sign}${m}m`;
   return `${sign}${Math.floor(m / 60)}h${String(m % 60).padStart(2, "0")}`;
 }
 

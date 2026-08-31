@@ -255,18 +255,19 @@ untrustworthy, and it costs *more* to do it.
 **The last column changes one thing.** The rule check moves out of the model and into a
 deterministic function. Invented rules: 40 → 0. Trustworthy: 1/8 → 8/8. Cheaper, too.
 
-Seven of the eleven stages moved neither headline number. All seven were real defects: a
+Eight of the twelve stages moved neither headline number. All eight were real defects: a
 planner that never suggested a nap; one that left every day off unplanned; one that gave
 every crew member the same bedtime whatever they told it; one that stacked three sleeps
 into thirteen hours with a five-minute gap; one that had people asleep the minute they
 walked through the door; one that asked for twenty-four hours of sleep in forty-six and
-blamed the roster for it; and a calendar that drew a crew member asleep before they landed.
-**None was found by a metric.** All seven came from rendering the output and looking at it,
-and six of the seven were found by someone other than the author.
+blamed the roster for it; a calendar that drew a crew member asleep before they landed; and
+then the same calendar still mixing timezones in its labels after I had declared that one
+fixed. **None was found by a metric.** All eight came from rendering the output and looking
+at it, and seven of the eight were found by someone other than the author.
 
 That is the finding this evaluation produced about itself, and it is worth more than any
 row in the table above. Twelve cases, a pre-registered metric, an independent grader, four
-repeats and two held-out sets — and every one of those seven defects sailed through. The
+repeats and two held-out sets — and every one of those eight defects sailed through. The
 grader checks that a plan contains no violation. It never asked whether the plan was
 coherent, whether a person could actually follow it, or whether the picture of it told the
 truth. That is the argument for the hot take below as much as any of the numbers above.
@@ -296,6 +297,7 @@ job it should not be doing — and the tools that let it do the other half exact
 | **9 · time to get through the door** | Sleep was starting the exact minute the rest window opened — asleep the second you walk in, having not eaten or come down off a ten-hour duty. Reported from the calendar. | Shortest gap between a duty ending and sleep starting goes from **25 minutes to 70**; nothing changes in what the regulation measures, since narrowing 117.25(e)'s window here would be reinterpreting it; primary and co-primary **unchanged** | Kept. Fifth stage running that moved no headline number. |
 | **10 · a night's sleep costs a day awake** | Two things, both reported from the calendar. The planner gave every body-clock night the full eight hours, so a 46-hour Chicago layover came out as **24 hours of sleep in three goes** — and the explanation printed onto it read *"the roster leaves no room to keep your normal hours"*, which on a 46-hour window is simply false. Sleep is now bought with time awake at roughly 2:1, floored at the rule pack's own six hours, and every block explains itself from why it landed where it did rather than from where it ended up. | Most-slept rest window **72% → 63%**; d07-cirrus over that layover 24h → 20h40; plan violations **0 either way**; primary and co-primary **unchanged** | Kept. Sixth stage running that moved no headline number, and the second where the fault was in what the plan *said* rather than where it put the sleep. |
 | **11 · one clock draws the calendar** | Each span was positioned in its own station's timezone, so the Madrid–JFK sector was drawn ending at 21:10 Madrid time and the New York sleep after it starting at 19:56 New York time. The picture showed a crew member asleep an hour and a half before they landed. The plan was correct; the calendar was not. Reported by a reader, from the demo. | The grid is now drawn on one clock and labelled with it, blocks away from base carrying their station; no arrangement of stations can now draw a false overlap. Nothing in the plan changed, so **no metric moved at all** | Kept. The one class of mistake this calendar must not make, and there was no number anywhere in the evaluation that could have caught it. |
+| **12 · the same mistake, moved into the text** | Stage 11 fixed the geometry and left the labels alone, so a block positioned at 00:41 on the base-time axis was captioned *"ORD 17:41"*, and the agenda beside it read in station time while the grid read in home time. Reported by the same reader, on the next look: *"it is mixing time zones."* They were right, and my fix had been half a fix. | One clock now sets position, label, agenda and day-by-day table together — plus a picker for home, any station on the roster, or UTC, which moves the **whole** view at once. A block's station rides along as a place, never as a second set of hours. The block reasons carry no clock readings at all now, only durations, so they cannot contradict whichever zone the reader picked. **No metric moved** | Kept. Eighth stage running that moved no headline number, and the one that taught me the most: a partial fix to a display bug looks exactly like a complete one from the terminal. |
 | **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3

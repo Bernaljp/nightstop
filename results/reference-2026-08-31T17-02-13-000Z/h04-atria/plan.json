@@ -7,7 +7,7 @@
       "startUtc": "2026-09-02T16:25:00.000Z",
       "endUtc": "2026-09-03T00:20:00.000Z",
       "station": "LHR",
-      "why": "17:25 to 01:20 at LHR — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 02:00.",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -18,7 +18,7 @@
       "startUtc": "2026-09-03T18:55:00.000Z",
       "endUtc": "2026-09-04T02:55:00.000Z",
       "station": "LHR",
-      "why": "19:55 to 03:55 at LHR — late on purpose, so you are rested for a duty running 1h25 through your circadian low. You report at 04:35.",
+      "why": "Late on purpose, so you are rested for a duty that runs 1h25 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -29,7 +29,7 @@
       "startUtc": "2026-09-04T20:30:00.000Z",
       "endUtc": "2026-09-05T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR — late on purpose, so you are rested for a duty running 1h43 through your circadian low. You report at 14:40.",
+      "why": "Late on purpose, so you are rested for a duty that runs 1h43 through your circadian low. You leave for the airport 8h30 after this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -40,7 +40,7 @@
       "startUtc": "2026-09-05T10:15:00.000Z",
       "endUtc": "2026-09-05T12:15:00.000Z",
       "station": "LHR",
-      "why": "2026-09-05 runs 1h43 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 0h45 before you leave.",
+      "why": "2026-09-05 runs 1h43 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
         "nap-cap-2h"
@@ -52,7 +52,7 @@
       "startUtc": "2026-09-06T04:08:00.000Z",
       "endUtc": "2026-09-06T12:08:00.000Z",
       "station": "LHR",
-      "why": "05:08 to 13:08 at LHR — you were still on duty at 21:30, so this is the first chance you get.",
+      "why": "You were still on duty at your usual 21:30, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -63,7 +63,7 @@
       "startUtc": "2026-09-06T20:30:00.000Z",
       "endUtc": "2026-09-07T02:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 03:30 at LHR, your usual hours, covering 1h30 of your circadian low. 6h00 rather than a full night — you will only have been up 8h22 by then.",
+      "why": "Your usual hours, covering 1h30 of your circadian low. 6h00 rather than a full night — you will only have been up 8h22 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -74,7 +74,7 @@
       "startUtc": "2026-09-08T00:14:00.000Z",
       "endUtc": "2026-09-08T08:10:00.000Z",
       "station": "LHR",
-      "why": "01:14 to 09:10 at LHR — you were still on duty at 21:30, so this is the first chance you get.",
+      "why": "You were still on duty at your usual 21:30, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -85,7 +85,7 @@
       "startUtc": "2026-09-08T14:58:00.000Z",
       "endUtc": "2026-09-08T22:55:00.000Z",
       "station": "LHR",
-      "why": "15:58 to 23:55 at LHR — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 00:35.",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -96,7 +96,7 @@
       "startUtc": "2026-09-09T20:30:00.000Z",
       "endUtc": "2026-09-10T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -107,7 +107,7 @@
       "startUtc": "2026-09-10T20:30:00.000Z",
       "endUtc": "2026-09-11T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -118,7 +118,7 @@
       "startUtc": "2026-09-11T20:30:00.000Z",
       "endUtc": "2026-09-12T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -129,7 +129,7 @@
       "startUtc": "2026-09-12T20:30:00.000Z",
       "endUtc": "2026-09-13T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -140,7 +140,7 @@
       "startUtc": "2026-09-13T19:25:00.000Z",
       "endUtc": "2026-09-14T03:25:00.000Z",
       "station": "LHR",
-      "why": "20:25 to 04:25 at LHR — an early night, because you report at 05:05.",
+      "why": "An early night: you leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -151,7 +151,7 @@
       "startUtc": "2026-09-14T20:30:00.000Z",
       "endUtc": "2026-09-15T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR — late on purpose, so you are rested for a duty running 2h29 through your circadian low. You report at 15:25.",
+      "why": "Late on purpose, so you are rested for a duty that runs 2h29 through your circadian low. You leave for the airport 9h15 after this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -162,7 +162,7 @@
       "startUtc": "2026-09-15T11:00:00.000Z",
       "endUtc": "2026-09-15T13:00:00.000Z",
       "station": "LHR",
-      "why": "2026-09-15 runs 2h29 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 0h45 before you leave.",
+      "why": "2026-09-15 runs 2h29 through your circadian low. Take this 2h00 beforehand, while you can still sleep — it ends 45m before you leave.",
       "ruleIds": [
         "nap-inertia-gap-45m",
         "nap-cap-2h"
@@ -174,7 +174,7 @@
       "startUtc": "2026-09-16T20:30:00.000Z",
       "endUtc": "2026-09-17T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -185,7 +185,7 @@
       "startUtc": "2026-09-17T18:55:00.000Z",
       "endUtc": "2026-09-18T02:55:00.000Z",
       "station": "LHR",
-      "why": "19:55 to 03:55 at LHR — late on purpose, so you are rested for a duty running 1h25 through your circadian low. You report at 04:35.",
+      "why": "Late on purpose, so you are rested for a duty that runs 1h25 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -196,7 +196,7 @@
       "startUtc": "2026-09-20T01:18:00.000Z",
       "endUtc": "2026-09-20T09:18:00.000Z",
       "station": "LHR",
-      "why": "02:18 to 10:18 at LHR — you were still on duty at 21:30, so this is the first chance you get.",
+      "why": "You were still on duty at your usual 21:30, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -207,7 +207,7 @@
       "startUtc": "2026-09-20T20:55:00.000Z",
       "endUtc": "2026-09-21T02:55:00.000Z",
       "station": "LHR",
-      "why": "21:55 to 03:55 at LHR — late on purpose, so you are rested for a duty running 1h25 through your circadian low. You report at 04:35. 6h00 rather than a full night — you will only have been up 11h37 by then.",
+      "why": "Late on purpose, so you are rested for a duty that runs 1h25 through your circadian low. You leave for the airport the moment this ends. 6h00 rather than a full night — you will only have been up 11h37 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -218,7 +218,7 @@
       "startUtc": "2026-09-21T20:30:00.000Z",
       "endUtc": "2026-09-22T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -229,7 +229,7 @@
       "startUtc": "2026-09-22T19:27:00.000Z",
       "endUtc": "2026-09-23T02:55:00.000Z",
       "station": "LHR",
-      "why": "20:27 to 03:55 at LHR — late on purpose, so you are rested for a duty running 1h25 through your circadian low. You report at 04:35. 7h28 rather than a full night — you will only have been up 14h57 by then.",
+      "why": "Late on purpose, so you are rested for a duty that runs 1h25 through your circadian low. You leave for the airport the moment this ends. 7h28 rather than a full night — you will only have been up 14h57 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -240,7 +240,7 @@
       "startUtc": "2026-09-23T20:30:00.000Z",
       "endUtc": "2026-09-24T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -251,7 +251,7 @@
       "startUtc": "2026-09-24T16:25:00.000Z",
       "endUtc": "2026-09-25T00:20:00.000Z",
       "station": "LHR",
-      "why": "17:25 to 01:20 at LHR — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 02:00.",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -262,7 +262,7 @@
       "startUtc": "2026-09-25T16:06:00.000Z",
       "endUtc": "2026-09-26T00:05:00.000Z",
       "station": "LHR",
-      "why": "17:06 to 01:05 at LHR — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 01:45.",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -273,7 +273,7 @@
       "startUtc": "2026-09-26T20:30:00.000Z",
       "endUtc": "2026-09-27T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -284,7 +284,7 @@
       "startUtc": "2026-09-27T20:30:00.000Z",
       "endUtc": "2026-09-28T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -295,7 +295,7 @@
       "startUtc": "2026-09-28T20:30:00.000Z",
       "endUtc": "2026-09-29T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -306,7 +306,7 @@
       "startUtc": "2026-09-29T20:30:00.000Z",
       "endUtc": "2026-09-30T04:30:00.000Z",
       "station": "LHR",
-      "why": "21:30 to 05:30 at LHR, your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 3h30 of your circadian low.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]

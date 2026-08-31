@@ -126,10 +126,15 @@ Every one was a real defect. None was found by a metric — all seven came from 
 the output and looking at it, six of them from someone else looking. Every arm was
 re-run on every corpus after each, and the headline numbers did not move.
 
-One further change touched no plan at all: the briefing drew each block in its own
+Two further changes touched no plan at all. The briefing drew each block in its own
 station's timezone, which let a westbound duty and the sleep after it overlap on the page
-without overlapping in time. The geometry now comes from a single clock. No number in this
-pre-registration could have caught it, and none moved when it was fixed.
+without overlapping in time; the geometry now comes from a single clock. That fix was then
+found to be half a fix — the labels were still in station time, so a block positioned at
+00:41 was captioned "ORD 17:41" — and one clock now sets position, label, agenda and table
+together, selectable across home, any station on the roster, or UTC. The block reasons were
+rewritten to carry durations and place names only, never a clock reading, so nothing in the
+text can contradict the zone the reader chose. No number in this pre-registration could have
+caught either, and none moved when they were fixed.
 
 **A note on re-planning.** Because the reader is the expensive half and the planner is
 deterministic, a planner fix is re-applied to finished runs from the duties they already
