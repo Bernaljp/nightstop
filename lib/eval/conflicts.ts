@@ -341,6 +341,17 @@ export function planViolations(
           if (b.kind !== "main") continue;
           const len = blockMinutesOf(b);
           if (len >= rule.check.minutes) continue;
+          // A sleep is judged against the time awake that earned it. The second sleep of a
+          // long layover follows a short waking day, and at roughly an hour down per two
+          // hours up there is no six-hour night to be had — calling it short would be the
+          // checker marking the planner down for the one realistic thing it does.
+          const before = ordered
+            .filter((x) => new Date(x.endUtc) <= new Date(b.startUtc))
+            .pop();
+          if (before) {
+            const awake = minutesBetween(new Date(before.endUtc), new Date(b.startUtc));
+            if (awake / 2 < rule.check.minutes) continue;
+          }
           // Only the planner's fault if the window could have held a longer sleep.
           const r = rests.find((rp) =>
             overlaps(

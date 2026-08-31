@@ -255,19 +255,21 @@ untrustworthy, and it costs *more* to do it.
 **The last column changes one thing.** The rule check moves out of the model and into a
 deterministic function. Invented rules: 40 → 0. Trustworthy: 1/8 → 8/8. Cheaper, too.
 
-Five of the nine stages moved neither headline number. All five were real defects: a planner that never suggested a nap; one that left every day
-off unplanned; one that gave every crew member the same bedtime whatever they told it; one
-that stacked three sleeps into thirteen hours with a five-minute gap; and one that had
-people asleep the minute they walked through the door. **None was found by a metric.** All
-five came from rendering the output and looking at it, and four of the five were found by
-someone other than the author.
+Seven of the eleven stages moved neither headline number. All seven were real defects: a
+planner that never suggested a nap; one that left every day off unplanned; one that gave
+every crew member the same bedtime whatever they told it; one that stacked three sleeps
+into thirteen hours with a five-minute gap; one that had people asleep the minute they
+walked through the door; one that asked for twenty-four hours of sleep in forty-six and
+blamed the roster for it; and a calendar that drew a crew member asleep before they landed.
+**None was found by a metric.** All seven came from rendering the output and looking at it,
+and six of the seven were found by someone other than the author.
 
 That is the finding this evaluation produced about itself, and it is worth more than any
 row in the table above. Twelve cases, a pre-registered metric, an independent grader, four
-repeats and two held-out sets — and every one of those five defects sailed through. The
+repeats and two held-out sets — and every one of those seven defects sailed through. The
 grader checks that a plan contains no violation. It never asked whether the plan was
-coherent, complete, or for the right person. That is the argument for the hot take below as
-much as any of the numbers above.
+coherent, whether a person could actually follow it, or whether the picture of it told the
+truth. That is the argument for the hot take below as much as any of the numbers above.
 
 > The model was never the bottleneck on **finding** collisions. It was the bottleneck on
 > **not inventing** them. A deterministic checker cannot invent a rule — the failure mode
@@ -289,9 +291,11 @@ job it should not be doing — and the tools that let it do the other half exact
 | **4 · own rules in** | The distiller: read a rules document once, reduce it to a pack with a hardness on every rule, and never show the planner the source. | Part 117 ~7,021 → ~711 tokens (**−89.9%**); 3/3 recall against the hand-written reference, plus one rule it had missed | Kept. The refusals matter as much as the extractions — it declines to collapse a table-driven limit into a number. |
 | **5 · a nap you would actually take** | The planner had never recommended a nap in twelve rosters — the rule only fired below a six-hour night, and the tightest window is 6h50. Added a prophylactic nap before any duty running an hour or more through the circadian low. Found by building the demo, not by reading a metric. | 2–6 naps per roster (0 on the short-haul European case, correctly); primary and co-primary **unchanged** at 8/8 and 0 | Kept. It moved no number I report, which is the point: the summary statistics could not see that a whole class of advice was missing. |
 | **6 · every night, not one per gap** | The planner placed one main sleep per *rest period*, which is right only when the rest period is one night — and four of the first six on the Aurora roster span two. Every day off had no sleep at all. Found by someone looking at the calendar, not by a metric. | Night coverage ~19 → 20–27 per month; plan violations 70 → 15 → **0** as the two shift rules landed; primary and co-primary **unchanged** at 8/8 and 0 | Kept. The second stage running that moved no number I report. |
-| **7 · their hours, not a default** | Everyone was being given a 23:00 bedtime — a hardcoded default the crew member had no say in. Real crew differ by hours. `usualSleep` is now part of the profile, every night is anchored to it, and recovery sleep follows a duty that took 90 minutes or more out of the hours they normally keep. | Recovery sleep produced for the first time (it was declared in the schema and never emitted); the advice changes from *"23:00 to 07:00"* to *"about 3h27 later than your usual 21:30 — the roster leaves no room to keep your normal hours here"*; primary and co-primary again **unchanged** | Kept. Third stage in a row that moved no headline number. |
+| **7 · their hours, not a default** | Everyone was being given a 23:00 bedtime — a hardcoded default the crew member had no say in. Real crew differ by hours. `usualSleep` is now part of the profile, every night is anchored to it, and recovery sleep follows a duty that took 90 minutes or more out of the hours they normally keep. | Recovery sleep produced for the first time (it was declared in the schema and never emitted); the advice changes from *"23:00 to 07:00"* to *"about 3h27 later than your usual 21:30"*; primary and co-primary again **unchanged** | Kept. Third stage in a row that moved no headline number. |
 | **8 · one extra sleep, not three** | A normal night, a "recovery" an hour later, and a nap five minutes after that — eight hours of sleep followed by two more and then two more again. Reported by someone reading the calendar. | At most one supplementary block per rest period, four hours clear of any night; the smallest gap between any two sleeps across sixteen rosters goes from **5 minutes to 4h00**; plan violations 0; primary and co-primary **unchanged** | Kept. The fourth stage running that moved no headline number. |
 | **9 · time to get through the door** | Sleep was starting the exact minute the rest window opened — asleep the second you walk in, having not eaten or come down off a ten-hour duty. Reported from the calendar. | Shortest gap between a duty ending and sleep starting goes from **25 minutes to 70**; nothing changes in what the regulation measures, since narrowing 117.25(e)'s window here would be reinterpreting it; primary and co-primary **unchanged** | Kept. Fifth stage running that moved no headline number. |
+| **10 · a night's sleep costs a day awake** | Two things, both reported from the calendar. The planner gave every body-clock night the full eight hours, so a 46-hour Chicago layover came out as **24 hours of sleep in three goes** — and the explanation printed onto it read *"the roster leaves no room to keep your normal hours"*, which on a 46-hour window is simply false. Sleep is now bought with time awake at roughly 2:1, floored at the rule pack's own six hours, and every block explains itself from why it landed where it did rather than from where it ended up. | Most-slept rest window **72% → 63%**; d07-cirrus over that layover 24h → 20h40; plan violations **0 either way**; primary and co-primary **unchanged** | Kept. Sixth stage running that moved no headline number, and the second where the fault was in what the plan *said* rather than where it put the sleep. |
+| **11 · one clock draws the calendar** | Each span was positioned in its own station's timezone, so the Madrid–JFK sector was drawn ending at 21:10 Madrid time and the New York sleep after it starting at 19:56 New York time. The picture showed a crew member asleep an hour and a half before they landed. The plan was correct; the calendar was not. Reported by a reader, from the demo. | The grid is now drawn on one clock and labelled with it, blocks away from base carrying their station; no arrangement of stations can now draw a false overlap. Nothing in the plan changed, so **no metric moved at all** | Kept. The one class of mistake this calendar must not make, and there was no number anywhere in the evaluation that could have caught it. |
 | **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3

@@ -91,13 +91,26 @@ function clamp(v: number, lo: number, hi: number): number {
  * falls partly outside the window it is clipped rather than dropped, because a short
  * night that is flagged beats a night nobody planned.
  */
+interface Night {
+  from: Date;
+  to: Date;
+  /** The end was pulled back to fit before the next report — an early night, on purpose. */
+  clippedEnd: boolean;
+  /** The start was pushed out because the window opened late, or a night came before it. */
+  clippedStart: boolean;
+  /** Set when the length was cut back because they will not have been up long. */
+  trimmedAwake?: number;
+  /** Set on the sleep that exists to get them through a night duty. */
+  preDuty?: boolean;
+}
+
 function placeMainSleeps(
   windowFrom: Date,
   windowTo: Date,
   bodyOffsetFromUtc: number,
   s: EngineSettings,
   bedHour: number,
-): Array<{ from: Date; to: Date }> {
+): Night[] {
   if (minutesBetween(windowFrom, windowTo) <= 0) return [];
 
   // Body-clock midnight of the day the window opens, as a real instant.
@@ -106,13 +119,15 @@ function placeMainSleeps(
     bodyFrom.getUTCFullYear(), bodyFrom.getUTCMonth(), bodyFrom.getUTCDate(),
   );
 
-  const out: Array<{ from: Date; to: Date }> = [];
+  const out: Night[] = [];
   // A rest period longer than a fortnight is not a rest period; the bound is a guard.
   for (let day = -1; day <= 15; day++) {
     const bedBody = bodyDayStart + day * 24 * HOUR + bedHour * HOUR;
     const bed = new Date(bedBody - bodyOffsetFromUtc * 60_000);
     let from = bed;
     let to = addMinutes(bed, s.mainSleepTargetMinutes);
+    let clippedEnd = false;
+    let clippedStart = false;
 
     if (to <= windowFrom || from >= windowTo) continue;
 
@@ -129,12 +144,14 @@ function placeMainSleeps(
       const shifted = windowTo.getTime() - s.mainSleepTargetMinutes * 60_000;
       from = new Date(Math.max(floor, shifted));
       to = windowTo;
+      clippedEnd = true;
     }
     // And the mirror: land at 02:35 after a night duty and the answer is not to wake at
     // the usual hour having slept four hours. If the night is cut short at the START,
     // extend the END to keep the length, up to the window and the next night's bedtime.
     if (from.getTime() < floor) {
       from = new Date(floor);
+      clippedStart = true;
       const wanted = addMinutes(from, s.mainSleepTargetMinutes);
       // Stop short of crowding the following night. Extending right up to the next
       // bedtime produced two main sleeps an hour apart, which is one fragmented night
@@ -150,9 +167,61 @@ function placeMainSleeps(
     // A sliver at the edge of a window is not a night's sleep. Below four hours it is
     // left out rather than dressed up as one.
     if (minutesBetween(from, to) < 4 * 60) continue;
-    out.push({ from, to });
+    out.push({ from, to, clippedEnd, clippedStart });
   }
   return out;
+}
+
+/**
+ * Nobody sleeps eight hours twice in the same day.
+ *
+ * On a long layover the loop above finds a body-clock night at each edge of the window as
+ * well as in the middle, and gave every one of them the full eight hours. On a 46-hour
+ * Chicago layover that came out as twenty-four hours of sleep — a plan asking a person to
+ * spend more than half the window unconscious, in three separate goes. It read as broken
+ * because it was.
+ *
+ * Sleep is bought with time awake, at roughly two hours up for every hour down. So a night
+ * that follows eleven hours of wakefulness is a five-and-a-half hour night, not an eight.
+ *
+ * The ratio holds even for the sleep taken before a night duty. What makes that one a
+ * pre-duty sleep is where it sits — late, ending at report — not how long it is; a crew
+ * member who woke at half past three cannot bank eight hours at three in the afternoon
+ * however much they would like to. It is floored at the rule pack's own six hours, so the
+ * planner never proposes a main sleep it would then have to flag as too short.
+ */
+function trimForTimeAwake(nights: Night[], preDutyIndex: number, floorMinutes: number): void {
+  if (preDutyIndex >= 0 && nights[preDutyIndex]) nights[preDutyIndex].preDuty = true;
+  for (let i = 1; i < nights.length; i++) {
+    const woke = nights[i - 1].to.getTime();
+
+    if (nights[i].clippedEnd) {
+      // An early night ends when it has to — the report fixes that end — so the bedtime
+      // is what moves. Moving it lengthens the day before it, which in turn earns more
+      // sleep, so the two have to be solved together rather than in sequence: with the
+      // end E pinned and waking at W, the bedtime that makes sleep exactly half the time
+      // awake is (2E + W)/3. Trimming against the untouched bedtime instead left the plan
+      // and the checker measuring different days, and the checker won.
+      const end = nights[i].to.getTime();
+      // Rounded to the minute: a third of a duration lands on odd seconds, and a plan
+      // that tells someone to go to bed at 13:00:20 has stopped sounding like advice.
+      let from = new Date(Math.round((2 * end + woke) / 3 / 60_000) * 60_000);
+      if (minutesBetween(from, nights[i].to) < floorMinutes) {
+        from = addMinutes(nights[i].to, -floorMinutes);
+      }
+      if (from.getTime() <= nights[i].from.getTime()) continue;
+      nights[i].trimmedAwake = minutesBetween(nights[i - 1].to, from);
+      nights[i].from = from;
+      continue;
+    }
+
+    // Any other night keeps the bedtime the body asked for; they simply wake earlier.
+    const awake = minutesBetween(nights[i - 1].to, nights[i].from);
+    const allowed = Math.max(floorMinutes, Math.round(awake / 2));
+    if (minutesBetween(nights[i].from, nights[i].to) <= allowed) continue;
+    nights[i].to = addMinutes(nights[i].from, allowed);
+    nights[i].trimmedAwake = awake;
+  }
 }
 
 /**
@@ -217,6 +286,27 @@ export function buildPlan(
     const nights = placeMainSleeps(from, to, bodyOffsetFromUtc, settings, usualBed);
     if (!nights.length) return;
 
+    // How much of the NEXT duty sits in the circadian low. Computed here rather than with
+    // the naps below because it decides something first: whether the last sleep in this
+    // window is an ordinary night or the sleep that has to get them through a night duty.
+    const dutyWocl = woclCoverageMinutes(
+      new Date(r.next.reportUtc!), new Date(r.next.endUtc!), bodyOffsetFromUtc,
+    );
+    trimForTimeAwake(nights, dutyWocl >= 60 ? nights.length - 1 : -1, settings.mainSleepFloorMinutes);
+
+    const usual = `${String(Math.floor(usualBed)).padStart(2, "0")}:${String(Math.round((usualBed % 1) * 60)).padStart(2, "0")}`;
+    const reportLocal = localHHmm(new Date(r.next.reportUtc!), tzOf(r.next.station));
+    const windowOpens = localHHmm(new Date(r.sleepWindowFromUtc), stationTz);
+
+    // If they were still on duty at their usual bedtime, say that rather than leaving
+    // "the roster leaves no room" to be taken on trust.
+    const onDutyThen = r.prev.reportUtc && r.prev.endUtc
+      ? usualWindowOverlap(
+          new Date(r.prev.reportUtc), new Date(r.prev.endUtc),
+          tzOf(r.prev.endStation), usualBed, usualWake,
+        ) >= 60
+      : false;
+
     // The nights themselves.
     nights.forEach((night) => {
       const len = minutesBetween(night.from, night.to);
@@ -225,32 +315,46 @@ export function buildPlan(
       const localWake = localHHmm(night.to, stationTz);
       const drift = Math.round(phase?.offsetFromLocalMinutes ?? 0);
       const off = displacementFrom(night.from, stationTz);
-      const usual = `${String(Math.floor(usualBed)).padStart(2, "0")}:${String(Math.round((usualBed % 1) * 60)).padStart(2, "0")}`;
+      const at = r.prev.endStation;
+      const span = `${localBed} to ${localWake} at ${at}`;
 
-      // If they were still on duty at their usual bedtime, say that rather than leaving
-      // "the roster leaves no room" to be taken on trust.
-      const onDutyThen = r.prev.reportUtc && r.prev.endUtc
-        ? usualWindowOverlap(
-            new Date(r.prev.reportUtc), new Date(r.prev.endUtc),
-            tzOf(r.prev.endStation), usualBed, usualWake,
-          ) >= 60
-        : false;
-
-      const why =
-        Math.abs(off) >= 60
-          ? `${localBed} to ${localWake} at ${r.prev.endStation} — about ` +
-            `${formatDuration(Math.abs(off))} ${off > 0 ? "later" : "earlier"} than your ` +
-            `usual ${usual}. ` +
-            (onDutyThen
-              ? `You were still on duty at ${usual}; this is the first chance you get.`
-              : `The roster leaves no room to keep your normal hours here.`)
-          : Math.abs(drift) >= 60
-            ? `${localBed} to ${localWake} local at ${r.prev.endStation} — close to your ` +
-              `usual ${usual}, but about ${formatDuration(Math.abs(drift))} ` +
-              `${drift > 0 ? "later" : "earlier"} on your body clock, which has not caught ` +
-              `up with where you are.`
-            : `${localBed} to ${localWake} at ${r.prev.endStation}, your usual hours, ` +
-              `covering ${formatDuration(inWocl)} of your circadian low.`;
+      // The explanation is built from WHY the block landed where it did, not guessed at
+      // from where it ended up. The version that guessed printed "the roster leaves no
+      // room to keep your normal hours" onto a forty-six hour layover, which is not a
+      // small wording problem: it told a crew member the roster was to blame for a bedtime
+      // their own body clock had chosen, and there was no way to tell from the plan that
+      // it was wrong.
+      let why: string;
+      if (night.preDuty) {
+        why =
+          `${span} — late on purpose, so you are rested for a duty running ` +
+          `${formatDuration(dutyWocl)} through your circadian low. You report at ${reportLocal}.`;
+      } else if (night.clippedEnd) {
+        why = `${span} — an early night, because you report at ${reportLocal}.`;
+      } else if (night.clippedStart) {
+        why = onDutyThen
+          ? `${span} — you were still on duty at ${usual}, so this is the first chance you get.`
+          : `${span} — the earliest you could be asleep here is ${windowOpens}.`;
+      } else if (Math.abs(drift) >= 60) {
+        why = Math.abs(off) >= 60
+          ? `${span}. Your body is still ${formatDuration(Math.abs(drift))} ` +
+            `${drift > 0 ? "ahead of" : "behind"} the clock at ${at}, so this IS your usual ` +
+            `${usual} — it just lands at ${localBed} here.`
+          : `${span} — close to your usual ${usual}, but about ` +
+            `${formatDuration(Math.abs(drift))} ${drift > 0 ? "later" : "earlier"} on your ` +
+            `body clock, which has not caught up with where you are.`;
+      } else if (Math.abs(off) >= 60) {
+        why =
+          `${span} — about ${formatDuration(Math.abs(off))} ` +
+          `${off > 0 ? "later" : "earlier"} than your usual ${usual}.`;
+      } else {
+        why = `${span}, your usual hours, covering ${formatDuration(inWocl)} of your circadian low.`;
+      }
+      if (night.trimmedAwake) {
+        why +=
+          ` ${formatDuration(len)} rather than a full night — you will only have been up ` +
+          `${formatDuration(night.trimmedAwake)} by then.`;
+      }
 
       blocks.push({
         id: `main-${night.from.toISOString().slice(0, 16)}`,
@@ -279,9 +383,6 @@ export function buildPlan(
     const napEnd = addMinutes(pickup, -settings.napInertiaMinutes);
     const earliest = addMinutes(lastNight.to, settings.napSeparationMinutes);
 
-    const dutyWocl = woclCoverageMinutes(
-      new Date(r.next.reportUtc!), new Date(r.next.endUtc!), bodyOffsetFromUtc,
-    );
     const prevAte = r.prev.reportUtc && r.prev.endUtc
       ? usualWindowOverlap(
           new Date(r.prev.reportUtc), new Date(r.prev.endUtc),

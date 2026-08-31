@@ -2,62 +2,62 @@
   "caseId": "h04-atria",
   "blocks": [
     {
-      "id": "main-2026-09-05",
+      "id": "main-2026-09-05T21:10",
       "kind": "main",
-      "startUtc": "2026-09-05T21:00:00.000Z",
-      "endUtc": "2026-09-06T05:00:00.000Z",
+      "startUtc": "2026-09-05T21:10:00.000Z",
+      "endUtc": "2026-09-06T05:10:00.000Z",
       "station": "LHR",
-      "why": "22:00 to 06:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "why": "22:10 to 06:10 at LHR — the earliest you could be asleep here is 21:25.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-06",
+      "id": "main-2026-09-06T20:07",
       "kind": "main",
-      "startUtc": "2026-09-06T19:35:00.000Z",
+      "startUtc": "2026-09-06T20:07:00.000Z",
       "endUtc": "2026-09-07T03:35:00.000Z",
       "station": "LHR",
-      "why": "20:35 to 04:35 at LHR — about 1h25 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "21:07 to 04:35 at LHR — an early night, because you report at 06:00. 7h28 rather than a full night — you will only have been up 14h57 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-07",
+      "id": "main-2026-09-07T19:15",
       "kind": "main",
       "startUtc": "2026-09-07T19:15:00.000Z",
       "endUtc": "2026-09-08T03:15:00.000Z",
       "station": "LHR",
-      "why": "20:15 to 04:15 at LHR — about 1h45 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "20:15 to 04:15 at LHR — an early night, because you report at 05:40.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-08",
+      "id": "main-2026-09-08T19:45",
       "kind": "main",
       "startUtc": "2026-09-08T19:45:00.000Z",
       "endUtc": "2026-09-09T03:45:00.000Z",
       "station": "LHR",
-      "why": "20:45 to 04:45 at LHR — about 1h15 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "20:45 to 04:45 at LHR — an early night, because you report at 06:10.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-09",
+      "id": "main-2026-09-09T19:15",
       "kind": "main",
       "startUtc": "2026-09-09T19:15:00.000Z",
       "endUtc": "2026-09-10T03:15:00.000Z",
       "station": "LHR",
-      "why": "20:15 to 04:15 at LHR — about 1h45 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "20:15 to 04:15 at LHR — an early night, because you report at 05:40.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-10",
+      "id": "main-2026-09-10T21:00",
       "kind": "main",
       "startUtc": "2026-09-10T21:00:00.000Z",
       "endUtc": "2026-09-11T05:00:00.000Z",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "id": "main-2026-09-11",
+      "id": "main-2026-09-11T21:00",
       "kind": "main",
       "startUtc": "2026-09-11T21:00:00.000Z",
       "endUtc": "2026-09-12T05:00:00.000Z",
@@ -79,40 +79,29 @@
       ]
     },
     {
-      "id": "main-2026-09-13",
+      "id": "main-2026-09-13T01:31",
       "kind": "main",
-      "startUtc": "2026-09-13T00:46:00.000Z",
-      "endUtc": "2026-09-13T08:46:00.000Z",
+      "startUtc": "2026-09-13T01:31:00.000Z",
+      "endUtc": "2026-09-13T09:31:00.000Z",
       "station": "LHR",
-      "why": "01:46 to 09:46 at LHR — about 3h46 later than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "02:31 to 10:31 at LHR — you were still on duty at 22:00, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "recovery-2026-09-13",
-      "kind": "recovery-nap",
-      "startUtc": "2026-09-13T09:46:00.000Z",
-      "endUtc": "2026-09-13T11:46:00.000Z",
-      "station": "LHR",
-      "why": "2026-09-12 took 2h30 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
-      "ruleIds": [
-        "sleep-per-24h-7h"
-      ]
-    },
-    {
-      "id": "main-2026-09-13",
+      "id": "main-2026-09-13T20:40",
       "kind": "main",
-      "startUtc": "2026-09-13T18:40:00.000Z",
+      "startUtc": "2026-09-13T20:40:00.000Z",
       "endUtc": "2026-09-14T02:40:00.000Z",
       "station": "LHR",
-      "why": "19:40 to 03:40 at LHR — about 2h20 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "21:40 to 03:40 at LHR — an early night, because you report at 05:05. 6h00 rather than a full night — you will only have been up 11h09 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-14",
+      "id": "main-2026-09-14T21:00",
       "kind": "main",
       "startUtc": "2026-09-14T21:00:00.000Z",
       "endUtc": "2026-09-15T05:00:00.000Z",
@@ -123,51 +112,40 @@
       ]
     },
     {
-      "id": "main-2026-09-16",
+      "id": "main-2026-09-16T03:20",
       "kind": "main",
-      "startUtc": "2026-09-16T02:35:00.000Z",
-      "endUtc": "2026-09-16T10:35:00.000Z",
+      "startUtc": "2026-09-16T03:20:00.000Z",
+      "endUtc": "2026-09-16T11:20:00.000Z",
       "station": "LHR",
-      "why": "03:35 to 11:35 at LHR — about 5h35 later than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "04:20 to 12:20 at LHR — you were still on duty at 22:00, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "recovery-2026-09-16",
-      "kind": "recovery-nap",
-      "startUtc": "2026-09-16T11:35:00.000Z",
-      "endUtc": "2026-09-16T13:35:00.000Z",
-      "station": "LHR",
-      "why": "2026-09-15 took 4h10 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
-      "ruleIds": [
-        "sleep-per-24h-7h"
-      ]
-    },
-    {
-      "id": "main-2026-09-16",
+      "id": "main-2026-09-16T20:40",
       "kind": "main",
-      "startUtc": "2026-09-16T18:40:00.000Z",
+      "startUtc": "2026-09-16T20:40:00.000Z",
       "endUtc": "2026-09-17T02:40:00.000Z",
       "station": "LHR",
-      "why": "19:40 to 03:40 at LHR — about 2h20 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "21:40 to 03:40 at LHR — an early night, because you report at 05:05. 6h00 rather than a full night — you will only have been up 9h20 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-17",
+      "id": "main-2026-09-17T18:40",
       "kind": "main",
       "startUtc": "2026-09-17T18:40:00.000Z",
       "endUtc": "2026-09-18T02:40:00.000Z",
       "station": "LHR",
-      "why": "19:40 to 03:40 at LHR — about 2h20 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "19:40 to 03:40 at LHR — an early night, because you report at 05:05.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-18",
+      "id": "main-2026-09-18T21:00",
       "kind": "main",
       "startUtc": "2026-09-18T21:00:00.000Z",
       "endUtc": "2026-09-19T05:00:00.000Z",
@@ -178,40 +156,29 @@
       ]
     },
     {
-      "id": "main-2026-09-20",
+      "id": "main-2026-09-20T00:51",
       "kind": "main",
-      "startUtc": "2026-09-20T00:06:00.000Z",
-      "endUtc": "2026-09-20T08:06:00.000Z",
+      "startUtc": "2026-09-20T00:51:00.000Z",
+      "endUtc": "2026-09-20T08:51:00.000Z",
       "station": "LHR",
-      "why": "01:06 to 09:06 at LHR — about 3h06 later than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "01:51 to 09:51 at LHR — you were still on duty at 22:00, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "recovery-2026-09-20",
-      "kind": "recovery-nap",
-      "startUtc": "2026-09-20T09:06:00.000Z",
-      "endUtc": "2026-09-20T11:06:00.000Z",
-      "station": "LHR",
-      "why": "2026-09-19 took 1h50 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
-      "ruleIds": [
-        "sleep-per-24h-7h"
-      ]
-    },
-    {
-      "id": "main-2026-09-20",
+      "id": "main-2026-09-20T20:40",
       "kind": "main",
-      "startUtc": "2026-09-20T18:40:00.000Z",
+      "startUtc": "2026-09-20T20:40:00.000Z",
       "endUtc": "2026-09-21T02:40:00.000Z",
       "station": "LHR",
-      "why": "19:40 to 03:40 at LHR — about 2h20 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "21:40 to 03:40 at LHR — an early night, because you report at 05:05. 6h00 rather than a full night — you will only have been up 11h49 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-21",
+      "id": "main-2026-09-21T21:00",
       "kind": "main",
       "startUtc": "2026-09-21T21:00:00.000Z",
       "endUtc": "2026-09-22T05:00:00.000Z",
@@ -222,107 +189,62 @@
       ]
     },
     {
-      "id": "main-2026-09-23",
+      "id": "main-2026-09-23T01:43",
       "kind": "main",
-      "startUtc": "2026-09-23T00:58:00.000Z",
-      "endUtc": "2026-09-23T08:58:00.000Z",
+      "startUtc": "2026-09-23T01:43:00.000Z",
+      "endUtc": "2026-09-23T09:43:00.000Z",
       "station": "LHR",
-      "why": "01:58 to 09:58 at LHR — about 3h58 later than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "02:43 to 10:43 at LHR — late on purpose, so you are rested for a duty running 1h05 through your circadian low. You report at 15:25.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "nap-2026-09-23",
-      "kind": "pre-duty-nap",
-      "startUtc": "2026-09-23T10:15:00.000Z",
-      "endUtc": "2026-09-23T12:15:00.000Z",
-      "station": "LHR",
-      "why": "2026-09-23 runs 1h05 through your circadian low. Take this 2h00 now, while you can still sleep — it ends 0h45 before you leave.",
-      "ruleIds": [
-        "nap-inertia-gap-45m",
-        "nap-cap-2h"
-      ]
-    },
-    {
-      "id": "recovery-2026-09-23",
-      "kind": "recovery-nap",
-      "startUtc": "2026-09-23T09:58:00.000Z",
-      "endUtc": "2026-09-23T11:58:00.000Z",
-      "station": "LHR",
-      "why": "2026-09-22 took 2h30 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
-      "ruleIds": [
-        "sleep-per-24h-7h"
-      ]
-    },
-    {
-      "id": "main-2026-09-24",
+      "id": "main-2026-09-24T04:15",
       "kind": "main",
-      "startUtc": "2026-09-24T03:30:00.000Z",
-      "endUtc": "2026-09-24T11:30:00.000Z",
+      "startUtc": "2026-09-24T04:15:00.000Z",
+      "endUtc": "2026-09-24T12:15:00.000Z",
       "station": "LHR",
-      "why": "04:30 to 12:30 at LHR — about 6h30 later than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "05:15 to 13:15 at LHR — you were still on duty at 22:00, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "recovery-2026-09-24",
-      "kind": "recovery-nap",
-      "startUtc": "2026-09-24T12:30:00.000Z",
-      "endUtc": "2026-09-24T14:30:00.000Z",
-      "station": "LHR",
-      "why": "2026-09-23 took 5h00 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
-      "ruleIds": [
-        "sleep-per-24h-7h"
-      ]
-    },
-    {
-      "id": "main-2026-09-24",
+      "id": "main-2026-09-24T21:00",
       "kind": "main",
       "startUtc": "2026-09-24T21:00:00.000Z",
-      "endUtc": "2026-09-25T05:00:00.000Z",
+      "endUtc": "2026-09-25T03:00:00.000Z",
       "station": "LHR",
-      "why": "22:00 to 06:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "why": "22:00 to 04:00 at LHR, your usual hours, covering 2h00 of your circadian low. 6h00 rather than a full night — you will only have been up 8h45 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-26",
+      "id": "main-2026-09-26T03:34",
       "kind": "main",
-      "startUtc": "2026-09-26T02:49:00.000Z",
-      "endUtc": "2026-09-26T10:49:00.000Z",
+      "startUtc": "2026-09-26T03:34:00.000Z",
+      "endUtc": "2026-09-26T11:34:00.000Z",
       "station": "LHR",
-      "why": "03:49 to 11:49 at LHR — about 5h49 later than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "04:34 to 12:34 at LHR — you were still on duty at 22:00, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "recovery-2026-09-26",
-      "kind": "recovery-nap",
-      "startUtc": "2026-09-26T11:49:00.000Z",
-      "endUtc": "2026-09-26T13:49:00.000Z",
-      "station": "LHR",
-      "why": "2026-09-25 took 4h30 out of the hours you normally sleep. This 2h00 pays some of that back — you are carrying it into the rest of the week otherwise.",
-      "ruleIds": [
-        "sleep-per-24h-7h"
-      ]
-    },
-    {
-      "id": "main-2026-09-26",
+      "id": "main-2026-09-26T21:00",
       "kind": "main",
       "startUtc": "2026-09-26T21:00:00.000Z",
-      "endUtc": "2026-09-27T05:00:00.000Z",
+      "endUtc": "2026-09-27T03:00:00.000Z",
       "station": "LHR",
-      "why": "22:00 to 06:00 at LHR, your usual hours, covering 4h00 of your circadian low.",
+      "why": "22:00 to 04:00 at LHR, your usual hours, covering 2h00 of your circadian low. 6h00 rather than a full night — you will only have been up 9h26 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-27",
+      "id": "main-2026-09-27T21:00",
       "kind": "main",
       "startUtc": "2026-09-27T21:00:00.000Z",
       "endUtc": "2026-09-28T05:00:00.000Z",
@@ -333,7 +255,7 @@
       ]
     },
     {
-      "id": "main-2026-09-28",
+      "id": "main-2026-09-28T21:00",
       "kind": "main",
       "startUtc": "2026-09-28T21:00:00.000Z",
       "endUtc": "2026-09-29T05:00:00.000Z",
@@ -344,12 +266,12 @@
       ]
     },
     {
-      "id": "main-2026-09-29",
+      "id": "main-2026-09-29T19:07",
       "kind": "main",
-      "startUtc": "2026-09-29T18:10:00.000Z",
+      "startUtc": "2026-09-29T19:07:00.000Z",
       "endUtc": "2026-09-30T02:10:00.000Z",
       "station": "LHR",
-      "why": "19:10 to 03:10 at LHR — about 2h50 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "20:07 to 03:10 at LHR — late on purpose, so you are rested for a duty running 1h25 through your circadian low. You report at 04:35. 7h03 rather than a full night — you will only have been up 14h07 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]

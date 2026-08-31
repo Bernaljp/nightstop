@@ -113,16 +113,29 @@ run has not measured its own variance.
 Stated here rather than folded into the results, because the point of a pre-registration
 is that departures from it are visible.
 
-**The planner changed five times after the first held-out set had been run.** In order:
+**The planner changed seven times after the first held-out set had been run.** In order:
 a prophylactic nap before duties running through the circadian low; planning every night
 in a window rather than one per rest period; shifting bedtime earlier before an early
 report and later after a late arrival; anchoring the plan to the hours each crew member
-actually keeps, with recovery sleep after a duty that takes those hours off them; and
-limiting a rest period to one supplementary sleep, separated by four hours.
+actually keeps, with recovery sleep after a duty that takes those hours off them;
+limiting a rest period to one supplementary sleep, separated by four hours; allowing time
+to get through the door before sleep starts; and buying sleep with time awake at roughly
+2:1 rather than giving every body-clock night a full eight hours.
 
-Every one was a real defect. None was found by a metric — all five came from rendering
-the output and looking at it, three of them from someone else looking. Every arm was
+Every one was a real defect. None was found by a metric — all seven came from rendering
+the output and looking at it, six of them from someone else looking. Every arm was
 re-run on every corpus after each, and the headline numbers did not move.
+
+One further change touched no plan at all: the briefing drew each block in its own
+station's timezone, which let a westbound duty and the sleep after it overlap on the page
+without overlapping in time. The geometry now comes from a single clock. No number in this
+pre-registration could have caught it, and none moved when it was fixed.
+
+**A note on re-planning.** Because the reader is the expensive half and the planner is
+deterministic, a planner fix is re-applied to finished runs from the duties they already
+read (`npm run replan`), then re-graded. Only the sleep blocks are rebuilt; conflicts are
+left exactly as each arm produced them, so the ablation's model-found conflicts are never
+quietly replaced with the engine's.
 
 **The honest reading of the held-out numbers.** After the second and third changes the
 configuration was re-frozen and a **second** held-out set generated from an unused seed,

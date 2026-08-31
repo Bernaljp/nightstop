@@ -1,10 +1,20 @@
 /**
  * Turns a plan into the rows a briefing renders.
  *
- * Everything a crew member reads is anchored to LOCAL time at the station they are
- * actually at — that is the clock they will look at. The body clock still drives where
- * sleep was placed and why, and it is stated in words where it differs, but nobody
- * plans their evening in UTC.
+ * ONE TIMEZONE DRAWS THE GRID. Every span is positioned in the crew member's base time,
+ * and the times written on it are local to wherever they will be.
+ *
+ * The first version placed each span in its own station's timezone, which reads well
+ * until a westbound duty and the sleep after it land on the same column: the Madrid–JFK
+ * sector was drawn ending at 21:10 (Madrid) and the sleep in New York starting at 19:56
+ * (New York), so the picture showed a crew member asleep an hour and a half before they
+ * landed. Nothing was wrong with the plan. A calendar drawn in more than one timezone at
+ * once will eventually draw two things overlapping that never overlapped, and on this
+ * particular calendar that is the one mistake it must not make.
+ *
+ * So the geometry comes from a single clock, and the label on each block carries the
+ * local time — with the station in front of it whenever that is a different clock from
+ * the one the grid is on.
  */
 import type { Duty, CrewProfile } from "../corpus/schema";
 import type { SleepPlan, Conflict } from "../plan/schema";
@@ -38,6 +48,8 @@ export interface BriefData {
   from: string;
   to: string;
   base: string;
+  /** The clock the grid is drawn on, named for the reader. */
+  gridStation: string;
   days: DayRow[];
   conflicts: { hard: Conflict[]; recommended: Conflict[]; preference: Conflict[] };
   derivations: NonNullable<SleepPlan["derivations"]>;
@@ -67,11 +79,10 @@ function addSpan(
   kind: Span["kind"],
   startUtc: string,
   endUtc: string,
-  station: string,
+  tz: string,
   label: string,
   title: string,
 ): void {
-  const tz = tzOf(station);
   const a = new Date(startUtc);
   const b = new Date(endUtc);
   // A block crossing local midnight is drawn on both days rather than wrapping.
@@ -92,6 +103,11 @@ export function buildBriefData(
   plan: SleepPlan,
   covered: { from: string; to: string },
 ): BriefData {
+  const gridTz = profile.baseTz || tzOf(profile.base);
+  /** The local clock at a station, and whether it differs from the one the grid uses. */
+  const away = (station: string) => tzOf(station) !== gridTz;
+  const at = (instant: Date, station: string) => localHHmm(instant, tzOf(station));
+
   const rows = new Map<string, DayRow>();
   for (const date of dateRange(covered.from, covered.to)) {
     const d = duties.find((x) => x.date === date);
@@ -111,22 +127,23 @@ export function buildBriefData(
   for (const [i, d] of duties.filter((x) => x.endUtc).entries()) {
     const phase = phases[i];
     if (!phase) continue;
-    const tz = tzOf(d.endStation);
+    const end = new Date(d.endUtc!);
     const drift = phase.offsetFromLocalMinutes;
-    const woclLocalStart = (2 * 60 - drift + 1440) % 1440;
-    const row = rows.get(localDate(new Date(d.endUtc!), tz));
-    if (!row) continue;
-    row.spans.push({
-      kind: "wocl",
-      from: woclLocalStart / 1440,
-      to: Math.min(1, (woclLocalStart + 240) / 1440),
-      label: "",
-      title:
-        `Your circadian low, 02:00–06:00 body time` +
+    // Body clock as an offset from UTC, so the low becomes two real instants rather than
+    // a fraction of somebody's local day. Positioned like everything else, it can no
+    // longer drift out of step with the blocks drawn over it.
+    const bodyOffset = utcOffsetMinutes(end, tzOf(d.endStation)) + drift;
+    const body = new Date(end.getTime() + bodyOffset * 60_000);
+    const bodyMidnight = Date.UTC(body.getUTCFullYear(), body.getUTCMonth(), body.getUTCDate());
+    const from = new Date(bodyMidnight + 2 * 60 * 60_000 - bodyOffset * 60_000);
+    addSpan(
+      rows, "wocl", from.toISOString(), new Date(from.getTime() + 4 * 60 * 60_000).toISOString(),
+      gridTz, "",
+      `Your circadian low, 02:00–06:00 body time` +
         (Math.abs(drift) >= 45
           ? ` — about ${formatDuration(Math.abs(drift))} ${drift > 0 ? "later" : "earlier"} than the local clock, because your body has not caught up yet.`
           : "."),
-    });
+    );
   }
 
   for (const d of duties) {
@@ -140,9 +157,9 @@ export function buildBriefData(
         ? sectors.map((s) => `${s.origin}–${s.dest}`).join(" ")
         : d.kind;
     addSpan(
-      rows, "duty", d.reportUtc, d.endUtc, d.station, label,
-      `On duty ${localHHmm(new Date(d.reportUtc), tz)} → ` +
-        `${localHHmm(new Date(d.endUtc), tzOf(d.endStation))} · ${label}`,
+      rows, "duty", d.reportUtc, d.endUtc, gridTz, label,
+      `On duty ${at(new Date(d.reportUtc), d.station)} ${d.station} → ` +
+        `${at(new Date(d.endUtc), d.endStation)} ${d.endStation} · ${label}`,
     );
     const row = rows.get(d.date);
     if (row) {
@@ -159,9 +176,13 @@ export function buildBriefData(
     totalSleep += mins;
     if (b.kind === "main") shortest = Math.min(shortest, mins);
     const tz = tzOf(b.station);
-    const label = `${localHHmm(new Date(b.startUtc), tz)}–${localHHmm(new Date(b.endUtc), tz)}`;
-    addSpan(rows, b.kind, b.startUtc, b.endUtc, b.station, label, b.why);
-    const row = rows.get(localDate(new Date(b.startUtc), tz));
+    const clock = `${localHHmm(new Date(b.startUtc), tz)}–${localHHmm(new Date(b.endUtc), tz)}`;
+    // Away from base the block sits on the grid at base time but reads in local time, so
+    // the station goes in front of the hours. Without it the chip says 17:41 while sitting
+    // at midnight on the axis, and the reader has no way to know which one to believe.
+    const label = away(b.station) ? `${b.station} ${clock}` : clock;
+    addSpan(rows, b.kind, b.startUtc, b.endUtc, gridTz, label, b.why);
+    const row = rows.get(localDate(new Date(b.startUtc), gridTz));
     if (row) {
       row.sleepText = [row.sleepText, `${label} (${formatDuration(mins)})`]
         .filter(Boolean)
@@ -180,6 +201,7 @@ export function buildBriefData(
     from: covered.from,
     to: covered.to,
     base: profile.base,
+    gridStation: profile.base,
     days: [...rows.values()],
     conflicts: {
       hard: by("hard-limit"),

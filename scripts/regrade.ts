@@ -31,7 +31,12 @@ const prior = existsSync(join(runDir, "summary.json"))
 const arm = prior?.arm ?? basename(runDir).replace(/-\d{4}-.*$/, "");
 
 const grades: CaseGrade[] = [];
-for (const caseId of readdirSync(runDir).filter((d) => d.startsWith("d")).sort()) {
+// Case directories are named d01-… on the dev set and h01-… on the held-out ones. The
+// first version matched "d", so a held-out run re-graded nothing, reported 0/0, and then
+// wrote that empty summary over a real result. Refusing to write a summary with no cases
+// in it matters more than the pattern: a regrade that finds nothing has not proved
+// anything, and must not look like it has.
+for (const caseId of readdirSync(runDir).filter((d) => /^[dh]\d/.test(d)).sort()) {
   const dir = join(runDir, caseId);
   const truthPath = join("corpus", "truth", set, `${caseId}.json`);
   if (!existsSync(truthPath)) continue;
@@ -72,6 +77,13 @@ console.log(
   `recall ${(summary.conflictRecall * 100).toFixed(1)}%  ` +
   `falseAlarms ${summary.falseAlarmCount}  $${summary.totalCostUsd.toFixed(2)}`,
 );
+if (!grades.length) {
+  console.error(
+    `\nno cases graded in ${runDir} — is --set right? (looked for corpus/truth/${set}/). ` +
+    `Leaving summary.json alone.`,
+  );
+  process.exit(1);
+}
 if (prior) {
   writeFileSync(
     join(runDir, "summary.json"),

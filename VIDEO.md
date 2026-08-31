@@ -3,7 +3,7 @@
 Up to five minutes. Two columns throughout: **what is on screen** and **what you say over
 it**. Nothing here needs slides — every shot is a real page or a real terminal.
 
-Runs about **4:35** at an unhurried pace.
+Runs about **4:55** at an unhurried pace.
 
 ---
 
@@ -94,6 +94,7 @@ judge may be watching at.
 |---|---|
 | **Tab 6**, `docs/removed-experiments.md`, scrolled to experiment 2. | "One more. When the reader flags something as uncertain, you can hand it back and ask it to resolve it. Forty lines. I predicted it would beat my metric while making the system more dangerous." |
 | **Point at the comparison table** in that file — the row reading 33 → 0. | "It did something worse. It *tied*. Same trustworthy count, same silently-wrong count. What changed is invisible to every number I report: values the pilot can check go from thirty-three to zero, and it costs thirty-eight percent more. It guessed right every time here — which isn't a reason to keep it, because the behaviour is identical whether the guess is right or wrong." |
+| **Switch to tab 2**, the demo, and scroll the phone calendar. | "And here is the number I did not expect to be reporting. Seven of my eleven stages moved neither headline number — a planner that never suggested a nap, one that asked for twenty-four hours of sleep in a forty-six hour layover, a calendar that drew a pilot asleep before they landed. All seven were real. **None was caught by a metric.** Six were caught by someone reading the output." |
 | **Switch to tab 3**, the briefing, and leave it on screen. | "So: build the scoreboard before the agent. Then distrust the scoreboard too. Both of my worst bugs were in the measuring apparatus, not the thing being measured — and the decision to cut that experiment came from looking at what the pilot ends up holding, which no number in my results table reports." |
 | Hold on the briefing. Stop. | *(end)* |
 
@@ -119,6 +120,8 @@ Cut in this order:
 1. The live tag (0:20)
 2. The Cirrus midnight-rollover aside at 2:10 (0:20)
 3. The *Repeats* / held-out lines at 3:25 (0:15)
+4. The seven-of-eleven line at 4:10 (0:20) — only if you must; it is the strongest
+   evidence in the video that the evaluation was run honestly
 
 **Do not cut** the v1 → v4 switch at 1:20, the Kestrel failure at 3:25, or the removed
 experiment. Those are the three the brief specifically asks for, and they carry the hot

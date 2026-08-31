@@ -83,3 +83,11 @@ had to hold the same line — always produce a plan, state the collision, never 
 legality, hand the choice back — and that line was re-derived by hand in the briefing, the
 conflict text, the calendar descriptions and the demo. It is exactly the thing a skill is
 for, and I wrote it four times instead.
+
+The cost of not having it showed up late and concretely. The planner printed *"the roster
+leaves no room to keep your normal hours here"* onto a forty-six hour layover — a sentence
+that blamed the roster for a bedtime the crew member's own body clock had chosen, and that
+nothing in the evaluation could see was false. It was not a wording slip: the line was
+being chosen by inferring a reason from where the block ended up, because there was no
+shared rule saying a plan states the reason it actually had. A voice skill would have made
+that rule explicit in one place instead of leaving four surfaces to each invent it.

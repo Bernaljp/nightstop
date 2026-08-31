@@ -8,6 +8,7 @@
     "verify:grader": "tsx scripts/verify-grader.ts",
     "eval": "tsx scripts/run-eval.ts",
     "regrade": "tsx scripts/regrade.ts",
+    "replan": "tsx scripts/replan.ts",
     "report": "tsx scripts/report.ts",
     "brief": "tsx scripts/brief.ts",
     "trajectories": "tsx scripts/trajectories.ts",

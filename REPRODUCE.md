@@ -165,8 +165,20 @@ Runs also keep the duties they read, so a grader fix can be re-applied to a fini
 without paying to run the model again:
 
 ```bash
-npm run regrade -- results/<runId>
+npm run regrade -- results/<runId> --set dev
 ```
 
 That is how every arm here stays comparable under one grader over one corpus, whenever
 each happened to run.
+
+The same holds for the planner, which is deterministic and — unlike the reader — not
+frozen. A planning fix is re-applied to a finished run without another model call:
+
+```bash
+npm run replan -- results/<runId> --set dev    # rebuild the sleep blocks
+npm run regrade -- results/<runId> --set dev   # then re-grade
+```
+
+`replan` rebuilds **only** the sleep blocks, and refuses to run on an arm whose blocks
+came from a model. Conflicts are left untouched, so the ablation arm keeps the conflicts
+its model found rather than silently acquiring the engine's.

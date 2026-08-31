@@ -7,7 +7,7 @@
       "startUtc": "2026-10-12T03:10:00.000Z",
       "endUtc": "2026-10-12T11:10:00.000Z",
       "station": "ORD",
-      "why": "22:10 to 06:10 local at ORD — close to your usual 22:00, but about 6h19 later on your body clock, which has not caught up with where you are.",
+      "why": "22:10 to 06:10 at ORD — the earliest you could be asleep here is 21:25.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -16,20 +16,20 @@
       "id": "main-2026-10-12T20:41",
       "kind": "main",
       "startUtc": "2026-10-12T20:41:00.000Z",
-      "endUtc": "2026-10-13T04:41:00.000Z",
+      "endUtc": "2026-10-13T02:41:00.000Z",
       "station": "ORD",
-      "why": "15:41 to 23:41 at ORD — about 6h19 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "15:41 to 21:41 at ORD. Your body is still 6h19 ahead of the clock at ORD, so this IS your usual 22:00 — it just lands at 15:41 here. 6h00 rather than a full night — you will only have been up 9h31 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-10-13T16:55",
+      "id": "main-2026-10-13T17:30",
       "kind": "main",
-      "startUtc": "2026-10-13T16:55:00.000Z",
+      "startUtc": "2026-10-13T17:30:00.000Z",
       "endUtc": "2026-10-14T00:55:00.000Z",
       "station": "ORD",
-      "why": "11:55 to 19:55 at ORD — about 10h05 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "12:30 to 19:55 at ORD — late on purpose, so you are rested for a duty running 3h21 through your circadian low. You report at 20:20. 7h25 rather than a full night — you will only have been up 14h49 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -51,18 +51,18 @@
       "startUtc": "2026-10-15T23:15:00.000Z",
       "endUtc": "2026-10-16T07:15:00.000Z",
       "station": "BOS",
-      "why": "19:15 to 03:15 at BOS — about 2h45 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "19:15 to 03:15 at BOS — the earliest you could be asleep here is 18:30.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-10-16T17:15",
+      "id": "main-2026-10-16T19:15",
       "kind": "main",
-      "startUtc": "2026-10-16T17:15:00.000Z",
+      "startUtc": "2026-10-16T19:15:00.000Z",
       "endUtc": "2026-10-17T01:15:00.000Z",
       "station": "BOS",
-      "why": "13:15 to 21:15 at BOS — about 8h45 earlier than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "15:15 to 21:15 at BOS — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 21:40. 6h00 rather than a full night — you will only have been up 12h00 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -90,12 +90,12 @@
       ]
     },
     {
-      "id": "main-2026-10-19T19:15",
+      "id": "main-2026-10-19T19:41",
       "kind": "main",
-      "startUtc": "2026-10-19T19:15:00.000Z",
+      "startUtc": "2026-10-19T19:41:00.000Z",
       "endUtc": "2026-10-20T03:15:00.000Z",
       "station": "MAD",
-      "why": "21:15 to 05:15 at MAD, your usual hours, covering 2h41 of your circadian low.",
+      "why": "21:41 to 05:15 at MAD — an early night, because you report at 06:10. 7h34 rather than a full night — you will only have been up 15h07 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -106,7 +106,7 @@
       "startUtc": "2026-10-20T20:00:00.000Z",
       "endUtc": "2026-10-21T04:00:00.000Z",
       "station": "MAD",
-      "why": "22:00 to 06:00 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "22:00 to 06:00 at MAD — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 20:20.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -129,7 +129,7 @@
       "startUtc": "2026-10-22T22:53:00.000Z",
       "endUtc": "2026-10-23T06:53:00.000Z",
       "station": "LAX",
-      "why": "15:53 to 23:53 at LAX — about 6h07 earlier than your usual 22:00. You were still on duty at 22:00; this is the first chance you get.",
+      "why": "15:53 to 23:53 at LAX — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 11:10.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -152,7 +152,7 @@
       "startUtc": "2026-10-24T20:53:00.000Z",
       "endUtc": "2026-10-25T04:53:00.000Z",
       "station": "MAD",
-      "why": "22:53 to 05:53 at MAD, your usual hours, covering 4h00 of your circadian low.",
+      "why": "22:53 to 05:53 at MAD — late on purpose, so you are rested for a duty running 1h02 through your circadian low. You report at 14:35.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -175,7 +175,7 @@
       "startUtc": "2026-10-26T03:05:00.000Z",
       "endUtc": "2026-10-26T11:05:00.000Z",
       "station": "GRU",
-      "why": "00:05 to 08:05 at GRU — about 2h05 later than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "00:05 to 08:05 at GRU — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 17:00.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -198,7 +198,7 @@
       "startUtc": "2026-10-27T22:17:00.000Z",
       "endUtc": "2026-10-28T06:17:00.000Z",
       "station": "MAD",
-      "why": "23:17 to 07:17 at MAD — about 1h17 later than your usual 22:00. You were still on duty at 22:00; this is the first chance you get.",
+      "why": "23:17 to 07:17 at MAD — late on purpose, so you are rested for a duty running 1h58 through your circadian low. You report at 17:00.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -221,7 +221,7 @@
       "startUtc": "2026-10-29T05:25:00.000Z",
       "endUtc": "2026-10-29T13:25:00.000Z",
       "station": "BOG",
-      "why": "00:25 to 08:25 at BOG — about 2h25 later than your usual 22:00. You were still on duty at 22:00; this is the first chance you get.",
+      "why": "00:25 to 08:25 at BOG — you were still on duty at 22:00, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -230,9 +230,9 @@
       "id": "main-2026-10-30T01:01",
       "kind": "main",
       "startUtc": "2026-10-30T01:01:00.000Z",
-      "endUtc": "2026-10-30T09:01:00.000Z",
+      "endUtc": "2026-10-30T07:01:00.000Z",
       "station": "BOG",
-      "why": "20:01 to 04:01 at BOG — about 1h59 earlier than your usual 22:00. You were still on duty at 22:00; this is the first chance you get.",
+      "why": "20:01 to 02:01 at BOG. Your body is still 1h59 ahead of the clock at BOG, so this IS your usual 22:00 — it just lands at 20:01 here. 6h00 rather than a full night — you will only have been up 11h36 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -243,7 +243,7 @@
       "startUtc": "2026-10-31T03:40:00.000Z",
       "endUtc": "2026-10-31T11:40:00.000Z",
       "station": "MAD",
-      "why": "04:40 to 12:40 at MAD — about 6h40 later than your usual 22:00. You were still on duty at 22:00; this is the first chance you get.",
+      "why": "04:40 to 12:40 at MAD — you were still on duty at 22:00, so this is the first chance you get.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -252,9 +252,9 @@
       "id": "main-2026-10-31T23:07",
       "kind": "main",
       "startUtc": "2026-10-31T23:07:00.000Z",
-      "endUtc": "2026-11-01T07:07:00.000Z",
+      "endUtc": "2026-11-01T05:07:00.000Z",
       "station": "MAD",
-      "why": "00:07 to 08:07 at MAD — about 2h07 later than your usual 22:00. You were still on duty at 22:00; this is the first chance you get.",
+      "why": "00:07 to 06:07 at MAD. Your body is still 2h07 behind the clock at MAD, so this IS your usual 22:00 — it just lands at 00:07 here. 6h00 rather than a full night — you will only have been up 11h27 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -265,18 +265,18 @@
       "startUtc": "2026-11-01T23:07:00.000Z",
       "endUtc": "2026-11-02T07:07:00.000Z",
       "station": "MAD",
-      "why": "00:07 to 08:07 at MAD — about 2h07 later than your usual 22:00. You were still on duty at 22:00; this is the first chance you get.",
+      "why": "00:07 to 08:07 at MAD. Your body is still 2h07 behind the clock at MAD, so this IS your usual 22:00 — it just lands at 00:07 here.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-11-02T22:50",
+      "id": "main-2026-11-02T22:56",
       "kind": "main",
-      "startUtc": "2026-11-02T22:50:00.000Z",
+      "startUtc": "2026-11-02T22:56:00.000Z",
       "endUtc": "2026-11-03T06:50:00.000Z",
       "station": "MAD",
-      "why": "23:50 to 07:50 at MAD — about 1h50 later than your usual 22:00. You were still on duty at 22:00; this is the first chance you get.",
+      "why": "23:56 to 07:50 at MAD — an early night, because you report at 08:45. 7h54 rather than a full night — you will only have been up 15h49 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -298,7 +298,7 @@
       "startUtc": "2026-11-05T03:00:00.000Z",
       "endUtc": "2026-11-05T11:00:00.000Z",
       "station": "BOS",
-      "why": "22:00 to 06:00 at BOS, your usual hours, covering 4h00 of your circadian low.",
+      "why": "22:00 to 06:00 at BOS — late on purpose, so you are rested for a duty running 4h00 through your circadian low. You report at 21:40.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -321,7 +321,7 @@
       "startUtc": "2026-11-06T20:05:00.000Z",
       "endUtc": "2026-11-07T04:05:00.000Z",
       "station": "MAD",
-      "why": "21:05 to 05:05 local at MAD — close to your usual 22:00, but about 3h13 earlier on your body clock, which has not caught up with where you are.",
+      "why": "21:05 to 05:05 at MAD — late on purpose, so you are rested for a duty running 3h13 through your circadian low. You report at 06:00.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -332,7 +332,7 @@
       "startUtc": "2026-11-07T23:08:00.000Z",
       "endUtc": "2026-11-08T07:08:00.000Z",
       "station": "MAD",
-      "why": "00:08 to 08:08 at MAD — about 2h08 later than your usual 22:00. The roster leaves no room to keep your normal hours here.",
+      "why": "00:08 to 08:08 at MAD. Your body is still 2h08 behind the clock at MAD, so this IS your usual 22:00 — it just lands at 00:08 here.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
