@@ -57,6 +57,17 @@ export const BASELINE_PACK: RulePack = {
       check: { kind: "no_sleep_during_duty" },
     },
     {
+      id: "sleep-not-fragmented-4h",
+      statement:
+        "Sleep in solid blocks. Lying down again a couple of hours after getting up is " +
+        "one broken night, not two sleeps.",
+      source:
+        "Reading of FAA AC 120-103A and ICAO Doc 9966 on sleep continuity and the cost of " +
+        "fragmentation; a working separation, not a quoted limit.",
+      hardness: "recommendation",
+      check: { kind: "min_gap_between_sleeps", minutes: 240 },
+    },
+    {
       id: "main-sleep-floor-6h",
       statement:
         "A main sleep shorter than 6 hours does not do the job — if the window is that " +

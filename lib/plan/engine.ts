@@ -41,6 +41,11 @@ export interface EngineSettings {
    * offered afterwards.
    */
   disruptionMinutes: number;
+  /**
+   * Minimum gap between the end of a main sleep and the start of any nap. Sleeping again
+   * an hour after waking is not a nap, it is a fragmented night.
+   */
+  napSeparationMinutes: number;
 }
 
 export const DEFAULT_SETTINGS: EngineSettings = {
@@ -51,6 +56,7 @@ export const DEFAULT_SETTINGS: EngineSettings = {
   preferredBodyBedHour: 23,
   preferredBodyWakeHour: 7,
   disruptionMinutes: 90,
+  napSeparationMinutes: 4 * 60,
 };
 
 function clamp(v: number, lo: number, hi: number): number {
@@ -97,7 +103,9 @@ function placeMainSleeps(
     if (to <= windowFrom || from >= windowTo) continue;
 
     const prev = out[out.length - 1];
-    const floor = prev ? Math.max(windowFrom.getTime(), prev.to.getTime()) : windowFrom.getTime();
+    const floor = prev
+      ? Math.max(windowFrom.getTime(), prev.to.getTime() + s.napSeparationMinutes * 60_000)
+      : windowFrom.getTime();
 
     // Before an early report, go to bed EARLIER rather than getting up short. Clipping
     // the end instead produced 5h45 nights before 05:40 reports and then flagged them as
@@ -114,9 +122,12 @@ function placeMainSleeps(
     if (from.getTime() < floor) {
       from = new Date(floor);
       const wanted = addMinutes(from, s.mainSleepTargetMinutes);
+      // Stop short of crowding the following night. Extending right up to the next
+      // bedtime produced two main sleeps an hour apart, which is one fragmented night
+      // rather than two.
       const ceiling = Math.min(
         windowTo.getTime(),
-        bedBody + 24 * HOUR - bodyOffsetFromUtc * 60_000,
+        bedBody + 24 * HOUR - bodyOffsetFromUtc * 60_000 - s.napSeparationMinutes * 60_000,
       );
       if (wanted.getTime() > to.getTime()) to = new Date(Math.min(wanted.getTime(), ceiling));
     }
@@ -191,19 +202,16 @@ export function buildPlan(
     const nights = placeMainSleeps(from, to, bodyOffsetFromUtc, settings, usualBed);
     if (!nights.length) return;
 
-    nights.forEach((night, n) => {
-      const isLast = n === nights.length - 1;
+    // The nights themselves.
+    nights.forEach((night) => {
       const len = minutesBetween(night.from, night.to);
-      const main = night;
-    const inWocl = woclCoverageMinutes(main.from, main.to, bodyOffsetFromUtc);
-    const localBed = localHHmm(main.from, stationTz);
-    const localWake = localHHmm(main.to, stationTz);
-    const drift = Math.round(phase?.offsetFromLocalMinutes ?? 0);
-
-      const off = displacementFrom(main.from, stationTz);
+      const inWocl = woclCoverageMinutes(night.from, night.to, bodyOffsetFromUtc);
+      const localBed = localHHmm(night.from, stationTz);
+      const localWake = localHHmm(night.to, stationTz);
+      const drift = Math.round(phase?.offsetFromLocalMinutes ?? 0);
+      const off = displacementFrom(night.from, stationTz);
       const usual = `${String(Math.floor(usualBed)).padStart(2, "0")}:${String(Math.round((usualBed % 1) * 60)).padStart(2, "0")}`;
 
-      // Say it in their terms: not "this is 23:00" but "this is two hours off your usual".
       const why =
         Math.abs(off) >= 60
           ? `${localBed} to ${localWake} at ${r.prev.endStation} — about ` +
@@ -218,95 +226,81 @@ export function buildPlan(
               `covering ${formatDuration(inWocl)} of your circadian low.`;
 
       blocks.push({
-      id: `main-${localDate(night.from, stationTz)}`,
-      kind: "main",
-      startUtc: main.from.toISOString(),
-      endUtc: main.to.toISOString(),
-      station: r.prev.endStation,
-      why,
-      ruleIds: ["far117-sleep-opportunity-8h"],
+        id: `main-${night.from.toISOString().slice(0, 16)}`,
+        kind: "main",
+        startUtc: night.from.toISOString(),
+        endUtc: night.to.toISOString(),
+        station: r.prev.endStation,
+        why,
+        ruleIds: ["far117-sleep-opportunity-8h"],
+      });
     });
 
-    // A pre-duty nap, on the two occasions crew actually take one.
+    // Then AT MOST ONE supplementary block for the whole rest period.
     //
-    // The first version only offered a nap when the main sleep came in under the
-    // six-hour floor, which never once happened across twelve rosters - the tightest
-    // window in the corpus is 6h50. The rule was dead code, and a fatigue planner that
-    // never suggests a nap is missing the tool crew reach for most.
-    //
-    // The one that matters is prophylactic: a nap before a duty that runs through the
-    // circadian low, taken while you can still sleep, so you are not meeting 03:00 body
-    // time on whatever you managed the night before (UK CAA Paper 2003/8).
+    // The first version placed a recovery nap an hour after waking and a pre-duty nap
+    // five minutes after that, giving eight hours of sleep followed by two more and then
+    // two more again. Nobody sleeps like that, and being told to is worse than being told
+    // nothing. Three rules fix it: only one extra block per rest period; it must sit at
+    // least four hours clear of any night; and it is only offered when there is something
+    // for it to do.
+    const slept = nights.reduce((a, x) => a + minutesBetween(x.from, x.to), 0);
+    const lastNight = nights[nights.length - 1];
     const pickup = addMinutes(
       new Date(r.next.reportUtc!), -commuteFor(profile, r.next.station),
     );
     const napEnd = addMinutes(pickup, -settings.napInertiaMinutes);
-    const room = minutesBetween(main.to, napEnd);
+    const earliest = addMinutes(lastNight.to, settings.napSeparationMinutes);
 
-    // How much of the coming duty runs through the body's own night?
     const dutyWocl = woclCoverageMinutes(
-      new Date(r.next.reportUtc!),
-      new Date(r.next.endUtc!),
-      bodyOffsetFromUtc,
+      new Date(r.next.reportUtc!), new Date(r.next.endUtc!), bodyOffsetFromUtc,
     );
+    const prevAte = r.prev.reportUtc && r.prev.endUtc
+      ? usualWindowOverlap(
+          new Date(r.prev.reportUtc), new Date(r.prev.endUtc),
+          tzOf(r.prev.endStation), usualBed, usualWake,
+        )
+      : 0;
 
-      const short = len < settings.mainSleepFloorMinutes;
-      const nightDuty = dutyWocl >= 60;
+    // A pre-duty nap is time-critical and wins where both would apply: it has to be taken
+    // before this particular duty, where recovery could be taken on any of several days.
+    const wantPreDuty = dutyWocl >= 60 || slept < settings.mainSleepFloorMinutes;
+    // Recovery repays a debt. If the nights in this window already got them to target,
+    // there is no debt and nothing to repay.
+    const wantRecovery = prevAte >= settings.disruptionMinutes
+      && slept < settings.mainSleepTargetMinutes;
 
-      // Only the last night of a rest period sits before the duty; a nap after any
-      // earlier one would be a nap in the middle of a day off.
-      if (isLast && (short || nightDuty) && room >= 90) {
-        const napLen = Math.min(settings.napCapMinutes, room - 60);
+    if (wantPreDuty || wantRecovery) {
+      const room = minutesBetween(earliest, napEnd);
+      if (room >= 45) {
+        const napLen = Math.min(settings.napCapMinutes, room);
         const napStart = addMinutes(napEnd, -napLen);
-        if (napLen >= 30) {
-          blocks.push({
-          id: `nap-${r.next.date}`,
-          kind: "pre-duty-nap",
+        const kind = wantPreDuty ? "pre-duty-nap" : "recovery-nap";
+        blocks.push({
+          id: `${kind}-${napStart.toISOString().slice(0, 16)}`,
+          kind,
           startUtc: napStart.toISOString(),
           endUtc: napEnd.toISOString(),
           station: r.next.station,
-          why: short
-            ? `Only ${formatDuration(len)} of main sleep fits before ${r.next.date}, so this ` +
-              `${formatDuration(napLen)} nap takes the edge off. It ends ` +
-              `${formatDuration(settings.napInertiaMinutes)} before you leave, so you are not ` +
-              `driving on sleep inertia.`
-            : `${r.next.date} runs ${formatDuration(dutyWocl)} through your circadian low. ` +
-              `Take this ${formatDuration(napLen)} now, while you can still sleep — it ends ` +
-              `${formatDuration(settings.napInertiaMinutes)} before you leave.`,
-            ruleIds: ["nap-inertia-gap-45m", "nap-cap-2h"],
-          });
-        }
+          why: wantPreDuty
+            ? (slept < settings.mainSleepFloorMinutes
+                ? `Only ${formatDuration(slept)} of sleep fits before ${r.next.date}, so ` +
+                  `this ${formatDuration(napLen)} takes the edge off. It ends ` +
+                  `${formatDuration(settings.napInertiaMinutes)} before you leave, so you ` +
+                  `are not driving on sleep inertia.`
+                : `${r.next.date} runs ${formatDuration(dutyWocl)} through your circadian ` +
+                  `low. Take this ${formatDuration(napLen)} beforehand, while you can still ` +
+                  `sleep — it ends ${formatDuration(settings.napInertiaMinutes)} before you leave.`)
+            : `${r.prev.date} took ${formatDuration(prevAte)} out of the hours you normally ` +
+              `sleep, and this window only gets you ${formatDuration(slept)}. This ` +
+              `${formatDuration(napLen)} pays some of it back rather than carrying it into ` +
+              `the week.`,
+          ruleIds: wantPreDuty
+            ? ["nap-inertia-gap-45m", "nap-cap-2h"]
+            : ["sleep-per-24h-7h"],
+        });
       }
-
-      // Recovery sleep, on the first night after a duty that took their usual window off
-      // them. A duty ending at 03:00 does not just cost that night's sleep — the debt is
-      // still there the next day, and the place to repay it is the morning after.
-      if (n === 0 && r.prev.reportUtc && r.prev.endUtc) {
-        const prevTz = tzOf(r.prev.endStation);
-        const ate = usualWindowOverlap(
-          new Date(r.prev.reportUtc), new Date(r.prev.endUtc), prevTz, usualBed, usualWake,
-        );
-        const gap = minutesBetween(night.to, new Date(r.sleepWindowToUtc));
-        if (ate >= settings.disruptionMinutes && gap >= 120) {
-          const recStart = addMinutes(night.to, 60);
-          const recLen = Math.min(settings.napCapMinutes, gap - 90);
-          if (recLen >= 45) {
-            blocks.push({
-              id: `recovery-${localDate(recStart, stationTz)}`,
-              kind: "recovery-nap",
-              startUtc: recStart.toISOString(),
-              endUtc: addMinutes(recStart, recLen).toISOString(),
-              station: r.prev.endStation,
-              why:
-                `${r.prev.date} took ${formatDuration(ate)} out of the hours you normally ` +
-                `sleep. This ${formatDuration(recLen)} pays some of that back — you are ` +
-                `carrying it into the rest of the week otherwise.`,
-              ruleIds: ["sleep-per-24h-7h"],
-            });
-          }
-        }
-      }
-    });
+    }
   });
 
   const conflicts: Conflict[] = mandatoryConflicts(duties, profile, pack);

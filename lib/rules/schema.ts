@@ -41,6 +41,8 @@ export type RuleCheck =
   | { kind: "min_main_sleep_minutes"; minutes: number }
   /** Sleep may never be scheduled inside a duty period. */
   | { kind: "no_sleep_during_duty" }
+  /** Minimum gap between one sleep ending and the next beginning. */
+  | { kind: "min_gap_between_sleeps"; minutes: number }
   /** Consecutive duties starting before this local hour. */
   | { kind: "max_consecutive_early_starts"; count: number; beforeLocalHour: number };
 

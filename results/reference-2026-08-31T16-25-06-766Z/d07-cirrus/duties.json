@@ -1,0 +1,500 @@
+[
+  {
+    "id": "2026-09-01-01",
+    "date": "2026-09-01",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "ORD",
+    "reportUtc": "2026-09-01T15:00:00.000Z",
+    "endUtc": "2026-09-02T02:00:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR574",
+        "origin": "MAD",
+        "dest": "ORD",
+        "depUtc": "2026-09-01T16:30:00.000Z",
+        "arrUtc": "2026-09-02T01:30:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-02-02",
+    "date": "2026-09-02",
+    "kind": "off",
+    "code": "OFF",
+    "station": "ORD",
+    "endStation": "ORD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-03-03",
+    "date": "2026-09-03",
+    "kind": "flight",
+    "station": "ORD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-04T01:20:00.000Z",
+    "endUtc": "2026-09-04T12:20:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR706",
+        "origin": "ORD",
+        "dest": "MAD",
+        "depUtc": "2026-09-04T02:50:00.000Z",
+        "arrUtc": "2026-09-04T11:50:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-04-04",
+    "date": "2026-09-04",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-05-05",
+    "date": "2026-09-05",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "JFK",
+    "reportUtc": "2026-09-05T09:10:00.000Z",
+    "endUtc": "2026-09-05T19:10:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR861",
+        "origin": "MAD",
+        "dest": "JFK",
+        "depUtc": "2026-09-05T10:40:00.000Z",
+        "arrUtc": "2026-09-05T18:40:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-06-06",
+    "date": "2026-09-06",
+    "kind": "off",
+    "code": "OFF",
+    "station": "JFK",
+    "endStation": "JFK",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-07-07",
+    "date": "2026-09-07",
+    "kind": "flight",
+    "station": "JFK",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-08T01:40:00.000Z",
+    "endUtc": "2026-09-08T11:40:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR345",
+        "origin": "JFK",
+        "dest": "MAD",
+        "depUtc": "2026-09-08T03:10:00.000Z",
+        "arrUtc": "2026-09-08T11:10:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-08-08",
+    "date": "2026-09-08",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-09-09",
+    "date": "2026-09-09",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-10-10",
+    "date": "2026-09-10",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-11-11",
+    "date": "2026-09-11",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-11T13:25:00.000Z",
+    "endUtc": "2026-09-12T04:18:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR346",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-11T14:25:00.000Z",
+        "arrUtc": "2026-09-11T17:05:00.000Z"
+      },
+      {
+        "flightNo": "CR113",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-11T18:06:00.000Z",
+        "arrUtc": "2026-09-11T20:46:00.000Z"
+      },
+      {
+        "flightNo": "CR866",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-09-11T21:55:00.000Z",
+        "arrUtc": "2026-09-12T00:20:00.000Z"
+      },
+      {
+        "flightNo": "CR563",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-09-12T01:23:00.000Z",
+        "arrUtc": "2026-09-12T03:48:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-12-12",
+    "date": "2026-09-12",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-13-13",
+    "date": "2026-09-13",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-14-14",
+    "date": "2026-09-14",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-15-15",
+    "date": "2026-09-15",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-16-16",
+    "date": "2026-09-16",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-17-17",
+    "date": "2026-09-17",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-18-18",
+    "date": "2026-09-18",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-19-19",
+    "date": "2026-09-19",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-19T03:05:00.000Z",
+    "endUtc": "2026-09-19T14:21:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR367",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-19T04:05:00.000Z",
+        "arrUtc": "2026-09-19T05:25:00.000Z"
+      },
+      {
+        "flightNo": "CR633",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-19T06:20:00.000Z",
+        "arrUtc": "2026-09-19T07:40:00.000Z"
+      },
+      {
+        "flightNo": "CR296",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-19T08:39:00.000Z",
+        "arrUtc": "2026-09-19T10:44:00.000Z"
+      },
+      {
+        "flightNo": "CR737",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-19T11:46:00.000Z",
+        "arrUtc": "2026-09-19T13:51:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-20-20",
+    "date": "2026-09-20",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-20T13:25:00.000Z",
+    "endUtc": "2026-09-20T18:29:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR856",
+        "origin": "MAD",
+        "dest": "BCN",
+        "depUtc": "2026-09-20T14:25:00.000Z",
+        "arrUtc": "2026-09-20T15:45:00.000Z"
+      },
+      {
+        "flightNo": "CR651",
+        "origin": "BCN",
+        "dest": "MAD",
+        "depUtc": "2026-09-20T16:39:00.000Z",
+        "arrUtc": "2026-09-20T17:59:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-21-21",
+    "date": "2026-09-21",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-22-22",
+    "date": "2026-09-22",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-22T03:40:00.000Z",
+    "endUtc": "2026-09-22T10:03:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR812",
+        "origin": "MAD",
+        "dest": "CDG",
+        "depUtc": "2026-09-22T04:40:00.000Z",
+        "arrUtc": "2026-09-22T06:45:00.000Z"
+      },
+      {
+        "flightNo": "CR111",
+        "origin": "CDG",
+        "dest": "MAD",
+        "depUtc": "2026-09-22T07:28:00.000Z",
+        "arrUtc": "2026-09-22T09:33:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-23-23",
+    "date": "2026-09-23",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-23T02:35:00.000Z",
+    "endUtc": "2026-09-23T10:11:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR893",
+        "origin": "MAD",
+        "dest": "DUB",
+        "depUtc": "2026-09-23T03:35:00.000Z",
+        "arrUtc": "2026-09-23T06:15:00.000Z"
+      },
+      {
+        "flightNo": "CR277",
+        "origin": "DUB",
+        "dest": "MAD",
+        "depUtc": "2026-09-23T07:01:00.000Z",
+        "arrUtc": "2026-09-23T09:41:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-24-24",
+    "date": "2026-09-24",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-24T10:20:00.000Z",
+    "endUtc": "2026-09-24T22:14:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR893",
+        "origin": "MAD",
+        "dest": "LIS",
+        "depUtc": "2026-09-24T11:20:00.000Z",
+        "arrUtc": "2026-09-24T12:45:00.000Z"
+      },
+      {
+        "flightNo": "CR881",
+        "origin": "LIS",
+        "dest": "MAD",
+        "depUtc": "2026-09-24T13:38:00.000Z",
+        "arrUtc": "2026-09-24T15:03:00.000Z"
+      },
+      {
+        "flightNo": "CR884",
+        "origin": "MAD",
+        "dest": "FCO",
+        "depUtc": "2026-09-24T16:10:00.000Z",
+        "arrUtc": "2026-09-24T18:35:00.000Z"
+      },
+      {
+        "flightNo": "CR222",
+        "origin": "FCO",
+        "dest": "MAD",
+        "depUtc": "2026-09-24T19:19:00.000Z",
+        "arrUtc": "2026-09-24T21:44:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-25-25",
+    "date": "2026-09-25",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-26-26",
+    "date": "2026-09-26",
+    "kind": "flight",
+    "station": "MAD",
+    "endStation": "SIN",
+    "reportUtc": "2026-09-26T09:10:00.000Z",
+    "endUtc": "2026-09-27T00:40:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR673",
+        "origin": "MAD",
+        "dest": "SIN",
+        "depUtc": "2026-09-26T10:40:00.000Z",
+        "arrUtc": "2026-09-27T00:10:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-27-27",
+    "date": "2026-09-27",
+    "kind": "off",
+    "code": "OFF",
+    "station": "SIN",
+    "endStation": "SIN",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-28-28",
+    "date": "2026-09-28",
+    "kind": "flight",
+    "station": "SIN",
+    "endStation": "MAD",
+    "reportUtc": "2026-09-28T03:10:00.000Z",
+    "endUtc": "2026-09-28T18:40:00.000Z",
+    "sectors": [
+      {
+        "flightNo": "CR515",
+        "origin": "SIN",
+        "dest": "MAD",
+        "depUtc": "2026-09-28T04:40:00.000Z",
+        "arrUtc": "2026-09-28T18:10:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "2026-09-29-29",
+    "date": "2026-09-29",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  },
+  {
+    "id": "2026-09-30-30",
+    "date": "2026-09-30",
+    "kind": "off",
+    "code": "OFF",
+    "station": "MAD",
+    "endStation": "MAD",
+    "reportUtc": null,
+    "endUtc": null,
+    "sectors": []
+  }
+]

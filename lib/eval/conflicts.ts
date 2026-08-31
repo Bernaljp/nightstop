@@ -310,8 +310,33 @@ export function planViolations(
         }
         break;
       }
+      case "min_gap_between_sleeps": {
+        const sorted = [...plan.blocks].sort((a, b) => a.startUtc.localeCompare(b.startUtc));
+        for (let i = 1; i < sorted.length; i++) {
+          const gap = minutesBetween(new Date(sorted[i - 1].endUtc), new Date(sorted[i].startUtc));
+          if (gap < rule.check.minutes) {
+            out.push(
+              conflict(
+                rule, sorted[i].startUtc.slice(0, 10), sorted[i].id,
+                `Only ${formatDuration(gap)} between one sleep ending and the next ` +
+                  `starting — that is one broken night, not two.`,
+                ["Merge them, or drop the second."],
+              ),
+            );
+          }
+        }
+        break;
+      }
       case "min_main_sleep_minutes": {
         const rests = restPeriods(duties, profile);
+        // The slot actually available to THIS block, not the whole rest period: a window
+        // holding two nights gives the second one only what is left after the first plus
+        // the separation. Measuring against the whole window called a boxed-in 5h15
+        // second night the planner's fault when nothing could have made it longer.
+        const ordered = [...plan.blocks].sort((a, b) => a.startUtc.localeCompare(b.startUtc));
+        const sepRule = pack.rules.find((x) => x.check.kind === "min_gap_between_sleeps");
+        const sep = sepRule && sepRule.check.kind === "min_gap_between_sleeps"
+          ? sepRule.check.minutes : 0;
         for (const b of plan.blocks) {
           if (b.kind !== "main") continue;
           const len = blockMinutesOf(b);
@@ -323,12 +348,25 @@ export function planViolations(
               new Date(rp.sleepWindowFromUtc), new Date(rp.sleepWindowToUtc),
             ),
           );
-          if (r && r.sleepWindowMinutes >= rule.check.minutes) {
+          if (!r) continue;
+          const idx = ordered.findIndex((x) => x.id === b.id);
+          const prevBlock = ordered[idx - 1];
+          const nextBlock = ordered[idx + 1];
+          const slotFrom = Math.max(
+            new Date(r.sleepWindowFromUtc).getTime(),
+            prevBlock ? new Date(prevBlock.endUtc).getTime() + sep * 60_000 : 0,
+          );
+          const slotTo = Math.min(
+            new Date(r.sleepWindowToUtc).getTime(),
+            nextBlock ? new Date(nextBlock.startUtc).getTime() - sep * 60_000 : Infinity,
+          );
+          const slot = Math.round((slotTo - slotFrom) / 60_000);
+          if (slot >= rule.check.minutes) {
             out.push(
               conflict(
                 rule, b.startUtc.slice(0, 10), b.id,
-                `A ${formatDuration(len)} main sleep in a window that had room for ` +
-                  `${formatDuration(r.sleepWindowMinutes)}.`,
+                `A ${formatDuration(len)} main sleep in a slot that had room for ` +
+                  `${formatDuration(slot)}.`,
                 ["Lengthen it — the time was available."],
               ),
             );
