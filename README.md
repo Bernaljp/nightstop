@@ -463,7 +463,7 @@ short version:
 
 ```bash
 npm install
-npm run verify          # typecheck + 44 tests + the freeze check. No credentials needed.
+npm run verify          # typecheck + 45 tests + the freeze check. No credentials needed.
 npm run package         # build dist/nightstop-submission.zip with its sha256
 
 npm run corpus          # regenerate the 8 rosters from a seed, byte-identical
@@ -500,6 +500,12 @@ rather than burying it, and the empty directories are in the repository.
 
 **Trajectories** for all six product agents are in
 [`trajectories/`](trajectories/README.md), rendered from the JSONL each run writes.
+
+**Verifying it runs.** `npm run verify` — typecheck, 45 tests, freeze check — needs no
+credentials, no network and no model. It has been run from a clean unzip of
+`dist/nightstop-submission.zip` into an empty directory, which is how the freeze check's
+own dependency on `git` was found: the archive does not carry `.git`, so it now falls back
+to `docs/freeze.sha256`.
 
 ## Ground rules
 

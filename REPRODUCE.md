@@ -54,7 +54,7 @@ accident waiting to happen.
 npm run verify
 ```
 
-Typecheck, then **44 tests**, then the freeze check. Nothing here needs a key, a network,
+Typecheck, then **45 tests**, then the freeze check. Nothing here needs a key, a network,
 or a model, so it is the first thing to run from a clean clone and the fastest way to tell
 whether the project works on your machine.
 
@@ -216,3 +216,10 @@ archive's sha256 and the commit it was built from. It **refuses to run on a dirt
 tree**, because the point of the archive is that what a judge unzips is what produced the
 numbers inside it. Excluded: `node_modules/`, `.git/`, `out/`, `dist/`, and any `.env`
 file — so no credential can travel with it.
+
+**This was checked the only way it can be.** The archive was unzipped into an empty
+directory, `npm install` run from nothing, and `npm run verify` run there: 45 tests pass
+and the freeze check reports which mode it used. That is also how the freeze check's own
+bug was found — it shelled out to `git`, which the archive deliberately does not carry, so
+a judge taking the archive path would have got a stack trace where a PASS should have been.
+It now falls back to `docs/freeze.sha256`.
