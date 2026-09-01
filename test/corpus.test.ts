@@ -77,3 +77,18 @@ test("no roster contains anything that looks like a real person", () => {
     }
   }
 });
+
+test("the freeze hashes still describe the files a model reads", () => {
+  // These are what proves the freeze claim when there is no repository — from the
+  // submission archive, say, which deliberately ships without .git. A hash file that
+  // quietly stops matching is worse than not having one.
+  const lines = readFileSync("docs/freeze.sha256", "utf8").split("\n")
+    .filter((l) => l.trim() && !l.startsWith("#"));
+  assert.ok(lines.length >= 6, `only ${lines.length} reader files are pinned`);
+  for (const line of lines) {
+    const [want, file] = line.split(/\s+/);
+    assert.ok(existsSync(file), `${file} is pinned but missing`);
+    const got = createHash("sha256").update(readFileSync(file)).digest("hex");
+    assert.equal(got, want, `${file} has changed since the freeze`);
+  }
+});

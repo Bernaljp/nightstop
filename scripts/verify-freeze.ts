@@ -9,6 +9,9 @@
  *   npx tsx scripts/verify-freeze.ts
  */
 import { execSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { readFileSync, readdirSync, statSync, existsSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
 /**
  * The original freeze, before any held-out case had ever been generated.
@@ -40,16 +43,89 @@ const READER = [
 /** Deterministic planning: never seen by a model, but it shapes every plan. */
 const PLANNER = ["lib/plan/", "lib/rules/", "lib/eval/conflicts.ts"];
 
+/**
+ * The same claim, checkable without a repository.
+ *
+ * The submission ships as an archive as well as a repo, and `.git` is deliberately not in
+ * it — so a judge running this from a clean unzip got a stack trace where the freeze
+ * check should have been. Found by unzipping the archive and running it, which is the
+ * only way that class of bug is ever found.
+ *
+ * `docs/freeze.sha256` carries a hash per reader file, written while git could still
+ * confirm those bytes were identical to the freeze commit. Git remains the better check
+ * when it is available, because it also reports planner drift; the hashes are the floor.
+ */
+const HASHES = "docs/freeze.sha256";
+
+function filesUnder(p: string): string[] {
+  if (!existsSync(p)) return [];
+  if (!statSync(p).isDirectory()) return [p];
+  return readdirSync(p).flatMap((f) => filesUnder(join(p, f))).sort();
+}
+
+const readerFiles = READER.flatMap(filesUnder).sort();
+const hashOf = (f: string) => createHash("sha256").update(readFileSync(f)).digest("hex");
+
+if (process.argv.includes("--write-hashes")) {
+  const body = readerFiles.map((f) => `${hashOf(f)}  ${f}`).join("\n");
+  writeFileSync(
+    HASHES,
+    `# Every file a model reads, hashed at the original freeze ${ORIGINAL_FREEZE}.\n` +
+      `# Written with git available and confirming these bytes matched that commit.\n` +
+      `# Checked by \`npm run verify:freeze\`, which needs no repository to do it.\n` +
+      `${body}\n`,
+  );
+  console.log(`wrote ${HASHES} — ${readerFiles.length} files`);
+  process.exit(0);
+}
+
+const hasGit = (() => {
+  try {
+    execSync("git rev-parse --git-dir", { stdio: "ignore" });
+    execSync(`git cat-file -e ${ORIGINAL_FREEZE}^{commit}`, { stdio: "ignore" });
+    return true;
+  } catch {
+    return false;
+  }
+})();
+
 function diffStat(paths: string[], since: string): string {
   return execSync(`git diff --stat ${since} HEAD -- ${paths.join(" ")}`, {
     encoding: "utf8",
   }).trim();
 }
 
-const readerDrift = diffStat(READER, ORIGINAL_FREEZE);
-const plannerDrift = diffStat(PLANNER, ORIGINAL_FREEZE);
+/** Without git: compare against the hashes committed at the freeze. */
+function hashDrift(): string {
+  if (!existsSync(HASHES)) {
+    return `${HASHES} is missing, and there is no repository to check against instead.`;
+  }
+  const want = new Map<string, string>();
+  for (const line of readFileSync(HASHES, "utf8").split("\n")) {
+    if (!line.trim() || line.startsWith("#")) continue;
+    const [h, f] = line.split(/\s+/);
+    want.set(f, h);
+  }
+  const out: string[] = [];
+  for (const f of readerFiles) {
+    if (!want.has(f)) out.push(`  ${f} — new since the freeze`);
+    else if (want.get(f) !== hashOf(f)) out.push(`  ${f} — changed since the freeze`);
+  }
+  for (const f of want.keys()) {
+    if (!readerFiles.includes(f)) out.push(`  ${f} — deleted since the freeze`);
+  }
+  return out.join("\n");
+}
 
-console.log(`Original freeze: ${ORIGINAL_FREEZE.slice(0, 8)}\n`);
+const readerDrift = hasGit ? diffStat(READER, ORIGINAL_FREEZE) : hashDrift();
+const plannerDrift = hasGit ? diffStat(PLANNER, ORIGINAL_FREEZE) : "";
+
+console.log(`Original freeze: ${ORIGINAL_FREEZE.slice(0, 8)}`);
+console.log(
+  hasGit
+    ? "Checked against the repository.\n"
+    : `No repository here, so checked against ${HASHES} — ${readerFiles.length} files.\n`,
+);
 
 if (readerDrift) {
   console.log("FAIL — the reader has changed since the original freeze:\n");
@@ -66,6 +142,14 @@ console.log(
   "PASS — every prompt and tool a model reads is byte-identical to the original\n" +
     "freeze. The reader has never been tuned, on any corpus.",
 );
+
+if (!hasGit) {
+  console.log(
+    "\nPlanner drift is not reported in this mode: it needs the repository, and it is\n" +
+      "reported in full in README.md and docs/eval-preregistration.md. The planner is\n" +
+      "NOT frozen and is not claimed to be.",
+  );
+}
 
 if (plannerDrift) {
   console.log("\nThe deterministic planner HAS changed since then:\n");

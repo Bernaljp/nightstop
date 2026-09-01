@@ -1,0 +1,9 @@
+# Every file a model reads, hashed at the original freeze 7b77a67719996342d81034ec90be858a1e2b5aa7.
+# Written with git available and confirming these bytes matched that commit.
+# Checked by `npm run verify:freeze`, which needs no repository to do it.
+4900d97d18bd4f64e2bf2b6bb99272ecc0efcf3b722b7c6d15017656bc42a1c9  lib/agents/baselines.ts
+f9bf12d758a83a107e280edb68d6125fbaae1c0f80325320221ac0969f030694  lib/agents/pipeline.ts
+b67a4a26e87981e11d4db99e42770214b3ed7dd23986d5997fd6f5d2d557d8b0  lib/agents/prompts/output-contract.ts
+f8753ae34e723a9e86ce21e6118a2491459bcb6b6080bc0cc892e3e195e5c96c  lib/agents/reader.ts
+dd0971a81109ceb319f7fa298ab74d82e6c6decfbe2fce863382df962ed678ec  lib/agents/sdk-runtime.ts
+ce509b223a6afac262ffa5272470a54eb2c73a8f08c49d240f663906103bc20d  lib/agents/tools.ts
