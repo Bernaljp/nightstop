@@ -304,12 +304,24 @@
       ]
     },
     {
-      "id": "main-2026-11-04T18:35",
+      "id": "recovery-nap-2026-11-04T13:58",
+      "kind": "recovery-nap",
+      "startUtc": "2026-11-04T13:58:00.000Z",
+      "endUtc": "2026-11-04T14:48:00.000Z",
+      "station": "MAD",
+      "why": "2026-11-04 took 1h50 out of the hours you normally sleep, and you are 4h50 from your next proper night. Take this 50m now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-11-04T18:48",
       "kind": "main",
-      "startUtc": "2026-11-04T18:35:00.000Z",
+      "startUtc": "2026-11-04T18:48:00.000Z",
       "endUtc": "2026-11-05T02:35:00.000Z",
       "station": "MAD",
-      "why": "Late on purpose, so you are rested for a duty that runs 1h00 through your circadian low. You leave for the airport the moment this ends.",
+      "why": "Late on purpose, so you are rested for a duty that runs 1h00 through your circadian low. You leave for the airport the moment this ends. 7h47 rather than a full night — you will only have been up 15h33 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]

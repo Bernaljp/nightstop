@@ -16,9 +16,9 @@
       "id": "main-2026-09-02T21:30",
       "kind": "main",
       "startUtc": "2026-09-02T21:30:00.000Z",
-      "endUtc": "2026-09-03T05:30:00.000Z",
+      "endUtc": "2026-09-03T04:33:00.000Z",
       "station": "MAD",
-      "why": "Your usual hours, covering 4h00 of your circadian low.",
+      "why": "Your usual hours, covering 4h00 of your circadian low. 7h03 rather than a full night — you will only have been up 14h05 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -103,12 +103,12 @@
       ]
     },
     {
-      "id": "main-2026-09-09T15:55",
+      "id": "main-2026-09-09T16:11",
       "kind": "main",
-      "startUtc": "2026-09-09T15:55:00.000Z",
+      "startUtc": "2026-09-09T16:11:00.000Z",
       "endUtc": "2026-09-09T22:50:00.000Z",
       "station": "MAD",
-      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends. 6h39 rather than a full night — you will only have been up 13h17 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -270,12 +270,45 @@
       ]
     },
     {
+      "id": "main-2026-09-22T12:05",
+      "kind": "main",
+      "startUtc": "2026-09-22T12:05:00.000Z",
+      "endUtc": "2026-09-22T18:05:00.000Z",
+      "station": "MAD",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends. 6h00 rather than a full night — you will only have been up 9h05 by then.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-23T09:37",
+      "kind": "main",
+      "startUtc": "2026-09-23T09:37:00.000Z",
+      "endUtc": "2026-09-23T16:35:00.000Z",
+      "station": "MAD",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-24T07:53",
+      "kind": "main",
+      "startUtc": "2026-09-24T07:53:00.000Z",
+      "endUtc": "2026-09-24T14:50:00.000Z",
+      "station": "MAD",
+      "why": "Late on purpose, so you are rested for a duty that runs 2h03 through your circadian low. You leave for the airport the moment this ends.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
       "id": "main-2026-09-25T03:58",
       "kind": "main",
       "startUtc": "2026-09-25T03:58:00.000Z",
-      "endUtc": "2026-09-25T11:58:00.000Z",
+      "endUtc": "2026-09-25T10:32:00.000Z",
       "station": "MAD",
-      "why": "You were still on duty at your usual 23:30, so this is the first chance you get.",
+      "why": "You were still on duty at your usual 23:30, so this is the first chance you get. 6h34 rather than a full night — you will only have been up 13h08 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -286,7 +319,7 @@
       "startUtc": "2026-09-25T21:30:00.000Z",
       "endUtc": "2026-09-26T03:30:00.000Z",
       "station": "MAD",
-      "why": "Your usual hours, covering 3h30 of your circadian low. 6h00 rather than a full night — you will only have been up 9h32 by then.",
+      "why": "Your usual hours, covering 3h30 of your circadian low. 6h00 rather than a full night — you will only have been up 10h58 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -309,6 +342,17 @@
       "endUtc": "2026-09-28T01:50:00.000Z",
       "station": "MAD",
       "why": "Late on purpose, so you are rested for a duty that runs 1h00 through your circadian low. You leave for the airport the moment this ends. 6h47 rather than a full night — you will only have been up 13h33 by then.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-28T11:50",
+      "kind": "main",
+      "startUtc": "2026-09-28T11:50:00.000Z",
+      "endUtc": "2026-09-28T17:50:00.000Z",
+      "station": "MAD",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends. 6h00 rather than a full night — you will only have been up 10h00 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]

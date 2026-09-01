@@ -13,12 +13,23 @@
       ]
     },
     {
+      "id": "main-2026-09-02T09:35",
+      "kind": "main",
+      "startUtc": "2026-09-02T09:35:00.000Z",
+      "endUtc": "2026-09-02T15:35:00.000Z",
+      "station": "MAD",
+      "why": "An early night: you leave for the airport the moment this ends. 6h00 rather than a full night — you will only have been up 11h35 by then.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
       "id": "main-2026-09-03T01:20",
       "kind": "main",
       "startUtc": "2026-09-03T01:20:00.000Z",
-      "endUtc": "2026-09-03T09:20:00.000Z",
+      "endUtc": "2026-09-03T07:20:00.000Z",
       "station": "MAD",
-      "why": "You were still on duty at your usual 22:00, so this is the first chance you get.",
+      "why": "You were still on duty at your usual 22:00, so this is the first chance you get. 6h00 rather than a full night — you will only have been up 9h45 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -27,9 +38,9 @@
       "id": "main-2026-09-03T20:00",
       "kind": "main",
       "startUtc": "2026-09-03T20:00:00.000Z",
-      "endUtc": "2026-09-04T02:00:00.000Z",
+      "endUtc": "2026-09-04T02:20:00.000Z",
       "station": "MAD",
-      "why": "Your usual hours, covering 2h00 of your circadian low. 6h00 rather than a full night — you will only have been up 10h40 by then.",
+      "why": "Your usual hours, covering 2h20 of your circadian low. 6h20 rather than a full night — you will only have been up 12h40 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -68,12 +79,12 @@
       ]
     },
     {
-      "id": "main-2026-09-07T18:45",
+      "id": "main-2026-09-07T18:55",
       "kind": "main",
-      "startUtc": "2026-09-07T18:45:00.000Z",
+      "startUtc": "2026-09-07T18:55:00.000Z",
       "endUtc": "2026-09-08T02:45:00.000Z",
       "station": "MAD",
-      "why": "An early night: you leave for the airport the moment this ends.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h50 rather than a full night — you will only have been up 15h40 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]

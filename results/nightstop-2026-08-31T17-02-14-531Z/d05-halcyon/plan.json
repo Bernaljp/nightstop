@@ -263,31 +263,31 @@
       "id": "main-2026-09-22T20:30",
       "kind": "main",
       "startUtc": "2026-09-22T20:30:00.000Z",
-      "endUtc": "2026-09-23T04:30:00.000Z",
+      "endUtc": "2026-09-23T03:15:00.000Z",
       "station": "LHR",
-      "why": "Your usual hours, covering 3h30 of your circadian low.",
+      "why": "Your usual hours, covering 2h15 of your circadian low. 6h45 rather than a full night — you will only have been up 13h30 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-23T19:33",
+      "id": "main-2026-09-23T19:08",
       "kind": "main",
-      "startUtc": "2026-09-23T19:33:00.000Z",
+      "startUtc": "2026-09-23T19:08:00.000Z",
       "endUtc": "2026-09-24T03:05:00.000Z",
       "station": "LHR",
-      "why": "An early night: you leave for the airport the moment this ends. 7h32 rather than a full night — you will only have been up 15h03 by then.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h57 rather than a full night — you will only have been up 15h53 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
     },
     {
-      "id": "main-2026-09-24T18:30",
+      "id": "main-2026-09-24T18:42",
       "kind": "main",
-      "startUtc": "2026-09-24T18:30:00.000Z",
+      "startUtc": "2026-09-24T18:42:00.000Z",
       "endUtc": "2026-09-25T02:30:00.000Z",
       "station": "LHR",
-      "why": "An early night: you leave for the airport the moment this ends.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h48 rather than a full night — you will only have been up 15h37 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]

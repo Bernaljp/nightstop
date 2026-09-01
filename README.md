@@ -171,6 +171,28 @@ text throughout, phrased as 'no certificate holder may' / 'must', with no operat
 layered above it."* Which is the right reading — whether a rule is a limit or advice
 depends on who wrote the document, not on how the sentence is phrased.
 
+## The baseline solution, and the advanced one
+
+Both are in this repository, both run on the same twelve rosters under the same grader,
+and either can be run with one command.
+
+| | **Baseline** — `b1-chatbot` | **Advanced** — `nightstop` |
+|---|---|---|
+| What it is | One prompt, the roster PDF, the crew member's own settings. What a pilot does today. | Model reads with tools; a deterministic engine plans the sleep and finds every rule collision. |
+| Run it | `npm run eval -- --arm b1-chatbot` | `npm run eval -- --arm nightstop` |
+| Trustworthy | 0/8 | **8/8** |
+| Silently wrong | 8/8 | **0/8** |
+| Conflict recall | 0% | **100%** |
+| Invented rules | 69 | **0** |
+| Cost per roster | $0.65 | **$0.59** |
+
+The improvement is not cosmetic and it is not a bigger prompt. It is **capability** (the
+baseline surfaces none of the real collisions; the advanced arm surfaces all of them),
+**reliability** (nothing invented, across four repeats and two held-out sets), and
+**efficiency** (cheaper and faster per roster, because the checking left the model). Two
+further arms exist purely to make that claim survive scrutiny — a steelman that hands the
+same model the same rule pack in one shot, and an ablation that changes exactly one thing.
+
 ## Results
 
 Eight synthetic rosters, one grader, same task for every arm. Full tables in
@@ -293,7 +315,7 @@ untrustworthy, and it costs *more* to do it.
 **The last column changes one thing.** The rule check moves out of the model and into a
 deterministic function. Invented rules: 40 → 0. Trustworthy: 1/8 → 8/8. Cheaper, too.
 
-Nine of the thirteen stages moved neither headline number. All nine were real defects: a
+Ten of the fourteen stages moved neither headline number. All ten were real defects: a
 planner that never suggested a nap; one that left every day off unplanned; one that gave
 every crew member the same bedtime whatever they told it; one that stacked three sleeps
 into thirteen hours with a five-minute gap; one that had people asleep the minute they
@@ -301,15 +323,21 @@ walked through the door; one that asked for twenty-four hours of sleep in forty-
 blamed the roster for it; a calendar that drew a crew member asleep before they landed;
 the same calendar still mixing timezones in its labels after I had declared that one
 fixed; and a plan that left a crew member nine hours awake off a red-eye with no nap in
-sight. **None was found by a metric.** All nine came from rendering the output and looking
-at it, and eight of the nine were found by someone other than the author.
+sight; and an eight-hour window with nothing planned in it whatsoever. **Not one was found
+by a metric.** Nine came from rendering the output and looking at it, and eight of those
+nine were found by someone other than the author.
+
+The tenth is the exception that makes the point. It was caught by the **first run of the
+test suite** — by an assertion saying *every rest window long enough to sleep in gets sleep
+in it*. That is not a score, it is an invariant, and it found in three seconds a defect
+that twelve cases, a pre-registered metric, an independent grader, four repeats and two
+held-out sets had all walked straight past. The grader asks whether a plan breaks a rule.
+It never asked whether the plan was coherent, whether a person could follow it, whether the
+picture of it told the truth, or whether it was **there at all**.
 
 That is the finding this evaluation produced about itself, and it is worth more than any
-row in the table above. Twelve cases, a pre-registered metric, an independent grader, four
-repeats and two held-out sets — and every one of those nine defects sailed through. The
-grader checks that a plan contains no violation. It never asked whether the plan was
-coherent, whether a person could actually follow it, or whether the picture of it told the
-truth. That is the argument for the hot take below as much as any of the numbers above.
+row in the table above. The answer to "no number could see it" turned out not to be a
+better number. It was a different kind of check.
 
 > The model was never the bottleneck on **finding** collisions. It was the bottleneck on
 > **not inventing** them. A deterministic checker cannot invent a rule — the failure mode
@@ -338,6 +366,7 @@ job it should not be doing — and the tools that let it do the other half exact
 | **11 · one clock draws the calendar** | Each span was positioned in its own station's timezone, so the Madrid–JFK sector was drawn ending at 21:10 Madrid time and the New York sleep after it starting at 19:56 New York time. The picture showed a crew member asleep an hour and a half before they landed. The plan was correct; the calendar was not. Reported by a reader, from the demo. | The grid is now drawn on one clock and labelled with it, blocks away from base carrying their station; no arrangement of stations can now draw a false overlap. Nothing in the plan changed, so **no metric moved at all** | Kept. The one class of mistake this calendar must not make, and there was no number anywhere in the evaluation that could have caught it. |
 | **12 · the same mistake, moved into the text** | Stage 11 fixed the geometry and left the labels alone, so a block positioned at 00:41 on the base-time axis was captioned *"ORD 17:41"*, and the agenda beside it read in station time while the grid read in home time. Reported by the same reader, on the next look: *"it is mixing time zones."* They were right, and my fix had been half a fix. | One clock now sets position, label, agenda and day-by-day table together — plus a picker for home, any station on the roster, or UTC, which moves the **whole** view at once. A block's station rides along as a place, never as a second set of hours. The block reasons carry no clock readings at all now, only durations, so they cannot contradict whichever zone the reader picked. **No metric moved** | Kept. Eighth stage running that moved no headline number, and the one that taught me the most: a partial fix to a display bug looks exactly like a complete one from the terminal. |
 | **13 · a nap after the duty, not only before it** | Stage 8's rule — at most one supplementary sleep per rest period — stopped naps stacking and quietly created the opposite problem: land at 14:20 off an overnight sector that ate half your night, and the plan offered nothing at all until midnight. Nine hours awake, straight off a red-eye, no nap. Reported from the calendar. The stacking was never about the count, it was about placement, so the two naps now have separate slots — recovery in the gap *before* the first night, pre-duty in the gap *after* the last — each four hours clear of the sleep beside it. The old gate was backwards too: it withheld recovery when the window's own nights reached target, as though a full night tonight repaid the four hours yesterday's duty took. | Recovery sleep across sixteen rosters **0 → 66**, pre-duty naps 12 → 31, plan violations **0 either way**; primary and co-primary **unchanged**. Sleep away from base is now drawn in its own colour, which is not a defect fix — it was asked for, and which nights are at home turns out to be the shape of the month | Kept. Ninth stage running that moved no headline number. |
+| **14 · the window nobody planned** | Writing the test suite the rules asked for, I turned nine sessions of hindsight into thirteen invariants — and the very first run failed one. Finish standby at 13:00, report at 23:00 for an all-night sector, and the eight hours between them held **no block at all**: no sleep, no nap, no conflict, no warning. Their usual bedtime fell just after the window shut, so no candidate night existed, and because the nap logic only ran when a night did, nothing else was offered either. A window now falls back to a duty-anchored sleep ending as late as it can, and sleep pressure carries across windows rather than resetting at each one. | Main sleeps across sixteen rosters **405 → 418**; thirteen previously-empty windows now planned; plan violations **0 either way**; primary and co-primary **unchanged** | Kept — and it is the first defect here a *check* caught rather than a person. The check is an invariant, not a score, which is the whole lesson. |
 | **Removed** | A repair pass that resolves flagged uncertainties instead of surfacing them. Predicted to raise the primary metric while making the system more dangerous. | 8/8 either way — **but values shown to the crew member 33 → 0**, cost +38% | Cut. The metric could not see the change at all, which is worse than being fooled by it. [`docs/removed-experiments.md`](docs/removed-experiments.md) |
 
 ### The failure that drove stage 3
@@ -434,6 +463,9 @@ short version:
 
 ```bash
 npm install
+npm run verify          # typecheck + 44 tests + the freeze check. No credentials needed.
+npm run package         # build dist/nightstop-submission.zip with its sha256
+
 npm run corpus          # regenerate the 8 rosters from a seed, byte-identical
 npm run verify:grader   # 42 assertions proving the scoreboard — no API key needed
 npm run verify:freeze   # proves the held-out set was not tuned against
@@ -445,6 +477,29 @@ npm run report          # rebuild RESULTS.md from the runs on disk
 
 Model access is the Claude Agent SDK, which authenticates with existing Claude Code
 credentials; set `ANTHROPIC_API_KEY` in `.env.local` instead if you prefer.
+
+## Coding-agent disclosure
+
+Agent use is required and must be disclosed. Everything below was used to build this;
+nothing was hand-written without an agent in the loop, and nothing here predates the
+competition.
+
+| Tool | Version | What it did |
+|---|---|---|
+| **Claude Code** (CLI) | 2.1.251 | The entire build. One long session per day, plan mode first, then implementation. |
+| **Claude Opus 5** (1M context) | `claude-opus-5[1m]` | The model behind Claude Code for every session. |
+| **Claude Agent SDK** | `@anthropic-ai/claude-agent-sdk` 0.3.250 | The runtime for the agents *inside* the product. Authenticates on existing Claude Code credentials. |
+| Bundled skills | `claude-api`, `dataviz`, `artifact-design`, `artifact-capabilities` | Each changed the artefact in a way [documented and checkable](docs/how-agents-built-this.md). No custom skills were written; `.claude/skills/` is empty, which is easy to verify. |
+| Planning subagents | 4, via Claude Code's `Agent` tool | One of them is the reason this evaluation has a co-primary metric at all. |
+| Models used by the product | `claude-opus-5` | Same model for every arm, so no comparison here is a model comparison. |
+
+**What is not here.** No `/wayfinder` map, no ADRs, no custom skills, no MCP servers. The
+plan called for the first three and the build did not use them.
+[`docs/how-agents-built-this.md`](docs/how-agents-built-this.md) leads with that omission
+rather than burying it, and the empty directories are in the repository.
+
+**Trajectories** for all six product agents are in
+[`trajectories/`](trajectories/README.md), rendered from the JSONL each run writes.
 
 ## Ground rules
 

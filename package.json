@@ -5,6 +5,9 @@
   "scripts": {
     "corpus": "tsx scripts/generate-corpus.ts --set dev --seed 20260828",
     "corpus:heldout": "tsx scripts/generate-corpus.ts --set heldout --seed 19730411",
+    "test": "tsx --test test/*.test.ts",
+    "verify": "npm run typecheck && npm run test && npm run verify:freeze",
+    "package": "tsx scripts/package.ts",
     "verify:grader": "tsx scripts/verify-grader.ts",
     "eval": "tsx scripts/run-eval.ts",
     "regrade": "tsx scripts/regrade.ts",

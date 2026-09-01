@@ -113,7 +113,7 @@ run has not measured its own variance.
 Stated here rather than folded into the results, because the point of a pre-registration
 is that departures from it are visible.
 
-**The planner changed eight times after the first held-out set had been run.** In order:
+**The planner changed nine times after the first held-out set had been run.** In order:
 a prophylactic nap before duties running through the circadian low; planning every night
 in a window rather than one per rest period; shifting bedtime earlier before an early
 report and later after a late arrival; anchoring the plan to the hours each crew member
@@ -124,9 +124,19 @@ to get through the door before sleep starts; buying sleep with time awake at rou
 pre-duty naps separate slots, after that one-supplementary-sleep cap turned out to leave a
 crew member nine hours awake off a red-eye with nothing offered until midnight.
 
-Every one was a real defect. None was found by a metric — all eight came from rendering
-the output and looking at it, seven of them from someone else looking. Every arm was
-re-run on every corpus after each, and the headline numbers did not move.
+Every one was a real defect. **Not one was found by a metric.** Eight came from rendering
+the output and looking at it, seven of those from someone else looking. The ninth — an
+eight-hour rest window with nothing planned in it at all — was caught by the first run of
+`npm test`, by an invariant rather than a score: *every rest window long enough to sleep in
+gets sleep in it*. Every arm was re-run on every corpus after each change, and the headline
+numbers did not move.
+
+**What this says about the pre-registration.** A primary metric scores the plans that
+exist. It has nothing to say about a plan that is absent, incoherent, or drawn wrong, and
+those turned out to be most of the real defects in this project. If I were pre-registering
+again I would register the invariants alongside the metric, because they are the half that
+catches this class — and I would register a coverage check by name: nights planned against
+nights available.
 
 Two further changes touched no plan at all. The briefing drew each block in its own
 station's timezone, which let a westbound duty and the sleep after it overlap on the page

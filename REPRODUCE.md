@@ -48,6 +48,28 @@ The answer keys live outside the case directories on purpose — an agent handed
 path will list the folder it sits in, and ground truth sitting next to the input is an
 accident waiting to happen.
 
+## 2b. Run the tests — no credentials, ~12 seconds
+
+```bash
+npm run verify
+```
+
+Typecheck, then **44 tests**, then the freeze check. Nothing here needs a key, a network,
+or a model, so it is the first thing to run from a clean clone and the fastest way to tell
+whether the project works on your machine.
+
+| Test file | What it holds the code to |
+|---|---|
+| `test/time.test.ts` | Real DST transitions in real zones: the hour that never happens, the one that happens twice, and offsets either side of both. |
+| `test/engine.test.ts` | Thirteen invariants across all sixteen rosters — no sleep overlapping a duty or another block, none starting the instant a window opens, none running past the drive to the airport, no window left empty, no more than 68% of a window spent asleep, every block citing a rule that exists. |
+| `test/brief.test.ts` | The calendar cannot draw a lie: in **every** timezone the picker offers, nothing overlaps on the page that did not overlap in the air, and the hours written on a block are the hours it is drawn at. |
+| `test/grader.test.ts` | The 42 constructed-answer assertions, plus regressions for both grader bugs that shipped. |
+| `test/corpus.test.ts` | Every committed hash matches the bytes on disk; rosters and answer keys agree; no real names anywhere. |
+| `test/ics.test.ts` | RFC 5545: 75-octet folding, balanced VEVENTs, duties marked free, and the missing-`sectors` crash that once wiped a good result off the screen. |
+
+Most of these exist because something shipped broken. The engine and calendar tests in
+particular are the invariants a person had to notice by eye first.
+
 ## 3. Prove the scoreboard — no credentials, ~3 seconds
 
 ```bash
@@ -182,3 +204,15 @@ npm run regrade -- results/<runId> --set dev   # then re-grade
 `replan` rebuilds **only** the sleep blocks, and refuses to run on an arm whose blocks
 came from a model. Conflicts are left untouched, so the ablation arm keeps the conflicts
 its model found rather than silently acquiring the engine's.
+
+## 8. Build the submission archive
+
+```bash
+npm run package
+```
+
+Writes `dist/nightstop-submission.zip` and `dist/MANIFEST.md` beside it, carrying the
+archive's sha256 and the commit it was built from. It **refuses to run on a dirty working
+tree**, because the point of the archive is that what a judge unzips is what produced the
+numbers inside it. Excluded: `node_modules/`, `.git/`, `out/`, `dist/`, and any `.env`
+file — so no credential can travel with it.

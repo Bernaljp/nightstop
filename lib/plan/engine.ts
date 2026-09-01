@@ -173,6 +173,27 @@ function placeMainSleeps(
     if (minutesBetween(from, to) < 4 * 60) continue;
     out.push({ from, to, clippedEnd, clippedStart, floorWasWindow });
   }
+
+  // A window that holds no body-clock night at all still has to be slept in.
+  //
+  // Finish standby at 13:00 and report at 23:00 for an all-night sector, and the eight
+  // hours between them contain no candidate bedtime — their usual 22:30 falls just after
+  // the window shuts. The loop above returned nothing, and because the nap logic ran only
+  // when a night existed, the plan offered nothing whatsoever before a duty that flies
+  // through the whole circadian low. It is the emptiest kind of failure: no block, no
+  // conflict, no warning, and no metric that scores plans can see an absence.
+  //
+  // So: anchor to the duty instead of the body, ending as late as the window allows.
+  // Sleeping right up to the moment you leave is exactly the advice before a night flight.
+  if (!out.length && minutesBetween(windowFrom, windowTo) >= s.mainSleepFloorMinutes) {
+    const from = new Date(
+      Math.max(windowFrom.getTime(), windowTo.getTime() - s.mainSleepTargetMinutes * 60_000),
+    );
+    out.push({
+      from, to: windowTo, clippedEnd: true,
+      clippedStart: from.getTime() === windowFrom.getTime(), floorWasWindow: true,
+    });
+  }
   return out;
 }
 
@@ -194,10 +215,21 @@ function placeMainSleeps(
  * however much they would like to. It is floored at the rule pack's own six hours, so the
  * planner never proposes a main sleep it would then have to flag as too short.
  */
-function trimForTimeAwake(nights: Night[], preDutyIndex: number, floorMinutes: number): void {
+function trimForTimeAwake(
+  nights: Night[],
+  preDutyIndex: number,
+  floorMinutes: number,
+  /** When they last slept, from anywhere in the plan. Undefined for the first window. */
+  lastSleepEnd?: Date,
+): void {
   if (preDutyIndex >= 0 && nights[preDutyIndex]) nights[preDutyIndex].preDuty = true;
-  for (let i = 1; i < nights.length; i++) {
-    const woke = nights[i - 1].to.getTime();
+  // Start at the first night, not the second. The ratio was only applied WITHIN a window,
+  // on the reasoning that the first sleep after a duty is recovery and has earned its
+  // length. That holds when a duty separates them, and not when it does not: wake at
+  // 05:05, fly nothing, and eight more hours at 14:00 is not a night, it is a wish.
+  for (let i = lastSleepEnd ? 0 : 1; i < nights.length; i++) {
+    const woke = i === 0 ? lastSleepEnd!.getTime() : nights[i - 1].to.getTime();
+    if (woke >= nights[i].from.getTime()) continue;
 
     if (nights[i].clippedEnd) {
       // An early night ends when it has to — the report fixes that end — so the bedtime
@@ -214,13 +246,13 @@ function trimForTimeAwake(nights: Night[], preDutyIndex: number, floorMinutes: n
         from = addMinutes(nights[i].to, -floorMinutes);
       }
       if (from.getTime() <= nights[i].from.getTime()) continue;
-      nights[i].trimmedAwake = minutesBetween(nights[i - 1].to, from);
+      nights[i].trimmedAwake = minutesBetween(new Date(woke), from);
       nights[i].from = from;
       continue;
     }
 
     // Any other night keeps the bedtime the body asked for; they simply wake earlier.
-    const awake = minutesBetween(nights[i - 1].to, nights[i].from);
+    const awake = minutesBetween(new Date(woke), nights[i].from);
     const allowed = Math.max(floorMinutes, Math.round(awake / 2));
     if (minutesBetween(nights[i].from, nights[i].to) <= allowed) continue;
     nights[i].to = addMinutes(nights[i].from, allowed);
@@ -295,6 +327,10 @@ export function buildPlan(
     return Math.round(diff * 60);
   };
 
+  // When they last slept, carried across rest periods. Sleep pressure does not reset
+  // because the planner moved on to the next window.
+  let lastSleepEnd: Date | undefined;
+
   rests.forEach((r, i) => {
     // Sleep cannot begin the instant the commute ends; allow time to settle.
     const from = addMinutes(new Date(r.sleepWindowFromUtc), settings.settleMinutes);
@@ -316,7 +352,11 @@ export function buildPlan(
     const dutyWocl = woclCoverageMinutes(
       new Date(r.next.reportUtc!), new Date(r.next.endUtc!), bodyOffsetFromUtc,
     );
-    trimForTimeAwake(nights, dutyWocl >= 60 ? nights.length - 1 : -1, settings.mainSleepFloorMinutes);
+    trimForTimeAwake(
+      nights, dutyWocl >= 60 ? nights.length - 1 : -1, settings.mainSleepFloorMinutes,
+      lastSleepEnd,
+    );
+    lastSleepEnd = nights[nights.length - 1].to;
 
     const usual = `${String(Math.floor(usualBed)).padStart(2, "0")}:${String(Math.round((usualBed % 1) * 60)).padStart(2, "0")}`;
     const leaveFor = addMinutes(

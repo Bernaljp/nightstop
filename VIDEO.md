@@ -101,7 +101,7 @@ judge may be watching at.
 |---|---|
 | **Tab 6**, `docs/removed-experiments.md`, scrolled to experiment 2. | "One more. When the reader flags something as uncertain, you can hand it back and ask it to resolve it. Forty lines. I predicted it would beat my metric while making the system more dangerous." |
 | **Point at the comparison table** in that file — the row reading 33 → 0. | "It did something worse. It *tied*. Same trustworthy count, same silently-wrong count. What changed is invisible to every number I report: values the pilot can check go from thirty-three to zero, and it costs thirty-eight percent more. It guessed right every time here — which isn't a reason to keep it, because the behaviour is identical whether the guess is right or wrong." |
-| **Switch to tab 2**, the demo, and scroll the phone calendar. | "And here is the number I did not expect to be reporting. Nine of my thirteen stages moved neither headline number — a planner that never suggested a nap, one that asked for twenty-four hours of sleep in a forty-six hour layover, a calendar that drew a pilot asleep before they landed. All nine were real. **None was caught by a metric.** Eight were caught by someone reading the output — including the one where I fixed the calendar, said so, and had left half of it still broken." |
+| **Switch to tab 2**, the demo, and scroll the phone calendar. | "And here is the number I did not expect to be reporting. Ten of my fourteen stages moved neither headline number — a planner that never suggested a nap, one that asked for twenty-four hours of sleep in a forty-six hour layover, a calendar that drew a pilot asleep before they landed. All ten were real. **Not one was caught by a metric.** Nine were caught by someone reading the output. The tenth was caught by the first run of my test suite — an eight-hour window with nothing planned in it at all — and that is the lesson: the answer to *no number could see it* wasn't a better number, it was an invariant." |
 | **Switch to tab 3**, the briefing, and leave it on screen. | "So: build the scoreboard before the agent. Then distrust the scoreboard too. Both of my worst bugs were in the measuring apparatus, not the thing being measured — and the decision to cut that experiment came from looking at what the pilot ends up holding, which no number in my results table reports." |
 | Hold on the briefing. Stop. | *(end)* |
 
@@ -127,7 +127,7 @@ Cut in this order:
 1. The live tag (0:20)
 2. The Cirrus midnight-rollover aside at 2:10 (0:20)
 3. The *Repeats* / held-out lines at 3:25 (0:15)
-4. The nine-of-thirteen line at 4:10 (0:20) — only if you must; it is the strongest
+4. The ten-of-fourteen line at 4:10 (0:20) — only if you must; it is the strongest
    evidence in the video that the evaluation was run honestly
 
 Cuts 1 and 2 bring it to **4:00** with every one of the brief's required beats intact.

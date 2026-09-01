@@ -195,9 +195,9 @@
       "id": "main-2026-09-16T19:35",
       "kind": "main",
       "startUtc": "2026-09-16T19:35:00.000Z",
-      "endUtc": "2026-09-17T03:35:00.000Z",
+      "endUtc": "2026-09-17T03:08:00.000Z",
       "station": "DXB",
-      "why": "The earliest you could be asleep — the rest window opens 45m before this, which is the time it takes to get through the door.",
+      "why": "The earliest you could be asleep — the rest window opens 45m before this, which is the time it takes to get through the door. 7h33 rather than a full night — you will only have been up 15h05 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -225,12 +225,12 @@
       ]
     },
     {
-      "id": "main-2026-09-19T14:54",
+      "id": "main-2026-09-19T15:00",
       "kind": "main",
-      "startUtc": "2026-09-19T14:54:00.000Z",
+      "startUtc": "2026-09-19T15:00:00.000Z",
       "endUtc": "2026-09-19T21:00:00.000Z",
       "station": "MAD",
-      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends. 6h00 rather than a full night — you will only have been up 11h35 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -242,6 +242,17 @@
       "endUtc": "2026-09-20T21:10:00.000Z",
       "station": "MAD",
       "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
+      "id": "main-2026-09-21T10:50",
+      "kind": "main",
+      "startUtc": "2026-09-21T10:50:00.000Z",
+      "endUtc": "2026-09-21T16:55:00.000Z",
+      "station": "MAD",
+      "why": "Late on purpose, so you are rested for a duty that runs 3h53 through your circadian low. You leave for the airport the moment this ends.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]

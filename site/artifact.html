@@ -245,8 +245,8 @@ footer a { color: var(--ink-2); }
       <div class="rw"><span>20</span><b>SIN</b><div class="rt"><i class="duty" style="left:41.67%;width:58.33%"></i><i class="main away" style="left:0.00%;width:13.54%"></i></div></div>
       <div class="rw"><span>21</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:0.00%;width:5.56%"></i><i class="duty" style="left:47.22%;width:50.76%"></i><i class="main" style="left:15.28%;width:25.35%"></i></div></div>
       <div class="rw"><span>22</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:39.93%;width:39.86%"></i><i class="main" style="left:7.71%;width:25.62%"></i><i class="main" style="left:89.58%;width:10.42%"></i></div></div>
-      <div class="rw"><span>23</span><b>LHR</b><div class="rt"><i class="main" style="left:0.00%;width:22.92%"></i><i class="main" style="left:85.63%;width:14.38%"></i></div></div>
-      <div class="rw"><span>24</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:23.61%;width:24.44%"></i><i class="main" style="left:0.00%;width:17.01%"></i><i class="main" style="left:81.25%;width:18.75%"></i></div></div>
+      <div class="rw"><span>23</span><b>LHR</b><div class="rt"><i class="main" style="left:0.00%;width:17.71%"></i><i class="main" style="left:83.89%;width:16.11%"></i></div></div>
+      <div class="rw"><span>24</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:23.61%;width:24.44%"></i><i class="main" style="left:0.00%;width:17.01%"></i><i class="main" style="left:82.08%;width:17.92%"></i></div></div>
       <div class="rw"><span>25</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:21.18%;width:55.35%"></i><i class="main" style="left:0.00%;width:14.58%"></i><i class="main" style="left:86.25%;width:13.75%"></i></div></div>
       <div class="rw"><span>26</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:18.40%;width:41.46%"></i><i class="main" style="left:0.00%;width:11.81%"></i><i class="main" style="left:69.58%;width:25.56%"></i></div></div>
       <div class="rw"><span>27</span><b>LHR</b><div class="rt"><i class="wocl" style="left:8.33%;width:16.67%"></i><i class="duty" style="left:1.74%;width:31.04%"></i><i class="recovery-nap" style="left:42.50%;width:8.33%"></i><i class="main" style="left:89.58%;width:10.42%"></i></div></div>
@@ -477,8 +477,8 @@ footer a { color: var(--ink-2); }
 <section>
   <p class="eyebrow">what no number caught</p>
   <div class="col">
-    <h2>Nine of thirteen stages moved neither headline number.</h2>
-    <p>All nine were real defects. A planner that never once suggested a nap. One that
+    <h2>Ten of fourteen stages moved neither headline number.</h2>
+    <p>All ten were real defects. A planner that never once suggested a nap. One that
     left every day off unplanned. One that gave every crew member the same bedtime whatever
     they had told it. One that stacked three sleeps into thirteen hours with a five-minute
     gap. One that had people asleep the minute they walked through the door. One that asked
@@ -502,11 +502,19 @@ footer a { color: var(--ink-2); }
     naps have their own slots now &mdash; recovery before the first night, pre-duty after
     the last &mdash; and recovery sleep across sixteen rosters went from none to
     sixty-six.</p>
+    <p>Then I wrote the test suite, turned nine sessions of hindsight into thirteen
+    invariants, and the first run failed one. Finish standby at 13:00, report at 23:00 for
+    an all-night sector, and the eight hours between held <strong>no block at all</strong>
+    &mdash; no sleep, no nap, no conflict, no warning. <strong>The answer to &ldquo;no
+    number could see it&rdquo; was not a better number. It was a different kind of
+    check.</strong> An assertion that every window long enough to sleep in gets sleep in it
+    found in three seconds what twelve cases, four repeats and two held-out sets had walked
+    straight past.</p>
   </div>
   <div class="score">
-    <div class="chip bad">defects a metric caught <b>0 of 9</b></div>
+    <div class="chip bad">defects a score caught <b>0 of 10</b></div>
     <div class="chip">found by reading the output <b>9</b></div>
-    <div class="chip">found by someone other than the author <b>8</b></div>
+    <div class="chip good">found by an invariant <b>1</b></div>
   </div>
   <div class="note col">
     Twelve rosters, a pre-registered metric, an independent grader, four repeats and two

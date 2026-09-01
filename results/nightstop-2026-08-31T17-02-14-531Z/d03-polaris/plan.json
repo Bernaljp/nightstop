@@ -2,6 +2,29 @@
   "caseId": "d03-polaris",
   "blocks": [
     {
+      "id": "recovery-nap-2026-09-02T06:50",
+      "kind": "recovery-nap",
+      "startUtc": "2026-09-02T06:50:00.000Z",
+      "endUtc": "2026-09-02T07:35:00.000Z",
+      "station": "GRU",
+      "why": "2026-09-01 took 5h10 out of the hours you normally sleep, and you are 4h45 from your next proper night. Take this 45m now, while the pressure is still there — it is short on purpose, so it does not cost you tonight.",
+      "ruleIds": [
+        "sleep-per-24h-7h",
+        "nap-cap-2h"
+      ]
+    },
+    {
+      "id": "main-2026-09-02T11:35",
+      "kind": "main",
+      "startUtc": "2026-09-02T11:35:00.000Z",
+      "endUtc": "2026-09-02T19:35:00.000Z",
+      "station": "GRU",
+      "why": "Late on purpose, so you are rested for a duty that runs 4h00 through your circadian low. You leave for the airport the moment this ends.",
+      "ruleIds": [
+        "far117-sleep-opportunity-8h"
+      ]
+    },
+    {
       "id": "recovery-nap-2026-09-03T11:20",
       "kind": "recovery-nap",
       "startUtc": "2026-09-03T11:20:00.000Z",

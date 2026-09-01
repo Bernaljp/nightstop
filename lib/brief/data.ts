@@ -133,7 +133,13 @@ export function buildBriefData(
   // may switch the WHOLE view to; there is no way to ask for two of them at once.
   const zones: Zone[] = [];
   const addZone = (label: string, tz: string) => {
-    if (!zones.some((z) => z.tz === tz)) zones.push({ label, tz });
+    const existing = zones.find((z) => z.tz === tz);
+    // One entry per CLOCK, never per station — two options showing the same hours is a
+    // picker that looks broken. But a crew member goes looking for the code on their
+    // roster, so a station that shares a clock joins the label rather than vanishing:
+    // Boston is findable under "JFK / BOS", not missing because New York got there first.
+    if (!existing) zones.push({ label, tz });
+    else if (!existing.label.split(" / ").includes(label)) existing.label += ` / ${label}`;
   };
   addZone(profile.base, homeTz);
   for (const d of duties) {

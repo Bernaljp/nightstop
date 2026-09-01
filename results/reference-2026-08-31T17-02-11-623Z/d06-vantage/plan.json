@@ -168,12 +168,12 @@
       ]
     },
     {
-      "id": "main-2026-09-16T17:30",
+      "id": "main-2026-09-16T17:32",
       "kind": "main",
-      "startUtc": "2026-09-16T17:30:00.000Z",
+      "startUtc": "2026-09-16T17:32:00.000Z",
       "endUtc": "2026-09-17T01:30:00.000Z",
       "station": "MAD",
-      "why": "An early night: you leave for the airport the moment this ends.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h58 rather than a full night — you will only have been up 15h57 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
@@ -312,12 +312,12 @@
       ]
     },
     {
-      "id": "main-2026-09-28T17:30",
+      "id": "main-2026-09-28T17:52",
       "kind": "main",
-      "startUtc": "2026-09-28T17:30:00.000Z",
+      "startUtc": "2026-09-28T17:52:00.000Z",
       "endUtc": "2026-09-29T01:30:00.000Z",
       "station": "MAD",
-      "why": "An early night: you leave for the airport the moment this ends.",
+      "why": "An early night: you leave for the airport the moment this ends. 7h38 rather than a full night — you will only have been up 15h17 by then.",
       "ruleIds": [
         "far117-sleep-opportunity-8h"
       ]
